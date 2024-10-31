@@ -1,2 +1,5 @@
-User-agent: *
+User-agent: Baidu
 Disallow: /
+
+User-agent: *
+Allow: /
