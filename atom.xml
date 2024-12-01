@@ -134,11 +134,11 @@
     <category term="编程" scheme="https://dropsong.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="DRF" scheme="https://dropsong.github.io/tags/DRF/"/>
+    <category term="Django" scheme="https://dropsong.github.io/tags/Django/"/>
     
     <category term="后端" scheme="https://dropsong.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
     
-    <category term="Django" scheme="https://dropsong.github.io/tags/Django/"/>
+    <category term="DRF" scheme="https://dropsong.github.io/tags/DRF/"/>
     
     <category term="postman" scheme="https://dropsong.github.io/tags/postman/"/>
     
@@ -200,9 +200,9 @@
     <category term="编程" scheme="https://dropsong.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="后端" scheme="https://dropsong.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
-    
     <category term="Django" scheme="https://dropsong.github.io/tags/Django/"/>
+    
+    <category term="后端" scheme="https://dropsong.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
     
     <category term="sqlite" scheme="https://dropsong.github.io/tags/sqlite/"/>
     
@@ -278,8 +278,6 @@
     <category term="编程" scheme="https://dropsong.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="网络编程" scheme="https://dropsong.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
     <category term="python" scheme="https://dropsong.github.io/tags/python/"/>
     
     <category term="红黑树" scheme="https://dropsong.github.io/tags/%E7%BA%A2%E9%BB%91%E6%A0%91/"/>
@@ -287,6 +285,8 @@
     <category term="抓包" scheme="https://dropsong.github.io/tags/%E6%8A%93%E5%8C%85/"/>
     
     <category term="多进程" scheme="https://dropsong.github.io/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/"/>
+    
+    <category term="网络编程" scheme="https://dropsong.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
     <category term="进程池" scheme="https://dropsong.github.io/tags/%E8%BF%9B%E7%A8%8B%E6%B1%A0/"/>
     
