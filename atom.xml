@@ -6,7 +6,7 @@
   <link href="https://dropsong.github.io/atom.xml" rel="self"/>
   
   <link href="https://dropsong.github.io/"/>
-  <updated>2025-01-11T15:05:18.985Z</updated>
+  <updated>2025-01-18T16:06:20.340Z</updated>
   <id>https://dropsong.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据分析笔记</title>
+    <link href="https://dropsong.github.io/posts/9d28aa01.html"/>
+    <id>https://dropsong.github.io/posts/9d28aa01.html</id>
+    <published>2025-01-18T16:03:44.000Z</published>
+    <updated>2025-01-18T16:06:20.340Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数据分析概述"><a href="#数据分析概述" class="headerlink" title="数据分析概述"></a>数据分析概述</h1><p>文章分享：<a href="http://mp.weixin.qq.com/s?__biz=MzAwNjM1ODkxNQ==&amp;mid=2650893225&amp;idx=1&amp;sn=3b192e4702af06038da886302363557a&amp;chksm=80fb5945b78cd05318c0bc35e4c382904a0120d8c0140251774b703259f722ed445d4d575dc9&amp;mpshare=1&amp;scene=23&amp;srcid=08286ptjP2MEHifQbXAhyaBc&amp;sharer_sharetime=1598618305575&amp;sharer_shareid=5d3ffbb35ebafe08f3d5081eefd49acf#rd">一份来自贾扬清的AI青年修炼指南：不存在算法工程师、调参侠没有市场</a></p><p>大致流程：</p><ol><li>原始数据收集<ul><li>数据埋点。收集用户在网页端，APP，小程序等终端的各种数据。</li><li>业务数据</li><li>外部数据</li></ul></li><li>数据加工处理<ul><li>将收集的数据转换成可理解、可量化、可观察的业务指标</li></ul></li><li>数据可视化</li><li>数据决策和执行</li><li>数据产品<ul><li>将策略制作成数据应用和产品，开始自动化和系统化运营。</li></ul></li><li>数据战略<ul><li>积累了大量数据，大量模型，大量数据应用</li><li>不只是数据分析，可以将数据变现</li></ul></li></ol><p>三类岗位:</p><ul><li>业务线 数据分析</li><li>研发线 数据仓库<ul><li>数据仓库也是普通的数据库（例如 mysql），里面存的数据是为数据分析人员服务的，不对接用户。举例来说，里面可以存储用户行为路径、每日新增用户数等指标。</li></ul></li><li>算法线 数据挖掘<ul><li>相对于数据分析，需要建模，模型的目的是做预测。</li></ul></li></ul><p>行业黑话：</p><ul><li><a href="https://zh.wikipedia.org/zh-cn/ETL">ETL</a>：提取转换加载（英语：Extract, transform, load，简称ETL），用来描述将资料从来源端经过抽取、转置、加载至目的端的过程。ETL一词较常用在数据仓库，但其对象并不限于数据仓库。</li><li>DW 数据仓库（data warehouse）</li><li>CRM 客户关系管理 销售</li><li>CMS（Content Management System）”内容管理系统”</li></ul><p>理解业务从理解商业模式开始：</p><p><img src="https://s2.loli.net/2025/01/18/xoXQV9TO2MLuqFm.png" alt="98-1.png"></p><h1 id="指标体系"><a href="#指标体系" class="headerlink" title="指标体系"></a>指标体系</h1><h2 id="数据指标概念"><a href="#数据指标概念" class="headerlink" title="数据指标概念"></a>数据指标概念</h2><p>场景 1，描述刚上线社区产品最近表现</p><ol><li>日活每天都在涨，新增用户也很多。</li><li>日活按 IMEI 是在涨，但是注册用户没有很多 》新增注册转化只有 20%，说明没有促使用户注册的动机。</li></ol><p>场景 2，产品上线一段时间，领导想知道是否要推广产品</p><ol><li>最近日活平稳，新增用户最初没那么多了。</li><li>虽然日活平稳，但是用户活跃程度很高（人均发帖，好友关系）比上个月增长了 30%，新用户次日留存提升。（可以推广）</li></ol><h2 id="定义及常用数据指标"><a href="#定义及常用数据指标" class="headerlink" title="定义及常用数据指标"></a>定义及常用数据指标</h2><p>数据指标是<strong>对当前业务有参考价值</strong>的<strong>统计</strong>数据。</p><p>常用的数据指标：</p><ul><li>用户数据：谁</li><li>行为数据：干了什么</li><li>业务数据：产生了什么结果</li></ul><p><strong>用户数据：</strong></p><ul><li>存量: DAU（日活）、MAU（月活）</li><li>增量: 新增用户</li><li>健康程度: 留存率</li><li>从哪儿来: 渠道来源<ul><li>搜索引擎推广 SEO</li><li>Rom 推广</li><li>app 商店</li><li>手机厂商预装</li><li>其它产品挂下载链接</li></ul></li></ul><p><strong>行为数据：</strong></p><ul><li>次数、频率，PV, UV, 访问深度</li><li>关键路径走了多远, 转化率</li><li>行为做了多久, 时长</li><li>质量, 弹出率(跳出率，进去后立即出来)</li></ul><p><img src="https://s2.loli.net/2025/01/18/gJnIrVshEYWAR4o.png" alt="98-2.png" title="关键路径"></p><p><strong>业务数据：</strong></p><ul><li>总量 GMV 访问时长</li><li>ARPU(Average Revenue Per User)</li><li>ARPPU(Average Revenue Per Paying User)</li><li>人数 付费人数 播放人数</li><li>健康程度 付费率 付费频次 观看率</li><li>被消费对象 SKU 被消费内容</li></ul><h2 id="数据指标详解"><a href="#数据指标详解" class="headerlink" title="数据指标详解"></a>数据指标详解</h2><p><strong>DAU、MAU</strong></p><ul><li>Daily<ul><li>如何理解 Daily</li><li>出海产品跨时区</li></ul></li><li>Monthly<ul><li>怎样才算一个有效的月活呢？视情况而定。某用户一个月只活跃了一次，我们可能认为将其纳入月活会降低数据的可参考性，可以规定一个用户月活跃 7 次以上，才纳入统计。</li></ul></li><li>活跃（怎么才算一次有效的活跃？）<ol><li>数据统计系统的定义<ul><li>基于事件上报：有事件上报 》该用户活跃</li><li>预制报表的统计系统（ e.g. 友盟…）都是基于事件上报进行统计<ul><li>web 端页面加载成功</li><li>app 端按钮点击</li></ul></li></ul></li><li>业务定义，用户执行了关键事件<ul><li>日活事件列表（访问首页/访问商品详情页/访问抽奖页）</li></ul></li></ol></li><li>用户<ul><li>用户通过多台设备访问产品</li><li>认人<ul><li>给每位注册用户一个 UID</li><li>只适合强登录/注册产品，未登录用户会被漏掉</li></ul></li><li>认设备<ul><li>IMEI Cookie 中随机字符串</li><li>无法对应设备背后的用户</li></ul></li><li>产品是否强制登录<ul><li>人+单独指标记录设备</li></ul></li><li>不登录用户是否有价值<ul><li>没价值（人+单独指标记录设备）</li><li>有价值（设备）</li></ul></li></ul></li></ul><p>如何理解“新增用户”：</p><ul><li>渠道商 点了下载就算</li><li>运营 下载成功才算，一个用户一天最多算一次</li><li>产品 按启动量算，没打开不算</li><li>研发 注册了才叫新增用户，表里得能查到</li></ul><p>用户留存：7 日留存算法、…，具体细节会根据情况变动。</p><p><strong>为什么要看留存？</strong> 了解某个渠道的质量。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;数据分析概述&quot;&gt;&lt;a href=&quot;#数据分析概述&quot; class=&quot;headerlink&quot; title=&quot;数据分析概述&quot;&gt;&lt;/a&gt;数据分析概述&lt;/h1&gt;&lt;p&gt;文章分享：&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzAwNjM1</summary>
+      
+    
+    
+    
+    <category term="算法" scheme="https://dropsong.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="数据分析" scheme="https://dropsong.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
   
   <entry>
     <title>读书笔记 24</title>
@@ -153,8 +177,6 @@
     
     <category term="搜索引擎" scheme="https://dropsong.github.io/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
     
-    <category term="中间件" scheme="https://dropsong.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
-    
     <category term="docker" scheme="https://dropsong.github.io/tags/docker/"/>
     
     <category term="ElasticSearch" scheme="https://dropsong.github.io/tags/ElasticSearch/"/>
@@ -162,6 +184,8 @@
     <category term="MinIO" scheme="https://dropsong.github.io/tags/MinIO/"/>
     
     <category term="RabbitMQ" scheme="https://dropsong.github.io/tags/RabbitMQ/"/>
+    
+    <category term="中间件" scheme="https://dropsong.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
     
     <category term="对象存储" scheme="https://dropsong.github.io/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/"/>
     
@@ -278,11 +302,11 @@
     <category term="编程" scheme="https://dropsong.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+    <category term="中间件" scheme="https://dropsong.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
     <category term="Django" scheme="https://dropsong.github.io/tags/Django/"/>
     
     <category term="后端" scheme="https://dropsong.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="中间件" scheme="https://dropsong.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
     
     <category term="sqlite" scheme="https://dropsong.github.io/tags/sqlite/"/>
     
@@ -584,36 +608,6 @@
     
     
     <category term="书评" scheme="https://dropsong.github.io/tags/%E4%B9%A6%E8%AF%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>苏州园林</title>
-    <link href="https://dropsong.github.io/posts/167f15dc.html"/>
-    <id>https://dropsong.github.io/posts/167f15dc.html</id>
-    <published>2024-06-13T09:32:24.000Z</published>
-    <updated>2024-12-09T14:51:44.927Z</updated>
-    
-    <content type="html"><![CDATA[<p>我已经完全懂了（叉腰.jpg）！</p><p>这些小园林，就是主打一个欲遮半掩。</p><p>雕一个镂空的花纹窗户，外面要么是假山要么是湖。</p><p>一面墙空出一大块，外面一株精甚细腻的小植物得把枝条探进来。</p><p>靠着墙的走廊，不能紧挨着墙，要适时地折一下，和墙空出的部分又是一个赏心悦目的绿植。</p><p>园里还要有假山，假山最好簇着一块怪石，像点什么最好。</p><p>这假山的周围还要有水，水里可以有点鱼，尽量是黑的，红的多了就俗了，可以放两只伸着脑袋的乌龟。</p><p>假山可以探洞，也可以爬，若是要爬，每到一个视野开阔处就是园子的另一个角度。</p><p>假山要是想跨过水面，必须是只通一人的看着不小心就能掉下去的石板小桥。</p><p>水里还须竖着若干小石头磊起来的莫名其妙的小柱子。</p><p>要是园子再大点，还能再弄一片湖，湖里面还有个亭子，去亭子的小桥也是弯弯曲曲的。</p><p>园子里的门，尤其是那种圆门，最好是每换个角度看都不一样，或是藏着点惊喜。看上去就是一副圆形边框的画。</p><p>房子之间还是要有假山的（永远都不嫌多），山上是有亭子的，周围还得用树挡着。</p><p><img src="https://bu.dusays.com/2024/06/13/666ac4b7c0783.jpg" alt="78-1.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac4be93cff.jpg" alt="78-2.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac4bda5651.jpg" alt="78-3.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac4be6d3c0.jpg" alt="78-4.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac4bec340f.jpg" alt="78-5.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac4b7dbe7f.jpg" alt="78-6.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac4b2094dc.jpg" alt="78-7.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac4aa245d6.jpg" alt="78-8.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac4b9e7f2a.jpg" alt="78-9.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac4b7c5875.jpg" alt="78-10.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac5265c87f.jpg" alt="78-11.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac526611ce.jpg" alt="78-12.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac525569e2.jpg" alt="78-13.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac51d82ff9.jpg" alt="78-14.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac519ad577.jpg" alt="78-15.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac526b2adb.jpg" alt="78-16.jpg"></p><p><img src="https://bu.dusays.com/2024/06/13/666ac516bfc76.jpg" alt="78-17.jpg"></p><p>其实还是拿着手机随手拍啦。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;我已经完全懂了（叉腰.jpg）！&lt;/p&gt;
-&lt;p&gt;这些小园林，就是主打一个欲遮半掩。&lt;/p&gt;
-&lt;p&gt;雕一个镂空的花纹窗户，外面要么是假山要么是湖。&lt;/p&gt;
-&lt;p&gt;一面墙空出一大块，外面一株精甚细腻的小植物得把枝条探进来。&lt;/p&gt;
-&lt;p&gt;靠着墙的走廊，不能紧挨着墙，要适时地折一</summary>
-      
-    
-    
-    
-    <category term="生活" scheme="https://dropsong.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="摄影" scheme="https://dropsong.github.io/tags/%E6%91%84%E5%BD%B1/"/>
-    
-    <category term="园林" scheme="https://dropsong.github.io/tags/%E5%9B%AD%E6%9E%97/"/>
     
   </entry>
   
