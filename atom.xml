@@ -110,9 +110,9 @@
     
     <category term="后端" scheme="https://dropsong.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
     
-    <category term="docker" scheme="https://dropsong.github.io/tags/docker/"/>
-    
     <category term="DRF" scheme="https://dropsong.github.io/tags/DRF/"/>
+    
+    <category term="docker" scheme="https://dropsong.github.io/tags/docker/"/>
     
     <category term="JWT" scheme="https://dropsong.github.io/tags/JWT/"/>
     
