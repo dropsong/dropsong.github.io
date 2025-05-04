@@ -6,7 +6,7 @@
   <link href="https://dropsong.github.io/atom.xml" rel="self"/>
   
   <link href="https://dropsong.github.io/"/>
-  <updated>2025-05-01T15:51:17.655Z</updated>
+  <updated>2025-05-04T17:13:23.444Z</updated>
   <id>https://dropsong.github.io/</id>
   
   <author>
@@ -21,18 +21,15 @@
     <link href="https://dropsong.github.io/posts/5888fb8e.html"/>
     <id>https://dropsong.github.io/posts/5888fb8e.html</id>
     <published>2025-05-01T15:17:43.000Z</published>
-    <updated>2025-05-01T15:51:17.655Z</updated>
+    <updated>2025-05-04T17:13:23.444Z</updated>
     
-    <content type="html"><![CDATA[<p>献祭五一劳工节的假期，权且作为对本科时代摆烂过度的补偿。</p><h1 id="理论部分"><a href="#理论部分" class="headerlink" title="理论部分"></a>理论部分</h1><div class="row"><iframe src="https://drive.google.com/file/d/1rROxoFfnKr0KUvRciiaYlY-97wqM20aH/preview" style="width:100%; height:550px"></iframe></div><blockquote><p><strong>目录</strong><br>对弧长的曲线积分  2<br>对坐标的曲线积分  7<br>格林公式及其应用  14<br>对面积的曲面积分  27<br>对坐标的曲面积分  31<br>高斯公式 通量与散度  40<br>斯托克斯公式 环流量与旋度  48</p></blockquote><h1 id="少量练习"><a href="#少量练习" class="headerlink" title="少量练习"></a>少量练习</h1><p>todo</p>]]></content>
+    <content type="html"><![CDATA[<p>献祭五一劳工节的假期，权且作为对本科时代摆烂过度的补偿。</p><h1 id="理论部分"><a href="#理论部分" class="headerlink" title="理论部分"></a>理论部分</h1><p><img src="https://s2.loli.net/2025/05/05/wg79sLZHGNmdV8R.jpg" alt="104-1.jpg"></p><div class="row"><iframe src="https://drive.google.com/file/d/1rROxoFfnKr0KUvRciiaYlY-97wqM20aH/preview" style="width:100%; height:550px"></iframe></div><blockquote><p><strong>目录</strong><br>对弧长的曲线积分  2<br>对坐标的曲线积分  7<br>格林公式及其应用  14<br>对面积的曲面积分  27<br>对坐标的曲面积分  31<br>高斯公式 通量与散度  40<br>斯托克斯公式 环流量与旋度  48</p></blockquote><h1 id="少量练习"><a href="#少量练习" class="headerlink" title="少量练习"></a>少量练习</h1><h2 id="例-1"><a href="#例-1" class="headerlink" title="例 1"></a>例 1</h2><p>计算 $\int_{L} x^2 \mathrm{d}s$ ，其中 L 是由 $x^2+y^2+z^2 = a^2 (a&gt;0)$ 与 $x+y+z=0$ 所表示的圆的一周。</p><p><strong>解法 1</strong></p><p>先找曲线 L 的一个参数方程。由 $x^2+y^2+z^2=a^2$ 与 $x+y+z=0$，消去 $z$，得</p><script type="math/tex; mode=display">x^2 + xy + y^2 = \frac{a^2}{2}</script><p>或</p><script type="math/tex; mode=display">\frac{3x^2}{4} + (y+ \frac{x}{2})^2 = \frac{a^2}{2}</script><p>令 $\begin{cases} x= \sqrt{\frac{2}{3}} a \mathrm{cos}t \\ y+\frac{x}{2} = \frac{1}{\sqrt{2}}a \mathrm{sin}t \end{cases}$ ，则 $\begin{cases} x= \sqrt{\frac{2}{3}} a \mathrm{cos}t \\ y = \frac{1}{\sqrt{2}}a \mathrm{sin}t - \frac{1}{\sqrt{6}}a \mathrm{cos}t \end{cases}$ ，从而</p><script type="math/tex; mode=display">x'_t = - \sqrt{\frac{2}{3}} a \mathrm{sin}t</script><script type="math/tex; mode=display">y'_t = \frac{1}{\sqrt{2}} a \mathrm{cos}t + \frac{1}{\sqrt{6}}a \mathrm{sin}t</script><script type="math/tex; mode=display">z'_t = - x'_t - y'_t</script><p>故 </p><script type="math/tex; mode=display">\mathrm{d}s = \sqrt{(x'_t)^2 + (y'_t)^2 + (z'_t)^2} \mathrm{d}t = a \mathrm{d}t</script><p>所以</p><script type="math/tex; mode=display">\begin{aligned}\int_L x^2 \mathrm{d}s & = \frac{2a^2}{3} \int_0^{2 \pi} \mathrm{cos}^2t \mathrm{d}t \\                        & = \frac{a^2}{3} \int_0^{2 \pi} (1-\mathrm{cos}2t) \mathrm{d}t \\                       & = \frac{a^2}{3} (t - \frac{1}{2} \mathrm{sin}2t)|_0^{2 \pi} = \frac{2 \pi a^3}{3} \\\end{aligned}</script><p><strong>解法 2</strong></p><p>由于变量 $x, y, z$ 的地位是一样的，所以</p><script type="math/tex; mode=display">\begin{aligned}\int_L x^2 \mathrm{d}s &= \frac{1}{3} \int_L (x^2+y^2+z^2) \mathrm{d}s \\                       &= \frac{a^2}{3} \int_L \mathrm{d}s = \frac{2 \pi a^3}{3}\end{aligned}</script><h2 id="例-2"><a href="#例-2" class="headerlink" title="例 2"></a>例 2</h2><p>计算曲线 $L: x = e^{-t} \mathrm{cos}t$，$y = e^{-t} \mathrm{sin}t$，$z = e^{-t}(0&lt;t&lt;+ \infty)$ 的弧长 $s$ .</p><p><strong>解</strong></p><p>由于 $x’_t = -e^{-t} \mathrm{cos}t -e^{-t} \mathrm{sin}t$，$y’_t = -e^{-t} \mathrm{sin}t + e^{-t} \mathrm{cos}t$，$z’_t = -e^{-t}$，从而</p><script type="math/tex; mode=display">\mathrm{d}s = \sqrt{(x'_t)^2 + (y'_t)^2 + (z'_t)^2} \mathrm{d}t = \sqrt{3} e^{-t} \mathrm{d}t</script><p>所以，弧长</p><script type="math/tex; mode=display">s = \int_L \mathrm{d}s = \int_0^{+ \infty} \sqrt{3} e^{-t} \mathrm{d}t = \sqrt{3}</script><h2 id="例-3"><a href="#例-3" class="headerlink" title="例 3"></a>例 3</h2><p>设 $P(x, y)$，$Q(x,y)$ 在曲线 $L$ 上连续，$l$ 为 $L$ 的长度，且</p><script type="math/tex; mode=display">M = \mathrm{max}_{(x,y) \in L} \sqrt{P^2(x, y) + Q^2(x,y)}</script><p>（1）证明 $|\int_L P \mathrm{d}x + Q \mathrm{d}y| \le M l$<br>（2）利用（1）估计积分</p><script type="math/tex; mode=display">I_R = \oint_{C_R} \frac{(y-1) \mathrm{d}x + (x+1) \mathrm{d}y}{(x^2 + y^2 +2x - 2y +2)^2}</script><p>其中，$C_R$ 为圆周 $(x+1)^2+(y-1)^2=R^2$ 的正向，并求 $\lim_{R \to + \infty} |I_R|$</p><p><strong>解</strong></p><p>（1）</p><p>由两类积分曲线之间的关系</p><script type="math/tex; mode=display">\int_L P \mathrm{d}x + Q \mathrm{d}y = \int_L (P \mathrm{cos} \alpha + Q \mathrm{sin} \alpha) \mathrm{d}s</script><p>其中，$\alpha (x,y)$ 为有向曲线弧 L 在 $(x,y)$ 处的切向量的方向角，由曲线积分的性质得</p><script type="math/tex; mode=display">\begin{aligned}|\int_L P \mathrm{d}x + Q \mathrm{d}y| &= |\int_L(P \mathrm{cos} \alpha + Q \mathrm{sin} \alpha) \mathrm{d}s | \\                                       & \le \int_L |P \mathrm{cos} \alpha + Q \mathrm{sin} \alpha| \mathrm{d}s \\\end{aligned}</script><p>由 Schwarz 不等式有</p><script type="math/tex; mode=display">\begin{aligned}|P \mathrm{cos} \alpha + Q \mathrm{sin} \alpha| &= |(P,Q)(\cos \alpha, \sin \alpha)| \\                                                & \le \sqrt{P^2+Q^2} \sqrt{\cos ^2 \alpha + \sin ^2 \alpha} \\                                                & \le M\end{aligned}</script><p>所以</p><script type="math/tex; mode=display">|\int_L P \mathrm{d}x + Q \mathrm{d}y| \le M \int_L \mathrm{d}s = Ml</script><p>（2）</p><p>由已知有 $P = \frac{y-1}{(x^2+y^2+2x-2y+2)^2}$，$Q = \frac{x+1}{(x^2+y^2+2x-2y+2)^2}$，所以 $P^2+Q^2=\frac{1}{R^6}$ 为常数，从而 $M = \frac{1}{R^3}$，故</p><script type="math/tex; mode=display">\begin{aligned}|I_R| &= |\oint_{C_R} \frac{(y-1)\mathrm{d}x+(x+1) \mathrm{d}y}{(x^2 + y^2 +2x-2y+2)^2}| \\      & \le \frac{1}{R^3} 2 \pi R = \frac{2 \pi}{R^2}\end{aligned}</script><p>进而</p><script type="math/tex; mode=display">\lim_{R \to + \infty} |I_R| \le \lim_{R \to + \infty} \frac{2 \pi}{R^2} = 0</script><p>所以</p><script type="math/tex; mode=display">\lim_{R \to + \infty} |I_R| = 0</script><h2 id="其他例子"><a href="#其他例子" class="headerlink" title="其他例子"></a>其他例子</h2><p><img src="https://s2.loli.net/2025/05/05/ZETfrxln49C2RSA.jpg" alt="104-2.jpg"></p><p><img src="https://s2.loli.net/2025/05/05/8yhFNYPMtzA9R7x.jpg" alt="104-3.jpg"></p><p><img src="https://s2.loli.net/2025/05/05/C9LmtHZ61hTlxDO.jpg" alt="104-4.jpg"></p><p><img src="https://s2.loli.net/2025/05/05/wH5Q3P76sSNujAE.jpg" alt="104-5.jpg"></p><p><img src="https://s2.loli.net/2025/05/05/WB9iHms8oCbQaYt.jpg" alt="104-6.jpg"></p><p><img src="https://s2.loli.net/2025/05/05/jzhKLnmiDOQwCkS.jpg" alt="104-7.jpg"></p><p><img src="https://s2.loli.net/2025/05/05/nKOCbI6l1uw8VXj.jpg" alt="104-8.jpg"></p>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;献祭五一劳工节的假期，权且作为对本科时代摆烂过度的补偿。&lt;/p&gt;
-&lt;h1 id=&quot;理论部分&quot;&gt;&lt;a href=&quot;#理论部分&quot; class=&quot;headerlink&quot; title=&quot;理论部分&quot;&gt;&lt;/a&gt;理论部分&lt;/h1&gt;
-
-	&lt;div class=&quot;row&quot;&gt;
-		&lt;ifram</summary>
+&lt;h1 id=&quot;理论部分&quot;&gt;&lt;a href=&quot;#理论部分&quot; class=&quot;headerlink&quot; title=&quot;理论部分&quot;&gt;&lt;/a&gt;理论部分&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://s2.loli.</summary>
       
     
     
@@ -152,11 +149,11 @@
     
     <category term="前端" scheme="https://dropsong.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="DRF" scheme="https://dropsong.github.io/tags/DRF/"/>
-    
     <category term="后端" scheme="https://dropsong.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
     
     <category term="docker" scheme="https://dropsong.github.io/tags/docker/"/>
+    
+    <category term="DRF" scheme="https://dropsong.github.io/tags/DRF/"/>
     
     <category term="JWT" scheme="https://dropsong.github.io/tags/JWT/"/>
     
@@ -397,6 +394,8 @@
     
     <category term="搜索引擎" scheme="https://dropsong.github.io/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
     
+    <category term="中间件" scheme="https://dropsong.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
     <category term="docker" scheme="https://dropsong.github.io/tags/docker/"/>
     
     <category term="ElasticSearch" scheme="https://dropsong.github.io/tags/ElasticSearch/"/>
@@ -404,8 +403,6 @@
     <category term="MinIO" scheme="https://dropsong.github.io/tags/MinIO/"/>
     
     <category term="RabbitMQ" scheme="https://dropsong.github.io/tags/RabbitMQ/"/>
-    
-    <category term="中间件" scheme="https://dropsong.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
     
     <category term="对象存储" scheme="https://dropsong.github.io/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/"/>
     
@@ -462,11 +459,11 @@
     <category term="编程" scheme="https://dropsong.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="DRF" scheme="https://dropsong.github.io/tags/DRF/"/>
+    <category term="Django" scheme="https://dropsong.github.io/tags/Django/"/>
     
     <category term="后端" scheme="https://dropsong.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
     
-    <category term="Django" scheme="https://dropsong.github.io/tags/Django/"/>
+    <category term="DRF" scheme="https://dropsong.github.io/tags/DRF/"/>
     
     <category term="postman" scheme="https://dropsong.github.io/tags/postman/"/>
     
@@ -528,9 +525,9 @@
     <category term="编程" scheme="https://dropsong.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="后端" scheme="https://dropsong.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
-    
     <category term="Django" scheme="https://dropsong.github.io/tags/Django/"/>
+    
+    <category term="后端" scheme="https://dropsong.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
     
     <category term="中间件" scheme="https://dropsong.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
     
