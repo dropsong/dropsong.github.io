@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2026/01/11/4Np9HVymwjq7bxd.png">
 <meta property="article:published_time" content="2026-01-11T15:34:31.000Z">
-<meta property="article:modified_time" content="2026-01-11T15:59:32.483Z">
+<meta property="article:modified_time" content="2026-01-18T12:50:08.006Z">
 <meta property="article:author" content="dropsong">
 <meta property="article:tag" content="RDMA">
 <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2026-01-11 23:59:32'
+  postUpdate: '2026-01-18 20:50:08'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -143,7 +143,7 @@
     }
     detectApple()
     })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="dropsong's" type="application/atom+xml">
-</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/11/07/tEWlYGuVUqFvxw7.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">110</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">167</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2026/01/11/4Np9HVymwjq7bxd.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">dropsong's</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">RDMA 杂记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2026-01-11T15:34:31.000Z" title="发表于 2026-01-11 23:34:31">2026-01-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.3k</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>本文旨在厘清一些概念上的细节，尽管更高抽象层次上的工作内容无此要求，但当我们深入到仿真代码中试图 debug 或者研究 rdma 的其他内容时，这是必要的。</p>
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/11/07/tEWlYGuVUqFvxw7.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">110</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">167</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2026/01/11/4Np9HVymwjq7bxd.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">dropsong's</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">RDMA 杂记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2026-01-11T15:34:31.000Z" title="发表于 2026-01-11 23:34:31">2026-01-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.6k</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>本文旨在厘清一些概念上的细节，尽管更高抽象层次上的工作内容无此要求，但当我们深入到仿真代码中试图 debug 或者研究 rdma 的其他内容时，这是必要的。</p>
 <h1 id="什么是“流”"><a href="#什么是“流”" class="headerlink" title="什么是“流”"></a>什么是“流”</h1><p>在 RDMA 中，什么是“流”？这个概念为何提出？有没有对应的物理实体，还是仅仅是方便理解的抽象概念？在普通的 TCP/IP 网络中，有没有类似的“流”的概念？</p>
 <h2 id="在-RDMA-中，什么是“流”-Flow"><a href="#在-RDMA-中，什么是“流”-Flow" class="headerlink" title="在 RDMA 中，什么是“流” (Flow)"></a>在 RDMA 中，什么是“流” (Flow)</h2><p>在 RDMA（特别是目前数据中心主流的 RoCEv2）语境下，“流”通常指的是<strong>一对 Queue Pair (QP) 之间的通信连接</strong>。</p>
 <p>更具体地说，一个 RDMA 流由以下特征定义：</p>
@@ -156,8 +156,19 @@
 </li>
 </ul>
 <ul>
-<li><strong>逻辑连接</strong>：在端侧（NIC），一个流对应一个 QP（Queue Pair）。当你建立一个 RC (Reliable Connected) 连接时，本质上就是建立了一条“流”。</li>
+<li><strong>逻辑连接</strong>：当你建立一个 RC (Reliable Connected) 连接时，本质上就是建立了一条“流”，在端侧（NIC），一个流对应一个 QP（Queue Pair）。</li>
 </ul>
+<p>一个流对应一个 QP（Queue Pair），这是针对 RC 来说的。在<a target="_blank" rel="noopener" href="https://crad.ict.ac.cn/article/doi/10.7544/issn1000-1239.202331036?viewType=HTML">《以太网RDMA网卡综述_黄曼蒂》</a>中介绍了其他情况：</p>
+<blockquote>
+<p>使用 UD 而非 RC 传输方式可避免建立 1 对 1  的 QP 连接. Kalia 等人提出的 FaSST 使用 UD 提升网卡的可扩展性，并使用双边原语实现快速远程过程调用(remote procedure call，RPC)，但并不保证可靠传输. He 等人提出的 RoUD 和 Singhvi 等人提出的 1RMA 则 在使用 UD 的基础上将拥塞控制、重传和流控机制等可靠传输功能上载至软件传输层. UD 相比 RC 更简单且扩展性更好，但 UD 不支持单边原语，无法传输大于 4KB 的数据，且<strong>在传输层实现可靠传输重新引入了 CPU 开销</strong>.</p>
+</blockquote>
+<p>即，关于“一个 QP 能否对应多条流？”这个问题：</p>
+<ul>
+<li>RC (Reliable Connected) 模式： <strong>不能（同时）</strong></li>
+<li>UD (Unreliable Datagram) 模式： <strong>可以</strong></li>
+</ul>
+<p>（应该是这样，你可以仔细阅读上面的论文。）</p>
+<p>在 ns3 仿真中，一个流对应一个 message, message 会被 push 到 QP 中发送。这个 QP 可以是用完 message 即抛，也可以复用，具体取决于实现。</p>
 <p>补充，<strong>RoCE v2中UDP的源端口和目的端口</strong>：</p>
 <p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2026/01/11/yJEsjCBwDq2UnI4.png" alt="110-1.png"></p>
 <p><strong>简而言之：</strong> 一个 RDMA 流就是为了完成特定应用任务，在两个端点之间持续传输的一系列数据包的集合。</p>
@@ -179,9 +190,11 @@
 <h2 id="有没有对应的物理实体"><a href="#有没有对应的物理实体" class="headerlink" title="有没有对应的物理实体"></a>有没有对应的物理实体</h2><p><strong>它是一个抽象概念，没有单一的物理实体，但在硬件中有对应的物理状态记录。</strong></p>
 <ul>
 <li><strong>物理上</strong>：它只是一串穿过网卡、网线、交换机芯片的电子或光子信号。并不存在一条物理的“管道”专门给某个流使用。</li>
-<li><strong>逻辑/硬件状态上</strong>：</li>
+<li><strong>逻辑/硬件状态上</strong>：<ul>
 <li>在 <strong>RNIC (RDMA网卡)</strong> 中，流对应着 <strong>QP Context (QPC)</strong>。网卡上的 SRAM/DRAM 会存储这个流的状态（当前的 Sequence Number、ACK Number、拥塞窗口大小等）。这就是“流”存在的物理证据——显存中的状态条目。</li>
 <li>在 <strong>交换机</strong> 中，流对应着流表（Flow Table）中的一个哈希条目，用于记录路由决策。</li>
+</ul>
+</li>
 </ul>
 <h2 id="普通-TCP-IP-网络中有没有类似的“流”"><a href="#普通-TCP-IP-网络中有没有类似的“流”" class="headerlink" title="普通 TCP/IP 网络中有没有类似的“流”"></a>普通 TCP/IP 网络中有没有类似的“流”</h2><p><strong>有，且概念高度相似，但实现机制截然不同。</strong></p>
 <ul>
