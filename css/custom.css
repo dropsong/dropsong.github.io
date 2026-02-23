@@ -4,6 +4,19 @@
   font-display: swap;
   font-weight: lighter;
 } */
+
+/* =======================================================
+   强行接管 Font Awesome 6 字体下载源，绕过腐烂的 CDN
+   ======================================================= */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2') format('woff2'),
+       url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.ttf') format('truetype');
+}
+
 @font-face {
     font-family: ZhuZiAYuanJWD;
     src: url(https://npm.elemecdn.com/anzhiyu-blog@1.1.6/fonts/ZhuZiAWan.woff2);
