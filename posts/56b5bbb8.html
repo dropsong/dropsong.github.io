@@ -1,0 +1,353 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>论文阅读 A Deep Reinforcement Learning Framework for Optimizing Congestion Control in Data Centers | dropsong's</title><meta name="keywords" content="强化学习,拥塞控制"><meta name="author" content="dropsong"><meta name="copyright" content="dropsong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="paper: A Deep Reinforcement Learning Framework for  Optimizing Congestion Control in Data Centers 这篇论文提出了一个将拥塞控制与强化学习结合在一起的框架。 摘要研究痛点：传统的拥塞控制协议针对特定网络环境设计，其静态参数无法适应现代数据中心极度动态的流量变化 。虽然纯在线强化学习（Online Lea">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文阅读 A Deep Reinforcement Learning Framework for Optimizing Congestion Control in Data Centers">
+<meta property="og:url" content="https://dropsong.cc/posts/56b5bbb8.html">
+<meta property="og:site_name" content="dropsong&#39;s">
+<meta property="og:description" content="paper: A Deep Reinforcement Learning Framework for  Optimizing Congestion Control in Data Centers 这篇论文提出了一个将拥塞控制与强化学习结合在一起的框架。 摘要研究痛点：传统的拥塞控制协议针对特定网络环境设计，其静态参数无法适应现代数据中心极度动态的流量变化 。虽然纯在线强化学习（Online Lea">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://files.seeusercontent.com/2026/03/03/0fMo/cover113.png">
+<meta property="article:published_time" content="2026-03-03T12:59:07.000Z">
+<meta property="article:modified_time" content="2026-03-03T13:57:34.769Z">
+<meta property="article:author" content="dropsong">
+<meta property="article:tag" content="强化学习">
+<meta property="article:tag" content="拥塞控制">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://files.seeusercontent.com/2026/03/03/0fMo/cover113.png"><link rel="shortcut icon" href="/img/favicon2.jpg"><link rel="canonical" href="https://dropsong.cc/posts/56b5bbb8"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '论文阅读 A Deep Reinforcement Learning Framework for Optimizing Congestion Control in Data Centers',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-03-03 21:57:34'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="dropsong's" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/11/07/tEWlYGuVUqFvxw7.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">113</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">171</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://files.seeusercontent.com/2026/03/03/0fMo/cover113.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">dropsong's</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">论文阅读 A Deep Reinforcement Learning Framework for Optimizing Congestion Control in Data Centers</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2026-03-03T12:59:07.000Z" title="发表于 2026-03-03 20:59:07">2026-03-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.5k</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>paper: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2301.12558">A Deep Reinforcement Learning Framework for  Optimizing Congestion Control in Data Centers</a></p>
+<p>这篇论文提出了一个将拥塞控制与强化学习结合在一起的框架。</p>
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><strong>研究痛点</strong>：传统的拥塞控制协议针对特定网络环境设计，其静态参数无法适应现代数据中心极度动态的流量变化 。虽然纯在线强化学习（Online Learning）被寄予厚望，但数据中心的拥塞控制周期在微秒级别，机器无法在如此严苛的时间尺度内收敛并做出准确的控制动作 。</p>
+<p><strong>核心创新</strong>：提出了一种混合架构。<strong>在微秒级的底层控制上</strong>，依然依赖专家设计的传统协议；而<strong>在秒/小时级别的高层控制上</strong>，利用多智能体强化学习（MARL）来动态调整传统协议的关键参数 。</p>
+<p><strong>实验结果</strong>：以 BBR 算法作为案例（调整其 RTT 和带宽的采样窗口），该系统能显著减少静态参数带来的性能惩罚，将收敛时间缩短了 2.7 倍，并将往返时间（RTT）降低了 40% 。</p>
+<h1 id="背景与相关工作"><a href="#背景与相关工作" class="headerlink" title="背景与相关工作"></a>背景与相关工作</h1><p><strong>传统方案的局限</strong>：随着网络带宽延迟乘积（BDP）的增加，从早期的 NewReno 到后来的 BIC 和 CUBIC，研究者不断推出新的激进算法或手动调整参数 。然而，诸如 BBR 算法中固定为 10 秒的 RTT 最小滤波器窗口等静态配置，在网络动态变化时会导致严重的效率低下 。</p>
+<p><strong>现有强化学习方案的局限</strong>：诸如 Orca 和 ACC 这样的现代混合方案开始出现 。但这篇论文与它们不同：它不直接干预底层拥塞控制窗口（CWND），只调整端主机（End-hosts）侧的宏观参数，不需要修改数据中心核心交换机，因此更具部署可行性 。</p>
+<h1 id="系统架构设计"><a href="#系统架构设计" class="headerlink" title="系统架构设计"></a>系统架构设计</h1><p>论文将整个系统分为主机服务器和强化学习智能体两个核心部分 。由于数据中心由单一机构控制，非常适合部署多智能体合作学习（优化全局目标） 。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://files.seeusercontent.com/2026/03/03/1xFn/113-1.png" alt="113-1.png"></p>
+<ol>
+<li><p><strong>主机端 (Host Servers)</strong>：</p>
+<ul>
+<li><strong>Monitor (监控器)</strong>：每隔 $T_1$（毫秒级）采样一次流的统计特征（吞吐量、延迟、丢包率等），更新本地状态 。</li>
+<li><strong>Tuner (调参器)</strong>：每隔 $T_2$（秒到小时级）从 RL 智能体接收新的拥塞控制参数，并通过通道将其从用户态下发到内核态 。</li>
+</ul>
+</li>
+<li><p><strong>RL 智能体端 (RL Agents)</strong>：</p>
+<ul>
+<li><strong>RL-Host Interface</strong>：通过 RPC 消息与主机通信，将收集到的数据转化为二维数组（行代表不同的流，列代表特征）作为强化学习的 State 。</li>
+<li><strong>RL Environment Model</strong>：内部署神经网络模型，利用奖励（Reward）和状态（State）迭代生成最优动作（Action） 。</li>
+</ul>
+</li>
+</ol>
+<h1 id="问题建模"><a href="#问题建模" class="headerlink" title="问题建模"></a>问题建模</h1><h2 id="优化目标、State、Action、Reward"><a href="#优化目标、State、Action、Reward" class="headerlink" title="优化目标、State、Action、Reward"></a>优化目标、State、Action、Reward</h2><p><strong>目标</strong>：最大化未来的折扣奖励总和：$max_{\pi_{\theta}}\sum_{t}^{Total~Time}\gamma^{t}r_{t}$ 。其中 $\gamma$ 为折扣因子，$\pi_{\theta}$ 表示以 $\theta$ 为参数的深度神经网络策略 。</p>
+<p><strong>状态 (State)</strong>：流统计特征构成的矩阵（如 RTT、传送速率、拥塞窗口大小，以及 BBR 独有的 BtlBw 等） 。</p>
+<p><strong>动作 (Action)</strong>：一个包含所有需要动态调整参数的数组 $a_{t}=[a_{t}[1],…,a_{t}[M]]$ 。在 BBR 案例中，$M=2$，分别控制 RTprop（极小延迟）和 BtlBw（极大带宽）的估算窗口大小 。</p>
+<p><strong>奖励 (Reward)</strong>：结合了比例（P）、积分（I）、微分（D）的控制思想 。针对 BBR 的特性，论文设计了基于吞吐量和延迟预测误差的奖励函数：$r_{t}=\alpha\times Throughput+(1-\alpha)\times 1/(1+exp(|latency_{estimate}-latency|))$ 。</p>
+<blockquote>
+<p><strong>补充背景：为什么奖励函数使用负 Sigmoid 结构？</strong><br>论文在延迟惩罚项中使用了 $1/(1+exp(x))$ 的形式 。这是机器学习中常见的非线性映射手法。它能将绝对误差 $|latency_{estimate}-latency|$ 映射到 $(0, 0.5]$ 的范围内，并有效放大小误差与大误差之间的梯度差距，迫使智能体在网络抖动时做出更精确的预测 。</p>
+</blockquote>
+<h2 id="深度强化学习算法选择-PPO"><a href="#深度强化学习算法选择-PPO" class="headerlink" title="深度强化学习算法选择 (PPO)"></a>深度强化学习算法选择 (PPO)</h2><p>数据中心对实时性要求极高，因此算法必须具备低样本复杂度、收敛快且高度稳定的特点 。论文选择了 <a target="_blank" rel="noopener" href="https://hrl.boyuai.com/chapter/2/ppo%E7%AE%97%E6%B3%95/">PPO</a>.</p>
+<p>下列一些函数的设计。</p>
+<p>Objective function:</p>
+<script type="math/tex; mode=display">
+L_t^1 = \mathbb{E} \left[ \min (R_t(\theta)\hat{A}_t, \mathrm{clip}(R_t(\theta),1-\epsilon,1+\epsilon)\hat{A}_t)\right]</script><p>Critic loss:</p>
+<script type="math/tex; mode=display">
+L_t^2 = (V_\theta(s_t) - V_t^\text{target})^2</script><p>An entropy term for exploration:</p>
+<script type="math/tex; mode=display">
+S = \beta_\text{entropy} \mathbb{E}[-\pi_\theta(a_t|s_t)\log\pi_\theta(a_t|s_t)]</script><p>Surrogate objective function:</p>
+<script type="math/tex; mode=display">
+\max_\theta \mathbb{E}[L_t^1 - c_1 L_t^2 + c_2 S]</script><h1 id="系统原型验证与实验"><a href="#系统原型验证与实验" class="headerlink" title="系统原型验证与实验"></a>系统原型验证与实验</h1><h2 id="Case-Study-BBR"><a href="#Case-Study-BBR" class="headerlink" title="Case Study: BBR"></a>Case Study: BBR</h2><p>BBR 摒弃了传统的“丢包即拥塞”理念，转而试图维持链路的极小延迟 (RTprop) 和极大带宽 (BtlBw) 。</p>
+<p><strong>问题所在</strong>：如果在固定的估算窗口期内，网络的真实物理 RTT 突然变大（如路由切换），或者带宽骤降，BBR 仍然会坚守旧的（错误的）窗口缓存值，导致长时间的吞吐量断崖式下跌和缓冲区堆积（见论文图 2） 。</p>
+<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>研究团队在 Mininet 仿真环境中使用 Python (OpenAI Gym) 和 C/Linux 工具实现了该框架 。实验结果证明了该框架的优越性：</p>
+<ul>
+<li><strong>预测准确率</strong>：面对频繁变化的 RTT，原生 BBR 的预测准确率仅为 40%，而 PPO-BBR 达到了 60% 以上 。</li>
+<li><strong>吞吐量响应</strong>：在网络带宽突然增加时，原生 BBR 会有明显的滞后（约 2 秒），而 PPO-BBR 和 A2C-BBR 几乎可以瞬间占满可用带宽 。从 CDF 分布图来看，PPO-BBR 显著超越了原生协议 。</li>
+<li><strong>多流博弈 (Multi-flow)</strong>：当多个网络流动态加入或退出时，PPO-BBR 使得流分配到公平份额的收敛时间缩短了 2.7 倍（约 5 秒 vs 13.5 秒），并且将峰值 RTT 降低了 40%，反应速度提升了 10 倍 。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://dropsong.cc">dropsong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://dropsong.cc/posts/56b5bbb8.html">https://dropsong.cc/posts/56b5bbb8.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://dropsong.cc" target="_blank">dropsong's</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">强化学习</a><a class="post-meta__tags" href="/tags/%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6/">拥塞控制</a></div><div class="post_share"><div class="social-share" data-image="https://files.seeusercontent.com/2026/03/03/0fMo/cover113.png" data-sites="facebook,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://ko-fi.com/dropsong" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://files.seeusercontent.com/2026/02/22/8Tmb/donate-kofi.png" alt="PayPal/CreditCard"/></a><div class="post-qr-code-desc">PayPal/CreditCard</div></li><li class="reward-item"><a href="https://mobile.alipay.com/" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://files.seeusercontent.com/2026/02/22/qk6F/donate-alipay.png" alt="支付宝（Alipay）"/></a><div class="post-qr-code-desc">支付宝（Alipay）</div></li><li class="reward-item"><a href="https://weixin.qq.com/" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://files.seeusercontent.com/2026/02/25/1frN/donate-wechat.png" alt="微信（Wechat）"/></a><div class="post-qr-code-desc">微信（Wechat）</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/83f36d39.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://files.seeusercontent.com/2026/02/25/p9Qi/cover112.jpg" onerror="onerror=null;src='/img/404me.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">TRPO 笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/102c6a93.html" title="论文阅读 ACC:automatic ECN tuning for high-speed datacenter networks"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2025/12/22/y8qlo64ubZskBCH.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-12-22</div><div class="title">论文阅读 ACC:automatic ECN tuning for high-speed datacenter networks</div></div></a></div><div><a href="/posts/d0b008fb.html" title="强化学习笔记"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://bu.dusays.com/2025/11/18/691c7df68c4b4.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-18</div><div class="title">强化学习笔记</div></div></a></div><div><a href="/posts/83f36d39.html" title="TRPO 笔记"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://files.seeusercontent.com/2026/02/25/p9Qi/cover112.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-02-25</div><div class="title">TRPO 笔记</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/11/07/tEWlYGuVUqFvxw7.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">dropsong</div><div class="author-info__description">把你 TeriTeri 掉哦～(∠・ω< )⌒★</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">113</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">171</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/dropsong"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">右下设置简繁切换。安卓和 linux 上代码无法正常缩进。博客有备份，若资源无法加载请留言，部分资源需翻墙。欢迎打赏（入口在每篇文章末尾处）。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">背景与相关工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.</span> <span class="toc-text">系统架构设计</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%BB%BA%E6%A8%A1"><span class="toc-number">4.</span> <span class="toc-text">问题建模</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87%E3%80%81State%E3%80%81Action%E3%80%81Reward"><span class="toc-number">4.1.</span> <span class="toc-text">优化目标、State、Action、Reward</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E9%80%89%E6%8B%A9-PPO"><span class="toc-number">4.2.</span> <span class="toc-text">深度强化学习算法选择 (PPO)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%8E%9F%E5%9E%8B%E9%AA%8C%E8%AF%81%E4%B8%8E%E5%AE%9E%E9%AA%8C"><span class="toc-number">5.</span> <span class="toc-text">系统原型验证与实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Case-Study-BBR"><span class="toc-number">5.1.</span> <span class="toc-text">Case Study: BBR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">5.2.</span> <span class="toc-text">实验结果</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/56b5bbb8.html" title="论文阅读 A Deep Reinforcement Learning Framework for Optimizing Congestion Control in Data Centers"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://files.seeusercontent.com/2026/03/03/0fMo/cover113.png" onerror="this.onerror=null;this.src='/img/404me.png'" alt="论文阅读 A Deep Reinforcement Learning Framework for Optimizing Congestion Control in Data Centers"/></a><div class="content"><a class="title" href="/posts/56b5bbb8.html" title="论文阅读 A Deep Reinforcement Learning Framework for Optimizing Congestion Control in Data Centers">论文阅读 A Deep Reinforcement Learning Framework for Optimizing Congestion Control in Data Centers</a><time datetime="2026-03-03T12:59:07.000Z" title="发表于 2026-03-03 20:59:07">2026-03-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/83f36d39.html" title="TRPO 笔记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://files.seeusercontent.com/2026/02/25/p9Qi/cover112.jpg" onerror="this.onerror=null;this.src='/img/404me.png'" alt="TRPO 笔记"/></a><div class="content"><a class="title" href="/posts/83f36d39.html" title="TRPO 笔记">TRPO 笔记</a><time datetime="2026-02-25T13:40:00.000Z" title="发表于 2026-02-25 21:40:00">2026-02-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/16bc990.html" title="乙巳年记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://files.seeusercontent.com/2026/02/22/f4Kl/cover111.jpg" onerror="this.onerror=null;this.src='/img/404me.png'" alt="乙巳年记"/></a><div class="content"><a class="title" href="/posts/16bc990.html" title="乙巳年记">乙巳年记</a><time datetime="2026-02-22T13:33:27.000Z" title="发表于 2026-02-22 21:33:27">2026-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2b9cab11.html" title="RDMA 杂记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2026/01/11/4Np9HVymwjq7bxd.png" onerror="this.onerror=null;this.src='/img/404me.png'" alt="RDMA 杂记"/></a><div class="content"><a class="title" href="/posts/2b9cab11.html" title="RDMA 杂记">RDMA 杂记</a><time datetime="2026-01-11T15:34:31.000Z" title="发表于 2026-01-11 23:34:31">2026-01-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/102c6a93.html" title="论文阅读 ACC:automatic ECN tuning for high-speed datacenter networks"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2025/12/22/y8qlo64ubZskBCH.jpg" onerror="this.onerror=null;this.src='/img/404me.png'" alt="论文阅读 ACC:automatic ECN tuning for high-speed datacenter networks"/></a><div class="content"><a class="title" href="/posts/102c6a93.html" title="论文阅读 ACC:automatic ECN tuning for high-speed datacenter networks">论文阅读 ACC:automatic ECN tuning for high-speed datacenter networks</a><time datetime="2025-12-22T14:08:46.000Z" title="发表于 2025-12-22 22:08:46">2025-12-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2026 By dropsong</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: 'Ov23lijmGQilj9J9CrdP',
+      clientSecret: '255f80b6a1783219f05a3c250856e45342d37c3b',
+      repo: 'dropsong.github.io',
+      owner: 'dropsong',
+      admin: ['dropsong'],
+      id: '620c54156da261dc386b4a5e2dbd19a6',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div><!-- hexo injector body_end start --><script async src="/js/ali_font.js"></script><!-- hexo injector body_end end --></body></html>
