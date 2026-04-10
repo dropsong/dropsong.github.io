@@ -6,7 +6,7 @@
   <link href="https://dropsong.cc/atom.xml" rel="self"/>
   
   <link href="https://dropsong.cc/"/>
-  <updated>2026-03-16T03:33:40.936Z</updated>
+  <updated>2026-04-10T16:27:48.194Z</updated>
   <id>https://dropsong.cc/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>广西之行</title>
+    <link href="https://dropsong.cc/posts/1b1f1607.html"/>
+    <id>https://dropsong.cc/posts/1b1f1607.html</id>
+    <published>2026-04-05T16:25:26.000Z</published>
+    <updated>2026-04-10T16:27:48.194Z</updated>
+    
+    <content type="html"><![CDATA[<p>先占坑。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;先占坑。&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="生活" scheme="https://dropsong.cc/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="桂林" scheme="https://dropsong.cc/tags/%E6%A1%82%E6%9E%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>知识管理的方法论</title>
     <link href="https://dropsong.cc/posts/3fc9cd84.html"/>
     <id>https://dropsong.cc/posts/3fc9cd84.html</id>
     <published>2026-03-16T03:26:04.000Z</published>
-    <updated>2026-03-16T03:33:40.936Z</updated>
+    <updated>2026-03-16T03:50:07.971Z</updated>
     
     <content type="html"><![CDATA[<p>本文略记博主个人的知识管理体系。</p><p><img src="https://files.seeusercontent.com/2026/03/16/Fkx7/114-1.png" alt="114-1.png"></p><p>首先，明确一点需求：<br>除了隐性知识之外，我所有的知识，在接入互联网的情况下，都应该是可访问的。因此知识必须是电子化的。曾经的纸质笔记可以扫描为 pdf 电子化。</p><p>接下来，我们定义何为隐性知识，之后我们不会再讨论它。<br>隐性知识是指那些不宜公开的知识，或者不值得记录的知识。例如，在公司获得的业务经验，或根据保密条款之义务，不能公开但被确实掌握的知识，这些属于不宜公开的知识。再如，一些非常基础的知识，例如义务教育阶段知识、基础的微积分等已经“固化”到脑子里的知识，再花时间记录有些不值当，这些属于不值得记录的知识。</p><p>剩下的知识虽然可以公开，但为管理之方便，分为两类：public, private. Public 的知识所有人可以访问，Private 的知识只有我本人可以访问。截至文章写作时，我把它们分为五大类：Blog, Github, Zotero, Baidu Pan, Chrome Bookmarks.</p><p>最直观的，Blog，也就是这个博客。可以看到，里面有非常多的笔记，内容较为详实，以下举例：<a href="https://dropsong.cc/posts/83f36d39.html">TRPO 笔记</a>、<a href="https://dropsong.cc/posts/eeca0305.html">深度学习小记</a>、<a href="https://dropsong.cc/posts/9d28aa01.html">数据分析业务</a>、<a href="https://dropsong.cc/posts/70707e46.html">工程数学</a>。这种组织形式非常友好，它<strong>支持目录、latex、展示 pdf 等实用功能</strong>。小的代码片段可以直接在博客文章里展示，长的大段代码可以上传 github, 然后附上 github 链接。</p><p>然后是 github, 它的作用就是存储我写过的一切可以公开的代码。尽管我有一个开源作者的梦想，不过暂时还没时间去实现它，目前更多的是一些笔记和 leetcode 等网站的 ac 代码。一些 repo 和 blog 有联动，例如：<a href="https://github.com/dropsong/dl-ipynb-examples">dropsong/dl-ipynb-examples</a> .</p><p>Zotero, 一个论文阅读管理器，可以非常方便地做一些批注，故也可以用来高效地管理知识。</p><p><img src="https://files.seeusercontent.com/2026/03/16/yPz8/114-2.png" alt="114-2.png" title="这个pdf的标注有905条之多"></p><p>同时，也可以将一些有价值的互联网内容导出为 pdf（善用 f12 删除遮挡元素），保存到 Zotero 中。</p><p><img src="https://files.seeusercontent.com/2026/03/16/Kju7/114-3.png" alt="114-3.png"></p><p>Chrome（或者任何其他浏览器）的同步书签，也是保存知识的好方式。这种方法适用于积累一些并不是于自己的专业很核心的知识（你并不想真的看到什么都导出为 pdf 吧？），舒展自己的领域触角。我也会 mark 一些有趣的冷知识、一些作者的博客等。</p><p><img src="https://files.seeusercontent.com/2026/03/16/5aGd/114-4.png" alt="114-4.png"></p><p>这些在 <strong>bookmarks 里面的链接，必须至少清楚其大致内容</strong>（尽管可能还没有理解）。对于那些由于拖延（懒），还没有看内容只是看了标题的文章，更应该把它们放入阅读清单。这样可以清晰地为知识分层，也避免了我们在搜索栏搜索时出现未知的内容，干扰我们快速检索已有知识的效率。当然，如果阅读清单里的链接读完了，也自然会转正到 bookmarks 中。</p><p><img src="https://files.seeusercontent.com/2026/03/16/gPg0/114-5.png" alt="114-5.png" title="右侧阅读清单。左侧网页是我经常阅读的一个博主。"></p><p>最后，是百度网盘（你可以用任意一个网盘，我是因为觉得 BaiduPan 量大管饱），可以用来存放一些“冷却的知识”——你并不需要频繁访问它们，也可以存一些未来可能有用的知识（例如导师在微信群发的 pdf、咸鱼淘来的视频网课）。</p><p><img src="https://files.seeusercontent.com/2026/03/16/bsS8/114-6.png" alt="114-6.png"></p>]]></content>
     
@@ -105,18 +130,16 @@
     <link href="https://dropsong.cc/posts/16bc990.html"/>
     <id>https://dropsong.cc/posts/16bc990.html</id>
     <published>2026-02-22T13:33:27.000Z</published>
-    <updated>2026-02-23T16:26:54.178Z</updated>
+    <updated>2026-04-10T16:23:47.087Z</updated>
     
-    <content type="html"><![CDATA[<p>好久没记录生活了，主要是太忙了，另外也没什么心思。。。</p><p>先占坑，以后慢慢写。。。</p><p>谢谢大家关注喵。。。谢谢大家打赏喵。。。</p><p>做了两个漂亮的收款二维码。。。</p>]]></content>
+    <content type="html"><![CDATA[<div class="note info simple"><p>const qz<br>const_list = {F, M, B, Z, zd, zr, wc, qz}</p></div><p>本博客的年度总结从太阳历换成月亮历了，望周知，主要是实在太忙，只有过年才能得闲。在时间跨度上，这个文章也会记载丙午新年期间的事。</p><center><i>弃我去者</i></center><center><i>昨日之日不可留</i></center><center><i>乱我心者</i></center><center><i>今日之日多烦忧</i></center><h1 id="书、影视"><a href="#书、影视" class="headerlink" title="书、影视"></a>书、影视</h1><p>乙巳年并没有看多少书，太忙了。</p><table>  <tbody>    <tr>      <td>踏切时间</td>      <td>还行，挺有意思的。</td>    </tr>    <tr>      <td>唐探1900</td>      <td>低自尊水平的控诉是廉价的。</td>    </tr>    <tr>      <td>辉夜姬物语</td>      <td>最重要的两个主旨是，一，人要知道自己想要什么；二，不要假定别人的幸福。 辉夜姬不明白自己想要什么，辉夜姬的养父假定了辉夜姬的幸福。另一点，作为月宫神明的孩子，辉夜姬可以称为纯洁无垢之物。幼稚纯洁对一个孩子或许是赞美，但在成长的过程中会渐渐成为一种危险的特质，只是行走在光明中，没有见过黑暗，就会不知道边界在哪里，作为一种谶言，无垢之子几乎一定会滑落到可悲可叹的境地。</td>    </tr>    <tr>      <td>东京残响</td>      <td>还行。</td>    </tr>    <tr>      <td>少女终末旅行</td>      <td>好看。</td>    </tr>    <tr>      <td>穿越时空的少女</td>      <td>某个曾经有点缘分之人的安利。还不错。</td>    </tr>    <tr>      <td>四叠半神话大系</td>      <td>三刷。</td>    </tr>    <tr>      <td>夕阳染红的街道</td>      <td>挺好看的，就是最后两集的转变有点突兀。</td>    </tr>    <tr>      <td>初音岛</td>      <td>一般。</td>    </tr>    <tr>      <td>让子弹飞</td>      <td>好看。</td>    </tr>    <tr>      <td>家有女友</td>      <td>作者是脑残。但是歌很好听。</td>    </tr>    <tr>      <td>雷神4：爱与雷霆</td>      <td>Average Marvel Moive. </td>    </tr>    <tr>      <td>钢铁侠3</td>      <td>还行吧。</td>    </tr>    <tr>      <td>康斯坦丁</td>      <td>不错的爆米花电影。</td>    </tr>    <tr>      <td>义妹生活</td>      <td>乏善可陈。</td>    </tr>    <tr>      <td>碧蓝之海</td>      <td>超好看。</td>    </tr>    <tr>      <td>孤独摇滚</td>      <td>好看。</td>    </tr>    <tr>      <td>时空恋旅人</td>      <td>乏善可陈。</td>    </tr>    <tr>      <td>大雄的绘画奇遇记</td>      <td>一般。</td>    </tr>    <tr>      <td>复仇者联盟4：终局之战</td>      <td>还行，情怀加分。</td>    </tr>    <tr>      <td>蓝色星球</td>      <td>纪录片不错。</td>    </tr>    <tr>      <td>哈利波特全系列</td>      <td>三刷。</td>    </tr>    <tr>      <td>阿凡达</td>      <td>剧情可预测。</td>    </tr>    <tr>      <td>sonny boy</td>      <td>二刷。</td>    </tr>    <tr>      <td>蔷薇少女</td>      <td>好看。</td>    </tr>    <tr>      <td>恋风</td>      <td>不太行。</td>    </tr>    <tr>      <td>上课小动作</td>      <td>挺有意思的泡面番。</td>    </tr>    <tr>      <td>another</td>      <td>好看，我吹爆。</td>    </tr>    <tr>      <td>好日子</td>      <td>看了一部分。</td>    </tr>    <tr>      <td>A KITE</td>      <td>不予置评。</td>    </tr>    <tr>      <td>次强音</td>      <td>不予置评。</td>    </tr>    <tr>      <td>辉夜大小姐想让我告白通往大人的阶梯</td>      <td>好看。</td>    </tr>    <tr>      <td>芳华</td>      <td>确实是由于芳华在简中网络的重新流行我才去看的，不过我并不了解为什么大家讨论这个电影，只是忽然想起来高中政治老师有推荐过，出于好奇我去找资源看了。它套了一个文革的壳，讲了一些一再反复的事情。</td>    </tr>    <tr>      <td>天浴</td>      <td>人要武装自己，首要的是用知识武装自己。</td>    </tr>    <tr>      <td>輝夜姬想讓人告白-永不結束的初吻</td>      <td>好看。</td>    </tr>    <tr>      <td>《金阁寺》</td>      <td>去实地参观了。</td>    </tr>    <tr>      <td>李新野博客</td>      <td>可以一看。</td>    </tr>  </tbody>  <colgroup>    <col>    <col>  </colgroup></table><h1 id="旅行"><a href="#旅行" class="headerlink" title="旅行"></a>旅行</h1><p>去了京都和东京，在 <a href="https://dropsong.cc/posts/821dd720.html">京都、东京游</a> 中已有详细记载。</p><p>四月，去了天坛。</p><p><img src="https://files.seeusercontent.com/2026/03/28/iY8p/111-1.jpg" alt="111-1.jpg"></p><p><img src="https://bu.dusays.com/2026/03/29/69c7fca71b5c9.jpg" alt="111-2.jpg"></p><p><img src="https://files.seeusercontent.com/2026/03/28/Lm4d/111-3.jpg" alt="111-3.jpg"></p><p>端午假期，和 F 去淮安。高速路上，我开车有点瞌睡，感觉略危险，服务区换 F 开了。以后会避免，尤其是前一天熬夜第二天被折腾起来这种情况。行车至淮安境已是中午，吃了一个路边的餐馆。</p><p><img src="https://files.seeusercontent.com/2026/03/28/Dsp0/111-4.jpg" alt="111-4.jpg"></p><p>饭后去了汉韩侯祠。</p><p>下午参观了博物馆，淮安的漕运文化，周育民教授的新浪博客多有提及，值得一看。</p><p><img src="https://files.seeusercontent.com/2026/03/28/Wyo2/111-5.jpg" alt="111-5.jpg"></p><p>下图是一个绝对，感兴趣的可以试试，“河下”是一个地名。</p><p><img src="https://bu.dusays.com/2026/03/29/69c805508d63d.jpg" alt="111-6.jpg"></p><p>晚饭前，吃了 ￥30 一个的蟹黄包，乍吃很不错，不过吃到最后有点过于鲜了。</p><p>六月，和领妹去了扬州。</p><p><img src="https://files.seeusercontent.com/2026/03/28/Nu2d/111-7.jpg" alt="111-7.jpg" title="领妹"></p><p>八月，回 C 市没有直达的票了，中转天津。在去天津之前取道见了 zr, 逛了书会，吃了火锅，夜晚便去天津。晚上参观了基督教会的教堂，在一家民宿休息。次日，登天津鼓楼，敲钟。随性漫步至天津眼，然后参拜了一处寺庙。</p><p><img src="https://files.seeusercontent.com/2026/03/30/lQr1/111-8.jpg" alt="111-8.jpg" title="那么，建这个庙又是作甚呢？"></p><p>小雪，参观首都博物馆，馆藏以黄金为主，辅以一些瓦当、佛教物件之类的。同质化比较严重，没有相关知识背景的土狗（比如我）逛到一半会觉得比较无聊。</p><p><img src="https://files.seeusercontent.com/2026/04/10/qP9c/111-9.jpg" alt="111-9.jpg"></p><p>冬月，和 jh 去了国家博物馆。我们本打算打卡公司的产品，奈何转了一圈没有找着，只能作罢。不过国博还是很有看头的，四羊方尊、司母戊鼎、三星堆等等。</p><h1 id="脱离导师"><a href="#脱离导师" class="headerlink" title="脱离导师"></a>脱离导师</h1><p>六月，在一阵雷霆之怒后，导师与我切割。我不再要帮组内干活，可以出去实习，代价是毕业论文自己负责，相关费用也是自己出。当然这其实是很好的结果了，相比之下。</p><p>切割的导火索是学校没有住宿了，导师说他补贴房租（大约 1800 一个月，这个钱完全不够的），然后趁机施压要我们更卖力的干活，最后还 PUA 说你们这些干活少的就是被组内干活多的养着的。于是割席，自谋出路。</p><p>趁此机会，也讲讲组内的情况。</p><p>组内基本都是横向，不过确实也是系里面给研究生发钱最多的（大头还是导师的，已经挣了一千万了），当然，一般情况赶不上出去实习的钱。</p><p>开会非常多，之前最多的时候平均两天一会甚至更多，一般晚上八点开，时常开到凌晨。导师经常骂人。横向项目基本都是对接国企的，作风很差，没有休息日的概念。常常有论文代写、做枪手的事情，甚至是给某集团老总代写博士毕业论文。曾经我们一度想要搞 pdf 举报材料。</p><p>有时也会需要出差。同届的两位强者早就跟着项目全国可飞了。</p><p><img src="https://files.seeusercontent.com/2026/04/10/y5qM/111-10.jpg" alt="111-10.jpg"></p><h1 id="Summer"><a href="#Summer" class="headerlink" title="Summer"></a>Summer</h1><p>This summer, I stayed with M—a period of quiet scrutiny, a form of control. F and B remained in the dark. As the past compresses within memory, even the victimizer seems to radiate a flicker of tenderness. The conditions for revenge were fully met, yet I choose to keep it buried for now, allowing for moments of mercy. Life is long; building and exploring should, after all, be the true leitmotif.</p><p>By summer’s end, my relationship with lingmei had fractured. Her birthday night was perhaps our zenith. It was an inevitable decline; I have no desire to discuss it, nor to invent a reason. I strive for honesty, for to speak untruthfully would wound my self-respect, or perhaps, more simply, I just do not care what others think.</p><p>What happened this summer might become a novel, or a line in a post-retirement memoir. Then again, it may simply vanish into nothing at all.</p><h1 id="实习"><a href="#实习" class="headerlink" title="实习"></a>实习</h1><p>上半年，从第一家实习公司离职之后，我陆续也投了一些简历，不过最后都没有去，因为当时还没有脱离导师，事情比较多，另外也呆在宿舍里稍微学了一点东西。印象比较深刻的一家是七牛云，面试官比较认真地看了我的博客。</p><p>七月，我入职了一家初创（其实也有几年了），这个面试官是我老乡，因此可能对我的中学比较感兴趣，面试的时候没有写题就直接收我进来了。不过事后证明，他倒也没看错，我在实习生中的产出还是比较多的。公司规模小，比较人性化，每周三下午茶，每月生日会，实习生管理非常宽松，只要有产出，迟到早退也没人管。另外实习生和正式员工一起编号，属实爽到了。</p><p>临过年的时候，北方的冬天异常难熬，我申请了远程。长达一个月的远程工作，至少证实了我还是需要一个大家都在努力的环境，慎独是不太可行的。</p><h1 id="丙午新年"><a href="#丙午新年" class="headerlink" title="丙午新年"></a>丙午新年</h1><p>安宁祥和的新年。去见了几个老朋友。</p><p>办了信用卡。按理说，学信网在籍是办不下有额度的卡的，但是我把个人信息填成实习公司的，留了公司 HR 的电话，就妥了。迅速下卡：</p><p><img src="https://files.seeusercontent.com/2026/04/10/ui6I/111-11.jpg" alt="111-11.jpg"></p><p>见到了 qz .</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;好久没记录生活了，主要是太忙了，另外也没什么心思。。。&lt;/p&gt;
-&lt;p&gt;先占坑，以后慢慢写。。。&lt;/p&gt;
-&lt;p&gt;谢谢大家关注喵。。。谢谢大家打赏喵。。。&lt;/p&gt;
-&lt;p&gt;做了两个漂亮的收款二维码。。。&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;div class=&quot;note info simple&quot;&gt;&lt;p&gt;const qz&lt;br&gt;const_list = {F, M, B, Z, zd, zr, wc, qz}&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;本博客的年度总结从太阳历换成月亮历了，望周知，主要是实在太忙，只有过年才能得闲</summary>
       
     
     
@@ -257,9 +280,9 @@
     <category term="算法" scheme="https://dropsong.cc/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="神经网络" scheme="https://dropsong.cc/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
     <category term="AI" scheme="https://dropsong.cc/tags/AI/"/>
+    
+    <category term="神经网络" scheme="https://dropsong.cc/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
     <category term="深度学习" scheme="https://dropsong.cc/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
@@ -449,11 +472,11 @@
     
     <category term="前端" scheme="https://dropsong.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="docker" scheme="https://dropsong.cc/tags/docker/"/>
+    <category term="DRF" scheme="https://dropsong.cc/tags/DRF/"/>
     
     <category term="后端" scheme="https://dropsong.cc/tags/%E5%90%8E%E7%AB%AF/"/>
     
-    <category term="DRF" scheme="https://dropsong.cc/tags/DRF/"/>
+    <category term="docker" scheme="https://dropsong.cc/tags/docker/"/>
     
     <category term="JWT" scheme="https://dropsong.cc/tags/JWT/"/>
     
@@ -606,32 +629,6 @@
     
     <category term="生活" scheme="https://dropsong.cc/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Java 零碎笔记</title>
-    <link href="https://dropsong.cc/posts/a5f2d934.html"/>
-    <id>https://dropsong.cc/posts/a5f2d934.html</id>
-    <published>2024-12-15T14:21:51.000Z</published>
-    <updated>2024-12-15T15:12:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>接手了一个前后端不分离的学校项目，似乎历史悠久。</p><p>以后一些关于 Java 的零碎笔记可能也会放在这里。</p><h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><p>在 linux 上配置 Java 环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install openjdk-17-jdk</span><br></pre></td></tr></table></figure><p>在 vscode 上配置 java 开发环境，安装推荐插件即可。然后在 <code>settings.json</code> 中：</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;java.configuration.runtimes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;JavaSE-17&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/usr/lib/jvm/java-17-openjdk-amd64&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;default&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure><p>一个 java 的 <code>HelloWorld.java</code> 程序：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, World!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在 terminal 中：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac HelloWorld.java</span><br><span class="line">java HelloWorld</span><br></pre></td></tr></table></figure><p>输出 <code>Hello, World!</code> 。</p><p>在官网安装 tomcat（例如：apache-tomcat-9.0.96.tar.gz）。</p><p>然后：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -xvzf apache-tomcat-9.0.96.tar.gz -C /opt/</span><br><span class="line"><span class="built_in">cd</span> /opt/</span><br><span class="line">sudo <span class="built_in">mv</span> apache-tomcat-9.0.96 tomcat9</span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">su root</span><br><span class="line"><span class="built_in">cd</span> /opt/tomcat9/bin</span><br><span class="line">sudo ./startup.sh</span><br></pre></td></tr></table></figure><p>如果一切正常，会得到类似如下的输出：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Using CATALINA_BASE:   /opt/tomcat9</span><br><span class="line">Using CATALINA_HOME:   /opt/tomcat9</span><br><span class="line">Using CATALINA_TMPDIR: /opt/tomcat9/temp</span><br><span class="line">Using JRE_HOME:        /usr</span><br><span class="line">Using CLASSPATH:       /opt/tomcat9/bin/bootstrap.jar:/opt/tomcat9/bin/tomcat-juli.jar</span><br><span class="line">Using CATALINA_OPTS:   </span><br><span class="line">Tomcat started.</span><br></pre></td></tr></table></figure><p>打开浏览器，访问 <code>http://localhost:8080</code>，可以看到 Tomcat 的欢迎页面。</p><p>安装 Maven :</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install maven</span><br></pre></td></tr></table></figure><p><code>mvn clean package</code> 是 Maven 的一个常用命令，用于清理项目并打包构建应用。它包含以下两部分操作：</p><ol><li><strong>clean</strong>：Maven 会删除之前的构建文件，清理 <code>target</code> 目录（这是 Maven 默认的输出目录）。清理操作确保新的构建不会受到上一次构建遗留文件的影响。</li><li><strong>package</strong>：这个阶段会根据项目的 <code>pom.xml</code> 文件中定义的构建配置，编译源代码、运行测试（如果有的话），然后将项目打包成一个可执行的格式，比如 JAR（Java Archive）或 WAR（Web Archive）文件。这个打包的文件会存放在 <code>target</code> 目录下。</li></ol><p>这个命令常用于 Java 项目的标准构建流程。如果项目配置了 Maven，执行该命令后生成的 JAR 或 WAR 文件就是最终要运行或部署的可执行文件。</p><p>但是这个命令非常慢！试情况我们可以跳过一些不必要的过程（参考<a href="https://stackoverflow.com/questions/21090915/the-maven-build-takes-too-long">The maven build takes too long</a>），在项目文件夹下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean package -DskipTests -T 1C -Dmaven.javadoc.skip=<span class="literal">true</span></span><br></pre></td></tr></table></figure><p>将编译好的 WAR 文件部署到 Tomcat。通常，使用 Maven 构建后，WAR 文件会生成在 <code>target/</code> 目录下。将该文件复制到 Tomcat 的 <code>webapps/</code> 目录中。Tomcat 会自动解压和部署这个 WAR 文件。</p><p>部署成功后，打开浏览器，访问： <code>http://localhost:8080/your-project-name</code> .</p><h1 id="零碎操作"><a href="#零碎操作" class="headerlink" title="零碎操作"></a>零碎操作</h1><p>进入 mysql 命令行，建立 database ：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE 表名;</span><br></pre></td></tr></table></figure><p>导入数据：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p 表名 &lt; .sql文件路径</span><br></pre></td></tr></table></figure><p>按项目要求，修改密码：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">&#x27;你知道的太多了&#x27;</span>;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;接手了一个前后端不分离的学校项目，似乎历史悠久。&lt;/p&gt;
-&lt;p&gt;以后一些关于 Java 的零碎笔记可能也会放在这里。&lt;/p&gt;
-&lt;h1 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h1</summary>
-      
-    
-    
-    
-    <category term="编程" scheme="https://dropsong.cc/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="Java" scheme="https://dropsong.cc/tags/Java/"/>
     
   </entry>
   
