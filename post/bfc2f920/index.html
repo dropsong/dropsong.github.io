@@ -1,0 +1,1078 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>微观经济学笔记 · dropsong&#39;s</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><style>.article-body{font-size:16px;line-height:1.85;color:var(--text);max-width:820px;margin:0 auto}.article-body h1,.article-body h2,.article-body h3,.article-body h4,.article-body h5,.article-body h6{margin-top:1.8em;margin-bottom:.6em;font-weight:600;line-height:1.35;color:var(--text)}.article-body h1{font-size:1.75rem}.article-body h2{font-size:1.45rem}.article-body h3{font-size:1.2rem}.article-body h4{font-size:1.05rem}.article-body p{margin-bottom:1.2em}.article-body p,.article-body li{white-space:pre-line}.article-body p,.article-body li,.article-body blockquote,.article-body td,.article-body th{word-break:normal;overflow-wrap:break-word}.article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.article-body a:hover{color:var(--accent-hover)}.article-body blockquote{margin:1.2em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:#5b9e8c1a;border-radius:0 var(--radius) var(--radius) 0;color:var(--muted)}.article-body blockquote>:last-child{margin-bottom:0}.article-body ul,.article-body ol{margin-bottom:1.2em;padding-left:1.5em}.article-body li>ul,.article-body li>ol{margin-bottom:0;white-space:normal}.article-body li:has(>ul,>ol){white-space:normal}.article-body li{margin-bottom:.25em}.article-body table{width:auto;max-width:100%;border-collapse:collapse;margin:1.5em auto;font-size:.925rem;overflow-x:auto}.article-body table th,.article-body table td{padding:.6em .85em;border:1px solid var(--border);text-align:left}.article-body table th{font-weight:600}.article-body hr{border:none;border-top:1px solid var(--border);margin:2em 0}.article-body img{border-radius:var(--radius);cursor:zoom-in}.article-body .article-figure{margin:1.5em 0;text-align:center}.article-body .article-figure img{display:block;margin:0 auto}.article-body .article-figure-caption{margin-top:.55em;color:var(--muted);font-size:.875rem;line-height:1.5}.article-body iframe{max-width:100%;border-radius:var(--radius)}.article-body .gdrive-pdf-wrapper{margin:1.5em 0;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius);background:#fff}.article-body .gdrive-pdf-header{display:flex;align-items:center;justify-content:space-between;min-height:2.75rem;padding:.5rem .875rem;border-bottom:1px solid var(--border);background:var(--bg)}.article-body .gdrive-pdf-label{color:var(--muted);font-size:.85rem}.article-body .gdrive-pdf-link{color:var(--accent);font-size:.8rem;text-decoration:none}.article-body .gdrive-pdf-link:hover{text-decoration:underline}.article-body .gdrive-pdf-frame{display:block;width:100%;height:min(720px,80vh);border:0;border-radius:0;background:#fff}.article-body :not(pre)>code{background:#fffaf0a6;border:1px solid rgba(180,155,130,.2);border-radius:4px;padding:.1em .4em;font-size:.875em}.article-body pre,.article-body pre.astro-code,.article-body .astro-code{background:transparent!important;background-color:transparent!important;border:1.5px dashed rgba(224,143,88,.45);border-radius:14px}.article-body pre.astro-code code,.article-body .astro-code code{background:transparent!important;background-color:transparent!important}.article-body pre,.article-body table{-webkit-overflow-scrolling:touch}.article-body .katex-display{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;margin:1.4em 0;padding:.25rem 0 .45rem;text-align:center;scrollbar-width:thin;scrollbar-color:rgba(224,143,88,.35) transparent;word-break:normal;overflow-wrap:normal}.article-body .katex-display>.katex{display:inline-block;width:max-content;max-width:none}.article-body .katex{white-space:nowrap;word-break:normal;overflow-wrap:normal}.article-body .katex-display::-webkit-scrollbar{height:4px}.article-body .katex-display::-webkit-scrollbar-thumb{background:transparent}.article-body .katex-display:hover::-webkit-scrollbar-thumb{background:var(--border)}
+</style>
+<link rel="stylesheet" href="/_astro/about.CS0PymYq.css">
+<style>.site-footer[data-astro-cid-sz7xmlte]{padding:2rem 1.5rem;text-align:center}.footer-inner[data-astro-cid-sz7xmlte]{max-width:var(--max-width-page);margin:0 auto;display:flex;justify-content:center;align-items:center;gap:1rem;font-size:.85rem;color:var(--muted)}.footer-muted[data-astro-cid-sz7xmlte]{color:var(--muted)}
+</style>
+<link rel="stylesheet" href="/_astro/_abbrlink_.BDkgFBJR.css">
+<style>.gitalk-container[data-astro-cid-ajg7agi2]{margin-top:2rem}.gt-container{color:var(--text)!important;font-family:inherit!important}.gt-container a{color:var(--accent)!important}.gt-container a:hover{color:var(--accent-hover, var(--accent))!important}.gt-container .gt-header-textarea{background:transparent!important;border:1.5px dashed rgba(224,143,88,.45)!important;border-radius:14px!important;color:var(--text)!important;box-shadow:none!important;outline:none!important;font-family:inherit!important;line-height:1.7!important}.gt-container .gt-header-textarea:focus{border-color:#e08f58ad!important;box-shadow:0 0 0 3px #e08f5814!important}.gt-container .gt-header-preview{background:transparent!important;border:1.5px dashed rgba(224,143,88,.35)!important;border-radius:14px!important;color:var(--text)!important}.gt-container .gt-comment-content{background:transparent!important;border-radius:12px!important}.gt-container .gt-btn-login,.gt-container .gt-btn-public{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important}.gt-container .gt-btn-login:hover,.gt-container .gt-btn-public:hover{background:var(--accent-hover)!important;border-color:var(--accent-hover)!important}.gt-container .gt-btn-preview{background:transparent!important;border:1px solid var(--accent)!important;color:var(--accent)!important}.gt-container .gt-btn-preview:hover{background:#5b9e8c1a!important}
+</style></head> <body data-page="post" data-astro-cid-37fxchfa> <div class="site-page" data-astro-cid-37fxchfa> <!-- Background decoration layer (cream paper style) --> <div class="site-background" aria-hidden="true" data-astro-cid-37fxchfa> <div class="bg-pattern" data-astro-cid-37fxchfa></div> <div class="bg-top-border" data-astro-cid-37fxchfa></div> <div class="bg-bottom-border" data-astro-cid-37fxchfa></div> </div> <!-- Content shell --> <div class="site-shell" data-astro-cid-37fxchfa>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="site-name" data-astro-cid-3ef6ksr2>dropsong's</a> <!-- Desktop: hover dropdown nav (button → panel drops below) --> <nav class="desktop-hover-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <div class="desktop-hover-nav-inner" data-astro-cid-3ef6ksr2> <button class="desktop-nav-trigger" type="button" aria-label="Open navigation menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> <div class="desktop-nav-dropdown" data-astro-cid-3ef6ksr2> <div class="desktop-nav-dropdown-body" data-astro-cid-3ef6ksr2> <a href="/archive/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Search</a> </div> </div> </div> </nav> <!-- Mobile: click-toggle nav (keep exactly as before) --> <nav class="header-nav" id="header-nav" data-astro-cid-3ef6ksr2> <a href="/archive/" class="nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="nav-link" data-astro-cid-3ef6ksr2>Search</a> </nav> <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> </header>  <script type="module">const e=document.getElementById("menu-toggle"),t=document.getElementById("header-nav");e&&t&&e.addEventListener("click",()=>{t.classList.toggle("open")});</script> <main class="post-page" data-astro-cid-gjtny2mx> <article class="post-article" data-astro-cid-gjtny2mx> <header class="post-header" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <h1 class="article-title" data-astro-cid-bjlpfrhy>微观经济学笔记</h1> <div class="article-meta" data-astro-cid-bjlpfrhy> <time class="article-date" data-astro-cid-bjlpfrhy>2022-11-07</time>  <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-category" data-astro-cid-bjlpfrhy>杂项</span>   <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-tags" data-astro-cid-bjlpfrhy> #经济 </span>   </div> </div> </header> <div class="post-body" id="post-body" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <div class="article-body" data-astro-cid-bjlpfrhy><p>本文是视频 <a href="https://www.bilibili.com/video/BV1AT4y137Fp">微观经济学-中国农业大学</a> 的笔记。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/iAHJGzdSeRKCumV.png" alt="Newbrush.png" loading="lazy"><figcaption class="article-figure-caption">Newbrush.png</figcaption></figure>
+<h2 id="经济与经济学"><a class="heading-anchor" href="#经济与经济学">经济与经济学</a></h2>
+<p>为取得经济品的有代价的活动就是<strong>经济</strong>。</p>
+<p><strong>经济学</strong>是研究人们如何利用<strong>稀缺资源</strong>来满足人们<strong>无限需求</strong>的一门社会科学。</p>
+<ul>
+<li>稀缺：相对稀缺</li>
+<li>短缺：绝对</li>
+<li>需求是无限的：生存（有）、享受（好）、发展（自我）</li>
+</ul>
+<p>经济学：解决资源的稀缺性和需求的无限性之间的矛盾。</p>
+<h2 id="经济理论认知"><a class="heading-anchor" href="#经济理论认知">经济理论认知</a></h2>
+<p>经济人假说：理性人、利益追求、个性追求</p>
+<ul>
+<li>消费者：满足最大化</li>
+<li>生产者：利润最大化</li>
+</ul>
+<p>社会人：适应社会、</p>
+<p>信息完备性假说：（。。。）</p>
+<p>表达方法：表格法、图线法、文字描述法、数学函数法</p>
+<p>生产可能曲线：在资源一定的情况下，所能够生产的两种商品的最大组合的运动轨迹。</p>
+<h2 id="微观经济学的研究对象"><a class="heading-anchor" href="#微观经济学的研究对象">微观经济学的研究对象</a></h2>
+<p>以价格为核心（价格学、资源稀缺性——价格）、以单个经济单位为研究对象（消费者，生产者）、单个经济单位的经济行为</p>
+<p>说白了就是，解决资源的配置问题。</p>
+<ul>
+<li>生产什么</li>
+<li>生产多少</li>
+<li>为谁生产</li>
+</ul>
+<h2 id="怎样才能学好经济学"><a class="heading-anchor" href="#怎样才能学好经济学">怎样才能学好经济学</a></h2>
+<p>两种研究方法：实证分析法、规范分析法</p>
+<ul>
+<li>实证经济学：就事论事（无价值判断）</li>
+<li>规范经济学：就事论理（有价值判断）
+<ul>
+<li>福利经济学</li>
+<li>公共财政学</li>
+<li>税收学</li>
+<li>法律</li>
+</ul>
+</li>
+</ul>
+<h2 id="欲望与需求"><a class="heading-anchor" href="#欲望与需求">欲望与需求</a></h2>
+<p>定义：需求是消费者在一定时期内，在一定价格水平上，<strong>愿意购买</strong>且<strong>能够购买</strong>的商品量。</p>
+<ul>
+<li>只满足一个，潜在需求</li>
+<li>满足两个，有效需求
+<ul>
+<li>有效需求=市场容量</li>
+</ul>
+</li>
+</ul>
+<h2 id="影响需求的因素"><a class="heading-anchor" href="#影响需求的因素">影响需求的因素</a></h2>
+<p>因素：</p>
+<ul>
+<li>商品本身的价格(P)</li>
+<li>收入水平(I)
+<ul>
+<li>第一类：I增Q增，正常品</li>
+<li>第二类：I增Q减，低档品</li>
+</ul>
+</li>
+<li>偏好
+<ul>
+<li>引导方式：广告、宣传</li>
+</ul>
+</li>
+<li>相关商品的价格
+<ul>
+<li><span class="math-source">$P_x$</span>增，<span class="math-source">$Q_y$</span>降<span class="math-source">$\rightarrow$</span>互补品</li>
+<li><span class="math-source">$P_x$</span>增，<span class="math-source">$Q_y$</span>增<span class="math-source">$\rightarrow$</span>替代品</li>
+<li><span class="math-source">$P_x$</span>无论增减，<span class="math-source">$Q_y$</span>不变<span class="math-source">$\rightarrow$</span>独立品</li>
+</ul>
+</li>
+<li>未来预期
+<ul>
+<li>好：Q增加</li>
+<li>差：Q减少</li>
+</ul>
+</li>
+</ul>
+<h2 id="需求规律及其表达"><a class="heading-anchor" href="#需求规律及其表达">需求规律及其表达</a></h2>
+<p>需求规律：在其他条件不变的情况下，消费者对某种商品的需求量与商品本身的价格呈反向变化。</p>
+<p>需求曲线以符号<span class="math-source">$D$</span>标记。</p>
+<p><span class="math-source">$notice$</span>：需求量是表示的是消费者在<strong>一定时间内</strong>的它的需求量。</p>
+<h2 id="需求规律及其表达2"><a class="heading-anchor" href="#需求规律及其表达2">需求规律及其表达（2）</a></h2>
+<p>需求函数：<span class="math-source">$Q=f(p,p_x,a,c,…)$</span></p>
+<ul>
+<li><span class="math-source">$p:$</span>本身的价格</li>
+<li><span class="math-source">$p_x:$</span>有关商品的价格</li>
+<li><span class="math-source">$a:$</span>个人偏好</li>
+<li><span class="math-source">$c:$</span>预期</li>
+</ul>
+<p>简化：<span class="math-source">$Q=f(p)$</span></p>
+<ul>
+<li>当其他条件不变时，<span class="math-source">$Q$</span>只是<span class="math-source">$p$</span>的函数</li>
+</ul>
+<p><span class="math-source">$e.g.$</span>
+解释方程<span class="math-source">$Q=200-5P+2p_x$</span>的含义</p>
+<ul>
+<li>解释：这种商品本身价格提高1单位，需求量减少5单位；<span class="math-source">$x$</span>的价格提高一单位，需求量增加2单位。这里<span class="math-source">$x$</span>是替代品。</li>
+</ul>
+<p>市场需求与个人需求：个人需求的加和等于市场。</p>
+<h2 id="需求规律的例外"><a class="heading-anchor" href="#需求规律的例外">需求规律的例外</a></h2>
+<p>情况一：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/jT9wQBqL6YlxFrM.png" alt="2dot4case1.png" loading="lazy"><figcaption class="article-figure-caption">2dot4case1.png</figcaption></figure>
+<ul>
+<li>例如：黄金、紧俏物资</li>
+</ul>
+<blockquote>
+<p>无需广告</p>
+</blockquote>
+<p>情况二：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/Bv6NX9O5esuwjCp.png" alt="2dot4pic2.png" loading="lazy"><figcaption class="article-figure-caption">2dot4pic2.png</figcaption></figure>
+<ul>
+<li>例如：生活必需品(药品、食盐、收费厕所(国外居多；吐槽一下驾照考点外的扫码撒尿服务)、殡葬用品)</li>
+</ul>
+<blockquote>
+<p>提价</p>
+</blockquote>
+<p>情况三：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/F4Ul123ReSqTu7W.png" alt="2dot4pic3.png" loading="lazy"><figcaption class="article-figure-caption">2dot4pic3.png</figcaption></figure>
+<ul>
+<li>买涨不买跌</li>
+<li>高档消费品（奢侈品）、非生活必需品</li>
+</ul>
+<blockquote>
+<p>定价宜高</p>
+</blockquote>
+<p>情况四：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/H2WR4TFEvybg7nl.png" alt="2dot4pic4.png" loading="lazy"><figcaption class="article-figure-caption">2dot4pic4.png</figcaption></figure>
+<ul>
+<li>金融产品</li>
+</ul>
+<h2 id="其他因素对需求的影响"><a class="heading-anchor" href="#其他因素对需求的影响">其他因素对需求的影响</a></h2>
+<p>一、价格与需求</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/mHp8BWEK2cn7oJa.png" alt="2dot5pic1.png" loading="lazy"><figcaption class="article-figure-caption">2dot5pic1.png</figcaption></figure>
+<p>单纯由商品价格本身价格变化引起的需求量的变化，叫做<strong>需求量变动</strong>。</p>
+<p>二、非价格因素对需求的影响</p>
+<p><span class="math-source">$I_1\rightarrow I_2$</span>时，<span class="math-source">$Q_1\rightarrow Q_2\quad$</span>  //需求变动</p>
+<p><strong>需求变动</strong>：非价格因素变化所引起的需求量的变化。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/QmqM4kz3XiePxKo.png" alt="2dot5pic2.png" loading="lazy"><figcaption class="article-figure-caption">2dot5pic2.png</figcaption></figure>
+<h2 id="产量与供给"><a class="heading-anchor" href="#产量与供给">产量与供给</a></h2>
+<p>定义：<strong>供给</strong>是生产者在一定时期内，一定的价格水平上，愿意而且能够提供的商品量。</p>
+<ul>
+<li>供给<span class="math-source">$\approx$</span>出售愿望+产量
+<ul>
+<li>如果只满足其中之一，称为<strong>潜在供给</strong>。</li>
+<li>两个条件都满足，称为<strong>有效供给</strong>。</li>
+<li>区分有效供给、潜在供给<span class="math-source">$\rightarrow$</span>衡量生产者的实际收入</li>
+</ul>
+</li>
+</ul>
+<h2 id="影响供给的因素"><a class="heading-anchor" href="#影响供给的因素">影响供给的因素</a></h2>
+<ol>
+<li>本身价格 <span class="math-source">$\quad P$</span>增，<span class="math-source">$Q_s$</span>增； <span class="math-source">$\quad P$</span>减，<span class="math-source">$Q_s$</span>减</li>
+<li>生产成本 <span class="math-source">$\quad C$</span>增，<span class="math-source">$Q_s$</span>减； <span class="math-source">$\quad C$</span>减，<span class="math-source">$Q_s$</span>增</li>
+<li>技术</li>
+<li>相关商品的价格</li>
+<li>生产者的目标
+<ul>
+<li>利润最大化</li>
+<li>总产量最大</li>
+<li>平均产量最大</li>
+</ul>
+</li>
+<li>未来预期
+<ul>
+<li>好<span class="math-source">$\rightarrow Q_s$</span>增</li>
+<li>差<span class="math-source">$\rightarrow Q_s$</span>减</li>
+</ul>
+</li>
+</ol>
+<h2 id="供给规律及其表达"><a class="heading-anchor" href="#供给规律及其表达">供给规律及其表达</a></h2>
+<p>供给规律：在其他条件不变的情况下，某种商品的供给量与商品本身的价格呈同向变化。</p>
+<p>供给曲线：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/NhQTanfkAVOwgrY.png" alt="2dot8pic1.png" loading="lazy"><figcaption class="article-figure-caption">2dot8pic1.png</figcaption></figure>
+<p>供给函数：<span class="math-source">$Q_s=f(p,p_x,c,t,…)$</span></p>
+<p>市场供给=个别供给的总和</p>
+<h2 id="供给规律的例外"><a class="heading-anchor" href="#供给规律的例外">供给规律的例外</a></h2>
+<p>情况一</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/MJ1AGzIKPwBrfcU.png" alt="2dot9pic1.png" loading="lazy"><figcaption class="article-figure-caption">2dot9pic1.png</figcaption></figure>
+<p>例如：饮料类、某些公共产品（地铁、自来水、电力）</p>
+<p>情况二：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/M5jpqPnNb4Qz8f2.png" alt="2dot9pic2.png" loading="lazy"><figcaption class="article-figure-caption">2dot9pic2.png</figcaption></figure>
+<p>例如：土地、古玩古董</p>
+<p>情况三：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/fBnMm43HwDQuyP6.png" alt="2dot9pic3.png" loading="lazy"><figcaption class="article-figure-caption">2dot9pic3.png</figcaption></figure>
+<p>举例：流水线作业的、大规模生产的</p>
+<p>情况四：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/Tu62kwrYFRiyIsC.png" alt="2dot9pic4.png" loading="lazy"><figcaption class="article-figure-caption">2dot9pic4.png</figcaption></figure>
+<p>例如：劳动力（在上图中，<span class="math-source">$L$</span>表示提供的劳动量，<span class="math-source">$W$</span>表示工资）</p>
+<h2 id="其他因素对供给的影响"><a class="heading-anchor" href="#其他因素对供给的影响">其他因素对供给的影响</a></h2>
+<p>供给量变动：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/DzSE3COImNWRqPB.png" alt="2dot10pic1.png" loading="lazy"><figcaption class="article-figure-caption">2dot10pic1.png</figcaption></figure>
+<p><strong>供给变动</strong>：非价格变化引起的</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/bCs91XAdRaf45BO.png" alt="2dot10pic2.png" loading="lazy"><figcaption class="article-figure-caption">2dot10pic2.png</figcaption></figure>
+<h2 id="市场均衡及其形成"><a class="heading-anchor" href="#市场均衡及其形成">市场均衡及其形成</a></h2>
+<p>均衡状态：供求力量对比的结果</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/x3W4tiELfYXqpAl.png" alt="2dot11pic1.png" loading="lazy"><figcaption class="article-figure-caption">2dot11pic1.png</figcaption></figure>
+<p>定义：当需求和供给相等的时候，这个状态叫均衡状态，此时的价格叫均衡价格<span class="math-source">$(P_e)$</span>，此时的数量叫均衡数量<span class="math-source">$(Q_e)$</span>。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/K64ZGbCjOkhoVyl.png" alt="2dot11pic2.png" loading="lazy"><figcaption class="article-figure-caption">2dot11pic2.png</figcaption></figure>
+<h2 id="市场均衡的变动"><a class="heading-anchor" href="#市场均衡的变动">市场均衡的变动</a></h2>
+<p>一、消费者与均衡的问题</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/6CeElVhcn234oRL.png" alt="2dot12pic1.png" loading="lazy"><figcaption class="article-figure-caption">2dot12pic1.png</figcaption></figure>
+<p>总结：单纯需求变动会引起均衡价格和均衡数量同向变化。</p>
+<p>二、生产者与均衡的问题</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/cI6XOAqiyrN79Rm.png" alt="2dot12pic2.png" loading="lazy"><figcaption class="article-figure-caption">2dot12pic2.png</figcaption></figure>
+<p>供给变动：均衡价格反向变化；均衡数量同向变化。</p>
+<p>三、消费者和生产者行为都在变引起的变化</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/5IcACwT18VavsKB.png" alt="2dot12pic3.png" loading="lazy"><figcaption class="article-figure-caption">2dot12pic3.png</figcaption></figure>
+<p>（其他情况的分析方法与之类似。。。）</p>
+<h2 id="支持价格与限制价格"><a class="heading-anchor" href="#支持价格与限制价格">支持价格与限制价格</a></h2>
+<p><span class="math-source">$notion:\quad$</span>工农业产品的剪刀差</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/Ml4Uebq3Oj8iRZy.png" alt="2dot13pic1.png" loading="lazy"><figcaption class="article-figure-caption">2dot13pic1.png</figcaption></figure>
+<p><span class="math-source">$definition:\quad$</span>支持价格，政府制定的高于市场均衡价格的最低销售价格。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/XzrUh1vwHIYeJKu.png" alt="2dot13pic2.png" loading="lazy"><figcaption class="article-figure-caption">2dot13pic2.png</figcaption></figure>
+<p>方法：政府收购多余商品。</p>
+<p><span class="math-source">$definition:\quad$</span>限制价格，低于市场均衡价格的最高销售价。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/R9OUoICN2JMWVaw.png" alt="2dot13pic3.png" loading="lazy"><figcaption class="article-figure-caption">2dot13pic3.png</figcaption></figure>
+<p>限制价格可能导致的市场现象：黑市、贿赂等。应对方法：凭票供应。</p>
+<h2 id="政府税收"><a class="heading-anchor" href="#政府税收">政府税收</a></h2>
+<p><span class="math-source">$notion:$</span></p>
+<ul>
+<li>消费者剩余，消费者从市场里面的得益。</li>
+<li>生产者剩余，生产者从市场里面的得益。</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/ZwQgz1yhncE7eaU.png" alt="2dot14pic1.png" loading="lazy"><figcaption class="article-figure-caption">2dot14pic1.png</figcaption></figure>
+<p>国家收的税：<span class="math-source">$E_1A$</span></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/mSUniWtgT9yOd6B.png" alt="2dot14pic2.png" loading="lazy"><figcaption class="article-figure-caption">2dot14pic2.png</figcaption></figure>
+<p>设<span class="math-source">$A$</span>点对应价格为<span class="math-source">$P_2$</span>。<span class="math-source">$P_0P_1$</span>=消费者税负，<span class="math-source">$P_0P_2$</span>=生产者税负</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/VvE2XWZrs8zGdpF.png" alt="2dot14pic3.png" loading="lazy"><figcaption class="article-figure-caption">2dot14pic3.png</figcaption></figure>
+<h2 id="政府补贴"><a class="heading-anchor" href="#政府补贴">政府补贴</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/UarCBNcSWVXx7wD.png" alt="2dot15pic1.png" loading="lazy"><figcaption class="article-figure-caption">2dot15pic1.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/a6E9yexc8uIjJpT.png" alt="2dot15pic2.png" loading="lazy"><figcaption class="article-figure-caption">2dot15pic2.png</figcaption></figure>
+<h2 id="需求价格弹性及其计算1"><a class="heading-anchor" href="#需求价格弹性及其计算1">需求价格弹性及其计算（1）</a></h2>
+<p>一、弹性</p>
+<div class="math-source">$$e=\frac{\frac{\Delta Y}{Y}}{\frac{\Delta X}{X}}$$</div>
+<p>二、需求价格弹性</p>
+<div class="math-source">$$e=\frac{\Delta Q/Q}{\Delta P/P}$$</div>
+<p><span class="math-source">$definition:\quad$</span>价格变动<span class="math-source">$1\%$</span>引起的需求量变动的百分比</p>
+<p><span class="math-source">$notice:\quad$</span>在一个正常的需求曲线的计算中，为方便<span class="math-source">$(?)$</span>起见，在公式中加一个负号，则<span class="math-source">$e$</span>变为正。公式如下：</p>
+<div class="math-source">$$e=-\frac{\Delta Q/Q}{\Delta P/P}$$</div>
+<h2 id="需求价格弹性及其计算2"><a class="heading-anchor" href="#需求价格弹性及其计算2">需求价格弹性及其计算（2）</a></h2>
+<p>一、点弹性</p>
+<div class="math-source">$$e=-\frac{\Delta Q/Q}{\Delta P/P}=-\frac{\Delta Q}{\Delta P}\cdot \frac{P}{Q}=-\frac{\Delta Q}{\Delta P}\cdot \frac{P_1}{Q_1}$$</div>
+<p>精确计算：</p>
+<div class="math-source">$$e=-\lim_{\Delta P \to 0} \frac{\Delta Q}{\Delta P}\cdot \frac{P}{Q}=-\frac{P}{Q}\cdot \frac{\mathrm{d}Q}{\mathrm{d}P}$$</div>
+<p>二、弧弹性</p>
+<div class="math-source">$$e=-\frac{\Delta Q}{\Delta P}\cdot \frac{P}{Q}=-\frac{\Delta Q}{\Delta P}\cdot \frac{\frac{P_1+P_2}{2}}{\frac{Q_1+Q_2}{2}}$$</div>
+<h2 id="需求价格弹性的类型"><a class="heading-anchor" href="#需求价格弹性的类型">需求价格弹性的类型</a></h2>
+<p>情况一：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/FbuEYWQJltmqLRd.png" alt="3dot2pic1.png" loading="lazy"><figcaption class="article-figure-caption">3dot2pic1.png</figcaption></figure>
+<p>情况二：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/Cgq9eK6tQydPADN.png" alt="3dot2pic2.png" loading="lazy"><figcaption class="article-figure-caption">3dot2pic2.png</figcaption></figure>
+<p>情况三：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/QYfIE8WDvN5xzap.png" alt="3dot2pic3.png" loading="lazy"><figcaption class="article-figure-caption">3dot2pic3.png</figcaption></figure>
+<p>例如：接近于生活必需品的</p>
+<p>其他情况：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/hC3v9K1RcqZNmEF.png" alt="3dot2pic4.png" loading="lazy"><figcaption class="article-figure-caption">3dot2pic4.png</figcaption></figure>
+<p><strong>总结：</strong></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/tgpdVYabc2l5XM8.png" alt="3dot2pic5.png" loading="lazy"><figcaption class="article-figure-caption">3dot2pic5.png</figcaption></figure>
+<p><span class="math-source">$notice:\quad$</span>同一种商品在不同价位上有不同的弹性值。高价位富有弹性，低价位缺乏弹性。</p>
+<h2 id="影响需求价格弹性的因素"><a class="heading-anchor" href="#影响需求价格弹性的因素">影响需求价格弹性的因素</a></h2>
+<p>一、商品本身被需要的程度</p>
+<ul>
+<li>越被需要，弹性越小</li>
+<li>越不需要，弹性越大</li>
+</ul>
+<p>二、本身被替代的程度</p>
+<ul>
+<li>易被替代，弹性越大</li>
+</ul>
+<p>三、商品本身占总支出的比重</p>
+<ul>
+<li>比重大<span class="math-source">$\rightarrow$</span>弹性大</li>
+</ul>
+<p>四、商品的用途的多少</p>
+<ul>
+<li>用途越多，弹性越大</li>
+</ul>
+<p>五、商品的种类的大小</p>
+<ul>
+<li>种类越大，弹性越小</li>
+</ul>
+<p>种类的含义如下图：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/gEiQNImjXbchwPn.png" alt="3dot3pic1.png" loading="lazy"><figcaption class="article-figure-caption">3dot3pic1.png</figcaption></figure>
+<p><strong>解释</strong>：种类越小，越容易被替代，弹性就大了。</p>
+<p>六、时间因素</p>
+<ul>
+<li>近期弹性小</li>
+<li>远期弹性大</li>
+</ul>
+<p>解释：近期可能没有替代品；长期可能因为技术进步等原因，出现替代品。</p>
+<h2 id="需求价格弹性的用途"><a class="heading-anchor" href="#需求价格弹性的用途">需求价格弹性的用途</a></h2>
+<ul>
+<li>大件<span class="math-source">$\rightarrow$</span>价格特别关心<span class="math-source">$\rightarrow$</span>弹性大</li>
+</ul>
+<p>总结：通过人们对价格的关心程度来判断。</p>
+<ul>
+<li>需求价格弹性就是帮助企业进行定价的</li>
+<li>总收益（TR）=P<span class="math-source">$\cdot$</span>Q</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/Ke82YCrZjUIuwxB.png" alt="3dot4pic1.png" loading="lazy"><figcaption class="article-figure-caption">3dot4pic1.png</figcaption></figure>
+<p><strong>富有弹性，定低价。</strong></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/qzBrQcRZ6FCsYAX.png" alt="3dot4pic2.png" loading="lazy"><figcaption class="article-figure-caption">3dot4pic2.png</figcaption></figure>
+<p><strong>缺乏弹性，定高价。</strong></p>
+<h2 id="需求收入弹性"><a class="heading-anchor" href="#需求收入弹性">需求收入弹性</a></h2>
+<p><span class="math-source">$definition:\quad$</span>消费者的收入变化1%所引起的商品需求量的变动百分比。</p>
+<div class="math-source">$$e_I=\frac{\frac{\Delta Q}{Q}}{\frac{\Delta I}{I}}$$</div>
+<p><span class="math-source">$notion:\quad$</span>公式前<strong>没有负号</strong></p>
+<ul>
+<li><span class="math-source">$e_I>0$</span>，正常品
+<ul>
+<li><span class="math-source">$0&#x3C; e_I&#x3C;1$</span>，必需品</li>
+<li><span class="math-source">$e_I>1$</span>，高档品</li>
+</ul>
+</li>
+<li><span class="math-source">$e_I&#x3C;0$</span>，低档品</li>
+</ul>
+<p>通过<span class="math-source">$e_I$</span>判断生活水平的高低：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/WTz39FPj4o5QSEq.png" alt="3dot5pic1.png" loading="lazy"><figcaption class="article-figure-caption">3dot5pic1.png</figcaption></figure>
+<h2 id="需求交叉弹性"><a class="heading-anchor" href="#需求交叉弹性">需求交叉弹性</a></h2>
+<div class="math-source">$$e_{yx}=\frac{\frac{\Delta Q_y}{Q_y}}{\frac{\Delta P_x}{P_x}}$$</div>
+<p><span class="math-source">$e_{yx}:\quad x$</span>的价格变化引起的<span class="math-source">$y$</span>的需求量的改变。</p>
+<p><span class="math-source">$notion:\quad$</span>前面<strong>没有负号</strong>。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/FgsjxMJ9w5Q8mBu.png" alt="3dot6pic1.png" loading="lazy"><figcaption class="article-figure-caption">3dot6pic1.png</figcaption></figure>
+<p>通过需求交叉弹性帮助企业调整产业结构、产品结构：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/6xecVNFiIpus9R8.png" alt="3dot6pic2.png" loading="lazy"><figcaption class="article-figure-caption">3dot6pic2.png</figcaption></figure>
+<h2 id="供给弹性及其类型"><a class="heading-anchor" href="#供给弹性及其类型">供给弹性及其类型</a></h2>
+<p><span class="math-source">$definition:\quad$</span>供给弹性，商品的价格变化引起的供给量的变化。</p>
+<div class="math-source">$$e_s=\frac{\frac{\Delta Q_s}{Q_s}}{\frac{\Delta P}{P}}$$</div>
+<p><span class="math-source">$notice:\quad$</span><strong>没有负号</strong></p>
+<p>含义：价格变化1%引起的供给量的变动百分比</p>
+<p><span class="math-source">$notice:\quad$</span>有和之前相似的<strong>点弹性</strong>、<strong>弧弹性</strong>概念</p>
+<p>类型一：<span class="math-source">$\quad e_s=\infty \quad$</span>完全有弹性</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/Yr9bWzihkp42NvC.png" alt="3dot7pic1.png" loading="lazy"><figcaption class="article-figure-caption">3dot7pic1.png</figcaption></figure>
+<p>类型二：<span class="math-source">$\quad e_s=0\quad$</span>完全无弹性</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/KpQqG9dzTcyMbmj.png" alt="3dot7pic2.png" loading="lazy"><figcaption class="article-figure-caption">3dot7pic2.png</figcaption></figure>
+<p>类型三：<span class="math-source">$\quad e_s=1\quad$</span>单位弹性</p>
+<p>类型四：<span class="math-source">$\quad e_s&#x3C;1\quad$</span>缺乏弹性</p>
+<p>类型五：<span class="math-source">$\quad e_s>1\quad$</span>富有弹性</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/QTYSxcUK2zvC8gE.png" alt="3dot7pic3.png" loading="lazy"><figcaption class="article-figure-caption">3dot7pic3.png</figcaption></figure>
+<blockquote>
+<p>影响大的弹性大，影响小的弹性小</p>
+</blockquote>
+<h2 id="影响供给弹性大小的因素"><a class="heading-anchor" href="#影响供给弹性大小的因素">影响供给弹性大小的因素</a></h2>
+<ul>
+<li>生产的难易程度（难<span class="math-source">$\rightarrow e_s$</span>小）</li>
+<li>生产成本增加幅度的大小（成本增加的幅度大<span class="math-source">$\rightarrow e_s$</span>小）</li>
+<li>生产规模的大小（规模大的供给弹性小）</li>
+<li>派生供给的难易程度（易<span class="math-source">$\rightarrow e_s$</span>大）
+<ul>
+<li><span class="math-source">$definition:$</span> 派生供给：对生产最终产品的原材料、机器设备、半成品和燃料等中间产品的供给。</li>
+</ul>
+</li>
+<li>时间因素（现在<span class="math-source">$e_s$</span>小，将来<span class="math-source">$e_s$</span>大）</li>
+</ul>
+<h2 id="欲望与效用"><a class="heading-anchor" href="#欲望与效用">欲望与效用</a></h2>
+<p>效用是一种对欲望的满足程度。</p>
+<p>效用的大小和个人的经济条件是有关的。</p>
+<h2 id="边际效用递减规律"><a class="heading-anchor" href="#边际效用递减规律">边际效用递减规律</a></h2>
+<p>总效用（total utility）：消费一定量的物品获得的总满足程度</p>
+<p>边际效用（marginal utility)：多消费一个单位的商品增加的效用值</p>
+<div class="math-source">$$MU=\frac{\Delta TU}{\Delta Q}\quad MU=\frac{\mathrm{d}TU}{\mathrm{d}Q}$$</div>
+<p>解释：增加的消费量引起的总效用的该变量。即：多消费一个产品获得的满足程度。</p>
+<blockquote>
+<p>满足与消费量有关。</p>
+</blockquote>
+<p>边际效用的加和等于总效用 <span class="math-source">$TU_x=\begin{matrix} \sum_{i=1}^n MU_{xi} \end{matrix}$</span></p>
+<p><strong>边际效用递减规律</strong>：随着消费量的不断增加，后一单位的边际效用小于前一单位的边际效用。</p>
+<h2 id="消费者最佳决策"><a class="heading-anchor" href="#消费者最佳决策">消费者最佳决策</a></h2>
+<p>一、为什么要进行消费决策？</p>
+<ul>
+<li>收入是有限的</li>
+<li>时间是有限的</li>
+<li>商品是有限的</li>
+<li>价格是变化的</li>
+</ul>
+<p>二、货币效应</p>
+<div class="math-source">$$一元钱的边际效用=\frac{一单位的边际效用}{商品价格}$$</div>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/oku7Ycwn2tU5SzP.png" alt="4dot3pic1.png" loading="lazy"><figcaption class="article-figure-caption">4dot3pic1.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/rjNtu2nfKBEMyhZ.png" alt="4dot3pic2.png" loading="lazy"><figcaption class="article-figure-caption">4dot3pic2.png</figcaption></figure>
+<p>总结：</p>
+<div class="math-source">$$\begin{cases}
+\frac{MU_x}{P_x}=\frac{MU_y}{P_y}(最佳条件)\\
+P_x\cdot X+P_y\cdot Y=I(约束条件)
+\end{cases}$$</div>
+<h2 id="消费者剩余"><a class="heading-anchor" href="#消费者剩余">消费者剩余</a></h2>
+<p>消费者剩余=愿意支付的货币-实际支付的货币</p>
+<ul>
+<li>愿意支付是根据边际效用的大小来决定的。</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/nqSoKEfPZiTdXrx.png" alt="4dot4pic1.png" loading="lazy"><figcaption class="article-figure-caption">4dot4pic1.png</figcaption></figure>
+<p>启示：</p>
+<ul>
+<li>政府要维持物价水平</li>
+<li>说明发展市场经济是有好处的
+<ul>
+<li>市场越发达，剩余越多</li>
+</ul>
+</li>
+<li>剩余是存在的</li>
+</ul>
+<h2 id="消费者偏好假设与无差异曲线"><a class="heading-anchor" href="#消费者偏好假设与无差异曲线">消费者偏好假设与无差异曲线</a></h2>
+<p>消费者偏好：消费者对商品的喜好程度。</p>
+<blockquote>
+<p>消费的是商品的组合。</p>
+</blockquote>
+<p><strong>三个假设：</strong></p>
+<ol>
+<li>完全性<span class="math-source">$(completeness)$</span>：消费者在不同的组合中能够区分(tell)，自己更偏向(喜欢)哪个组合</li>
+<li>传递性<span class="math-source">$(transitivity)$</span>：<span class="math-source">$a>b,b>c\Rightarrow a>c$</span></li>
+<li>非饱和性：两个不同的组合，消费者总是喜欢数量大的组合</li>
+</ol>
+<p>无差异曲线（等效用曲线）：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/XO5UVbYATBcd6Hj.png" alt="4dot5pic1.png" loading="lazy"><figcaption class="article-figure-caption">4dot5pic1.png</figcaption></figure>
+<p><span class="math-source">$definition:\quad$</span>能够获得相同满足的两种商品的各种组合的运动轨迹，叫做<strong>无差异曲线</strong>。</p>
+<p>特点：</p>
+<ul>
+<li>无数条。每一条无差异曲线代表唯一的效用水平；位置越高的线代表的效用水平越大。</li>
+<li>任意两条无差异曲线不相交。</li>
+<li>无差异曲线凸向原点。</li>
+</ul>
+<p>一些特例：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/NZKCyBV3vrAOqeY.png" alt="4dot5pic2.png" loading="lazy"><figcaption class="article-figure-caption">4dot5pic2.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/FNzcb75Rom3wgls.png" alt="4dot5pic3.png" loading="lazy"><figcaption class="article-figure-caption">4dot5pic3.png</figcaption></figure>
+<h2 id="预算约束线"><a class="heading-anchor" href="#预算约束线">预算约束线</a></h2>
+<p><span class="math-source">$definition\quad$</span><strong>预算约束线</strong>：在收入一定的情况下，消费者所能购买的两种商品的<strong>最大</strong>组合的运动轨迹。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/eZpx3EVrfkcl2CJ.png" alt="4dot6pic1.png" loading="lazy"><figcaption class="article-figure-caption">4dot6pic1.png</figcaption></figure>
+<p>影响因素：</p>
+<ul>
+<li>收入<span class="math-source">$I$</span></li>
+<li>价格</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/sUjyEuAJnedYc9p.png" alt="4dot6pic2.png" loading="lazy"><figcaption class="article-figure-caption">4dot6pic2.png</figcaption></figure>
+<p>边际替代率：<span class="math-source">$MRS_{xy}=\frac{\Delta Y}{\Delta X}$</span></p>
+<ul>
+<li>指标越大，说明替代越容易</li>
+<li>指标越小，说明替代越难</li>
+<li>边际替代率递减</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/MkyLaVCqu7ZwsdO.png" alt="4dot6pic3.png" loading="lazy"><figcaption class="article-figure-caption">4dot6pic3.png</figcaption></figure>
+<p>证明：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/PubljBdtZgo3YsC.png" alt="4dot6pic4.png" loading="lazy"><figcaption class="article-figure-caption">4dot6pic4.png</figcaption></figure>
+<h2 id="消费者均衡"><a class="heading-anchor" href="#消费者均衡">消费者均衡</a></h2>
+<p>消费者最佳选择问题又称<strong>消费者均衡</strong>。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/jeIx3VlvDpOKS4L.png" alt="4dot7pic1.png" loading="lazy"><figcaption class="article-figure-caption">4dot7pic1.png</figcaption></figure>
+<p><span class="math-source">$definition\quad$</span> 在收入一定情况下，消费者所买到的能够使效用最大的商品组合，就叫做<strong>消费者均衡</strong>。</p>
+<p>E点的条件：（其中包含一些简单的推导，如果忘记不会可以看视频）</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/HYniWSXImFVo6xe.png" alt="4dot7pic2.png" loading="lazy"><figcaption class="article-figure-caption">4dot7pic2.png</figcaption></figure>
+<p>（和之前用表格推的那节课道理一样）</p>
+<div class="math-source">$$\begin{cases}
+\frac{MU_x}{P_x}=\frac{MU_y}{P_y}(均衡条件)\\
+P_x\cdot X+P_y\cdot Y=I(约束条件)
+\end{cases}$$</div>
+<h2 id="消费者均衡的变动"><a class="heading-anchor" href="#消费者均衡的变动">消费者均衡的变动</a></h2>
+<p>一、收入变动对消费者均衡的影响</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/zc8TemMR3yXFb6s.png" alt="4dot8pic1.png" loading="lazy"><figcaption class="article-figure-caption">4dot8pic1.png</figcaption></figure>
+<p><span class="math-source">$definition\quad$</span> 收入改变引起的消费者的均衡变动的运动轨迹叫做<strong>收入——消费线</strong>。</p>
+<p><strong>恩格尔曲线：</strong></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/2JTflcnoSiyDj91.png" alt="4dot8pic2.png" loading="lazy"><figcaption class="article-figure-caption">4dot8pic2.png</figcaption></figure>
+<p>二、价格变动对消费者均衡的影响</p>
+<p>研究的假设：<span class="math-source">$I_0,P_y$</span> 不变，<span class="math-source">$P_x$</span> 变化</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/hFSo7lGBRaOc2uN.png" alt="4dot8pic3.png" loading="lazy"><figcaption class="article-figure-caption">4dot8pic3.png</figcaption></figure>
+<p><span class="math-source">$definition\quad$</span> 收入不变的情况下，由于价格变化所引起的消费者的均衡位置的移动轨迹，就是<strong>价格消费曲线</strong>。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/DkQOG4aPUx2Ev87.png" alt="4dot8pic4.png" loading="lazy"><figcaption class="article-figure-caption">4dot8pic4.png</figcaption></figure>
+<h2 id="替代效应与收入效应"><a class="heading-anchor" href="#替代效应与收入效应">替代效应与收入效应</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/aChBSw5qR7WDp1G.png" alt="4dot9pic1.png" loading="lazy"><figcaption class="article-figure-caption">4dot9pic1.png</figcaption></figure>
+<p><span class="math-source">$definition\quad$</span> 相对价格的变化导致了产品的替代，影响了消费者的需求，叫<strong>替代效应</strong>。</p>
+<p><span class="math-source">$definition\quad$</span> 由于价格变化导致了实际收入的改变，引起了消费者需求改变，叫<strong>收入效应</strong>。</p>
+<p>总效应=替代效应+收入效应</p>
+<p>向政府提供建议：</p>
+<ul>
+<li>替代效应&#x3C;收入效应：要提高收入</li>
+<li>替代效应>收入效应：调整比价关系</li>
+</ul>
+<h2 id="生产与生产函数"><a class="heading-anchor" href="#生产与生产函数">生产与生产函数</a></h2>
+<p><strong>生产</strong>就是将投入要素转化为产出的活动。</p>
+<p>生产要素：劳动、土地、资本、才能</p>
+<p>产出：有形产品——实体、无形产品——劳务（第三产业）</p>
+<p><span class="math-source">$definition\quad$</span> <strong>生产函数：</strong> 在一定时期内，在技术水平不变的情况下，生产中所使用的各种生产要素与所能生产的最大产量之间的关系。</p>
+<div class="math-source">$$Q=f(L,K,D)$$</div>
+<blockquote>
+<p>L劳动、K资本、D土地</p>
+</blockquote>
+<p><strong>柯布<span class="math-source">$\cdot$</span>道格拉斯生产函数</strong></p>
+<div class="math-source">$$Q=AL^{\alpha}K^{\beta}$$</div>
+<p>A：技术进步因素（所有的其他说不清楚的影响因素的集合）</p>
+<p><strong>不变要素和可变要素</strong>：</p>
+<ul>
+<li>不变要素（variable input）：不随着产量变化而变化的要素</li>
+<li>可变要素（fixed input）：随着产量变化而变化的要素</li>
+</ul>
+<p><strong>短期生产和长期生产</strong>：</p>
+<ul>
+<li>短期生产（short run）：在这个时期内，至少有一种不变要素的生产</li>
+<li>长期生产（long run）：在这个时期内，所有要素都是可变的</li>
+</ul>
+<h2 id="短期生产分析"><a class="heading-anchor" href="#短期生产分析">短期生产分析</a></h2>
+<div class="math-source">$$Q=f(L,K_0)$$</div>
+<blockquote>
+<p>资本要素不变</p>
+</blockquote>
+<p><strong>三个产量指标：</strong></p>
+<ol>
+<li>总产量（Total Product of Labor)
+<span class="math-source">$TP_L=Q$</span></li>
+<li>平均产量（Average Product of Labor）
+<span class="math-source">$AP_L=TP_L/L$</span></li>
+<li>边际产量（Marginal Product of Labor）
+<span class="math-source">$MP_L=\frac{\Delta TP_L}{\Delta L}=\frac{\Delta Q}{\Delta L}$</span></li>
+</ol>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/LEzRxk8Mt5JG3p7.png" alt="5dot2pic1.png" loading="lazy"><figcaption class="article-figure-caption">5dot2pic1.png</figcaption></figure>
+<p>结论：</p>
+<ul>
+<li>这三条线都有一个最高点</li>
+<li>当<span class="math-source">$MP_L=0$</span>时，<span class="math-source">$TP_L$</span>最大
+<ul>
+<li>总产量等于边际产量的加和（其实就是数学上的求导和积分QAQ）</li>
+</ul>
+</li>
+<li>当<span class="math-source">$MP_L$</span>与<span class="math-source">$AP_L$</span>相交时，<span class="math-source">$AP_L$</span>最大</li>
+</ul>
+<p><strong>边际报酬递减规律：</strong></p>
+<p><span class="math-source">$definition\quad$</span> 在其他条件不变的情况下，单纯增加一种可变要素的使用量，一开始产量以递增的速度增长，然后以递减的速度增长，再继续增加该种要素的使用量，产量就会绝对的减产。这种现象称为边际报酬递减规律。</p>
+<h2 id="生产的合理阶段"><a class="heading-anchor" href="#生产的合理阶段">生产的合理阶段</a></h2>
+<p>第二阶段是合理阶段。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/HKsU8XOBfDpJmai.png" alt="5dot3pic1.png" loading="lazy"><figcaption class="article-figure-caption">5dot3pic1.png</figcaption></figure>
+<p>第一阶段可能存在设备的闲置问题。</p>
+<p>具体如何选定第二阶段的<span class="math-source">$L$</span>值，与生产者的目标有关：</p>
+<ul>
+<li>平均产量最大</li>
+<li>总产量最大</li>
+</ul>
+<p><strong>管理方法：</strong></p>
+<ul>
+<li>第一阶段：开拓市场</li>
+<li>第二阶段：合理阶段</li>
+<li>第三阶段：劳动过剩，浮于事，裁员</li>
+</ul>
+<h2 id="生产决策的工具"><a class="heading-anchor" href="#生产决策的工具">生产决策的工具</a></h2>
+<div class="math-source">$$Q=f(L,K)$$</div>
+<p><strong>决策工具——等产量线</strong></p>
+<p>生产同样的产量，可以采取不同的要素组合。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/07/tEXkWKxQ47IyfZC.png" alt="5dot4pic1.png" loading="lazy"><figcaption class="article-figure-caption">5dot4pic1.png</figcaption></figure>
+<p><span class="math-source">$definition\quad$</span><strong>等产量线</strong><span class="math-source">$\quad$</span> 能够取得相同产量的两种要素的组合的运动轨迹</p>
+<p>特征：</p>
+<ul>
+<li>有无数条等产量曲线，位置越高，产量水平越高</li>
+<li>任意两条等产量曲线不相交</li>
+<li>凸向原点</li>
+</ul>
+<p><strong>决策工具——等成本线</strong></p>
+<div class="math-source">$$C_0=P_L\cdot L+P_K\cdot K$$</div>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/g17wxAOVSEGihQb.png" alt="5dot4pic2.png" loading="lazy"><figcaption class="article-figure-caption">5dot4pic2.png</figcaption></figure>
+<p><span class="math-source">$definition\quad$</span>等成本线<span class="math-source">$\quad$</span> 在成本一定的情况下，企业所能购买的两种要素的最大组合的运动轨迹</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/IychvAu8xCkLqaF.png" alt="5dot4pic3.png" loading="lazy"><figcaption class="article-figure-caption">5dot4pic3.png</figcaption></figure>
+<h2 id="生产的合理区域1"><a class="heading-anchor" href="#生产的合理区域1">生产的合理区域（1）</a></h2>
+<div class="math-source">$$MRTS_{LK}=\frac{\Delta K}{\Delta L}$$</div>
+<blockquote>
+<p>T：边际技术替代率
+LK：劳动对资本替代
+左式读作：“劳动对资本的边际技术替代率”</p>
+</blockquote>
+<div class="math-source">$$\Delta Q=0=\Delta TP_L+\Delta TP_K$$</div>
+<div class="math-source">$$0=MP_L\cdot \Delta L+MP_K\cdot \Delta K$$</div>
+<div class="math-source">$$MRTS_{LK}=-\frac{\Delta K}{\Delta L}=\frac{MP_L}{MP_K}$$</div>
+<blockquote>
+<p>为方便起见，在前面加个负号。（搞不懂哪里方便了QAQ）</p>
+</blockquote>
+<p><span class="math-source">$MP_L$</span>下降，<span class="math-source">$MP_K$</span>增加，所以<span class="math-source">$MRTS_{LK}$</span>下降</p>
+<p>结论：要素之间的替代是有限的</p>
+<h2 id="生产的合理区域2"><a class="heading-anchor" href="#生产的合理区域2">生产的合理区域（2）</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/lTVS4ofRrAFHhLq.png" alt="5dot5pic1.png" loading="lazy"><figcaption class="article-figure-caption">5dot5pic1.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/ZYsyVqEUw5KiDPr.png" alt="5dot5pic2.png" loading="lazy"><figcaption class="article-figure-caption">5dot5pic2.png</figcaption></figure>
+<h2 id="生产者的最佳决策"><a class="heading-anchor" href="#生产者的最佳决策">生产者的最佳决策</a></h2>
+<p><strong>成本一定，产量决策：</strong></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/OlxXHFeGkTPiw23.png" alt="5dot6pic1.png" loading="lazy"><figcaption class="article-figure-caption">5dot6pic1.png</figcaption></figure>
+<p><strong>产量一定，成本决策：</strong></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/KsIz7AmjrBtbf9J.png" alt="5dot6pic2.png" loading="lazy"><figcaption class="article-figure-caption">5dot6pic2.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/48cMEUtIQnpG9b2.png" alt="5dot6pic3.png" loading="lazy"><figcaption class="article-figure-caption">5dot6pic3.png</figcaption></figure>
+<blockquote>
+<p>这里的最佳决策也可以称为<strong>生产者均衡</strong>。</p>
+</blockquote>
+<h2 id="生产扩展线"><a class="heading-anchor" href="#生产扩展线">生产扩展线</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/A2Ke5q1jOtYBvhf.png" alt="5dot7pic1.png" loading="lazy"><figcaption class="article-figure-caption">5dot7pic1.png</figcaption></figure>
+<p>不同企业类型划分：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/HhQFt6Xq1m78CLb.png" alt="5dot7pic2.png" loading="lazy"><figcaption class="article-figure-caption">5dot7pic2.png</figcaption></figure>
+<p>生产扩展线方程：</p>
+<div class="math-source">$$\frac{MP_L}{P_L}=\frac{MP_K}{P_K}$$</div>
+<p>为什么有些国家（企业）采取资本密集型，有些国家（企业）采取劳动密集型：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/r68sC4FbHY9M1ej.png" alt="5dot7pic3.png" loading="lazy"><figcaption class="article-figure-caption">5dot7pic3.png</figcaption></figure>
+<h2 id="规模经济"><a class="heading-anchor" href="#规模经济">规模经济</a></h2>
+<p><span class="math-source">$definition\quad$</span>规模经济<span class="math-source">$\quad$</span>在一个生产过程当中，当所有的要素按照相同的倍数增加的时候，所表现出的产出的变化特征</p>
+<p><strong>规模经济的三种形式（三个阶段）：</strong></p>
+<ol>
+<li>规模报酬递增</li>
+<li>规模报酬不变</li>
+<li>规模报酬递减</li>
+</ol>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/mgLNbrZqVU3FGca.png" alt="5dot8pic1.png" loading="lazy"><figcaption class="article-figure-caption">5dot8pic1.png</figcaption></figure>
+<p>规模报酬递增的原因</p>
+<ol>
+<li>生产专门化</li>
+<li>管理专门化</li>
+<li>几何因素（重工业等）</li>
+<li>便利条件</li>
+</ol>
+<p>规模报酬不变的原因：</p>
+<ul>
+<li>规模报酬递增的因素吸收完了，受到某种技术的限制</li>
+</ul>
+<p>规模报酬递减的原因：</p>
+<ul>
+<li>管理效率低下</li>
+</ul>
+<h2 id="多角度的成本"><a class="heading-anchor" href="#多角度的成本">多角度的成本</a></h2>
+<p>在生产过程中实际发生的支出，为显性成本；在生产过程中经营者主观上感觉到的损失，为隐性成本。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/gGRzl6SfiBXaLuT.png" alt="6dot1pic1.png" loading="lazy"><figcaption class="article-figure-caption">6dot1pic1.png</figcaption></figure>
+<p><span class="math-source">$definiton\quad$</span> 当一种资源有多种用途时，生产者选择了收益最大的用途后，必然放弃的该资源用于其他用途所可能获得的最大收益，就是<strong>生产这种产品的机会成本</strong>。</p>
+<p>经济成本=会计成本+机会成本</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/2jTF8lmdwG9qXaZ.png" alt="6dot1pic2.png" loading="lazy"><figcaption class="article-figure-caption">6dot1pic2.png</figcaption></figure>
+<h2 id="短期成本分析"><a class="heading-anchor" href="#短期成本分析">短期成本分析</a></h2>
+<p>成本函数 <span class="math-source">$C=f(Q)$</span></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/qJgFWxGZOMmbLPR.png" alt="6dot2pic1.png" loading="lazy"><figcaption class="article-figure-caption">6dot2pic1.png</figcaption></figure>
+<p>短期总成本=短期固定成本(不变要素的花费)+短期可变成本(可变要素的花费)</p>
+<div class="math-source">$$STC=TFC+TVC$$</div>
+<p>或（明确特指短期成本）：</p>
+<div class="math-source">$$TC=TFC+TVC$$</div>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/wYvR4izQGqALjTn.png" alt="6dot2pic2.png" loading="lazy"><figcaption class="article-figure-caption">6dot2pic2.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/m2dyVquj3TgI9bA.png" alt="6dot2pic3.png" loading="lazy"><figcaption class="article-figure-caption">6dot2pic3.png</figcaption></figure>
+<h2 id="边际成本分析"><a class="heading-anchor" href="#边际成本分析">边际成本分析</a></h2>
+<div class="math-source">$$MC=\frac{\Delta TC}{\Delta Q}$$</div>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/FvJjcVEXxORQbsL.png" alt="6dot3pic1.png" loading="lazy"><figcaption class="article-figure-caption">6dot3pic1.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/7NIdKw2LxsnCoOT.png" alt="6dot3pic2.png" loading="lazy"><figcaption class="article-figure-caption">6dot3pic2.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/uEMvOweoY8zNTpj.png" alt="6dot3pic3.png" loading="lazy"><figcaption class="article-figure-caption">6dot3pic3.png</figcaption></figure>
+<p>证明思路：</p>
+<p>在AVC的最低点，有：</p>
+<div class="math-source">$$AVC'=(\frac{TVC}{Q})'=0$$</div>
+<div class="math-source">$$TVC'\cdot Q=TVC\cdot Q'$$</div>
+<div class="math-source">$$\frac{TVC}{Q}=\frac{TVC'}{Q'}=\frac{\mathrm{d}TVC}{\mathrm{d}Q}$$</div>
+<div class="math-source">$$AVC=MC$$</div>
+<h2 id="长期总成本分析"><a class="heading-anchor" href="#长期总成本分析">长期总成本分析</a></h2>
+<p>规模与成本</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/McQt2rn9YsxJpiA.png" alt="6dot4pic1.png" loading="lazy"><figcaption class="article-figure-caption">6dot4pic1.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/gUzZMAFH7WCNdL2.png" alt="6dot4pic2.png" loading="lazy"><figcaption class="article-figure-caption">6dot4pic2.png</figcaption></figure>
+<h2 id="长期平均成本与长期边际成本1"><a class="heading-anchor" href="#长期平均成本与长期边际成本1">长期平均成本与长期边际成本（1）</a></h2>
+<p>长期平均成本（LAC） <span class="math-source">$\quad$</span> 长期边际成本（LMC）</p>
+<div class="math-source">$$LAC=\frac{LTC}{Q}$$</div>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="cpp"><code><span class="line"><span style="color:#6A737D">//视频此处有图画错了</span></span>
+<span class="line"><span style="color:#6A737D">//本笔记中只放正确的</span></span></code></pre>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/hKSipPIoXsH9yzA.png" alt="6dot5pic1.png" loading="lazy"><figcaption class="article-figure-caption">6dot5pic1.png</figcaption></figure>
+<h2 id="长期平均成本与长期边际成本2"><a class="heading-anchor" href="#长期平均成本与长期边际成本2">长期平均成本与长期边际成本（2）</a></h2>
+<div class="math-source">$$LMC=\frac{\Delta LTC}{\Delta Q}$$</div>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/j2VFZCUaTJu1rnp.png" alt="6dot5pic2.png" loading="lazy"><figcaption class="article-figure-caption">6dot5pic2.png</figcaption></figure>
+<p><strong>在SAC和LAC决定的这个产量水平上，SMC=LMC</strong></p>
+<blockquote>
+<p>从导数的角度去理解这块内容：STC的导数是SMC，LTC的导数是LMC，LTC是STC的包络线。对于任意一个给定资本规模的STC（当然也可以是给定labor规模的STC，只不过老师的视频中一直以给定资本规模为例），它和LTC在两者的切点处导数值相同。因此在对应的Q值，有：SMC=LMC</p>
+</blockquote>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/ISwFQh4YZ7NonsV.png" alt="6dot5pic3.png" loading="lazy"><figcaption class="article-figure-caption">6dot5pic3.png</figcaption></figure>
+<p>规模经济的实质就是成本不断降低的经济。</p>
+<h2 id="收益与利润分析1"><a class="heading-anchor" href="#收益与利润分析1">收益与利润分析（1）</a></h2>
+<p>总收益<span class="math-source">$\quad TR=P\cdot Q$</span></p>
+<p>平均收益<span class="math-source">$\quad AR=\frac{TR}{Q}=\frac{P\cdot Q}{Q}=P$</span></p>
+<p>边际收益<span class="math-source">$\quad MR=\frac{\Delta TR}{\Delta Q}$</span></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/L6z9TXi8GQWs2Vo.png" alt="6dot6pic1.png" loading="lazy"><figcaption class="article-figure-caption">6dot6pic1.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/IiASpYrabT2GJhk.png" alt="6dot6pic2.png" loading="lazy"><figcaption class="article-figure-caption">6dot6pic2.png</figcaption></figure>
+<h2 id="收益与利润分析2"><a class="heading-anchor" href="#收益与利润分析2">收益与利润分析（2）</a></h2>
+<p>利润<span class="math-source">$\quad \pi =TR-TC$</span></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/JKIrxGzj9kXpsRu.png" alt="6dot6pic3.png" loading="lazy"><figcaption class="article-figure-caption">6dot6pic3.png</figcaption></figure>
+<blockquote>
+<p>利润最大化的条件是边际收益等于边际成本</p>
+</blockquote>
+<h2 id="完全竞争的四个假设条件"><a class="heading-anchor" href="#完全竞争的四个假设条件">完全竞争的四个假设条件</a></h2>
+<p>四种市场：<span class="math-source">$\quad$</span>完全竞争<span class="math-source">$\quad$</span>完全垄断<span class="math-source">$\quad$</span>垄断竞争<span class="math-source">$\quad$</span>寡头垄断</p>
+<p>完全竞争的条件：</p>
+<ul>
+<li>大数假定
+<ul>
+<li>有无数多生产者和消费者</li>
+<li>完全竞争厂商没有定价权</li>
+</ul>
+</li>
+<li>产品同质性
+<ul>
+<li>所有同名产品都是一样的</li>
+<li>厂商没有必要做广告</li>
+</ul>
+</li>
+<li>信息完备性
+<ul>
+<li>信息是公开、免费的，人们无所不知</li>
+<li>不会出现假冒伪劣等现象</li>
+</ul>
+</li>
+<li>资源完全流动性
+<ul>
+<li>生产者想生产什么就生产什么</li>
+<li>人（资源）想干什么工作就干什么工作</li>
+<li>人口自由流动</li>
+<li>意味着资源可以达到最佳配置</li>
+</ul>
+</li>
+</ul>
+<p>接近于完全竞争市场的：</p>
+<p>证券市场 <span class="math-source">$\qquad$</span> 农产品市场</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/48WUiDeKcFnJBuN.png" alt="7dot1pic1.png" loading="lazy"><figcaption class="article-figure-caption">7dot1pic1.png</figcaption></figure>
+<h2 id="完全竞争厂商的短期均衡"><a class="heading-anchor" href="#完全竞争厂商的短期均衡">完全竞争厂商的短期均衡</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/xBrQeNJzqy6g17Z.png" alt="7dot2pic1.png" loading="lazy"><figcaption class="article-figure-caption">7dot2pic1.png</figcaption></figure>
+<blockquote>
+<p>注意：这里的利润是<strong>经济利润</strong>，只能说赚的钱比正常的利润要少。</p>
+</blockquote>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/7JdncRvCoKbqV2H.png" alt="7dot2pic2.png" loading="lazy"><figcaption class="article-figure-caption">7dot2pic2.png</figcaption></figure>
+<blockquote>
+<p>注意这里的小于号，它的记法是出于经济学的习惯而非数学
+P=AVC，停产点</p>
+</blockquote>
+<h2 id="完全竞争的长期均衡"><a class="heading-anchor" href="#完全竞争的长期均衡">完全竞争的长期均衡</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/DHzlPtF6von7UVO.png" alt="7dot3pic1.png" loading="lazy"><figcaption class="article-figure-caption">7dot3pic1.png</figcaption></figure>
+<p>完全竞争厂商的长期均衡条件：</p>
+<div class="math-source">$$MR=SMC=LMC=SAC=LAC$$</div>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/ZGR9Mzy34YWPJag.png" alt="7dot3pic2.png" loading="lazy"><figcaption class="article-figure-caption">7dot3pic2.png</figcaption></figure>
+<p>长期均衡是在最佳规模下的最佳产量，是一个行业长期均衡的达到的结果。</p>
+<p>当个别厂商均衡的时候，行业未必均衡。当行业均衡的时候，整个厂商都均衡了。</p>
+<h2 id="完全垄断市场的条件"><a class="heading-anchor" href="#完全垄断市场的条件">完全垄断市场的条件</a></h2>
+<p>三个条件：</p>
+<ol>
+<li>只有一个厂商</li>
+<li>无很近的替代品</li>
+<li><strong>其他厂商无法进入</strong>（最重要）
+<ul>
+<li>政府特许</li>
+<li>材料垄断</li>
+<li>技术垄断</li>
+<li>不当竞争</li>
+</ul>
+</li>
+</ol>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/frz4onIhyQNWjRC.png" alt="8dot1pic1.png" loading="lazy"><figcaption class="article-figure-caption">8dot1pic1.png</figcaption></figure>
+<h2 id="完全垄断厂商的短期决策"><a class="heading-anchor" href="#完全垄断厂商的短期决策">完全垄断厂商的短期决策</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/9LNIEcfqbABuWPw.png" alt="8dot2pic1.png" loading="lazy"><figcaption class="article-figure-caption">8dot2pic1.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/QnvObdeGP5FAUYj.png" alt="8dot2pic2.png" loading="lazy"><figcaption class="article-figure-caption">8dot2pic2.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/xBvKgtw7QCZspUL.png" alt="8dot2pic3.png" loading="lazy"><figcaption class="article-figure-caption">8dot2pic3.png</figcaption></figure>
+<p>少数情况的应对方法：降低成本、刺激消费</p>
+<h2 id="完全垄断厂商的长期决策"><a class="heading-anchor" href="#完全垄断厂商的长期决策">完全垄断厂商的长期决策</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/xNl92HfESkuhKWz.png" alt="8dot3pic1.png" loading="lazy"><figcaption class="article-figure-caption">8dot3pic1.png</figcaption></figure>
+<h2 id="完全垄断厂商的价格歧视"><a class="heading-anchor" href="#完全垄断厂商的价格歧视">完全垄断厂商的价格歧视</a></h2>
+<p><strong>一级价格歧视</strong></p>
+<ul>
+<li>需求者少</li>
+<li>十分了解消费者的支付能力</li>
+<li>两次、多次收费现象</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/pG2hyaOuZg3zrDe.png" alt="8dot4pic1.png" loading="lazy"><figcaption class="article-figure-caption">8dot4pic1.png</figcaption></figure>
+<p><strong>二级价格歧视</strong>（一部分一部分地单独定价）</p>
+<ul>
+<li>例如：邮政计费、电话计费</li>
+</ul>
+<p><strong>三级价格歧视</strong>（同一个产品在不同的市场上制定不同的价格）</p>
+<p>条件：</p>
+<ul>
+<li>市场之间是分割的</li>
+<li>消费者的需求不同</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/y8DCZzH61XsSkhW.png" alt="8dot4pic2.png" loading="lazy"><figcaption class="article-figure-caption">8dot4pic2.png</figcaption></figure>
+<h2 id="垄断竞争市场的条件"><a class="heading-anchor" href="#垄断竞争市场的条件">垄断竞争市场的条件</a></h2>
+<p>三个条件：</p>
+<ol>
+<li>有很多厂商</li>
+<li><strong>有很近的替代品</strong> <span class="math-source">$\rightarrow$</span> 产品是有差别的</li>
+<li>其他厂商自由进出</li>
+</ol>
+<p>整体产品的三个层次：</p>
+<ul>
+<li>产品的核心（功能）</li>
+<li>产品的实体</li>
+<li>产品的附加服务</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/pLJkDlXbeITwRuK.png" alt="9dot1pic1.png" loading="lazy"><figcaption class="article-figure-caption">9dot1pic1.png</figcaption></figure>
+<p>垄断竞争市场竞争特别激烈</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/i1CXQ2vWDwFRSgM.png" alt="9dot1pic2.png" loading="lazy"><figcaption class="article-figure-caption">9dot1pic2.png</figcaption></figure>
+<h2 id="垄断竞争厂商的短期决策"><a class="heading-anchor" href="#垄断竞争厂商的短期决策">垄断竞争厂商的短期决策</a></h2>
+<p>垄断竞争厂商达到短期决策均衡满足的条件：</p>
+<ol>
+<li>MR=MC</li>
+<li>在MR=MC决定的产量上D与d相交</li>
+</ol>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/PJuoS72Dzn1RBZ9.png" alt="9dot2pic1.png" loading="lazy"><figcaption class="article-figure-caption">9dot2pic1.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/HftRExAPzVTkQpe.png" alt="9dot2pic2.png" loading="lazy"><figcaption class="article-figure-caption">9dot2pic2.png</figcaption></figure>
+<p>垄断竞争厂商在短期之内，不管怎样调，在市场里的份额没有增加。</p>
+<h2 id="垄断竞争厂商的长期决策"><a class="heading-anchor" href="#垄断竞争厂商的长期决策">垄断竞争厂商的长期决策</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/Uydt63jNeqFGL12.png" alt="9dot3pic1.png" loading="lazy"><figcaption class="article-figure-caption">9dot3pic1.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/KXreCdG4OZRgQfk.png" alt="9dot3pic2.png" loading="lazy"><figcaption class="article-figure-caption">9dot3pic2.png</figcaption></figure>
+<p>垄断竞争长期决策的条件：</p>
+<ol>
+<li>MR=SMC=LMC</li>
+<li>在MR=SMC=LMC决定的产量水平上，d线与LAC相切</li>
+<li>D过d与LAC的切点</li>
+</ol>
+<p>短期决策<span class="math-source">$\rightarrow$</span>预期变化<span class="math-source">$\qquad$</span>长期决策<span class="math-source">$\rightarrow$</span>份额变化</p>
+<blockquote>
+<p>完全竞争价格最低产量最高
+完全垄断价格最高产量最低
+垄断竞争居于中间</p>
+</blockquote>
+<h2 id="古诺模型"><a class="heading-anchor" href="#古诺模型">古诺模型</a></h2>
+<p>寡头垄断市场：只有少数几个大的厂商垄断着市场</p>
+<p>特点：</p>
+<ul>
+<li>只有少数大厂商</li>
+<li>厂商间相互影响</li>
+<li>达成协议</li>
+<li>价格相当稳定</li>
+</ul>
+<p>寡头垄断市场举例：<span class="math-source">$\quad$</span> 钢铁公司、化工集团</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/yfa6QpJGcFHIACs.png" alt="10dot1pic1.png" loading="lazy"><figcaption class="article-figure-caption">10dot1pic1.png</figcaption></figure>
+<p>古诺模型的意义：说明寡头之间是相互影响的</p>
+<p><strong>推论：</strong> 如果有<span class="math-source">$n$</span>个寡头，每一个寡头的产量为<span class="math-source">$Q_i= \frac{1}{n+1}\cdot Q_0$</span></p>
+<h2 id="斯威齐模型"><a class="heading-anchor" href="#斯威齐模型">斯威齐模型</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/JEhBDMNLIOioQgs.png" alt="10dot2pic1.png" loading="lazy"><figcaption class="article-figure-caption">10dot2pic1.png</figcaption></figure>
+<p>斯威齐模型认为，寡头垄断的需求曲线<strong>有折弯</strong></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/sMCZVrEqzpKRcI5.png" alt="10dot2pic2.png" loading="lazy"><figcaption class="article-figure-caption">10dot2pic2.png</figcaption></figure>
+<p>寡头垄断市场中，寡头的规模也不是完全相等</p>
+<h2 id="价格领袖制"><a class="heading-anchor" href="#价格领袖制">价格领袖制</a></h2>
+<p>目的：确定价格、维护价格稳定</p>
+<p>充当价格领袖的条件：</p>
+<ul>
+<li>成本低的企业</li>
+<li>规模大的寡头</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/12RhL8ysMKCJawS.png" alt="10dot3pic1.png" loading="lazy"><figcaption class="article-figure-caption">10dot3pic1.png</figcaption></figure>
+<h2 id="囚徒困境"><a class="heading-anchor" href="#囚徒困境">囚徒困境</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/aDWA5nNxfYiBS3V.png" alt="10dot4pic1.png" loading="lazy"><figcaption class="article-figure-caption">10dot4pic1.png</figcaption></figure>
+<p><strong>卡特尔（cartel）：</strong> 生产者之间的价格和产量协议</p>
+<p>卡特尔本身是个囚徒博弈的问题。</p>
+<h2 id="智猪博弈"><a class="heading-anchor" href="#智猪博弈">智猪博弈</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/QyeUrIp6A19Md3b.png" alt="10dot5pic1.png" loading="lazy"><figcaption class="article-figure-caption">10dot5pic1.png</figcaption></figure>
+<p>博弈矩阵：</p>
+<!--网上找资料缝了一个表格，可能会有细节上的错误qwq-->
+<style type="text/css">
+.mytable{
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+}
+</style>
+<table class="mytable">
+<tbody><tr><th class="row-0" style="150px;height:50px;">
+    <div class="biaotou">
+         <div class="biaotoutxt1">小猪策略</div>
+         <div class="biaotoutxt2">大猪策略</div>
+    </div> 
+</th> 
+<style>
+    .biaotou {  
+        line-height: 5px;
+        text-align: left;
+    }
+    .biaotoutxt1 {
+        color: #FFFFF;
+        padding: 1px 0 0 65px;
+    }
+    .biaotoutxt2 {
+        color: #FFFFF;
+        padding: 15px 0 0 5px;
+    }
+</style>
+<th>按</th>
+<th>不按</th>
+</tr><tr>
+<th>按</th>
+<th>大=+3<br>小=+1</th>
+<th>大=+2<br>小=+4</th>
+</tr>
+<tr>
+<th>不按</th>
+<th>大=+7<br>小=-1</th>
+<th>大=0<br>小=0</th>
+</tr>
+</tbody></table>
+<br>
+<p><strong>剔除最劣决策法</strong>，最后结果：大猪按，小猪不按</p>
+<blockquote>
+<p>寡头之间是相互影响的，决策是相互依赖的</p>
+</blockquote>
+<h2 id="生产要素市场认知"><a class="heading-anchor" href="#生产要素市场认知">生产要素市场认知</a></h2>
+<p>生产者使用要素的原则：利润最大化</p>
+<p>产品市场：</p>
+<div class="math-source">$$MR=MC$$</div>
+<div class="math-source">$$MP_L\cdot MR=MC\cdot MP_L$$</div>
+<div class="math-source">$$\frac{\Delta Q}{\Delta L}\cdot \frac{\Delta TR}{\Delta Q}=\frac{\Delta TC}{\Delta Q} \cdot \frac{\Delta Q}{\Delta L}$$</div>
+<div class="math-source">$$\frac{\Delta TR}{\Delta L}=\frac{\Delta TC}{\Delta L}$$</div>
+<div class="math-source">$$\Downarrow$$</div>
+<div class="math-source">$$MRP_L=MFC_L$$</div>
+<p><span class="math-source">$notion\quad$</span>边际收益产品（<span class="math-source">$MRP_L$</span>） <span class="math-source">$Marginal$</span> <span class="math-source">$Rvenue$</span> <span class="math-source">$Product$</span></p>
+<p><span class="math-source">$notion\quad$</span>边际要素成本（<span class="math-source">$MFC_L$</span>） <span class="math-source">$Marginal$</span> <span class="math-source">$Factor$</span> <span class="math-source">$Cost$</span></p>
+<p>生产当中<strong>使用要素的原则</strong>：<span class="math-source">$MRP_L=MFC_L$</span></p>
+<p>在完全竞争的要素市场上，工资是一个常数。<span class="math-source">$MFC_L=W_0(工资)$</span></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/2MNwpUZcsABf5mq.png" alt="11dot1pic1.png" loading="lazy"><figcaption class="article-figure-caption">11dot1pic1.png</figcaption></figure>
+<blockquote>
+<p>劳动量是工资的函数
+图形解释：在上图中，因为边际收益产品和工资的单位相同，所以可以一起放在纵轴。边际收益产品先增后减，可以由其含义推得。</p>
+</blockquote>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/JYrDnf51qZcvNGd.png" alt="11dot1pic2.png" loading="lazy"><figcaption class="article-figure-caption">11dot1pic2.png</figcaption></figure>
+<blockquote>
+<p>粗线部分是劳动的需求曲线
+解释：上图中的W0,W1,W2可以理解为不同的薪资水平。如果一个企业（or whatever…）的工资水平高，<strong>那就应该</strong>少雇人。在视频中，是以劳动为例来讲的，如果<strong>把横轴变成资本，纵轴变成利息，就形成了资本的需求曲线</strong>；如果<strong>把横轴变成土地，纵轴变成土地价格，就是土地的需求曲线</strong>。</p>
+</blockquote>
+<p>AFC：平均要素成本</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/HXvJ2VgASKckdoD.png" alt="11dot1pic3.png" loading="lazy"><figcaption class="article-figure-caption">11dot1pic3.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/Nj8k62KybTCQI4O.png" alt="11dot1pic4.png" loading="lazy"><figcaption class="article-figure-caption">11dot1pic4.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/GvRericVwA7aLfN.png" alt="11dot1pic5.png" loading="lazy"><figcaption class="article-figure-caption">11dot1pic5.png</figcaption></figure>
+<h2 id="工资的决定"><a class="heading-anchor" href="#工资的决定">工资的决定</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/IUVuKna7xcDYtMq.png" alt="11dot2pic1.png" loading="lazy"><figcaption class="article-figure-caption">11dot2pic1.png</figcaption></figure>
+<p>替代效应：<span class="math-source">$W_\uparrow \rightarrow L_\uparrow$</span></p>
+<p>收入效应：<span class="math-source">$W_\uparrow \rightarrow L_\downarrow$</span></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/zDMZ9UsYlJ5SPBA.png" alt="11dot2pic2.png" loading="lazy"><figcaption class="article-figure-caption">11dot2pic2.png</figcaption></figure>
+<p>提高工资水平的策略：</p>
+<ol>
+<li>需求：
+<ul>
+<li>提高生产率</li>
+<li>支持涨价</li>
+<li>贸易保护</li>
+</ul>
+</li>
+<li>供给：（减少供给）
+<ul>
+<li>对移民的限制</li>
+<li>最长工作时间立法</li>
+<li>规定工作的年龄</li>
+<li>禁止使用童工</li>
+<li>强制退休</li>
+<li>制定最低工资法</li>
+</ul>
+</li>
+</ol>
+<h2 id="利息的决定与变动"><a class="heading-anchor" href="#利息的决定与变动">利息的决定与变动</a></h2>
+<p><span class="math-source">$notion\quad$</span>迂回生产论</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/XMnGpKQiNuoB8cH.png" alt="11dot3pic1.png" loading="lazy"><figcaption class="article-figure-caption">11dot3pic1.png</figcaption></figure>
+<p>宽松政策：供给增加，利率下调</p>
+<p>紧缩政策：供给减少，利率上调</p>
+<h2 id="地租的决定"><a class="heading-anchor" href="#地租的决定">地租的决定</a></h2>
+<div class="math-source">$$土地价格=\frac{地租(或土地的收入)}{(银行)利率}$$</div>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/lfb3WKXzqSDFGkO.png" alt="11dot4pic1.png" loading="lazy"><figcaption class="article-figure-caption">11dot4pic1.png</figcaption></figure>
+<p>准地租（经济地租）：固定资产在短期内获得的报酬</p>
+<div class="math-source">$$
+\begin{alignedat}{2}
+准地租&#x26;=固定成本+经济利润 \\
+     &#x26;= \pi +TFC \\
+\end{alignedat}
+$$</div>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/myNXLUGR7SFuIO2.png" alt="11dot4pic2.png" loading="lazy"><figcaption class="article-figure-caption">11dot4pic2.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/lMqW62d5porfnyw.png" alt="11dot4pic3.png" loading="lazy"><figcaption class="article-figure-caption">11dot4pic3.png</figcaption></figure>
+<div class="math-source">$$
+\begin{aligned}
+\int_{0}^{Q_0}(P_0-MC)\,{\rm d}Q &#x26;= \int_{0}^{Q_0}P_0\,{\rm d}Q-\int_{0}^{Q_0}MC\,{\rm d}Q \\
+&#x26;= \int_{0}^{Q_0}P_0\,{\rm d}Q-(TC-TFC) \\
+&#x26;= (\int_{0}^{Q_0}P_0\,{\rm d}Q-TC)+TFC \\
+&#x26;= (TR-AVC\cdot Q_0)+TFC\\
+&#x26;= \pi +TFC
+\end{aligned}
+$$</div>
+<div class="math-source">$$生产者剩余=\pi +TFC$$</div>
+<p>寻租行为</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/LvRXmPIMfyYkcNU.png" alt="11dot4pic4.png" loading="lazy"><figcaption class="article-figure-caption">11dot4pic4.png</figcaption></figure>
+<h2 id="社会福利及其衡量"><a class="heading-anchor" href="#社会福利及其衡量">社会福利及其衡量</a></h2>
+<p><strong>个人福利</strong>是人们的欲望和需要所得到的满足。</p>
+<p><strong>社会福利</strong>是个人福利的总和。</p>
+<p><strong>经济福利</strong>是可以直接或间接用货币衡量的社会福利；<strong>非经济福利</strong>是不能用货币衡量的社会福利。</p>
+<p>对社会福利的研究属于<strong>规范性</strong>的研究。</p>
+<p><strong>帕累托效率</strong>指的是这样一种情况：这时经济已不可能通过改变资源配置，在其他人（至少1人）的效用水平至少不降的情况下，使任何别人（至少1人）的效用水平有所提高。</p>
+<div class="math-source">$$帕累托无效率 \stackrel{帕累托改进}{\longrightarrow}帕累托效率$$</div>
+<p>表现：</p>
+<ol>
+<li>交换的帕累托效率</li>
+<li>生产的帕累托效率</li>
+<li>交换与生产的帕累托效率</li>
+</ol>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/xcW84nHKuMCOvgN.png" alt="12dot1pic1.png" loading="lazy"><figcaption class="article-figure-caption">12dot1pic1.png</figcaption></figure>
+<blockquote>
+<p>交换的帕累托效率
+解释：A的<span class="math-source">$MRS_{xy}$</span>大于B，意味着在资源有限的前提下，应当根据贪心的策略将X优先配给A，将Y配给B。由边际效用的规律知，A和B两者的<span class="math-source">$MRS$</span>值最终会趋于相等。这就是帕累托改进的过程在数值上的表现。</p>
+</blockquote>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/4hiuH52DKseJG9c.png" alt="12dot1pic2.png" loading="lazy"><figcaption class="article-figure-caption">12dot1pic2.png</figcaption></figure>
+<blockquote>
+<p>生产的帕累托效率</p>
+</blockquote>
+<p><span class="math-source">$MRT_{xy}$</span>：边际产品转化率</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/z4dM3HvmkX5GwJF.png" alt="12dot1pic3.png" loading="lazy"><figcaption class="article-figure-caption">12dot1pic3.png</figcaption></figure>
+<blockquote>
+<p>MRT即是此图中的替代率</p>
+</blockquote>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/FKHBhtvQ95GapTE.png" alt="12dot1pic4.png" loading="lazy"><figcaption class="article-figure-caption">12dot1pic4.png</figcaption></figure>
+<blockquote>
+<p>生产与交换的帕累托效率
+当<span class="math-source">$MRS_{xy}=MRT_{xy}$</span>时，社会出清。</p>
+</blockquote>
+<h2 id="收入分配公平程度的衡量"><a class="heading-anchor" href="#收入分配公平程度的衡量">收入分配公平程度的衡量</a></h2>
+<p>洛伦茨曲线</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/vQVUeKGFZD5Im4r.png" alt="12dot2pic1.png" loading="lazy"><figcaption class="article-figure-caption">12dot2pic1.png</figcaption></figure>
+<div class="math-source">$$基尼系数=\frac{A}{A+B}$$</div>
+<figure class="article-figure"><img src="https://s2.loli.net/2022/11/08/pGir5DWC4Bnv7t9.png" alt="12dot2pic2.png" loading="lazy"><figcaption class="article-figure-caption">12dot2pic2.png</figcaption></figure>
+<ul>
+<li>基尼系数在0.3以下，平均状态</li>
+<li>0.3-0.4，合理状态</li>
+<li>大于0.4，收入差距过大</li>
+<li>大于0.6，暴发户和赤贫阶层同时出现</li>
+</ul>
+<h2 id="外部性及其影响"><a class="heading-anchor" href="#外部性及其影响">外部性及其影响</a></h2>
+<p>消费的外部性：</p>
+<ul>
+<li>正外部性：消费者的消费为其他消费者带来的利益</li>
+<li>负外部性：消费者为其他消费者带来的损害</li>
+</ul>
+<p>生产的外部性：</p>
+<ul>
+<li>正外部性：（例如）养蜜蜂、行业经济</li>
+<li>负外部性：（例如）环境污染</li>
+</ul>
+<blockquote>
+<p>解决生产的负外部性：明确产权、 …</p>
+</blockquote>
+<h2 id="信息不完全性"><a class="heading-anchor" href="#信息不完全性">信息不完全性</a></h2>
+<p>次品市场和逆向选择<span class="math-source">$\quad$</span>错误选择（逆向选择）</p>
+<p>信息不对称的情况下，可能产生道德风险。</p>
+<blockquote>
+<p>在市场经济当中，存在市场的失灵。</p>
+</blockquote>
+<h2 id="结语"><a class="heading-anchor" href="#结语">结语</a></h2>
+<p>祝大家考试稳过，生活愉（<span class="math-source">$y\grave{u}$</span>）快，阖家欢乐（<span class="math-source">$l\grave{u}o$</span>）！</p>
+<div class="math-source">$$\mathcal{THE}\quad \mathcal{END}$$</div></div> </div> </div> <footer class="post-footer" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <!-- Gitalk comments will be added in Phase 3 --> </div> <section class="reward-widget" data-reward-widget data-astro-cid-bbdapvnt> <div class="reward-panel" id="reward-panel" aria-label="打赏二维码" data-astro-cid-bbdapvnt> <div class="reward-list" data-astro-cid-bbdapvnt> <div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/Alipay.png" alt="支付宝收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>支付宝 Alipay</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/WeChat.png" alt="微信收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>微信 Wechat</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/PayPal-or-CreditCard.png" alt="PayPal 或信用卡收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>PayPal/CreditCard</span> </div> </div> </div> <button class="reward-trigger" type="button" aria-label="打开打赏二维码" aria-controls="reward-panel" aria-expanded="false" data-astro-cid-bbdapvnt>
+打赏 Reward
+</button> </section>  <script type="module">function a(){document.querySelectorAll("[data-reward-widget]").forEach(e=>{if(e.dataset.initialized)return;const r=e.querySelector(".reward-trigger");if(!r)return;e.dataset.initialized="true";const n=t=>{e.classList.toggle("is-open",t),r.setAttribute("aria-expanded",String(t))};r.addEventListener("click",()=>n(!e.classList.contains("is-open"))),document.addEventListener("click",t=>{e.contains(t.target)||n(!1)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&(n(!1),r.blur())})})}window.addEventListener("encrypted-content-revealed",()=>{document.querySelectorAll("[data-reward-after-unlock]").forEach(e=>{e.removeAttribute("hidden")})});document.addEventListener("astro:page-load",a);a();</script> <div id="gitalk-container" class="gitalk-container" data-abbrlink="bfc2f920" data-title="微观经济学笔记" data-astro-cid-ajg7agi2></div> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">   <script>
+  var GITALK_CFG = {"clientID":"Ov23lijmGQilj9J9CrdP","clientSecret":"bd5066a2aadbe28c20913dd390b8047031f7174a","repo":"dropsong.github.io","owner":"dropsong","admin":["dropsong"],"labels":["Gitalk"],"distractionFreeMode":false};
+</script> <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js">
+</script> <script>
+  (function() {
+    var c = document.getElementById('gitalk-container');
+    if (!c) return;
+    var id = c.dataset.abbrlink || '';
+    var title = c.dataset.title || '';
+    new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting && !c.dataset.loaded) {
+          c.dataset.loaded = '1';
+          new Gitalk(Object.assign({}, GITALK_CFG, {id: id, title: title})).render('gitalk-container');
+        }
+      });
+    }, {rootMargin: '200px'}).observe(c);
+  })();
+</script> </footer> </article> </main> <button class="toc-fab" id="toc-fab" aria-label="目录" data-astro-cid-6t6zfk7k> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M4 6h16M4 12h10M4 18h16" data-astro-cid-6t6zfk7k></path> </svg> </button> <!-- Desktop: hover popup panel --> <div class="toc-popup" id="toc-popup" data-astro-cid-6t6zfk7k> <div class="toc-popup-header" data-astro-cid-6t6zfk7k> <span class="toc-popup-title" data-astro-cid-6t6zfk7k>目录</span> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> <div class="toc-popup-body" data-astro-cid-6t6zfk7k> <ul class="toc-popup-list" data-astro-cid-6t6zfk7k> <li class="toc-popup-item" data-mtoc-section="经济与经济学" data-astro-cid-6t6zfk7k> <a href="#经济与经济学" class="toc-popup-link" data-mtoc="经济与经济学" data-astro-cid-6t6zfk7k> 经济与经济学 </a>  </li><li class="toc-popup-item" data-mtoc-section="经济理论认知" data-astro-cid-6t6zfk7k> <a href="#经济理论认知" class="toc-popup-link" data-mtoc="经济理论认知" data-astro-cid-6t6zfk7k> 经济理论认知 </a>  </li><li class="toc-popup-item" data-mtoc-section="微观经济学的研究对象" data-astro-cid-6t6zfk7k> <a href="#微观经济学的研究对象" class="toc-popup-link" data-mtoc="微观经济学的研究对象" data-astro-cid-6t6zfk7k> 微观经济学的研究对象 </a>  </li><li class="toc-popup-item" data-mtoc-section="怎样才能学好经济学" data-astro-cid-6t6zfk7k> <a href="#怎样才能学好经济学" class="toc-popup-link" data-mtoc="怎样才能学好经济学" data-astro-cid-6t6zfk7k> 怎样才能学好经济学 </a>  </li><li class="toc-popup-item" data-mtoc-section="欲望与需求" data-astro-cid-6t6zfk7k> <a href="#欲望与需求" class="toc-popup-link" data-mtoc="欲望与需求" data-astro-cid-6t6zfk7k> 欲望与需求 </a>  </li><li class="toc-popup-item" data-mtoc-section="影响需求的因素" data-astro-cid-6t6zfk7k> <a href="#影响需求的因素" class="toc-popup-link" data-mtoc="影响需求的因素" data-astro-cid-6t6zfk7k> 影响需求的因素 </a>  </li><li class="toc-popup-item" data-mtoc-section="需求规律及其表达" data-astro-cid-6t6zfk7k> <a href="#需求规律及其表达" class="toc-popup-link" data-mtoc="需求规律及其表达" data-astro-cid-6t6zfk7k> 需求规律及其表达 </a>  </li><li class="toc-popup-item" data-mtoc-section="需求规律及其表达2" data-astro-cid-6t6zfk7k> <a href="#需求规律及其表达2" class="toc-popup-link" data-mtoc="需求规律及其表达2" data-astro-cid-6t6zfk7k> 需求规律及其表达（2） </a>  </li><li class="toc-popup-item" data-mtoc-section="需求规律的例外" data-astro-cid-6t6zfk7k> <a href="#需求规律的例外" class="toc-popup-link" data-mtoc="需求规律的例外" data-astro-cid-6t6zfk7k> 需求规律的例外 </a>  </li><li class="toc-popup-item" data-mtoc-section="其他因素对需求的影响" data-astro-cid-6t6zfk7k> <a href="#其他因素对需求的影响" class="toc-popup-link" data-mtoc="其他因素对需求的影响" data-astro-cid-6t6zfk7k> 其他因素对需求的影响 </a>  </li><li class="toc-popup-item" data-mtoc-section="产量与供给" data-astro-cid-6t6zfk7k> <a href="#产量与供给" class="toc-popup-link" data-mtoc="产量与供给" data-astro-cid-6t6zfk7k> 产量与供给 </a>  </li><li class="toc-popup-item" data-mtoc-section="影响供给的因素" data-astro-cid-6t6zfk7k> <a href="#影响供给的因素" class="toc-popup-link" data-mtoc="影响供给的因素" data-astro-cid-6t6zfk7k> 影响供给的因素 </a>  </li><li class="toc-popup-item" data-mtoc-section="供给规律及其表达" data-astro-cid-6t6zfk7k> <a href="#供给规律及其表达" class="toc-popup-link" data-mtoc="供给规律及其表达" data-astro-cid-6t6zfk7k> 供给规律及其表达 </a>  </li><li class="toc-popup-item" data-mtoc-section="供给规律的例外" data-astro-cid-6t6zfk7k> <a href="#供给规律的例外" class="toc-popup-link" data-mtoc="供给规律的例外" data-astro-cid-6t6zfk7k> 供给规律的例外 </a>  </li><li class="toc-popup-item" data-mtoc-section="其他因素对供给的影响" data-astro-cid-6t6zfk7k> <a href="#其他因素对供给的影响" class="toc-popup-link" data-mtoc="其他因素对供给的影响" data-astro-cid-6t6zfk7k> 其他因素对供给的影响 </a>  </li><li class="toc-popup-item" data-mtoc-section="市场均衡及其形成" data-astro-cid-6t6zfk7k> <a href="#市场均衡及其形成" class="toc-popup-link" data-mtoc="市场均衡及其形成" data-astro-cid-6t6zfk7k> 市场均衡及其形成 </a>  </li><li class="toc-popup-item" data-mtoc-section="市场均衡的变动" data-astro-cid-6t6zfk7k> <a href="#市场均衡的变动" class="toc-popup-link" data-mtoc="市场均衡的变动" data-astro-cid-6t6zfk7k> 市场均衡的变动 </a>  </li><li class="toc-popup-item" data-mtoc-section="支持价格与限制价格" data-astro-cid-6t6zfk7k> <a href="#支持价格与限制价格" class="toc-popup-link" data-mtoc="支持价格与限制价格" data-astro-cid-6t6zfk7k> 支持价格与限制价格 </a>  </li><li class="toc-popup-item" data-mtoc-section="政府税收" data-astro-cid-6t6zfk7k> <a href="#政府税收" class="toc-popup-link" data-mtoc="政府税收" data-astro-cid-6t6zfk7k> 政府税收 </a>  </li><li class="toc-popup-item" data-mtoc-section="政府补贴" data-astro-cid-6t6zfk7k> <a href="#政府补贴" class="toc-popup-link" data-mtoc="政府补贴" data-astro-cid-6t6zfk7k> 政府补贴 </a>  </li><li class="toc-popup-item" data-mtoc-section="需求价格弹性及其计算1" data-astro-cid-6t6zfk7k> <a href="#需求价格弹性及其计算1" class="toc-popup-link" data-mtoc="需求价格弹性及其计算1" data-astro-cid-6t6zfk7k> 需求价格弹性及其计算（1） </a>  </li><li class="toc-popup-item" data-mtoc-section="需求价格弹性及其计算2" data-astro-cid-6t6zfk7k> <a href="#需求价格弹性及其计算2" class="toc-popup-link" data-mtoc="需求价格弹性及其计算2" data-astro-cid-6t6zfk7k> 需求价格弹性及其计算（2） </a>  </li><li class="toc-popup-item" data-mtoc-section="需求价格弹性的类型" data-astro-cid-6t6zfk7k> <a href="#需求价格弹性的类型" class="toc-popup-link" data-mtoc="需求价格弹性的类型" data-astro-cid-6t6zfk7k> 需求价格弹性的类型 </a>  </li><li class="toc-popup-item" data-mtoc-section="影响需求价格弹性的因素" data-astro-cid-6t6zfk7k> <a href="#影响需求价格弹性的因素" class="toc-popup-link" data-mtoc="影响需求价格弹性的因素" data-astro-cid-6t6zfk7k> 影响需求价格弹性的因素 </a>  </li><li class="toc-popup-item" data-mtoc-section="需求价格弹性的用途" data-astro-cid-6t6zfk7k> <a href="#需求价格弹性的用途" class="toc-popup-link" data-mtoc="需求价格弹性的用途" data-astro-cid-6t6zfk7k> 需求价格弹性的用途 </a>  </li><li class="toc-popup-item" data-mtoc-section="需求收入弹性" data-astro-cid-6t6zfk7k> <a href="#需求收入弹性" class="toc-popup-link" data-mtoc="需求收入弹性" data-astro-cid-6t6zfk7k> 需求收入弹性 </a>  </li><li class="toc-popup-item" data-mtoc-section="需求交叉弹性" data-astro-cid-6t6zfk7k> <a href="#需求交叉弹性" class="toc-popup-link" data-mtoc="需求交叉弹性" data-astro-cid-6t6zfk7k> 需求交叉弹性 </a>  </li><li class="toc-popup-item" data-mtoc-section="供给弹性及其类型" data-astro-cid-6t6zfk7k> <a href="#供给弹性及其类型" class="toc-popup-link" data-mtoc="供给弹性及其类型" data-astro-cid-6t6zfk7k> 供给弹性及其类型 </a>  </li><li class="toc-popup-item" data-mtoc-section="影响供给弹性大小的因素" data-astro-cid-6t6zfk7k> <a href="#影响供给弹性大小的因素" class="toc-popup-link" data-mtoc="影响供给弹性大小的因素" data-astro-cid-6t6zfk7k> 影响供给弹性大小的因素 </a>  </li><li class="toc-popup-item" data-mtoc-section="欲望与效用" data-astro-cid-6t6zfk7k> <a href="#欲望与效用" class="toc-popup-link" data-mtoc="欲望与效用" data-astro-cid-6t6zfk7k> 欲望与效用 </a>  </li><li class="toc-popup-item" data-mtoc-section="边际效用递减规律" data-astro-cid-6t6zfk7k> <a href="#边际效用递减规律" class="toc-popup-link" data-mtoc="边际效用递减规律" data-astro-cid-6t6zfk7k> 边际效用递减规律 </a>  </li><li class="toc-popup-item" data-mtoc-section="消费者最佳决策" data-astro-cid-6t6zfk7k> <a href="#消费者最佳决策" class="toc-popup-link" data-mtoc="消费者最佳决策" data-astro-cid-6t6zfk7k> 消费者最佳决策 </a>  </li><li class="toc-popup-item" data-mtoc-section="消费者剩余" data-astro-cid-6t6zfk7k> <a href="#消费者剩余" class="toc-popup-link" data-mtoc="消费者剩余" data-astro-cid-6t6zfk7k> 消费者剩余 </a>  </li><li class="toc-popup-item" data-mtoc-section="消费者偏好假设与无差异曲线" data-astro-cid-6t6zfk7k> <a href="#消费者偏好假设与无差异曲线" class="toc-popup-link" data-mtoc="消费者偏好假设与无差异曲线" data-astro-cid-6t6zfk7k> 消费者偏好假设与无差异曲线 </a>  </li><li class="toc-popup-item" data-mtoc-section="预算约束线" data-astro-cid-6t6zfk7k> <a href="#预算约束线" class="toc-popup-link" data-mtoc="预算约束线" data-astro-cid-6t6zfk7k> 预算约束线 </a>  </li><li class="toc-popup-item" data-mtoc-section="消费者均衡" data-astro-cid-6t6zfk7k> <a href="#消费者均衡" class="toc-popup-link" data-mtoc="消费者均衡" data-astro-cid-6t6zfk7k> 消费者均衡 </a>  </li><li class="toc-popup-item" data-mtoc-section="消费者均衡的变动" data-astro-cid-6t6zfk7k> <a href="#消费者均衡的变动" class="toc-popup-link" data-mtoc="消费者均衡的变动" data-astro-cid-6t6zfk7k> 消费者均衡的变动 </a>  </li><li class="toc-popup-item" data-mtoc-section="替代效应与收入效应" data-astro-cid-6t6zfk7k> <a href="#替代效应与收入效应" class="toc-popup-link" data-mtoc="替代效应与收入效应" data-astro-cid-6t6zfk7k> 替代效应与收入效应 </a>  </li><li class="toc-popup-item" data-mtoc-section="生产与生产函数" data-astro-cid-6t6zfk7k> <a href="#生产与生产函数" class="toc-popup-link" data-mtoc="生产与生产函数" data-astro-cid-6t6zfk7k> 生产与生产函数 </a>  </li><li class="toc-popup-item" data-mtoc-section="短期生产分析" data-astro-cid-6t6zfk7k> <a href="#短期生产分析" class="toc-popup-link" data-mtoc="短期生产分析" data-astro-cid-6t6zfk7k> 短期生产分析 </a>  </li><li class="toc-popup-item" data-mtoc-section="生产的合理阶段" data-astro-cid-6t6zfk7k> <a href="#生产的合理阶段" class="toc-popup-link" data-mtoc="生产的合理阶段" data-astro-cid-6t6zfk7k> 生产的合理阶段 </a>  </li><li class="toc-popup-item" data-mtoc-section="生产决策的工具" data-astro-cid-6t6zfk7k> <a href="#生产决策的工具" class="toc-popup-link" data-mtoc="生产决策的工具" data-astro-cid-6t6zfk7k> 生产决策的工具 </a>  </li><li class="toc-popup-item" data-mtoc-section="生产的合理区域1" data-astro-cid-6t6zfk7k> <a href="#生产的合理区域1" class="toc-popup-link" data-mtoc="生产的合理区域1" data-astro-cid-6t6zfk7k> 生产的合理区域（1） </a>  </li><li class="toc-popup-item" data-mtoc-section="生产的合理区域2" data-astro-cid-6t6zfk7k> <a href="#生产的合理区域2" class="toc-popup-link" data-mtoc="生产的合理区域2" data-astro-cid-6t6zfk7k> 生产的合理区域（2） </a>  </li><li class="toc-popup-item" data-mtoc-section="生产者的最佳决策" data-astro-cid-6t6zfk7k> <a href="#生产者的最佳决策" class="toc-popup-link" data-mtoc="生产者的最佳决策" data-astro-cid-6t6zfk7k> 生产者的最佳决策 </a>  </li><li class="toc-popup-item" data-mtoc-section="生产扩展线" data-astro-cid-6t6zfk7k> <a href="#生产扩展线" class="toc-popup-link" data-mtoc="生产扩展线" data-astro-cid-6t6zfk7k> 生产扩展线 </a>  </li><li class="toc-popup-item" data-mtoc-section="规模经济" data-astro-cid-6t6zfk7k> <a href="#规模经济" class="toc-popup-link" data-mtoc="规模经济" data-astro-cid-6t6zfk7k> 规模经济 </a>  </li><li class="toc-popup-item" data-mtoc-section="多角度的成本" data-astro-cid-6t6zfk7k> <a href="#多角度的成本" class="toc-popup-link" data-mtoc="多角度的成本" data-astro-cid-6t6zfk7k> 多角度的成本 </a>  </li><li class="toc-popup-item" data-mtoc-section="短期成本分析" data-astro-cid-6t6zfk7k> <a href="#短期成本分析" class="toc-popup-link" data-mtoc="短期成本分析" data-astro-cid-6t6zfk7k> 短期成本分析 </a>  </li><li class="toc-popup-item" data-mtoc-section="边际成本分析" data-astro-cid-6t6zfk7k> <a href="#边际成本分析" class="toc-popup-link" data-mtoc="边际成本分析" data-astro-cid-6t6zfk7k> 边际成本分析 </a>  </li><li class="toc-popup-item" data-mtoc-section="长期总成本分析" data-astro-cid-6t6zfk7k> <a href="#长期总成本分析" class="toc-popup-link" data-mtoc="长期总成本分析" data-astro-cid-6t6zfk7k> 长期总成本分析 </a>  </li><li class="toc-popup-item" data-mtoc-section="长期平均成本与长期边际成本1" data-astro-cid-6t6zfk7k> <a href="#长期平均成本与长期边际成本1" class="toc-popup-link" data-mtoc="长期平均成本与长期边际成本1" data-astro-cid-6t6zfk7k> 长期平均成本与长期边际成本（1） </a>  </li><li class="toc-popup-item" data-mtoc-section="长期平均成本与长期边际成本2" data-astro-cid-6t6zfk7k> <a href="#长期平均成本与长期边际成本2" class="toc-popup-link" data-mtoc="长期平均成本与长期边际成本2" data-astro-cid-6t6zfk7k> 长期平均成本与长期边际成本（2） </a>  </li><li class="toc-popup-item" data-mtoc-section="收益与利润分析1" data-astro-cid-6t6zfk7k> <a href="#收益与利润分析1" class="toc-popup-link" data-mtoc="收益与利润分析1" data-astro-cid-6t6zfk7k> 收益与利润分析（1） </a>  </li><li class="toc-popup-item" data-mtoc-section="收益与利润分析2" data-astro-cid-6t6zfk7k> <a href="#收益与利润分析2" class="toc-popup-link" data-mtoc="收益与利润分析2" data-astro-cid-6t6zfk7k> 收益与利润分析（2） </a>  </li><li class="toc-popup-item" data-mtoc-section="完全竞争的四个假设条件" data-astro-cid-6t6zfk7k> <a href="#完全竞争的四个假设条件" class="toc-popup-link" data-mtoc="完全竞争的四个假设条件" data-astro-cid-6t6zfk7k> 完全竞争的四个假设条件 </a>  </li><li class="toc-popup-item" data-mtoc-section="完全竞争厂商的短期均衡" data-astro-cid-6t6zfk7k> <a href="#完全竞争厂商的短期均衡" class="toc-popup-link" data-mtoc="完全竞争厂商的短期均衡" data-astro-cid-6t6zfk7k> 完全竞争厂商的短期均衡 </a>  </li><li class="toc-popup-item" data-mtoc-section="完全竞争的长期均衡" data-astro-cid-6t6zfk7k> <a href="#完全竞争的长期均衡" class="toc-popup-link" data-mtoc="完全竞争的长期均衡" data-astro-cid-6t6zfk7k> 完全竞争的长期均衡 </a>  </li><li class="toc-popup-item" data-mtoc-section="完全垄断市场的条件" data-astro-cid-6t6zfk7k> <a href="#完全垄断市场的条件" class="toc-popup-link" data-mtoc="完全垄断市场的条件" data-astro-cid-6t6zfk7k> 完全垄断市场的条件 </a>  </li><li class="toc-popup-item" data-mtoc-section="完全垄断厂商的短期决策" data-astro-cid-6t6zfk7k> <a href="#完全垄断厂商的短期决策" class="toc-popup-link" data-mtoc="完全垄断厂商的短期决策" data-astro-cid-6t6zfk7k> 完全垄断厂商的短期决策 </a>  </li><li class="toc-popup-item" data-mtoc-section="完全垄断厂商的长期决策" data-astro-cid-6t6zfk7k> <a href="#完全垄断厂商的长期决策" class="toc-popup-link" data-mtoc="完全垄断厂商的长期决策" data-astro-cid-6t6zfk7k> 完全垄断厂商的长期决策 </a>  </li><li class="toc-popup-item" data-mtoc-section="完全垄断厂商的价格歧视" data-astro-cid-6t6zfk7k> <a href="#完全垄断厂商的价格歧视" class="toc-popup-link" data-mtoc="完全垄断厂商的价格歧视" data-astro-cid-6t6zfk7k> 完全垄断厂商的价格歧视 </a>  </li><li class="toc-popup-item" data-mtoc-section="垄断竞争市场的条件" data-astro-cid-6t6zfk7k> <a href="#垄断竞争市场的条件" class="toc-popup-link" data-mtoc="垄断竞争市场的条件" data-astro-cid-6t6zfk7k> 垄断竞争市场的条件 </a>  </li><li class="toc-popup-item" data-mtoc-section="垄断竞争厂商的短期决策" data-astro-cid-6t6zfk7k> <a href="#垄断竞争厂商的短期决策" class="toc-popup-link" data-mtoc="垄断竞争厂商的短期决策" data-astro-cid-6t6zfk7k> 垄断竞争厂商的短期决策 </a>  </li><li class="toc-popup-item" data-mtoc-section="垄断竞争厂商的长期决策" data-astro-cid-6t6zfk7k> <a href="#垄断竞争厂商的长期决策" class="toc-popup-link" data-mtoc="垄断竞争厂商的长期决策" data-astro-cid-6t6zfk7k> 垄断竞争厂商的长期决策 </a>  </li><li class="toc-popup-item" data-mtoc-section="古诺模型" data-astro-cid-6t6zfk7k> <a href="#古诺模型" class="toc-popup-link" data-mtoc="古诺模型" data-astro-cid-6t6zfk7k> 古诺模型 </a>  </li><li class="toc-popup-item" data-mtoc-section="斯威齐模型" data-astro-cid-6t6zfk7k> <a href="#斯威齐模型" class="toc-popup-link" data-mtoc="斯威齐模型" data-astro-cid-6t6zfk7k> 斯威齐模型 </a>  </li><li class="toc-popup-item" data-mtoc-section="价格领袖制" data-astro-cid-6t6zfk7k> <a href="#价格领袖制" class="toc-popup-link" data-mtoc="价格领袖制" data-astro-cid-6t6zfk7k> 价格领袖制 </a>  </li><li class="toc-popup-item" data-mtoc-section="囚徒困境" data-astro-cid-6t6zfk7k> <a href="#囚徒困境" class="toc-popup-link" data-mtoc="囚徒困境" data-astro-cid-6t6zfk7k> 囚徒困境 </a>  </li><li class="toc-popup-item" data-mtoc-section="智猪博弈" data-astro-cid-6t6zfk7k> <a href="#智猪博弈" class="toc-popup-link" data-mtoc="智猪博弈" data-astro-cid-6t6zfk7k> 智猪博弈 </a>  </li><li class="toc-popup-item" data-mtoc-section="生产要素市场认知" data-astro-cid-6t6zfk7k> <a href="#生产要素市场认知" class="toc-popup-link" data-mtoc="生产要素市场认知" data-astro-cid-6t6zfk7k> 生产要素市场认知 </a>  </li><li class="toc-popup-item" data-mtoc-section="工资的决定" data-astro-cid-6t6zfk7k> <a href="#工资的决定" class="toc-popup-link" data-mtoc="工资的决定" data-astro-cid-6t6zfk7k> 工资的决定 </a>  </li><li class="toc-popup-item" data-mtoc-section="利息的决定与变动" data-astro-cid-6t6zfk7k> <a href="#利息的决定与变动" class="toc-popup-link" data-mtoc="利息的决定与变动" data-astro-cid-6t6zfk7k> 利息的决定与变动 </a>  </li><li class="toc-popup-item" data-mtoc-section="地租的决定" data-astro-cid-6t6zfk7k> <a href="#地租的决定" class="toc-popup-link" data-mtoc="地租的决定" data-astro-cid-6t6zfk7k> 地租的决定 </a>  </li><li class="toc-popup-item" data-mtoc-section="社会福利及其衡量" data-astro-cid-6t6zfk7k> <a href="#社会福利及其衡量" class="toc-popup-link" data-mtoc="社会福利及其衡量" data-astro-cid-6t6zfk7k> 社会福利及其衡量 </a>  </li><li class="toc-popup-item" data-mtoc-section="收入分配公平程度的衡量" data-astro-cid-6t6zfk7k> <a href="#收入分配公平程度的衡量" class="toc-popup-link" data-mtoc="收入分配公平程度的衡量" data-astro-cid-6t6zfk7k> 收入分配公平程度的衡量 </a>  </li><li class="toc-popup-item" data-mtoc-section="外部性及其影响" data-astro-cid-6t6zfk7k> <a href="#外部性及其影响" class="toc-popup-link" data-mtoc="外部性及其影响" data-astro-cid-6t6zfk7k> 外部性及其影响 </a>  </li><li class="toc-popup-item" data-mtoc-section="信息不完全性" data-astro-cid-6t6zfk7k> <a href="#信息不完全性" class="toc-popup-link" data-mtoc="信息不完全性" data-astro-cid-6t6zfk7k> 信息不完全性 </a>  </li><li class="toc-popup-item" data-mtoc-section="结语" data-astro-cid-6t6zfk7k> <a href="#结语" class="toc-popup-link" data-mtoc="结语" data-astro-cid-6t6zfk7k> 结语 </a>  </li> </ul> </div> </div> <!-- Mobile: bottom sheet overlay --> <div class="toc-overlay" id="toc-overlay" data-astro-cid-6t6zfk7k></div> <div class="toc-sheet" id="toc-sheet" data-astro-cid-6t6zfk7k> <div class="toc-sheet-header" data-astro-cid-6t6zfk7k> <span class="toc-sheet-title" data-astro-cid-6t6zfk7k>目录</span> <div class="toc-sheet-actions" data-astro-cid-6t6zfk7k> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> <button class="toc-sheet-close" id="toc-sheet-close" aria-label="关闭" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M18 6L6 18M6 6l12 12" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> </div> <div class="toc-sheet-body" data-astro-cid-6t6zfk7k> <ul class="toc-sheet-list" data-astro-cid-6t6zfk7k> <li class="toc-sheet-item" data-msheet-section="经济与经济学" data-astro-cid-6t6zfk7k> <a href="#经济与经济学" class="toc-sheet-link" data-msheet="经济与经济学" data-astro-cid-6t6zfk7k> 经济与经济学 </a>  </li><li class="toc-sheet-item" data-msheet-section="经济理论认知" data-astro-cid-6t6zfk7k> <a href="#经济理论认知" class="toc-sheet-link" data-msheet="经济理论认知" data-astro-cid-6t6zfk7k> 经济理论认知 </a>  </li><li class="toc-sheet-item" data-msheet-section="微观经济学的研究对象" data-astro-cid-6t6zfk7k> <a href="#微观经济学的研究对象" class="toc-sheet-link" data-msheet="微观经济学的研究对象" data-astro-cid-6t6zfk7k> 微观经济学的研究对象 </a>  </li><li class="toc-sheet-item" data-msheet-section="怎样才能学好经济学" data-astro-cid-6t6zfk7k> <a href="#怎样才能学好经济学" class="toc-sheet-link" data-msheet="怎样才能学好经济学" data-astro-cid-6t6zfk7k> 怎样才能学好经济学 </a>  </li><li class="toc-sheet-item" data-msheet-section="欲望与需求" data-astro-cid-6t6zfk7k> <a href="#欲望与需求" class="toc-sheet-link" data-msheet="欲望与需求" data-astro-cid-6t6zfk7k> 欲望与需求 </a>  </li><li class="toc-sheet-item" data-msheet-section="影响需求的因素" data-astro-cid-6t6zfk7k> <a href="#影响需求的因素" class="toc-sheet-link" data-msheet="影响需求的因素" data-astro-cid-6t6zfk7k> 影响需求的因素 </a>  </li><li class="toc-sheet-item" data-msheet-section="需求规律及其表达" data-astro-cid-6t6zfk7k> <a href="#需求规律及其表达" class="toc-sheet-link" data-msheet="需求规律及其表达" data-astro-cid-6t6zfk7k> 需求规律及其表达 </a>  </li><li class="toc-sheet-item" data-msheet-section="需求规律及其表达2" data-astro-cid-6t6zfk7k> <a href="#需求规律及其表达2" class="toc-sheet-link" data-msheet="需求规律及其表达2" data-astro-cid-6t6zfk7k> 需求规律及其表达（2） </a>  </li><li class="toc-sheet-item" data-msheet-section="需求规律的例外" data-astro-cid-6t6zfk7k> <a href="#需求规律的例外" class="toc-sheet-link" data-msheet="需求规律的例外" data-astro-cid-6t6zfk7k> 需求规律的例外 </a>  </li><li class="toc-sheet-item" data-msheet-section="其他因素对需求的影响" data-astro-cid-6t6zfk7k> <a href="#其他因素对需求的影响" class="toc-sheet-link" data-msheet="其他因素对需求的影响" data-astro-cid-6t6zfk7k> 其他因素对需求的影响 </a>  </li><li class="toc-sheet-item" data-msheet-section="产量与供给" data-astro-cid-6t6zfk7k> <a href="#产量与供给" class="toc-sheet-link" data-msheet="产量与供给" data-astro-cid-6t6zfk7k> 产量与供给 </a>  </li><li class="toc-sheet-item" data-msheet-section="影响供给的因素" data-astro-cid-6t6zfk7k> <a href="#影响供给的因素" class="toc-sheet-link" data-msheet="影响供给的因素" data-astro-cid-6t6zfk7k> 影响供给的因素 </a>  </li><li class="toc-sheet-item" data-msheet-section="供给规律及其表达" data-astro-cid-6t6zfk7k> <a href="#供给规律及其表达" class="toc-sheet-link" data-msheet="供给规律及其表达" data-astro-cid-6t6zfk7k> 供给规律及其表达 </a>  </li><li class="toc-sheet-item" data-msheet-section="供给规律的例外" data-astro-cid-6t6zfk7k> <a href="#供给规律的例外" class="toc-sheet-link" data-msheet="供给规律的例外" data-astro-cid-6t6zfk7k> 供给规律的例外 </a>  </li><li class="toc-sheet-item" data-msheet-section="其他因素对供给的影响" data-astro-cid-6t6zfk7k> <a href="#其他因素对供给的影响" class="toc-sheet-link" data-msheet="其他因素对供给的影响" data-astro-cid-6t6zfk7k> 其他因素对供给的影响 </a>  </li><li class="toc-sheet-item" data-msheet-section="市场均衡及其形成" data-astro-cid-6t6zfk7k> <a href="#市场均衡及其形成" class="toc-sheet-link" data-msheet="市场均衡及其形成" data-astro-cid-6t6zfk7k> 市场均衡及其形成 </a>  </li><li class="toc-sheet-item" data-msheet-section="市场均衡的变动" data-astro-cid-6t6zfk7k> <a href="#市场均衡的变动" class="toc-sheet-link" data-msheet="市场均衡的变动" data-astro-cid-6t6zfk7k> 市场均衡的变动 </a>  </li><li class="toc-sheet-item" data-msheet-section="支持价格与限制价格" data-astro-cid-6t6zfk7k> <a href="#支持价格与限制价格" class="toc-sheet-link" data-msheet="支持价格与限制价格" data-astro-cid-6t6zfk7k> 支持价格与限制价格 </a>  </li><li class="toc-sheet-item" data-msheet-section="政府税收" data-astro-cid-6t6zfk7k> <a href="#政府税收" class="toc-sheet-link" data-msheet="政府税收" data-astro-cid-6t6zfk7k> 政府税收 </a>  </li><li class="toc-sheet-item" data-msheet-section="政府补贴" data-astro-cid-6t6zfk7k> <a href="#政府补贴" class="toc-sheet-link" data-msheet="政府补贴" data-astro-cid-6t6zfk7k> 政府补贴 </a>  </li><li class="toc-sheet-item" data-msheet-section="需求价格弹性及其计算1" data-astro-cid-6t6zfk7k> <a href="#需求价格弹性及其计算1" class="toc-sheet-link" data-msheet="需求价格弹性及其计算1" data-astro-cid-6t6zfk7k> 需求价格弹性及其计算（1） </a>  </li><li class="toc-sheet-item" data-msheet-section="需求价格弹性及其计算2" data-astro-cid-6t6zfk7k> <a href="#需求价格弹性及其计算2" class="toc-sheet-link" data-msheet="需求价格弹性及其计算2" data-astro-cid-6t6zfk7k> 需求价格弹性及其计算（2） </a>  </li><li class="toc-sheet-item" data-msheet-section="需求价格弹性的类型" data-astro-cid-6t6zfk7k> <a href="#需求价格弹性的类型" class="toc-sheet-link" data-msheet="需求价格弹性的类型" data-astro-cid-6t6zfk7k> 需求价格弹性的类型 </a>  </li><li class="toc-sheet-item" data-msheet-section="影响需求价格弹性的因素" data-astro-cid-6t6zfk7k> <a href="#影响需求价格弹性的因素" class="toc-sheet-link" data-msheet="影响需求价格弹性的因素" data-astro-cid-6t6zfk7k> 影响需求价格弹性的因素 </a>  </li><li class="toc-sheet-item" data-msheet-section="需求价格弹性的用途" data-astro-cid-6t6zfk7k> <a href="#需求价格弹性的用途" class="toc-sheet-link" data-msheet="需求价格弹性的用途" data-astro-cid-6t6zfk7k> 需求价格弹性的用途 </a>  </li><li class="toc-sheet-item" data-msheet-section="需求收入弹性" data-astro-cid-6t6zfk7k> <a href="#需求收入弹性" class="toc-sheet-link" data-msheet="需求收入弹性" data-astro-cid-6t6zfk7k> 需求收入弹性 </a>  </li><li class="toc-sheet-item" data-msheet-section="需求交叉弹性" data-astro-cid-6t6zfk7k> <a href="#需求交叉弹性" class="toc-sheet-link" data-msheet="需求交叉弹性" data-astro-cid-6t6zfk7k> 需求交叉弹性 </a>  </li><li class="toc-sheet-item" data-msheet-section="供给弹性及其类型" data-astro-cid-6t6zfk7k> <a href="#供给弹性及其类型" class="toc-sheet-link" data-msheet="供给弹性及其类型" data-astro-cid-6t6zfk7k> 供给弹性及其类型 </a>  </li><li class="toc-sheet-item" data-msheet-section="影响供给弹性大小的因素" data-astro-cid-6t6zfk7k> <a href="#影响供给弹性大小的因素" class="toc-sheet-link" data-msheet="影响供给弹性大小的因素" data-astro-cid-6t6zfk7k> 影响供给弹性大小的因素 </a>  </li><li class="toc-sheet-item" data-msheet-section="欲望与效用" data-astro-cid-6t6zfk7k> <a href="#欲望与效用" class="toc-sheet-link" data-msheet="欲望与效用" data-astro-cid-6t6zfk7k> 欲望与效用 </a>  </li><li class="toc-sheet-item" data-msheet-section="边际效用递减规律" data-astro-cid-6t6zfk7k> <a href="#边际效用递减规律" class="toc-sheet-link" data-msheet="边际效用递减规律" data-astro-cid-6t6zfk7k> 边际效用递减规律 </a>  </li><li class="toc-sheet-item" data-msheet-section="消费者最佳决策" data-astro-cid-6t6zfk7k> <a href="#消费者最佳决策" class="toc-sheet-link" data-msheet="消费者最佳决策" data-astro-cid-6t6zfk7k> 消费者最佳决策 </a>  </li><li class="toc-sheet-item" data-msheet-section="消费者剩余" data-astro-cid-6t6zfk7k> <a href="#消费者剩余" class="toc-sheet-link" data-msheet="消费者剩余" data-astro-cid-6t6zfk7k> 消费者剩余 </a>  </li><li class="toc-sheet-item" data-msheet-section="消费者偏好假设与无差异曲线" data-astro-cid-6t6zfk7k> <a href="#消费者偏好假设与无差异曲线" class="toc-sheet-link" data-msheet="消费者偏好假设与无差异曲线" data-astro-cid-6t6zfk7k> 消费者偏好假设与无差异曲线 </a>  </li><li class="toc-sheet-item" data-msheet-section="预算约束线" data-astro-cid-6t6zfk7k> <a href="#预算约束线" class="toc-sheet-link" data-msheet="预算约束线" data-astro-cid-6t6zfk7k> 预算约束线 </a>  </li><li class="toc-sheet-item" data-msheet-section="消费者均衡" data-astro-cid-6t6zfk7k> <a href="#消费者均衡" class="toc-sheet-link" data-msheet="消费者均衡" data-astro-cid-6t6zfk7k> 消费者均衡 </a>  </li><li class="toc-sheet-item" data-msheet-section="消费者均衡的变动" data-astro-cid-6t6zfk7k> <a href="#消费者均衡的变动" class="toc-sheet-link" data-msheet="消费者均衡的变动" data-astro-cid-6t6zfk7k> 消费者均衡的变动 </a>  </li><li class="toc-sheet-item" data-msheet-section="替代效应与收入效应" data-astro-cid-6t6zfk7k> <a href="#替代效应与收入效应" class="toc-sheet-link" data-msheet="替代效应与收入效应" data-astro-cid-6t6zfk7k> 替代效应与收入效应 </a>  </li><li class="toc-sheet-item" data-msheet-section="生产与生产函数" data-astro-cid-6t6zfk7k> <a href="#生产与生产函数" class="toc-sheet-link" data-msheet="生产与生产函数" data-astro-cid-6t6zfk7k> 生产与生产函数 </a>  </li><li class="toc-sheet-item" data-msheet-section="短期生产分析" data-astro-cid-6t6zfk7k> <a href="#短期生产分析" class="toc-sheet-link" data-msheet="短期生产分析" data-astro-cid-6t6zfk7k> 短期生产分析 </a>  </li><li class="toc-sheet-item" data-msheet-section="生产的合理阶段" data-astro-cid-6t6zfk7k> <a href="#生产的合理阶段" class="toc-sheet-link" data-msheet="生产的合理阶段" data-astro-cid-6t6zfk7k> 生产的合理阶段 </a>  </li><li class="toc-sheet-item" data-msheet-section="生产决策的工具" data-astro-cid-6t6zfk7k> <a href="#生产决策的工具" class="toc-sheet-link" data-msheet="生产决策的工具" data-astro-cid-6t6zfk7k> 生产决策的工具 </a>  </li><li class="toc-sheet-item" data-msheet-section="生产的合理区域1" data-astro-cid-6t6zfk7k> <a href="#生产的合理区域1" class="toc-sheet-link" data-msheet="生产的合理区域1" data-astro-cid-6t6zfk7k> 生产的合理区域（1） </a>  </li><li class="toc-sheet-item" data-msheet-section="生产的合理区域2" data-astro-cid-6t6zfk7k> <a href="#生产的合理区域2" class="toc-sheet-link" data-msheet="生产的合理区域2" data-astro-cid-6t6zfk7k> 生产的合理区域（2） </a>  </li><li class="toc-sheet-item" data-msheet-section="生产者的最佳决策" data-astro-cid-6t6zfk7k> <a href="#生产者的最佳决策" class="toc-sheet-link" data-msheet="生产者的最佳决策" data-astro-cid-6t6zfk7k> 生产者的最佳决策 </a>  </li><li class="toc-sheet-item" data-msheet-section="生产扩展线" data-astro-cid-6t6zfk7k> <a href="#生产扩展线" class="toc-sheet-link" data-msheet="生产扩展线" data-astro-cid-6t6zfk7k> 生产扩展线 </a>  </li><li class="toc-sheet-item" data-msheet-section="规模经济" data-astro-cid-6t6zfk7k> <a href="#规模经济" class="toc-sheet-link" data-msheet="规模经济" data-astro-cid-6t6zfk7k> 规模经济 </a>  </li><li class="toc-sheet-item" data-msheet-section="多角度的成本" data-astro-cid-6t6zfk7k> <a href="#多角度的成本" class="toc-sheet-link" data-msheet="多角度的成本" data-astro-cid-6t6zfk7k> 多角度的成本 </a>  </li><li class="toc-sheet-item" data-msheet-section="短期成本分析" data-astro-cid-6t6zfk7k> <a href="#短期成本分析" class="toc-sheet-link" data-msheet="短期成本分析" data-astro-cid-6t6zfk7k> 短期成本分析 </a>  </li><li class="toc-sheet-item" data-msheet-section="边际成本分析" data-astro-cid-6t6zfk7k> <a href="#边际成本分析" class="toc-sheet-link" data-msheet="边际成本分析" data-astro-cid-6t6zfk7k> 边际成本分析 </a>  </li><li class="toc-sheet-item" data-msheet-section="长期总成本分析" data-astro-cid-6t6zfk7k> <a href="#长期总成本分析" class="toc-sheet-link" data-msheet="长期总成本分析" data-astro-cid-6t6zfk7k> 长期总成本分析 </a>  </li><li class="toc-sheet-item" data-msheet-section="长期平均成本与长期边际成本1" data-astro-cid-6t6zfk7k> <a href="#长期平均成本与长期边际成本1" class="toc-sheet-link" data-msheet="长期平均成本与长期边际成本1" data-astro-cid-6t6zfk7k> 长期平均成本与长期边际成本（1） </a>  </li><li class="toc-sheet-item" data-msheet-section="长期平均成本与长期边际成本2" data-astro-cid-6t6zfk7k> <a href="#长期平均成本与长期边际成本2" class="toc-sheet-link" data-msheet="长期平均成本与长期边际成本2" data-astro-cid-6t6zfk7k> 长期平均成本与长期边际成本（2） </a>  </li><li class="toc-sheet-item" data-msheet-section="收益与利润分析1" data-astro-cid-6t6zfk7k> <a href="#收益与利润分析1" class="toc-sheet-link" data-msheet="收益与利润分析1" data-astro-cid-6t6zfk7k> 收益与利润分析（1） </a>  </li><li class="toc-sheet-item" data-msheet-section="收益与利润分析2" data-astro-cid-6t6zfk7k> <a href="#收益与利润分析2" class="toc-sheet-link" data-msheet="收益与利润分析2" data-astro-cid-6t6zfk7k> 收益与利润分析（2） </a>  </li><li class="toc-sheet-item" data-msheet-section="完全竞争的四个假设条件" data-astro-cid-6t6zfk7k> <a href="#完全竞争的四个假设条件" class="toc-sheet-link" data-msheet="完全竞争的四个假设条件" data-astro-cid-6t6zfk7k> 完全竞争的四个假设条件 </a>  </li><li class="toc-sheet-item" data-msheet-section="完全竞争厂商的短期均衡" data-astro-cid-6t6zfk7k> <a href="#完全竞争厂商的短期均衡" class="toc-sheet-link" data-msheet="完全竞争厂商的短期均衡" data-astro-cid-6t6zfk7k> 完全竞争厂商的短期均衡 </a>  </li><li class="toc-sheet-item" data-msheet-section="完全竞争的长期均衡" data-astro-cid-6t6zfk7k> <a href="#完全竞争的长期均衡" class="toc-sheet-link" data-msheet="完全竞争的长期均衡" data-astro-cid-6t6zfk7k> 完全竞争的长期均衡 </a>  </li><li class="toc-sheet-item" data-msheet-section="完全垄断市场的条件" data-astro-cid-6t6zfk7k> <a href="#完全垄断市场的条件" class="toc-sheet-link" data-msheet="完全垄断市场的条件" data-astro-cid-6t6zfk7k> 完全垄断市场的条件 </a>  </li><li class="toc-sheet-item" data-msheet-section="完全垄断厂商的短期决策" data-astro-cid-6t6zfk7k> <a href="#完全垄断厂商的短期决策" class="toc-sheet-link" data-msheet="完全垄断厂商的短期决策" data-astro-cid-6t6zfk7k> 完全垄断厂商的短期决策 </a>  </li><li class="toc-sheet-item" data-msheet-section="完全垄断厂商的长期决策" data-astro-cid-6t6zfk7k> <a href="#完全垄断厂商的长期决策" class="toc-sheet-link" data-msheet="完全垄断厂商的长期决策" data-astro-cid-6t6zfk7k> 完全垄断厂商的长期决策 </a>  </li><li class="toc-sheet-item" data-msheet-section="完全垄断厂商的价格歧视" data-astro-cid-6t6zfk7k> <a href="#完全垄断厂商的价格歧视" class="toc-sheet-link" data-msheet="完全垄断厂商的价格歧视" data-astro-cid-6t6zfk7k> 完全垄断厂商的价格歧视 </a>  </li><li class="toc-sheet-item" data-msheet-section="垄断竞争市场的条件" data-astro-cid-6t6zfk7k> <a href="#垄断竞争市场的条件" class="toc-sheet-link" data-msheet="垄断竞争市场的条件" data-astro-cid-6t6zfk7k> 垄断竞争市场的条件 </a>  </li><li class="toc-sheet-item" data-msheet-section="垄断竞争厂商的短期决策" data-astro-cid-6t6zfk7k> <a href="#垄断竞争厂商的短期决策" class="toc-sheet-link" data-msheet="垄断竞争厂商的短期决策" data-astro-cid-6t6zfk7k> 垄断竞争厂商的短期决策 </a>  </li><li class="toc-sheet-item" data-msheet-section="垄断竞争厂商的长期决策" data-astro-cid-6t6zfk7k> <a href="#垄断竞争厂商的长期决策" class="toc-sheet-link" data-msheet="垄断竞争厂商的长期决策" data-astro-cid-6t6zfk7k> 垄断竞争厂商的长期决策 </a>  </li><li class="toc-sheet-item" data-msheet-section="古诺模型" data-astro-cid-6t6zfk7k> <a href="#古诺模型" class="toc-sheet-link" data-msheet="古诺模型" data-astro-cid-6t6zfk7k> 古诺模型 </a>  </li><li class="toc-sheet-item" data-msheet-section="斯威齐模型" data-astro-cid-6t6zfk7k> <a href="#斯威齐模型" class="toc-sheet-link" data-msheet="斯威齐模型" data-astro-cid-6t6zfk7k> 斯威齐模型 </a>  </li><li class="toc-sheet-item" data-msheet-section="价格领袖制" data-astro-cid-6t6zfk7k> <a href="#价格领袖制" class="toc-sheet-link" data-msheet="价格领袖制" data-astro-cid-6t6zfk7k> 价格领袖制 </a>  </li><li class="toc-sheet-item" data-msheet-section="囚徒困境" data-astro-cid-6t6zfk7k> <a href="#囚徒困境" class="toc-sheet-link" data-msheet="囚徒困境" data-astro-cid-6t6zfk7k> 囚徒困境 </a>  </li><li class="toc-sheet-item" data-msheet-section="智猪博弈" data-astro-cid-6t6zfk7k> <a href="#智猪博弈" class="toc-sheet-link" data-msheet="智猪博弈" data-astro-cid-6t6zfk7k> 智猪博弈 </a>  </li><li class="toc-sheet-item" data-msheet-section="生产要素市场认知" data-astro-cid-6t6zfk7k> <a href="#生产要素市场认知" class="toc-sheet-link" data-msheet="生产要素市场认知" data-astro-cid-6t6zfk7k> 生产要素市场认知 </a>  </li><li class="toc-sheet-item" data-msheet-section="工资的决定" data-astro-cid-6t6zfk7k> <a href="#工资的决定" class="toc-sheet-link" data-msheet="工资的决定" data-astro-cid-6t6zfk7k> 工资的决定 </a>  </li><li class="toc-sheet-item" data-msheet-section="利息的决定与变动" data-astro-cid-6t6zfk7k> <a href="#利息的决定与变动" class="toc-sheet-link" data-msheet="利息的决定与变动" data-astro-cid-6t6zfk7k> 利息的决定与变动 </a>  </li><li class="toc-sheet-item" data-msheet-section="地租的决定" data-astro-cid-6t6zfk7k> <a href="#地租的决定" class="toc-sheet-link" data-msheet="地租的决定" data-astro-cid-6t6zfk7k> 地租的决定 </a>  </li><li class="toc-sheet-item" data-msheet-section="社会福利及其衡量" data-astro-cid-6t6zfk7k> <a href="#社会福利及其衡量" class="toc-sheet-link" data-msheet="社会福利及其衡量" data-astro-cid-6t6zfk7k> 社会福利及其衡量 </a>  </li><li class="toc-sheet-item" data-msheet-section="收入分配公平程度的衡量" data-astro-cid-6t6zfk7k> <a href="#收入分配公平程度的衡量" class="toc-sheet-link" data-msheet="收入分配公平程度的衡量" data-astro-cid-6t6zfk7k> 收入分配公平程度的衡量 </a>  </li><li class="toc-sheet-item" data-msheet-section="外部性及其影响" data-astro-cid-6t6zfk7k> <a href="#外部性及其影响" class="toc-sheet-link" data-msheet="外部性及其影响" data-astro-cid-6t6zfk7k> 外部性及其影响 </a>  </li><li class="toc-sheet-item" data-msheet-section="信息不完全性" data-astro-cid-6t6zfk7k> <a href="#信息不完全性" class="toc-sheet-link" data-msheet="信息不完全性" data-astro-cid-6t6zfk7k> 信息不完全性 </a>  </li><li class="toc-sheet-item" data-msheet-section="结语" data-astro-cid-6t6zfk7k> <a href="#结语" class="toc-sheet-link" data-msheet="结语" data-astro-cid-6t6zfk7k> 结语 </a>  </li> </ul> </div> </div>  <script type="module">function F(){const f=document.getElementById("toc-fab"),o=document.getElementById("toc-popup"),a=document.getElementById("toc-overlay"),n=document.getElementById("toc-sheet"),q=document.getElementById("toc-sheet-close"),P=document.querySelectorAll(".toc-top-btn");if(!f||!o||!a||!n||!q)return;const p=()=>window.matchMedia("(max-width: 768px)").matches;let h=null,m=null,g=!1,E=!1;function A(){p()||(m&&clearTimeout(m),o.classList.add("open"),y(!0))}function B(){m&&clearTimeout(m),m=setTimeout(()=>{!g&&!E&&o.classList.remove("open")},200)}f.addEventListener("mouseenter",()=>{g=!0,A()}),f.addEventListener("mouseleave",()=>{g=!1,B()}),o.addEventListener("mouseenter",()=>{E=!0,A()}),o.addEventListener("mouseleave",()=>{E=!1,B()}),o.querySelectorAll(".toc-popup-link").forEach(t=>{t.addEventListener("click",()=>{setTimeout(()=>o.classList.remove("open"),150)})}),f.addEventListener("click",()=>{p()&&(a.style.display="block",n.style.display="flex",requestAnimationFrame(()=>{a.classList.add("open"),n.classList.add("open"),y(!0)}),document.body.style.overflow="hidden")});function v(){a.classList.remove("open"),n.classList.remove("open"),setTimeout(()=>{a.style.display="none",n.style.display="none"},300),document.body.style.overflow=""}q.addEventListener("click",v),a.addEventListener("click",v),n.querySelectorAll(".toc-sheet-link").forEach(t=>{t.addEventListener("click",()=>setTimeout(v,200))}),P.forEach(t=>{t.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"}),p()&&v()})});function I(t,b,s,i=!1){const l=t.querySelector(b),S=t.querySelector(s);if(!l||!S)return;const r=l.getBoundingClientRect(),e=S.getBoundingClientRect(),c=e.top>=r.top&&e.bottom<=r.bottom;if(!i&&c)return;const d=l.scrollTop+(e.top-r.top)-l.clientHeight/2+e.height/2;l.scrollTo({top:Math.max(0,d),behavior:i?"auto":"smooth"})}function k(t=!1){!p()&&o.classList.contains("open")&&I(o,".toc-popup-body",".toc-popup-link.active",t),p()&&n.classList.contains("open")&&I(n,".toc-sheet-body",".toc-sheet-link.active",t)}function y(t=!1){requestAnimationFrame(()=>k(t)),h&&clearTimeout(h),h=setTimeout(()=>{k(t),h=null},260)}let x="";function T(){const t=o.querySelectorAll(".toc-popup-link"),b=n.querySelectorAll(".toc-sheet-link"),s=[];t.forEach(e=>{const c=e.dataset.mtoc;if(c){const d=document.getElementById(c);d&&s.push({id:c,el:d})}});let i="";const l=window.scrollY+100;if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-4&&s.length>0)i=s[s.length-1].id;else for(let e=s.length-1;e>=0;e--)if(s[e].el.offsetTop<=l){i=s[e].id;break}t.forEach(e=>e.classList.toggle("active",e.dataset.mtoc===i)),b.forEach(e=>e.classList.toggle("active",e.dataset.msheet===i));function r(e,c,d,H){const R=(i?e.querySelector(`${c}.active`):null)?.closest(d)?.querySelector(H);e.querySelectorAll(H).forEach(u=>{u===R?(u.classList.add("expanded"),u.style.maxHeight=`${u.scrollHeight}px`):(u.classList.remove("expanded"),u.style.removeProperty("max-height"))})}r(o,".toc-popup-link",".toc-popup-item",".toc-popup-sub"),r(n,".toc-sheet-link",".toc-sheet-item",".toc-sheet-sub"),k(),i!==x&&(y(),x=i)}let w=!1;window.addEventListener("scroll",()=>{w||(requestAnimationFrame(()=>{T(),w=!1}),w=!0)});let L=null;window.addEventListener("resize",()=>{L&&clearTimeout(L),L=setTimeout(()=>{T(),y(!0),L=null},100)}),T()}document.addEventListener("astro:page-load",F);F();</script><footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner" data-astro-cid-sz7xmlte></div> </footer>  <script type="module" src="/_astro/CodeBlockEnhance.astro_astro_type_script_index_0_lang.Di89G-ws.js"></script> <div id="image-lightbox" class="lightbox-overlay" data-astro-cid-fbflauxb> <div class="lightbox-content" data-astro-cid-fbflauxb> <img id="lightbox-img" src="" alt="" data-astro-cid-fbflauxb> </div> </div>  <script type="module">function c(){const t=document.getElementById("image-lightbox"),n=document.getElementById("lightbox-img");if(!t||!n)return;function s(e){n.src=e,t.classList.add("open"),document.body.style.overflow="hidden"}function i(){t.classList.remove("open"),document.body.style.overflow=""}t.addEventListener("click",e=>{e.target===t&&i()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t.classList.contains("open")&&i()});function d(){document.querySelectorAll(".article-body img").forEach(e=>{const o=e;o.dataset.lightbox||(o.dataset.lightbox="true",o.style.cursor="zoom-in",o.addEventListener("click",()=>{s(o.src)}))})}document.addEventListener("astro:page-load",d),d()}document.addEventListener("astro:page-load",c);c();</script> <script type="module" src="/_astro/EncryptedBlock.astro_astro_type_script_index_0_lang.DuPogRv7.js"></script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"><script type="module">
+  import renderMathInElement from 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs';
+
+  function renderMath() {
+    const articleBody = document.querySelector('.article-body');
+    if (!articleBody) return;
+
+    renderMathInElement(articleBody, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      throwOnError: false,
+    });
+  }
+
+  document.addEventListener('astro:page-load', renderMath);
+  renderMath();
+</script> </div> </div> </body></html>  

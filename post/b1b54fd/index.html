@@ -1,0 +1,465 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>机器学习笔记 · dropsong&#39;s</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><style>.article-body{font-size:16px;line-height:1.85;color:var(--text);max-width:820px;margin:0 auto}.article-body h1,.article-body h2,.article-body h3,.article-body h4,.article-body h5,.article-body h6{margin-top:1.8em;margin-bottom:.6em;font-weight:600;line-height:1.35;color:var(--text)}.article-body h1{font-size:1.75rem}.article-body h2{font-size:1.45rem}.article-body h3{font-size:1.2rem}.article-body h4{font-size:1.05rem}.article-body p{margin-bottom:1.2em}.article-body p,.article-body li{white-space:pre-line}.article-body p,.article-body li,.article-body blockquote,.article-body td,.article-body th{word-break:normal;overflow-wrap:break-word}.article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.article-body a:hover{color:var(--accent-hover)}.article-body blockquote{margin:1.2em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:#5b9e8c1a;border-radius:0 var(--radius) var(--radius) 0;color:var(--muted)}.article-body blockquote>:last-child{margin-bottom:0}.article-body ul,.article-body ol{margin-bottom:1.2em;padding-left:1.5em}.article-body li>ul,.article-body li>ol{margin-bottom:0;white-space:normal}.article-body li:has(>ul,>ol){white-space:normal}.article-body li{margin-bottom:.25em}.article-body table{width:auto;max-width:100%;border-collapse:collapse;margin:1.5em auto;font-size:.925rem;overflow-x:auto}.article-body table th,.article-body table td{padding:.6em .85em;border:1px solid var(--border);text-align:left}.article-body table th{font-weight:600}.article-body hr{border:none;border-top:1px solid var(--border);margin:2em 0}.article-body img{border-radius:var(--radius);cursor:zoom-in}.article-body .article-figure{margin:1.5em 0;text-align:center}.article-body .article-figure img{display:block;margin:0 auto}.article-body .article-figure-caption{margin-top:.55em;color:var(--muted);font-size:.875rem;line-height:1.5}.article-body iframe{max-width:100%;border-radius:var(--radius)}.article-body .gdrive-pdf-wrapper{margin:1.5em 0;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius);background:#fff}.article-body .gdrive-pdf-header{display:flex;align-items:center;justify-content:space-between;min-height:2.75rem;padding:.5rem .875rem;border-bottom:1px solid var(--border);background:var(--bg)}.article-body .gdrive-pdf-label{color:var(--muted);font-size:.85rem}.article-body .gdrive-pdf-link{color:var(--accent);font-size:.8rem;text-decoration:none}.article-body .gdrive-pdf-link:hover{text-decoration:underline}.article-body .gdrive-pdf-frame{display:block;width:100%;height:min(720px,80vh);border:0;border-radius:0;background:#fff}.article-body :not(pre)>code{background:#fffaf0a6;border:1px solid rgba(180,155,130,.2);border-radius:4px;padding:.1em .4em;font-size:.875em}.article-body pre,.article-body pre.astro-code,.article-body .astro-code{background:transparent!important;background-color:transparent!important;border:1.5px dashed rgba(224,143,88,.45);border-radius:14px}.article-body pre.astro-code code,.article-body .astro-code code{background:transparent!important;background-color:transparent!important}.article-body pre,.article-body table{-webkit-overflow-scrolling:touch}.article-body .katex-display{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;margin:1.4em 0;padding:.25rem 0 .45rem;text-align:center;scrollbar-width:thin;scrollbar-color:rgba(224,143,88,.35) transparent;word-break:normal;overflow-wrap:normal}.article-body .katex-display>.katex{display:inline-block;width:max-content;max-width:none}.article-body .katex{white-space:nowrap;word-break:normal;overflow-wrap:normal}.article-body .katex-display::-webkit-scrollbar{height:4px}.article-body .katex-display::-webkit-scrollbar-thumb{background:transparent}.article-body .katex-display:hover::-webkit-scrollbar-thumb{background:var(--border)}
+</style>
+<link rel="stylesheet" href="/_astro/about.CS0PymYq.css">
+<style>.site-footer[data-astro-cid-sz7xmlte]{padding:2rem 1.5rem;text-align:center}.footer-inner[data-astro-cid-sz7xmlte]{max-width:var(--max-width-page);margin:0 auto;display:flex;justify-content:center;align-items:center;gap:1rem;font-size:.85rem;color:var(--muted)}.footer-muted[data-astro-cid-sz7xmlte]{color:var(--muted)}
+</style>
+<link rel="stylesheet" href="/_astro/_abbrlink_.BDkgFBJR.css">
+<style>.gitalk-container[data-astro-cid-ajg7agi2]{margin-top:2rem}.gt-container{color:var(--text)!important;font-family:inherit!important}.gt-container a{color:var(--accent)!important}.gt-container a:hover{color:var(--accent-hover, var(--accent))!important}.gt-container .gt-header-textarea{background:transparent!important;border:1.5px dashed rgba(224,143,88,.45)!important;border-radius:14px!important;color:var(--text)!important;box-shadow:none!important;outline:none!important;font-family:inherit!important;line-height:1.7!important}.gt-container .gt-header-textarea:focus{border-color:#e08f58ad!important;box-shadow:0 0 0 3px #e08f5814!important}.gt-container .gt-header-preview{background:transparent!important;border:1.5px dashed rgba(224,143,88,.35)!important;border-radius:14px!important;color:var(--text)!important}.gt-container .gt-comment-content{background:transparent!important;border-radius:12px!important}.gt-container .gt-btn-login,.gt-container .gt-btn-public{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important}.gt-container .gt-btn-login:hover,.gt-container .gt-btn-public:hover{background:var(--accent-hover)!important;border-color:var(--accent-hover)!important}.gt-container .gt-btn-preview{background:transparent!important;border:1px solid var(--accent)!important;color:var(--accent)!important}.gt-container .gt-btn-preview:hover{background:#5b9e8c1a!important}
+</style></head> <body data-page="post" data-astro-cid-37fxchfa> <div class="site-page" data-astro-cid-37fxchfa> <!-- Background decoration layer (cream paper style) --> <div class="site-background" aria-hidden="true" data-astro-cid-37fxchfa> <div class="bg-pattern" data-astro-cid-37fxchfa></div> <div class="bg-top-border" data-astro-cid-37fxchfa></div> <div class="bg-bottom-border" data-astro-cid-37fxchfa></div> </div> <!-- Content shell --> <div class="site-shell" data-astro-cid-37fxchfa>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="site-name" data-astro-cid-3ef6ksr2>dropsong's</a> <!-- Desktop: hover dropdown nav (button → panel drops below) --> <nav class="desktop-hover-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <div class="desktop-hover-nav-inner" data-astro-cid-3ef6ksr2> <button class="desktop-nav-trigger" type="button" aria-label="Open navigation menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> <div class="desktop-nav-dropdown" data-astro-cid-3ef6ksr2> <div class="desktop-nav-dropdown-body" data-astro-cid-3ef6ksr2> <a href="/archive/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Search</a> </div> </div> </div> </nav> <!-- Mobile: click-toggle nav (keep exactly as before) --> <nav class="header-nav" id="header-nav" data-astro-cid-3ef6ksr2> <a href="/archive/" class="nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="nav-link" data-astro-cid-3ef6ksr2>Search</a> </nav> <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> </header>  <script type="module">const e=document.getElementById("menu-toggle"),t=document.getElementById("header-nav");e&&t&&e.addEventListener("click",()=>{t.classList.toggle("open")});</script> <main class="post-page" data-astro-cid-gjtny2mx> <article class="post-article" data-astro-cid-gjtny2mx> <header class="post-header" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <h1 class="article-title" data-astro-cid-bjlpfrhy>机器学习笔记</h1> <div class="article-meta" data-astro-cid-bjlpfrhy> <time class="article-date" data-astro-cid-bjlpfrhy>2025-04-01</time>  <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-category" data-astro-cid-bjlpfrhy>算法</span>   <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-tags" data-astro-cid-bjlpfrhy> #机器学习 #knn #特征工程 #网格搜索 #朴素贝叶斯 #决策树 #随机森林 #线性回归 #岭回归 #逻辑回归 #kmeans #集成学习 #AdaBoost </span>   </div> </div> </header> <div class="post-body" id="post-body" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <div class="article-body" data-astro-cid-bjlpfrhy><p>一些基础内容参见 <a href="https://dropsong.github.io/posts/6f3f8819.html">人工智能导论</a> 。</p>
+<h1 id="绪论"><a class="heading-anchor" href="#绪论">绪论</a></h1>
+<p>一些机器学习的框架：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/01/GnTBkKsubwrqeht.png" alt="103-1.png" loading="lazy"><figcaption class="article-figure-caption">103-1.png</figcaption></figure>
+<p>可以在 github 上搜索它们。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>框架</th><th>机构</th><th>支持语言</th><th>Stars</th><th>Forks</th><th>Contributors</th></tr></thead><tbody><tr><td>TensorFlow</td><td>Google</td><td>Python/C++/Go/…</td><td>41628</td><td>19339</td><td>568</td></tr><tr><td>Caffe</td><td>BVLC</td><td>C++/Python</td><td>14956</td><td>9282</td><td>221</td></tr><tr><td>Keras</td><td>fchollet</td><td>Python</td><td>10727</td><td>3575</td><td>322</td></tr><tr><td>CNTK</td><td>Microsoft</td><td>C++</td><td>9063</td><td>2144</td><td>100</td></tr><tr><td>MXNet</td><td>DMLC</td><td>Python/C++/R/…</td><td>7393</td><td>2745</td><td>241</td></tr><tr><td>Torch7</td><td>Facebook</td><td>Lua</td><td>6111</td><td>1784</td><td>113</td></tr><tr><td>Theano</td><td>U. Montreal</td><td>Python</td><td>5352</td><td>1868</td><td>271</td></tr><tr><td>Deeplearning4J</td><td>DeepLearning4J</td><td>Java/Scala</td><td>5053</td><td>1927</td><td>101</td></tr><tr><td>Leaf</td><td>AutumnAI</td><td>Rust</td><td>4562</td><td>216</td><td>14</td></tr><tr><td>Lasagne</td><td>Lasagne</td><td>Python</td><td>2749</td><td>761</td><td>55</td></tr><tr><td>Neon</td><td>NervanaSystems</td><td>Python</td><td>2633</td><td>573</td><td>52</td></tr></tbody></table>
+<p>上面表格内容可能有些过时。</p>
+<p>常见的流程：</p>
+<ol>
+<li>预处理</li>
+<li>特征工程</li>
+<li>机器学习（选择合适的算法、调参）</li>
+<li>评估</li>
+<li>若评估通过，则上线</li>
+</ol>
+<p><strong>数据来源</strong>：</p>
+<ul>
+<li>企业日益积累的大量数据（互联网公司更为显著）</li>
+<li>政府掌握的各种数据</li>
+<li>科研机构的实验数据</li>
+<li>…</li>
+</ul>
+<p>数据类型：</p>
+<ul>
+<li>离散型数据</li>
+<li>连续型数据</li>
+</ul>
+<p><strong>可用数据集</strong>：</p>
+<ul>
+<li><a href="https://www.kaggle.com/datasets">https://www.kaggle.com/datasets</a></li>
+<li><a href="https://archive.ics.uci.edu/datasets/">https://archive.ics.uci.edu/datasets/</a></li>
+<li><a href="https://scikit-learn.org/stable/datasets">https://scikit-learn.org/stable/datasets</a></li>
+</ul>
+<p>预测问题分为两大类：</p>
+<ul>
+<li>分类：顾名思义。例如人脸识别就是分类，每个人都是其中的一类。</li>
+<li>回归：预测结果是一个值。</li>
+</ul>
+<p>机器学习的算法分类：</p>
+<ul>
+<li>监督学习：
+<ul>
+<li>分类
+<ul>
+<li>k-近邻算法、贝叶斯分类、决策树与随机森林、逻辑回归、神经网络</li>
+</ul>
+</li>
+<li>回归
+<ul>
+<li>线性回归、岭回归</li>
+</ul>
+</li>
+<li>标注
+<ul>
+<li>隐马尔可夫模型</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>无监督学习：
+<ul>
+<li>聚类, k-means</li>
+</ul>
+</li>
+</ul>
+<p>监督学习: 特征值 + 目标值
+非监督学习: 特征值 1000 个样本（例子）</p>
+<h1 id="特征工程"><a class="heading-anchor" href="#特征工程">特征工程</a></h1>
+<p>常用数据集的数据可能有这样的结构：<strong>特征值+目标值</strong> 。</p>
+<p>比如说要预测房价，可能 <code>(房子面积, 房子位置, 房子楼层, 房子朝向)</code> 是影响目标值的因素，那么这个“房子面积”等就是特征。</p>
+<p>特征工程是将原始数据转换为更好地代表预测模型的潜在问题的特征的过程，从而提高了模型对未知数据预测的准确性。</p>
+<p>一个形象的理解：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/01/gC8waMrPGuFjn5e.png" alt="103-2.png" loading="lazy"><figcaption class="article-figure-caption">103-2.png</figcaption></figure>
+<p>在新的虚拟环境中：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>pip install scikit-learn</span></span></code></pre>
+<p>scikit-learn 官网的介绍：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/01/jtVCAMqv1cJOZxz.png" alt="103-3.png" loading="lazy"><figcaption class="article-figure-caption">103-3.png</figcaption></figure>
+<p>下面的 ipynb 文件包含以下内容：</p>
+<ul>
+<li>字典特征抽取</li>
+<li>文本特征抽取</li>
+<li>特征处理（归一化、标准化）</li>
+<li>缺失值处理（删除、插补）</li>
+<li>特征选择（Filter 例如 VarianceThreshold, Embedded, Wrapper）</li>
+<li>降维（PCA 主成分分析）</li>
+</ul>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/ipynb-examples/blob/master/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/1-%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B.ipynb"></iframe>
+<p>本小节的剩余部分是 PCA 主成分分析的数学推导。</p>
+<p>截图来自视频 BV1E5411E71z 。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/15/APDoXquxB6ES8ga.png" alt="103-4.png" loading="lazy"><figcaption class="article-figure-caption">103-4.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/15/ftMW9x5h4Loc3Rn.png" alt="103-5.png" loading="lazy"><figcaption class="article-figure-caption">103-5.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/15/mFxRdQaHNPWk57M.png" alt="103-6.png" loading="lazy"><figcaption class="article-figure-caption">103-6.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/15/2TiWqc8xuNGjbBK.png" alt="103-7.png" loading="lazy"><figcaption class="article-figure-caption">103-7.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/15/v43NqPUGpw8BIzE.png" alt="103-8.png" loading="lazy"><figcaption class="article-figure-caption">103-8.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/15/WYfLbAwU12PJspz.png" alt="103-9.png" loading="lazy"><figcaption class="article-figure-caption">103-9.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/15/NjYhJ5KtxXge9bP.png" alt="103-10.png" loading="lazy"><figcaption class="article-figure-caption">103-10.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/15/EvDBN492LbVq8hl.png" alt="103-11.png" loading="lazy"><figcaption class="article-figure-caption">103-11.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/15/Ggjm4zOcJ1SKb2t.png" alt="103-12.png" loading="lazy"><figcaption class="article-figure-caption">103-12.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/15/IiQ6LrsO8VSbYcP.png" alt="103-13.png" loading="lazy"><figcaption class="article-figure-caption">103-13.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/15/uRlD36zUnyCSiZw.png" alt="103-14.png" loading="lazy"><figcaption class="article-figure-caption">103-14.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/15/gAFnIkeXY74JZN9.png" alt="103-15.png" loading="lazy"><figcaption class="article-figure-caption">103-15.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/15/Csq9FzBJo8dPvnj.png" alt="103-16.png" loading="lazy"><figcaption class="article-figure-caption">103-16.png</figcaption></figure>
+<p>拓展资料：</p>
+<ul>
+<li><a href="https://gitee.com/ni1o1/pygeo-tutorial/blob/master/12-.ipynb">https://gitee.com/ni1o1/pygeo-tutorial/blob/master/12-.ipynb</a> （github 备份）</li>
+<li><a href="https://www.cnblogs.com/pinard/p/6239403.html%EF%BC%88archive">https://www.cnblogs.com/pinard/p/6239403.html（archive</a> 备份）</li>
+<li><a href="https://zhuanlan.zhihu.com/p/55297233">https://zhuanlan.zhihu.com/p/55297233</a> （github 备份）</li>
+</ul>
+<h1 id="数据集举例分类估计器knn网格搜索roc-auc朴素贝叶斯"><a class="heading-anchor" href="#数据集举例分类估计器knn网格搜索roc-auc朴素贝叶斯">数据集举例、分类估计器、knn、网格搜索、ROC AUC、朴素贝叶斯</a></h1>
+<p><code>sklearn.datasets</code> 加载获取流行数据集。</p>
+<p><code>datasets.load_*()</code></p>
+<ul>
+<li>获取小规模数据集，数据包含在 datasets 里，直接加载到内存中。</li>
+</ul>
+<p><code>datasets.fetch_*(data_home=None)</code></p>
+<ul>
+<li>获取大规模数据集，需要从网络上下载，函数的第一个参数是 data_home，表示数据集下载的目录。</li>
+</ul>
+<p>下面的 ipynb 文件包含以下内容：</p>
+<ul>
+<li>鸢尾花数据集</li>
+<li>20 类新闻数据集</li>
+<li>boston 房价数据集</li>
+<li>分类估计器</li>
+<li>knn</li>
+<li>网格搜索</li>
+<li>分类模型的评估
+<ul>
+<li>基础知识</li>
+<li>ROC 曲线与 AUC 值概述</li>
+<li>ROC 的动机</li>
+<li>ROC 的定义</li>
+<li>ROC 的图形化表示</li>
+<li>AUC 值</li>
+</ul>
+</li>
+<li>朴素贝叶斯进行文本分类</li>
+</ul>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/ipynb-examples/blob/master/%E7%BB%8F%E5%85%B8%E5%85%A5%E9%97%A8%E6%95%B0%E6%8D%AE%E9%9B%86_knn_ROC_AUC_%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/2-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%88%86%E7%B1%BB%E4%B8%8E%E5%9B%9E%E5%BD%92.ipynb"></iframe>
+<h1 id="决策树随机森林"><a class="heading-anchor" href="#决策树随机森林">决策树、随机森林</a></h1>
+<p>下面的 ipynb 文件包含以下内容：</p>
+<ul>
+<li>原理部分</li>
+<li>sklearn 决策树 API</li>
+<li>决策树实例</li>
+<li>剪枝</li>
+<li>集成学习方法-随机森林</li>
+</ul>
+<p><a href="https://github.com/dropsong/ipynb-examples/blob/master/%E5%86%B3%E7%AD%96%E6%A0%91_%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/Decision_tree.ipynb">https://github.com/dropsong/ipynb-examples/blob/master/%E5%86%B3%E7%AD%96%E6%A0%91_%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97/Decision_tree.ipynb</a></p>
+<h1 id="模型选择线性回归加载保存的模型梯度下降过拟合欠拟合岭回归逻辑回归"><a class="heading-anchor" href="#模型选择线性回归加载保存的模型梯度下降过拟合欠拟合岭回归逻辑回归">模型选择、线性回归、加载保存的模型、梯度下降、过拟合欠拟合、岭回归、逻辑回归</a></h1>
+<p>下面的 ipynb 文件包含以下内容：</p>
+<ul>
+<li>模型选择</li>
+<li>线性回归</li>
+<li>加载保存的模型</li>
+<li>梯度下降</li>
+<li>过拟合欠拟合</li>
+<li>岭回归</li>
+<li>逻辑回归</li>
+</ul>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/ipynb-examples/blob/master/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D_%E5%B2%AD%E5%9B%9E%E5%BD%92_%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%95.ipynb"></iframe>
+<h1 id="kmeans异常值"><a class="heading-anchor" href="#kmeans异常值">kmeans、异常值</a></h1>
+<p>下面的 ipynb 文件包含以下内容：</p>
+<ul>
+<li>k-means</li>
+<li>找异常值的方法</li>
+</ul>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/ipynb-examples/blob/master/kmeans/kmeans_%E5%BC%82%E5%B8%B8%E5%80%BC.ipynb"></iframe>
+<h1 id="偏差与方差"><a class="heading-anchor" href="#偏差与方差">偏差与方差</a></h1>
+<p>在有监督学习中，模型的泛化误差来源于两个方面，偏差和方差。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/25/BsrMp39HJUAS7cV.png" alt="103-17.png" loading="lazy"><figcaption class="article-figure-caption">103-17.png</figcaption></figure>
+<p><strong>偏差</strong>指的是由所有采样得到的大小为 m 的训练数据集训练出的<strong>所有模型</strong>的输出的平均值和真实模型输出之间的差距。偏差通常是由于我们对学习算法<strong>做了错误的假设</strong>所导致的，比如真实模型是某个二次函数，但我们假设模型是一次函数。由偏差带来的误差<strong>通常在训练误差上就能体现出来</strong>。</p>
+<p><strong>方差</strong>指的是由所有采样得到的大小为 m 的训练数据集训练出的<strong>所有模型</strong>的输出的方差。方差通常是由于<strong>模型的复杂度相对于训练样本数 m 过高</strong>导致的，比如一共有 100 个训练样本，而我们假设模型是阶数不大于 200 的多项式函数。由方差带来的误差<strong>通常体现在测试误差相对于训练误差的增量上</strong>。</p>
+<h1 id="集成学习"><a class="heading-anchor" href="#集成学习">集成学习</a></h1>
+<p>面对一个机器学习问题，通常有两种策略：</p>
+<ul>
+<li>尝试各种模型，选择其中表现最好的模型做重点调参优化</li>
+<li>将多个分类器的结果统一成一个最终的决策
+<ul>
+<li>使用这类策略的机器学习方法统称为<strong>集成学习</strong>，其中的每个单独的分类器称为<strong>基分类器</strong>。</li>
+</ul>
+</li>
+</ul>
+<p>集成学习不仅在学界的研究热度不减，在业界和众多机器学习竞赛中也有非常成功的应用。例如在 Kaggle 竞赛中所向披靡的 XGBoost，就是成功应用集成学习思想的一个例子。</p>
+<p><strong>Boosting（串行）</strong>：
+Boosting 方法训练基分类器时采用串行的方式，<strong>各个基分类器之间有依赖</strong>。它的基本思路是将基分类器层层叠加，每一层在训练的时候，对前一层基分类器分错的样本，给予更高的权重。测试时，根据各层分类器的结果的加权得到最终结果。</p>
+<p><strong>Bagging（并行）</strong>：
+Bagging 与 Boosting 的串行训练方式不同，Bagging 方法在训练过程中，<strong>各基分类器之间无强依赖</strong>，可以进行<strong>并行训练</strong>。其中很著名的算法之一是基于决策树基分类器的<strong>随机森林（Random Forest）</strong>。为了让基分类器之间互相独立，将训练集分为若干子集（当训练样本数量较少时，子集之间可能有交叠）。Bagging 方法更像是一个集体决策的过程，每个个体都进行单独学习，学习的内容可以相同，也可以不同，也可以部分重叠。但由于个体之间存在差异性，最终做出的判断不会完全一致。在最终做决策时，每个个体单独作出判断，再通过投票的方式做出最后的集体决策。</p>
+<p>从消除基分类器的偏差和方差的角度来理解 Boosting 和 Bagging 方法的差异。<strong>基分类器</strong>，有时又被称为<strong>弱分类器</strong>，因为基分类器的错误率要大于集成分类器。基分类器的错误，是偏差和方差两种错误之和。偏差主要是由于分类器的表达能力有限导致的系统性错误，表现在训练误差不收敛。方差是由于分类器对于样本分布过于敏感，导致在训练样本数较少时，产生过拟合。</p>
+<p>Boosting 方法是通过<strong>逐步聚焦于基分类器分错的样本</strong>，减小集成分类器的偏差。Bagging 方法则是采取分而治之的策略，通过对训练样本多次采样，并分别<strong>训练出多个不同模型，然后做综合</strong>，来减小集成分类器的方差。假设所有基分类器出错的概率是独立的，在某个测试样本上，用简单多数投票方法来集成结果，超过半数基分类器出错的概率会随着基分类器的数量增加而下降。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/04/25/viCpcAwT1WZzrSx.png" alt="103-18.png" loading="lazy"><figcaption class="article-figure-caption">103-18.png</figcaption></figure>
+<p>集成学习一般可分为以下 3 个步骤：</p>
+<ol>
+<li>找到误差互相独立的基分类器</li>
+<li>训练基分类器</li>
+<li>合并基分类器的结果</li>
+</ol>
+<p>合并基分类器的方法有 <strong>voting</strong> 和 <strong>stacking</strong> 两种。前者是用<strong>投票</strong>的方式，将获得最多选票的结果作为最终的结果。后者是用串行的方式，<strong>把前一个基分类器的结果输出到下一个分类器</strong>，将所有基分类器的输出结果相加（或者用更复杂的算法融合，比如把各基分类器的输出作为特征，使用逻辑回归作为融合模型进行最后的结果预测）作为最终的输出。</p>
+<h1 id="基分类器"><a class="heading-anchor" href="#基分类器">基分类器</a></h1>
+<p><strong>常用的基分类器是决策树</strong>，主要有以下 3 个方面的原因：</p>
+<ol>
+<li>决策树可以较为方便地将样本的权重整合到训练过程中，而不需要使用过采样的方法来调整样本权重。</li>
+<li>决策树的表达能力和泛化能力，可以通过调节树的层数来做折中。</li>
+<li>数据样本的扰动对于决策树的影响较大，因此不同子样本集合生成的决策树基分类器随机性较大，这样的“不稳定学习器”更适合作为基分类器。此外，在决策树节点分裂的时候，随机地选择一个特征子集，从中找出最优分裂属性，很好地引入了随机性。</li>
+</ol>
+<p>除决策树外，<strong>神经网络模型</strong>也适合作为基分类器，主要由于神经网络模型<strong>也比较“不稳定”</strong>，而且还可以通过调整神经元数量、连接方式、网络层数、初始权值等方式<strong>引入随机性</strong>。</p>
+<p>可否将随机森林中的基分类器，由决策树替换为线性分类器或 K-近邻？
+随机森林属于 Bagging 类的集成学习。Bagging 的主要好处是集成后的分类器的方差，比基分类器的方差小。<strong>Bagging 所采用的基分类器，最好是本身对样本分布较为敏感的</strong>（即所谓不稳定的分类器），这样 Bagging 才能有用武之地。<strong>线性分类器或者 K-近邻都是较为稳定的分类器，本身方差就不大</strong>，所以以它们为基分类器使用 Bagging 并不能在原有基分类器的基础上获得更好的表现，甚至可能因为 Bagging 的采样，导致他们在训练中更难收敛，从而增大集成分类器的偏差。</p>
+<h1 id="adaboost"><a class="heading-anchor" href="#adaboost">AdaBoost</a></h1>
+<p>简要的介绍：</p>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1qQkgYTEN4">https://www.bilibili.com/video/BV1qQkgYTEN4</a></li>
+<li><a href="https://www.youtube.com/watch?v=AtYN8QP-U6w&#x26;ab_channel=Serrano.Academy">https://www.youtube.com/watch?v=AtYN8QP-U6w&#x26;ab_channel=Serrano.Academy</a></li>
+</ul>
+<p>下面是 AdaBoost 相关的 pdf 存档。</p>
+<section class="gdrive-pdf-wrapper"><header class="gdrive-pdf-header"><span class="gdrive-pdf-label">PDF</span><a class="gdrive-pdf-link" href="https://drive.google.com/file/d/1ZKPD8jmnK_Bzs6soQjIDIqNQF9xy1QfN/view" target="_blank" rel="noopener">在 Google Drive 打开</a></header><iframe class="gdrive-pdf-frame" src="https://drive.google.com/file/d/1ZKPD8jmnK_Bzs6soQjIDIqNQF9xy1QfN/preview" loading="lazy" title="PDF preview"></iframe></section>
+<p>上面的两个视频链接，有一个配套的 notebook:</p>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/luisguiserrano/manning/blob/master/Chapter_12_Ensemble_Methods/Random_forests_and_AdaBoost.ipynb"></iframe>
+<p>或者也可以看李航的《统计学习方法》，不过那个写的比较学院派。</p>
+<p>从 Adaboost 的例子中可以明显地看到 Boosting 的思想，对分类正确的样本降低了权重，对分类错误的样本升高或者保持权重不变。在最后进行模型融合的过程中，也根据错误率对基分类器进行加权融合。错误率低的分类器拥有更大的“话语权”。</p>
+<p>预测器的准确率越高，其权重就越高。如果它只是随机猜测，则其权重接近于零。但是，如果大部分情况下它都是错的（也就是准确率比随机猜测还低），那么它的权重为负。</p>
+<p>样本权重：</p>
+<ul>
+<li>Bagging 使用的是均匀取样，每个样本权重相等；</li>
+<li>Boosting 根据错误率调整样本权重，错误率越大的样本权重越大。<strong>错误率大的样本被取样的概率越高</strong>。</li>
+</ul>
+<h1 id="从减小方差和偏差的角度解释-boosting-和-bagging"><a class="heading-anchor" href="#从减小方差和偏差的角度解释-boosting-和-bagging">从减小方差和偏差的角度解释 Boosting 和 Bagging</a></h1>
+<p><strong>Bagging</strong> 能提高弱分类器的性能是因为<strong>降低了方差</strong>，<strong>Boosting</strong> 则<strong>降低了偏差</strong>。</p>
+<p>Bagging 是 Bootstrap Aggregating 的简称，即再抽样，然后在每个样本上训练出来的模型取平均。</p>
+<p>现尝试计算样本均值</p>
+<div class="math-source">$$
+\bar X = \frac1n\sum_{i=1}^n X_i
+$$</div>
+<p>的方差。设每个 <span class="math-source">$X_i$</span> 都有相同方差 <span class="math-source">$\mathrm{D}(X_i)=\sigma^2$</span>，并且任意两两之间协方差 <span class="math-source">$\mathrm{Cov}(X_i,X_j)=\rho\,\sigma^2$</span>（<span class="math-source">$i\neq j$</span>）。</p>
+<p>写出方差的展开：</p>
+<div class="math-source">$$
+\mathrm{D}(\bar X)
+= \mathrm{D}\Bigl(\tfrac1n\sum_{i=1}^n X_i\Bigr)
+= \frac1{n^2}\mathrm{D}\Bigl(\sum_{i=1}^n X_i\Bigr)
+$$</div>
+<p>利用方差和协方差的线性性质有：</p>
+<div class="math-source">$$
+\mathrm{D}\Bigl(\sum_{i=1}^n X_i\Bigr)
+= \sum_{i=1}^n \mathrm{D}(X_i)
+  \;+\;\sum_{i\neq j}\mathrm{Cov}(X_i,X_j)
+= n\,\sigma^2 \;+\; n(n-1)\,\rho\,\sigma^2.
+$$</div>
+<p>代回并化简：</p>
+<div class="math-source">$$
+\mathrm{D}(\bar X)
+= \frac{1}{n^2}\Bigl[n\,\sigma^2 + n(n-1)\,\rho\,\sigma^2\Bigr]
+= \frac{\sigma^2}{n^2}\,n\Bigl[1 + (n-1)\rho\Bigr]
+= \frac{\sigma^2}{n}\,\bigl[1+(n-1)\rho\bigr].
+$$</div>
+<p>又因为：</p>
+<div class="math-source">$$
+\frac{\sigma^2}{n}\bigl[1+(n-1)\rho\bigr]
+= \rho\,\sigma^2 \;+\;\frac{1-\rho}{n}\,\sigma^2.
+$$</div>
+<p>即：</p>
+<div class="math-source">$$
+\mathrm{D}(\bar X)\;=\;\rho\,\sigma^2 + (1-\rho)\,\frac{\sigma^2}{n}.
+$$</div>
+<p>当 <span class="math-source">$\rho=0$</span>（完全独立）时，上式<strong>退化</strong>为：</p>
+<div class="math-source">$$
+\mathrm{D}(\bar X)=\frac{\sigma^2}{n},
+$$</div>
+<p>也就是方差缩小到原来的 <span class="math-source">$1/n$</span> 。</p>
+<p>粗糙地从模型的角度理解这个问题，即，对 n 个独立不相关的模型的预测结果取平均，方差是原来单个模型的 1/n。当然，模型之间不可能完全独立。为追求独立性，许多 Bagging 方法做了不同改进。比如<strong>在随机森林算法中，每次选取节点分裂属性时，会随机抽取一个属性子集</strong>，而不是从所有属性中选取最优属性，这就<strong>是为了避免弱分类器之间过强的相关性</strong>。通过训练集的<strong>重采样</strong>也能够带来弱分类器之间的一定独立性，从而降低 Bagging 后模型的方差。</p>
+<p>对于 Boosting，训练完一个弱分类器后，需要计算弱分类器的<strong>错误</strong>或<strong>残差</strong>，作为下一个分类器的输入。这个过程本身就是在不断减小损失函数，来<strong>使模型不断逼近“靶心”，使得模型偏差不断降低</strong>。但 Boosting 的过程并不会显著降低方差。这是因为 <strong>Boosting 的训练过程使得各弱分类器之间是强相关的</strong>，缺乏独立性，所以并不会对降低方差有作用。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/14/P71kcbgRMDYduXt.png" alt="103-19.png" loading="lazy"><figcaption class="article-figure-caption">103-19.png</figcaption></figure>
+<h1 id="梯度提升决策树-gbdt"><a class="heading-anchor" href="#梯度提升决策树-gbdt">梯度提升决策树 GBDT</a></h1>
+<h2 id="gbdt"><a class="heading-anchor" href="#gbdt">GBDT</a></h2>
+<p><strong>梯度提升决策树（Gradient Boosting Decision Tree，GBDT）</strong>，GBDT 体现了“从错误中学习”的理念，<strong>基于决策树预测的残差进行迭代学习</strong>。GBDT 中使用的决策树通常为 CART 。</p>
+<p>下面举一个简单的例子。</p>
+<p>以一个视频网站的用户画像为例，为了将广告定向投放给指定年龄的用户，视频网站需要对每个用户的年龄做出预测。在这个问题中，每个样本是一个已知性别/年龄的用户，而特征则包括这个人访问的时长、时段、观看的视频的类型等。</p>
+<p>例如用户 A 的真实年龄是 25 岁，但第一棵决策树的预测年龄是 22 岁，差了 3 岁，即残差为 3。那么在第二棵树里我们把 A 的年龄设为 3 岁去学习，如果第二棵树能把 A 分到 3 岁的叶子节点，那两棵树的结果相加就可以得到 A 的真实年龄；如果第二棵树的结论是 5 岁，则 A 仍然存在 −2 岁的残差，第三棵树里 A 的年龄就变成−2 岁，继续学。这里使用残差继续学习，就是 GBDT 中 Gradient Boosted 所表达的意思。</p>
+<p>一个更形象的例子：
+模型的任务是预测一个人的年龄，训练集只有 A、B、C、D 四个人，他们的年龄分别是 14、16、24、26，特征包括了“月购物金额”“上网时长”“上网历史”等。下面开始训练第一棵树，训练的过程跟传统决策树相同，简单起见，我们只进行一次分枝。训练好第一棵树后，求得每个样本预测值与真实值之间的残差。可以看到，A、B、C、D 的残差分别是−1、1、−1、1。这时我们就用每个样本的残差训练下一棵树，<strong>直到残差收敛到某个阈值以下，或者树的总数达到某个上限为止</strong>。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/15/yDwIhcu6GlKqx8T.png" alt="103-20.png" loading="lazy"><figcaption class="article-figure-caption">103-20.png</figcaption></figure>
+<p>由于 GBDT 是利用残差训练的，在预测的过程中，我们也需要把所有树的预测值加起来，得到最终的预测结果。</p>
+<p>伪代码示意：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/15/zSkOrhaqwC1bLui.png" alt="103-21.png" loading="lazy"><figcaption class="article-figure-caption">103-21.png</figcaption></figure>
+<p>另一个图示：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/15/uFNXJykCYcAhP25.png" alt="103-22.png" loading="lazy"><figcaption class="article-figure-caption">103-22.png</figcaption></figure>
+<h2 id="梯度提升梯度下降"><a class="heading-anchor" href="#梯度提升梯度下降">梯度提升、梯度下降</a></h2>
+<p>ref: <a href="https://zh.wikipedia.org/wiki/%E6%A2%AF%E5%BA%A6%E6%8F%90%E5%8D%87%E6%8A%80%E6%9C%AF">https://zh.wikipedia.org/wiki/%E6%A2%AF%E5%BA%A6%E6%8F%90%E5%8D%87%E6%8A%80%E6%9C%AF</a></p>
+<p>与其他增强方法一样，梯度增强以迭代方式将弱的“学习器”组合为一个强学习器。最简单的解释是在最小二乘回归中，通过最小化均方误差 <span class="math-source">$\frac{1}{n} \sum_{i}(\hat{y_i} - y_i)^2$</span>，“教”模型 <span class="math-source">$F$</span> 预测实数值 <span class="math-source">$\hat{y} = F(x)$</span>。</p>
+<p>在梯度提升的每个阶段 <span class="math-source">$m, 1 \leq m \leq M$</span>，假设已经有一个不太完美的模型 <span class="math-source">$F_m$</span>（最开始时只是一个预测输出变量 <span class="math-source">$y$</span> 均值的模型）。梯度提升算法通过在当前模型 <span class="math-source">$F_m$</span> 增加一个新的估计量 <span class="math-source">$h$</span> 得到一个更好的模型：</p>
+<div class="math-source">$$F_{m+1}(x) = F_m(x) + h(x)$$</div>
+<p>为了求得 <span class="math-source">$h$</span>，梯度提升基于以下观察：一个完美的 <span class="math-source">$h$</span> 可以完美预测当前不完美模型 <span class="math-source">$F_m$</span> 的残差，即满足，</p>
+<div class="math-source">$$F_{m+1}(x) = F_m(x) + h(x) = y$$</div>
+<p>或者，等效地有，</p>
+<div class="math-source">$$h(x) = y - F_m(x)$$</div>
+<p>因此，梯度提升通过拟合残差 <span class="math-source">$y - F_m(x)$</span> 得到 <span class="math-source">$h$</span>。和其他提升方法的变体一样，<span class="math-source">$F_{m+1}$</span> 通过纠正 <span class="math-source">$F_m$</span> 的误差变得更完美。这个想法可以扩展到均方误差损失之外的任意损失函数，甚至扩展到分类与排序问题，只要观察到以下一点：<strong>模型的残差 <span class="math-source">$y - F_m(x)$</span> 就是均方损失函数 <span class="math-source">$\frac{1}{2}(y - F(x))^2$</span> 关于 <span class="math-source">$F(x)$</span> 的负梯度。</strong> 因此，<strong>梯度提升其实是一种梯度下降算法</strong> （这里有一个翻译问题造成了可能的困惑，“提升方法”英文为 Boosting），可以代入除了均方损失之外的不同的损失函数，得到不同的梯度。</p>
+<blockquote>
+<p>梯度提升和梯度下降的区别和联系是什么？</p>
+</blockquote>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/15/MV7WD1RkSeuFNHx.png" alt="103-23.png" loading="lazy"><figcaption class="article-figure-caption">103-23.png</figcaption></figure>
+<p>两者都是在每一轮迭代中，利用损失函数相对于模型的负梯度方向的信息来对当前模型进行更新，只不过<strong>在梯度下降中，模型是以参数化形式表示，从而模型的更新等价于参数的更新</strong>。而在<strong>梯度提升中，模型并不需要进行参数化表示，而是直接定义在函数空间中</strong>，从而大大扩展了可以使用的模型种类。</p>
+<p>额外补充，ref: <a href="https://zhuanlan.zhihu.com/p/86354141">https://zhuanlan.zhihu.com/p/86354141</a></p>
+<section class="gdrive-pdf-wrapper"><header class="gdrive-pdf-header"><span class="gdrive-pdf-label">PDF</span><a class="gdrive-pdf-link" href="https://drive.google.com/file/d/19IYM1kXWQoVooS88SwfiG1GF_1Kq95TS/view" target="_blank" rel="noopener">在 Google Drive 打开</a></header><iframe class="gdrive-pdf-frame" src="https://drive.google.com/file/d/19IYM1kXWQoVooS88SwfiG1GF_1Kq95TS/preview" loading="lazy" title="PDF preview"></iframe></section>
+<h2 id="gbdt-的优点和局限性"><a class="heading-anchor" href="#gbdt-的优点和局限性">GBDT 的优点和局限性</a></h2>
+<p>优点：</p>
+<ul>
+<li>预测阶段的计算速度快，树与树之间可“并行”化计算。（前一个有结果可以给下一个，类似于流水线，所有人都在干活，<strong>看起来好像是并行的</strong>）</li>
+<li>在分布稠密的数据集上，泛化能力和表达能力都很好，这使得 GBDT 在 Kaggle 的众多竞赛中，经常名列榜首。</li>
+<li>采用决策树作为弱分类器使得 GBDT 模型具有较好的解释性和鲁棒性，能够自动发现特征间的高阶关系，并且也<strong>不需要对数据进行特殊的预处理如归一化</strong>等。</li>
+</ul>
+<p>局限性：</p>
+<ul>
+<li>GBDT 在<strong>高维稀疏的数据集</strong>上，表现不如<a href="https://www.bilibili.com/video/BV1Hs411w7ci">支持向量机</a>或神经网络。</li>
+<li>GBDT 在处理<strong>文本分类特征问题</strong>上，相对其他模型的优势不如它在处理数值特征时明显。</li>
+<li>训练过程需要串行训练，<strong>只能</strong>在决策树内部<strong>采用一些局部并行</strong>的手段提高训练速度。</li>
+</ul>
+<h2 id="xgboost"><a class="heading-anchor" href="#xgboost">XGBoost</a></h2>
+<p>XGBoost 是陈天奇等人开发的一个开源机器学习项目，高效地实现了 GBDT 算法并进行了算法和工程上的许多改进，被广泛应用在 Kaggle 竞赛及其他许多机器学习竞赛中并取得了不错的成绩。</p>
+<h1 id="实战"><a class="heading-anchor" href="#实战">实战</a></h1>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/ipynb-examples/blob/master/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/EnsembleLearning.ipynb"></iframe></div> </div> </div> <footer class="post-footer" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <!-- Gitalk comments will be added in Phase 3 --> </div> <section class="reward-widget" data-reward-widget data-astro-cid-bbdapvnt> <div class="reward-panel" id="reward-panel" aria-label="打赏二维码" data-astro-cid-bbdapvnt> <div class="reward-list" data-astro-cid-bbdapvnt> <div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/Alipay.png" alt="支付宝收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>支付宝 Alipay</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/WeChat.png" alt="微信收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>微信 Wechat</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/PayPal-or-CreditCard.png" alt="PayPal 或信用卡收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>PayPal/CreditCard</span> </div> </div> </div> <button class="reward-trigger" type="button" aria-label="打开打赏二维码" aria-controls="reward-panel" aria-expanded="false" data-astro-cid-bbdapvnt>
+打赏 Reward
+</button> </section>  <script type="module">function a(){document.querySelectorAll("[data-reward-widget]").forEach(e=>{if(e.dataset.initialized)return;const r=e.querySelector(".reward-trigger");if(!r)return;e.dataset.initialized="true";const n=t=>{e.classList.toggle("is-open",t),r.setAttribute("aria-expanded",String(t))};r.addEventListener("click",()=>n(!e.classList.contains("is-open"))),document.addEventListener("click",t=>{e.contains(t.target)||n(!1)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&(n(!1),r.blur())})})}window.addEventListener("encrypted-content-revealed",()=>{document.querySelectorAll("[data-reward-after-unlock]").forEach(e=>{e.removeAttribute("hidden")})});document.addEventListener("astro:page-load",a);a();</script> <div id="gitalk-container" class="gitalk-container" data-abbrlink="b1b54fd" data-title="机器学习笔记" data-astro-cid-ajg7agi2></div> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">   <script>
+  var GITALK_CFG = {"clientID":"Ov23lijmGQilj9J9CrdP","clientSecret":"bd5066a2aadbe28c20913dd390b8047031f7174a","repo":"dropsong.github.io","owner":"dropsong","admin":["dropsong"],"labels":["Gitalk"],"distractionFreeMode":false};
+</script> <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js">
+</script> <script>
+  (function() {
+    var c = document.getElementById('gitalk-container');
+    if (!c) return;
+    var id = c.dataset.abbrlink || '';
+    var title = c.dataset.title || '';
+    new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting && !c.dataset.loaded) {
+          c.dataset.loaded = '1';
+          new Gitalk(Object.assign({}, GITALK_CFG, {id: id, title: title})).render('gitalk-container');
+        }
+      });
+    }, {rootMargin: '200px'}).observe(c);
+  })();
+</script> </footer> </article> </main> <button class="toc-fab" id="toc-fab" aria-label="目录" data-astro-cid-6t6zfk7k> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M4 6h16M4 12h10M4 18h16" data-astro-cid-6t6zfk7k></path> </svg> </button> <!-- Desktop: hover popup panel --> <div class="toc-popup" id="toc-popup" data-astro-cid-6t6zfk7k> <div class="toc-popup-header" data-astro-cid-6t6zfk7k> <span class="toc-popup-title" data-astro-cid-6t6zfk7k>目录</span> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> <div class="toc-popup-body" data-astro-cid-6t6zfk7k> <ul class="toc-popup-list" data-astro-cid-6t6zfk7k> <li class="toc-popup-item" data-mtoc-section="绪论" data-astro-cid-6t6zfk7k> <a href="#绪论" class="toc-popup-link" data-mtoc="绪论" data-astro-cid-6t6zfk7k> 绪论 </a>  </li><li class="toc-popup-item" data-mtoc-section="特征工程" data-astro-cid-6t6zfk7k> <a href="#特征工程" class="toc-popup-link" data-mtoc="特征工程" data-astro-cid-6t6zfk7k> 特征工程 </a>  </li><li class="toc-popup-item" data-mtoc-section="数据集举例分类估计器knn网格搜索roc-auc朴素贝叶斯" data-astro-cid-6t6zfk7k> <a href="#数据集举例分类估计器knn网格搜索roc-auc朴素贝叶斯" class="toc-popup-link" data-mtoc="数据集举例分类估计器knn网格搜索roc-auc朴素贝叶斯" data-astro-cid-6t6zfk7k> 数据集举例、分类估计器、knn、网格搜索、ROC AUC、朴素贝叶斯 </a>  </li><li class="toc-popup-item" data-mtoc-section="决策树随机森林" data-astro-cid-6t6zfk7k> <a href="#决策树随机森林" class="toc-popup-link" data-mtoc="决策树随机森林" data-astro-cid-6t6zfk7k> 决策树、随机森林 </a>  </li><li class="toc-popup-item" data-mtoc-section="模型选择线性回归加载保存的模型梯度下降过拟合欠拟合岭回归逻辑回归" data-astro-cid-6t6zfk7k> <a href="#模型选择线性回归加载保存的模型梯度下降过拟合欠拟合岭回归逻辑回归" class="toc-popup-link" data-mtoc="模型选择线性回归加载保存的模型梯度下降过拟合欠拟合岭回归逻辑回归" data-astro-cid-6t6zfk7k> 模型选择、线性回归、加载保存的模型、梯度下降、过拟合欠拟合、岭回归、逻辑回归 </a>  </li><li class="toc-popup-item" data-mtoc-section="kmeans异常值" data-astro-cid-6t6zfk7k> <a href="#kmeans异常值" class="toc-popup-link" data-mtoc="kmeans异常值" data-astro-cid-6t6zfk7k> kmeans、异常值 </a>  </li><li class="toc-popup-item" data-mtoc-section="偏差与方差" data-astro-cid-6t6zfk7k> <a href="#偏差与方差" class="toc-popup-link" data-mtoc="偏差与方差" data-astro-cid-6t6zfk7k> 偏差与方差 </a>  </li><li class="toc-popup-item" data-mtoc-section="集成学习" data-astro-cid-6t6zfk7k> <a href="#集成学习" class="toc-popup-link" data-mtoc="集成学习" data-astro-cid-6t6zfk7k> 集成学习 </a>  </li><li class="toc-popup-item" data-mtoc-section="基分类器" data-astro-cid-6t6zfk7k> <a href="#基分类器" class="toc-popup-link" data-mtoc="基分类器" data-astro-cid-6t6zfk7k> 基分类器 </a>  </li><li class="toc-popup-item" data-mtoc-section="adaboost" data-astro-cid-6t6zfk7k> <a href="#adaboost" class="toc-popup-link" data-mtoc="adaboost" data-astro-cid-6t6zfk7k> AdaBoost </a>  </li><li class="toc-popup-item" data-mtoc-section="从减小方差和偏差的角度解释-boosting-和-bagging" data-astro-cid-6t6zfk7k> <a href="#从减小方差和偏差的角度解释-boosting-和-bagging" class="toc-popup-link" data-mtoc="从减小方差和偏差的角度解释-boosting-和-bagging" data-astro-cid-6t6zfk7k> 从减小方差和偏差的角度解释 Boosting 和 Bagging </a>  </li><li class="toc-popup-item" data-mtoc-section="梯度提升决策树-gbdt" data-astro-cid-6t6zfk7k> <a href="#梯度提升决策树-gbdt" class="toc-popup-link" data-mtoc="梯度提升决策树-gbdt" data-astro-cid-6t6zfk7k> 梯度提升决策树 GBDT </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#gbdt" class="toc-popup-link" data-mtoc="gbdt" data-astro-cid-6t6zfk7k> GBDT </a> </li><li data-astro-cid-6t6zfk7k> <a href="#梯度提升梯度下降" class="toc-popup-link" data-mtoc="梯度提升梯度下降" data-astro-cid-6t6zfk7k> 梯度提升、梯度下降 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#gbdt-的优点和局限性" class="toc-popup-link" data-mtoc="gbdt-的优点和局限性" data-astro-cid-6t6zfk7k> GBDT 的优点和局限性 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#xgboost" class="toc-popup-link" data-mtoc="xgboost" data-astro-cid-6t6zfk7k> XGBoost </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="实战" data-astro-cid-6t6zfk7k> <a href="#实战" class="toc-popup-link" data-mtoc="实战" data-astro-cid-6t6zfk7k> 实战 </a>  </li> </ul> </div> </div> <!-- Mobile: bottom sheet overlay --> <div class="toc-overlay" id="toc-overlay" data-astro-cid-6t6zfk7k></div> <div class="toc-sheet" id="toc-sheet" data-astro-cid-6t6zfk7k> <div class="toc-sheet-header" data-astro-cid-6t6zfk7k> <span class="toc-sheet-title" data-astro-cid-6t6zfk7k>目录</span> <div class="toc-sheet-actions" data-astro-cid-6t6zfk7k> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> <button class="toc-sheet-close" id="toc-sheet-close" aria-label="关闭" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M18 6L6 18M6 6l12 12" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> </div> <div class="toc-sheet-body" data-astro-cid-6t6zfk7k> <ul class="toc-sheet-list" data-astro-cid-6t6zfk7k> <li class="toc-sheet-item" data-msheet-section="绪论" data-astro-cid-6t6zfk7k> <a href="#绪论" class="toc-sheet-link" data-msheet="绪论" data-astro-cid-6t6zfk7k> 绪论 </a>  </li><li class="toc-sheet-item" data-msheet-section="特征工程" data-astro-cid-6t6zfk7k> <a href="#特征工程" class="toc-sheet-link" data-msheet="特征工程" data-astro-cid-6t6zfk7k> 特征工程 </a>  </li><li class="toc-sheet-item" data-msheet-section="数据集举例分类估计器knn网格搜索roc-auc朴素贝叶斯" data-astro-cid-6t6zfk7k> <a href="#数据集举例分类估计器knn网格搜索roc-auc朴素贝叶斯" class="toc-sheet-link" data-msheet="数据集举例分类估计器knn网格搜索roc-auc朴素贝叶斯" data-astro-cid-6t6zfk7k> 数据集举例、分类估计器、knn、网格搜索、ROC AUC、朴素贝叶斯 </a>  </li><li class="toc-sheet-item" data-msheet-section="决策树随机森林" data-astro-cid-6t6zfk7k> <a href="#决策树随机森林" class="toc-sheet-link" data-msheet="决策树随机森林" data-astro-cid-6t6zfk7k> 决策树、随机森林 </a>  </li><li class="toc-sheet-item" data-msheet-section="模型选择线性回归加载保存的模型梯度下降过拟合欠拟合岭回归逻辑回归" data-astro-cid-6t6zfk7k> <a href="#模型选择线性回归加载保存的模型梯度下降过拟合欠拟合岭回归逻辑回归" class="toc-sheet-link" data-msheet="模型选择线性回归加载保存的模型梯度下降过拟合欠拟合岭回归逻辑回归" data-astro-cid-6t6zfk7k> 模型选择、线性回归、加载保存的模型、梯度下降、过拟合欠拟合、岭回归、逻辑回归 </a>  </li><li class="toc-sheet-item" data-msheet-section="kmeans异常值" data-astro-cid-6t6zfk7k> <a href="#kmeans异常值" class="toc-sheet-link" data-msheet="kmeans异常值" data-astro-cid-6t6zfk7k> kmeans、异常值 </a>  </li><li class="toc-sheet-item" data-msheet-section="偏差与方差" data-astro-cid-6t6zfk7k> <a href="#偏差与方差" class="toc-sheet-link" data-msheet="偏差与方差" data-astro-cid-6t6zfk7k> 偏差与方差 </a>  </li><li class="toc-sheet-item" data-msheet-section="集成学习" data-astro-cid-6t6zfk7k> <a href="#集成学习" class="toc-sheet-link" data-msheet="集成学习" data-astro-cid-6t6zfk7k> 集成学习 </a>  </li><li class="toc-sheet-item" data-msheet-section="基分类器" data-astro-cid-6t6zfk7k> <a href="#基分类器" class="toc-sheet-link" data-msheet="基分类器" data-astro-cid-6t6zfk7k> 基分类器 </a>  </li><li class="toc-sheet-item" data-msheet-section="adaboost" data-astro-cid-6t6zfk7k> <a href="#adaboost" class="toc-sheet-link" data-msheet="adaboost" data-astro-cid-6t6zfk7k> AdaBoost </a>  </li><li class="toc-sheet-item" data-msheet-section="从减小方差和偏差的角度解释-boosting-和-bagging" data-astro-cid-6t6zfk7k> <a href="#从减小方差和偏差的角度解释-boosting-和-bagging" class="toc-sheet-link" data-msheet="从减小方差和偏差的角度解释-boosting-和-bagging" data-astro-cid-6t6zfk7k> 从减小方差和偏差的角度解释 Boosting 和 Bagging </a>  </li><li class="toc-sheet-item" data-msheet-section="梯度提升决策树-gbdt" data-astro-cid-6t6zfk7k> <a href="#梯度提升决策树-gbdt" class="toc-sheet-link" data-msheet="梯度提升决策树-gbdt" data-astro-cid-6t6zfk7k> 梯度提升决策树 GBDT </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#gbdt" class="toc-sheet-link" data-msheet="gbdt" data-astro-cid-6t6zfk7k> GBDT </a> </li><li data-astro-cid-6t6zfk7k> <a href="#梯度提升梯度下降" class="toc-sheet-link" data-msheet="梯度提升梯度下降" data-astro-cid-6t6zfk7k> 梯度提升、梯度下降 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#gbdt-的优点和局限性" class="toc-sheet-link" data-msheet="gbdt-的优点和局限性" data-astro-cid-6t6zfk7k> GBDT 的优点和局限性 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#xgboost" class="toc-sheet-link" data-msheet="xgboost" data-astro-cid-6t6zfk7k> XGBoost </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="实战" data-astro-cid-6t6zfk7k> <a href="#实战" class="toc-sheet-link" data-msheet="实战" data-astro-cid-6t6zfk7k> 实战 </a>  </li> </ul> </div> </div>  <script type="module">function F(){const f=document.getElementById("toc-fab"),o=document.getElementById("toc-popup"),a=document.getElementById("toc-overlay"),n=document.getElementById("toc-sheet"),q=document.getElementById("toc-sheet-close"),P=document.querySelectorAll(".toc-top-btn");if(!f||!o||!a||!n||!q)return;const p=()=>window.matchMedia("(max-width: 768px)").matches;let h=null,m=null,g=!1,E=!1;function A(){p()||(m&&clearTimeout(m),o.classList.add("open"),y(!0))}function B(){m&&clearTimeout(m),m=setTimeout(()=>{!g&&!E&&o.classList.remove("open")},200)}f.addEventListener("mouseenter",()=>{g=!0,A()}),f.addEventListener("mouseleave",()=>{g=!1,B()}),o.addEventListener("mouseenter",()=>{E=!0,A()}),o.addEventListener("mouseleave",()=>{E=!1,B()}),o.querySelectorAll(".toc-popup-link").forEach(t=>{t.addEventListener("click",()=>{setTimeout(()=>o.classList.remove("open"),150)})}),f.addEventListener("click",()=>{p()&&(a.style.display="block",n.style.display="flex",requestAnimationFrame(()=>{a.classList.add("open"),n.classList.add("open"),y(!0)}),document.body.style.overflow="hidden")});function v(){a.classList.remove("open"),n.classList.remove("open"),setTimeout(()=>{a.style.display="none",n.style.display="none"},300),document.body.style.overflow=""}q.addEventListener("click",v),a.addEventListener("click",v),n.querySelectorAll(".toc-sheet-link").forEach(t=>{t.addEventListener("click",()=>setTimeout(v,200))}),P.forEach(t=>{t.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"}),p()&&v()})});function I(t,b,s,i=!1){const l=t.querySelector(b),S=t.querySelector(s);if(!l||!S)return;const r=l.getBoundingClientRect(),e=S.getBoundingClientRect(),c=e.top>=r.top&&e.bottom<=r.bottom;if(!i&&c)return;const d=l.scrollTop+(e.top-r.top)-l.clientHeight/2+e.height/2;l.scrollTo({top:Math.max(0,d),behavior:i?"auto":"smooth"})}function k(t=!1){!p()&&o.classList.contains("open")&&I(o,".toc-popup-body",".toc-popup-link.active",t),p()&&n.classList.contains("open")&&I(n,".toc-sheet-body",".toc-sheet-link.active",t)}function y(t=!1){requestAnimationFrame(()=>k(t)),h&&clearTimeout(h),h=setTimeout(()=>{k(t),h=null},260)}let x="";function T(){const t=o.querySelectorAll(".toc-popup-link"),b=n.querySelectorAll(".toc-sheet-link"),s=[];t.forEach(e=>{const c=e.dataset.mtoc;if(c){const d=document.getElementById(c);d&&s.push({id:c,el:d})}});let i="";const l=window.scrollY+100;if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-4&&s.length>0)i=s[s.length-1].id;else for(let e=s.length-1;e>=0;e--)if(s[e].el.offsetTop<=l){i=s[e].id;break}t.forEach(e=>e.classList.toggle("active",e.dataset.mtoc===i)),b.forEach(e=>e.classList.toggle("active",e.dataset.msheet===i));function r(e,c,d,H){const R=(i?e.querySelector(`${c}.active`):null)?.closest(d)?.querySelector(H);e.querySelectorAll(H).forEach(u=>{u===R?(u.classList.add("expanded"),u.style.maxHeight=`${u.scrollHeight}px`):(u.classList.remove("expanded"),u.style.removeProperty("max-height"))})}r(o,".toc-popup-link",".toc-popup-item",".toc-popup-sub"),r(n,".toc-sheet-link",".toc-sheet-item",".toc-sheet-sub"),k(),i!==x&&(y(),x=i)}let w=!1;window.addEventListener("scroll",()=>{w||(requestAnimationFrame(()=>{T(),w=!1}),w=!0)});let L=null;window.addEventListener("resize",()=>{L&&clearTimeout(L),L=setTimeout(()=>{T(),y(!0),L=null},100)}),T()}document.addEventListener("astro:page-load",F);F();</script><footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner" data-astro-cid-sz7xmlte></div> </footer>  <script type="module" src="/_astro/CodeBlockEnhance.astro_astro_type_script_index_0_lang.Di89G-ws.js"></script> <div id="image-lightbox" class="lightbox-overlay" data-astro-cid-fbflauxb> <div class="lightbox-content" data-astro-cid-fbflauxb> <img id="lightbox-img" src="" alt="" data-astro-cid-fbflauxb> </div> </div>  <script type="module">function c(){const t=document.getElementById("image-lightbox"),n=document.getElementById("lightbox-img");if(!t||!n)return;function s(e){n.src=e,t.classList.add("open"),document.body.style.overflow="hidden"}function i(){t.classList.remove("open"),document.body.style.overflow=""}t.addEventListener("click",e=>{e.target===t&&i()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t.classList.contains("open")&&i()});function d(){document.querySelectorAll(".article-body img").forEach(e=>{const o=e;o.dataset.lightbox||(o.dataset.lightbox="true",o.style.cursor="zoom-in",o.addEventListener("click",()=>{s(o.src)}))})}document.addEventListener("astro:page-load",d),d()}document.addEventListener("astro:page-load",c);c();</script> <script type="module" src="/_astro/EncryptedBlock.astro_astro_type_script_index_0_lang.DuPogRv7.js"></script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"><script type="module">
+  import renderMathInElement from 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs';
+
+  function renderMath() {
+    const articleBody = document.querySelector('.article-body');
+    if (!articleBody) return;
+
+    renderMathInElement(articleBody, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      throwOnError: false,
+    });
+  }
+
+  document.addEventListener('astro:page-load', renderMath);
+  renderMath();
+</script> </div> </div> </body></html>  

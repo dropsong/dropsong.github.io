@@ -1,0 +1,1319 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>深度学习小记 · dropsong&#39;s</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><style>.article-body{font-size:16px;line-height:1.85;color:var(--text);max-width:820px;margin:0 auto}.article-body h1,.article-body h2,.article-body h3,.article-body h4,.article-body h5,.article-body h6{margin-top:1.8em;margin-bottom:.6em;font-weight:600;line-height:1.35;color:var(--text)}.article-body h1{font-size:1.75rem}.article-body h2{font-size:1.45rem}.article-body h3{font-size:1.2rem}.article-body h4{font-size:1.05rem}.article-body p{margin-bottom:1.2em}.article-body p,.article-body li{white-space:pre-line}.article-body p,.article-body li,.article-body blockquote,.article-body td,.article-body th{word-break:normal;overflow-wrap:break-word}.article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.article-body a:hover{color:var(--accent-hover)}.article-body blockquote{margin:1.2em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:#5b9e8c1a;border-radius:0 var(--radius) var(--radius) 0;color:var(--muted)}.article-body blockquote>:last-child{margin-bottom:0}.article-body ul,.article-body ol{margin-bottom:1.2em;padding-left:1.5em}.article-body li>ul,.article-body li>ol{margin-bottom:0;white-space:normal}.article-body li:has(>ul,>ol){white-space:normal}.article-body li{margin-bottom:.25em}.article-body table{width:auto;max-width:100%;border-collapse:collapse;margin:1.5em auto;font-size:.925rem;overflow-x:auto}.article-body table th,.article-body table td{padding:.6em .85em;border:1px solid var(--border);text-align:left}.article-body table th{font-weight:600}.article-body hr{border:none;border-top:1px solid var(--border);margin:2em 0}.article-body img{border-radius:var(--radius);cursor:zoom-in}.article-body .article-figure{margin:1.5em 0;text-align:center}.article-body .article-figure img{display:block;margin:0 auto}.article-body .article-figure-caption{margin-top:.55em;color:var(--muted);font-size:.875rem;line-height:1.5}.article-body iframe{max-width:100%;border-radius:var(--radius)}.article-body .gdrive-pdf-wrapper{margin:1.5em 0;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius);background:#fff}.article-body .gdrive-pdf-header{display:flex;align-items:center;justify-content:space-between;min-height:2.75rem;padding:.5rem .875rem;border-bottom:1px solid var(--border);background:var(--bg)}.article-body .gdrive-pdf-label{color:var(--muted);font-size:.85rem}.article-body .gdrive-pdf-link{color:var(--accent);font-size:.8rem;text-decoration:none}.article-body .gdrive-pdf-link:hover{text-decoration:underline}.article-body .gdrive-pdf-frame{display:block;width:100%;height:min(720px,80vh);border:0;border-radius:0;background:#fff}.article-body :not(pre)>code{background:#fffaf0a6;border:1px solid rgba(180,155,130,.2);border-radius:4px;padding:.1em .4em;font-size:.875em}.article-body pre,.article-body pre.astro-code,.article-body .astro-code{background:transparent!important;background-color:transparent!important;border:1.5px dashed rgba(224,143,88,.45);border-radius:14px}.article-body pre.astro-code code,.article-body .astro-code code{background:transparent!important;background-color:transparent!important}.article-body pre,.article-body table{-webkit-overflow-scrolling:touch}.article-body .katex-display{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;margin:1.4em 0;padding:.25rem 0 .45rem;text-align:center;scrollbar-width:thin;scrollbar-color:rgba(224,143,88,.35) transparent;word-break:normal;overflow-wrap:normal}.article-body .katex-display>.katex{display:inline-block;width:max-content;max-width:none}.article-body .katex{white-space:nowrap;word-break:normal;overflow-wrap:normal}.article-body .katex-display::-webkit-scrollbar{height:4px}.article-body .katex-display::-webkit-scrollbar-thumb{background:transparent}.article-body .katex-display:hover::-webkit-scrollbar-thumb{background:var(--border)}
+</style>
+<link rel="stylesheet" href="/_astro/about.CS0PymYq.css">
+<style>.site-footer[data-astro-cid-sz7xmlte]{padding:2rem 1.5rem;text-align:center}.footer-inner[data-astro-cid-sz7xmlte]{max-width:var(--max-width-page);margin:0 auto;display:flex;justify-content:center;align-items:center;gap:1rem;font-size:.85rem;color:var(--muted)}.footer-muted[data-astro-cid-sz7xmlte]{color:var(--muted)}
+</style>
+<link rel="stylesheet" href="/_astro/_abbrlink_.BDkgFBJR.css">
+<style>.gitalk-container[data-astro-cid-ajg7agi2]{margin-top:2rem}.gt-container{color:var(--text)!important;font-family:inherit!important}.gt-container a{color:var(--accent)!important}.gt-container a:hover{color:var(--accent-hover, var(--accent))!important}.gt-container .gt-header-textarea{background:transparent!important;border:1.5px dashed rgba(224,143,88,.45)!important;border-radius:14px!important;color:var(--text)!important;box-shadow:none!important;outline:none!important;font-family:inherit!important;line-height:1.7!important}.gt-container .gt-header-textarea:focus{border-color:#e08f58ad!important;box-shadow:0 0 0 3px #e08f5814!important}.gt-container .gt-header-preview{background:transparent!important;border:1.5px dashed rgba(224,143,88,.35)!important;border-radius:14px!important;color:var(--text)!important}.gt-container .gt-comment-content{background:transparent!important;border-radius:12px!important}.gt-container .gt-btn-login,.gt-container .gt-btn-public{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important}.gt-container .gt-btn-login:hover,.gt-container .gt-btn-public:hover{background:var(--accent-hover)!important;border-color:var(--accent-hover)!important}.gt-container .gt-btn-preview{background:transparent!important;border:1px solid var(--accent)!important;color:var(--accent)!important}.gt-container .gt-btn-preview:hover{background:#5b9e8c1a!important}
+</style></head> <body data-page="post" data-astro-cid-37fxchfa> <div class="site-page" data-astro-cid-37fxchfa> <!-- Background decoration layer (cream paper style) --> <div class="site-background" aria-hidden="true" data-astro-cid-37fxchfa> <div class="bg-pattern" data-astro-cid-37fxchfa></div> <div class="bg-top-border" data-astro-cid-37fxchfa></div> <div class="bg-bottom-border" data-astro-cid-37fxchfa></div> </div> <!-- Content shell --> <div class="site-shell" data-astro-cid-37fxchfa>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="site-name" data-astro-cid-3ef6ksr2>dropsong's</a> <!-- Desktop: hover dropdown nav (button → panel drops below) --> <nav class="desktop-hover-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <div class="desktop-hover-nav-inner" data-astro-cid-3ef6ksr2> <button class="desktop-nav-trigger" type="button" aria-label="Open navigation menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> <div class="desktop-nav-dropdown" data-astro-cid-3ef6ksr2> <div class="desktop-nav-dropdown-body" data-astro-cid-3ef6ksr2> <a href="/archive/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Search</a> </div> </div> </div> </nav> <!-- Mobile: click-toggle nav (keep exactly as before) --> <nav class="header-nav" id="header-nav" data-astro-cid-3ef6ksr2> <a href="/archive/" class="nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="nav-link" data-astro-cid-3ef6ksr2>Search</a> </nav> <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> </header>  <script type="module">const e=document.getElementById("menu-toggle"),t=document.getElementById("header-nav");e&&t&&e.addEventListener("click",()=>{t.classList.toggle("open")});</script> <main class="post-page" data-astro-cid-gjtny2mx> <article class="post-article" data-astro-cid-gjtny2mx> <header class="post-header" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <h1 class="article-title" data-astro-cid-bjlpfrhy>深度学习小记</h1> <div class="article-meta" data-astro-cid-bjlpfrhy> <time class="article-date" data-astro-cid-bjlpfrhy>2025-05-16</time>  <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-category" data-astro-cid-bjlpfrhy>算法</span>   <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-tags" data-astro-cid-bjlpfrhy> #深度学习 #TensorFlow #神经网络 #AI #推荐系统 #CNN #图像风格变换 #论文阅读 #Embedding #RNN #LSTM #GPU #注意力机制 #机器翻译 </span>   </div> </div> </header> <div class="post-body" id="post-body" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <div class="article-body" data-astro-cid-bjlpfrhy><p>前置知识请见 <a href="https://dropsong.github.io/posts/6f3f8819.html">人工智能导论</a> 。</p>
+<h1 id="初识-tensorflow"><a class="heading-anchor" href="#初识-tensorflow">初识 TensorFlow</a></h1>
+<p>官网： <a href="https://www.tensorflow.org">https://www.tensorflow.org</a></p>
+<p>TensorFlow 大框架：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/16/MThykvKcuZ3SPEW.png" alt="106-1.png" loading="lazy"><figcaption class="article-figure-caption">106-1.png</figcaption></figure>
+<p>Estimator 属于 High level 的 API，而 Mid-level API 分别是：</p>
+<ul>
+<li>Layers：用来构建网络结构</li>
+<li>Datasets：用来构建数据读取 pipeline</li>
+<li>Metrics：用来评估网络性能</li>
+</ul>
+<p>Tensorflow1.0 主要特性：</p>
+<ul>
+<li>XLA —— Accelerate Linear Algebra
+<ul>
+<li>提升训练速度 58 倍</li>
+<li>可以在移动设备运行</li>
+</ul>
+</li>
+<li>引入更高级别的 API —— <code>tf.layers</code> / <code>tf.metrics</code> / <code>tf.losses</code> / <code>tf.keras</code></li>
+<li>Tensorflow 调试器</li>
+<li>支持 docker 镜像，引入 tensorflow serving 服务</li>
+</ul>
+<p>Tensorflow2.0 主要特性：</p>
+<ul>
+<li>使用 <code>tf.keras</code> 和 <code>eager mode</code> 进行更加简单的模型构建</li>
+<li>鲁棒的跨平台模型部署</li>
+<li>强大的研究实验</li>
+<li>清除不推荐使用的 API 和减少重复来简化 API</li>
+</ul>
+<p>使用 Tensorflow 的大致流程：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/16/Dxpi3b5RuLkQmsB.png" alt="106-2.png" loading="lazy"><figcaption class="article-figure-caption">106-2.png</figcaption></figure>
+<p>在虚拟环境中安装 tensorflow 。</p>
+<p>一个 helloword 程序：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="py"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> tensorflow </span><span style="color:#D73A49">as</span><span style="color:#24292E"> tf</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">print</span><span style="color:#24292E">(</span><span style="color:#032F62">'*******************'</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#005CC5">print</span><span style="color:#24292E">(tf.</span><span style="color:#005CC5">__version__</span><span style="color:#24292E">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">x </span><span style="color:#D73A49">=</span><span style="color:#24292E"> tf.constant(</span><span style="color:#005CC5">0</span><span style="color:#24292E">.) </span><span style="color:#6A737D"># 常量  张量</span></span>
+<span class="line"><span style="color:#24292E">y </span><span style="color:#D73A49">=</span><span style="color:#24292E"> tf.constant(</span><span style="color:#005CC5">1</span><span style="color:#24292E">.)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">for</span><span style="color:#24292E"> i </span><span style="color:#D73A49">in</span><span style="color:#005CC5"> range</span><span style="color:#24292E">(</span><span style="color:#005CC5">50</span><span style="color:#24292E">):</span></span>
+<span class="line"><span style="color:#24292E">    x </span><span style="color:#D73A49">=</span><span style="color:#24292E"> x</span><span style="color:#D73A49">+</span><span style="color:#24292E">y</span></span>
+<span class="line"><span style="color:#24292E">    y </span><span style="color:#D73A49">=</span><span style="color:#24292E"> y</span><span style="color:#D73A49">/</span><span style="color:#005CC5">2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">print</span><span style="color:#24292E">(x.numpy())  </span><span style="color:#6A737D"># 张量和 ndarray 之间可以互相转化</span></span>
+<span class="line"><span style="color:#005CC5">print</span><span style="color:#24292E">(x)</span></span></code></pre>
+<p>在我本地没有 nvidia GPU 的电脑，输出类似于：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># 前面还有一大堆警告和报错...</span></span>
+<span class="line"><span>This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.</span></span>
+<span class="line"><span>To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.</span></span>
+<span class="line"><span>*******************</span></span>
+<span class="line"><span>2.19.0</span></span>
+<span class="line"><span>[时间]E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)</span></span>
+<span class="line"><span>2.0</span></span>
+<span class="line"><span>tf.Tensor(2.0, shape=(), dtype=float32)</span></span></code></pre>
+<p>在 Colab 中运行该代码，得到输出：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>*******************</span></span>
+<span class="line"><span>2.18.0</span></span>
+<span class="line"><span>2.0</span></span>
+<span class="line"><span>tf.Tensor(2.0, shape=(), dtype=float32)</span></span></code></pre>
+<p>另一个例子：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="py"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> tensorflow </span><span style="color:#D73A49">as</span><span style="color:#24292E"> tf</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">print</span><span style="color:#24292E">(</span><span style="color:#032F62">'*******************'</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#005CC5">print</span><span style="color:#24292E">(tf.</span><span style="color:#005CC5">__version__</span><span style="color:#24292E">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">x </span><span style="color:#D73A49">=</span><span style="color:#24292E"> tf.Variable(</span><span style="color:#005CC5">0</span><span style="color:#24292E">.) </span><span style="color:#6A737D"># 变量  张量</span></span>
+<span class="line"><span style="color:#24292E">y </span><span style="color:#D73A49">=</span><span style="color:#24292E"> tf.Variable(</span><span style="color:#005CC5">1</span><span style="color:#24292E">.)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">print</span><span style="color:#24292E">(x)</span></span>
+<span class="line"><span style="color:#005CC5">print</span><span style="color:#24292E">(y)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">x.assign(x</span><span style="color:#D73A49">+</span><span style="color:#24292E">y)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">print</span><span style="color:#24292E">(x)</span></span>
+<span class="line"><span style="color:#005CC5">print</span><span style="color:#24292E">(y)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">'''</span></span>
+<span class="line"><span style="color:#032F62">前略</span></span>
+<span class="line"><span style="color:#032F62">*******************</span></span>
+<span class="line"><span style="color:#032F62">2.19.0</span></span>
+<span class="line"><span style="color:#032F62">[时间]: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)</span></span>
+<span class="line"><span style="color:#032F62">&#x3C;tf.Variable 'Variable:0' shape=() dtype=float32, numpy=0.0></span></span>
+<span class="line"><span style="color:#032F62">&#x3C;tf.Variable 'Variable:0' shape=() dtype=float32, numpy=1.0></span></span>
+<span class="line"><span style="color:#032F62">&#x3C;tf.Variable 'Variable:0' shape=() dtype=float32, numpy=1.0></span></span>
+<span class="line"><span style="color:#032F62">&#x3C;tf.Variable 'Variable:0' shape=() dtype=float32, numpy=1.0></span></span>
+<span class="line"><span style="color:#032F62">'''</span></span></code></pre>
+<p><strong>图结构</strong>：静态图，效率高；动态图，调试容易。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/16/pezBNM4RgjmLASC.png" alt="106-3.png" loading="lazy"><figcaption class="article-figure-caption">106-3.png</figcaption></figure>
+<p><strong>图（graph）</strong> 是 tensorflow 用于表达计算任务的一个核心概念。从前端（Python）描述神经网络的结构，到后端在多机和分布式系统上部署，到底层 Device（CPU、GPU、TPU）上运行，都是基于图来完成。</p>
+<p>数据流图：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/19/cwaknUeL43vq9AX.png" alt="106-4.png" loading="lazy"><figcaption class="article-figure-caption">106-4.png</figcaption></figure>
+<p>张量为什么那么多阶？
+可以考虑一些典型场景。例如，灰度图、png、视频等。</p>
+<p><strong>深度学习中的“张量”</strong> 是工程实践中使用的多维数组结构，而 <strong>数学中的张量</strong> 是抽象代数与几何的核心概念，两者在形式上相似，但本质和用途<strong>大不相同</strong>。</p>
+<p>张量属性：</p>
+<ul>
+<li><code>graph</code> 张量所属的默认图</li>
+<li><code>op</code> 张量的操作名</li>
+<li><code>name</code> 张量的字符串描述</li>
+<li><code>shape</code> 张量形状</li>
+</ul>
+<h1 id="tensorflow-keras"><a class="heading-anchor" href="#tensorflow-keras">Tensorflow-keras</a></h1>
+<h2 id="简介"><a class="heading-anchor" href="#简介">简介</a></h2>
+<p>keras 是基于 python 的高级神经网络 API，以 Tensorflow、CNTK 或 Theano 为后端运行，keras 必须有后端才可以运行。后端可以切换，现在多用 tensorflow. 方便快速实验，帮助用户以最少的时间验证自己的想法。</p>
+<p>Tensorflow-keras 是什么？</p>
+<ul>
+<li>Tensorflow 对 keras API 规范的实现</li>
+<li>相对于以 tensorflow 为后端的 keras, Tensorflow-keras 与 Tensorflow 结合更加紧密</li>
+<li>实现在 <code>tf.keras</code> 空间下</li>
+</ul>
+<p>Tf-keras 和 keras 联系：</p>
+<ul>
+<li>基于同一套 API</li>
+<li>keras 程序可以通过修改导入方式轻松转为 <code>tf.keras</code> 程序</li>
+<li>反之可能不成立，因为 <code>tf.keras</code> 有其他特性</li>
+<li>相同的 JSON 和 <a href="https://zhuanlan.zhihu.com/p/104145585">HDF5</a> 模型序列化格式和语义</li>
+</ul>
+<h2 id="tf_keras做分类"><a class="heading-anchor" href="#tf_keras做分类">tf_keras做分类</a></h2>
+<p>下面的 ipynb 文件包含以下内容：</p>
+<ul>
+<li>一个衣服分类的实验</li>
+<li>为什么要分为训练集，验证集，测试集</li>
+<li>tensorflow 的基本使用</li>
+<li>均方误差</li>
+<li>Cross Entropy Loss Function（交叉熵损失函数）</li>
+<li>w 的初始分布</li>
+</ul>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/dl-ipynb-examples/blob/master/tf_keras%E5%81%9A%E5%88%86%E7%B1%BB/tf01_keras_classification.ipynb"></iframe>
+<p>下面的 ipynb 文件包含以下内容：</p>
+<ul>
+<li>对之前相同的流程，做归一化，看看有无改进</li>
+</ul>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/dl-ipynb-examples/blob/master/tf_keras%E5%81%9A%E5%88%86%E7%B1%BB/tf02_keras_classification_model-normalize.ipynb"></iframe>
+<p>下面的 ipynb 文件包含以下内容：</p>
+<ul>
+<li>TensorBoard</li>
+<li>ModelCheckpoint</li>
+<li>EarlyStopping</li>
+</ul>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/dl-ipynb-examples/blob/master/tf_keras%E5%81%9A%E5%88%86%E7%B1%BB/tf03_keras_classification_model-callbacks.ipynb"></iframe>
+<h2 id="tf_keras做回归"><a class="heading-anchor" href="#tf_keras做回归">tf_keras做回归</a></h2>
+<p>下面的 ipynb 文件包含以下内容：</p>
+<ul>
+<li>使用 California Housing dataset 做回归</li>
+</ul>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/dl-ipynb-examples/blob/master/tf_keras%E5%81%9A%E5%9B%9E%E5%BD%92/tf04_keras_regression.ipynb"></iframe>
+<h1 id="梯度消失梯度爆炸"><a class="heading-anchor" href="#梯度消失梯度爆炸">梯度消失、梯度爆炸</a></h1>
+<h2 id="问题描述"><a class="heading-anchor" href="#问题描述">问题描述</a></h2>
+<p>关于梯度消失，从一个例子入手：</p>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/dl-ipynb-examples/blob/master/%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1%E5%92%8C%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8/tf05_keras_classification_model-dnn.ipynb"></iframe>
+<p>上面文件演示的问题即是梯度消失。</p>
+<p><strong>梯度消失</strong>：
+梯度消失问题发生时，接近于输出层的 hidden layer 3 等的权值更新相对正常，但前面的 hidden layer 1 的权值更新会变得很慢，导致<strong>前面的层权值几乎不变，仍接近于初始化的权值</strong>，这就导致 hidden layer 1 相当于只是一个映射层，这是此深层网络的学习就等价于只有后几层的浅层网络的学习了。</p>
+<p><strong>梯度爆炸</strong>：
+在反向传播过程中使用的是链式求导法则，如果每一层偏导数都大于 1，那么连乘起来将以指数形式增加，误差梯度不断累积，就会造成梯度爆炸。梯度爆炸会导致模型权重更新幅度过大，会造成<strong>模型不稳定，无法有效学习</strong>，还会出现<strong>无法再更新的 NaN 权重值</strong>。</p>
+<p>梯度消失和梯度爆炸其实都是因为<strong>反向传播中的连乘效应</strong>。除此之外，也和<strong>激活函数的选取</strong>有关。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/22/NRDOnXCu6W1qf9y.png" alt="106-5.png" loading="lazy"><figcaption class="article-figure-caption">106-5.png</figcaption></figure>
+<div class="math-source">$$
+\text{selu}(x) = \lambda \begin{cases} 
+x &#x26; \text{if } x > 0 \\
+\alpha e^x - \alpha &#x26; \text{if } x \leq 0 
+\end{cases}
+$$</div>
+<p>对于梯度消失：</p>
+<ul>
+<li>Sigmoid 函数的导数最大值是 0.25（当 <span class="math-source">$ z = 0 $</span> 时）。当 <span class="math-source">$ z $</span> 的绝对值较大时（即神经元饱和时），<span class="math-source">$ \sigma’(z) $</span> 接近于 0 .</li>
+<li>Tanh 函数，当 <span class="math-source">$ z $</span> 的绝对值较大时，导数也接近于 0 .</li>
+<li>在反向传播过程中，如果<strong>许多层的激活函数导数值都小于1</strong>（特别是当它们远小于1时，比如 Sigmoid 导数的最大值0.25），这些导数值连乘起来会使梯度呈指数级衰减。</li>
+<li>如果<strong>权重被初始化为较小的值</strong>（例如，绝对值小于 1），多个较小的权重矩阵与较小的激活函数导数连乘，会进一步加速梯度的消失。</li>
+</ul>
+<p>对于梯度爆炸，可以作类似的解释，不再赘述。</p>
+<h2 id="批归一化"><a class="heading-anchor" href="#批归一化">批归一化</a></h2>
+<blockquote>
+<p>接下来的行文逻辑：什么是批归一化，批归一化的动机，减均值除以标准差为什么失败，正确的批归一化算法。</p>
+</blockquote>
+<p>批归一化可以缓解梯度消失和梯度爆炸的问题，简单来说即是，每层的激活值都做归一化。</p>
+<p>在深度神经网络的训练过程中，每一层的参数都会在反向传播后进行更新。这意味着，对于网络中的某一层，其输入数据的分布（来自前一层的输出）会随着训练的进行而不断发生变化。这种现象被称为<strong>内部协变量偏移 (Internal Covariate Shift, ICS)</strong>。</p>
+<p>ICS 会导致以下问题：</p>
+<ul>
+<li>训练速度减慢：后续层需要不断适应这种变化的输入分布。</li>
+<li>对初始化敏感：网络对参数的初始值更加敏感。</li>
+<li>激活函数饱和：输入数据分布的变化可能导致激活函数的输入落入饱和区（例如Sigmoid的两端），从而导致梯度消失。</li>
+</ul>
+<p><strong>批归一化的提出就是为了缓解 ICS 问题。</strong></p>
+<p>如何实现批归一化呢？我们自然想到经典的“减均值除以标准差”方法：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/22/TNWJeRn7FvzGKUI.png" alt="106-6.png" loading="lazy"><figcaption class="article-figure-caption">106-6.png</figcaption></figure>
+<p>这有两个好处：</p>
+<ol>
+<li>避免分布数据偏移</li>
+<li>远离导数饱和区</li>
+</ol>
+<p>但这个处理对于在 -1 至 1 之间的梯度变化不大的激活函数，效果不仅不好，反而更差。比如 sigmoid 函数，在 -1 至 1 之间几乎是线性，BN 变换后就没有达到非线性变换的目的；而对于 relu，效果会更差，因为会有一半的置零。总之，<strong>减均值除以标准差后可能削弱网络的性能</strong>。</p>
+<p>改进的思路是：缩放加移位。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/22/a2rdN3DEOQfVFie.png" alt="106-7.png" loading="lazy"><figcaption class="article-figure-caption">106-7.png</figcaption></figure>
+<p>这里的 <span class="math-source">$ y_i $</span> 就是批归一化层的输出，它将作为下一层或激活函数的输入。<span class="math-source">$\gamma$</span> 和 <span class="math-source">$\beta$</span> 是与网络的其他参数（如权重 <span class="math-source">$ W $</span> 和偏置 <span class="math-source">$ b $</span>）一样通过梯度下降学习得到的。如果网络发现原始的表示更好，它可以学习到 <span class="math-source">$\gamma = \sqrt{\sigma_B^2 + \epsilon}$</span> 和 <span class="math-source">$\beta = \mu_B$</span>，从而在一定程度上抵消归一化的影响。</p>
+<p>tensorflow 中的接口：
+<a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/BatchNormalization">https://www.tensorflow.org/api_docs/python/tf/keras/layers/BatchNormalization</a></p>
+<p>下面是使用批归一化的例子：</p>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/dl-ipynb-examples/blob/master/%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1%E5%92%8C%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8/tf06_keras_classification_model-dnn-bn.ipynb"></iframe>
+<h2 id="更改激活函数"><a class="heading-anchor" href="#更改激活函数">更改激活函数</a></h2>
+<p><code>relu -> selu</code>, 缓解梯度消失。</p>
+<p>实例：</p>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/dl-ipynb-examples/blob/master/%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1%E5%92%8C%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8/tf07_keras_classification_model-dnn-selu.ipynb"></iframe>
+<h1 id="dropout"><a class="heading-anchor" href="#dropout">Dropout</a></h1>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/22/jkhlRfGuJETvSgF.png" alt="106-8.png" loading="lazy"><figcaption class="article-figure-caption">106-8.png</figcaption></figure>
+<p>Dropout 可以防止过拟合，实现也非常简单：对想要 dropout 的点输出乘 0 .</p>
+<p>在 <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dropout">tensorflow keras 中的实现</a>：</p>
+<blockquote>
+<p>The <code>Dropout</code> layer randomly sets input units to 0 with a frequency of <code>rate</code> at each step during training time, which helps prevent overfitting. Inputs not set to 0 are scaled up by <code>1 / (1 - rate)</code> such that the sum over all inputs is unchanged.</p>
+</blockquote>
+<p>实例：</p>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/dl-ipynb-examples/blob/master/%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1%E5%92%8C%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8/tf08_keras_classification_model-dnn-selu-dropout.ipynb"></iframe>
+<h1 id="wide--deep-模型推荐场景"><a class="heading-anchor" href="#wide--deep-模型推荐场景">Wide &#x26; Deep 模型（推荐场景）</a></h1>
+<p>原始论文:  <a href="https://arxiv.org/pdf/1606.07792v1">https://arxiv.org/pdf/1606.07792v1</a></p>
+<p>Google 于 16 年发布，用于分类和回归。曾应用在 Google Play 中的应用推荐。</p>
+<p>Wide 用于记忆，Deep 用于联想。<strong>一个推荐系统的经典矛盾：应该给用户推荐经常买的，还是探索一些用户可能会买的？</strong></p>
+<p>相关文章：</p>
+<ul>
+<li><a href="https://blog.csdn.net/Yasin0/article/details/100736420">https://blog.csdn.net/Yasin0/article/details/100736420</a> （已备份）</li>
+<li><a href="https://zhuanlan.zhihu.com/p/57247478">https://zhuanlan.zhihu.com/p/57247478</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/139358172">https://zhuanlan.zhihu.com/p/139358172</a> （已备份）</li>
+</ul>
+<p>尝试搭建简单的 wide and deep 模型（<a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/wide_and_deep/tf09_keras_regression-wide_deep.ipynb">github 链接</a>）：</p>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/dl-ipynb-examples/blob/master/wide_and_deep/tf09_keras_regression-wide_deep.ipynb"></iframe>
+<p>在 Deep 部分，会用到 Word2Vec 技术。简要介绍：</p>
+<blockquote>
+<p>Word2Vec is a technique in natural language processing that represents words as vectors in a high-dimensional space, capturing semantic relationships between them. It essentially translates words into numerical representations, where words with similar meanings are located closer together in the vector space.</p>
+</blockquote>
+<p>可供参考的资料：
+<a href="https://medium.com/@manansuri/a-dummys-guide-to-word2vec-456444f3c673">https://medium.com/@manansuri/a-dummys-guide-to-word2vec-456444f3c673</a></p>
+<p>Word2Vec utilizes two main architectures:</p>
+<ul>
+<li>CBOW (Continuous Bag of Words): Predicts a target word based on its surrounding context words.</li>
+<li>Skip-gram: Predicts surrounding words based on a given input word.</li>
+</ul>
+<p>简要的原理介绍：
+如何衡量两个词在语义上是否相近？如果两个词的上下文相同（相近），我们可以有较大的把握认为，这两个词的语义也相近。我们构造一个神经网络，输入为上下文，输出为该词，训练之，将隐藏层的数值作为这个词的 vector 元素。在实践中，我们发现语义相近的词，由这种机制产生的 vector 表示也相近。</p>
+<p>有了 Word2Vec，我们就可以用向量之间的差距来衡量信息之间的差距。</p>
+<p>用面向对象的方法重写之前的代码：<a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/wide_and_deep/tf10_keras_regression-wide_deep-subclass.ipynb">github链接</a>。</p>
+<p>在之前的模型中，我们只有一个输入，现在尝试多输入（<a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/wide_and_deep/tf11_keras_regression-wide_deep-multi-input.ipynb">github链接</a>）：</p>
+<iframe frameborder="0" width="100%" height="100%" style="min-width: 300px; min-height:700px" src="https://nbviewer.org/github/dropsong/dl-ipynb-examples/blob/master/wide_and_deep/tf11_keras_regression-wide_deep-multi-input.ipynb"></iframe>
+<p>iframe 嵌多了可能有点卡，之后只放 github 链接了。</p>
+<p>尝试搭建更加复杂的模型（<a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/wide_and_deep/tf12_keras_regression-wide_deep-multi-input-output.ipynb">github链接</a>）：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/25/JywfBIqtvgZiC2X.png" alt="106-9.png" loading="lazy"><figcaption class="article-figure-caption">106-9.png</figcaption></figure>
+<p>一个关于 Wide and Deep 的推荐实验：
+<a href="https://blog.csdn.net/weixin_34268753/article/details/92123569">https://blog.csdn.net/weixin_34268753/article/details/92123569</a></p>
+<h1 id="超参数搜索"><a class="heading-anchor" href="#超参数搜索">超参数搜索</a></h1>
+<p>为什么要超参数搜索？手工去试耗费人力。</p>
+<p>有哪些超参数？</p>
+<ul>
+<li>网络结构参数：几层，每层神经元个数，每层激活函数</li>
+<li>训练参数: <code>batch_size</code>，学习率，学习率衰减算法</li>
+</ul>
+<h2 id="batch-size"><a class="heading-anchor" href="#batch-size">Batch Size</a></h2>
+<p>下面链接详细讲解了 Batch Size：
+<a href="https://blog.csdn.net/qq_34886403/article/details/82558399">https://blog.csdn.net/qq_34886403/article/details/82558399</a></p>
+<p>注意：<strong>Batch Size 增大了，要到达相同的准确度，必须要增大 epoch。</strong></p>
+<h2 id="学习率衰减"><a class="heading-anchor" href="#学习率衰减">学习率衰减</a></h2>
+<p><strong>固定学习率时</strong>，当到达收敛状态时，会在最优值附近一个<strong>较大的区域内摆动</strong>；而当<strong>随着迭代轮次的增加而减小学习率</strong>，会使得在收敛时，在最优值附近一个<strong>更小的区域内摆动</strong>（之所以曲线震荡朝向最优值收敛，是因为在每一个 mini-batch 中都存在噪音）。</p>
+<p>学习率衰减算法有很多，这里仅举最简单的两例。</p>
+<h3 id="离散下降discrete-staircase"><a class="heading-anchor" href="#离散下降discrete-staircase">离散下降（discrete staircase）</a></h3>
+<p>对于深度学习来说，每 t 轮学习，学习率减半。对于监督学习来说，初始设置一个较大的学习率，然后随着迭代次数的增加，减小学习率。</p>
+<h3 id="指数减缓exponential-decay"><a class="heading-anchor" href="#指数减缓exponential-decay">指数减缓（exponential decay）</a></h3>
+<p>对于深度学习来说，学习率按训练轮数增长指数差值递减。例如：</p>
+<div class="math-source">$$
+\alpha = 0.95^{\text{epochnum}} \cdot \alpha_0
+$$</div>
+<p>又或者公式为：</p>
+<div class="math-source">$$
+\alpha = \frac{k}{\sqrt{\text{epochnum}}}
+$$</div>
+<p>其中 epochnum 为当前 epoch 的迭代轮数。不过第二种方法会引入另一个超参 k。</p>
+<h2 id="网格搜索随机搜索"><a class="heading-anchor" href="#网格搜索随机搜索">网格搜索、随机搜索</a></h2>
+<p>在 <a href="https://dropsong.github.io/posts/b1b54fd.html">机器学习笔记</a> 中已经提过，我们直接实战。</p>
+<p>先看一个朴素的例子：<a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E8%B6%85%E5%8F%82%E6%95%B0%E6%90%9C%E7%B4%A2/tf13_keras_regression-hp-search.ipynb">github链接</a> 。</p>
+<p>能否配合 sklearn 进行参数搜索？</p>
+<p><strong>注意</strong>： scikit-learn 在 1.6 版本中对其内部处理 estimator tags (估计器标签) 的 API 进行了现代化更改。这导致一些第三方库（包括早期版本的 XGBoost 和 CausalML）在与 scikit-learn 1.6.x 交互时出现了 <code>AttributeError: 'super' object has no attribute '__sklearn_tags__'</code> 类似的问题。</p>
+<p>一种不够优雅的解决方案是降级 scikit-learn, <del>我就不尝试了。</del> <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E8%B6%85%E5%8F%82%E6%95%B0%E6%90%9C%E7%B4%A2/tf14_keras_regression-hp-search-sklearn.ipynb">github链接</a> .</p>
+<p>另外一些可能的方案有：KerasTuner 等。</p>
+<p>关于网格搜索、随机搜索：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/05/26/CRHAvt9Z1epwhbO.png" alt="106-10.png" loading="lazy"><figcaption class="article-figure-caption">106-10.png</figcaption></figure>
+<p>随机搜索：参数的生成方式为随机，<strong>可探索的空间更大</strong>。</p>
+<h1 id="tensorflow-基础-api"><a class="heading-anchor" href="#tensorflow-基础-api">tensorflow 基础 API</a></h1>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/tf%E7%9A%84%E5%9F%BA%E7%A1%80API/tf15-basic-api.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li>常量张量及其操作</li>
+<li>矩阵乘法</li>
+<li>RaggedTensor</li>
+<li>SparseTensor</li>
+<li>变量张量</li>
+<li>reduce_mean</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/tf%E7%9A%84%E5%9F%BA%E7%A1%80API/tf16-keras-regression-customized-loss.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li>自定义损失函数</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/tf%E7%9A%84%E5%9F%BA%E7%A1%80API/tf17-keras-regression-customized-layer.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li>自定义全连接层
+<ul>
+<li>重写 <code>__init__</code></li>
+<li>重写 <code>build</code>，compile 的时候就会调用 build</li>
+<li>重写 <code>call</code></li>
+</ul>
+</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/tf%E7%9A%84%E5%9F%BA%E7%A1%80API/tf18-function-and-auto-graph-1.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li><code>@tf.function</code></li>
+<li><code>@tf.py_function</code></li>
+<li>把 py 实现的函数变为图实现的函数</li>
+<li>找回原来的 py 函数</li>
+<li>查看 tf 的图的代码</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/tf%E7%9A%84%E5%9F%BA%E7%A1%80API/tf19-diffs.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li>导数、偏导数的近似计算</li>
+<li><code>with tf.GradientTape() as tape</code></li>
+<li>二阶导数</li>
+<li>模拟梯度下降算法</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/tf%E7%9A%84%E5%9F%BA%E7%A1%80API/tf20-keras-regression-manu-diffs.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li>手动模拟 fit 操作</li>
+<li><code>tf.squeeze()</code></li>
+</ul>
+<h1 id="dataset"><a class="heading-anchor" href="#dataset">dataset</a></h1>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/dataset%E7%9A%84%E4%BD%BF%E7%94%A8/tf21-data-basic-api.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li>dataset 的基本常识</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/dataset%E7%9A%84%E4%BD%BF%E7%94%A8/tf22-data-generate-csv.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li>在 kaggle 平台上操作数据</li>
+<li>数据存为csv文件</li>
+<li><code>tf.data.Dataset.list_files</code></li>
+<li><code>tf.io.decode_csv</code></li>
+<li><code>.shuffle()</code></li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/dataset%E7%9A%84%E4%BD%BF%E7%94%A8/tf23-tfrecord-basic-api.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li>为什么使用 TFRecord</li>
+<li><code>tf.train.BytesList</code>, <code>tf.train.FloatList</code>, <code>tf.train.Int64List</code></li>
+<li><code>tf.train.Features</code>, <code>tf.train.Example</code></li>
+<li>读取 record 并打印</li>
+<li>把 tfrecord 存为压缩文件</li>
+</ul>
+<p>数据保存为 tfrecord, 然后再读出来训练： <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/dataset%E7%9A%84%E4%BD%BF%E7%94%A8/tf24_data_generate_tfrecord.ipynb">notebook</a></p>
+<h1 id="estimator"><a class="heading-anchor" href="#estimator">estimator</a></h1>
+<p>Estimator API 是 TensorFlow 1.x 时代的主要训练方式，现在为了简化和统一，官方推荐直接使用 Keras 的 <code>model.fit()</code>, <code>model.evaluate()</code>, <code>model.predict()</code> .</p>
+<p>即便如此，我保留了一些有价值的代码片段。</p>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/estimator/tf25-keras-to-estimator.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li>使用 titanic 数据集</li>
+<li><strong>将特征预处理作为模型的一部分</strong>，使得模型部署和迁移都更加方便
+<ul>
+<li><code>StringLookup</code>, <code>CategoryEncoding</code></li>
+</ul>
+</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/estimator/tf26_premade_estimators.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li>旧范式，仅参考</li>
+</ul>
+<h1 id="卷积神经网络"><a class="heading-anchor" href="#卷积神经网络">卷积神经网络</a></h1>
+<p>什么是卷积神经网络？</p>
+<ul>
+<li><strong>(卷积层+(可选)池化层)×N+全连接层×M</strong> ,N>=1, M>=0</li>
+<li>卷积层的输入和输出都是矩阵，全连接层的输入和输出都是向量</li>
+</ul>
+<h2 id="全连接层的困境"><a class="heading-anchor" href="#全连接层的困境">全连接层的困境</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/06/17/O5XT7A3HYPnrMEG.png" alt="106-11.png" loading="lazy"><figcaption class="article-figure-caption">106-11.png</figcaption></figure>
+<p>上图中，图像大小 1000×1000， 一层神经元数目为 10^6（<strong>经验：神经元数目应与特征数的数量差不多，这样效果好</strong>），这样全连接参数为 <code>1000*1000*10^6 = 10^12</code>，一层就是 1 万亿个参数，内存装不下。</p>
+<p>除此之外，全连接层还有参数过多容易过拟合的问题：</p>
+<ul>
+<li>计算资源不足</li>
+<li>容易过拟合，发生过拟合，我们就需要更多训练数据，但是很多时候我们没有更多的数据，因为获取数据需要成本</li>
+</ul>
+<h2 id="卷积的思路"><a class="heading-anchor" href="#卷积的思路">卷积的思路</a></h2>
+<h3 id="局部连接"><a class="heading-anchor" href="#局部连接">局部连接</a></h3>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/06/17/LS4soTJYgqnfKaQ.png" alt="106-12.png" loading="lazy"><figcaption class="article-figure-caption">106-12.png</figcaption></figure>
+<p><strong>局部连接</strong>举例：
+图像大小 1000×1000，下一层神经元为 10^6，局部连接范围为 10×10，也就是只跟图像中的 100 个像素做连接，全连接参数为 <code>10*10*10^6 = 10^8</code> .</p>
+<p>上图反而不太好理解？我这里画一个个人的理解（仅粗糙的原理示意）：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/06/20/xFJ9WrQnEoXHu1V.png" alt="106-13png.png" loading="lazy"><figcaption class="article-figure-caption">106-13png.png</figcaption></figure>
+<p><strong>为什么可以这么做？</strong>
+局部连接：图像的区域性，爱因斯坦的嘴唇附近的色彩是相似的。</p>
+<p><code>10^8</code> 依然是很多的！</p>
+<h3 id="卷积操作参数共享"><a class="heading-anchor" href="#卷积操作参数共享">卷积操作、参数共享</a></h3>
+<p>如何做卷积？把卷积核和它相对应部分做乘法，然后再求和。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/06/20/Dk8mdFaIQsHC56M.jpg" alt="106-14.jpeg" loading="lazy"><figcaption class="article-figure-caption">106-14.jpeg</figcaption></figure>
+<p>这时我们得到启发，我们将一张图片通过某种映射关系压缩了（尽管这种压缩对于人眼来说可能是无意义的）。我们得到减少训练参数的思路。</p>
+<p>input: 一张图片，output: 经过卷积操作后缩小的图片。
+我们只需要调整卷积核里面的参数，这里面的参数是需要学习的。</p>
+<p><strong>为什么可以这么做？</strong>
+<strong>参数共享</strong>与<strong>平移不变性</strong>：图像特征与位置无关。左边是脸，右边也是脸，这样无论脸放在什么地方都检查出来，刚好可以解决过拟合的问题（否则脸放到其他地方就检测不出来）。
+更多、更详细的参考：<a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CCNN%E7%9A%84%E7%94%B1%E6%9D%A5%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E5%8D%B7%E7%A7%AF%EF%BC%9F_%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AB%E5%8D%B7%E7%A7%AF-CSDN%E5%8D%9A%E5%AE%A2.pdf">https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CCNN%E7%9A%84%E7%94%B1%E6%9D%A5%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E5%8D%B7%E7%A7%AF%EF%BC%9F_%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AB%E5%8D%B7%E7%A7%AF-CSDN%E5%8D%9A%E5%AE%A2.pdf</a></p>
+<p>考虑卷积操作的步长：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/06/20/r5spfoED98ORThW.png" alt="106-15.png" loading="lazy"><figcaption class="article-figure-caption">106-15.png</figcaption></figure>
+<p><code>输出图像尺寸 = 1+(n-k)//s</code>, s 是步长。</p>
+<p>新的问题：步长变大，输出变小，那最后导致图像没了怎么办？或者在一些边界上怎么处理？
+采用如下 <strong>padding</strong> 手法：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/06/20/WCm5i1XZeSDvK7E.png" alt="106-16.png" loading="lazy"><figcaption class="article-figure-caption">106-16.png</figcaption></figure>
+<h2 id="池化"><a class="heading-anchor" href="#池化">池化</a></h2>
+<p>池化函数使用某一位置的相邻输出的总体统计特征来代替网络在该位置的输出。本质是<strong>降采样</strong>，可以大幅减少网络的参数量。</p>
+<p>池化技术的本质：在尽可能保留图片空间信息的前提下，降低图片尺寸，提取高层特征，同时减少网络参数量，预防过拟合。图片的主体内容丢失不多，<strong>依然具有平移，旋转，尺度的不变性</strong>，简单来说就是图片的主体内容依旧保存着原来大部分的空间信息。</p>
+<p><strong>最大值池化</strong>，能够抑制网络参数误差造成的估计均值偏移的现象。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/06/21/PDqIvpbW745tsmH.png" alt="106-17.png" loading="lazy"><figcaption class="article-figure-caption">106-17.png</figcaption></figure>
+<p><strong>平均值池化</strong>，主要用来抑制邻域值之间差别过大，造成的方差过大。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/06/21/wAkRG4NBgqDUeIH.png" alt="106-18.png" loading="lazy"><figcaption class="article-figure-caption">106-18.png</figcaption></figure>
+<p><strong>池化操作特点</strong>：</p>
+<ul>
+<li>常使用不重叠、不补零的方式</li>
+<li>没有用于求导的参数（没有需要训练的参数，参数个数为 0）</li>
+<li>池化层的<strong>超参数</strong>为步长和池化核大小</li>
+<li>减少图像尺寸，从而减少计算量</li>
+<li>一定程度<strong>平移鲁棒</strong>
+<ul>
+<li>比如一只猫移动了一个像素的另外一张图片，我们先做池化，再做卷积，那么最终还是可以识别这个猫</li>
+</ul>
+</li>
+<li>损失了空间位置精度</li>
+</ul>
+<h2 id="实战"><a class="heading-anchor" href="#实战">实战</a></h2>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/tf27-keras-classification-model-cnn.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li><code>fashion_mnist</code> 数据集上使用卷积神经网络</li>
+<li>多通道的图片如何卷积</li>
+<li>使用多个卷积核</li>
+<li>搭建卷积神经网络的经典流程</li>
+<li>卷积神经网络的参数量计算</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/tf28-keras-classification-model-cnn-selu.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li>在上一个的基础上改变了激活函数</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/tf29-keras-classification-model-separable-cnn.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li>深度可分离卷积</li>
+<li>深度可分离卷积的参数量计算、优化比例</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/tf30_10_monkeys_model_1.ipynb">notebook</a> 、<a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/tf31-10-monkeys-model-1.ipynb">notebook</a> 包含的内容：</p>
+<ul>
+<li>10-monkeys 数据集</li>
+<li>图片增强</li>
+<li>卷积神经网络进行图像分类</li>
+</ul>
+<h1 id="迁移学习"><a class="heading-anchor" href="#迁移学习">迁移学习</a></h1>
+<p>迁移学习在研究领域上属于机器学习。它专注于存储已有问题的解决模型，并将其利用在其他不同但相关的问题上。比如说，<strong>用来辨识汽车的知识（或者是模型）也可以被用来提升识别卡车的能力</strong>。计算机领域的迁移学习和心理学常常提到的学习迁移在概念上有一定关系，但是两个领域在学术上的关系非常有限。</p>
+<p>迁移学习的领域很大，它不是深度学习的一个子领域，而是与深度学习<strong>有交叉</strong>的领域。一般来说，迁移学习包括<strong>基于样本的迁移</strong>，<strong>基于特征的迁移</strong>，<strong>基于模型的迁移</strong>，以及<strong>基于关系的迁移</strong>。</p>
+<p>相关讨论：
+<a href="https://www.zhihu.com/question/41979241">https://www.zhihu.com/question/41979241</a></p>
+<blockquote>
+<p>迁移学习按照学习方式可以分为基于样本的迁移，基于特征的迁移，基于模型的迁移，以及基于关系的迁移。基于样本的迁移通过对源域中有标定样本的加权利用完成知识迁移；基于特征的迁移通过将源域和目标域映射到相同的空间（或者将其中之一映射到另一个的空间中）并最小化源域和目标域的距离来完成知识迁移；基于模型的迁移将源域和目标域的模型与样本结合起来调整模型的参数；基于关系的迁移则通过在源域中学习概念之间的关系，然后将其类比到目标域中，完成知识的迁移。</p>
+</blockquote>
+<h1 id="resnet"><a class="heading-anchor" href="#resnet">ResNet</a></h1>
+<h2 id="基本知识"><a class="heading-anchor" href="#基本知识">基本知识</a></h2>
+<p><a href="https://arxiv.org/abs/1512.03385">ResNet</a> 是 2015 年何凯明、张翔宇、任少卿、孙剑共同提出的。</p>
+<p>使用更深层的网络时，会发生<strong>梯度消失、梯度爆炸</strong>的问题，这个问题可以通过标准的初始化和正则化层基本解决，这样可以确保几十层的网络仍能够收敛。但是<strong>随着网络层数的增加，梯度消失或者爆炸的问题依旧存在</strong>。</p>
+<p>还有一个问题就是<strong>网络的退化</strong>，举个例子，假设已经有了一个最优化的网络结构，是 18 层。当我们设计网络结构的时候，我们并不知道具体多少层的网络是最优结构，假设我们设计了 34 层网络结构，那么多出来的 16 层其实是冗余的，<strong>我们希望训练网络的过程中，模型能够自己训练它们为恒等映射</strong>，也就是经过这层时的输入与输出完全一样。但是模型往往很难正确地将这 16 层学习为恒等映射，那么最终得到的效果就会比最优的 18 层网络结构差。这就是网络深度增加时，模型产生退化的现象。它不是由过拟合产生的，而是由冗余的网络层学习了不是恒等映射的参数造成的。</p>
+<p>具体哪些层是恒等层，这个由网络训练时自己判断。将原网络的几层改成一个残差块，残差块的具体构造如下图所示：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/06/24/AnqrZH8smWJEvfU.png" alt="106-19.png" loading="lazy"><figcaption class="article-figure-caption">106-19.png</figcaption></figure>
+<p>在第二层输出值激活前加入 X，这条路径称作 shortcut 连接。</p>
+<p>我们发现，假设该层是冗余的，在引入 ResNet 之前，我们想让该层学习到的参数能够满足 h(x)=x，即输入是 x，经过该冗余层后，输出仍然为 x. 但是要想学习 h(x)=x 恒等映射时的这层参数比较困难。ResNet 想到避免去学习该层恒等映射的参数，使用了如上图的结构，让 h(x)=F(x)+x; 这里的 F(x) 称作残差项，我们发现，要想让该冗余层能够恒等映射，只需要学习 F(x)=0. 学习 F(x)=0 比学习 h(x)=x 要简单，因为一般每层网络中的参数初始化偏向于 0，这样在相比于更新该网络层的参数来学习 h(x)=x，该冗余层学习 F(x)=0 的更新参数能够更快收敛。</p>
+<h2 id="实战-1"><a class="heading-anchor" href="#实战-1">实战</a></h2>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/tf32-10-monkeys-model-2-resnet50-finetune.ipynb">notebook</a> 包含的内容：</p>
+<ul>
+<li>使用 10-monkeys 数据集</li>
+<li>微调 resnet，做图像分类</li>
+</ul>
+<h1 id="卷积神经网络进阶"><a class="heading-anchor" href="#卷积神经网络进阶">卷积神经网络进阶</a></h1>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/tf33-cifar10-model-1.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li><strong>在 kaggle 上打比赛的大致流程</strong></li>
+<li>CIFAR-10 - Object Recognition in Images</li>
+<li>在 kaggle 上进行更复杂的输入输出文件操作</li>
+<li>使用卷积神经网络</li>
+</ul>
+<p>模型演变：AlexNet、VGG、ResNet、Inception、MobileNet.</p>
+<p>为什么要讲不同的网络结构？</p>
+<ul>
+<li>不同的网络结构解决的问题不同</li>
+<li>不同的网络结构使用的技巧不同</li>
+<li>不同的网络结构应用的场景不同</li>
+</ul>
+<p>模型的进化：</p>
+<ul>
+<li>更深更宽： AlexNet 到 VGGNet</li>
+<li>不同的模型结构： VGG 到 InceptionNet/ResNet</li>
+<li>优势组合： Inception+Res = InceptionResNet</li>
+<li>自我学习： NASNet</li>
+<li>实用： MobileNet</li>
+</ul>
+<h2 id="alexnet"><a class="heading-anchor" href="#alexnet">AlexNet</a></h2>
+<p>请参考：</p>
+<ul>
+<li><a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%BF%9B%E9%98%B6/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-AlexNet%20-%20%E7%9F%A5%E4%B9%8E.pdf">https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%BF%9B%E9%98%B6/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-AlexNet%20-%20%E7%9F%A5%E4%B9%8E.pdf</a></li>
+<li><a href="https://learnopencv.com/understanding-alexnet/">https://learnopencv.com/understanding-alexnet/</a></li>
+</ul>
+<h2 id="vggnet"><a class="heading-anchor" href="#vggnet">VGGNet</a></h2>
+<p>ImageNet 2014，分类第二，物体检测第一。论文地址：<a href="https://arxiv.org/abs/1409.1556">https://arxiv.org/abs/1409.1556</a></p>
+<ul>
+<li>网络结构层次更深</li>
+<li><strong>多使用 3x3 的卷积核</strong>
+<ul>
+<li>2 个 3x3 的卷积层可以看做一层 5x5 的卷积层，见图 106-20</li>
+<li>3 个 3x3 的卷积层可以看做一层 7x7 的卷积层</li>
+<li>1x1 的卷积层可以看做是非线性变换</li>
+</ul>
+</li>
+<li>每经过一个 pooling 层，通道数目翻倍</li>
+</ul>
+<p>视野域：2 个 3x3 = 1 个 5x5，但是为什么要这样做呢？</p>
+<ul>
+<li><strong>2 层比 1 层多一次非线性变换</strong></li>
+<li><strong>参数降低</strong> 28%， <code>5*5-3*3-3*3=7</code>, <code>7/25=28%</code>，参数量降低 28% .</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/06/lvtDWho6EcGqU2Q.png" alt="106-20.png" loading="lazy"><figcaption class="article-figure-caption">106-20.png</figcaption></figure>
+<p>训练技巧：</p>
+<ul>
+<li>LRN 是局部做归一化</li>
+<li>为什么都在后面加层？因为前面经过 maxpooling 后，后面参数没那么多，加层的计算量没那么大</li>
+<li>先训练浅层网络如 A，再去训练深层网络多尺度输入</li>
+<li>不同的尺度训练多个分类器，然后做 ensemble 随机使用不同的尺度缩放然后输入进分类器进行训练</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/06/bEKz1UZVGqrumIT.png" alt="106-21.png" loading="lazy"><figcaption class="article-figure-caption">106-21.png</figcaption></figure>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%BF%9B%E9%98%B6/tf34-vgg.ipynb">notebook</a> 包含以下内容：</p>
+<ul>
+<li>tensorflow 1 的一些使用（过时）</li>
+<li>模仿 vgg 的实现</li>
+</ul>
+<h2 id="resnet-1"><a class="heading-anchor" href="#resnet-1">ResNet</a></h2>
+<p>可以参考前面的部分，有这个小标题是为了展示卷积神经网络的发展历史，这里仅放一个 ipynb 文件。</p>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%BF%9B%E9%98%B6/tf35-resnet.ipynb">notebook</a> 包含的内容：</p>
+<ul>
+<li>使用过时的 tensorflow 1 版本</li>
+<li>实现 ResNet 的大致思路</li>
+</ul>
+<h2 id="inceptionnet"><a class="heading-anchor" href="#inceptionnet">InceptionNet</a></h2>
+<p>GoogLeNet/<strong>Inception v1</strong> 架构论文： <a href="https://arxiv.org/abs/1409.4842">https://arxiv.org/abs/1409.4842</a></p>
+<p>InceptionNet 可以看作是一种工程优化，同样的参数量更有效率。</p>
+<p>分组卷积：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/07/JThgdmNb81AiHaF.png" alt="106-22.png" loading="lazy"><figcaption class="article-figure-caption">106-22.png</figcaption></figure>
+<p>可以参考的内容（机翻注意⚠️）：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/45189981">https://zhuanlan.zhihu.com/p/45189981</a></li>
+<li><a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%BF%9B%E9%98%B6/InceptionNet%20%E4%BB%8Ev1%E5%88%B0v4%E7%9A%84%E6%BC%94%E5%8F%98%20-%20%E7%9F%A5%E4%B9%8E.pdf">https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%BF%9B%E9%98%B6/InceptionNet%20%E4%BB%8Ev1%E5%88%B0v4%E7%9A%84%E6%BC%94%E5%8F%98%20-%20%E7%9F%A5%E4%B9%8E.pdf</a> （这是备份）</li>
+</ul>
+<p><strong>InceptionNet v2</strong> 和 <strong>InceptionNet v3</strong> 在同一篇论文中提出：
+<a href="https://arxiv.org/abs/1512.00567v3">https://arxiv.org/abs/1512.00567v3</a></p>
+<p>这个版本提出了许多升级，这些升级提高了准确性并降低了计算复杂度。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/07/LedRZjXSWsC42zT.png" alt="106-23.png" loading="lazy"><figcaption class="article-figure-caption">106-23.png</figcaption></figure>
+<p>3x3 不是最小卷积核，3x3 效果类似于 1x3 加上 3x1，这样比较极致，减少 33% .</p>
+<p><strong>Inception-v4</strong>, 论文地址：
+<a href="https://arxiv.org/abs/1602.07261">https://arxiv.org/abs/1602.07261</a></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/07/z4OYT2GD8nLmgHs.png" alt="106-24.png" title="这里类似于残差连接" loading="lazy"><figcaption class="article-figure-caption">这里类似于残差连接</figcaption></figure>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%BF%9B%E9%98%B6/tf36-inception_net.ipynb">notebook</a> 包含的内容：</p>
+<ul>
+<li>使用过时的 tensorflow 1</li>
+<li>实现 inception net 的大致思路</li>
+</ul>
+<h2 id="mobilenet"><a class="heading-anchor" href="#mobilenet">MobileNet</a></h2>
+<p>MobileNet is a family of convolutional neural network (CNN) architectures designed for efficient image classification, object detection, and other computer vision tasks on mobile and embedded devices. They are known for their small size, low latency, and low power consumption, making them suitable for resource-constrained environments.</p>
+<p>论文地址： <a href="https://arxiv.org/abs/1704.04861">https://arxiv.org/abs/1704.04861</a></p>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/70703846">https://zhuanlan.zhihu.com/p/70703846</a></li>
+<li><a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%BF%9B%E9%98%B6/%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E2%80%9C%E5%B7%A1%E7%A4%BC%E2%80%9D%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%20MobileNet%EF%BC%8C%E4%BB%8EV1%E5%88%B0V3%20-%20%E7%9F%A5%E4%B9%8E.pdf">https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%BF%9B%E9%98%B6/%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E2%80%9C%E5%B7%A1%E7%A4%BC%E2%80%9D%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%20MobileNet%EF%BC%8C%E4%BB%8EV1%E5%88%B0V3%20-%20%E7%9F%A5%E4%B9%8E.pdf</a> （备份）</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%BF%9B%E9%98%B6/tf37-mobile_net.ipynb">notebook</a> 包含的内容：</p>
+<ul>
+<li>使用过时的 tensorflow 1 代码</li>
+<li>自行编写深度可分离卷积</li>
+<li>实现 MobileNet 的大致思路</li>
+</ul>
+<h2 id="不同模型结构的对比"><a class="heading-anchor" href="#不同模型结构的对比">不同模型结构的对比</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/08/lZyh3xIR1pPDbgL.png" alt="106-25.png" loading="lazy"><figcaption class="article-figure-caption">106-25.png</figcaption></figure>
+<p>此外，还有 NASNet，是强化学习，并不在图中。</p>
+<p>效果计算量分析（性价比）。横轴是计算量，纵轴是精确率，圆圈大小是模型参数量的多少，可以看到 V3 非常的不错：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/08/7YqxWjKTor1w8JZ.png" alt="106-26.png" loading="lazy"><figcaption class="article-figure-caption">106-26.png</figcaption></figure>
+<h1 id="卷积神经网络调参"><a class="heading-anchor" href="#卷积神经网络调参">卷积神经网络调参</a></h1>
+<h2 id="不同的优化器"><a class="heading-anchor" href="#不同的优化器">不同的优化器</a></h2>
+<p>对于稀疏数据，使用学习率可自适应方法。</p>
+<p>SGD 通常训练时间更长，最终效果比较好，但需要好的初始化和 learning rate。</p>
+<p><strong>需要训练较深较复杂的网络且需要快速收敛时，推荐使用 adam.</strong> 设定一个比较小的 learning rate 值。</p>
+<p>Adagrad, RMSprop, Adam 是比较相近的算法，在相似的情况下表现差不多。</p>
+<h3 id="前情提要---梯度下降"><a class="heading-anchor" href="#前情提要---梯度下降">前情提要 - 梯度下降</a></h3>
+<p>随机梯度下降的问题：</p>
+<ul>
+<li>局部极值</li>
+<li>Saddle point 问题（鞍点问题）</li>
+</ul>
+<p><strong>动量（momentum）梯度下降</strong>，通过一个比喻来理解：</p>
+<blockquote>
+<p>想象一个从山坡上滚下来的小球。在普通的梯度下降中，小球的每一步只取决于当前位置的坡度。而带有动量的小球，则会积累滚动的速度。当它冲下陡坡时，会越滚越快；即使遇到比较平缓的区域，由于“惯性”的存在，它也会继续前行一段距离，而不是立即停下。</p>
+</blockquote>
+<p>在标准的梯度下降中，参数 <span class="math-source">$w$</span> 的更新仅仅依赖于当前位置的梯度 <span class="math-source">$\nabla J(w)$</span> 和学习率 <span class="math-source">$\eta$</span>。更新的向量可以表示为 <span class="math-source">$\Delta w_t$</span>：</p>
+<div class="math-source">$$
+\Delta w_t = -\eta \cdot \nabla J(w_t)
+$$</div>
+<p>参数更新规则为：</p>
+<div class="math-source">$$
+w_{t+1} = w_t + \Delta w_t = w_t - \eta \cdot \nabla J(w_t)
+$$</div>
+<p>动量法引入了一个“速度”向量 <span class="math-source">$v$</span> (velocity)，它会累积历史的梯度信息。参数更新分为两步：</p>
+<p>首先，计算当前的速度 <span class="math-source">$v_t$</span>。它由<strong>上一时刻的速度 <span class="math-source">$v_{t-1}$</span></strong> (按动量因子 <span class="math-source">$\gamma$</span> 衰减) 和 <strong>当前梯度</strong> 共同决定：</p>
+<div class="math-source">$$
+v_t = \gamma \cdot v_{t-1} + \eta \cdot \nabla J(w_t)
+$$</div>
+<p>然后，使用这个速度 <span class="math-source">$v_t$</span> 来更新参数：</p>
+<div class="math-source">$$
+w_{t+1} = w_t - v_t
+$$</div>
+<ul>
+<li><span class="math-source">$\gamma$</span> 是<strong>动量因子 (momentum)</strong>，一个介于 <code>[0, 1]</code> 之间的超参数，通常取值为 0.9 左右。它决定了历史速度的保留程度。</li>
+<li>当梯度方向连续保持一致时，速度 <span class="math-source">$v_t$</span> 会持续累加，从而在那个方向上<strong>加速</strong>前进。</li>
+<li>当梯度方向发生振荡时，历史速度可以抵消一部分相反的梯度，从而对更新路径起到平滑作用，实现<strong>减速</strong>和调整方向。</li>
+</ul>
+<p>动量法通过累积历史梯度，带来了两个显著的优势：</p>
+<ol>
+<li><strong>加速收敛 (Accelerated Convergence)</strong>
+<ul>
+<li>在损失曲面中平坦但有持续梯度的方向（好比一个长长的缓坡峡谷），动量项会累积梯度，使得参数更新的步长越来越大，从而更快地穿越这些区域，整体上加速收敛。</li>
+</ul>
+</li>
+<li><strong>提高精度与稳定性 (Improved Precision and Stability)</strong>
+<ul>
+<li>该优势主要体现在<strong>减少振荡</strong>。在损失曲面陡峭但梯度方向来回摆动的方向（好比峡谷的两壁），当前梯度与历史速度方向可能相反。动量项可以起到平滑和抑制作用，有效衰减这种振荡，使得更新方向更稳定地指向最优解。</li>
+</ul>
+</li>
+</ol>
+<h3 id="adagrad"><a class="heading-anchor" href="#adagrad">AdaGrad</a></h3>
+<p>调整学习率，学习率随着训练次数的增加越来越小。</p>
+<div class="math-source">$$
+n_t = n_{t-1} + g_t^2
+$$</div>
+<p>以往梯度的平方和作为分母，每次计算要除以它：</p>
+<div class="math-source">$$
+\Delta \theta_t = - \frac{\eta}{\sqrt{n_t+ \epsilon}} \cdot g_t
+$$</div>
+<p>伪代码：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#24292E">grad_squared </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span></span>
+<span class="line"><span style="color:#D73A49">while</span><span style="color:#005CC5"> True</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">  dx </span><span style="color:#D73A49">=</span><span style="color:#24292E"> compute_gradient(x)</span></span>
+<span class="line"><span style="color:#24292E">  grad_squared </span><span style="color:#D73A49">+=</span><span style="color:#24292E"> dx </span><span style="color:#D73A49">*</span><span style="color:#24292E"> dx</span></span>
+<span class="line"><span style="color:#24292E">  x </span><span style="color:#D73A49">-=</span><span style="color:#24292E"> learning_rate </span><span style="color:#D73A49">*</span><span style="color:#24292E"> dx </span><span style="color:#D73A49">/</span><span style="color:#24292E"> (np.sqrt(grad_squared) </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 1e-7</span><span style="color:#24292E">)</span></span></code></pre>
+<p>前期，regularizer 较小，放大梯度；后期，regularizer（分母）较大，缩小梯度。梯度随训练次数降低。</p>
+<p>AdaGrad 算法<strong>缺点</strong>：</p>
+<ul>
+<li>学习率设置太大，导致 regularizer（分母）影响过于敏感</li>
+<li>后期，regularizer 累积值太大，提前结束训练</li>
+</ul>
+<h3 id="rmsprop"><a class="heading-anchor" href="#rmsprop">RMSProp</a></h3>
+<p>Adagrad 的变种，作了一些调整，由累积平方梯度变为平均平方梯度：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#24292E">grad_squared </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span></span>
+<span class="line"><span style="color:#D73A49">while</span><span style="color:#005CC5"> True</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">  dx </span><span style="color:#D73A49">=</span><span style="color:#24292E"> compute_gradient(x)</span></span>
+<span class="line"><span style="color:#24292E">  grad_squared </span><span style="color:#D73A49">=</span><span style="color:#24292E"> decay_rate </span><span style="color:#D73A49">*</span><span style="color:#24292E"> grad_squared </span><span style="color:#D73A49">+</span><span style="color:#24292E"> (</span><span style="color:#005CC5">1</span><span style="color:#D73A49">-</span><span style="color:#24292E">decay_rate) </span><span style="color:#D73A49">*</span><span style="color:#24292E"> dx </span><span style="color:#D73A49">*</span><span style="color:#24292E"> dx</span></span>
+<span class="line"><span style="color:#24292E">  x </span><span style="color:#D73A49">-=</span><span style="color:#24292E"> learning_rate </span><span style="color:#D73A49">*</span><span style="color:#24292E"> dx </span><span style="color:#D73A49">/</span><span style="color:#24292E"> (np.sqrt(grad_squared) </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 1e-7</span><span style="color:#24292E">)</span></span></code></pre>
+<p>解决了后期提前结束的问题。</p>
+<h3 id="adam"><a class="heading-anchor" href="#adam">Adam</a></h3>
+<p>伪代码：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#24292E">first_moment </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span></span>
+<span class="line"><span style="color:#24292E">second_moment </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span></span>
+<span class="line"><span style="color:#D73A49">while</span><span style="color:#005CC5"> True</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">  dx </span><span style="color:#D73A49">=</span><span style="color:#24292E"> compute_gradient(x)</span></span>
+<span class="line"><span style="color:#24292E">  first_moment </span><span style="color:#D73A49">=</span><span style="color:#24292E"> beta1 </span><span style="color:#D73A49">*</span><span style="color:#24292E"> first_moment </span><span style="color:#D73A49">+</span><span style="color:#24292E"> (</span><span style="color:#005CC5">1</span><span style="color:#D73A49">-</span><span style="color:#24292E">beta1) </span><span style="color:#D73A49">*</span><span style="color:#24292E"> dx  </span><span style="color:#6A737D"># Momentum</span></span>
+<span class="line"><span style="color:#24292E">  second_moment </span><span style="color:#D73A49">=</span><span style="color:#24292E"> beta2 </span><span style="color:#D73A49">*</span><span style="color:#24292E"> second_moment </span><span style="color:#D73A49">+</span><span style="color:#24292E"> (</span><span style="color:#005CC5">1</span><span style="color:#D73A49">-</span><span style="color:#24292E">beta2) </span><span style="color:#D73A49">*</span><span style="color:#24292E"> dx </span><span style="color:#D73A49">*</span><span style="color:#24292E"> dx  </span><span style="color:#6A737D"># Adagrad</span></span>
+<span class="line"><span style="color:#24292E">  x </span><span style="color:#D73A49">-=</span><span style="color:#24292E"> learning_rate </span><span style="color:#D73A49">*</span><span style="color:#24292E"> first_moment </span><span style="color:#D73A49">/</span><span style="color:#24292E"> (np.sqrt(second_moment)</span><span style="color:#D73A49">+</span><span style="color:#005CC5">1e-7</span><span style="color:#24292E">)</span></span></code></pre>
+<p>又加入了一个校准，校准的目的是一开始时，让 <code>first_moment</code> 和 <code>second_moment</code> 都变的稍微大一些：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#24292E">first_moment </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span></span>
+<span class="line"><span style="color:#24292E">second_moment </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span></span>
+<span class="line"><span style="color:#D73A49">for</span><span style="color:#24292E"> t </span><span style="color:#D73A49">in</span><span style="color:#005CC5"> range</span><span style="color:#24292E">(</span><span style="color:#005CC5">1</span><span style="color:#24292E">, num_iterations):</span></span>
+<span class="line"><span style="color:#24292E">  dx </span><span style="color:#D73A49">=</span><span style="color:#24292E"> compute_gradient(x)</span></span>
+<span class="line"><span style="color:#24292E">  first_moment </span><span style="color:#D73A49">=</span><span style="color:#24292E"> beta1 </span><span style="color:#D73A49">*</span><span style="color:#24292E"> first_moment </span><span style="color:#D73A49">+</span><span style="color:#24292E"> (</span><span style="color:#005CC5">1</span><span style="color:#D73A49">-</span><span style="color:#24292E">beta1) </span><span style="color:#D73A49">*</span><span style="color:#24292E"> dx</span></span>
+<span class="line"><span style="color:#24292E">  second_moment </span><span style="color:#D73A49">=</span><span style="color:#24292E"> beta2 </span><span style="color:#D73A49">*</span><span style="color:#24292E"> second_moment </span><span style="color:#D73A49">+</span><span style="color:#24292E"> (</span><span style="color:#005CC5">1</span><span style="color:#D73A49">-</span><span style="color:#24292E">beta2) </span><span style="color:#D73A49">*</span><span style="color:#24292E"> dx </span><span style="color:#D73A49">*</span><span style="color:#24292E"> dx</span></span>
+<span class="line"><span style="color:#24292E">  first_unbias </span><span style="color:#D73A49">=</span><span style="color:#24292E"> first_moment </span><span style="color:#D73A49">/</span><span style="color:#24292E"> (</span><span style="color:#005CC5">1</span><span style="color:#D73A49">-</span><span style="color:#24292E">beta1</span><span style="color:#D73A49">**</span><span style="color:#24292E">t)</span></span>
+<span class="line"><span style="color:#24292E">  second_unbias </span><span style="color:#D73A49">=</span><span style="color:#24292E"> second_moment </span><span style="color:#D73A49">/</span><span style="color:#24292E"> (</span><span style="color:#005CC5">1</span><span style="color:#D73A49">-</span><span style="color:#24292E">beta2</span><span style="color:#D73A49">**</span><span style="color:#24292E">t)</span></span>
+<span class="line"><span style="color:#24292E">  x </span><span style="color:#D73A49">-=</span><span style="color:#24292E"> learning_rate </span><span style="color:#D73A49">*</span><span style="color:#24292E"> first_unbias </span><span style="color:#D73A49">/</span><span style="color:#24292E"> (np.sqrt(second_unbias)</span><span style="color:#D73A49">+</span><span style="color:#005CC5">1e-7</span><span style="color:#24292E">)</span></span></code></pre>
+<h2 id="激活函数"><a class="heading-anchor" href="#激活函数">激活函数</a></h2>
+<h3 id="sigmoid"><a class="heading-anchor" href="#sigmoid">Sigmoid</a></h3>
+<p>参考之前的内容。</p>
+<h3 id="tanh"><a class="heading-anchor" href="#tanh">Tanh</a></h3>
+<ul>
+<li>输入非常大或非常小时没有梯度</li>
+<li>输出均值是 0: 相对于 sigmoid 的好处</li>
+<li>计算复杂</li>
+</ul>
+<h3 id="relu"><a class="heading-anchor" href="#relu">ReLU</a></h3>
+<p>优点：</p>
+<ol>
+<li>使用 ReLU 的 SGD 算法的收敛速度比 sigmoid 和 tanh 快。</li>
+<li>在 x>0 区域上，不会出现梯度饱和、梯度消失的问题。</li>
+<li>计算复杂度低，不需要进行指数运算，只要一个阈值就可以得到激活值。</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>ReLU 的输出不是 0 均值的。</li>
+<li><strong>Dead ReLU Problem(神经元坏死现象)</strong>：ReLU 在负数区域被 kill 的现象叫做 dead relu. ReLU 在训练的时很“脆弱”。在 x&#x3C;0 时，梯度为 0. 这个神经元及之后的神经元梯度永远为 0，不再对任何数据有所响应，导致相应参数永远不会被更新。</li>
+</ol>
+<blockquote>
+<p>一个非常大的梯度流过神经元，不会再对数据有激活现象了，“很大的梯度流过神经元”的意思就是指：该神经元相关的参数被梯度下降算法更新了一次。
+比如原来的参数可能是：[-10, 5, 7], 然后突然来了一个梯度是[-100, -100, -100], 这样参数就更新成了 [-110, -95, -93]。 然后如果接下来的收到的数据都是[a, b, c], 其中 a, b, c >=0, 这个时候神经元的输出恒为 0，于是不会再有梯度传回来。因而参数得不到更新，也就变成了 dead cell 了。</p>
+</blockquote>
+<p>产生这种现象的原因：</p>
+<ol>
+<li>参数初始化问题</li>
+<li>learning rate 太高导致在训练过程中参数更新太大</li>
+</ol>
+<p>解决方法：
+采用 Xavier 初始化方法，以及避免将 learning rate 设置太大或使用 adagrad 等自动调节 learning rate 的算法。</p>
+<h3 id="leaky-relu"><a class="heading-anchor" href="#leaky-relu">Leaky-ReLU</a></h3>
+<p>Leaky ReLU is <strong>an activation function in neural networks that addresses the “dying ReLU” problem by allowing a small, non-zero gradient for negative inputs</strong>, unlike the standard ReLU which outputs zero. This helps prevent neurons from becoming completely inactive during training, especially in deep networks.</p>
+<div class="math-source">$$
+\text{LeakyReLU}(x) =
+\begin{cases} 
+x,  &#x26; x>0 \\
+\alpha x, &#x26; x \le 0
+\end{cases}
+$$</div>
+<p>其中，<span class="math-source">$ \alpha $</span> 通常取值 0.01 ，Leaky-ReLU 的函数范围是 <span class="math-source">$(-\infty, +\infty)$</span> .</p>
+<h3 id="elu"><a class="heading-anchor" href="#elu">ELU</a></h3>
+<p>具有 relu 的优势，没有 Dead ReLU 问题，输出均值接近 0，实际上 PReLU 和 Leaky ReLU 都有这一优点。<strong>有负数饱和区域，从而对噪声有一些鲁棒性。</strong> 可以看做是介于 ReLU 和 LeakyReLU 之间的一个函数。当然，这个函数小于零时也需要计算 exp，从而计算量更大。</p>
+<h3 id="maxout"><a class="heading-anchor" href="#maxout">Maxout</a></h3>
+<div class="math-source">$$
+\text{max}(w_1^T x + b_1, w_2^T x + b_2)
+$$</div>
+<p>没有 dead relu 问题。参数翻倍。</p>
+<p>优点：</p>
+<ol>
+<li>Maxout 的拟合能力非常强，可以拟合任意的凸函数</li>
+<li>Maxout 具有 ReLU 的所有优点，线性、不饱和性</li>
+<li>不会出现神经元坏死的现象</li>
+</ol>
+<p>缺点：
+增加了太多参数量。maxout 还需要反向传播去更新它自身的权重系数。</p>
+<h3 id="总结"><a class="heading-anchor" href="#总结">总结</a></h3>
+<ul>
+<li>Relu, 小心设置 learning rate（初始值不要太大）</li>
+<li>不要使用 sigmoid（relu 出现后，就不用它了，收敛太慢）</li>
+<li>使用 LeakyRelu、maxout、ELU</li>
+<li>可以试试 tanh，但不要抱太大期望（因为计算量大）</li>
+</ul>
+<h2 id="网络初始化w和b"><a class="heading-anchor" href="#网络初始化w和b">网络初始化（w和b）</a></h2>
+<p>有关论文： <a href="https://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf">Understanding the difficulty of training deep feedforward neural networks</a> .</p>
+<p>论文解析： <a href="https://zhuanlan.zhihu.com/p/43840797">https://zhuanlan.zhihu.com/p/43840797</a></p>
+<p><strong>如何分析初始化结果好不好？</strong></p>
+<p>查看初始化后各层的激活值分布，激活值就是经过激活函数后的值，如果分布是固定的在 -1到 1，或者 0 到 1 之间，那没问题，如果集中在某一个值，那就不太好。</p>
+<p>用均值为 0，方差为 0.02 的<strong>正态分布</strong>初始化（tanh），如下图所示（依次往后看是经过每一层后的效果），高层均值为 0，<strong>没有梯度</strong>：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/10/DRX4E9VPfO5aIzZ.png" alt="106-27.png" loading="lazy"><figcaption class="article-figure-caption">106-27.png</figcaption></figure>
+<p>用均值为 0，方差为 1 的<strong>正态分布</strong>初始化（tanh），如下图所示，高层均值为-1,1，已经饱和：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/10/3VTSKDWIJPLzGiR.png" alt="106-28.png" loading="lazy"><figcaption class="article-figure-caption">106-28.png</figcaption></figure>
+<p><strong>Xavier 分布（glorot_uniform）</strong> 在 tanh 上表现很好：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/10/yEM6junIYVicbKN.png" alt="106-29.png" loading="lazy"><figcaption class="article-figure-caption">106-29.png</figcaption></figure>
+<p><strong>Xavier 分布在 ReLU 上表现并不好：</strong></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/10/vJKjpZIVHqBsf6W.png" alt="106-30.png" loading="lazy"><figcaption class="article-figure-caption">106-30.png</figcaption></figure>
+<p>何凯明发明了 <strong>He Initialization</strong>，对 ReLU 效果较好：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/10/86fQRxE4mCirHSy.png" alt="106-31.png" loading="lazy"><figcaption class="article-figure-caption">106-31.png</figcaption></figure>
+<p>关于 He Initialization，可参考：</p>
+<ul>
+<li><a href="https://medium.com/@piyushkashyap045/mastering-weight-initialization-in-neural-networks-a-beginners-guide-6066403140e9">Mastering Weight Initialization in Neural Networks: A Beginner’s Guide</a></li>
+<li><a href="https://docs.pytorch.org/docs/stable/nn.init.html">PyTorch documentation - torch.nn.init</a> ，网页搜索 kaiming</li>
+</ul>
+<h2 id="批归一化-1"><a class="heading-anchor" href="#批归一化-1">批归一化</a></h2>
+<p>参照之前。</p>
+<h2 id="数据增强"><a class="heading-anchor" href="#数据增强">数据增强</a></h2>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/10/RtzNQTsCPjhxA7o.png" alt="106-32.png" loading="lazy"><figcaption class="article-figure-caption">106-32.png</figcaption></figure>
+<h2 id="更多调参技巧"><a class="heading-anchor" href="#更多调参技巧">更多调参技巧</a></h2>
+<ul>
+<li>拿到更多的数据（开发埋点收集更多数据，购买，爬取）</li>
+<li>给神经网络添加层次</li>
+<li>紧跟最新进展，使用新方法（看论文）</li>
+<li>增大训练的迭代次数</li>
+<li>尝试正则化 <span class="math-source">$||w||^2$</span></li>
+<li>使用更多的 GPU 来加速训练 （利用集群）</li>
+<li><strong>可视化工具来检查中间状态</strong></li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/10/BdPuv2eGbZksNCL.png" alt="106-33.png" loading="lazy"><figcaption class="article-figure-caption">106-33.png</figcaption></figure>
+<p>在预训练好的网络结构上微调（Fine-tuning），例如各种 application. 这种方法在比赛中被大量使用。</p>
+<h2 id="实战-2"><a class="heading-anchor" href="#实战-2">实战</a></h2>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%B0%83%E5%8F%82/tf38-vgg-tensorboard.ipynb">notebook</a> 包含的内容：</p>
+<ul>
+<li>使用 tensorflow 1 的 tensorboard</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%B0%83%E5%8F%82/tf39-vgg-tensorboard-fine-tune.ipynb">notebook</a> 包含的内容：</p>
+<ul>
+<li>使用老旧的 tensorflow 1</li>
+<li>加载、保存模型的方法</li>
+<li>checkpoint</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%B0%83%E5%8F%82/tf40-vgg-tensorboard-activation-initializer-optimizer.ipynb">notebook</a> 包含的内容：</p>
+<ul>
+<li>老旧的 tensorflow 1 版本</li>
+<li>尝试调整激活函数、初始化分布、优化器</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%B0%83%E5%8F%82/tf41-vgg-tensorboard-data_aug.ipynb">notebook</a> 包含的内容：</p>
+<ul>
+<li>老旧的 tensorflow 1 版本</li>
+<li>图像增强</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%B0%83%E5%8F%82/tf42-vgg-tensorboard-data_aug-deeper.ipynb">notebook</a> 包含的内容：</p>
+<ul>
+<li>老旧的 tensorflow 1 版本</li>
+<li>更深的网络深度</li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%B0%83%E5%8F%82/tf43-vgg-tensorboard-data_aug-deeper-bn.ipynb">notebook</a> 包含的内容：</p>
+<ul>
+<li>老旧的 tensorflow 1 版本</li>
+<li>卷积搞为装饰器（类似），这样方便很多</li>
+<li>批归一化</li>
+</ul>
+<h1 id="图像风格变换"><a class="heading-anchor" href="#图像风格变换">图像风格变换</a></h1>
+<h2 id="神经网络可以做什么"><a class="heading-anchor" href="#神经网络可以做什么">神经网络可以做什么</a></h2>
+<p>图像风格转换：</p>
+<figure class="article-figure"><img src="https://files.seeusercontent.com/2026/08/05/s8Tm/106-34.png" alt="106-34.png" loading="lazy"><figcaption class="article-figure-caption">106-34.png</figcaption></figure>
+<p>图像修复（第三列是<strong>传统修复</strong>，第四列是<strong>深度学习修复</strong>）：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/12/OkArDNZoCTXn16t.png" alt="106-35.png" loading="lazy"><figcaption class="article-figure-caption">106-35.png</figcaption></figure>
+<p>换脸（第二个是传统地 P 了一张脸上去，第三个是<strong>可以保证脸型和肤色还是原有的</strong>）：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/12/oRSbjAgJHxc5XrV.png" alt="106-36.png" loading="lazy"><figcaption class="article-figure-caption">106-36.png</figcaption></figure>
+<p>还有图片超清化，图像生成文字等。</p>
+<h2 id="卷积神经网络学到了什么"><a class="heading-anchor" href="#卷积神经网络学到了什么">卷积神经网络学到了什么</a></h2>
+<p>参考论文： <a href="https://arxiv.org/abs/1311.2901">https://arxiv.org/abs/1311.2901</a></p>
+<figure class="article-figure"><img src="https://bu.dusays.com/2025/07/12/68713aa5e62fa.png" alt="106-37.png" loading="lazy"><figcaption class="article-figure-caption">106-37.png</figcaption></figure>
+<p>经验总结（一种尝试性质的解释）：</p>
+<ul>
+<li>卷积神经网络的每一层的激活值都可以看做是图像的抽象表示</li>
+<li>卷积神经网络中某层的每个激活值都可以看做是一个分类器，众多的分类结果组成了抽象表示</li>
+<li>层级越高，特征抽象程度越高</li>
+</ul>
+<h2 id="图像风格转换简单版本"><a class="heading-anchor" href="#图像风格转换简单版本">图像风格转换（简单版本）</a></h2>
+<p>参考论文： <a href="https://arxiv.org/abs/1508.06576">https://arxiv.org/abs/1508.06576</a></p>
+<p>发展历史： <a href="https://zhuanlan.zhihu.com/p/26746283">图像风格迁移(Neural Style)简史</a>，内容已在 github 备份。</p>
+<p>不可能存在一个风格变换的目标值，所以是一个<strong>无监督问题</strong>。</p>
+<p>希望的效果：<strong>输出图像既和原图很相近，也和风格图片很相近。</strong></p>
+<blockquote>
+<p>根据之前的笔记内容 <strong>“卷积神经网络学到了什么”</strong>，对于原图，可以计算其内容特征；对于风格图片，可以计算其风格特征。</p>
+</blockquote>
+<p>图片在 CNN 的不同处理阶段中表现出不同的 filtered images ：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/21/5nQdy8SrgYNkBqU.png" alt="106-38.png" loading="lazy"><figcaption class="article-figure-caption">106-38.png</figcaption></figure>
+<p><strong>重要性质</strong>：</p>
+<ol>
+<li><strong>Higher layers in the network capture the high-level content</strong> in terms of objects and their  arrangement in the input image <strong>but do not constrain the exact pixel values</strong> of the reconstruction.
+<ul>
+<li>the size and complexity of local image  structures from the input image increases along the hierarchy, a result that <strong>can be explained  by the increasing receptive field sizes and feature complexity</strong>.</li>
+</ul>
+</li>
+<li>In contrast, <strong>reconstructions from the lower layers  simply reproduce the exact pixel values of the original image</strong>.</li>
+</ol>
+<p>思路：虽然这是一个无监督的问题，但是为了达到“相近”，还是可以计算损失。</p>
+<p>我们希望 <code>内容损失+风格损失</code> 是最小的（这里的 <code>+</code> 不一定是数值上简单的求和）。</p>
+<p>所以要计算两个损失：</p>
+<ol>
+<li>对内容图片的损失</li>
+<li>对风格图片的损失</li>
+</ol>
+<p><strong>对于内容</strong>，关键思路：we <strong>perform gradient descent on a white noise image</strong> to find another image that matches the feature responses of the original image.</p>
+<p>为方便起见，记：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/21/15r24vME8y3kCiT.png" alt="106-39.png" loading="lazy"><figcaption class="article-figure-caption">106-39.png</figcaption></figure>
+<p>因此 layer <span class="math-source">$l$</span> 的 responses 可以存储在矩阵 <span class="math-source">$F^l \in \cal{R}^{\it{N_l \times M_l}}$</span> 中，where <span class="math-source">$F^l_{ij}$</span> is the activation  of the <span class="math-source">$i^{th}$</span> filter at position <span class="math-source">$j$</span> in layer <span class="math-source">$l$</span>.</p>
+<p>记原图为 <span class="math-source">$\vec{p}$</span> ，<span class="math-source">$P^l$</span> 是其在 layer <span class="math-source">$l$</span> 对应的 feature representation. 记待生成的图像为 <span class="math-source">$\vec{x}$</span>，<span class="math-source">$F^l$</span> 是其在 layer <span class="math-source">$l$</span> 对应的 feature representation. 记损失：</p>
+<div class="math-source">$$
+\cal{L}_{\it{content}} (\vec{p}, \vec{x}, l) = \frac{1}{2} \sum _{i,j} (\it{F^l_{ij}} - P^l_{ij})^2
+$$</div>
+<p>激活函数是 relu, 则</p>
+<div class="math-source">$$
+\frac{\partial \cal{L}_{\it{content}}}{\partial F^l_{ij}} = 
+\begin{cases} 
+(F^l-P^l)_{ij}  &#x26; \text{if }F^l_{ij} > 0 \\
+0 &#x26; \text{if } F^l_{ij} &#x3C; 0
+\end{cases}
+$$</div>
+<p><strong>对于风格</strong>，On top of the CNN responses in each layer of the network we built <strong>a style representation that computes the correlations between the different filter responses</strong>, where the expectation is  taken over the spatial extend of the input image.</p>
+<p>特征相关性由 Gram 矩阵 <span class="math-source">$G^l \in \cal{R}^{\it{N_l} \times N_l}$</span> 给出，<span class="math-source">$G^l$</span> 在第 <span class="math-source">$i$</span> 行第 <span class="math-source">$j$</span> 列的元素 <span class="math-source">$G^l_{ij}$</span> 为：</p>
+<div class="math-source">$$
+G^l_{ij} = \sum_k F^l_{ik}F^l_{jk}
+$$</div>
+<p><span class="math-source">$G^l_{ij}$</span> 是 layer <span class="math-source">$l$</span> 里，向量化的 feature map <span class="math-source">$i$</span> 和 <span class="math-source">$j$</span> 的内积。示意图如下：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/21/TrYfiI2bZxSHUQu.png" alt="106-40.png" loading="lazy"><figcaption class="article-figure-caption">106-40.png</figcaption></figure>
+<p>因为这里的 feature map 是向量化的（类似于 tensorflow 中的展平操作），所以其实也可以有如下写法：</p>
+<div class="math-source">$$
+G^l = F^l \cdot (F^l)^T
+$$</div>
+<p>这里同时得出之后会用到的重要性质：<span class="math-source">$G^l$</span> 是对称阵，也即 <strong>Gram 矩阵是对称阵</strong> 。</p>
+<p>记 <span class="math-source">$\vec{a}$</span> 为原始图像，<span class="math-source">$\vec{x}$</span> 为待生成的图像，<span class="math-source">$A^l$</span> 和 <span class="math-source">$G^l$</span> 是 layer <span class="math-source">$l$</span> 上对应的风格表示。layer <span class="math-source">$l$</span> 对总损失的贡献为：</p>
+<div class="math-source">$$
+E_l = \frac{1}{4N^2_l M^2_l} \sum_{i,j} (G^l_{ij}-A^l_{ij})^2
+$$</div>
+<p>那么总的损失就是：</p>
+<div class="math-source">$$
+\cal{L}_{style}(\vec{a}, \vec{x}) = \sum_{l=0}^{\it{L}} w_l \it{E}_l
+$$</div>
+<p>其中，<span class="math-source">$w_l$</span> 是不同 layer 的权重系数。</p>
+<p>那么，可对 <span class="math-source">$E_l$</span> 求导（激活函数 relu 之后）。我们要求的是：</p>
+<div class="math-source">$$
+\frac{\partial E_l}{\partial F^l_{pq}}
+$$</div>
+<p>这个相当于对 activation map 中的某一个像素值求导。其中，<span class="math-source">$p$</span> 表示第 <span class="math-source">$p$</span> 个特征图（滤波器），<span class="math-source">$q$</span> 表示该特征图中的第 <span class="math-source">$q$</span> 个空间位置。</p>
+<div class="math-source">$$
+E_l = \frac{1}{4N^2_l M^2_l} \sum_{i,j} \left( \sum_k F^l_{ik}F^l_{jk} - A^l_{ij} \right) ^2
+$$</div>
+<p>对 <span class="math-source">$F^l_{pq}$</span> 求导数时，只考虑那些包含 <span class="math-source">$F^l_{pq}$</span> 的项。观察 Gram 矩阵的定义，我们发现 <span class="math-source">$F^l_{pq}$</span> 会出现在所有满足 <span class="math-source">$i = p$</span> 或 <span class="math-source">$j = p$</span> 的项中。</p>
+<p>所以对单个项 <span class="math-source">$(G^l_{ij} - A^l_{ij})^2$</span> 的导数如下：</p>
+<p><strong>情况 1，当 <span class="math-source">$i = p$</span> 时：</strong></p>
+<div class="math-source">$$
+\frac{\partial G^l_{ij}}{\partial F^l_{pq}} = \frac{\partial}{\partial F^l_{pq}} \sum_k F^l_{ik} F^l_{jk} = F^l_{jq} \quad (\text{因为 } i=p, \text{而 } k=q)
+$$</div>
+<p><strong>情况 2，当 <span class="math-source">$j = p$</span> 时：</strong></p>
+<p>同理：</p>
+<div class="math-source">$$
+\frac{\partial G^l_{ij}}{\partial F^l_{pq}} = F^l_{iq}
+$$</div>
+<p>（如果 <span class="math-source">$i = j = p$</span>，那就变成两项相加）</p>
+<p>于是：</p>
+<div class="math-source">$$
+\begin{aligned}
+\frac{\partial E_l}{\partial F^l_{pq}} &#x26;= \frac{1}{4 N_l^2 M_l^2} \sum_j 2 (G^l_{pj} - A^l_{pj}) F^l_{jq} + \sum_i 2 (G^l_{ip} - A^l_{ip}) F^l_{iq} \\
+&#x26;= \frac{1}{2 N_l^2 M_l^2} \left[ \sum_j (G^l_{pj} - A^l_{pj}) F^l_{jq} + \sum_i (G^l_{ip} - A^l_{ip}) F^l_{iq} \right]  \\
+\end{aligned}
+$$</div>
+<p>这个结果不够美观，可以使用矩阵乘法的一些小技巧化简一下。</p>
+<p>注意到</p>
+<div class="math-source">$$
+\sum_j (G^l_{pj} - A^l_{pj}) F^l_{jq}
+$$</div>
+<p>是对<strong>第 <span class="math-source">$p$</span> 行的 Gram 差值</strong>与<strong>第 <span class="math-source">$q$</span> 列的特征图</strong>相乘：</p>
+<center>
+<svg xmlns="http://www.w3.org/2000/svg" style="background: transparent; background-color: transparent;" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="422px" height="310px" viewBox="-0.5 -0.5 422 310" content="<mxfile><diagram id=&#x22;L-LIzdtOlmAaIUcO0Fmq&#x22; name=&#x22;Page-1&#x22;>7VpNc9owEP01zLQHOrb8ARwJ+eglnU7TmZ6FLYwmskVkEUh/fSVLxrYsEpIaEiA5EPO8XlnvrXdXwj1vkq5vGFzMb2mMSA848brnXfYAGLmu+JTAkwJCJ1BAwnCsILcC7vBfpEFHo0sco7xhyCklHC+aYESzDEW8gUHG6KppNqOkOeoCJqgF3EWQtNE/OOZzhQ7BoMK/I5zMy5HdcKTOpLA01jPJ5zCmqxrkXfW8CaOUq6N0PUFEclfyoq673nJ2c2MMZXyXC4C64BGSpZ6bvi/+VE4WZfFYcia+ZTQT4MWcp0R8c8Vhezx9CyhuUKhHv0E0RZw9CYNVRVygyZjXOCsxhgjk+LFJPNT6JRt3mxF+UizuBDg61Pyh9qMjzQudpoucLlmE9FV1ol5w5JqOOGQJ4i1H4qA27QoqdLBr4p24JgHoSBPT0R41CU9cE+A0qQT+W5+Tlxx1p8ng3DQZdqWJ6ag7TYY7aEKIqNNSi9Ucc3S3gJE8sxKdQlMfmC9U8Z7hNRL+L2aYkAkllBWOvNkMhVEk8Jwzeo9qZ+LBaCrm/IzEj4hxtH5W5FIF1yCvVLcWBMASBMDZrneD4GfYHJ0cm/7ISNmDw7Hp7tDs/C+JwwjZSZwOAz/oKiSD9wtJ1z8REs1I3DznhyAxsJAYEi65oEXmninyBPqwlGuBi984FSse4PxAK/H5i6Ywq0426C9B6amfF2unsTAQdK0L0+qiMNH/i5GnJXBTIvlyUWKkxMTUanB/3LC13EV7vC2uaujUgileStgIOCE5N2KM4CQTx5EIECSi50IGBhYruLE+keI4JtvSJqPLLJahednVE+sHjWDzLE+s61qibdBFtNmaV0Nz2SOJOdpFODa2Xd/sQYMW26GFbK8Lsm1dqUF2RMkyFY+v83AafPsDo6iDdnTvjW9bx6lIjfGjNSVJPvuaQpkZNyzukBs36W4h86/F+RRG90nBcD9ShUsOwZLpFxCIKJzITFw7+Kqyt2E6cJVB9V/bFTl9BlNMnpT1mGFIlFEOs7yfI4ZnNdsq/7u+zv+OOf9ctP/2VP2jyu5Te/q2pWrFzTny1Zt4vdGgO9a21MIisI81WQAjWWwWp4dIFrYF1Yfpu64/e6mdqs179lJlZfssN5/l5t35UuXm9rPcvKI3PWS52dztq3aoY5jPCwbc3nFvVzsGhW/erjYddbddXQpyngp55l7WWxVqOepQIduvoUaV/Fb8ncZa2myPgXO4vQtg29s9J65HB6wNti3gk808vrEj1/qlfufMYzhqvTvQYeZ502/+x6pQEHakkOlonwrtsNf6YfIVo1zoQ+VVo656W8/IX94Ba8X2rZSz4D4wXwvYH/fia/VCoHpMqrcqvat/</diagram></mxfile>"><defs></defs><g><g><path d="M 340 240 L 340 40" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><path d="M 380 240 L 380 40" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><path d="M 60 120 L 260 120" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><path d="M 60 160 L 260 160" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><ellipse cx="80" cy="140" rx="10" ry="10" fill="#ffe6cc" stroke="#d79b00" pointer-events="all" style="fill: light-dark(rgb(255, 230, 204), rgb(54, 33, 10)); stroke: light-dark(rgb(215, 155, 0), rgb(153, 101, 0));"></ellipse></g><g><ellipse cx="360" cy="60" rx="10" ry="10" fill="#ffe6cc" stroke="#d79b00" pointer-events="all" style="fill: light-dark(rgb(255, 230, 204), rgb(54, 33, 10)); stroke: light-dark(rgb(215, 155, 0), rgb(153, 101, 0));"></ellipse></g><g><rect x="110" y="130" width="20" height="20" fill="#f8cecc" stroke="#b85450" pointer-events="all" style="fill: light-dark(rgb(248, 206, 204), rgb(81, 45, 43)); stroke: light-dark(rgb(184, 84, 80), rgb(215, 129, 126));"></rect></g><g><rect x="350" y="90" width="20" height="20" fill="#f8cecc" stroke="#b85450" pointer-events="all" style="fill: light-dark(rgb(248, 206, 204), rgb(81, 45, 43)); stroke: light-dark(rgb(184, 84, 80), rgb(215, 129, 126));"></rect></g><g><rect x="105" y="230" width="110" height="70" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 108px; height: 1px; padding-top: 265px; margin-left: 106px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><font style="font-size: 20px;" face="Times New Roman"><b>G<sup>l</sup>-A<sup style="">l</sup></b></font></div></div></div></foreignObject><text x="160" y="269" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">Gl-Al</text></switch></g></g><g><rect x="0" y="125" width="60" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 140px; margin-left: 1px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><b>row p</b></div></div></div></foreignObject><text x="30" y="144" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">row p</text></switch></g></g><g><rect x="330" y="0" width="60" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 15px; margin-left: 331px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><b>column q</b></div></div></div></foreignObject><text x="360" y="19" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">column q</text></switch></g></g><g><rect x="130" y="280" width="60" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 295px; margin-left: 131px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><div style="text-align: center;"><b><span style="background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); color: light-dark(rgb(71, 71, 71), rgb(176, 176, 176)); font-family: Arial, sans-serif; font-size: 14px; text-align: start;">N<sub>l</sub></span><span style="background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); color: light-dark(rgb(71, 71, 71), rgb(176, 176, 176)); font-family: Arial, sans-serif; font-size: 14px; text-align: start;">×N<sub>l</sub></span></b></div></div></div></div></foreignObject><text x="160" y="299" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">Nl×Nl</text></switch></g></g><g><rect x="305" y="230" width="110" height="70" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 108px; height: 1px; padding-top: 265px; margin-left: 306px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><font style="font-size: 20px;" face="Times New Roman"><b>F<sup style="">l</sup></b></font></div></div></div></foreignObject><text x="360" y="269" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">Fl</text></switch></g></g><g><rect x="330" y="280" width="60" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 295px; margin-left: 331px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><div style="text-align: center;"><b><span style="background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); color: light-dark(rgb(71, 71, 71), rgb(176, 176, 176)); font-family: Arial, sans-serif; font-size: 14px; text-align: start;">N<sub>l</sub></span><span style="background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); color: light-dark(rgb(71, 71, 71), rgb(176, 176, 176)); font-family: Arial, sans-serif; font-size: 14px; text-align: start;">×M<sub>l</sub></span></b></div></div></div></div></foreignObject><text x="360" y="299" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">Nl×Ml</text></switch></g></g><g><path d="M 60 80 L 260 80" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><path d="M 60 200 L 260 200" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><rect x="130" y="85" width="60" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 100px; margin-left: 131px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><b>......</b></div></div></div></foreignObject><text x="160" y="104" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">......</text></switch></g></g><g><rect x="130" y="170" width="60" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 185px; margin-left: 131px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><b>......</b></div></div></div></foreignObject><text x="160" y="189" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">......</text></switch></g></g><g><path d="M 300 40 L 300 240" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><path d="M 420 40 L 420 240" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><rect x="290" y="115" width="60" height="30" fill="none" stroke="none" transform="rotate(90,320,130)" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)rotate(90 320 130)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 130px; margin-left: 291px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><b>......</b></div></div></div></foreignObject><text x="320" y="134" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">......</text></switch></g></g><g><rect x="370" y="115" width="60" height="30" fill="none" stroke="none" transform="rotate(90,400,130)" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)rotate(90 400 130)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 130px; margin-left: 371px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><b>......</b></div></div></div></foreignObject><text x="400" y="134" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">......</text></switch></g></g></g><switch><g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"></g><a transform="translate(0,-5)" xlink:href="https://www.drawio.com/doc/faq/svg-export-text-problems" target="_blank"><text text-anchor="middle" font-size="10px" x="50%" y="100%">Text is not SVG - cannot display</text></a></switch></svg>
+</center>
+<p>类似地，对于</p>
+<div class="math-source">$$
+\sum_i (G^l_{ip} - A^l_{ip}) F^l_{iq}
+$$</div>
+<p>是对<strong>第 <span class="math-source">$p$</span> 列的 Gram 差值</strong>与<strong>第 <span class="math-source">$q$</span> 列的特征图</strong>相乘：</p>
+<center>
+<svg xmlns="http://www.w3.org/2000/svg" style="background: transparent; background-color: transparent;" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="322px" height="310px" viewBox="-0.5 -0.5 322 310" content="<mxfile><diagram id=&#x22;L-LIzdtOlmAaIUcO0Fmq&#x22; name=&#x22;Page-1&#x22;>7VpLj9owEP41SO2BKrGTAEdgH73squpW6tkkJljrxKxjXv31dWKHPHAWqgZYFjhA8mU8jr8Zz9geOnAcrR85ms+eWIBpB1jBugPvOgAMLEd+p8BGAZ7lKiDkJFCQXQAv5A/WoKXRBQlwUhEUjFFB5lXQZ3GMfVHBEOdsVRWbMlrtdY5CvAO8+Ijuor9JIGYK7YNegX/HJJzlPdveQD2JUC6sR5LMUMBWJQjed+CYMybUVbQeY5pyl/Oi2j00PN2+GMexOKQBUA2WiC702PR7iU0+WBwHw5QzeRezWIKjmYiovLPl5W5/+hVwUKFQ9/6IWYQF30iBVUGcq8mYlTjLMY4pEmRZJR5p+4VbddsefjAi3wRY2tWcvtajPQ16VlVFwhbcx7pVmag9iuy6IoF4iMWOInlRGnYBZXYw2wR+cpu4oCWb1BUd0SaDA2xCqYw/qS1WMyLwyxz56ZOVjIBV+6BkroLSlKyx1D+aEkrHjDKeKYLTKfZ8X+KJ4OwVl54EvcHEst4z8RJzgdfvGjl36EGNvJ6+LzkBMDgBsJrtXSH4HTZtZz+d/0ti38dmEid913GPROI2Q52CRNdAokdFygXLpslUkSfRt0WaUEa/SCTTJrCe8Up+/2QRiouHFfpzMNXUTbIEPJQCkq51Jlo08kL9m/U8yYHHHEkW8xyjOSaHVoK7w4qs4S12+2tQVUInBkzxksM1h5MmFzUfoySM5bUvHQRL7xmljkHkMmCoH0QkCGjTjOdsEQepa9615GzAcatx0911Nts2eFuvDW/rNXrblmmf0UUkPcp6M9vh0gh3erUQCXYJ9wx8wzb47jfyHZClcZakfHY1helk3bJ4wHTdzsB5GhIMyifIfw0zhru+iqVpFzycfAGudMtxGhxKF19VQKmJ9mwlUPxquSzMTFFE6EZJDzlBVAklKE66CeZkWpItQpLt6JBk1cefyPRvjh7PRcCZmCOKKXoobq6Rr84Ydga99lhrCM+ZY19qsAC1YOFYJwwWpuXph1kKPNzS+0HZ5pzpPc9st3RzSzdn50ulm6dbuvmHtekp0w0w7Tz3nlAFKJllDNidizqucpw9p0wHHyHWFO2ce7V3XAW8a7KQ67VkobqiY1rogP30t+zzAfbSnAlpH5a2GrQVv2CVarncOV38al4uXwX3rn0+7qFpobk3Ml1QMAJtVZzqio5ZcbI/uVFgWyWnuqJjGgUcYJTLqjmBM9ac4AFl1YuoOdVJPGXNCZoKd01VgPkHyJ5t8H3GKgC8qp0WaGunVVd0xHU8vKqdFmxrp1VXdEwLXflOC5xxpwWbq5hXwT083U5L3hZ/G1TTpPjvJbz/Cw==</diagram></mxfile>"><defs></defs><g><g><path d="M 240 240 L 240 40" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><path d="M 280 240 L 280 40" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><ellipse cx="260" cy="60" rx="10" ry="10" fill="#ffe6cc" stroke="#d79b00" pointer-events="all" style="fill: light-dark(rgb(255, 230, 204), rgb(54, 33, 10)); stroke: light-dark(rgb(215, 155, 0), rgb(153, 101, 0));"></ellipse></g><g><rect x="250" y="90" width="20" height="20" fill="#f8cecc" stroke="#b85450" pointer-events="all" style="fill: light-dark(rgb(248, 206, 204), rgb(81, 45, 43)); stroke: light-dark(rgb(184, 84, 80), rgb(215, 129, 126));"></rect></g><g><rect x="5" y="230" width="110" height="70" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 108px; height: 1px; padding-top: 265px; margin-left: 6px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><font style="font-size: 20px;" face="Times New Roman"><b>G<sup>l</sup>-A<sup style="">l</sup></b></font></div></div></div></foreignObject><text x="60" y="269" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">Gl-Al</text></switch></g></g><g><rect x="230" y="0" width="60" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 15px; margin-left: 231px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><b>column q</b></div></div></div></foreignObject><text x="260" y="19" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">column q</text></switch></g></g><g><rect x="30" y="280" width="60" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 295px; margin-left: 31px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><div style="text-align: center;"><b><span style="background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); color: light-dark(rgb(71, 71, 71), rgb(176, 176, 176)); font-family: Arial, sans-serif; font-size: 14px; text-align: start;">N<sub>l</sub></span><span style="background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); color: light-dark(rgb(71, 71, 71), rgb(176, 176, 176)); font-family: Arial, sans-serif; font-size: 14px; text-align: start;">×N<sub>l</sub></span></b></div></div></div></div></foreignObject><text x="60" y="299" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">Nl×Nl</text></switch></g></g><g><rect x="205" y="230" width="110" height="70" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 108px; height: 1px; padding-top: 265px; margin-left: 206px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><font style="font-size: 20px;" face="Times New Roman"><b>F<sup style="">l</sup></b></font></div></div></div></foreignObject><text x="260" y="269" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">Fl</text></switch></g></g><g><rect x="230" y="280" width="60" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 295px; margin-left: 231px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><div style="text-align: center;"><b><span style="background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); color: light-dark(rgb(71, 71, 71), rgb(176, 176, 176)); font-family: Arial, sans-serif; font-size: 14px; text-align: start;">N<sub>l</sub></span><span style="background-color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); color: light-dark(rgb(71, 71, 71), rgb(176, 176, 176)); font-family: Arial, sans-serif; font-size: 14px; text-align: start;">×M<sub>l</sub></span></b></div></div></div></div></foreignObject><text x="260" y="299" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">Nl×Ml</text></switch></g></g><g><path d="M 200 40 L 200 240" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><path d="M 320 40 L 320 240" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><rect x="190" y="115" width="60" height="30" fill="none" stroke="none" transform="rotate(90,220,130)" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)rotate(90 220 130)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 130px; margin-left: 191px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><b>......</b></div></div></div></foreignObject><text x="220" y="134" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">......</text></switch></g></g><g><rect x="270" y="115" width="60" height="30" fill="none" stroke="none" transform="rotate(90,300,130)" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)rotate(90 300 130)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 130px; margin-left: 271px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><b>......</b></div></div></div></foreignObject><text x="300" y="134" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">......</text></switch></g></g><g><path d="M 40 240 L 40 40" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><path d="M 80 240 L 80 40" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><ellipse cx="60" cy="60" rx="10" ry="10" fill="#ffe6cc" stroke="#d79b00" pointer-events="all" style="fill: light-dark(rgb(255, 230, 204), rgb(54, 33, 10)); stroke: light-dark(rgb(215, 155, 0), rgb(153, 101, 0));"></ellipse></g><g><rect x="50" y="90" width="20" height="20" fill="#f8cecc" stroke="#b85450" pointer-events="all" style="fill: light-dark(rgb(248, 206, 204), rgb(81, 45, 43)); stroke: light-dark(rgb(184, 84, 80), rgb(215, 129, 126));"></rect></g><g><rect x="30" y="0" width="60" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 15px; margin-left: 31px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><b>column p</b></div></div></div></foreignObject><text x="60" y="19" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">column p</text></switch></g></g><g><path d="M 0 40 L 0 240" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><path d="M 120 40 L 120 240" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"></path></g><g><rect x="-10" y="115" width="60" height="30" fill="none" stroke="none" transform="rotate(90,20,130)" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)rotate(90 20 130)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 130px; margin-left: -9px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><b>......</b></div></div></div></foreignObject><text x="20" y="134" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">......</text></switch></g></g><g><rect x="70" y="115" width="60" height="30" fill="none" stroke="none" transform="rotate(90,100,130)" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)rotate(90 100 130)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 130px; margin-left: 71px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; "><div style="display: inline-block; font-size: 12px; font-family: &#x22;Helvetica&#x22;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><b>......</b></div></div></div></foreignObject><text x="100" y="134" fill="light-dark(#000000, #ffffff)" font-family="&#x22;Helvetica&#x22;" font-size="12px" text-anchor="middle">......</text></switch></g></g></g><switch><g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"></g><a transform="translate(0,-5)" xlink:href="https://www.drawio.com/doc/faq/svg-export-text-problems" target="_blank"><text text-anchor="middle" font-size="10px" x="50%" y="100%">Text is not SVG - cannot display</text></a></switch></svg>
+</center>
+<p><strong>对于上面的两个式子，只需要按照 dot product 的方法算出两个数值即可。</strong> （自行体会）</p>
+<p>既然只需要算出数值，为了简化形式，我们可以尝试合并。同时，我们注意到一个很好的性质：</p>
+<div class="math-source">$$
+(G^l - A^l) = (G^l - A^l)^T
+$$</div>
+<p>且 <span class="math-source">$(G^l - A^l)$</span> 是对称阵，形状为 <span class="math-source">$N_l \times N_l$</span> .</p>
+<p>我们很有注意力地简化为：</p>
+<div class="math-source">$$
+\frac{\partial E_l}{\partial F^l_{pq}} = \frac{1}{N^2_l M^2_l} \left( (F^l)^T (G^l - A^l)^T \right)_{qp}
+$$</div>
+<p><strong>注意细节</strong>：<span class="math-source">$p$</span> 和 <span class="math-source">$q$</span> 交换了位置。这是为了统一形式，做了转置之后位置也要对应上。</p>
+<p>可以进一步简化为：</p>
+<div class="math-source">$$
+\frac{\partial E_l}{\partial F^l_{pq}} = \frac{1}{N^2_l M^2_l} \left( (F^l)^T (G^l - A^l) \right)_{qp}
+$$</div>
+<p>实际上还要经过一次 relu, 因为在大于 0 的时候 relu 相当于恒等映射，小于 0 时值变为 0，所以最终的公式是：</p>
+<div class="math-source">$$
+\frac{\partial E_l}{\partial F^l_{pq}} =
+\begin{cases}
+\frac{1}{N_l^2 M_l^2} \left( (F^l)^T (G^l - A^l) \right)_{qp} &#x26; F^l_{pq} > 0 \\
+0 &#x26; F^l_{pq} &#x3C; 0
+\end{cases}
+$$</div>
+<p>为了<strong>综合考虑内容损失和风格损失</strong>：</p>
+<div class="math-source">$$
+\cal{L}_{total} (\vec{p}, \vec{a}, \vec{x}) = \alpha \cal{L}_{content} (\vec{p}, \vec{x}) + \beta \cal{L}_{style} (\vec{a}, \vec{x})
+$$</div>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/21/tVTz59FLJIMmGWX.png" alt="106-41.png" loading="lazy"><figcaption class="article-figure-caption">106-41.png</figcaption></figure>
+<p>关于代码实现，请参考 <a href="https://github.com/dropsong/dl-ipynb-examples/tree/master/%E5%9B%BE%E5%83%8F%E9%A3%8E%E6%A0%BC%E5%8F%98%E6%8D%A2/style-transfer">此链接</a> 。</p>
+<h2 id="拓展"><a class="heading-anchor" href="#拓展">拓展</a></h2>
+<p>另一个版本：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/21/FemaD49L8Uiwn3f.png" alt="106-42.png" loading="lazy"><figcaption class="article-figure-caption">106-42.png</figcaption></figure>
+<p>另一个版本：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/21/Qwa1ylbJpYkur48.png" alt="106-43.png" loading="lazy"><figcaption class="article-figure-caption">106-43.png</figcaption></figure>
+<p>可以用 Google Lens 搜图，查论文。</p>
+<h1 id="embedding"><a class="heading-anchor" href="#embedding">Embedding</a></h1>
+<p>为什么要提出 embedding? Embedding 可以干什么？</p>
+<ul>
+<li><a href="https://blog.csdn.net/qq_35799003/article/details/84780289">https://blog.csdn.net/qq_35799003/article/details/84780289</a></li>
+<li>以上链接内容已备份（<a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/RNN/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84embedding_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0embedding-CSDN%E5%8D%9A%E5%AE%A2.pdf">github 对应链接</a>）</li>
+</ul>
+<p>理解 Embedding 原理：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/26306795">秒懂词向量Word2vec的本质</a>，<a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/RNN/%E7%A7%92%E6%87%82%E8%AF%8D%E5%90%91%E9%87%8FWord2vec%E7%9A%84%E6%9C%AC%E8%B4%A8%20-%20%E7%9F%A5%E4%B9%8E.pdf">备份</a></li>
+</ul>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/RNN/tf44-embedding-padding-pooling.ipynb">notebook</a> 包含的内容：</p>
+<ul>
+<li>数据集imdb，电影分类，分电影是积极的，还是消极的</li>
+<li>变长输入</li>
+<li><code>keras.preprocessing.sequence.pad_sequences()</code></li>
+<li>embedding 理解</li>
+<li><code>keras.layers.Embedding()</code></li>
+<li><code>keras.layers.GlobalAveragePooling1D()</code></li>
+</ul>
+<h1 id="rnn"><a class="heading-anchor" href="#rnn">RNN</a></h1>
+<p>RNN 的基础知识： <a href="https://zhuanlan.zhihu.com/p/30844905">https://zhuanlan.zhihu.com/p/30844905</a>  （已在 github 对应仓库备份）</p>
+<p>RNN 的一个经典应用（例如可以用于输入法的下一个词预测）：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/25/nZpVlLbXvzQi2DH.png" alt="106-44.png" loading="lazy"><figcaption class="article-figure-caption">106-44.png</figcaption></figure>
+<p>RNN 的反向传播：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/25/tE4e8NqOCrQAK1l.jpg" alt="106-45.jpeg" loading="lazy"><figcaption class="article-figure-caption">106-45.jpeg</figcaption></figure>
+<p>较远的步骤梯度贡献很小，实践中可以把他们忽略：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/25/tywrH8PTGkMji9O.jpg" alt="106-46.jpeg" loading="lazy"><figcaption class="article-figure-caption">106-46.jpeg</figcaption></figure>
+<p>自然，可以有多层的 RNN：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/25/MNtJI2C5uelSm3Y.png" alt="106-47.png" loading="lazy"><figcaption class="article-figure-caption">106-47.png</figcaption></figure>
+<p>类似地，也可以在 RNN 上搞<strong>残差连接</strong>，按下不表。</p>
+<p>双向网络（<strong>上下文</strong>）：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/25/ceSOBfTuAI2MrsX.png" alt="106-48.png" loading="lazy"><figcaption class="article-figure-caption">106-48.png</figcaption></figure>
+<p>本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/RNN/tf45-embedding-rnn.ipynb">notebook</a> 包含的内容：</p>
+<ul>
+<li>imdb 数据集（完成任务同上一个）</li>
+<li><code>keras.layers.SimpleRNN()</code></li>
+<li><code>keras.layers.Bidirectional()</code></li>
+</ul>
+<p>BRNN（双向RNN）的应用包括（ref: <a href="https://en.wikipedia.org/wiki/Bidirectional_recurrent_neural_networks">Wikipedia</a>）：</p>
+<ul>
+<li>语音识别（与长时记忆结合）</li>
+<li>翻译</li>
+<li>手写识别</li>
+<li>蛋白质结构预测</li>
+<li>词性标记</li>
+<li>依赖解析</li>
+<li>实体提取</li>
+</ul>
+<p><strong>文本生成实战</strong>
+本 <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/RNN/tf46-text-generation.ipynb">notebook</a> 包含的内容：</p>
+<ul>
+<li>莎士比亚数据集</li>
+<li>生成文本的原理</li>
+<li>模型的保存与加载</li>
+<li>该模型的评价</li>
+<li><code>Squeeze</code>, <code>expand_dims</code></li>
+</ul>
+<h1 id="长短期记忆网络-lstm"><a class="heading-anchor" href="#长短期记忆网络-lstm">长短期记忆网络 LSTM</a></h1>
+<p><strong>为什么需要 LSTM？</strong>
+普通 RNN 的信息不能长久传播：离结尾较远的信息被稀释的比较厉害。</p>
+<p>LSTM 引入<strong>选择性机制</strong>：</p>
+<ul>
+<li>选择性输出</li>
+<li>选择性输入</li>
+<li>选择性遗忘</li>
+</ul>
+<p>选择性机制实现的原理：门。</p>
+<ol>
+<li>向量 A -> sigmoid -> <code>[0.1, 0.9, 0.4, 0, 0.6]</code></li>
+<li>向量 B -> <code>[13.8, 14, -7, -4, 30.0]</code></li>
+<li>A 为门限，B 为信息，两个相乘（点积）</li>
+<li>A dot B = <code>[1.38, 12.6, -2.8, 0, 18.0]</code></li>
+</ol>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/29/3u5lMGo9PfwbDcN.png" alt="106-49.png" loading="lazy"><figcaption class="article-figure-caption">106-49.png</figcaption></figure>
+<p>ref: <a href="https://blog.csdn.net/weixin_44162104/article/details/88660003">https://blog.csdn.net/weixin_44162104/article/details/88660003</a></p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/29/tl1WBjK4Q2YoDHR.png" alt="106-50.png" loading="lazy"><figcaption class="article-figure-caption">106-50.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/29/V5HrI9W8u2kTsPt.png" alt="106-51.png" loading="lazy"><figcaption class="article-figure-caption">106-51.png</figcaption></figure>
+<p>总览：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/29/ndvb1qws4Ih7ykB.png" alt="106-52.png" loading="lazy"><figcaption class="article-figure-caption">106-52.png</figcaption></figure>
+<p>从微观上看，LSTM 引入了细胞状态，并使用输入门、遗忘门、输出门来保持和控制信息。具体地，LSTM 某个 timestep <span class="math-source">$t$</span> 的计算公式如下：</p>
+<div class="math-source">$$
+\begin{aligned}
+f_t &#x26; = \sigma (W_f \cdot [h_{t-1}, x_t] + b_f) \\
+i_t &#x26; = \sigma (W_i \cdot [h_{t-1}, x_t] + b_i) \\
+\tilde{c}_t &#x26; = \tanh (W_c \cdot [h_{t-1}, x_t] + b_c) \\
+c_t &#x26; = f_t * c_{t-1} + i_t * \tilde{c}_t \\
+o_t &#x26; = \sigma (W_o \cdot [h_{t-1}, x_t] + b_o) \\
+\end{aligned}
+$$</div>
+<p>其中，<span class="math-source">$f_t$</span> 为遗忘门，<span class="math-source">$i_t$</span> 为输入门，<span class="math-source">$o_t$</span> 为输出门，<span class="math-source">$c_t$</span> 为细胞状态，<span class="math-source">$\tilde{c}_t$</span> 为细胞状态候选值，<span class="math-source">$h_t$</span> 为隐藏层状态值，<span class="math-source">$W$</span> 和 <span class="math-source">$b$</span> 为权重和偏置。</p>
+<p><strong>LSTM 既能够处理短期依赖问题，又能够处理长期依赖问题。</strong></p>
+<p>实战： <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/RNN/tf47-embedding-lstm.ipynb">RNN/tf47-embedding-lstm.ipynb</a></p>
+<ul>
+<li>imdb 数据集</li>
+<li>LSTM 文本分类</li>
+</ul>
+<p>实战： <a href="https://github.com/dropsong/dl-ipynb-examples/blob/master/RNN/tf48-embedding-lstm-subword.ipynb">RNN/tf48-embedding-lstm-subword.ipynb</a></p>
+<ul>
+<li>subword
+<ul>
+<li>Subword-level 是介于 char-level 和 word-level 之间的设计，很多机器翻译都会用 subword</li>
+<li>词典比 word level 小，embedding 参数变少，训练时间缩短</li>
+</ul>
+</li>
+<li>imdb 数据集</li>
+</ul>
+<h1 id="gpu-strategy"><a class="heading-anchor" href="#gpu-strategy">GPU Strategy</a></h1>
+<h2 id="引入"><a class="heading-anchor" href="#引入">引入</a></h2>
+<p>如何默认用全部 GPU 并且内存全部占满？</p>
+<p>如何不浪费内存和计算资源?</p>
+<ul>
+<li>内存自增长</li>
+<li>虚拟设备机制</li>
+</ul>
+<p>多 GPU 使用</p>
+<ul>
+<li>虚拟 GPU ； 实际 GPU</li>
+<li>手工设置 ； 分布式机制</li>
+</ul>
+<p>API 列表（旧的 tensorflow API，<strong>可能已经过时</strong>）：</p>
+<ul>
+<li><code>tf.debugging.set log_device_placement</code> 某个变量分配在哪个设备上</li>
+<li><code>tf.config.experimental.set_visible_devices</code> 本进程可见的设备</li>
+<li><code>tf.config.experimental.ist logical_devices</code> 获取逻辑设备</li>
+<li><code>tf.config.experimentalist physical_devices</code> 获取物理设备</li>
+<li><code>tf.config.experimental.set_memory_growth</code> 用多少，设置多少</li>
+<li><code>tf.config.experimental.VirtualDeviceConfiguration</code> 建立逻辑分区</li>
+<li><code>tf.config.set_soft_device_placement</code> 自动把某个计算分配到某个设备上，不容易出错</li>
+</ul>
+<p><strong>使用多 GPU 的实际例子</strong>：</p>
+<ul>
+<li><a href="https://tensorflow.google.cn/tutorials/distribute/custom_training?hl=zh-cn">使用 tf.distribute.Strategy 进行自定义训练</a> ，分布式训练官方实例</li>
+<li><a href="https://tf.wiki/zh_hans/appendix/distributed.html">TensorFlow 分布式训练</a> ，多机</li>
+<li><a href="https://blog.csdn.net/yjk13703623757/article/details/80956268">分布式TensorFlow多主机多GPU原理与实现</a> ，已在 github 相应仓库备份</li>
+<li><a href="https://github.com/otto248/tensorflow_cifar10_multiGPU">Cifar10 的多 GPU 代码参考</a></li>
+</ul>
+<h2 id="分布式策略"><a class="heading-anchor" href="#分布式策略">分布式策略</a></h2>
+<p>为什么需要分布式？ 数据量太大，模型太复杂。</p>
+<p>本小节以 tensorflow 为例。</p>
+<h3 id="mirroredstrategy"><a class="heading-anchor" href="#mirroredstrategy">MirroredStrategy</a></h3>
+<p><strong>同步</strong>式分布式训练，适用于<strong>一机多卡</strong>情况。</p>
+<p>每个 GPU 都有网络结构的所有参数，这些参数会被同步。</p>
+<p>数据并行</p>
+<ul>
+<li>Batch 数据切为 N 份分给各个 GPU</li>
+<li>梯度聚合然后更新给各个 GPU 上的参数</li>
+</ul>
+<h3 id="centralstoragestrategy"><a class="heading-anchor" href="#centralstoragestrategy">CentralStorageStrategy</a></h3>
+<p>MirroredStrategy 的变种。参数不是在每个 GPU 上，而是存储在一个设备上。</p>
+<p>除了更新参数的计算之外，计算是在所有 GPU 上并行的。</p>
+<h3 id="multiworkermirroredstrategy"><a class="heading-anchor" href="#multiworkermirroredstrategy">MultiWorkerMirroredStrategy</a></h3>
+<p>类似于 MirroredStrategy，适用于<strong>多机多卡</strong>情况。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/31/w59RU8qsZIWAeh6.png" alt="106-53.png" loading="lazy"><figcaption class="article-figure-caption">106-53.png</figcaption></figure>
+<h3 id="tpustrategy"><a class="heading-anchor" href="#tpustrategy">TPUStrategy</a></h3>
+<p>与 MirroredStrategy 类似，使用在 TPU 上的策略。</p>
+<h3 id="parameterserverstrategy"><a class="heading-anchor" href="#parameterserverstrategy">ParameterServerStrategy</a></h3>
+<p><strong>异步</strong>分布式，更加适用于大规模分布式系统。</p>
+<p>机器分为 Parameter Server 和 worker 两类：</p>
+<ul>
+<li>Parameter server 负责整合梯度，更新参数</li>
+<li>Worker 负责计算，训练网络</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/07/31/9tXUglEMsfAqJwi.png" alt="106-54.png" loading="lazy"><figcaption class="article-figure-caption">106-54.png</figcaption></figure>
+<p>Tensorflow 一开始支持分布式的时候，便是这种 parameter server 架构。TensorFlow 一般将任务分为两类 job：一类叫参数服务器，<strong>parameter server</strong>，简称为 ps，用于存储可训练的参数变量 <code>tf.Variable</code>；一类就是普通任务，称为 <strong>worker</strong>，用于执行具体的计算。</p>
+<h2 id="同步与异步的优劣"><a class="heading-anchor" href="#同步与异步的优劣">同步与异步的优劣</a></h2>
+<p><strong>异步可以避免短板效应</strong></p>
+<ul>
+<li>多机多卡（不同机器的显卡类型往往不一致）</li>
+</ul>
+<p><strong>异步的计算会增加模型的泛化能力</strong></p>
+<ul>
+<li>异步不是严格正确的，所以模型更容忍错误</li>
+</ul>
+<p><strong>同步可以避免过多的通信</strong></p>
+<ul>
+<li>一机多卡</li>
+</ul>
+<h1 id="机器翻译"><a class="heading-anchor" href="#机器翻译">机器翻译</a></h1>
+<h2 id="背景"><a class="heading-anchor" href="#背景">背景</a></h2>
+<p>Paper: <a href="https://www.sciencedirect.com/science/article/pii/S2095809921002745">Progress in Machine Translation</a>：</p>
+<blockquote>
+<p>After more than 70 years of evolution, great achievements have been made in machine translation. Especially in recent years, translation quality has been greatly improved with the emergence of neural machine translation (NMT). In this article, we first review the history of machine translation from rule-based machine translation to example-based machine translation and statistical machine translation. We then introduce NMT in more detail, including the basic framework and the current dominant framework, Transformer, as well as multilingual translation models to deal with the data sparseness problem. In addition, we introduce cutting-edge simultaneous translation methods that achieve a balance between translation quality and latency. We then describe various products and applications of machine translation. At the end of this article, we briefly discuss challenges and future research directions in this field.</p>
+</blockquote>
+<p>谷歌官网的项目链接：</p>
+<ul>
+<li><a href="https://tensorflow.google.cn/tutorials/text/nmt_with_attention?hl=zh-cn">https://tensorflow.google.cn/tutorials/text/nmt_with_attention?hl=zh-cn</a></li>
+</ul>
+<p>下面我们将训练一个将西班牙语翻译为英语的序列到序列（sequence to sequence，简写为 <strong>seq2seq</strong>）模型。</p>
+<p>训练完此模型后，将能够输入一个西班牙语句子，例如 “¿todavia estan en casa?”，并返回其英语翻译 “are you still at home?”</p>
+<p>注意：运行这个例子用一个 <strong>P100 GPU 需要花大约 10 分钟</strong>。</p>
+<p><strong>翻译是一个分类问题。</strong></p>
+<h2 id="seq2seq-模型"><a class="heading-anchor" href="#seq2seq-模型">Seq2seq 模型</a></h2>
+<p>原始的 <strong>seq2seq</strong>，Encoder 和 Decoder 都是循环神经网络实现，可以是 RNN，LSTM，GRU，CFG 等：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/08/06/6lHnDvQxcoCrzE9.png" alt="106-55.png" loading="lazy"><figcaption class="article-figure-caption">106-55.png</figcaption></figure>
+<p>GRU 是什么？
+GRU 即 <strong>Gated Recurrent Unit</strong>。为了克服 RNN 无法很好处理远距离依赖，提出了 LSTM，而 GRU 则是 LSTM 的一个变体。GRU 保持了 LSTM 的效果，同时结构更加简单，所以 GRU 非常流行。
+具体细节可以参考《动手学深度学习》。</p>
+<p>seq2seq 的 Encoder-Decoder 结构有一些缺点：</p>
+<ul>
+<li>定长编码是信息瓶颈</li>
+<li>长度越长，前面输入进 RNN 的信息就越被稀释</li>
+</ul>
+<h2 id="attention--seq2seq-理论"><a class="heading-anchor" href="#attention--seq2seq-理论">Attention + Seq2Seq 理论</a></h2>
+<p>为解决之前的问题，提出<strong>注意力机制</strong>。</p>
+<p>ref:</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1409.0473">Neural Machine Translation by Jointly Learning to Align and Translate</a></li>
+<li><a href="https://arxiv.org/abs/1508.04025">Effective Approaches to Attention-based Neural Machine Translation</a></li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2025/08/06/VFhCkANnjowBc69.png" alt="106-56.png" loading="lazy"><figcaption class="article-figure-caption">106-56.png</figcaption></figure>
+<p>记：</p>
+<ul>
+<li>EO: encoder 各个位置的输出</li>
+<li>H: decoder 某一步的隐含状态</li>
+<li>FC: 全连接层</li>
+<li>X: decoder 的一个输入</li>
+</ul>
+<p>在基于 Attention 的 Seq2Seq 模型中，当解码器（Decoder）准备生成一个新词时（例如，在生成了 “Er” 之后，准备生成下一个词），会执行以下步骤：</p>
+<ol>
+<li><strong>计算 Attention 权重 (Attention Weights)</strong>：解码器会利用其<strong>上一步的隐状态</strong> (<code>hidden_state</code>) 去和编码器（Encoder）的所有输出 (<code>encoder_outputs</code>，图中为5个) 进行比较或“打分”。这个分数代表了每个输入词对于生成当前输出词的“相关性”。然后，通过一个Softmax函数将这些分数归一化，得到一个 <strong>Attention 权重向量</strong>。这个向量的长度与输入序列长度相同（图中为5），且所有元素之和为1。
+<ul>
+<li>首先需要一个 score（注意力所需要的一个分数），score 有两种计算方式：
+<ul>
+<li><code>score = FC(tanh(FC(EO) + FC(H)))</code>，Bahdanau 注意力。用 tanh 激活函数，输出有正有负，梯度更新的比较快。score 是和 EO 长度一样的向量。注意，这里 <code>+</code> 将两者相加（这里利用了广播机制，将 <code>FC(H)</code> 加到每一个 <code>FC(EO)</code> 上）</li>
+<li>luong 注意力。</li>
+</ul>
+</li>
+<li><code>attention_weights = softmax(score, axis = 1)</code></li>
+</ul>
+</li>
+<li><strong>计算上下文向量 (Context Vector)</strong>：将上一步得到的Attention权重向量作为权重，对<code>encoder_outputs</code>进行<strong>加权求和</strong>，得到一个单一的向量，即<strong>上下文向量 (<code>context_vector</code>)</strong>。这个向量可以被理解为“为生成当前词而特别定制的输入信息摘要”。
+<ul>
+<li><code>context = sum(attention_weights * EO, axis = 1)</code>. <code>attention_weights</code> 会通过广播（broadcasting）机制，使其形状能与 <code>EO</code> 进行逐元素相乘，然后再沿着序列长度的维度（axis=1）求和，最终将所有加权的 <code>EO</code> 向量融合成一个 <code>context</code> 向量。</li>
+</ul>
+</li>
+<li><strong>生成目标词</strong>：解码器将这个<code>context_vector</code>与当前时间步的常规输入（即上一步生成的词 “Er” 的词嵌入）进行拼接或融合，然后一同送入解码器的循环神经网络单元（如 RNN/LSTM/GRU）。解码器结合这两部分信息，生成新的输出词（例如 “liebte”）和新的隐状态。
+<ul>
+<li><code>final_input = concat(context, embed(x))</code></li>
+</ul>
+</li>
+<li><strong>重复执行</strong>：这个从计算权重到生成词语的完整过程，会在解码器生成<strong>每一个</strong>词语时都重复执行。正因为如此，模型在翻译长句子时，能够动态地将注意力聚焦在源句子的不同部分，从而显著提升了翻译的准确性和流畅度。</li>
+</ol>
+<font color="red">
+<center>
+- - - - - - luong 注意力- - - - - -
+</center>
+</font> 
+<p>Luong 在他的论文中提出了几种评分函数，最常用的是 “General” Score：</p>
+<div class="math-source">$$
+\text{score}(H, \text{EO}_i) = H^T \cdot W \cdot \text{EO}_i
+$$</div>
+<p>其中：</p>
+<ul>
+<li><span class="math-source">$H^T$</span> 是解码器隐状态 <span class="math-source">$H$</span> 的转置。</li>
+<li><span class="math-source">$\text{EO}_i$</span> 是第 <span class="math-source">$i$</span> 个编码器输出向量。</li>
+<li><span class="math-source">$W$</span> 是一个可学习的权重矩阵，它的作用是进行一个线性变换，以匹配 <span class="math-source">$H$</span> 和 <span class="math-source">$\text{EO}$</span> 的维度或进行更复杂的交互。</li>
+</ul>
+<p>如果我们要一次性计算所有encoder位置的分数，用矩阵形式可以写为：</p>
+<div class="math-source">$$
+\text{score} = \text{dot}(\text{EO}, W \cdot H)
+$$</div>
+<p>或者</p>
+<div class="math-source">$$
+\text{score} = \text{EO} \cdot W \cdot H^T
+$$</div>
+<p>(具体形式取决于张量的维度排列)</p>
+<p>简单来说，就是“将H经过一个线性变换后，与每个EO做点积”。
+<code>score(H, EO_i) = H^T @ W @ EO_i</code> (其中 <code>@</code> 代表矩阵乘法)，Luong 注意力。这是一种更通用的乘法注意力，通过一个可训练的权重矩阵 <code>W</code> 来连接 <code>H</code> 和 <code>EO</code>。</p>
+<font color="red">
+<center>
+- - - - - - luong 注意力 (end) - - - - - -
+</center>
+</font> 
+<h2 id="attention--seq2seq-实战"><a class="heading-anchor" href="#attention--seq2seq-实战">Attention + Seq2Seq 实战</a></h2>
+<p>大致流程：</p>
+<ol>
+<li>preprocessing data
+<ul>
+<li>数据 id 化和 dataset 生成</li>
+<li>Tokenizer <span class="math-source">$\quad$</span> word level Tokenizer</li>
+</ul>
+</li>
+<li>build model
+<ol>
+<li>encoder 构建</li>
+<li>attention 构建（实现 Bahdanau）</li>
+<li>decoder 构建（用的 lstm 变种 GRU）</li>
+<li>loss &#x26; optimizer（自定义梯度的更新）</li>
+</ol>
+</li>
+<li>train</li>
+<li>evaluation
+<ul>
+<li>given sentence, return translated results</li>
+<li>visualize results (attention) 可视化</li>
+</ul>
+</li>
+</ol>
+<p>github 🔗：
+<a href="https://github.com/dropsong/dl-ipynb-examples/tree/master/%E6%9C%BA%E5%99%A8%E7%BF%BB%E8%AF%91">https://github.com/dropsong/dl-ipynb-examples/tree/master/%E6%9C%BA%E5%99%A8%E7%BF%BB%E8%AF%91</a></p></div> </div> </div> <footer class="post-footer" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <!-- Gitalk comments will be added in Phase 3 --> </div> <section class="reward-widget" data-reward-widget data-astro-cid-bbdapvnt> <div class="reward-panel" id="reward-panel" aria-label="打赏二维码" data-astro-cid-bbdapvnt> <div class="reward-list" data-astro-cid-bbdapvnt> <div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/Alipay.png" alt="支付宝收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>支付宝 Alipay</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/WeChat.png" alt="微信收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>微信 Wechat</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/PayPal-or-CreditCard.png" alt="PayPal 或信用卡收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>PayPal/CreditCard</span> </div> </div> </div> <button class="reward-trigger" type="button" aria-label="打开打赏二维码" aria-controls="reward-panel" aria-expanded="false" data-astro-cid-bbdapvnt>
+打赏 Reward
+</button> </section>  <script type="module">function a(){document.querySelectorAll("[data-reward-widget]").forEach(e=>{if(e.dataset.initialized)return;const r=e.querySelector(".reward-trigger");if(!r)return;e.dataset.initialized="true";const n=t=>{e.classList.toggle("is-open",t),r.setAttribute("aria-expanded",String(t))};r.addEventListener("click",()=>n(!e.classList.contains("is-open"))),document.addEventListener("click",t=>{e.contains(t.target)||n(!1)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&(n(!1),r.blur())})})}window.addEventListener("encrypted-content-revealed",()=>{document.querySelectorAll("[data-reward-after-unlock]").forEach(e=>{e.removeAttribute("hidden")})});document.addEventListener("astro:page-load",a);a();</script> <div id="gitalk-container" class="gitalk-container" data-abbrlink="eeca0305" data-title="深度学习小记" data-astro-cid-ajg7agi2></div> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">   <script>
+  var GITALK_CFG = {"clientID":"Ov23lijmGQilj9J9CrdP","clientSecret":"bd5066a2aadbe28c20913dd390b8047031f7174a","repo":"dropsong.github.io","owner":"dropsong","admin":["dropsong"],"labels":["Gitalk"],"distractionFreeMode":false};
+</script> <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js">
+</script> <script>
+  (function() {
+    var c = document.getElementById('gitalk-container');
+    if (!c) return;
+    var id = c.dataset.abbrlink || '';
+    var title = c.dataset.title || '';
+    new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting && !c.dataset.loaded) {
+          c.dataset.loaded = '1';
+          new Gitalk(Object.assign({}, GITALK_CFG, {id: id, title: title})).render('gitalk-container');
+        }
+      });
+    }, {rootMargin: '200px'}).observe(c);
+  })();
+</script> </footer> </article> </main> <button class="toc-fab" id="toc-fab" aria-label="目录" data-astro-cid-6t6zfk7k> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M4 6h16M4 12h10M4 18h16" data-astro-cid-6t6zfk7k></path> </svg> </button> <!-- Desktop: hover popup panel --> <div class="toc-popup" id="toc-popup" data-astro-cid-6t6zfk7k> <div class="toc-popup-header" data-astro-cid-6t6zfk7k> <span class="toc-popup-title" data-astro-cid-6t6zfk7k>目录</span> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> <div class="toc-popup-body" data-astro-cid-6t6zfk7k> <ul class="toc-popup-list" data-astro-cid-6t6zfk7k> <li class="toc-popup-item" data-mtoc-section="初识-tensorflow" data-astro-cid-6t6zfk7k> <a href="#初识-tensorflow" class="toc-popup-link" data-mtoc="初识-tensorflow" data-astro-cid-6t6zfk7k> 初识 TensorFlow </a>  </li><li class="toc-popup-item" data-mtoc-section="tensorflow-keras" data-astro-cid-6t6zfk7k> <a href="#tensorflow-keras" class="toc-popup-link" data-mtoc="tensorflow-keras" data-astro-cid-6t6zfk7k> Tensorflow-keras </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#简介" class="toc-popup-link" data-mtoc="简介" data-astro-cid-6t6zfk7k> 简介 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#tf_keras做分类" class="toc-popup-link" data-mtoc="tf_keras做分类" data-astro-cid-6t6zfk7k> tf_keras做分类 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#tf_keras做回归" class="toc-popup-link" data-mtoc="tf_keras做回归" data-astro-cid-6t6zfk7k> tf_keras做回归 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="梯度消失梯度爆炸" data-astro-cid-6t6zfk7k> <a href="#梯度消失梯度爆炸" class="toc-popup-link" data-mtoc="梯度消失梯度爆炸" data-astro-cid-6t6zfk7k> 梯度消失、梯度爆炸 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#问题描述" class="toc-popup-link" data-mtoc="问题描述" data-astro-cid-6t6zfk7k> 问题描述 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#批归一化" class="toc-popup-link" data-mtoc="批归一化" data-astro-cid-6t6zfk7k> 批归一化 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#更改激活函数" class="toc-popup-link" data-mtoc="更改激活函数" data-astro-cid-6t6zfk7k> 更改激活函数 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="dropout" data-astro-cid-6t6zfk7k> <a href="#dropout" class="toc-popup-link" data-mtoc="dropout" data-astro-cid-6t6zfk7k> Dropout </a>  </li><li class="toc-popup-item" data-mtoc-section="wide--deep-模型推荐场景" data-astro-cid-6t6zfk7k> <a href="#wide--deep-模型推荐场景" class="toc-popup-link" data-mtoc="wide--deep-模型推荐场景" data-astro-cid-6t6zfk7k> Wide &amp;#x26; Deep 模型（推荐场景） </a>  </li><li class="toc-popup-item" data-mtoc-section="超参数搜索" data-astro-cid-6t6zfk7k> <a href="#超参数搜索" class="toc-popup-link" data-mtoc="超参数搜索" data-astro-cid-6t6zfk7k> 超参数搜索 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#batch-size" class="toc-popup-link" data-mtoc="batch-size" data-astro-cid-6t6zfk7k> Batch Size </a> </li><li data-astro-cid-6t6zfk7k> <a href="#学习率衰减" class="toc-popup-link" data-mtoc="学习率衰减" data-astro-cid-6t6zfk7k> 学习率衰减 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#网格搜索随机搜索" class="toc-popup-link" data-mtoc="网格搜索随机搜索" data-astro-cid-6t6zfk7k> 网格搜索、随机搜索 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="tensorflow-基础-api" data-astro-cid-6t6zfk7k> <a href="#tensorflow-基础-api" class="toc-popup-link" data-mtoc="tensorflow-基础-api" data-astro-cid-6t6zfk7k> tensorflow 基础 API </a>  </li><li class="toc-popup-item" data-mtoc-section="dataset" data-astro-cid-6t6zfk7k> <a href="#dataset" class="toc-popup-link" data-mtoc="dataset" data-astro-cid-6t6zfk7k> dataset </a>  </li><li class="toc-popup-item" data-mtoc-section="estimator" data-astro-cid-6t6zfk7k> <a href="#estimator" class="toc-popup-link" data-mtoc="estimator" data-astro-cid-6t6zfk7k> estimator </a>  </li><li class="toc-popup-item" data-mtoc-section="卷积神经网络" data-astro-cid-6t6zfk7k> <a href="#卷积神经网络" class="toc-popup-link" data-mtoc="卷积神经网络" data-astro-cid-6t6zfk7k> 卷积神经网络 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#全连接层的困境" class="toc-popup-link" data-mtoc="全连接层的困境" data-astro-cid-6t6zfk7k> 全连接层的困境 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#卷积的思路" class="toc-popup-link" data-mtoc="卷积的思路" data-astro-cid-6t6zfk7k> 卷积的思路 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#池化" class="toc-popup-link" data-mtoc="池化" data-astro-cid-6t6zfk7k> 池化 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#实战" class="toc-popup-link" data-mtoc="实战" data-astro-cid-6t6zfk7k> 实战 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="迁移学习" data-astro-cid-6t6zfk7k> <a href="#迁移学习" class="toc-popup-link" data-mtoc="迁移学习" data-astro-cid-6t6zfk7k> 迁移学习 </a>  </li><li class="toc-popup-item" data-mtoc-section="resnet" data-astro-cid-6t6zfk7k> <a href="#resnet" class="toc-popup-link" data-mtoc="resnet" data-astro-cid-6t6zfk7k> ResNet </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#基本知识" class="toc-popup-link" data-mtoc="基本知识" data-astro-cid-6t6zfk7k> 基本知识 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#实战-1" class="toc-popup-link" data-mtoc="实战-1" data-astro-cid-6t6zfk7k> 实战 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="卷积神经网络进阶" data-astro-cid-6t6zfk7k> <a href="#卷积神经网络进阶" class="toc-popup-link" data-mtoc="卷积神经网络进阶" data-astro-cid-6t6zfk7k> 卷积神经网络进阶 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#alexnet" class="toc-popup-link" data-mtoc="alexnet" data-astro-cid-6t6zfk7k> AlexNet </a> </li><li data-astro-cid-6t6zfk7k> <a href="#vggnet" class="toc-popup-link" data-mtoc="vggnet" data-astro-cid-6t6zfk7k> VGGNet </a> </li><li data-astro-cid-6t6zfk7k> <a href="#resnet-1" class="toc-popup-link" data-mtoc="resnet-1" data-astro-cid-6t6zfk7k> ResNet </a> </li><li data-astro-cid-6t6zfk7k> <a href="#inceptionnet" class="toc-popup-link" data-mtoc="inceptionnet" data-astro-cid-6t6zfk7k> InceptionNet </a> </li><li data-astro-cid-6t6zfk7k> <a href="#mobilenet" class="toc-popup-link" data-mtoc="mobilenet" data-astro-cid-6t6zfk7k> MobileNet </a> </li><li data-astro-cid-6t6zfk7k> <a href="#不同模型结构的对比" class="toc-popup-link" data-mtoc="不同模型结构的对比" data-astro-cid-6t6zfk7k> 不同模型结构的对比 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="卷积神经网络调参" data-astro-cid-6t6zfk7k> <a href="#卷积神经网络调参" class="toc-popup-link" data-mtoc="卷积神经网络调参" data-astro-cid-6t6zfk7k> 卷积神经网络调参 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#不同的优化器" class="toc-popup-link" data-mtoc="不同的优化器" data-astro-cid-6t6zfk7k> 不同的优化器 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#激活函数" class="toc-popup-link" data-mtoc="激活函数" data-astro-cid-6t6zfk7k> 激活函数 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#网络初始化w和b" class="toc-popup-link" data-mtoc="网络初始化w和b" data-astro-cid-6t6zfk7k> 网络初始化（w和b） </a> </li><li data-astro-cid-6t6zfk7k> <a href="#批归一化-1" class="toc-popup-link" data-mtoc="批归一化-1" data-astro-cid-6t6zfk7k> 批归一化 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#数据增强" class="toc-popup-link" data-mtoc="数据增强" data-astro-cid-6t6zfk7k> 数据增强 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#更多调参技巧" class="toc-popup-link" data-mtoc="更多调参技巧" data-astro-cid-6t6zfk7k> 更多调参技巧 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#实战-2" class="toc-popup-link" data-mtoc="实战-2" data-astro-cid-6t6zfk7k> 实战 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="图像风格变换" data-astro-cid-6t6zfk7k> <a href="#图像风格变换" class="toc-popup-link" data-mtoc="图像风格变换" data-astro-cid-6t6zfk7k> 图像风格变换 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#神经网络可以做什么" class="toc-popup-link" data-mtoc="神经网络可以做什么" data-astro-cid-6t6zfk7k> 神经网络可以做什么 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#卷积神经网络学到了什么" class="toc-popup-link" data-mtoc="卷积神经网络学到了什么" data-astro-cid-6t6zfk7k> 卷积神经网络学到了什么 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#图像风格转换简单版本" class="toc-popup-link" data-mtoc="图像风格转换简单版本" data-astro-cid-6t6zfk7k> 图像风格转换（简单版本） </a> </li><li data-astro-cid-6t6zfk7k> <a href="#拓展" class="toc-popup-link" data-mtoc="拓展" data-astro-cid-6t6zfk7k> 拓展 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="embedding" data-astro-cid-6t6zfk7k> <a href="#embedding" class="toc-popup-link" data-mtoc="embedding" data-astro-cid-6t6zfk7k> Embedding </a>  </li><li class="toc-popup-item" data-mtoc-section="rnn" data-astro-cid-6t6zfk7k> <a href="#rnn" class="toc-popup-link" data-mtoc="rnn" data-astro-cid-6t6zfk7k> RNN </a>  </li><li class="toc-popup-item" data-mtoc-section="长短期记忆网络-lstm" data-astro-cid-6t6zfk7k> <a href="#长短期记忆网络-lstm" class="toc-popup-link" data-mtoc="长短期记忆网络-lstm" data-astro-cid-6t6zfk7k> 长短期记忆网络 LSTM </a>  </li><li class="toc-popup-item" data-mtoc-section="gpu-strategy" data-astro-cid-6t6zfk7k> <a href="#gpu-strategy" class="toc-popup-link" data-mtoc="gpu-strategy" data-astro-cid-6t6zfk7k> GPU Strategy </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#引入" class="toc-popup-link" data-mtoc="引入" data-astro-cid-6t6zfk7k> 引入 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#分布式策略" class="toc-popup-link" data-mtoc="分布式策略" data-astro-cid-6t6zfk7k> 分布式策略 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#同步与异步的优劣" class="toc-popup-link" data-mtoc="同步与异步的优劣" data-astro-cid-6t6zfk7k> 同步与异步的优劣 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="机器翻译" data-astro-cid-6t6zfk7k> <a href="#机器翻译" class="toc-popup-link" data-mtoc="机器翻译" data-astro-cid-6t6zfk7k> 机器翻译 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#背景" class="toc-popup-link" data-mtoc="背景" data-astro-cid-6t6zfk7k> 背景 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#seq2seq-模型" class="toc-popup-link" data-mtoc="seq2seq-模型" data-astro-cid-6t6zfk7k> Seq2seq 模型 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#attention--seq2seq-理论" class="toc-popup-link" data-mtoc="attention--seq2seq-理论" data-astro-cid-6t6zfk7k> Attention + Seq2Seq 理论 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#attention--seq2seq-实战" class="toc-popup-link" data-mtoc="attention--seq2seq-实战" data-astro-cid-6t6zfk7k> Attention + Seq2Seq 实战 </a> </li> </ul> </li> </ul> </div> </div> <!-- Mobile: bottom sheet overlay --> <div class="toc-overlay" id="toc-overlay" data-astro-cid-6t6zfk7k></div> <div class="toc-sheet" id="toc-sheet" data-astro-cid-6t6zfk7k> <div class="toc-sheet-header" data-astro-cid-6t6zfk7k> <span class="toc-sheet-title" data-astro-cid-6t6zfk7k>目录</span> <div class="toc-sheet-actions" data-astro-cid-6t6zfk7k> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> <button class="toc-sheet-close" id="toc-sheet-close" aria-label="关闭" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M18 6L6 18M6 6l12 12" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> </div> <div class="toc-sheet-body" data-astro-cid-6t6zfk7k> <ul class="toc-sheet-list" data-astro-cid-6t6zfk7k> <li class="toc-sheet-item" data-msheet-section="初识-tensorflow" data-astro-cid-6t6zfk7k> <a href="#初识-tensorflow" class="toc-sheet-link" data-msheet="初识-tensorflow" data-astro-cid-6t6zfk7k> 初识 TensorFlow </a>  </li><li class="toc-sheet-item" data-msheet-section="tensorflow-keras" data-astro-cid-6t6zfk7k> <a href="#tensorflow-keras" class="toc-sheet-link" data-msheet="tensorflow-keras" data-astro-cid-6t6zfk7k> Tensorflow-keras </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#简介" class="toc-sheet-link" data-msheet="简介" data-astro-cid-6t6zfk7k> 简介 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#tf_keras做分类" class="toc-sheet-link" data-msheet="tf_keras做分类" data-astro-cid-6t6zfk7k> tf_keras做分类 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#tf_keras做回归" class="toc-sheet-link" data-msheet="tf_keras做回归" data-astro-cid-6t6zfk7k> tf_keras做回归 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="梯度消失梯度爆炸" data-astro-cid-6t6zfk7k> <a href="#梯度消失梯度爆炸" class="toc-sheet-link" data-msheet="梯度消失梯度爆炸" data-astro-cid-6t6zfk7k> 梯度消失、梯度爆炸 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#问题描述" class="toc-sheet-link" data-msheet="问题描述" data-astro-cid-6t6zfk7k> 问题描述 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#批归一化" class="toc-sheet-link" data-msheet="批归一化" data-astro-cid-6t6zfk7k> 批归一化 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#更改激活函数" class="toc-sheet-link" data-msheet="更改激活函数" data-astro-cid-6t6zfk7k> 更改激活函数 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="dropout" data-astro-cid-6t6zfk7k> <a href="#dropout" class="toc-sheet-link" data-msheet="dropout" data-astro-cid-6t6zfk7k> Dropout </a>  </li><li class="toc-sheet-item" data-msheet-section="wide--deep-模型推荐场景" data-astro-cid-6t6zfk7k> <a href="#wide--deep-模型推荐场景" class="toc-sheet-link" data-msheet="wide--deep-模型推荐场景" data-astro-cid-6t6zfk7k> Wide &amp;#x26; Deep 模型（推荐场景） </a>  </li><li class="toc-sheet-item" data-msheet-section="超参数搜索" data-astro-cid-6t6zfk7k> <a href="#超参数搜索" class="toc-sheet-link" data-msheet="超参数搜索" data-astro-cid-6t6zfk7k> 超参数搜索 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#batch-size" class="toc-sheet-link" data-msheet="batch-size" data-astro-cid-6t6zfk7k> Batch Size </a> </li><li data-astro-cid-6t6zfk7k> <a href="#学习率衰减" class="toc-sheet-link" data-msheet="学习率衰减" data-astro-cid-6t6zfk7k> 学习率衰减 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#网格搜索随机搜索" class="toc-sheet-link" data-msheet="网格搜索随机搜索" data-astro-cid-6t6zfk7k> 网格搜索、随机搜索 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="tensorflow-基础-api" data-astro-cid-6t6zfk7k> <a href="#tensorflow-基础-api" class="toc-sheet-link" data-msheet="tensorflow-基础-api" data-astro-cid-6t6zfk7k> tensorflow 基础 API </a>  </li><li class="toc-sheet-item" data-msheet-section="dataset" data-astro-cid-6t6zfk7k> <a href="#dataset" class="toc-sheet-link" data-msheet="dataset" data-astro-cid-6t6zfk7k> dataset </a>  </li><li class="toc-sheet-item" data-msheet-section="estimator" data-astro-cid-6t6zfk7k> <a href="#estimator" class="toc-sheet-link" data-msheet="estimator" data-astro-cid-6t6zfk7k> estimator </a>  </li><li class="toc-sheet-item" data-msheet-section="卷积神经网络" data-astro-cid-6t6zfk7k> <a href="#卷积神经网络" class="toc-sheet-link" data-msheet="卷积神经网络" data-astro-cid-6t6zfk7k> 卷积神经网络 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#全连接层的困境" class="toc-sheet-link" data-msheet="全连接层的困境" data-astro-cid-6t6zfk7k> 全连接层的困境 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#卷积的思路" class="toc-sheet-link" data-msheet="卷积的思路" data-astro-cid-6t6zfk7k> 卷积的思路 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#池化" class="toc-sheet-link" data-msheet="池化" data-astro-cid-6t6zfk7k> 池化 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#实战" class="toc-sheet-link" data-msheet="实战" data-astro-cid-6t6zfk7k> 实战 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="迁移学习" data-astro-cid-6t6zfk7k> <a href="#迁移学习" class="toc-sheet-link" data-msheet="迁移学习" data-astro-cid-6t6zfk7k> 迁移学习 </a>  </li><li class="toc-sheet-item" data-msheet-section="resnet" data-astro-cid-6t6zfk7k> <a href="#resnet" class="toc-sheet-link" data-msheet="resnet" data-astro-cid-6t6zfk7k> ResNet </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#基本知识" class="toc-sheet-link" data-msheet="基本知识" data-astro-cid-6t6zfk7k> 基本知识 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#实战-1" class="toc-sheet-link" data-msheet="实战-1" data-astro-cid-6t6zfk7k> 实战 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="卷积神经网络进阶" data-astro-cid-6t6zfk7k> <a href="#卷积神经网络进阶" class="toc-sheet-link" data-msheet="卷积神经网络进阶" data-astro-cid-6t6zfk7k> 卷积神经网络进阶 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#alexnet" class="toc-sheet-link" data-msheet="alexnet" data-astro-cid-6t6zfk7k> AlexNet </a> </li><li data-astro-cid-6t6zfk7k> <a href="#vggnet" class="toc-sheet-link" data-msheet="vggnet" data-astro-cid-6t6zfk7k> VGGNet </a> </li><li data-astro-cid-6t6zfk7k> <a href="#resnet-1" class="toc-sheet-link" data-msheet="resnet-1" data-astro-cid-6t6zfk7k> ResNet </a> </li><li data-astro-cid-6t6zfk7k> <a href="#inceptionnet" class="toc-sheet-link" data-msheet="inceptionnet" data-astro-cid-6t6zfk7k> InceptionNet </a> </li><li data-astro-cid-6t6zfk7k> <a href="#mobilenet" class="toc-sheet-link" data-msheet="mobilenet" data-astro-cid-6t6zfk7k> MobileNet </a> </li><li data-astro-cid-6t6zfk7k> <a href="#不同模型结构的对比" class="toc-sheet-link" data-msheet="不同模型结构的对比" data-astro-cid-6t6zfk7k> 不同模型结构的对比 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="卷积神经网络调参" data-astro-cid-6t6zfk7k> <a href="#卷积神经网络调参" class="toc-sheet-link" data-msheet="卷积神经网络调参" data-astro-cid-6t6zfk7k> 卷积神经网络调参 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#不同的优化器" class="toc-sheet-link" data-msheet="不同的优化器" data-astro-cid-6t6zfk7k> 不同的优化器 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#激活函数" class="toc-sheet-link" data-msheet="激活函数" data-astro-cid-6t6zfk7k> 激活函数 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#网络初始化w和b" class="toc-sheet-link" data-msheet="网络初始化w和b" data-astro-cid-6t6zfk7k> 网络初始化（w和b） </a> </li><li data-astro-cid-6t6zfk7k> <a href="#批归一化-1" class="toc-sheet-link" data-msheet="批归一化-1" data-astro-cid-6t6zfk7k> 批归一化 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#数据增强" class="toc-sheet-link" data-msheet="数据增强" data-astro-cid-6t6zfk7k> 数据增强 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#更多调参技巧" class="toc-sheet-link" data-msheet="更多调参技巧" data-astro-cid-6t6zfk7k> 更多调参技巧 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#实战-2" class="toc-sheet-link" data-msheet="实战-2" data-astro-cid-6t6zfk7k> 实战 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="图像风格变换" data-astro-cid-6t6zfk7k> <a href="#图像风格变换" class="toc-sheet-link" data-msheet="图像风格变换" data-astro-cid-6t6zfk7k> 图像风格变换 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#神经网络可以做什么" class="toc-sheet-link" data-msheet="神经网络可以做什么" data-astro-cid-6t6zfk7k> 神经网络可以做什么 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#卷积神经网络学到了什么" class="toc-sheet-link" data-msheet="卷积神经网络学到了什么" data-astro-cid-6t6zfk7k> 卷积神经网络学到了什么 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#图像风格转换简单版本" class="toc-sheet-link" data-msheet="图像风格转换简单版本" data-astro-cid-6t6zfk7k> 图像风格转换（简单版本） </a> </li><li data-astro-cid-6t6zfk7k> <a href="#拓展" class="toc-sheet-link" data-msheet="拓展" data-astro-cid-6t6zfk7k> 拓展 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="embedding" data-astro-cid-6t6zfk7k> <a href="#embedding" class="toc-sheet-link" data-msheet="embedding" data-astro-cid-6t6zfk7k> Embedding </a>  </li><li class="toc-sheet-item" data-msheet-section="rnn" data-astro-cid-6t6zfk7k> <a href="#rnn" class="toc-sheet-link" data-msheet="rnn" data-astro-cid-6t6zfk7k> RNN </a>  </li><li class="toc-sheet-item" data-msheet-section="长短期记忆网络-lstm" data-astro-cid-6t6zfk7k> <a href="#长短期记忆网络-lstm" class="toc-sheet-link" data-msheet="长短期记忆网络-lstm" data-astro-cid-6t6zfk7k> 长短期记忆网络 LSTM </a>  </li><li class="toc-sheet-item" data-msheet-section="gpu-strategy" data-astro-cid-6t6zfk7k> <a href="#gpu-strategy" class="toc-sheet-link" data-msheet="gpu-strategy" data-astro-cid-6t6zfk7k> GPU Strategy </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#引入" class="toc-sheet-link" data-msheet="引入" data-astro-cid-6t6zfk7k> 引入 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#分布式策略" class="toc-sheet-link" data-msheet="分布式策略" data-astro-cid-6t6zfk7k> 分布式策略 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#同步与异步的优劣" class="toc-sheet-link" data-msheet="同步与异步的优劣" data-astro-cid-6t6zfk7k> 同步与异步的优劣 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="机器翻译" data-astro-cid-6t6zfk7k> <a href="#机器翻译" class="toc-sheet-link" data-msheet="机器翻译" data-astro-cid-6t6zfk7k> 机器翻译 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#背景" class="toc-sheet-link" data-msheet="背景" data-astro-cid-6t6zfk7k> 背景 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#seq2seq-模型" class="toc-sheet-link" data-msheet="seq2seq-模型" data-astro-cid-6t6zfk7k> Seq2seq 模型 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#attention--seq2seq-理论" class="toc-sheet-link" data-msheet="attention--seq2seq-理论" data-astro-cid-6t6zfk7k> Attention + Seq2Seq 理论 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#attention--seq2seq-实战" class="toc-sheet-link" data-msheet="attention--seq2seq-实战" data-astro-cid-6t6zfk7k> Attention + Seq2Seq 实战 </a> </li> </ul> </li> </ul> </div> </div>  <script type="module">function F(){const f=document.getElementById("toc-fab"),o=document.getElementById("toc-popup"),a=document.getElementById("toc-overlay"),n=document.getElementById("toc-sheet"),q=document.getElementById("toc-sheet-close"),P=document.querySelectorAll(".toc-top-btn");if(!f||!o||!a||!n||!q)return;const p=()=>window.matchMedia("(max-width: 768px)").matches;let h=null,m=null,g=!1,E=!1;function A(){p()||(m&&clearTimeout(m),o.classList.add("open"),y(!0))}function B(){m&&clearTimeout(m),m=setTimeout(()=>{!g&&!E&&o.classList.remove("open")},200)}f.addEventListener("mouseenter",()=>{g=!0,A()}),f.addEventListener("mouseleave",()=>{g=!1,B()}),o.addEventListener("mouseenter",()=>{E=!0,A()}),o.addEventListener("mouseleave",()=>{E=!1,B()}),o.querySelectorAll(".toc-popup-link").forEach(t=>{t.addEventListener("click",()=>{setTimeout(()=>o.classList.remove("open"),150)})}),f.addEventListener("click",()=>{p()&&(a.style.display="block",n.style.display="flex",requestAnimationFrame(()=>{a.classList.add("open"),n.classList.add("open"),y(!0)}),document.body.style.overflow="hidden")});function v(){a.classList.remove("open"),n.classList.remove("open"),setTimeout(()=>{a.style.display="none",n.style.display="none"},300),document.body.style.overflow=""}q.addEventListener("click",v),a.addEventListener("click",v),n.querySelectorAll(".toc-sheet-link").forEach(t=>{t.addEventListener("click",()=>setTimeout(v,200))}),P.forEach(t=>{t.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"}),p()&&v()})});function I(t,b,s,i=!1){const l=t.querySelector(b),S=t.querySelector(s);if(!l||!S)return;const r=l.getBoundingClientRect(),e=S.getBoundingClientRect(),c=e.top>=r.top&&e.bottom<=r.bottom;if(!i&&c)return;const d=l.scrollTop+(e.top-r.top)-l.clientHeight/2+e.height/2;l.scrollTo({top:Math.max(0,d),behavior:i?"auto":"smooth"})}function k(t=!1){!p()&&o.classList.contains("open")&&I(o,".toc-popup-body",".toc-popup-link.active",t),p()&&n.classList.contains("open")&&I(n,".toc-sheet-body",".toc-sheet-link.active",t)}function y(t=!1){requestAnimationFrame(()=>k(t)),h&&clearTimeout(h),h=setTimeout(()=>{k(t),h=null},260)}let x="";function T(){const t=o.querySelectorAll(".toc-popup-link"),b=n.querySelectorAll(".toc-sheet-link"),s=[];t.forEach(e=>{const c=e.dataset.mtoc;if(c){const d=document.getElementById(c);d&&s.push({id:c,el:d})}});let i="";const l=window.scrollY+100;if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-4&&s.length>0)i=s[s.length-1].id;else for(let e=s.length-1;e>=0;e--)if(s[e].el.offsetTop<=l){i=s[e].id;break}t.forEach(e=>e.classList.toggle("active",e.dataset.mtoc===i)),b.forEach(e=>e.classList.toggle("active",e.dataset.msheet===i));function r(e,c,d,H){const R=(i?e.querySelector(`${c}.active`):null)?.closest(d)?.querySelector(H);e.querySelectorAll(H).forEach(u=>{u===R?(u.classList.add("expanded"),u.style.maxHeight=`${u.scrollHeight}px`):(u.classList.remove("expanded"),u.style.removeProperty("max-height"))})}r(o,".toc-popup-link",".toc-popup-item",".toc-popup-sub"),r(n,".toc-sheet-link",".toc-sheet-item",".toc-sheet-sub"),k(),i!==x&&(y(),x=i)}let w=!1;window.addEventListener("scroll",()=>{w||(requestAnimationFrame(()=>{T(),w=!1}),w=!0)});let L=null;window.addEventListener("resize",()=>{L&&clearTimeout(L),L=setTimeout(()=>{T(),y(!0),L=null},100)}),T()}document.addEventListener("astro:page-load",F);F();</script><footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner" data-astro-cid-sz7xmlte></div> </footer>  <script type="module" src="/_astro/CodeBlockEnhance.astro_astro_type_script_index_0_lang.Di89G-ws.js"></script> <div id="image-lightbox" class="lightbox-overlay" data-astro-cid-fbflauxb> <div class="lightbox-content" data-astro-cid-fbflauxb> <img id="lightbox-img" src="" alt="" data-astro-cid-fbflauxb> </div> </div>  <script type="module">function c(){const t=document.getElementById("image-lightbox"),n=document.getElementById("lightbox-img");if(!t||!n)return;function s(e){n.src=e,t.classList.add("open"),document.body.style.overflow="hidden"}function i(){t.classList.remove("open"),document.body.style.overflow=""}t.addEventListener("click",e=>{e.target===t&&i()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t.classList.contains("open")&&i()});function d(){document.querySelectorAll(".article-body img").forEach(e=>{const o=e;o.dataset.lightbox||(o.dataset.lightbox="true",o.style.cursor="zoom-in",o.addEventListener("click",()=>{s(o.src)}))})}document.addEventListener("astro:page-load",d),d()}document.addEventListener("astro:page-load",c);c();</script> <script type="module" src="/_astro/EncryptedBlock.astro_astro_type_script_index_0_lang.DuPogRv7.js"></script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"><script type="module">
+  import renderMathInElement from 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs';
+
+  function renderMath() {
+    const articleBody = document.querySelector('.article-body');
+    if (!articleBody) return;
+
+    renderMathInElement(articleBody, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      throwOnError: false,
+    });
+  }
+
+  document.addEventListener('astro:page-load', renderMath);
+  renderMath();
+</script> </div> </div> </body></html>  

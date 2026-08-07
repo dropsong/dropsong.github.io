@@ -1,0 +1,786 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>算法题集子 · dropsong&#39;s</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><style>.article-body{font-size:16px;line-height:1.85;color:var(--text);max-width:820px;margin:0 auto}.article-body h1,.article-body h2,.article-body h3,.article-body h4,.article-body h5,.article-body h6{margin-top:1.8em;margin-bottom:.6em;font-weight:600;line-height:1.35;color:var(--text)}.article-body h1{font-size:1.75rem}.article-body h2{font-size:1.45rem}.article-body h3{font-size:1.2rem}.article-body h4{font-size:1.05rem}.article-body p{margin-bottom:1.2em}.article-body p,.article-body li{white-space:pre-line}.article-body p,.article-body li,.article-body blockquote,.article-body td,.article-body th{word-break:normal;overflow-wrap:break-word}.article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.article-body a:hover{color:var(--accent-hover)}.article-body blockquote{margin:1.2em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:#5b9e8c1a;border-radius:0 var(--radius) var(--radius) 0;color:var(--muted)}.article-body blockquote>:last-child{margin-bottom:0}.article-body ul,.article-body ol{margin-bottom:1.2em;padding-left:1.5em}.article-body li>ul,.article-body li>ol{margin-bottom:0;white-space:normal}.article-body li:has(>ul,>ol){white-space:normal}.article-body li{margin-bottom:.25em}.article-body table{width:auto;max-width:100%;border-collapse:collapse;margin:1.5em auto;font-size:.925rem;overflow-x:auto}.article-body table th,.article-body table td{padding:.6em .85em;border:1px solid var(--border);text-align:left}.article-body table th{font-weight:600}.article-body hr{border:none;border-top:1px solid var(--border);margin:2em 0}.article-body img{border-radius:var(--radius);cursor:zoom-in}.article-body .article-figure{margin:1.5em 0;text-align:center}.article-body .article-figure img{display:block;margin:0 auto}.article-body .article-figure-caption{margin-top:.55em;color:var(--muted);font-size:.875rem;line-height:1.5}.article-body iframe{max-width:100%;border-radius:var(--radius)}.article-body .gdrive-pdf-wrapper{margin:1.5em 0;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius);background:#fff}.article-body .gdrive-pdf-header{display:flex;align-items:center;justify-content:space-between;min-height:2.75rem;padding:.5rem .875rem;border-bottom:1px solid var(--border);background:var(--bg)}.article-body .gdrive-pdf-label{color:var(--muted);font-size:.85rem}.article-body .gdrive-pdf-link{color:var(--accent);font-size:.8rem;text-decoration:none}.article-body .gdrive-pdf-link:hover{text-decoration:underline}.article-body .gdrive-pdf-frame{display:block;width:100%;height:min(720px,80vh);border:0;border-radius:0;background:#fff}.article-body :not(pre)>code{background:#fffaf0a6;border:1px solid rgba(180,155,130,.2);border-radius:4px;padding:.1em .4em;font-size:.875em}.article-body pre,.article-body pre.astro-code,.article-body .astro-code{background:transparent!important;background-color:transparent!important;border:1.5px dashed rgba(224,143,88,.45);border-radius:14px}.article-body pre.astro-code code,.article-body .astro-code code{background:transparent!important;background-color:transparent!important}.article-body pre,.article-body table{-webkit-overflow-scrolling:touch}.article-body .katex-display{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;margin:1.4em 0;padding:.25rem 0 .45rem;text-align:center;scrollbar-width:thin;scrollbar-color:rgba(224,143,88,.35) transparent;word-break:normal;overflow-wrap:normal}.article-body .katex-display>.katex{display:inline-block;width:max-content;max-width:none}.article-body .katex{white-space:nowrap;word-break:normal;overflow-wrap:normal}.article-body .katex-display::-webkit-scrollbar{height:4px}.article-body .katex-display::-webkit-scrollbar-thumb{background:transparent}.article-body .katex-display:hover::-webkit-scrollbar-thumb{background:var(--border)}
+</style>
+<link rel="stylesheet" href="/_astro/about.CS0PymYq.css">
+<style>.site-footer[data-astro-cid-sz7xmlte]{padding:2rem 1.5rem;text-align:center}.footer-inner[data-astro-cid-sz7xmlte]{max-width:var(--max-width-page);margin:0 auto;display:flex;justify-content:center;align-items:center;gap:1rem;font-size:.85rem;color:var(--muted)}.footer-muted[data-astro-cid-sz7xmlte]{color:var(--muted)}
+</style>
+<link rel="stylesheet" href="/_astro/_abbrlink_.BDkgFBJR.css">
+<style>.gitalk-container[data-astro-cid-ajg7agi2]{margin-top:2rem}.gt-container{color:var(--text)!important;font-family:inherit!important}.gt-container a{color:var(--accent)!important}.gt-container a:hover{color:var(--accent-hover, var(--accent))!important}.gt-container .gt-header-textarea{background:transparent!important;border:1.5px dashed rgba(224,143,88,.45)!important;border-radius:14px!important;color:var(--text)!important;box-shadow:none!important;outline:none!important;font-family:inherit!important;line-height:1.7!important}.gt-container .gt-header-textarea:focus{border-color:#e08f58ad!important;box-shadow:0 0 0 3px #e08f5814!important}.gt-container .gt-header-preview{background:transparent!important;border:1.5px dashed rgba(224,143,88,.35)!important;border-radius:14px!important;color:var(--text)!important}.gt-container .gt-comment-content{background:transparent!important;border-radius:12px!important}.gt-container .gt-btn-login,.gt-container .gt-btn-public{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important}.gt-container .gt-btn-login:hover,.gt-container .gt-btn-public:hover{background:var(--accent-hover)!important;border-color:var(--accent-hover)!important}.gt-container .gt-btn-preview{background:transparent!important;border:1px solid var(--accent)!important;color:var(--accent)!important}.gt-container .gt-btn-preview:hover{background:#5b9e8c1a!important}
+</style></head> <body data-page="post" data-astro-cid-37fxchfa> <div class="site-page" data-astro-cid-37fxchfa> <!-- Background decoration layer (cream paper style) --> <div class="site-background" aria-hidden="true" data-astro-cid-37fxchfa> <div class="bg-pattern" data-astro-cid-37fxchfa></div> <div class="bg-top-border" data-astro-cid-37fxchfa></div> <div class="bg-bottom-border" data-astro-cid-37fxchfa></div> </div> <!-- Content shell --> <div class="site-shell" data-astro-cid-37fxchfa>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="site-name" data-astro-cid-3ef6ksr2>dropsong's</a> <!-- Desktop: hover dropdown nav (button → panel drops below) --> <nav class="desktop-hover-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <div class="desktop-hover-nav-inner" data-astro-cid-3ef6ksr2> <button class="desktop-nav-trigger" type="button" aria-label="Open navigation menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> <div class="desktop-nav-dropdown" data-astro-cid-3ef6ksr2> <div class="desktop-nav-dropdown-body" data-astro-cid-3ef6ksr2> <a href="/archive/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Search</a> </div> </div> </div> </nav> <!-- Mobile: click-toggle nav (keep exactly as before) --> <nav class="header-nav" id="header-nav" data-astro-cid-3ef6ksr2> <a href="/archive/" class="nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="nav-link" data-astro-cid-3ef6ksr2>Search</a> </nav> <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> </header>  <script type="module">const e=document.getElementById("menu-toggle"),t=document.getElementById("header-nav");e&&t&&e.addEventListener("click",()=>{t.classList.toggle("open")});</script> <main class="post-page" data-astro-cid-gjtny2mx> <article class="post-article" data-astro-cid-gjtny2mx> <header class="post-header" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <h1 class="article-title" data-astro-cid-bjlpfrhy>算法题集子</h1> <div class="article-meta" data-astro-cid-bjlpfrhy> <time class="article-date" data-astro-cid-bjlpfrhy>2023-07-12</time>  <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-category" data-astro-cid-bjlpfrhy>算法</span>   <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-tags" data-astro-cid-bjlpfrhy> #lca #tarjan #模拟退火 </span>   </div> </div> </header> <div class="post-body" id="post-body" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <div class="article-body" data-astro-cid-bjlpfrhy><p>一道题开一篇文章实在浪费，于是决定以后零零散散做的题就放在这个集子里了。如果数量过多会考虑再开。</p>
+<h2 id="jsoi2004-平衡点模拟退火"><a class="heading-anchor" href="#jsoi2004-平衡点模拟退火">JSOI2004 平衡点（模拟退火）</a></h2>
+<p><strong>提交入口</strong></p>
+<p><a href="https://www.luogu.com.cn/problem/P1337">https://www.luogu.com.cn/problem/P1337</a></p>
+<p><strong>题目描述</strong></p>
+<p>如图，有 <span class="math-source">$n$</span> 个重物，每个重物系在一条足够长的绳子上。</p>
+<p>每条绳子自上而下穿过桌面上的洞，然后系在一起。图中 <span class="math-source">$x$</span> 处就是公共的绳结。假设绳子是完全弹性的（即不会造成能量损失），桌子足够高（重物不会垂到地上），且忽略所有的摩擦，求绳结 <span class="math-source">$x$</span> 最终平衡于何处。</p>
+<p><strong>注意</strong>：桌面上的洞都比绳结 <span class="math-source">$x$</span> 小得多，所以即使某个重物特别重，绳结 <span class="math-source">$x$</span> 也不可能穿过桌面上的洞掉下来，最多是卡在某个洞口处。</p>
+<figure class="article-figure"><img src="https://cdn.luogu.com.cn/upload/pic/148.png" alt="47-1" loading="lazy"><figcaption class="article-figure-caption">47-1</figcaption></figure>
+<p><strong>输入格式</strong></p>
+<p>文件的第一行为一个正整数 <span class="math-source">$n$</span>（<span class="math-source">$1\le n\le 1000$</span>），表示重物和洞的数目。</p>
+<p>接下来的 <span class="math-source">$n$</span> 行，每行是 <span class="math-source">$3$</span> 个整数 <span class="math-source">$x_i, y_i, w_i$</span>，分别表示第 <span class="math-source">$i$</span> 个洞的坐标以及第 <span class="math-source">$i$</span> 个重物的重量。（<span class="math-source">$-10000\le x_i,y_i\le10000, 0&#x3C;w_i\le1000$</span>）</p>
+<p><strong>输出格式</strong></p>
+<p>你的程序必须输出两个浮点数（保留小数点后三位），分别表示处于最终平衡状态时绳结 <span class="math-source">$x$</span> 的横坐标和纵坐标。两个数以一个空格隔开。</p>
+<p><strong>样例输入 #1</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>3</span></span>
+<span class="line"><span>0 0 1</span></span>
+<span class="line"><span>0 2 1</span></span>
+<span class="line"><span>1 1 1</span></span></code></pre>
+<p><strong>样例输出 #1</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>0.577 1.000</span></span></code></pre>
+<p><strong>分析</strong></p>
+<p>待续。先贴代码。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="cpp"><code><span class="line"><span style="color:#D73A49">#include</span><span style="color:#032F62"> &#x3C;bits/stdc++.h></span></span>
+<span class="line"><span style="color:#D73A49">using</span><span style="color:#D73A49"> namespace</span><span style="color:#6F42C1"> std</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">const</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> MAXN </span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#D73A49">e</span><span style="color:#005CC5">4</span><span style="color:#D73A49">+</span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">int</span><span style="color:#24292E"> n,g[MAXN];</span></span>
+<span class="line"><span style="color:#D73A49">double</span><span style="color:#24292E"> minlen</span><span style="color:#D73A49">=</span><span style="color:#24292E">DBL_MAX;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> Point</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">	double</span><span style="color:#24292E"> x, y;</span></span>
+<span class="line"><span style="color:#6F42C1">	Point</span><span style="color:#24292E">(</span><span style="color:#D73A49">double</span><span style="color:#E36209"> a</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0.0</span><span style="color:#24292E">, </span><span style="color:#D73A49">double</span><span style="color:#E36209"> b</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0.0</span><span style="color:#24292E">):</span><span style="color:#6F42C1">x</span><span style="color:#24292E">(a),</span><span style="color:#6F42C1">y</span><span style="color:#24292E">(b){}</span></span>
+<span class="line"><span style="color:#24292E">}P[MAXN];</span></span>
+<span class="line"><span style="color:#24292E">Point ans;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">inline</span><span style="color:#D73A49"> double</span><span style="color:#6F42C1"> Sqr</span><span style="color:#24292E">(</span><span style="color:#D73A49">double</span><span style="color:#E36209"> x</span><span style="color:#24292E">){</span><span style="color:#D73A49">return</span><span style="color:#24292E"> x</span><span style="color:#D73A49">*</span><span style="color:#24292E">x;}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">inline</span><span style="color:#D73A49"> double</span><span style="color:#6F42C1"> Rand</span><span style="color:#24292E">(){</span></span>
+<span class="line"><span style="color:#D73A49">	return</span><span style="color:#D73A49"> double</span><span style="color:#24292E">(</span><span style="color:#6F42C1">rand</span><span style="color:#24292E">())</span><span style="color:#D73A49">/double</span><span style="color:#24292E">(RAND_MAX);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">inline</span><span style="color:#D73A49"> double</span><span style="color:#6F42C1"> dis</span><span style="color:#24292E">(</span><span style="color:#6F42C1">Point</span><span style="color:#E36209"> a</span><span style="color:#24292E">,</span><span style="color:#6F42C1">Point</span><span style="color:#E36209"> b</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">	return</span><span style="color:#6F42C1"> sqrt</span><span style="color:#24292E">(</span><span style="color:#6F42C1">Sqr</span><span style="color:#24292E">(a.x</span><span style="color:#D73A49">-</span><span style="color:#24292E">b.x)</span><span style="color:#D73A49">+</span><span style="color:#6F42C1">Sqr</span><span style="color:#24292E">(a.y</span><span style="color:#D73A49">-</span><span style="color:#24292E">b.y));</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">bool</span><span style="color:#6F42C1"> accept</span><span style="color:#24292E">(</span><span style="color:#D73A49">double</span><span style="color:#E36209"> delta</span><span style="color:#24292E">,</span><span style="color:#D73A49">double</span><span style="color:#E36209"> temp</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">	return</span><span style="color:#24292E"> delta</span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5">0</span><span style="color:#D73A49">||</span><span style="color:#6F42C1">Rand</span><span style="color:#24292E">()</span><span style="color:#D73A49">&#x3C;</span><span style="color:#6F42C1">exp</span><span style="color:#24292E">(</span><span style="color:#D73A49">-</span><span style="color:#24292E">delta</span><span style="color:#D73A49">/</span><span style="color:#24292E">temp);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">double</span><span style="color:#6F42C1"> calc</span><span style="color:#24292E">(</span><span style="color:#6F42C1">Point</span><span style="color:#E36209"> origin</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">	double</span><span style="color:#24292E"> len</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">	for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;i</span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">n;i</span><span style="color:#D73A49">++</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">	    len</span><span style="color:#D73A49">+=</span><span style="color:#6F42C1">dis</span><span style="color:#24292E">(origin,P[i])</span><span style="color:#D73A49">*</span><span style="color:#24292E">g[i];</span></span>
+<span class="line"><span style="color:#D73A49">	if</span><span style="color:#24292E">(len</span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">minlen){</span></span>
+<span class="line"><span style="color:#24292E">		ans</span><span style="color:#D73A49">=</span><span style="color:#24292E">origin;</span></span>
+<span class="line"><span style="color:#24292E">		minlen</span><span style="color:#D73A49">=</span><span style="color:#24292E">len;</span></span>
+<span class="line"><span style="color:#24292E">	}</span></span>
+<span class="line"><span style="color:#D73A49">	return</span><span style="color:#24292E"> len;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">void</span><span style="color:#6F42C1"> SA</span><span style="color:#24292E">(</span><span style="color:#6F42C1">Point</span><span style="color:#E36209"> ans0</span><span style="color:#24292E">,</span><span style="color:#D73A49">double</span><span style="color:#E36209"> T0</span><span style="color:#24292E">,</span><span style="color:#D73A49">double</span><span style="color:#E36209"> dec</span><span style="color:#24292E">,</span><span style="color:#D73A49">double</span><span style="color:#E36209"> end</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">	double</span><span style="color:#24292E"> temp</span><span style="color:#D73A49">=</span><span style="color:#24292E">T0;</span></span>
+<span class="line"><span style="color:#24292E">	Point nowpos</span><span style="color:#D73A49">=</span><span style="color:#24292E">ans0;</span></span>
+<span class="line"><span style="color:#D73A49">	double</span><span style="color:#24292E"> nowlen</span><span style="color:#D73A49">=</span><span style="color:#6F42C1">calc</span><span style="color:#24292E">(nowpos);</span></span>
+<span class="line"><span style="color:#24292E">	</span></span>
+<span class="line"><span style="color:#D73A49">    while</span><span style="color:#24292E">(temp</span><span style="color:#D73A49">></span><span style="color:#24292E">end){</span></span>
+<span class="line"><span style="color:#24292E">		Point nextpos</span><span style="color:#D73A49">=</span><span style="color:#6F42C1">Point</span><span style="color:#24292E">(nowpos.x</span><span style="color:#D73A49">+</span><span style="color:#24292E">temp</span><span style="color:#D73A49">*</span><span style="color:#24292E">(</span><span style="color:#6F42C1">Rand</span><span style="color:#24292E">()</span><span style="color:#D73A49">*</span><span style="color:#005CC5">2</span><span style="color:#D73A49">-</span><span style="color:#005CC5">1</span><span style="color:#24292E">),nowpos.y</span><span style="color:#D73A49">+</span><span style="color:#24292E">temp</span><span style="color:#D73A49">*</span><span style="color:#24292E">(</span><span style="color:#6F42C1">Rand</span><span style="color:#24292E">()</span><span style="color:#D73A49">*</span><span style="color:#005CC5">2</span><span style="color:#D73A49">-</span><span style="color:#005CC5">1</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#D73A49">		double</span><span style="color:#24292E"> nlen</span><span style="color:#D73A49">=</span><span style="color:#6F42C1">calc</span><span style="color:#24292E">(nextpos);</span></span>
+<span class="line"><span style="color:#D73A49">		if</span><span style="color:#24292E">(</span><span style="color:#6F42C1">accept</span><span style="color:#24292E">(nlen</span><span style="color:#D73A49">-</span><span style="color:#24292E">nowlen,temp)){</span></span>
+<span class="line"><span style="color:#24292E">			nowpos</span><span style="color:#D73A49">=</span><span style="color:#24292E">nextpos;</span></span>
+<span class="line"><span style="color:#24292E">			nowlen</span><span style="color:#D73A49">=</span><span style="color:#24292E">nlen;</span></span>
+<span class="line"><span style="color:#24292E">		}</span></span>
+<span class="line"><span style="color:#24292E">		temp</span><span style="color:#D73A49">*=</span><span style="color:#24292E">dec;</span><span style="color:#6A737D">   //dec为退火系数 </span></span>
+<span class="line"><span style="color:#24292E">	}</span></span>
+<span class="line"><span style="color:#24292E">	</span></span>
+<span class="line"><span style="color:#D73A49">    for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;i</span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5">1000</span><span style="color:#24292E">;i</span><span style="color:#D73A49">++</span><span style="color:#24292E">){</span><span style="color:#6A737D"> //精度维护</span></span>
+<span class="line"><span style="color:#24292E">		Point rnd</span><span style="color:#D73A49">=</span><span style="color:#6F42C1">Point</span><span style="color:#24292E">(ans.x</span><span style="color:#D73A49">+</span><span style="color:#24292E">temp</span><span style="color:#D73A49">*</span><span style="color:#24292E">(</span><span style="color:#6F42C1">Rand</span><span style="color:#24292E">()</span><span style="color:#D73A49">*</span><span style="color:#005CC5">2</span><span style="color:#D73A49">-</span><span style="color:#005CC5">1</span><span style="color:#24292E">),ans.y</span><span style="color:#D73A49">+</span><span style="color:#24292E">temp</span><span style="color:#D73A49">*</span><span style="color:#24292E">(</span><span style="color:#6F42C1">Rand</span><span style="color:#24292E">()</span><span style="color:#D73A49">*</span><span style="color:#005CC5">2</span><span style="color:#D73A49">-</span><span style="color:#005CC5">1</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#6F42C1">		calc</span><span style="color:#24292E">(rnd);</span></span>
+<span class="line"><span style="color:#24292E">	}</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">int</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(){</span></span>
+<span class="line"><span style="color:#6F42C1">	scanf</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">%d</span><span style="color:#032F62">"</span><span style="color:#24292E">,</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">n);</span></span>
+<span class="line"><span style="color:#24292E">	Point init;</span></span>
+<span class="line"><span style="color:#D73A49">	for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;i</span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">n;i</span><span style="color:#D73A49">++</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#6F42C1">		scanf</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">%lf%lf%d</span><span style="color:#032F62">"</span><span style="color:#24292E">,</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">P[i].x,</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">P[i].y,</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">g[i]);</span></span>
+<span class="line"><span style="color:#24292E">		init.x</span><span style="color:#D73A49">+=</span><span style="color:#24292E">P[i].x;</span></span>
+<span class="line"><span style="color:#24292E">		init.y</span><span style="color:#D73A49">+=</span><span style="color:#24292E">P[i].y;</span></span>
+<span class="line"><span style="color:#24292E">	}</span></span>
+<span class="line"><span style="color:#24292E">	init.x</span><span style="color:#D73A49">/=</span><span style="color:#24292E">n;</span></span>
+<span class="line"><span style="color:#24292E">	init.y</span><span style="color:#D73A49">/=</span><span style="color:#24292E">n;</span></span>
+<span class="line"><span style="color:#6F42C1">	SA</span><span style="color:#24292E">(init,</span><span style="color:#005CC5">1</span><span style="color:#D73A49">e</span><span style="color:#005CC5">5</span><span style="color:#24292E">,</span><span style="color:#005CC5">1</span><span style="color:#D73A49">-</span><span style="color:#005CC5">1</span><span style="color:#D73A49">e-</span><span style="color:#005CC5">2</span><span style="color:#24292E">,</span><span style="color:#005CC5">1</span><span style="color:#D73A49">e-</span><span style="color:#005CC5">3</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">	</span></span>
+<span class="line"><span style="color:#6F42C1">	printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">%.3f</span><span style="color:#005CC5"> %.3f\n</span><span style="color:#032F62">"</span><span style="color:#24292E">,ans.x,ans.y);</span></span>
+<span class="line"><span style="color:#D73A49">	return</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<h2 id="有机化学之神偶尔会做作弊tarjan-lca"><a class="heading-anchor" href="#有机化学之神偶尔会做作弊tarjan-lca">有机化学之神偶尔会做作弊（tarjan, lca）</a></h2>
+<p><strong>提交入口</strong></p>
+<p><a href="https://www.luogu.com.cn/problem/P2783">https://www.luogu.com.cn/problem/P2783</a></p>
+<p><strong>题意简述</strong></p>
+<p>给你一个 <span class="math-source">$n$</span> 个点，<span class="math-source">$m$</span> 条边的无向图。把图中所有的环变为一个点，求变化后某两个点之间有多少个点。</p>
+<p><strong>输入格式</strong></p>
+<p>第一行两个整数 <span class="math-source">$n$</span>，<span class="math-source">$m$</span>。表示有 <span class="math-source">$n$</span> 个点，<span class="math-source">$m$</span> 根键。</p>
+<p>接下来 <span class="math-source">$m$</span> 行每行两个整数 <span class="math-source">$u$</span>，<span class="math-source">$v$</span> 表示 <span class="math-source">$u$</span> 号碳和 <span class="math-source">$v$</span> 号碳有一根键。</p>
+<p>接下来一个整数 <span class="math-source">$tot$</span> 表示询问次数。</p>
+<p>接下来 <span class="math-source">$tot$</span> 行每行两个整数，<span class="math-source">$a$</span>，<span class="math-source">$b$</span> 表示询问的两个碳的编号。</p>
+<p><strong>输出格式</strong></p>
+<p>共 <span class="math-source">$tot$</span> 行，每行一个二进制数，表示答案。</p>
+<p><strong>样例输入 #1</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>3 2</span></span>
+<span class="line"><span>1 2</span></span>
+<span class="line"><span>2 3</span></span>
+<span class="line"><span>2</span></span>
+<span class="line"><span>1 2</span></span>
+<span class="line"><span>2 3</span></span></code></pre>
+<p><strong>样例输出 #1</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>10</span></span>
+<span class="line"><span>10</span></span></code></pre>
+<p><strong>提示</strong></p>
+<p>两个碳不成环。</p>
+<p><strong>数据范围及约定</strong></p>
+<p>对于 <span class="math-source">$100\%$</span> 的数据，<span class="math-source">$1&#x3C;n\le10 ^ 4$</span>，<span class="math-source">$1&#x3C;m\le5\times 10 ^ 4$</span>。</p>
+<p><strong>代码</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="cpp"><code><span class="line"><span style="color:#D73A49">#include</span><span style="color:#032F62"> &#x3C;cstdio></span></span>
+<span class="line"><span style="color:#D73A49">#include</span><span style="color:#032F62"> &#x3C;cmath></span></span>
+<span class="line"><span style="color:#D73A49">#include</span><span style="color:#032F62"> &#x3C;algorithm></span></span>
+<span class="line"><span style="color:#D73A49">#define</span><span style="color:#6F42C1"> MAX</span><span style="color:#24292E">(</span><span style="color:#E36209">a</span><span style="color:#24292E">,</span><span style="color:#E36209">b</span><span style="color:#24292E">) ((a)</span><span style="color:#D73A49">></span><span style="color:#24292E">(b)</span><span style="color:#D73A49">?</span><span style="color:#24292E">(a)</span><span style="color:#D73A49">:</span><span style="color:#24292E">(b))</span></span>
+<span class="line"><span style="color:#D73A49">#define</span><span style="color:#6F42C1"> MIN</span><span style="color:#24292E">(</span><span style="color:#E36209">a</span><span style="color:#24292E">,</span><span style="color:#E36209">b</span><span style="color:#24292E">) ((a)</span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">(b)</span><span style="color:#D73A49">?</span><span style="color:#24292E">(a)</span><span style="color:#D73A49">:</span><span style="color:#24292E">(b))</span></span>
+<span class="line"><span style="color:#D73A49">using</span><span style="color:#D73A49"> namespace</span><span style="color:#6F42C1"> std</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">const</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> maxn</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#D73A49">e</span><span style="color:#005CC5">4</span><span style="color:#D73A49">+</span><span style="color:#005CC5">3</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">const</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> maxm</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#D73A49">e</span><span style="color:#005CC5">5</span><span style="color:#D73A49">+</span><span style="color:#005CC5">3</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">// Edge_number in a general graph is twice that of a one-way graph</span></span>
+<span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> Edge</span><span style="color:#24292E">{</span><span style="color:#D73A49">int</span><span style="color:#24292E"> v,next;};</span></span>
+<span class="line"><span style="color:#24292E">Edge edge[maxm],edge2[maxm];</span></span>
+<span class="line"><span style="color:#D73A49">int</span><span style="color:#24292E"> head[maxn],dfn[maxn],low[maxn],stac[maxn],color[maxn],fa[maxn];</span></span>
+<span class="line"><span style="color:#D73A49">int</span><span style="color:#24292E"> n,m,tot,num,top,cnt,tot_in_txt,lcafa[maxn][</span><span style="color:#005CC5">25</span><span style="color:#24292E">];</span></span>
+<span class="line"><span style="color:#D73A49">int</span><span style="color:#24292E"> head2[maxn],tot2,dep[maxn],max0;</span></span>
+<span class="line"><span style="color:#D73A49">bool</span><span style="color:#24292E"> ins[maxn], vis[maxn];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">const</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> topow[] </span><span style="color:#D73A49">=</span><span style="color:#24292E"> {</span><span style="color:#005CC5">1</span><span style="color:#24292E">,</span><span style="color:#005CC5">2</span><span style="color:#24292E">,</span><span style="color:#005CC5">4</span><span style="color:#24292E">,</span><span style="color:#005CC5">8</span><span style="color:#24292E">,</span><span style="color:#005CC5">16</span><span style="color:#24292E">,</span><span style="color:#005CC5">32</span><span style="color:#24292E">,</span><span style="color:#005CC5">64</span><span style="color:#24292E">,</span><span style="color:#005CC5">128</span><span style="color:#24292E">,</span><span style="color:#005CC5">256</span><span style="color:#24292E">,</span><span style="color:#005CC5">512</span><span style="color:#24292E">,</span><span style="color:#005CC5">1024</span><span style="color:#24292E">,</span><span style="color:#005CC5">2048</span><span style="color:#24292E">,</span><span style="color:#005CC5">4096</span><span style="color:#24292E">,</span><span style="color:#005CC5">8192</span><span style="color:#24292E">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">inline</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> rd</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#D73A49"> &#x26;</span><span style="color:#E36209">x</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> w</span><span style="color:#D73A49">=</span><span style="color:#24292E">x</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    char</span><span style="color:#24292E"> ch</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    while</span><span style="color:#24292E">(ch</span><span style="color:#D73A49">&#x3C;</span><span style="color:#032F62">'0'</span><span style="color:#D73A49">||</span><span style="color:#032F62">'9'</span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">ch) w</span><span style="color:#D73A49">|=</span><span style="color:#24292E">(ch</span><span style="color:#D73A49">==</span><span style="color:#032F62">'-'</span><span style="color:#24292E">),ch</span><span style="color:#D73A49">=</span><span style="color:#6F42C1">getchar</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">    while</span><span style="color:#24292E">(</span><span style="color:#032F62">'0'</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#24292E">ch</span><span style="color:#D73A49">&#x26;&#x26;</span><span style="color:#24292E">ch</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#032F62">'9'</span><span style="color:#24292E">) x</span><span style="color:#D73A49">=</span><span style="color:#24292E">(x</span><span style="color:#D73A49">&#x3C;&#x3C;</span><span style="color:#005CC5">3</span><span style="color:#24292E">)</span><span style="color:#D73A49">+</span><span style="color:#24292E">(x</span><span style="color:#D73A49">&#x3C;&#x3C;</span><span style="color:#005CC5">1</span><span style="color:#24292E">)</span><span style="color:#D73A49">+</span><span style="color:#24292E">(ch</span><span style="color:#D73A49">^</span><span style="color:#032F62">'0'</span><span style="color:#24292E">),ch</span><span style="color:#D73A49">=</span><span style="color:#6F42C1">getchar</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">    x</span><span style="color:#D73A49">=</span><span style="color:#24292E">w</span><span style="color:#D73A49">?-</span><span style="color:#24292E">x</span><span style="color:#D73A49">:</span><span style="color:#24292E">x;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">inline</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> addedge</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> x</span><span style="color:#24292E">,</span><span style="color:#D73A49">int</span><span style="color:#E36209"> y</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">    edge[</span><span style="color:#D73A49">++</span><span style="color:#24292E">tot].v</span><span style="color:#D73A49">=</span><span style="color:#24292E">y;</span></span>
+<span class="line"><span style="color:#24292E">    edge[tot].next</span><span style="color:#D73A49">=</span><span style="color:#24292E">head[x];</span></span>
+<span class="line"><span style="color:#24292E">    head[x]</span><span style="color:#D73A49">=</span><span style="color:#24292E">tot;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">inline</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> addedge2</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> x</span><span style="color:#24292E">,</span><span style="color:#D73A49">int</span><span style="color:#E36209"> y</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">    edge2[</span><span style="color:#D73A49">++</span><span style="color:#24292E">tot2].v</span><span style="color:#D73A49">=</span><span style="color:#24292E">y;</span></span>
+<span class="line"><span style="color:#24292E">    edge2[tot2].next</span><span style="color:#D73A49">=</span><span style="color:#24292E">head2[x];</span></span>
+<span class="line"><span style="color:#24292E">    head2[x]</span><span style="color:#D73A49">=</span><span style="color:#24292E">tot2;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">void</span><span style="color:#6F42C1"> tarjan</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> x</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">    low[x]</span><span style="color:#D73A49">=</span><span style="color:#24292E">dfn[x]</span><span style="color:#D73A49">=++</span><span style="color:#24292E">num;</span></span>
+<span class="line"><span style="color:#24292E">    stac[</span><span style="color:#D73A49">++</span><span style="color:#24292E">top]</span><span style="color:#D73A49">=</span><span style="color:#24292E">x; ins[x]</span><span style="color:#D73A49">=</span><span style="color:#005CC5">true</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i</span><span style="color:#D73A49">=</span><span style="color:#24292E">head[x];i;i</span><span style="color:#D73A49">=</span><span style="color:#24292E">edge[i].next){</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#24292E"> y</span><span style="color:#D73A49">=</span><span style="color:#24292E">edge[i].v;</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(</span><span style="color:#D73A49">!</span><span style="color:#24292E">dfn[y]){</span></span>
+<span class="line"><span style="color:#24292E">            fa[y]</span><span style="color:#D73A49">=</span><span style="color:#24292E">x;</span></span>
+<span class="line"><span style="color:#6F42C1">            tarjan</span><span style="color:#24292E">(y);</span></span>
+<span class="line"><span style="color:#24292E">            low[x]</span><span style="color:#D73A49">=</span><span style="color:#6F42C1">MIN</span><span style="color:#24292E">(low[x],low[y]);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#D73A49"> if</span><span style="color:#24292E">(ins[y] </span><span style="color:#D73A49">&#x26;&#x26;</span><span style="color:#24292E"> y</span><span style="color:#D73A49">!=</span><span style="color:#24292E">fa[x]){</span></span>
+<span class="line"><span style="color:#24292E">            low[x]</span><span style="color:#D73A49">=</span><span style="color:#6F42C1">MIN</span><span style="color:#24292E">(low[x],dfn[y]);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E">(dfn[x]</span><span style="color:#D73A49">==</span><span style="color:#24292E">low[x]){</span></span>
+<span class="line"><span style="color:#D73A49">        ++</span><span style="color:#24292E">cnt; </span><span style="color:#D73A49">int</span><span style="color:#24292E"> y;</span></span>
+<span class="line"><span style="color:#D73A49">        do</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#24292E">            y</span><span style="color:#D73A49">=</span><span style="color:#24292E">stac[top</span><span style="color:#D73A49">--</span><span style="color:#24292E">]; ins[y]</span><span style="color:#D73A49">=</span><span style="color:#005CC5">false</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">            color[y]</span><span style="color:#D73A49">=</span><span style="color:#24292E">cnt;</span></span>
+<span class="line"><span style="color:#24292E">        }</span><span style="color:#D73A49">while</span><span style="color:#24292E">(x</span><span style="color:#D73A49">!=</span><span style="color:#24292E">y);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">void</span><span style="color:#6F42C1"> lcainit</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> x</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">    vis[x] </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> true</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">;i</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#24292E">max0;i</span><span style="color:#D73A49">++</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(lcafa[x][i</span><span style="color:#D73A49">-</span><span style="color:#005CC5">1</span><span style="color:#24292E">])lcafa[x][i]</span><span style="color:#D73A49">=</span><span style="color:#24292E">lcafa[lcafa[x][i</span><span style="color:#D73A49">-</span><span style="color:#005CC5">1</span><span style="color:#24292E">]][i</span><span style="color:#D73A49">-</span><span style="color:#005CC5">1</span><span style="color:#24292E">];</span></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#D73A49"> break</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i</span><span style="color:#D73A49">=</span><span style="color:#24292E">head2[x];i;i</span><span style="color:#D73A49">=</span><span style="color:#24292E">edge2[i].next){</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#24292E"> y</span><span style="color:#D73A49">=</span><span style="color:#24292E">edge2[i].v;</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(y</span><span style="color:#D73A49">!=</span><span style="color:#24292E">lcafa[x][</span><span style="color:#005CC5">0</span><span style="color:#24292E">]){</span></span>
+<span class="line"><span style="color:#24292E">            lcafa[y][</span><span style="color:#005CC5">0</span><span style="color:#24292E">]</span><span style="color:#D73A49">=</span><span style="color:#24292E">x;</span></span>
+<span class="line"><span style="color:#24292E">            dep[y]</span><span style="color:#D73A49">=</span><span style="color:#24292E">dep[x]</span><span style="color:#D73A49">+</span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">            if</span><span style="color:#24292E">(</span><span style="color:#D73A49">!</span><span style="color:#24292E">vis[y]) </span><span style="color:#6F42C1">lcainit</span><span style="color:#24292E">(y);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">inline</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> lca</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> u</span><span style="color:#24292E">,</span><span style="color:#D73A49">int</span><span style="color:#E36209"> v</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E">(dep[u]</span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">dep[v])</span><span style="color:#6F42C1">swap</span><span style="color:#24292E">(u,v);</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> delta</span><span style="color:#D73A49">=</span><span style="color:#24292E">dep[u]</span><span style="color:#D73A49">-</span><span style="color:#24292E">dep[v];</span></span>
+<span class="line"><span style="color:#D73A49">    for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> x</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;x</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#24292E">max0;x</span><span style="color:#D73A49">++</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">((</span><span style="color:#005CC5">1</span><span style="color:#D73A49">&#x3C;&#x3C;</span><span style="color:#24292E">x)</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">delta)u</span><span style="color:#D73A49">=</span><span style="color:#24292E">lcafa[u][x];</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E">(u</span><span style="color:#D73A49">==</span><span style="color:#24292E">v)</span><span style="color:#D73A49">return</span><span style="color:#24292E"> u;</span></span>
+<span class="line"><span style="color:#D73A49">    for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> x</span><span style="color:#D73A49">=</span><span style="color:#24292E">max0;x</span><span style="color:#D73A49">>=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;x</span><span style="color:#D73A49">--</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(lcafa[u][x]</span><span style="color:#D73A49">!=</span><span style="color:#24292E">lcafa[v][x]){</span></span>
+<span class="line"><span style="color:#24292E">            u</span><span style="color:#D73A49">=</span><span style="color:#24292E">lcafa[u][x];</span></span>
+<span class="line"><span style="color:#24292E">            v</span><span style="color:#D73A49">=</span><span style="color:#24292E">lcafa[v][x];</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> lcafa[u][</span><span style="color:#005CC5">0</span><span style="color:#24292E">];</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">int</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(){</span></span>
+<span class="line"><span style="color:#6F42C1">    rd</span><span style="color:#24292E">(n); </span><span style="color:#6F42C1">rd</span><span style="color:#24292E">(m);</span></span>
+<span class="line"><span style="color:#D73A49">    for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">;i</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#24292E">m;i</span><span style="color:#D73A49">++</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#24292E"> x,y;</span></span>
+<span class="line"><span style="color:#6F42C1">        rd</span><span style="color:#24292E">(x); </span><span style="color:#6F42C1">rd</span><span style="color:#24292E">(y);</span></span>
+<span class="line"><span style="color:#6F42C1">        addedge</span><span style="color:#24292E">(x,y);</span></span>
+<span class="line"><span style="color:#6F42C1">        addedge</span><span style="color:#24292E">(y,x);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#6F42C1">    rd</span><span style="color:#24292E">(tot_in_txt);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">;i</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#24292E">n;i</span><span style="color:#D73A49">++</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(</span><span style="color:#D73A49">!</span><span style="color:#24292E">dfn[i])</span><span style="color:#6F42C1">tarjan</span><span style="color:#24292E">(i);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> x</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">;x</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#24292E">n;x</span><span style="color:#D73A49">++</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">        for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i</span><span style="color:#D73A49">=</span><span style="color:#24292E">head[x];i;i</span><span style="color:#D73A49">=</span><span style="color:#24292E">edge[i].next){</span></span>
+<span class="line"><span style="color:#D73A49">            int</span><span style="color:#24292E"> y</span><span style="color:#D73A49">=</span><span style="color:#24292E">edge[i].v;</span></span>
+<span class="line"><span style="color:#D73A49">            if</span><span style="color:#24292E">(color[x]</span><span style="color:#D73A49">!=</span><span style="color:#24292E">color[y]){</span></span>
+<span class="line"><span style="color:#6F42C1">                addedge2</span><span style="color:#24292E">(color[x], color[y]);</span></span>
+<span class="line"><span style="color:#6F42C1">                addedge2</span><span style="color:#24292E">(color[y], color[x]);</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    max0</span><span style="color:#D73A49">=</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E">)(</span><span style="color:#6F42C1">log</span><span style="color:#24292E">(cnt)</span><span style="color:#D73A49">/</span><span style="color:#6F42C1">log</span><span style="color:#24292E">(</span><span style="color:#005CC5">2</span><span style="color:#24292E">))</span><span style="color:#D73A49">+</span><span style="color:#005CC5">3</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6F42C1">    lcainit</span><span style="color:#24292E">(</span><span style="color:#005CC5">1</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    while</span><span style="color:#24292E">(tot_in_txt</span><span style="color:#D73A49">--</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#24292E"> a,b;</span></span>
+<span class="line"><span style="color:#6F42C1">        rd</span><span style="color:#24292E">(a); </span><span style="color:#6F42C1">rd</span><span style="color:#24292E">(b);</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#24292E"> k </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> lca</span><span style="color:#24292E">(color[a], color[b]);</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#24292E"> temp </span><span style="color:#D73A49">=</span><span style="color:#24292E"> dep[color[a]] </span><span style="color:#D73A49">+</span><span style="color:#24292E"> dep[color[b]] </span><span style="color:#D73A49">-</span><span style="color:#24292E"> (dep[k]</span><span style="color:#D73A49">&#x3C;&#x3C;</span><span style="color:#005CC5">1</span><span style="color:#24292E">) </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        char</span><span style="color:#24292E"> ans[</span><span style="color:#005CC5">15</span><span style="color:#24292E">] </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "00000000000000"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">        for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i</span><span style="color:#D73A49">=</span><span style="color:#005CC5">13</span><span style="color:#24292E">; </span><span style="color:#D73A49">~</span><span style="color:#24292E">i; i</span><span style="color:#D73A49">--</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">            if</span><span style="color:#24292E">(temp</span><span style="color:#D73A49">>=</span><span style="color:#24292E">topow[i]){</span></span>
+<span class="line"><span style="color:#24292E">                ans[</span><span style="color:#005CC5">13</span><span style="color:#D73A49">-</span><span style="color:#24292E">i] </span><span style="color:#D73A49">=</span><span style="color:#032F62"> '1'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">                temp </span><span style="color:#D73A49">-=</span><span style="color:#24292E"> topow[i];</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#24292E"> i </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">        while</span><span style="color:#24292E">(ans[i]</span><span style="color:#D73A49">==</span><span style="color:#032F62">'0'</span><span style="color:#24292E">) i</span><span style="color:#D73A49">++</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">        for</span><span style="color:#24292E">(; i</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#005CC5">13</span><span style="color:#24292E">; i</span><span style="color:#D73A49">++</span><span style="color:#24292E">)</span><span style="color:#6F42C1">putchar</span><span style="color:#24292E">(ans[i]);</span></span>
+<span class="line"><span style="color:#6F42C1">        putchar</span><span style="color:#24292E">(</span><span style="color:#032F62">'</span><span style="color:#005CC5">\n</span><span style="color:#032F62">'</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<h2 id="yloi2022-枕万梦排序"><a class="heading-anchor" href="#yloi2022-枕万梦排序">yLOI2022 枕万梦（排序）</a></h2>
+<p><strong>提交入口</strong></p>
+<p><a href="https://www.luogu.com.cn/problem/P9472">https://www.luogu.com.cn/problem/P9472</a></p>
+<p><strong>题目描述</strong></p>
+<p>天亮了，扶苏不敌困意，早早地进入了梦乡。在失去引力的梦里，扶苏遇到了好多串漂浮着的数列，它们的长度都相等，而且都是美妙的等比数列！出于本能，扶苏想要把这些数列按照字典序排序，可是在梦里扶苏失去了思考的能力，请你来帮帮她！</p>
+<p>具体地，有 <span class="math-source">$n$</span> 个编号从 <span class="math-source">$1$</span> 到 <span class="math-source">$n$</span> 的数列 <span class="math-source">$a_1, a_2, \dots a_n$</span>，每个数列的长度均为 <span class="math-source">$m + 1$</span>。第 <span class="math-source">$i$</span> 个数列 <span class="math-source">$a_i$</span> 满足递推式 <span class="math-source">$a_{i,j} = a_{i,j - 1} \times i$</span>，其中 <span class="math-source">$1 \leq j \leq m$</span>。而扶苏会告诉你每个序列的首项 <span class="math-source">$a_{i,0}$</span>，你需要帮助她把这些数列按字典序排序。</p>
+<p><strong>输入格式</strong></p>
+<p>输入的第一行是两个整数，依次表示 <span class="math-source">$n$</span> 和 <span class="math-source">$m$</span>。<br>
+接下来 <span class="math-source">$n$</span> 行，每行一个整数，第 <span class="math-source">$i$</span> 行的整数表示数列 <span class="math-source">$a_i$</span> 的首项 <span class="math-source">$a_{i,0}$</span>。</p>
+<p><strong>输出格式</strong></p>
+<p>输出一行 <span class="math-source">$n$</span> 个整数，第 <span class="math-source">$i$</span> 个整数表示字典序第 <span class="math-source">$i$</span> 小的数列的<strong>编号</strong>。</p>
+<p><strong>样例 #1</strong></p>
+<p><strong>样例输入 #1</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>2 2</span></span>
+<span class="line"><span>1</span></span>
+<span class="line"><span>2</span></span></code></pre>
+<p><strong>样例输出 #1</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>1 2</span></span></code></pre>
+<p><strong>样例 #2</strong></p>
+<p><strong>样例输入 #2</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>2 3</span></span>
+<span class="line"><span>1</span></span>
+<span class="line"><span>-1</span></span></code></pre>
+<p><strong>样例输出 #2</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>2 1</span></span></code></pre>
+<p><strong>样例 #3</strong></p>
+<p><strong>样例输入 #3</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>2 2</span></span>
+<span class="line"><span>1</span></span>
+<span class="line"><span>1</span></span></code></pre>
+<p><strong>样例输出 #3</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>1 2</span></span></code></pre>
+<p><strong>样例 #4</strong></p>
+<p><strong>样例输入 #4</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>见附加文件中的 B4.in</span></span></code></pre>
+<p><strong>样例输出 #4</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>见附加文件中的 B4.ans</span></span></code></pre>
+<p><strong>提示</strong></p>
+<p><strong>样例 1 解释</strong></p>
+<p>共有两个数列，每个数列的长度均为 <span class="math-source">$2+1=3$</span>。</p>
+<p>对第一个数列 <span class="math-source">$a_1$</span>：</p>
+<ul>
+<li>已知其首项 <span class="math-source">$a_{1,0} = 1$</span>。</li>
+<li>根据 <span class="math-source">$a_{i,j} = a_{i,j - 1} \times i$</span>，取 <span class="math-source">$i=1,j = 1$</span> 可以得到 <span class="math-source">$a_{1,1} = a_{1,0} \times 1 = 1$</span>。</li>
+<li>根据 <span class="math-source">$a_{i,j} = a_{i,j - 1} \times i$</span>，取 <span class="math-source">$i=1,j = 2$</span> 可以得到 <span class="math-source">$a_{1,2} = a_{1,1} \times 1= 1$</span>。</li>
+</ul>
+<p>所以数列 <span class="math-source">$a_1$</span> 是 <span class="math-source">$1,1,1$</span>。</p>
+<p>对第二个数列 <span class="math-source">$a_2$</span>：</p>
+<ul>
+<li>已知其首项 <span class="math-source">$a_{2,0} = 2$</span>。</li>
+<li>根据 <span class="math-source">$a_{i,j} = a_{i,j - 1} \times i$</span>，取 <span class="math-source">$i=2,j = 1$</span> 可以得到 <span class="math-source">$a_{2,1} = a_{2,0} \times 2 = 2 \times 2 = 4$</span>。</li>
+<li>根据 <span class="math-source">$a_{i,j} = a_{i,j - 1} \times i$</span>，取 <span class="math-source">$i=2,j = 2$</span> 可以得到 <span class="math-source">$a_{2,2} = a_{2,1} \times 2= 4 \times 2 = 8$</span>。</li>
+</ul>
+<p>所以数列 <span class="math-source">$a_2$</span> 是 <span class="math-source">$2,4,8$</span>。</p>
+<p>比较字典序可得数列 <span class="math-source">$a_1$</span> 是字典序最小的数列。所以输出 <span class="math-source">$1$</span>。</p>
+<p><strong>样例 2 解释</strong></p>
+<p>数列 <span class="math-source">$a_1$</span> 为 <span class="math-source">$1,1,1,1$</span>，数列 <span class="math-source">$a_2$</span> 为 <span class="math-source">$-1, -2,-4,-8$</span>。</p>
+<p><strong>数据规模与约定</strong>
+本题共 <span class="math-source">$10$</span> 个测试点，各测试点信息如下表：</p>
+<figure class="article-figure"><img src="https://cdn.luogu.com.cn/upload/image_hosting/08wnuome.png" alt="47-2" loading="lazy"><figcaption class="article-figure-caption">47-2</figcaption></figure>
+<p>特殊约定 A：保证 <span class="math-source">$a_{i,0}$</span> 均相等。<br>
+特殊约定 B：保证 <span class="math-source">$a_{i,0}$</span> 互不相等。</p>
+<p>对全部的测试点，保证 <span class="math-source">$1 \leq n \leq 10^5$</span>，<span class="math-source">$1 \leq m \leq 10^9$</span>，<span class="math-source">$1 \leq |a_{i,0}| \leq 10^9$</span>。</p>
+<p><strong>提示</strong></p>
+<p>对两个数列 <span class="math-source">$a_i, a_j$</span>，按如下方式比较其字典序：</p>
+<p>找到<strong>最小的</strong>满足 <span class="math-source">$a_{i,p} \neq a_{j, p}$</span> 的下标 <span class="math-source">$p$</span>，比较 <span class="math-source">$a_{i, p}$</span> 和 <span class="math-source">$a_{j, p}$</span> 的大小：</p>
+<ul>
+<li>如果 <span class="math-source">$a_{i,p} &#x3C; a_{j, p}$</span>，则称 <span class="math-source">$a_i$</span> 的字典序比 <span class="math-source">$a_j$</span> 的小。</li>
+<li>如果 <span class="math-source">$a_{i,p} > a_{j, p}$</span>，则称 <span class="math-source">$a_i$</span> 的字典序比 <span class="math-source">$a_j$</span> 的大。</li>
+</ul>
+<p>可以证明，在本题的限制下，这样的 <span class="math-source">$p$</span> 一定存在。</p>
+<p><strong>分析</strong></p>
+<p>要求根据字典序排序。若两个数列第一个元素就不等，便可比较大小；若两个数列第一个元素相等，由数列定义，第二个元素必然不等，于是可比较大小。对于首元素为零的数列，整个数列都是零。由此得到下述做法：</p>
+<p>对于两个不等的 <span class="math-source">$a_{i,0}$</span> , 升序排序。对于两个相等的 <span class="math-source">$a_{i,0}$</span> , 分正负两种情况：若 <span class="math-source">$a_{i,0}>0$</span> , 则行数越大，位序靠后；若 <span class="math-source">$a_{i,0}&#x3C;0$</span> , 则行数越大，位序靠前。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="cpp"><code><span class="line"><span style="color:#D73A49">#include</span><span style="color:#032F62"> &#x3C;algorithm></span></span>
+<span class="line"><span style="color:#D73A49">#include</span><span style="color:#032F62"> &#x3C;cstdio></span></span>
+<span class="line"><span style="color:#D73A49">using</span><span style="color:#6F42C1"> LL</span><span style="color:#D73A49"> =</span><span style="color:#D73A49"> long</span><span style="color:#D73A49"> long</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">using</span><span style="color:#D73A49"> namespace</span><span style="color:#6F42C1"> std</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">LL n,m;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> mnode</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#24292E">    LL mcontent;</span></span>
+<span class="line"><span style="color:#24292E">    LL mindex;</span></span>
+<span class="line"><span style="color:#D73A49">    bool</span><span style="color:#D73A49"> operator</span><span style="color:#6F42C1"> &#x3C;</span><span style="color:#24292E"> (</span><span style="color:#D73A49">const</span><span style="color:#6F42C1"> mnode</span><span style="color:#D73A49">&#x26;</span><span style="color:#E36209"> v</span><span style="color:#24292E">)</span><span style="color:#D73A49">const</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(mcontent </span><span style="color:#D73A49">!=</span><span style="color:#24292E"> v.mcontent)</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> mcontent </span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E"> v.mcontent;</span></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#24292E">    </span></span>
+<span class="line"><span style="color:#D73A49">            if</span><span style="color:#24292E">(mcontent </span><span style="color:#D73A49">></span><span style="color:#005CC5"> 0</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">                return</span><span style="color:#24292E"> mindex </span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E"> v.mindex;</span></span>
+<span class="line"><span style="color:#D73A49">            else</span><span style="color:#24292E"> </span></span>
+<span class="line"><span style="color:#D73A49">                return</span><span style="color:#24292E"> mindex </span><span style="color:#D73A49">></span><span style="color:#24292E"> v.mindex;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}marray[</span><span style="color:#005CC5">100010</span><span style="color:#24292E">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">int</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(){</span></span>
+<span class="line"><span style="color:#6F42C1">    scanf</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">%lld%lld</span><span style="color:#032F62">"</span><span style="color:#24292E">,</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">n,</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">m);</span></span>
+<span class="line"><span style="color:#D73A49">    for</span><span style="color:#24292E">(LL i</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">; i</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#24292E">n; i</span><span style="color:#D73A49">++</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">        LL x; </span></span>
+<span class="line"><span style="color:#6F42C1">        scanf</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">%lld</span><span style="color:#032F62">"</span><span style="color:#24292E">,</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">x);</span></span>
+<span class="line"><span style="color:#24292E">        marray[i].mcontent </span><span style="color:#D73A49">=</span><span style="color:#24292E"> x;</span></span>
+<span class="line"><span style="color:#24292E">        marray[i].mindex </span><span style="color:#D73A49">=</span><span style="color:#24292E"> i;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    sort</span><span style="color:#24292E">(marray</span><span style="color:#D73A49">+</span><span style="color:#005CC5">1</span><span style="color:#24292E">, marray</span><span style="color:#D73A49">+</span><span style="color:#005CC5">1</span><span style="color:#D73A49">+</span><span style="color:#24292E">n);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    for</span><span style="color:#24292E">(LL i</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">; i</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#24292E">n; i</span><span style="color:#D73A49">++</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#6F42C1">        printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">%lld</span><span style="color:#032F62"> "</span><span style="color:#24292E">,marray[i].mindex);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<h2 id="平衡二叉树"><a class="heading-anchor" href="#平衡二叉树">平衡二叉树</a></h2>
+<p>最近考研应试之余，尝试着用王道的思路手写了平衡二叉树的代码，但是没有完成，只是个半成品。如果之后还记得的话，也许我会完成它？</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="cpp"><code><span class="line"><span style="color:#D73A49">#include</span><span style="color:#032F62"> &#x3C;cstdio></span></span>
+<span class="line"><span style="color:#D73A49">#define</span><span style="color:#6F42C1"> MAX</span><span style="color:#24292E">(</span><span style="color:#E36209">a</span><span style="color:#24292E">,</span><span style="color:#E36209">b</span><span style="color:#24292E">) ((a)</span><span style="color:#D73A49">></span><span style="color:#24292E">(b)</span><span style="color:#D73A49">?</span><span style="color:#24292E">(a)</span><span style="color:#D73A49">:</span><span style="color:#24292E">(b))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">inline</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> rd</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#D73A49"> &#x26;</span><span style="color:#E36209">x</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> w</span><span style="color:#D73A49">=</span><span style="color:#24292E">x</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    char</span><span style="color:#24292E"> ch</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    while</span><span style="color:#24292E">(ch</span><span style="color:#D73A49">&#x3C;</span><span style="color:#032F62">'0'</span><span style="color:#D73A49">||</span><span style="color:#032F62">'9'</span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">ch) w</span><span style="color:#D73A49">|=</span><span style="color:#24292E">(ch</span><span style="color:#D73A49">==</span><span style="color:#032F62">'-'</span><span style="color:#24292E">),ch</span><span style="color:#D73A49">=</span><span style="color:#6F42C1">getchar</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">    while</span><span style="color:#24292E">(</span><span style="color:#032F62">'0'</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#24292E">ch</span><span style="color:#D73A49">&#x26;&#x26;</span><span style="color:#24292E">ch</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#032F62">'9'</span><span style="color:#24292E">) x</span><span style="color:#D73A49">=</span><span style="color:#24292E">(x</span><span style="color:#D73A49">&#x3C;&#x3C;</span><span style="color:#005CC5">3</span><span style="color:#24292E">)</span><span style="color:#D73A49">+</span><span style="color:#24292E">(x</span><span style="color:#D73A49">&#x3C;&#x3C;</span><span style="color:#005CC5">1</span><span style="color:#24292E">)</span><span style="color:#D73A49">+</span><span style="color:#24292E">(ch</span><span style="color:#D73A49">^</span><span style="color:#032F62">'0'</span><span style="color:#24292E">),ch</span><span style="color:#D73A49">=</span><span style="color:#6F42C1">getchar</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">    x</span><span style="color:#D73A49">=</span><span style="color:#24292E">w</span><span style="color:#D73A49">?-</span><span style="color:#24292E">x</span><span style="color:#D73A49">:</span><span style="color:#24292E">x;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> avlNode</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> value;</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> cnt;</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> lsub_h;</span><span style="color:#6A737D">   //left sub_tree's height</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> rsub_h;</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> lsub_num;</span><span style="color:#6A737D"> //size of leftSubtree, excluding itself</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> rsub_num;</span></span>
+<span class="line"><span style="color:#24292E">    avlNode </span><span style="color:#D73A49">*</span><span style="color:#24292E">lchild, </span><span style="color:#D73A49">*</span><span style="color:#24292E">rchild, </span><span style="color:#D73A49">*</span><span style="color:#24292E">fa;</span></span>
+<span class="line"><span style="color:#24292E">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> avlTree</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">public:</span></span>
+<span class="line"><span style="color:#6F42C1">    avlTree</span><span style="color:#24292E">(){ T </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> nullptr</span><span style="color:#24292E">; }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    avlNode</span><span style="color:#D73A49">*</span><span style="color:#6F42C1"> getRoot</span><span style="color:#24292E">(){ </span><span style="color:#D73A49">return</span><span style="color:#24292E"> T; }</span></span>
+<span class="line"><span style="color:#24292E">    </span></span>
+<span class="line"><span style="color:#D73A49">    void</span><span style="color:#6F42C1"> insertX</span><span style="color:#24292E">(</span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*&#x26;</span><span style="color:#E36209"> K</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> x</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">        avlNode</span><span style="color:#D73A49">*</span><span style="color:#24292E"> p </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> bstInsert</span><span style="color:#24292E">(K, x, </span><span style="color:#005CC5">nullptr</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#6F42C1">        maintain_balance_insert</span><span style="color:#24292E">(p);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    void</span><span style="color:#6F42C1"> deleteX</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> x</span><span style="color:#24292E">){</span><span style="color:#6A737D">  // assume there is x</span></span>
+<span class="line"><span style="color:#24292E">        avlNode</span><span style="color:#D73A49">*</span><span style="color:#24292E"> p </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> find_X_delete</span><span style="color:#24292E">(T, x);</span></span>
+<span class="line"><span style="color:#24292E">        p->cnt</span><span style="color:#D73A49">--</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(p->cnt</span><span style="color:#D73A49">>=</span><span style="color:#005CC5">1</span><span style="color:#24292E">)</span><span style="color:#D73A49">return</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(p->lchild</span><span style="color:#D73A49">==</span><span style="color:#005CC5">nullptr</span><span style="color:#D73A49">&#x26;&#x26;</span><span style="color:#24292E">p->rchild</span><span style="color:#D73A49">==</span><span style="color:#005CC5">nullptr</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">            if</span><span style="color:#24292E">(p</span><span style="color:#D73A49">==</span><span style="color:#24292E">p->fa->lchild)</span></span>
+<span class="line"><span style="color:#24292E">                p->fa->lchild </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> nullptr</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">            else</span><span style="color:#24292E"> </span></span>
+<span class="line"><span style="color:#24292E">                p->fa->rchild </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> nullptr</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#D73A49"> if</span><span style="color:#24292E">(p->lchild</span><span style="color:#D73A49">!=</span><span style="color:#005CC5">nullptr</span><span style="color:#D73A49">&#x26;&#x26;</span><span style="color:#24292E">p->rchild</span><span style="color:#D73A49">==</span><span style="color:#005CC5">nullptr</span><span style="color:#24292E">){</span><span style="color:#6A737D"> // !</span></span>
+<span class="line"><span style="color:#D73A49">            if</span><span style="color:#24292E">(p</span><span style="color:#D73A49">==</span><span style="color:#24292E">p->fa->lchild)</span></span>
+<span class="line"><span style="color:#24292E">                p->fa->lchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->lchild;</span></span>
+<span class="line"><span style="color:#D73A49">            else</span></span>
+<span class="line"><span style="color:#24292E">                p->fa->rchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->lchild;</span></span>
+<span class="line"><span style="color:#24292E">            p->lchild->fa </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->fa;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#D73A49"> if</span><span style="color:#24292E">(p->lchild</span><span style="color:#D73A49">==</span><span style="color:#005CC5">nullptr</span><span style="color:#D73A49">&#x26;&#x26;</span><span style="color:#24292E">p->rchild</span><span style="color:#D73A49">!=</span><span style="color:#005CC5">nullptr</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">            if</span><span style="color:#24292E">(p</span><span style="color:#D73A49">==</span><span style="color:#24292E">p->fa->lchild)</span></span>
+<span class="line"><span style="color:#24292E">                p->fa->lchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->rchild;</span></span>
+<span class="line"><span style="color:#D73A49">            else</span></span>
+<span class="line"><span style="color:#24292E">                p->fa->rchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->rchild;</span></span>
+<span class="line"><span style="color:#24292E">            p->rchild->fa </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->fa;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">            avlNode</span><span style="color:#D73A49">*</span><span style="color:#24292E"> qwq </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> maxValue_in_lsubtree</span><span style="color:#24292E">(p);</span></span>
+<span class="line"><span style="color:#24292E">            p->value </span><span style="color:#D73A49">=</span><span style="color:#24292E"> qwq->value;</span></span>
+<span class="line"><span style="color:#24292E">            p->cnt </span><span style="color:#D73A49">=</span><span style="color:#24292E"> qwq->cnt;</span></span>
+<span class="line"><span style="color:#24292E">            p </span><span style="color:#D73A49">=</span><span style="color:#24292E"> qwq;</span></span>
+<span class="line"><span style="color:#D73A49">            if</span><span style="color:#24292E">(p</span><span style="color:#D73A49">==</span><span style="color:#24292E">p->fa->lchild)</span></span>
+<span class="line"><span style="color:#24292E">                p->fa->lchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->lchild;</span></span>
+<span class="line"><span style="color:#D73A49">            else</span></span>
+<span class="line"><span style="color:#24292E">                p->fa->rchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->lchild;</span></span>
+<span class="line"><span style="color:#24292E">            p->lchild->fa </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->fa;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        </span></span>
+<span class="line"><span style="color:#6F42C1">        maintain_balance_delete</span><span style="color:#24292E">(p);</span></span>
+<span class="line"><span style="color:#D73A49">        delete</span><span style="color:#24292E"> p;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">    </span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#6F42C1"> index_X</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> x</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#6A737D">        //find an avlNode whose value is x，return its index</span></span>
+<span class="line"><span style="color:#6A737D">        //at this point, the binary-tree is balanced</span></span>
+<span class="line"><span style="color:#24292E">        avlNode</span><span style="color:#D73A49">*</span><span style="color:#24292E"> p </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> find_X</span><span style="color:#24292E">(T, x);</span><span style="color:#6A737D">   // O(logN)</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#24292E"> ans </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> -</span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(p</span><span style="color:#D73A49">==</span><span style="color:#24292E">p->fa->rchild){</span></span>
+<span class="line"><span style="color:#24292E">            avlNode</span><span style="color:#D73A49">*</span><span style="color:#24292E"> G </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> find_left_daddy</span><span style="color:#24292E">(p);</span></span>
+<span class="line"><span style="color:#24292E">            ans </span><span style="color:#D73A49">=</span><span style="color:#24292E"> G->lsub_num </span><span style="color:#D73A49">+</span><span style="color:#24292E"> G->rsub_num </span><span style="color:#D73A49">+</span><span style="color:#24292E"> G->cnt</span></span>
+<span class="line"><span style="color:#D73A49">                  -</span><span style="color:#24292E"> p->rsub_num </span><span style="color:#D73A49">-</span><span style="color:#24292E"> p->cnt </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">                  //+1: the value-x avlNode goes the end</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#D73A49"> if</span><span style="color:#24292E">(p</span><span style="color:#D73A49">==</span><span style="color:#24292E">p->fa->lchild){</span></span>
+<span class="line"><span style="color:#24292E">            avlNode</span><span style="color:#D73A49">*</span><span style="color:#24292E"> G </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> find_right_daddy</span><span style="color:#24292E">(p);</span></span>
+<span class="line"><span style="color:#24292E">            ans </span><span style="color:#D73A49">=</span><span style="color:#24292E"> G->fa->lsub_num </span><span style="color:#D73A49">+</span><span style="color:#24292E"> G->fa->cnt</span></span>
+<span class="line"><span style="color:#D73A49">                  +</span><span style="color:#24292E"> p->lsub_num </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(ans</span><span style="color:#D73A49">==-</span><span style="color:#005CC5">1</span><span style="color:#24292E">) </span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"No such avlNode.</span><span style="color:#005CC5">\n</span><span style="color:#032F62">"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> ans;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">    </span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#6F42C1"> findIndex_X</span><span style="color:#24292E">(){</span></span>
+<span class="line"><span style="color:#6A737D">        //Query the avlNode whose index is x, return its value</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">    </span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#6F42C1"> preX</span><span style="color:#24292E">(){}</span></span>
+<span class="line"><span style="color:#24292E">    </span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#6F42C1"> afterX</span><span style="color:#24292E">(){}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">private:</span></span>
+<span class="line"><span style="color:#6F42C1">    avlNode</span><span style="color:#D73A49">*</span><span style="color:#6F42C1"> find_X</span><span style="color:#24292E">(</span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*</span><span style="color:#E36209"> K</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> x</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">        while</span><span style="color:#24292E">(K</span><span style="color:#D73A49">!=</span><span style="color:#005CC5">nullptr</span><span style="color:#D73A49"> &#x26;&#x26;</span><span style="color:#24292E"> x</span><span style="color:#D73A49">!=</span><span style="color:#24292E">K->value){</span></span>
+<span class="line"><span style="color:#D73A49">            if</span><span style="color:#24292E">(x</span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">K->value) K</span><span style="color:#D73A49">=</span><span style="color:#24292E">K->lchild;</span></span>
+<span class="line"><span style="color:#D73A49">            else</span><span style="color:#24292E"> K</span><span style="color:#D73A49">=</span><span style="color:#24292E">K->rchild;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(K</span><span style="color:#D73A49">==</span><span style="color:#005CC5">nullptr</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#6F42C1">            printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"function find_X() failed.</span><span style="color:#005CC5">\n</span><span style="color:#032F62">"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> K;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    avlNode</span><span style="color:#D73A49">*</span><span style="color:#6F42C1"> find_X_delete</span><span style="color:#24292E">(</span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*</span><span style="color:#E36209"> K</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> x</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">        while</span><span style="color:#24292E">(K</span><span style="color:#D73A49">!=</span><span style="color:#005CC5">nullptr</span><span style="color:#D73A49"> &#x26;&#x26;</span><span style="color:#24292E"> x</span><span style="color:#D73A49">!=</span><span style="color:#24292E">K->value){</span></span>
+<span class="line"><span style="color:#D73A49">            if</span><span style="color:#24292E">(x</span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">K->value){</span></span>
+<span class="line"><span style="color:#24292E">                K->lsub_num</span><span style="color:#D73A49">--</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">                K</span><span style="color:#D73A49">=</span><span style="color:#24292E">K->lchild;</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#D73A49">            else</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">                K->rsub_num</span><span style="color:#D73A49">--</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">                K</span><span style="color:#D73A49">=</span><span style="color:#24292E">K->rchild;</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(K</span><span style="color:#D73A49">==</span><span style="color:#005CC5">nullptr</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#6F42C1">            printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"function find_X() failed.</span><span style="color:#005CC5">\n</span><span style="color:#032F62">"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> K;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    avlNode</span><span style="color:#D73A49">*</span><span style="color:#6F42C1"> find_left_daddy</span><span style="color:#24292E">(</span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*</span><span style="color:#E36209"> p</span><span style="color:#24292E">){}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    avlNode</span><span style="color:#D73A49">*</span><span style="color:#6F42C1"> find_right_daddy</span><span style="color:#24292E">(</span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*</span><span style="color:#E36209"> p</span><span style="color:#24292E">){}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#6F42C1"> lsubtree_height</span><span style="color:#24292E">(</span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*</span><span style="color:#E36209"> x</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(x->lsub_h) </span><span style="color:#D73A49">return</span><span style="color:#24292E"> x->lsub_h;</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(x->lchild</span><span style="color:#D73A49">==</span><span style="color:#005CC5">nullptr</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">            x->lsub_h </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> x->lsub_h;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        x->lsub_h </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> MAX</span><span style="color:#24292E">(</span><span style="color:#6F42C1">lsubtree_height</span><span style="color:#24292E">(x->lchild), </span></span>
+<span class="line"><span style="color:#6F42C1">                        rsubtree_height</span><span style="color:#24292E">(x->lchild))</span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> x->lsub_h;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#6F42C1"> rsubtree_height</span><span style="color:#24292E">(</span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*</span><span style="color:#E36209"> x</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(x->rsub_h) </span><span style="color:#D73A49">return</span><span style="color:#24292E"> x->rsub_h;</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(x->rchild</span><span style="color:#D73A49">==</span><span style="color:#005CC5">nullptr</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">            x->rsub_h </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> x->rsub_h;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        x->rsub_h </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> MAX</span><span style="color:#24292E">(</span><span style="color:#6F42C1">lsubtree_height</span><span style="color:#24292E">(x->rchild), </span></span>
+<span class="line"><span style="color:#6F42C1">                        rsubtree_height</span><span style="color:#24292E">(x->rchild))</span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> x->rsub_h;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    avlNode</span><span style="color:#D73A49">*</span><span style="color:#6F42C1"> find_Unbalanced_Node</span><span style="color:#24292E">(</span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*</span><span style="color:#E36209"> p</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#24292E"> sub_balance </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">        while</span><span style="color:#24292E">(sub_balance</span><span style="color:#D73A49">>=-</span><span style="color:#005CC5">1</span><span style="color:#D73A49">&#x26;&#x26;</span><span style="color:#24292E">sub_balance</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#005CC5">1</span><span style="color:#24292E">){</span><span style="color:#6A737D"> //sub_balance = 0,1,-1</span></span>
+<span class="line"><span style="color:#24292E">            p </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->fa;</span></span>
+<span class="line"><span style="color:#D73A49">            if</span><span style="color:#24292E">(p</span><span style="color:#D73A49">==</span><span style="color:#005CC5">nullptr</span><span style="color:#24292E">) </span><span style="color:#D73A49">return</span><span style="color:#24292E"> p;</span></span>
+<span class="line"><span style="color:#24292E">            p->lsub_h </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->rsub_h </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span><span style="color:#6A737D"> // erase old data</span></span>
+<span class="line"><span style="color:#D73A49">            int</span><span style="color:#24292E"> lch </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> lsubtree_height</span><span style="color:#24292E">(p);</span></span>
+<span class="line"><span style="color:#D73A49">            int</span><span style="color:#24292E"> rch </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> rsubtree_height</span><span style="color:#24292E">(p);</span></span>
+<span class="line"><span style="color:#24292E">            sub_balance </span><span style="color:#D73A49">=</span><span style="color:#24292E"> lch</span><span style="color:#D73A49">-</span><span style="color:#24292E">rch;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> p;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    avlNode</span><span style="color:#D73A49">*</span><span style="color:#6F42C1"> bstInsert</span><span style="color:#24292E">(</span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*</span><span style="color:#E36209"> K</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> x</span><span style="color:#24292E">, </span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*</span><span style="color:#E36209"> myfa</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(K</span><span style="color:#D73A49">==</span><span style="color:#005CC5">nullptr</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">            K </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> avlNode;</span></span>
+<span class="line"><span style="color:#24292E">            K->value </span><span style="color:#D73A49">=</span><span style="color:#24292E"> x;</span></span>
+<span class="line"><span style="color:#24292E">            K->fa </span><span style="color:#D73A49">=</span><span style="color:#24292E"> myfa;</span></span>
+<span class="line"><span style="color:#24292E">            K->lchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> K->rchild </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> nullptr</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> K;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#D73A49"> if</span><span style="color:#24292E">(x</span><span style="color:#D73A49">==</span><span style="color:#24292E">K->value){</span></span>
+<span class="line"><span style="color:#24292E">            K->cnt</span><span style="color:#D73A49">++</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> K;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#D73A49"> if</span><span style="color:#24292E">(x </span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E"> K->value){</span></span>
+<span class="line"><span style="color:#24292E">            K->lsub_num</span><span style="color:#D73A49">++</span><span style="color:#24292E">;</span><span style="color:#6A737D">     // nice code &#x3C;(ˉ^ˉ)></span></span>
+<span class="line"><span style="color:#6F42C1">            bstInsert</span><span style="color:#24292E">(K->lchild, x, K);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#24292E">            K->rsub_num</span><span style="color:#D73A49">++</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6F42C1">            bstInsert</span><span style="color:#24292E">(K->rchild, x, K);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    void</span><span style="color:#6F42C1"> maintain_balance_insert</span><span style="color:#24292E">(</span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*</span><span style="color:#E36209"> p</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">        avlNode</span><span style="color:#D73A49">*</span><span style="color:#24292E"> subroot </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> find_Unbalanced_Node</span><span style="color:#24292E">(p);</span></span>
+<span class="line"><span style="color:#6A737D">        // after find_Unbalanced_Node, lsub_h &#x26; rsub_h is updated</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(subroot->lchild->lsub_h</span><span style="color:#D73A49">==</span><span style="color:#24292E">subroot->lchild->rsub_h</span><span style="color:#D73A49">+</span><span style="color:#005CC5">1</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#6F42C1">            rightRotation</span><span style="color:#24292E">(subroot->lchild);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#D73A49"> if</span><span style="color:#24292E">(subroot->rchild->lsub_h</span><span style="color:#D73A49">+</span><span style="color:#005CC5">1</span><span style="color:#D73A49">==</span><span style="color:#24292E">subroot->rchild->rsub_h){</span></span>
+<span class="line"><span style="color:#6F42C1">            leftRotation</span><span style="color:#24292E">(subroot->rchild);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#D73A49"> if</span><span style="color:#24292E">(subroot->lchild->lsub_h</span><span style="color:#D73A49">+</span><span style="color:#005CC5">1</span><span style="color:#D73A49">==</span><span style="color:#24292E">subroot->lchild->rsub_h){</span></span>
+<span class="line"><span style="color:#6F42C1">            leftRotation</span><span style="color:#24292E">(subroot->lchild->rchild);</span></span>
+<span class="line"><span style="color:#6F42C1">            rightRotation</span><span style="color:#24292E">(subroot->lchild);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#D73A49"> if</span><span style="color:#24292E">(subroot->rchild->lsub_h</span><span style="color:#D73A49">==</span><span style="color:#24292E">subroot->rchild->rsub_h</span><span style="color:#D73A49">+</span><span style="color:#005CC5">1</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#6F42C1">            rightRotation</span><span style="color:#24292E">(subroot->rchild->lchild);</span></span>
+<span class="line"><span style="color:#6F42C1">            leftRotation</span><span style="color:#24292E">(subroot->rchild);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    void</span><span style="color:#6F42C1"> maintain_balance_delete</span><span style="color:#24292E">(</span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*</span><span style="color:#E36209"> p</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#6A737D">        // 删除的节点向上计算 balance</span></span>
+<span class="line"><span style="color:#24292E">        avlNode</span><span style="color:#D73A49">*</span><span style="color:#24292E"> subroot </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> find_Unbalanced_Node</span><span style="color:#24292E">(p);</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(subroot</span><span style="color:#D73A49">==</span><span style="color:#005CC5">nullptr</span><span style="color:#24292E">) </span><span style="color:#D73A49">return</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">        // to do </span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    void</span><span style="color:#6F42C1"> leftRotation</span><span style="color:#24292E">(</span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*</span><span style="color:#E36209"> p</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">        avlNode </span><span style="color:#D73A49">*</span><span style="color:#24292E">f </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->fa, </span><span style="color:#D73A49">*</span><span style="color:#24292E">gf </span><span style="color:#D73A49">=</span><span style="color:#24292E"> f->fa;</span></span>
+<span class="line"><span style="color:#24292E">        f->rchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->lchild;</span></span>
+<span class="line"><span style="color:#24292E">        f->rsub_num </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p-> lsub_num;</span></span>
+<span class="line"><span style="color:#24292E">        f->rchild->fa </span><span style="color:#D73A49">=</span><span style="color:#24292E"> f;</span></span>
+<span class="line"><span style="color:#24292E">        p->lchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> f;</span></span>
+<span class="line"><span style="color:#24292E">        p->lsub_num </span><span style="color:#D73A49">=</span><span style="color:#24292E"> f->lsub_num </span><span style="color:#D73A49">+</span><span style="color:#24292E"> f->rsub_num </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        f->fa </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p;</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(gf->lchild</span><span style="color:#D73A49">==</span><span style="color:#24292E">f){</span></span>
+<span class="line"><span style="color:#24292E">            gf->lchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#D73A49"> if</span><span style="color:#24292E">(gf->rchild</span><span style="color:#D73A49">==</span><span style="color:#24292E">f){</span></span>
+<span class="line"><span style="color:#24292E">            gf->rchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        p->fa </span><span style="color:#D73A49">=</span><span style="color:#24292E"> gf;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    void</span><span style="color:#6F42C1"> rightRotation</span><span style="color:#24292E">(</span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*</span><span style="color:#E36209"> p</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">        avlNode </span><span style="color:#D73A49">*</span><span style="color:#24292E">f </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->fa, </span><span style="color:#D73A49">*</span><span style="color:#24292E">gf </span><span style="color:#D73A49">=</span><span style="color:#24292E"> f->fa;</span></span>
+<span class="line"><span style="color:#24292E">        f->lchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p->rchild;</span></span>
+<span class="line"><span style="color:#24292E">        f->lsub_num </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p-> rsub_num;</span></span>
+<span class="line"><span style="color:#24292E">        f->lchild->fa </span><span style="color:#D73A49">=</span><span style="color:#24292E"> f;</span></span>
+<span class="line"><span style="color:#24292E">        p->rchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> f;</span></span>
+<span class="line"><span style="color:#24292E">        p->rsub_num </span><span style="color:#D73A49">=</span><span style="color:#24292E"> f->lsub_num </span><span style="color:#D73A49">+</span><span style="color:#24292E"> f->rsub_num </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        f->fa </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p;</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(gf->lchild</span><span style="color:#D73A49">==</span><span style="color:#24292E">f){</span></span>
+<span class="line"><span style="color:#24292E">            gf->lchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        else</span><span style="color:#D73A49"> if</span><span style="color:#24292E">(gf->rchild</span><span style="color:#D73A49">==</span><span style="color:#24292E">f){</span></span>
+<span class="line"><span style="color:#24292E">            gf->rchild </span><span style="color:#D73A49">=</span><span style="color:#24292E"> p;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        p->fa </span><span style="color:#D73A49">=</span><span style="color:#24292E"> gf;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    avlNode</span><span style="color:#D73A49">*</span><span style="color:#6F42C1"> maxValue_in_lsubtree</span><span style="color:#24292E">(</span><span style="color:#6F42C1">avlNode</span><span style="color:#D73A49">*</span><span style="color:#E36209"> p</span><span style="color:#24292E">){}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    avlNode</span><span style="color:#D73A49">*</span><span style="color:#24292E"> T;</span><span style="color:#6A737D">  // root</span></span>
+<span class="line"><span style="color:#24292E">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">avlTree P3369;</span></span>
+<span class="line"><span style="color:#D73A49">int</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(){</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> n; </span><span style="color:#6F42C1">rd</span><span style="color:#24292E">(n);</span></span>
+<span class="line"><span style="color:#24292E">    avlNode</span><span style="color:#D73A49">*</span><span style="color:#24292E"> rooT </span><span style="color:#D73A49">=</span><span style="color:#24292E"> P3369.</span><span style="color:#6F42C1">getRoot</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">    while</span><span style="color:#24292E">(n</span><span style="color:#D73A49">--</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#24292E"> opt, x;</span></span>
+<span class="line"><span style="color:#6F42C1">        rd</span><span style="color:#24292E">(opt); </span><span style="color:#6F42C1">rd</span><span style="color:#24292E">(x);</span></span>
+<span class="line"><span style="color:#D73A49">        switch</span><span style="color:#24292E">(opt){</span></span>
+<span class="line"><span style="color:#D73A49">            case</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">: P3369.</span><span style="color:#6F42C1">insertX</span><span style="color:#24292E">(rooT, x); </span><span style="color:#D73A49">break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">            case</span><span style="color:#005CC5"> 2</span><span style="color:#24292E">: P3369.</span><span style="color:#6F42C1">deleteX</span><span style="color:#24292E">(x); </span><span style="color:#D73A49">break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">            case</span><span style="color:#005CC5"> 3</span><span style="color:#24292E">: </span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">%d\n</span><span style="color:#032F62">"</span><span style="color:#24292E">, P3369.</span><span style="color:#6F42C1">index_X</span><span style="color:#24292E">(x)); </span><span style="color:#D73A49">break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">            case</span><span style="color:#005CC5"> 4</span><span style="color:#24292E">: </span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">%d\n</span><span style="color:#032F62">"</span><span style="color:#24292E">, P3369.</span><span style="color:#6F42C1">findIndex_X</span><span style="color:#24292E">()); </span><span style="color:#D73A49">break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">            case</span><span style="color:#005CC5"> 5</span><span style="color:#24292E">: </span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">%d\n</span><span style="color:#032F62">"</span><span style="color:#24292E">, P3369.</span><span style="color:#6F42C1">preX</span><span style="color:#24292E">()); </span><span style="color:#D73A49">break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">            case</span><span style="color:#005CC5"> 6</span><span style="color:#24292E">: </span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">%d\n</span><span style="color:#032F62">"</span><span style="color:#24292E">, P3369.</span><span style="color:#6F42C1">afterX</span><span style="color:#24292E">()); </span><span style="color:#D73A49">break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<h2 id="5-倍经验日背包"><a class="heading-anchor" href="#5-倍经验日背包">5 倍经验日（背包）</a></h2>
+<p><strong>题目背景</strong></p>
+<p>现在乐斗有活动了！每打一个人可以获得 5 倍经验！absi2011 却无奈的看着那一些比他等级高的好友，想着能否把他们干掉。干掉能拿不少经验的。</p>
+<p><strong>题目描述</strong></p>
+<p>现在 absi2011 拿出了 <span class="math-source">$x$</span> 个迷你装药物（嗑药打人可耻…），准备开始与那些人打了。</p>
+<p>由于迷你装药物每个只能用一次，所以 absi2011 要谨慎的使用这些药。悲剧的是，用药量没达到最少打败该人所需的属性药药量，则打这个人必输。例如他用 <span class="math-source">$2$</span> 个药去打别人，别人却表明 <span class="math-source">$3$</span> 个药才能打过，那么相当于你输了并且这两个属性药浪费了。</p>
+<p>现在有 <span class="math-source">$n$</span> 个好友，给定失败时可获得的经验、胜利时可获得的经验，打败他至少需要的药量。</p>
+<p>要求求出最大经验 <span class="math-source">$s$</span>，输出 <span class="math-source">$5s$</span>。</p>
+<p><strong>输入格式</strong></p>
+<p>第一行两个数，<span class="math-source">$n$</span> 和 <span class="math-source">$x$</span>。</p>
+<p>后面 <span class="math-source">$n$</span> 行每行三个数，分别表示失败时获得的经验 <span class="math-source">$\mathit{lose}_i$</span>，胜利时获得的经验 <span class="math-source">$\mathit{win}_i$</span> 和打过要至少使用的药数量 <span class="math-source">$\mathit{use}_i$</span>。</p>
+<p><strong>输出格式</strong></p>
+<p>一个整数，最多获得的经验的五倍。</p>
+<p><strong>样例 #1</strong></p>
+<p><strong>样例输入 #1</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>6 8</span></span>
+<span class="line"><span>21 52 1</span></span>
+<span class="line"><span>21 70 5</span></span>
+<span class="line"><span>21 48 2</span></span>
+<span class="line"><span>14 38 3</span></span>
+<span class="line"><span>14 36 1</span></span>
+<span class="line"><span>14 36 2</span></span></code></pre>
+<p><strong>样例输出 #1</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>1060</span></span></code></pre>
+<p><strong>提示</strong></p>
+<p><strong>【Hint】</strong></p>
+<p>五倍经验活动的时候，absi2011 总是吃体力药水而不是这种属性药。</p>
+<p><strong>【数据范围】</strong></p>
+<ul>
+<li>对于 <span class="math-source">$10\%$</span> 的数据，保证 <span class="math-source">$x=0$</span>。</li>
+<li>对于 <span class="math-source">$30\%$</span> 的数据，保证 <span class="math-source">$0\le n\le 10$</span>，<span class="math-source">$0\le x\le 20$</span>。</li>
+<li>对于 <span class="math-source">$60\%$</span> 的数据，保证 <span class="math-source">$0\le n,x\le 100$</span>， <span class="math-source">$10&#x3C;lose_i,win_i\le 100$</span>，<span class="math-source">$0\le use_i\le 5$</span>。</li>
+<li>对于 <span class="math-source">$100\%$</span> 的数据，保证 <span class="math-source">$0\le n,x\le 10^3$</span>，<span class="math-source">$0&#x3C;lose_i\le win_i\le 10^6$</span>，<span class="math-source">$0\le use_i\le 10^3$</span>。</li>
+</ul>
+<p><strong>【题目来源】</strong></p>
+<p>fight.pet.qq.com</p>
+<p>absi2011 授权题目</p>
+<p><strong>分析</strong></p>
+<p>为防止学校自命题出 dp 埋伏一手，还是练两道为妙。</p>
+<p>整体思路看起来比较显然，但是特判会有点麻烦。大佬们都是用数组的，我还是老老实实用记忆化搜索。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="cpp"><code><span class="line"><span style="color:#D73A49">#include</span><span style="color:#032F62"> &#x3C;cstdio></span></span>
+<span class="line"><span style="color:#D73A49">#define</span><span style="color:#6F42C1"> MAX</span><span style="color:#24292E">(</span><span style="color:#E36209">a</span><span style="color:#24292E">,</span><span style="color:#E36209">b</span><span style="color:#24292E">) ((a)</span><span style="color:#D73A49">></span><span style="color:#24292E">(b)</span><span style="color:#D73A49">?</span><span style="color:#24292E">(a)</span><span style="color:#D73A49">:</span><span style="color:#24292E">(b))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">const</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> MAXN </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 1</span><span style="color:#D73A49">e</span><span style="color:#005CC5">3</span><span style="color:#D73A49">+</span><span style="color:#005CC5">5</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">int</span><span style="color:#24292E"> f[MAXN][MAXN],lose[MAXN],win[MAXN],use[MAXN];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">int</span><span style="color:#6F42C1"> dp</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> n</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> w</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E">(n</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#005CC5">0</span><span style="color:#24292E">) </span><span style="color:#D73A49">return</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E">(f[n][w]) </span><span style="color:#D73A49">return</span><span style="color:#24292E"> f[n][w];</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E">(</span><span style="color:#D73A49">!</span><span style="color:#24292E">use[n]){</span></span>
+<span class="line"><span style="color:#24292E">        f[n][w] </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> dp</span><span style="color:#24292E">(n</span><span style="color:#D73A49">-</span><span style="color:#005CC5">1</span><span style="color:#24292E">,w) </span><span style="color:#D73A49">+</span><span style="color:#24292E"> win[n];</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> f[n][w];</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E">(</span><span style="color:#D73A49">!</span><span style="color:#24292E">w){</span></span>
+<span class="line"><span style="color:#24292E">        f[n][w] </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> dp</span><span style="color:#24292E">(n</span><span style="color:#D73A49">-</span><span style="color:#005CC5">1</span><span style="color:#24292E">,</span><span style="color:#005CC5">0</span><span style="color:#24292E">) </span><span style="color:#D73A49">+</span><span style="color:#24292E"> lose[n];</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> f[n][w];</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> temp1 </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> dp</span><span style="color:#24292E">(n</span><span style="color:#D73A49">-</span><span style="color:#005CC5">1</span><span style="color:#24292E">,w) </span><span style="color:#D73A49">+</span><span style="color:#24292E"> lose[n];</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> temp2 </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (w</span><span style="color:#D73A49">-</span><span style="color:#24292E">use[n]</span><span style="color:#D73A49">>=</span><span style="color:#005CC5">0</span><span style="color:#24292E">)</span><span style="color:#D73A49">?</span><span style="color:#24292E">(</span><span style="color:#6F42C1">dp</span><span style="color:#24292E">(n</span><span style="color:#D73A49">-</span><span style="color:#005CC5">1</span><span style="color:#24292E">,w</span><span style="color:#D73A49">-</span><span style="color:#24292E">use[n]) </span><span style="color:#D73A49">+</span><span style="color:#24292E"> win[n])</span><span style="color:#D73A49">:</span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    f[n][w] </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> MAX</span><span style="color:#24292E">(temp1, temp2);</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> f[n][w];</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">int</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(){</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> n, x;</span></span>
+<span class="line"><span style="color:#6F42C1">    scanf</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">%d%d</span><span style="color:#032F62">"</span><span style="color:#24292E">,</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">n,</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">x);</span></span>
+<span class="line"><span style="color:#24292E">    </span></span>
+<span class="line"><span style="color:#D73A49">    for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">;i</span><span style="color:#D73A49">&#x3C;=</span><span style="color:#24292E">n;i</span><span style="color:#D73A49">++</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#6F42C1">        scanf</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">%d%d%d</span><span style="color:#032F62">"</span><span style="color:#24292E">,</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">lose[i],</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">win[i],</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">use[i]);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">%lld</span><span style="color:#032F62">"</span><span style="color:#24292E">,</span><span style="color:#005CC5">5</span><span style="color:#D73A49">ll*</span><span style="color:#6F42C1">dp</span><span style="color:#24292E">(n,x));</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<h2 id="杂记"><a class="heading-anchor" href="#杂记">杂记</a></h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="cpp"><code><span class="line"><span style="color:#D73A49"># define</span><span style="color:#6F42C1"> MAX</span><span style="color:#24292E">(</span><span style="color:#E36209">a</span><span style="color:#24292E">,</span><span style="color:#E36209">b</span><span style="color:#24292E">) ((a)</span><span style="color:#D73A49">></span><span style="color:#24292E">(b)</span><span style="color:#D73A49">?</span><span style="color:#24292E">(a)</span><span style="color:#D73A49">:</span><span style="color:#24292E">(b))</span></span>
+<span class="line"><span style="color:#D73A49"># define</span><span style="color:#6F42C1"> MIN</span><span style="color:#24292E">(</span><span style="color:#E36209">a</span><span style="color:#24292E">,</span><span style="color:#E36209">b</span><span style="color:#24292E">) ((a)</span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">(b)</span><span style="color:#D73A49">?</span><span style="color:#24292E">(a)</span><span style="color:#D73A49">:</span><span style="color:#24292E">(b))</span></span></code></pre>
+<p>这个常见的宏定义有大问题，今天被我遇到了。
+来看导致问题的代码：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="cpp"><code><span class="line"><span style="color:#24292E">alpha </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> MAX</span><span style="color:#24292E">(alpha, </span><span style="color:#6F42C1">alpha_beta</span><span style="color:#24292E">(T, alpha, beta, </span><span style="color:#005CC5">false</span><span style="color:#24292E">));</span></span></code></pre>
+<p>在编译前，宏会把这行代码展开，它实际变成了：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="cpp"><code><span class="line"><span style="color:#24292E">alpha </span><span style="color:#D73A49">=</span><span style="color:#24292E"> ((alpha) </span><span style="color:#D73A49">></span><span style="color:#24292E"> (</span><span style="color:#6F42C1">alpha_beta</span><span style="color:#24292E">(T, alpha, beta, </span><span style="color:#005CC5">false</span><span style="color:#24292E">)) </span><span style="color:#D73A49">?</span><span style="color:#24292E"> (alpha) </span><span style="color:#D73A49">:</span><span style="color:#24292E"> (</span><span style="color:#6F42C1">alpha_beta</span><span style="color:#24292E">(T, alpha, beta, </span><span style="color:#005CC5">false</span><span style="color:#24292E">)));</span></span></code></pre>
+<p>这个函数调用在展开后的代码里<strong>出现了两次！</strong></p>
+<p><strong>永远不要将带有副作用或计算成本高昂的表达式（如函数调用）直接放在宏参数中。</strong></p>
+<h2 id="后记"><a class="heading-anchor" href="#后记">后记</a></h2>
+<p>不再给出代码，仅给出链接。</p>
+<p>请参考：
+<a href="https://github.com/dropsong/ac_records">https://github.com/dropsong/ac_records</a></p></div> </div> </div> <footer class="post-footer" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <!-- Gitalk comments will be added in Phase 3 --> </div> <section class="reward-widget" data-reward-widget data-astro-cid-bbdapvnt> <div class="reward-panel" id="reward-panel" aria-label="打赏二维码" data-astro-cid-bbdapvnt> <div class="reward-list" data-astro-cid-bbdapvnt> <div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/Alipay.png" alt="支付宝收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>支付宝 Alipay</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/WeChat.png" alt="微信收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>微信 Wechat</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/PayPal-or-CreditCard.png" alt="PayPal 或信用卡收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>PayPal/CreditCard</span> </div> </div> </div> <button class="reward-trigger" type="button" aria-label="打开打赏二维码" aria-controls="reward-panel" aria-expanded="false" data-astro-cid-bbdapvnt>
+打赏 Reward
+</button> </section>  <script type="module">function a(){document.querySelectorAll("[data-reward-widget]").forEach(e=>{if(e.dataset.initialized)return;const r=e.querySelector(".reward-trigger");if(!r)return;e.dataset.initialized="true";const n=t=>{e.classList.toggle("is-open",t),r.setAttribute("aria-expanded",String(t))};r.addEventListener("click",()=>n(!e.classList.contains("is-open"))),document.addEventListener("click",t=>{e.contains(t.target)||n(!1)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&(n(!1),r.blur())})})}window.addEventListener("encrypted-content-revealed",()=>{document.querySelectorAll("[data-reward-after-unlock]").forEach(e=>{e.removeAttribute("hidden")})});document.addEventListener("astro:page-load",a);a();</script> <div id="gitalk-container" class="gitalk-container" data-abbrlink="53401ab0" data-title="算法题集子" data-astro-cid-ajg7agi2></div> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">   <script>
+  var GITALK_CFG = {"clientID":"Ov23lijmGQilj9J9CrdP","clientSecret":"bd5066a2aadbe28c20913dd390b8047031f7174a","repo":"dropsong.github.io","owner":"dropsong","admin":["dropsong"],"labels":["Gitalk"],"distractionFreeMode":false};
+</script> <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js">
+</script> <script>
+  (function() {
+    var c = document.getElementById('gitalk-container');
+    if (!c) return;
+    var id = c.dataset.abbrlink || '';
+    var title = c.dataset.title || '';
+    new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting && !c.dataset.loaded) {
+          c.dataset.loaded = '1';
+          new Gitalk(Object.assign({}, GITALK_CFG, {id: id, title: title})).render('gitalk-container');
+        }
+      });
+    }, {rootMargin: '200px'}).observe(c);
+  })();
+</script> </footer> </article> </main> <button class="toc-fab" id="toc-fab" aria-label="目录" data-astro-cid-6t6zfk7k> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M4 6h16M4 12h10M4 18h16" data-astro-cid-6t6zfk7k></path> </svg> </button> <!-- Desktop: hover popup panel --> <div class="toc-popup" id="toc-popup" data-astro-cid-6t6zfk7k> <div class="toc-popup-header" data-astro-cid-6t6zfk7k> <span class="toc-popup-title" data-astro-cid-6t6zfk7k>目录</span> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> <div class="toc-popup-body" data-astro-cid-6t6zfk7k> <ul class="toc-popup-list" data-astro-cid-6t6zfk7k> <li class="toc-popup-item" data-mtoc-section="jsoi2004-平衡点模拟退火" data-astro-cid-6t6zfk7k> <a href="#jsoi2004-平衡点模拟退火" class="toc-popup-link" data-mtoc="jsoi2004-平衡点模拟退火" data-astro-cid-6t6zfk7k> JSOI2004 平衡点（模拟退火） </a>  </li><li class="toc-popup-item" data-mtoc-section="有机化学之神偶尔会做作弊tarjan-lca" data-astro-cid-6t6zfk7k> <a href="#有机化学之神偶尔会做作弊tarjan-lca" class="toc-popup-link" data-mtoc="有机化学之神偶尔会做作弊tarjan-lca" data-astro-cid-6t6zfk7k> 有机化学之神偶尔会做作弊（tarjan, lca） </a>  </li><li class="toc-popup-item" data-mtoc-section="yloi2022-枕万梦排序" data-astro-cid-6t6zfk7k> <a href="#yloi2022-枕万梦排序" class="toc-popup-link" data-mtoc="yloi2022-枕万梦排序" data-astro-cid-6t6zfk7k> yLOI2022 枕万梦（排序） </a>  </li><li class="toc-popup-item" data-mtoc-section="平衡二叉树" data-astro-cid-6t6zfk7k> <a href="#平衡二叉树" class="toc-popup-link" data-mtoc="平衡二叉树" data-astro-cid-6t6zfk7k> 平衡二叉树 </a>  </li><li class="toc-popup-item" data-mtoc-section="5-倍经验日背包" data-astro-cid-6t6zfk7k> <a href="#5-倍经验日背包" class="toc-popup-link" data-mtoc="5-倍经验日背包" data-astro-cid-6t6zfk7k> 5 倍经验日（背包） </a>  </li><li class="toc-popup-item" data-mtoc-section="杂记" data-astro-cid-6t6zfk7k> <a href="#杂记" class="toc-popup-link" data-mtoc="杂记" data-astro-cid-6t6zfk7k> 杂记 </a>  </li><li class="toc-popup-item" data-mtoc-section="后记" data-astro-cid-6t6zfk7k> <a href="#后记" class="toc-popup-link" data-mtoc="后记" data-astro-cid-6t6zfk7k> 后记 </a>  </li> </ul> </div> </div> <!-- Mobile: bottom sheet overlay --> <div class="toc-overlay" id="toc-overlay" data-astro-cid-6t6zfk7k></div> <div class="toc-sheet" id="toc-sheet" data-astro-cid-6t6zfk7k> <div class="toc-sheet-header" data-astro-cid-6t6zfk7k> <span class="toc-sheet-title" data-astro-cid-6t6zfk7k>目录</span> <div class="toc-sheet-actions" data-astro-cid-6t6zfk7k> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> <button class="toc-sheet-close" id="toc-sheet-close" aria-label="关闭" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M18 6L6 18M6 6l12 12" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> </div> <div class="toc-sheet-body" data-astro-cid-6t6zfk7k> <ul class="toc-sheet-list" data-astro-cid-6t6zfk7k> <li class="toc-sheet-item" data-msheet-section="jsoi2004-平衡点模拟退火" data-astro-cid-6t6zfk7k> <a href="#jsoi2004-平衡点模拟退火" class="toc-sheet-link" data-msheet="jsoi2004-平衡点模拟退火" data-astro-cid-6t6zfk7k> JSOI2004 平衡点（模拟退火） </a>  </li><li class="toc-sheet-item" data-msheet-section="有机化学之神偶尔会做作弊tarjan-lca" data-astro-cid-6t6zfk7k> <a href="#有机化学之神偶尔会做作弊tarjan-lca" class="toc-sheet-link" data-msheet="有机化学之神偶尔会做作弊tarjan-lca" data-astro-cid-6t6zfk7k> 有机化学之神偶尔会做作弊（tarjan, lca） </a>  </li><li class="toc-sheet-item" data-msheet-section="yloi2022-枕万梦排序" data-astro-cid-6t6zfk7k> <a href="#yloi2022-枕万梦排序" class="toc-sheet-link" data-msheet="yloi2022-枕万梦排序" data-astro-cid-6t6zfk7k> yLOI2022 枕万梦（排序） </a>  </li><li class="toc-sheet-item" data-msheet-section="平衡二叉树" data-astro-cid-6t6zfk7k> <a href="#平衡二叉树" class="toc-sheet-link" data-msheet="平衡二叉树" data-astro-cid-6t6zfk7k> 平衡二叉树 </a>  </li><li class="toc-sheet-item" data-msheet-section="5-倍经验日背包" data-astro-cid-6t6zfk7k> <a href="#5-倍经验日背包" class="toc-sheet-link" data-msheet="5-倍经验日背包" data-astro-cid-6t6zfk7k> 5 倍经验日（背包） </a>  </li><li class="toc-sheet-item" data-msheet-section="杂记" data-astro-cid-6t6zfk7k> <a href="#杂记" class="toc-sheet-link" data-msheet="杂记" data-astro-cid-6t6zfk7k> 杂记 </a>  </li><li class="toc-sheet-item" data-msheet-section="后记" data-astro-cid-6t6zfk7k> <a href="#后记" class="toc-sheet-link" data-msheet="后记" data-astro-cid-6t6zfk7k> 后记 </a>  </li> </ul> </div> </div>  <script type="module">function F(){const f=document.getElementById("toc-fab"),o=document.getElementById("toc-popup"),a=document.getElementById("toc-overlay"),n=document.getElementById("toc-sheet"),q=document.getElementById("toc-sheet-close"),P=document.querySelectorAll(".toc-top-btn");if(!f||!o||!a||!n||!q)return;const p=()=>window.matchMedia("(max-width: 768px)").matches;let h=null,m=null,g=!1,E=!1;function A(){p()||(m&&clearTimeout(m),o.classList.add("open"),y(!0))}function B(){m&&clearTimeout(m),m=setTimeout(()=>{!g&&!E&&o.classList.remove("open")},200)}f.addEventListener("mouseenter",()=>{g=!0,A()}),f.addEventListener("mouseleave",()=>{g=!1,B()}),o.addEventListener("mouseenter",()=>{E=!0,A()}),o.addEventListener("mouseleave",()=>{E=!1,B()}),o.querySelectorAll(".toc-popup-link").forEach(t=>{t.addEventListener("click",()=>{setTimeout(()=>o.classList.remove("open"),150)})}),f.addEventListener("click",()=>{p()&&(a.style.display="block",n.style.display="flex",requestAnimationFrame(()=>{a.classList.add("open"),n.classList.add("open"),y(!0)}),document.body.style.overflow="hidden")});function v(){a.classList.remove("open"),n.classList.remove("open"),setTimeout(()=>{a.style.display="none",n.style.display="none"},300),document.body.style.overflow=""}q.addEventListener("click",v),a.addEventListener("click",v),n.querySelectorAll(".toc-sheet-link").forEach(t=>{t.addEventListener("click",()=>setTimeout(v,200))}),P.forEach(t=>{t.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"}),p()&&v()})});function I(t,b,s,i=!1){const l=t.querySelector(b),S=t.querySelector(s);if(!l||!S)return;const r=l.getBoundingClientRect(),e=S.getBoundingClientRect(),c=e.top>=r.top&&e.bottom<=r.bottom;if(!i&&c)return;const d=l.scrollTop+(e.top-r.top)-l.clientHeight/2+e.height/2;l.scrollTo({top:Math.max(0,d),behavior:i?"auto":"smooth"})}function k(t=!1){!p()&&o.classList.contains("open")&&I(o,".toc-popup-body",".toc-popup-link.active",t),p()&&n.classList.contains("open")&&I(n,".toc-sheet-body",".toc-sheet-link.active",t)}function y(t=!1){requestAnimationFrame(()=>k(t)),h&&clearTimeout(h),h=setTimeout(()=>{k(t),h=null},260)}let x="";function T(){const t=o.querySelectorAll(".toc-popup-link"),b=n.querySelectorAll(".toc-sheet-link"),s=[];t.forEach(e=>{const c=e.dataset.mtoc;if(c){const d=document.getElementById(c);d&&s.push({id:c,el:d})}});let i="";const l=window.scrollY+100;if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-4&&s.length>0)i=s[s.length-1].id;else for(let e=s.length-1;e>=0;e--)if(s[e].el.offsetTop<=l){i=s[e].id;break}t.forEach(e=>e.classList.toggle("active",e.dataset.mtoc===i)),b.forEach(e=>e.classList.toggle("active",e.dataset.msheet===i));function r(e,c,d,H){const R=(i?e.querySelector(`${c}.active`):null)?.closest(d)?.querySelector(H);e.querySelectorAll(H).forEach(u=>{u===R?(u.classList.add("expanded"),u.style.maxHeight=`${u.scrollHeight}px`):(u.classList.remove("expanded"),u.style.removeProperty("max-height"))})}r(o,".toc-popup-link",".toc-popup-item",".toc-popup-sub"),r(n,".toc-sheet-link",".toc-sheet-item",".toc-sheet-sub"),k(),i!==x&&(y(),x=i)}let w=!1;window.addEventListener("scroll",()=>{w||(requestAnimationFrame(()=>{T(),w=!1}),w=!0)});let L=null;window.addEventListener("resize",()=>{L&&clearTimeout(L),L=setTimeout(()=>{T(),y(!0),L=null},100)}),T()}document.addEventListener("astro:page-load",F);F();</script><footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner" data-astro-cid-sz7xmlte></div> </footer>  <script type="module" src="/_astro/CodeBlockEnhance.astro_astro_type_script_index_0_lang.Di89G-ws.js"></script> <div id="image-lightbox" class="lightbox-overlay" data-astro-cid-fbflauxb> <div class="lightbox-content" data-astro-cid-fbflauxb> <img id="lightbox-img" src="" alt="" data-astro-cid-fbflauxb> </div> </div>  <script type="module">function c(){const t=document.getElementById("image-lightbox"),n=document.getElementById("lightbox-img");if(!t||!n)return;function s(e){n.src=e,t.classList.add("open"),document.body.style.overflow="hidden"}function i(){t.classList.remove("open"),document.body.style.overflow=""}t.addEventListener("click",e=>{e.target===t&&i()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t.classList.contains("open")&&i()});function d(){document.querySelectorAll(".article-body img").forEach(e=>{const o=e;o.dataset.lightbox||(o.dataset.lightbox="true",o.style.cursor="zoom-in",o.addEventListener("click",()=>{s(o.src)}))})}document.addEventListener("astro:page-load",d),d()}document.addEventListener("astro:page-load",c);c();</script> <script type="module" src="/_astro/EncryptedBlock.astro_astro_type_script_index_0_lang.DuPogRv7.js"></script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"><script type="module">
+  import renderMathInElement from 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs';
+
+  function renderMath() {
+    const articleBody = document.querySelector('.article-body');
+    if (!articleBody) return;
+
+    renderMathInElement(articleBody, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      throwOnError: false,
+    });
+  }
+
+  document.addEventListener('astro:page-load', renderMath);
+  renderMath();
+</script> </div> </div> </body></html>  

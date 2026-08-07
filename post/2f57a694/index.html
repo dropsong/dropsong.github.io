@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>正则表达式 · dropsong&#39;s</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><style>.article-body{font-size:16px;line-height:1.85;color:var(--text);max-width:820px;margin:0 auto}.article-body h1,.article-body h2,.article-body h3,.article-body h4,.article-body h5,.article-body h6{margin-top:1.8em;margin-bottom:.6em;font-weight:600;line-height:1.35;color:var(--text)}.article-body h1{font-size:1.75rem}.article-body h2{font-size:1.45rem}.article-body h3{font-size:1.2rem}.article-body h4{font-size:1.05rem}.article-body p{margin-bottom:1.2em}.article-body p,.article-body li{white-space:pre-line}.article-body p,.article-body li,.article-body blockquote,.article-body td,.article-body th{word-break:normal;overflow-wrap:break-word}.article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.article-body a:hover{color:var(--accent-hover)}.article-body blockquote{margin:1.2em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:#5b9e8c1a;border-radius:0 var(--radius) var(--radius) 0;color:var(--muted)}.article-body blockquote>:last-child{margin-bottom:0}.article-body ul,.article-body ol{margin-bottom:1.2em;padding-left:1.5em}.article-body li>ul,.article-body li>ol{margin-bottom:0;white-space:normal}.article-body li:has(>ul,>ol){white-space:normal}.article-body li{margin-bottom:.25em}.article-body table{width:auto;max-width:100%;border-collapse:collapse;margin:1.5em auto;font-size:.925rem;overflow-x:auto}.article-body table th,.article-body table td{padding:.6em .85em;border:1px solid var(--border);text-align:left}.article-body table th{font-weight:600}.article-body hr{border:none;border-top:1px solid var(--border);margin:2em 0}.article-body img{border-radius:var(--radius);cursor:zoom-in}.article-body .article-figure{margin:1.5em 0;text-align:center}.article-body .article-figure img{display:block;margin:0 auto}.article-body .article-figure-caption{margin-top:.55em;color:var(--muted);font-size:.875rem;line-height:1.5}.article-body iframe{max-width:100%;border-radius:var(--radius)}.article-body .gdrive-pdf-wrapper{margin:1.5em 0;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius);background:#fff}.article-body .gdrive-pdf-header{display:flex;align-items:center;justify-content:space-between;min-height:2.75rem;padding:.5rem .875rem;border-bottom:1px solid var(--border);background:var(--bg)}.article-body .gdrive-pdf-label{color:var(--muted);font-size:.85rem}.article-body .gdrive-pdf-link{color:var(--accent);font-size:.8rem;text-decoration:none}.article-body .gdrive-pdf-link:hover{text-decoration:underline}.article-body .gdrive-pdf-frame{display:block;width:100%;height:min(720px,80vh);border:0;border-radius:0;background:#fff}.article-body :not(pre)>code{background:#fffaf0a6;border:1px solid rgba(180,155,130,.2);border-radius:4px;padding:.1em .4em;font-size:.875em}.article-body pre,.article-body pre.astro-code,.article-body .astro-code{background:transparent!important;background-color:transparent!important;border:1.5px dashed rgba(224,143,88,.45);border-radius:14px}.article-body pre.astro-code code,.article-body .astro-code code{background:transparent!important;background-color:transparent!important}.article-body pre,.article-body table{-webkit-overflow-scrolling:touch}.article-body .katex-display{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;margin:1.4em 0;padding:.25rem 0 .45rem;text-align:center;scrollbar-width:thin;scrollbar-color:rgba(224,143,88,.35) transparent;word-break:normal;overflow-wrap:normal}.article-body .katex-display>.katex{display:inline-block;width:max-content;max-width:none}.article-body .katex{white-space:nowrap;word-break:normal;overflow-wrap:normal}.article-body .katex-display::-webkit-scrollbar{height:4px}.article-body .katex-display::-webkit-scrollbar-thumb{background:transparent}.article-body .katex-display:hover::-webkit-scrollbar-thumb{background:var(--border)}
+</style>
+<link rel="stylesheet" href="/_astro/about.CS0PymYq.css">
+<style>.site-footer[data-astro-cid-sz7xmlte]{padding:2rem 1.5rem;text-align:center}.footer-inner[data-astro-cid-sz7xmlte]{max-width:var(--max-width-page);margin:0 auto;display:flex;justify-content:center;align-items:center;gap:1rem;font-size:.85rem;color:var(--muted)}.footer-muted[data-astro-cid-sz7xmlte]{color:var(--muted)}
+</style>
+<link rel="stylesheet" href="/_astro/_abbrlink_.BDkgFBJR.css">
+<style>.gitalk-container[data-astro-cid-ajg7agi2]{margin-top:2rem}.gt-container{color:var(--text)!important;font-family:inherit!important}.gt-container a{color:var(--accent)!important}.gt-container a:hover{color:var(--accent-hover, var(--accent))!important}.gt-container .gt-header-textarea{background:transparent!important;border:1.5px dashed rgba(224,143,88,.45)!important;border-radius:14px!important;color:var(--text)!important;box-shadow:none!important;outline:none!important;font-family:inherit!important;line-height:1.7!important}.gt-container .gt-header-textarea:focus{border-color:#e08f58ad!important;box-shadow:0 0 0 3px #e08f5814!important}.gt-container .gt-header-preview{background:transparent!important;border:1.5px dashed rgba(224,143,88,.35)!important;border-radius:14px!important;color:var(--text)!important}.gt-container .gt-comment-content{background:transparent!important;border-radius:12px!important}.gt-container .gt-btn-login,.gt-container .gt-btn-public{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important}.gt-container .gt-btn-login:hover,.gt-container .gt-btn-public:hover{background:var(--accent-hover)!important;border-color:var(--accent-hover)!important}.gt-container .gt-btn-preview{background:transparent!important;border:1px solid var(--accent)!important;color:var(--accent)!important}.gt-container .gt-btn-preview:hover{background:#5b9e8c1a!important}
+</style></head> <body data-page="post" data-astro-cid-37fxchfa> <div class="site-page" data-astro-cid-37fxchfa> <!-- Background decoration layer (cream paper style) --> <div class="site-background" aria-hidden="true" data-astro-cid-37fxchfa> <div class="bg-pattern" data-astro-cid-37fxchfa></div> <div class="bg-top-border" data-astro-cid-37fxchfa></div> <div class="bg-bottom-border" data-astro-cid-37fxchfa></div> </div> <!-- Content shell --> <div class="site-shell" data-astro-cid-37fxchfa>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="site-name" data-astro-cid-3ef6ksr2>dropsong's</a> <!-- Desktop: hover dropdown nav (button → panel drops below) --> <nav class="desktop-hover-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <div class="desktop-hover-nav-inner" data-astro-cid-3ef6ksr2> <button class="desktop-nav-trigger" type="button" aria-label="Open navigation menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> <div class="desktop-nav-dropdown" data-astro-cid-3ef6ksr2> <div class="desktop-nav-dropdown-body" data-astro-cid-3ef6ksr2> <a href="/archive/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Search</a> </div> </div> </div> </nav> <!-- Mobile: click-toggle nav (keep exactly as before) --> <nav class="header-nav" id="header-nav" data-astro-cid-3ef6ksr2> <a href="/archive/" class="nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="nav-link" data-astro-cid-3ef6ksr2>Search</a> </nav> <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> </header>  <script type="module">const e=document.getElementById("menu-toggle"),t=document.getElementById("header-nav");e&&t&&e.addEventListener("click",()=>{t.classList.toggle("open")});</script> <main class="post-page" data-astro-cid-gjtny2mx> <article class="post-article" data-astro-cid-gjtny2mx> <header class="post-header" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <h1 class="article-title" data-astro-cid-bjlpfrhy>正则表达式</h1> <div class="article-meta" data-astro-cid-bjlpfrhy> <time class="article-date" data-astro-cid-bjlpfrhy>2024-04-15</time>  <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-category" data-astro-cid-bjlpfrhy>转载</span>   <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-tags" data-astro-cid-bjlpfrhy> #正则表达式 </span>   </div> </div> </header> <div class="post-body" id="post-body" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <div class="article-body" data-astro-cid-bjlpfrhy><p>正则表达式快速参考：
+<a href="https://learn.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expression-language-quick-reference">https://learn.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expression-language-quick-reference</a></p>
+<blockquote>
+<p>版权声明：本文为博主原创文章，遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC 4.0 BY-SA</a> 版权协议，转载请附上原文出处链接和本声明。
+原文链接：<a href="https://blog.csdn.net/qq_28087491/article/details/107608569">https://blog.csdn.net/qq_28087491/article/details/107608569</a></p>
+</blockquote>
+<p>本文对原文的改编如下：
+修订了一些错误。例如 CSDN 将原博主的<code>*</code>识别为 markdown 标记，导致<code>*</code>丢失，部分字体变为斜体。</p>
+<h2 id="概念"><a class="heading-anchor" href="#概念">概念</a></h2>
+<p>在编写处理字符串的程序或网页时，经常会有查找某些复杂规则的字符串的需要。正则表达式就是用于描述这些规则的工具。换句话说，正则表达式就是记录文本规则的代码。</p>
+<p>很可能你使用过Win/Dos下用于文件查找的<strong>通配符(wildcard)</strong>，也就是<code>?</code>和<code>*</code>。如果你想要查找某个目录下的所有Word文档的话，你会搜索<code>*.doc</code>。在这里，<code>*</code>会被解释成任意的字符串。</p>
+<p>和通配符类似，<strong>正则表达式</strong>也是用来进行文本匹配的工具，只不过比起通配符，它能更精确地描述你的需求。当然，代价是更复杂。比如，可以编写一个正则表达式，用来查找所有以 0 开头，后面跟着 2~3 个数字，然后是一个连字号<code>-</code>，最后是7或8位数字的字符串（像010-12345678或0376-7654321）。</p>
+<h2 id="入门"><a class="heading-anchor" href="#入门">入门</a></h2>
+<p>假设你在一篇英文小说里查找 hi，你可以使用正则表达式<code>hi</code>。</p>
+<p>这几乎是最简单的正则表达式了，它可以精确匹配这样的字符串：由两个字符组成，前一个字符是<code>h</code>，后一个是<code>i</code>。通常，处理正则表达式的工具会提供一个忽略大小写的选项，如果选中了这个选项，它可以匹配hi, HI, Hi, hI这四种中的任意一种。</p>
+<p>不幸的是，很多单词里包含 hi 这两个连续的字符，比如 him, history, high 等等。用<code>hi</code>来查找的话，这里面的 hi 也会被找出来。如果要精确地查找 hi 这个单词的话，我们应该使用<code>\bhi\b</code>。</p>
+<p><code>\b</code>是正则表达式规定的一个特殊代码（被称为<strong>元字符 metacharacter</strong>），代表着单词的开头或结尾，也就是单词的分界处。虽然通常英文的单词是由空格，标点符号或者换行来分隔的，但是<code>\b</code>并不匹配这些单词分隔字符中的任何一个，它只匹配一个位置。</p>
+<p>假如你要找的是 hi 后面不远处跟着的一个 Lucy，你应该用<code>\bhi\b.*\bLucy\b</code>。</p>
+<p>这里，<code>.</code>是另一个元字符，匹配除了换行符以外的任意字符。<code>*</code>同样是元字符，不过它代表的不是字符，也不是位置，而是数量——它指定前边的内容可以连续重复出现任意次以使整个表达式得到匹配。因此，<code>.*</code>连在一起就意味着任意数量的不包含换行的字符。现在<code>\bhi\b.*\bLucy\b</code>的意思就很明显了：先是一个单词hi，然后是任意个字符（但不能换行），最后是Lucy这个单词。</p>
+<p>如果同时使用其它元字符，我们就能构造出功能更强大的正则表达式。比如下面这个例子：<code>0\d\d-\d\d\d\d\d\d\d\d</code>匹配这样的字符串：以0开头，然后是两个数字，然后是一个连字号“-”，最后是8个数字（也就是中国的电话号码。当然，这个例子只能匹配区号为3位的情形）。</p>
+<p>这里的<code>\d</code>是个新的元字符，匹配一位数字（0或1或2… …）。<code>-</code>不是元字符，只匹配它本身——连字符或者减号。</p>
+<p>为了避免那么多烦人的重复，我们也可以这样写这个表达式：<code>0\d{2}-\d{8}</code>。这里 \d 后面的 {2}({8}) 的意思是前面的 \d 必须连续重复匹配2次（8次）。</p>
+<h2 id="元字符"><a class="heading-anchor" href="#元字符">元字符</a></h2>
+<p>现在已经知道了几个很有用的元字符了，正则表达式里还有更多的元字符，比如<code>\s</code>匹配任意的空白符，包括空格，制表符(Tab)，换行符，中文全角空格等。<code>\w</code>匹配字母或数字或下划线或汉字等。</p>
+<p>下面看看更多的例子。</p>
+<p><code>\ba\w*\b</code>匹配以字母a开头的单词——先是某个单词开始处（\b），然后是字母a，然后是任意数量的字母或数字（\w*）,最后是单词结束处（\b）。</p>
+<p><code>\d+</code>匹配 1 个或更多连续的数字。这里的<code>+</code>是和<code>*</code>类似的元字符，不同的是<code>*</code>匹配重复任意次（可能是0次），而<code>+</code>则匹配重复 1 次或更多次。</p>
+<p><code>\b\w{6}\b</code>匹配刚好 6 个字母/数字的单词。</p>
+<p>元字符 <code>^</code> 和 <span class="math-source">$ 都匹配一个位置，这和 \b 有点类似。 <code>^</code> 匹配要用来查找的字符串的开头， $</span> 匹配结尾。这两个代码在验证输入的内容时非常有用，比如一个网站如果要求你填写的QQ号必须为5到12位的数字时，可以使用：<code>^\d{5,12}$</code>。</p>
+<p>这里的{5,12}和前面介绍过的{2}是类似的，只不过{2}匹配只能不多不少重复2次，{5,12}则是重复的次数不能少于5次，不能多于12次，否则都不匹配。</p>
+<p>因为使用了<code>^</code>和<code>$</code>，所以输入的整个字符串都要用来和<code>\d{5,12}</code>来匹配，也就是说整个输出必须是5到12个数字，因此如果输入的QQ号能匹配这个正则表达式的话，那就符合要求了。</p>
+<p>和忽略大小写的选项类似，有些正则表达式处理工具还有一个处理多行的选项。<strong>如果选中了这个选项，<code>^</code>和<code>$</code>的意义就变成了匹配行的开始处和结束处。</strong></p>
+<h2 id="字符转义"><a class="heading-anchor" href="#字符转义">字符转义</a></h2>
+<p>如果想查找元字符本身的话，比如查找<code>.</code>，或者<code>*</code>，就会出现问题：没有办法去指定它们，因为它们会被解释成别的意思。这时候就得使用<code>\</code>来取消这些字符的特殊意义。因此，应该使用<code>\.</code>和<code>\*</code>。当然，要查找<code>\</code>本身，则使用<code>\\</code>。</p>
+<h2 id="字符类"><a class="heading-anchor" href="#字符类">字符类</a></h2>
+<p>要想查找数字、字母或数字、空白是很简单的，因为已经有了对应这些字符集合的元字符，但是如果你想匹配没有预定义元字符的字符集合（比如元音字母a,e,i,o,u）,应该怎么办？</p>
+<p>很简单，你只需要在方括号里列出它们就行了，像<code>[aeiou]</code>就匹配任何一个英文元音字母，<code>[.?!]</code>匹配标点符号(.或?或!)。</p>
+<p>我们也可以轻松地指定一个字符范围，像<code>[0-9]</code>代表的含意与<code>\d</code>就是完全一致的：一位数字。同理<code>[a-z0-9A-Z_]</code>也完全等同于<code>\w</code>（如果只考虑英文的话）。</p>
+<p>下面是一个更复杂的表达式：<code>\(?0\d{2}[) -]?\d{8}</code>。</p>
+<p>这个表达式可以匹配几种格式的电话号码，像(010)88886666，或022-22334455，或02912345678等。我们对它进行一些分析吧：首先使用转义字符表示<code>(</code>,它能出现0次或1次(即 ? 的含义)，然后是一个<code>0</code>，后面跟着<code>2个数字</code>（即 \d{2} 的含义），然后是<code>)</code>或<code>-</code>或<code>空格</code>中的一个，它出现1次或不出现，最后是<code>8个数字</code>。</p>
+<h2 id="分枝条件"><a class="heading-anchor" href="#分枝条件">分枝条件</a></h2>
+<p>不幸的是，刚才那个表达式也能匹配 010)12345678 或 (022-87654321 这样的“不正确”的格式。要解决这个问题，我们需要用到分枝条件。正则表达式里的分枝条件指的是有几种规则，如果满足其中任意一种规则都应该当成匹配，具体方法是用<code>|</code>把不同的规则分隔开。</p>
+<p><code>0\d{2}-\d{8}|0\d{3}-\d{7}</code>这个表达式能匹配两种以连字号分隔的电话号码：一种是三位区号，8位本地号（如 010-12345678 ），一种是4位区号，7位本地号（0376-2233445）。</p>
+<p><code>\d{5}-\d{4}|\d{5}</code>这个表达式用于匹配美国的邮政编码。美国邮编的规则是5位数字，或者用连字号间隔的9位数字。之所以要给出这个例子是因为它能说明一个问题： <strong>使用分枝条件时，要注意各个条件的顺序。</strong> 如果你把它改成<code>\d{5}|\d{5}-\d{4}</code>的话，那么就只会匹配5位的邮编（以及9位邮编的前5位）。原因是匹配分枝条件时，将会从左到右地测试每个条件，如果满足了某个分枝的话，就不会去再管其它的条件了。</p>
+<h2 id="分组"><a class="heading-anchor" href="#分组">分组</a></h2>
+<p>上文中已经提到了怎么重复单个字符（直接在字符后面加上限定符就行了），但如果想要重复多个字符又该怎么办？</p>
+<p>可以使用小括号来指定<strong>子表达式</strong>（也叫作<strong>分组</strong>），然后就可以指定这个子表达式的重复次数了。</p>
+<p><code>(\d{1,3}\.){3}\d{1,3}</code>是一个简单的 IP 地址匹配表达式。要理解这个表达式，请按下列顺序分析它：<code>\d{1,3}</code>匹配1到3位的数字，<code>(\d{1,3}\.){3}</code>匹配三位数字加上一个英文句号重复三次，最后再加上一个一到三位的数字<code>\d{1,3}</code>。</p>
+<h2 id="反义"><a class="heading-anchor" href="#反义">反义</a></h2>
+<p>有时需要查找不属于某个能简单定义的字符类的字符。比如想查找除了数字以外，其它任意字符都行的情况，这时需要用到反义：</p>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>语法</strong></td>
+      <td><strong>说明</strong></td>
+    </tr>
+    <tr>
+      <td>\W</td>
+      <td>匹配任意不是字母，数字，下划线，汉字的字符</td>
+    </tr>
+    <tr>
+      <td>\S</td>
+      <td>匹配任意不是空白符的字符</td>
+    </tr>
+    <tr>
+      <td>\D</td>
+      <td>匹配任意非数字的字符</td>
+    </tr>
+    <tr>
+      <td>\B</td>
+      <td>匹配不是单词开头或结束的位置</td>
+    </tr>
+    <tr>
+      <td>[^x]</td>
+      <td>匹配除了x以外的任意字符</td>
+    </tr>
+    <tr>
+      <td>[^aeiou]</td>
+      <td>匹配除了aeiou这几个字母以外的任意字符</td>
+    </tr>
+  </tbody>
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+</table>
+<p>例如，用<code>&#x3C;a[^>]+></code>匹配用尖括号括起来的以a开头的字符串。</p>
+<h2 id="后向引用"><a class="heading-anchor" href="#后向引用">后向引用</a></h2>
+<p>使用小括号指定一个子表达式后，匹配这个子表达式的文本(也就是此分组捕获的内容)可以在表达式或其它程序中作进一步的处理。默认情况下，每个分组会自动拥有一个<strong>组号</strong>，规则是：从左向右，以分组的左括号为标志，第一个出现的分组的组号为1，第二个为2，以此类推。</p>
+<p>后向引用用于重复搜索前面某个分组匹配的文本。例如，<code>\1</code>代表分组 1 匹配的文本。难以理解？请看示例：</p>
+<p><code>\b(\w+)\b\s+\1\b</code>可以用来匹配重复的单词，像go go, 或者kitty kitty。这个表达式首先是一个单词，也就是单词开始处和结束处之间的多于一个的字母或数字<code>\b(\w+)\b</code>，这个单词会被捕获到编号为 1 的分组中，然后是 1 个或几个空白符<code>\s+</code>，最后是分组 1 中捕获的内容<code>\1</code>。</p>
+<p>你也可以自己指定子表达式的组名。要指定一个子表达式的组名，请使用这样的语法：<code>(?&#x3C;Word>\w+)</code>，或者把尖括号换成<code>'</code>也行：<code>(?'Word'\w+)</code>，这样就把<code>\w+</code>的组名指定为 Word 了。要反向引用这个分组捕获的内容，你可以使用<code>\k&#x3C;Word></code>。所以上一个例子也可以写成这样：<code>\b(?&#x3C;Word>\w+)\b\s+\k&#x3C;Word>\b</code>。</p>
+<h2 id="零宽断言"><a class="heading-anchor" href="#零宽断言">零宽断言</a></h2>
+<p>接下来的四个用于查找<strong>在某些内容（但并不包括这些内容）之前或之后的东西</strong>，也就是说它们像<code>\b</code>，<code>^</code>，<code>$</code>那样用于指定一个位置，这个位置应该满足一定的条件（即断言），因此它们也被称为<strong>零宽断言</strong>。</p>
+<p><code>(?=exp)</code>也叫作<strong>零宽度正预测先行断言</strong>，它断言自身出现的位置的后面能匹配表达式 exp。比如<code>\b\w+(?=ing\b)</code>，匹配以 ing 结尾的单词的前面部分（除了 ing 以外的部分），如查找 I’m singing while you’re dancing 时，它会匹配 sing 和 danc 。</p>
+<p><code>(?&#x3C;=exp)</code>也叫<strong>零宽度正回顾后发断言</strong>，它断言自身出现的位置的前面能匹配表达式 exp。比如<code>(?&#x3C;=\bre)\w+\b</code>会匹配以 re 开头的单词的后半部分（除了 re 以外的部分），例如在查找 reading a book 时，它匹配 ading .</p>
+<p>假如你想要给一个很长的数字中每三位间加一个逗号（当然是从右边加起了），你可以这样查找需要在前面和里面添加逗号的部分：<code>((?&#x3C;=\d)\d{3})*\b</code>，用它对 1234567890 进行查找时结果是 234567890 .</p>
+<p>这个例子同时使用了两种断言：<code>(?&#x3C;=\s)\d+(?=\s)</code>匹配以空白符间隔的数字（再次强调，不包括这些空白符）。</p>
+<p><strong>在 cpp 的 regex 库中，这部分的规则会稍有差异。</strong></p>
+<h2 id="贪婪与懒惰"><a class="heading-anchor" href="#贪婪与懒惰">贪婪与懒惰</a></h2>
+<p>当正则表达式中包含能接受重复的限定符时，通常的行为是<strong>在使整个表达式能得到匹配的前提下尽可能多的字符。</strong> 考虑这个表达式：<code>a.*b</code>，它将匹配最长的以 a 开始，以 b 结束的字符串。如果用它来搜索 aabab 的话，它会匹配整个字符串 aabab，被称为<strong>贪婪匹配</strong>。</p>
+<p>有时，我们更需要<strong>懒惰匹配</strong>，也就是匹配尽可能少的字符。前面给出的限定符都可以被转化为懒惰匹配模式，只要在它后面加上一个问号<code>?</code>。这样，<code>.*?</code>就意味着匹配任意数量的重复，但是在能使整个匹配成功的前提下使用最少的重复。</p>
+<p><code>a.*?b</code>匹配最短的，以 a 开始，以 b 结束的字符串。如果把它应用于 aabab 的话，它会匹配 aab（第一到第三个字符）和 ab（第四到第五个字符）。</p>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>代码/语法</strong></td>
+      <td><strong>说明</strong></td>
+    </tr>
+    <tr>
+      <td>*?</td>
+      <td>重复任意次，但尽可能少重复</td>
+    </tr>
+    <tr>
+      <td>+?</td>
+      <td>重复1次或更多次，但尽可能少重复</td>
+    </tr>
+    <tr>
+      <td>??</td>
+      <td>重复0次或1次，但尽可能少重复</td>
+    </tr>
+    <tr>
+      <td>{n,m}?</td>
+      <td>重复n到m次，但尽可能少重复</td>
+    </tr>
+    <tr>
+      <td>{n,}?</td>
+      <td>重复n次以上，但尽可能少重复</td>
+    </tr>
+  </tbody>
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+</table></div> </div> </div> <footer class="post-footer" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <!-- Gitalk comments will be added in Phase 3 --> </div> <section class="reward-widget" data-reward-widget data-astro-cid-bbdapvnt> <div class="reward-panel" id="reward-panel" aria-label="打赏二维码" data-astro-cid-bbdapvnt> <div class="reward-list" data-astro-cid-bbdapvnt> <div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/Alipay.png" alt="支付宝收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>支付宝 Alipay</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/WeChat.png" alt="微信收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>微信 Wechat</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/PayPal-or-CreditCard.png" alt="PayPal 或信用卡收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>PayPal/CreditCard</span> </div> </div> </div> <button class="reward-trigger" type="button" aria-label="打开打赏二维码" aria-controls="reward-panel" aria-expanded="false" data-astro-cid-bbdapvnt>
+打赏 Reward
+</button> </section>  <script type="module">function a(){document.querySelectorAll("[data-reward-widget]").forEach(e=>{if(e.dataset.initialized)return;const r=e.querySelector(".reward-trigger");if(!r)return;e.dataset.initialized="true";const n=t=>{e.classList.toggle("is-open",t),r.setAttribute("aria-expanded",String(t))};r.addEventListener("click",()=>n(!e.classList.contains("is-open"))),document.addEventListener("click",t=>{e.contains(t.target)||n(!1)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&(n(!1),r.blur())})})}window.addEventListener("encrypted-content-revealed",()=>{document.querySelectorAll("[data-reward-after-unlock]").forEach(e=>{e.removeAttribute("hidden")})});document.addEventListener("astro:page-load",a);a();</script> <div id="gitalk-container" class="gitalk-container" data-abbrlink="2f57a694" data-title="正则表达式" data-astro-cid-ajg7agi2></div> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">   <script>
+  var GITALK_CFG = {"clientID":"Ov23lijmGQilj9J9CrdP","clientSecret":"bd5066a2aadbe28c20913dd390b8047031f7174a","repo":"dropsong.github.io","owner":"dropsong","admin":["dropsong"],"labels":["Gitalk"],"distractionFreeMode":false};
+</script> <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js">
+</script> <script>
+  (function() {
+    var c = document.getElementById('gitalk-container');
+    if (!c) return;
+    var id = c.dataset.abbrlink || '';
+    var title = c.dataset.title || '';
+    new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting && !c.dataset.loaded) {
+          c.dataset.loaded = '1';
+          new Gitalk(Object.assign({}, GITALK_CFG, {id: id, title: title})).render('gitalk-container');
+        }
+      });
+    }, {rootMargin: '200px'}).observe(c);
+  })();
+</script> </footer> </article> </main> <button class="toc-fab" id="toc-fab" aria-label="目录" data-astro-cid-6t6zfk7k> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M4 6h16M4 12h10M4 18h16" data-astro-cid-6t6zfk7k></path> </svg> </button> <!-- Desktop: hover popup panel --> <div class="toc-popup" id="toc-popup" data-astro-cid-6t6zfk7k> <div class="toc-popup-header" data-astro-cid-6t6zfk7k> <span class="toc-popup-title" data-astro-cid-6t6zfk7k>目录</span> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> <div class="toc-popup-body" data-astro-cid-6t6zfk7k> <ul class="toc-popup-list" data-astro-cid-6t6zfk7k> <li class="toc-popup-item" data-mtoc-section="概念" data-astro-cid-6t6zfk7k> <a href="#概念" class="toc-popup-link" data-mtoc="概念" data-astro-cid-6t6zfk7k> 概念 </a>  </li><li class="toc-popup-item" data-mtoc-section="入门" data-astro-cid-6t6zfk7k> <a href="#入门" class="toc-popup-link" data-mtoc="入门" data-astro-cid-6t6zfk7k> 入门 </a>  </li><li class="toc-popup-item" data-mtoc-section="元字符" data-astro-cid-6t6zfk7k> <a href="#元字符" class="toc-popup-link" data-mtoc="元字符" data-astro-cid-6t6zfk7k> 元字符 </a>  </li><li class="toc-popup-item" data-mtoc-section="字符转义" data-astro-cid-6t6zfk7k> <a href="#字符转义" class="toc-popup-link" data-mtoc="字符转义" data-astro-cid-6t6zfk7k> 字符转义 </a>  </li><li class="toc-popup-item" data-mtoc-section="字符类" data-astro-cid-6t6zfk7k> <a href="#字符类" class="toc-popup-link" data-mtoc="字符类" data-astro-cid-6t6zfk7k> 字符类 </a>  </li><li class="toc-popup-item" data-mtoc-section="分枝条件" data-astro-cid-6t6zfk7k> <a href="#分枝条件" class="toc-popup-link" data-mtoc="分枝条件" data-astro-cid-6t6zfk7k> 分枝条件 </a>  </li><li class="toc-popup-item" data-mtoc-section="分组" data-astro-cid-6t6zfk7k> <a href="#分组" class="toc-popup-link" data-mtoc="分组" data-astro-cid-6t6zfk7k> 分组 </a>  </li><li class="toc-popup-item" data-mtoc-section="反义" data-astro-cid-6t6zfk7k> <a href="#反义" class="toc-popup-link" data-mtoc="反义" data-astro-cid-6t6zfk7k> 反义 </a>  </li><li class="toc-popup-item" data-mtoc-section="后向引用" data-astro-cid-6t6zfk7k> <a href="#后向引用" class="toc-popup-link" data-mtoc="后向引用" data-astro-cid-6t6zfk7k> 后向引用 </a>  </li><li class="toc-popup-item" data-mtoc-section="零宽断言" data-astro-cid-6t6zfk7k> <a href="#零宽断言" class="toc-popup-link" data-mtoc="零宽断言" data-astro-cid-6t6zfk7k> 零宽断言 </a>  </li><li class="toc-popup-item" data-mtoc-section="贪婪与懒惰" data-astro-cid-6t6zfk7k> <a href="#贪婪与懒惰" class="toc-popup-link" data-mtoc="贪婪与懒惰" data-astro-cid-6t6zfk7k> 贪婪与懒惰 </a>  </li> </ul> </div> </div> <!-- Mobile: bottom sheet overlay --> <div class="toc-overlay" id="toc-overlay" data-astro-cid-6t6zfk7k></div> <div class="toc-sheet" id="toc-sheet" data-astro-cid-6t6zfk7k> <div class="toc-sheet-header" data-astro-cid-6t6zfk7k> <span class="toc-sheet-title" data-astro-cid-6t6zfk7k>目录</span> <div class="toc-sheet-actions" data-astro-cid-6t6zfk7k> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> <button class="toc-sheet-close" id="toc-sheet-close" aria-label="关闭" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M18 6L6 18M6 6l12 12" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> </div> <div class="toc-sheet-body" data-astro-cid-6t6zfk7k> <ul class="toc-sheet-list" data-astro-cid-6t6zfk7k> <li class="toc-sheet-item" data-msheet-section="概念" data-astro-cid-6t6zfk7k> <a href="#概念" class="toc-sheet-link" data-msheet="概念" data-astro-cid-6t6zfk7k> 概念 </a>  </li><li class="toc-sheet-item" data-msheet-section="入门" data-astro-cid-6t6zfk7k> <a href="#入门" class="toc-sheet-link" data-msheet="入门" data-astro-cid-6t6zfk7k> 入门 </a>  </li><li class="toc-sheet-item" data-msheet-section="元字符" data-astro-cid-6t6zfk7k> <a href="#元字符" class="toc-sheet-link" data-msheet="元字符" data-astro-cid-6t6zfk7k> 元字符 </a>  </li><li class="toc-sheet-item" data-msheet-section="字符转义" data-astro-cid-6t6zfk7k> <a href="#字符转义" class="toc-sheet-link" data-msheet="字符转义" data-astro-cid-6t6zfk7k> 字符转义 </a>  </li><li class="toc-sheet-item" data-msheet-section="字符类" data-astro-cid-6t6zfk7k> <a href="#字符类" class="toc-sheet-link" data-msheet="字符类" data-astro-cid-6t6zfk7k> 字符类 </a>  </li><li class="toc-sheet-item" data-msheet-section="分枝条件" data-astro-cid-6t6zfk7k> <a href="#分枝条件" class="toc-sheet-link" data-msheet="分枝条件" data-astro-cid-6t6zfk7k> 分枝条件 </a>  </li><li class="toc-sheet-item" data-msheet-section="分组" data-astro-cid-6t6zfk7k> <a href="#分组" class="toc-sheet-link" data-msheet="分组" data-astro-cid-6t6zfk7k> 分组 </a>  </li><li class="toc-sheet-item" data-msheet-section="反义" data-astro-cid-6t6zfk7k> <a href="#反义" class="toc-sheet-link" data-msheet="反义" data-astro-cid-6t6zfk7k> 反义 </a>  </li><li class="toc-sheet-item" data-msheet-section="后向引用" data-astro-cid-6t6zfk7k> <a href="#后向引用" class="toc-sheet-link" data-msheet="后向引用" data-astro-cid-6t6zfk7k> 后向引用 </a>  </li><li class="toc-sheet-item" data-msheet-section="零宽断言" data-astro-cid-6t6zfk7k> <a href="#零宽断言" class="toc-sheet-link" data-msheet="零宽断言" data-astro-cid-6t6zfk7k> 零宽断言 </a>  </li><li class="toc-sheet-item" data-msheet-section="贪婪与懒惰" data-astro-cid-6t6zfk7k> <a href="#贪婪与懒惰" class="toc-sheet-link" data-msheet="贪婪与懒惰" data-astro-cid-6t6zfk7k> 贪婪与懒惰 </a>  </li> </ul> </div> </div>  <script type="module">function F(){const f=document.getElementById("toc-fab"),o=document.getElementById("toc-popup"),a=document.getElementById("toc-overlay"),n=document.getElementById("toc-sheet"),q=document.getElementById("toc-sheet-close"),P=document.querySelectorAll(".toc-top-btn");if(!f||!o||!a||!n||!q)return;const p=()=>window.matchMedia("(max-width: 768px)").matches;let h=null,m=null,g=!1,E=!1;function A(){p()||(m&&clearTimeout(m),o.classList.add("open"),y(!0))}function B(){m&&clearTimeout(m),m=setTimeout(()=>{!g&&!E&&o.classList.remove("open")},200)}f.addEventListener("mouseenter",()=>{g=!0,A()}),f.addEventListener("mouseleave",()=>{g=!1,B()}),o.addEventListener("mouseenter",()=>{E=!0,A()}),o.addEventListener("mouseleave",()=>{E=!1,B()}),o.querySelectorAll(".toc-popup-link").forEach(t=>{t.addEventListener("click",()=>{setTimeout(()=>o.classList.remove("open"),150)})}),f.addEventListener("click",()=>{p()&&(a.style.display="block",n.style.display="flex",requestAnimationFrame(()=>{a.classList.add("open"),n.classList.add("open"),y(!0)}),document.body.style.overflow="hidden")});function v(){a.classList.remove("open"),n.classList.remove("open"),setTimeout(()=>{a.style.display="none",n.style.display="none"},300),document.body.style.overflow=""}q.addEventListener("click",v),a.addEventListener("click",v),n.querySelectorAll(".toc-sheet-link").forEach(t=>{t.addEventListener("click",()=>setTimeout(v,200))}),P.forEach(t=>{t.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"}),p()&&v()})});function I(t,b,s,i=!1){const l=t.querySelector(b),S=t.querySelector(s);if(!l||!S)return;const r=l.getBoundingClientRect(),e=S.getBoundingClientRect(),c=e.top>=r.top&&e.bottom<=r.bottom;if(!i&&c)return;const d=l.scrollTop+(e.top-r.top)-l.clientHeight/2+e.height/2;l.scrollTo({top:Math.max(0,d),behavior:i?"auto":"smooth"})}function k(t=!1){!p()&&o.classList.contains("open")&&I(o,".toc-popup-body",".toc-popup-link.active",t),p()&&n.classList.contains("open")&&I(n,".toc-sheet-body",".toc-sheet-link.active",t)}function y(t=!1){requestAnimationFrame(()=>k(t)),h&&clearTimeout(h),h=setTimeout(()=>{k(t),h=null},260)}let x="";function T(){const t=o.querySelectorAll(".toc-popup-link"),b=n.querySelectorAll(".toc-sheet-link"),s=[];t.forEach(e=>{const c=e.dataset.mtoc;if(c){const d=document.getElementById(c);d&&s.push({id:c,el:d})}});let i="";const l=window.scrollY+100;if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-4&&s.length>0)i=s[s.length-1].id;else for(let e=s.length-1;e>=0;e--)if(s[e].el.offsetTop<=l){i=s[e].id;break}t.forEach(e=>e.classList.toggle("active",e.dataset.mtoc===i)),b.forEach(e=>e.classList.toggle("active",e.dataset.msheet===i));function r(e,c,d,H){const R=(i?e.querySelector(`${c}.active`):null)?.closest(d)?.querySelector(H);e.querySelectorAll(H).forEach(u=>{u===R?(u.classList.add("expanded"),u.style.maxHeight=`${u.scrollHeight}px`):(u.classList.remove("expanded"),u.style.removeProperty("max-height"))})}r(o,".toc-popup-link",".toc-popup-item",".toc-popup-sub"),r(n,".toc-sheet-link",".toc-sheet-item",".toc-sheet-sub"),k(),i!==x&&(y(),x=i)}let w=!1;window.addEventListener("scroll",()=>{w||(requestAnimationFrame(()=>{T(),w=!1}),w=!0)});let L=null;window.addEventListener("resize",()=>{L&&clearTimeout(L),L=setTimeout(()=>{T(),y(!0),L=null},100)}),T()}document.addEventListener("astro:page-load",F);F();</script><footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner" data-astro-cid-sz7xmlte></div> </footer>  <script type="module" src="/_astro/CodeBlockEnhance.astro_astro_type_script_index_0_lang.Di89G-ws.js"></script> <div id="image-lightbox" class="lightbox-overlay" data-astro-cid-fbflauxb> <div class="lightbox-content" data-astro-cid-fbflauxb> <img id="lightbox-img" src="" alt="" data-astro-cid-fbflauxb> </div> </div>  <script type="module">function c(){const t=document.getElementById("image-lightbox"),n=document.getElementById("lightbox-img");if(!t||!n)return;function s(e){n.src=e,t.classList.add("open"),document.body.style.overflow="hidden"}function i(){t.classList.remove("open"),document.body.style.overflow=""}t.addEventListener("click",e=>{e.target===t&&i()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t.classList.contains("open")&&i()});function d(){document.querySelectorAll(".article-body img").forEach(e=>{const o=e;o.dataset.lightbox||(o.dataset.lightbox="true",o.style.cursor="zoom-in",o.addEventListener("click",()=>{s(o.src)}))})}document.addEventListener("astro:page-load",d),d()}document.addEventListener("astro:page-load",c);c();</script> <script type="module" src="/_astro/EncryptedBlock.astro_astro_type_script_index_0_lang.DuPogRv7.js"></script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"><script type="module">
+  import renderMathInElement from 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs';
+
+  function renderMath() {
+    const articleBody = document.querySelector('.article-body');
+    if (!articleBody) return;
+
+    renderMathInElement(articleBody, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      throwOnError: false,
+    });
+  }
+
+  document.addEventListener('astro:page-load', renderMath);
+  renderMath();
+</script> </div> </div> </body></html>  

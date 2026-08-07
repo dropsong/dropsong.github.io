@@ -1,0 +1,1084 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>人工智能导论 · dropsong&#39;s</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><style>.article-body{font-size:16px;line-height:1.85;color:var(--text);max-width:820px;margin:0 auto}.article-body h1,.article-body h2,.article-body h3,.article-body h4,.article-body h5,.article-body h6{margin-top:1.8em;margin-bottom:.6em;font-weight:600;line-height:1.35;color:var(--text)}.article-body h1{font-size:1.75rem}.article-body h2{font-size:1.45rem}.article-body h3{font-size:1.2rem}.article-body h4{font-size:1.05rem}.article-body p{margin-bottom:1.2em}.article-body p,.article-body li{white-space:pre-line}.article-body p,.article-body li,.article-body blockquote,.article-body td,.article-body th{word-break:normal;overflow-wrap:break-word}.article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.article-body a:hover{color:var(--accent-hover)}.article-body blockquote{margin:1.2em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:#5b9e8c1a;border-radius:0 var(--radius) var(--radius) 0;color:var(--muted)}.article-body blockquote>:last-child{margin-bottom:0}.article-body ul,.article-body ol{margin-bottom:1.2em;padding-left:1.5em}.article-body li>ul,.article-body li>ol{margin-bottom:0;white-space:normal}.article-body li:has(>ul,>ol){white-space:normal}.article-body li{margin-bottom:.25em}.article-body table{width:auto;max-width:100%;border-collapse:collapse;margin:1.5em auto;font-size:.925rem;overflow-x:auto}.article-body table th,.article-body table td{padding:.6em .85em;border:1px solid var(--border);text-align:left}.article-body table th{font-weight:600}.article-body hr{border:none;border-top:1px solid var(--border);margin:2em 0}.article-body img{border-radius:var(--radius);cursor:zoom-in}.article-body .article-figure{margin:1.5em 0;text-align:center}.article-body .article-figure img{display:block;margin:0 auto}.article-body .article-figure-caption{margin-top:.55em;color:var(--muted);font-size:.875rem;line-height:1.5}.article-body iframe{max-width:100%;border-radius:var(--radius)}.article-body .gdrive-pdf-wrapper{margin:1.5em 0;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius);background:#fff}.article-body .gdrive-pdf-header{display:flex;align-items:center;justify-content:space-between;min-height:2.75rem;padding:.5rem .875rem;border-bottom:1px solid var(--border);background:var(--bg)}.article-body .gdrive-pdf-label{color:var(--muted);font-size:.85rem}.article-body .gdrive-pdf-link{color:var(--accent);font-size:.8rem;text-decoration:none}.article-body .gdrive-pdf-link:hover{text-decoration:underline}.article-body .gdrive-pdf-frame{display:block;width:100%;height:min(720px,80vh);border:0;border-radius:0;background:#fff}.article-body :not(pre)>code{background:#fffaf0a6;border:1px solid rgba(180,155,130,.2);border-radius:4px;padding:.1em .4em;font-size:.875em}.article-body pre,.article-body pre.astro-code,.article-body .astro-code{background:transparent!important;background-color:transparent!important;border:1.5px dashed rgba(224,143,88,.45);border-radius:14px}.article-body pre.astro-code code,.article-body .astro-code code{background:transparent!important;background-color:transparent!important}.article-body pre,.article-body table{-webkit-overflow-scrolling:touch}.article-body .katex-display{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;margin:1.4em 0;padding:.25rem 0 .45rem;text-align:center;scrollbar-width:thin;scrollbar-color:rgba(224,143,88,.35) transparent;word-break:normal;overflow-wrap:normal}.article-body .katex-display>.katex{display:inline-block;width:max-content;max-width:none}.article-body .katex{white-space:nowrap;word-break:normal;overflow-wrap:normal}.article-body .katex-display::-webkit-scrollbar{height:4px}.article-body .katex-display::-webkit-scrollbar-thumb{background:transparent}.article-body .katex-display:hover::-webkit-scrollbar-thumb{background:var(--border)}
+</style>
+<link rel="stylesheet" href="/_astro/about.CS0PymYq.css">
+<style>.site-footer[data-astro-cid-sz7xmlte]{padding:2rem 1.5rem;text-align:center}.footer-inner[data-astro-cid-sz7xmlte]{max-width:var(--max-width-page);margin:0 auto;display:flex;justify-content:center;align-items:center;gap:1rem;font-size:.85rem;color:var(--muted)}.footer-muted[data-astro-cid-sz7xmlte]{color:var(--muted)}
+</style>
+<link rel="stylesheet" href="/_astro/_abbrlink_.BDkgFBJR.css">
+<style>.gitalk-container[data-astro-cid-ajg7agi2]{margin-top:2rem}.gt-container{color:var(--text)!important;font-family:inherit!important}.gt-container a{color:var(--accent)!important}.gt-container a:hover{color:var(--accent-hover, var(--accent))!important}.gt-container .gt-header-textarea{background:transparent!important;border:1.5px dashed rgba(224,143,88,.45)!important;border-radius:14px!important;color:var(--text)!important;box-shadow:none!important;outline:none!important;font-family:inherit!important;line-height:1.7!important}.gt-container .gt-header-textarea:focus{border-color:#e08f58ad!important;box-shadow:0 0 0 3px #e08f5814!important}.gt-container .gt-header-preview{background:transparent!important;border:1.5px dashed rgba(224,143,88,.35)!important;border-radius:14px!important;color:var(--text)!important}.gt-container .gt-comment-content{background:transparent!important;border-radius:12px!important}.gt-container .gt-btn-login,.gt-container .gt-btn-public{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important}.gt-container .gt-btn-login:hover,.gt-container .gt-btn-public:hover{background:var(--accent-hover)!important;border-color:var(--accent-hover)!important}.gt-container .gt-btn-preview{background:transparent!important;border:1px solid var(--accent)!important;color:var(--accent)!important}.gt-container .gt-btn-preview:hover{background:#5b9e8c1a!important}
+</style></head> <body data-page="post" data-astro-cid-37fxchfa> <div class="site-page" data-astro-cid-37fxchfa> <!-- Background decoration layer (cream paper style) --> <div class="site-background" aria-hidden="true" data-astro-cid-37fxchfa> <div class="bg-pattern" data-astro-cid-37fxchfa></div> <div class="bg-top-border" data-astro-cid-37fxchfa></div> <div class="bg-bottom-border" data-astro-cid-37fxchfa></div> </div> <!-- Content shell --> <div class="site-shell" data-astro-cid-37fxchfa>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="site-name" data-astro-cid-3ef6ksr2>dropsong's</a> <!-- Desktop: hover dropdown nav (button → panel drops below) --> <nav class="desktop-hover-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <div class="desktop-hover-nav-inner" data-astro-cid-3ef6ksr2> <button class="desktop-nav-trigger" type="button" aria-label="Open navigation menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> <div class="desktop-nav-dropdown" data-astro-cid-3ef6ksr2> <div class="desktop-nav-dropdown-body" data-astro-cid-3ef6ksr2> <a href="/archive/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Search</a> </div> </div> </div> </nav> <!-- Mobile: click-toggle nav (keep exactly as before) --> <nav class="header-nav" id="header-nav" data-astro-cid-3ef6ksr2> <a href="/archive/" class="nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="nav-link" data-astro-cid-3ef6ksr2>Search</a> </nav> <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> </header>  <script type="module">const e=document.getElementById("menu-toggle"),t=document.getElementById("header-nav");e&&t&&e.addEventListener("click",()=>{t.classList.toggle("open")});</script> <main class="post-page" data-astro-cid-gjtny2mx> <article class="post-article" data-astro-cid-gjtny2mx> <header class="post-header" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <h1 class="article-title" data-astro-cid-bjlpfrhy>人工智能导论</h1> <div class="article-meta" data-astro-cid-bjlpfrhy> <time class="article-date" data-astro-cid-bjlpfrhy>2024-07-03</time>  <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-category" data-astro-cid-bjlpfrhy>算法</span>   <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-tags" data-astro-cid-bjlpfrhy> #AI #A* #蒙特卡洛树 #α-β剪枝 #主观贝叶斯 #机器学习 #决策树 #信息论 #遗传算法 #SVM #KNN #神经网络 </span>   </div> </div> </header> <div class="post-body" id="post-body" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <div class="article-body" data-astro-cid-bjlpfrhy><h1 id="绪论"><a class="heading-anchor" href="#绪论">绪论</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">人工智能程序</th><th align="left">通常计算机程序</th></tr></thead><tbody><tr><td align="left">主要是<strong>符号</strong>处理</td><td align="left">主要是<strong>数字</strong>处理</td></tr><tr><td align="left"><strong>启发式搜索</strong></td><td align="left">依靠<strong>算法</strong></td></tr><tr><td align="left">控制结构和知识域<strong>相分</strong></td><td align="left">信息和控制联结在<strong>一起</strong></td></tr><tr><td align="left">易于修改、更新和改变</td><td align="left">难以修改</td></tr><tr><td align="left"><strong>允许不正确</strong>的答案</td><td align="left">要求<strong>正确的</strong>回答</td></tr><tr><td align="left">AI程序：<strong>干什么</strong></td><td align="left">传统程序：<strong>干些什么及如何干</strong></td></tr></tbody></table>
+<p>AI 概览：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/07/03/bV5jKDqWYnBHiZS.png" alt="80-1.png" loading="lazy"><figcaption class="article-figure-caption">80-1.png</figcaption></figure>
+<p>AI、机器学习、深度学习的关系：</p>
+<figure class="article-figure"><img src="https://bu.dusays.com/2024/07/03/668542c0e08db.png" alt="80-2.png" loading="lazy"><figcaption class="article-figure-caption">80-2.png</figcaption></figure>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/07/03/y4JTQjUlhdPKftY.png" alt="80-3.png" loading="lazy"><figcaption class="article-figure-caption">80-3.png</figcaption></figure>
+<p>三大学派：符号主义、连接主义、行为主义。</p>
+<p><strong>符号主义（逻辑主义、心理学派、计算机学派）</strong></p>
+<ul>
+<li>原理：物理符号系统假设和有限合理性假设</li>
+<li>起源：源于数理逻辑</li>
+<li>基本思想
+<ul>
+<li>人的认知基元是符号，智能和知识可用符号表示，认知过程即符号操作过程，擅长抽象思维。</li>
+<li>人是一个物理符号系统，计算机也是一个物理符号系统，因此，能用计算机来模拟人的智能行为。</li>
+<li>知识是信息的一种形式，是构成智能的基础。人工智能的核心问题是知识表示、知识推理。</li>
+<li><img src="https://s2.loli.net/2024/07/03/g6Jr8otqR4DnTiE.png" alt="80-4.png" loading="lazy"></li>
+<li>启发式程序、专家系统、知识工程</li>
+</ul>
+</li>
+</ul>
+<p><strong>连接主义（生理学派）</strong></p>
+<ul>
+<li>原理：神经网络及神经网络间的连接机制和学习算法</li>
+<li>起源：源于仿生学，特别是人脑模型的研究</li>
+<li>基本思想
+<ul>
+<li>认识的基本元素是神经元，认识过程是大量神经元的并行活动，擅长形象思维。</li>
+<li>人脑不同于电脑，并提出连接主义的大脑工作模式，用于取代符号操作的电脑工作模式。</li>
+<li><img src="https://s2.loli.net/2024/07/03/ZuGbtIgvWSicOxP.png" alt="80-5.png" loading="lazy"></li>
+</ul>
+</li>
+</ul>
+<p><strong>行为主义（进化主义、控制论学派）</strong></p>
+<ul>
+<li>原理：控制论及感知-动作型控制系统</li>
+<li>起源：源于控制论</li>
+<li>基本思想
+<ul>
+<li>智能取决于感知和行动，提出智能行为的“感知-动作”模式。</li>
+<li>智能不需要知识、表示和推理；人工智能可以像人类智能一样逐步进化；智能行为只能在现实世界中与周围环境进行交互作用而表现出来。</li>
+<li><img src="https://s2.loli.net/2024/07/03/Tmw8Loh2BAtVkRx.png" alt="80-6.png" loading="lazy"></li>
+</ul>
+</li>
+</ul>
+<p><strong>三大学派比较</strong>：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/07/03/ZOA5g7RtHN6QEM4.png" alt="80-7.png" loading="lazy"><figcaption class="article-figure-caption">80-7.png</figcaption></figure>
+<h1 id="搜索技术"><a class="heading-anchor" href="#搜索技术">搜索技术</a></h1>
+<h2 id="搜索问题"><a class="heading-anchor" href="#搜索问题">搜索问题</a></h2>
+<p>搜索方式的分类：</p>
+<ul>
+<li>回溯搜索</li>
+<li>盲目搜索（深度优先、宽度优先）</li>
+<li>启发式搜索（<code>A</code>算法→<code>A*</code>算法→<code>A*</code>算法的改进）</li>
+</ul>
+<p>传教士和野人问题：
+问题可以转化为<strong>状态空间的搜索问题</strong>：</p>
+<ul>
+<li>用在河的左岸的传教士人数、野人人数和船的情况表示问题</li>
+<li>初始状态用三元组表示为（3，3，1）</li>
+<li>结束状态为（0，0，0）</li>
+<li>中间状态为（2，2，0）、（3，2，1）、（3，0，0）…… 等，每个三元组对应了三维空间上的一个点</li>
+</ul>
+<p><strong>表示方法 — 状态空间表示法</strong></p>
+<ul>
+<li><strong>状态</strong>用来表示系统状态,事实等叙述型知识的一组变量或数组
+<span class="math-source">$Q = [q_1, q_2, …, q_n]^t$</span></li>
+<li><strong>操作</strong>是用来表示引起状态变化的过程型知识的一组关系或函数
+<span class="math-source">$F:\{f_1, f_2, …, f_m\}$</span></li>
+<li><strong>状态空间(State Space)</strong> 是利用状态变量和操作符号，表示系统或问题的有关知识的符号体系
+四元组 <span class="math-source">$(S, O, S_0, G):$</span>
+<span class="math-source">$S$</span> 状态集合
+<span class="math-source">$O$</span> 操作算子集合
+<span class="math-source">$S_0$</span> 初始状态，<span class="math-source">$S_0 \subset S$</span>
+<span class="math-source">$G$</span> 目的状态，<span class="math-source">$G \subset S$</span>，（可是若干具体状态，也可是满足某些性质的路径信息描述）
+<strong>从S0结点到G结点的路径被称为求解路径。</strong></li>
+<li><strong>状态空间的一个解</strong>是一有限操作算子序列，它使初始状态转为目标状态
+<span class="math-source">$S_0 \xrightarrow{O_1} S_1 \xrightarrow{O_2} S_2 \xrightarrow{O_3} \cdots \xrightarrow{O_k} G$</span>
+其中 O1，…，Ok 即为状态空间的一个解（解往往不是唯一的）</li>
+</ul>
+<p>如何在一个较大的问题空间中，只搜索较小的范围，就找到问题的解呢？</p>
+<p>对于大空间问题，搜索策略要考虑组合爆炸的问题。</p>
+<p><strong>盲目搜索</strong>，未利用问题的知识，采用固定的方式生成状态的方法。</p>
+<p><strong>启发式搜索</strong>，利用问题的知识，缩小问题的搜索范围，选择那些最有可能在（最优）解路径上的状态优先搜索，以尽快地找到问题的（最优）解。</p>
+<h2 id="回溯策略"><a class="heading-anchor" href="#回溯策略">回溯策略</a></h2>
+<p><strong>考虑一个经典问题：N 皇后。</strong></p>
+<p>我们可以用 dfs 的方法寻找解，但是效率不高。有什么改进的思路吗？</p>
+<ul>
+<li>回溯有时不是上一步造成的，有可能是更早的那一步造成的——多步回溯</li>
+<li>找到回溯的原因，在开始就避免回溯——需要引入一些相关信息</li>
+<li>当然相关信息的引入不应造成搜索负担的巨大加重，否则得不偿失</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/07/04/oNBmg2RPncKG9Xz.png" alt="80-8.png" loading="lazy"><figcaption class="article-figure-caption">80-8.png</figcaption></figure>
+<p>如此一来，相比于固定排序的搜索树（没有引入知识），动态排序的搜索树（引入知识）的回溯次数大大减少。</p>
+<p>回溯搜索算法改进（？）：</p>
+<ul>
+<li>推广的回溯算法可应用于一般问题的求解，但这两个算法只描述了回溯一层的情况，即第 n 层递归调用失败，则控制退回到（n－1）层</li>
+<li>深层搜索失败往往在于浅层原因，因此也可以利用启发信息，分析失败的原因，再回溯到合适的层次上，即<strong>多层回溯策略</strong>，目前已有一些系统使用了这种策略</li>
+</ul>
+<h2 id="图搜索策略"><a class="heading-anchor" href="#图搜索策略">图搜索策略</a></h2>
+<p>问题的引出：</p>
+<ul>
+<li>回溯搜索：只保留从初始状态到当前状态的一条路径
+<ul>
+<li>节省空间，但已搜索部分不能被以后使用</li>
+</ul>
+</li>
+<li>图搜索：保留所有已经搜索过的路径
+<ul>
+<li>搜索过的路径被保留</li>
+<li>利用相关知识，可以进行启发式搜索</li>
+</ul>
+</li>
+<li>图搜索策略是实现从一个隐含图中生成出一部分确实含有一个目标节点的显式表示子图的搜索过程</li>
+</ul>
+<p>略：一般的图搜索算法、dfs、bfs</p>
+<h3 id="启发式图搜索"><a class="heading-anchor" href="#启发式图搜索">启发式图搜索</a></h3>
+<p>利用知识来引导搜索，减少搜索范围，降低问题复杂度。</p>
+<p>启发信息的强度</p>
+<ul>
+<li>强：降低搜索量，但可能找不到最优解</li>
+<li>弱：工作量较大，可能退化为盲目搜索，但找到最优解的概率相对较大</li>
+</ul>
+<h3 id="a-算法"><a class="heading-anchor" href="#a-算法">A* 算法</a></h3>
+<p>算法流程（如果链接挂了可在 archive.ph 中查看）：</p>
+<p><a href="https://paul.pub/a-star-algorithm/">https://paul.pub/a-star-algorithm/</a></p>
+<p>很多介绍 A* 的文章只是讲了 how ，而没有讲 why ，少数讲 why 的博主恐怕在一些细节上也和自己和解了。为此，找一下原始的论文是必要的：</p>
+<section class="gdrive-pdf-wrapper"><header class="gdrive-pdf-header"><span class="gdrive-pdf-label">PDF</span><a class="gdrive-pdf-link" href="https://drive.google.com/file/d/1aRpKPbJ1qMwoRRWjSso47WKvTp5PKScE/view" target="_blank" rel="noopener">在 Google Drive 打开</a></header><iframe class="gdrive-pdf-frame" src="https://drive.google.com/file/d/1aRpKPbJ1qMwoRRWjSso47WKvTp5PKScE/preview" loading="lazy" title="PDF preview"></iframe></section>
+<p>很好论文，解决了我多年的疑惑：</p>
+<ul>
+<li>如果 h(n) 始终小于等于节点 n 到终点的代价，则 A* 算法保证一定能够找到最短路径。为什么？</li>
+<li>另外一个小细节：f(n) 是单调不减的，这意味着一旦节点从优先队列中被移出并处理，它的最优路径已经被找到，因为任何从此节点出发的新路径不会比已经找到的路径更优。</li>
+</ul>
+<p>练习：</p>
+<ul>
+<li><a href="https://www.luogu.com.cn/problem/P5507">P5507 机关</a>：A*</li>
+<li><a href="https://www.luogu.com.cn/problem/P2324">SCOI2005 骑士精神</a>：IDA*</li>
+</ul>
+<h2 id="与或图搜索问题"><a class="heading-anchor" href="#与或图搜索问题">与或图搜索问题</a></h2>
+<section class="gdrive-pdf-wrapper"><header class="gdrive-pdf-header"><span class="gdrive-pdf-label">PDF</span><a class="gdrive-pdf-link" href="https://drive.google.com/file/d/1ZC5ytKk3EpBHKfzWS6vl2-mvyWvtw1pZ/view" target="_blank" rel="noopener">在 Google Drive 打开</a></header><iframe class="gdrive-pdf-frame" src="https://drive.google.com/file/d/1ZC5ytKk3EpBHKfzWS6vl2-mvyWvtw1pZ/preview" loading="lazy" title="PDF preview"></iframe></section>
+<blockquote>
+<p>目录：
+与或图搜索  2
+博弈树搜索（MINI-MAX、α-β剪枝）  10
+蒙特卡洛树搜索  25</p>
+</blockquote>
+<p>一些视频资料：</p>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="https://player.bilibili.com/player.html?bvid=BV1AK411M7BB&#x26;page=1&#x26;autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;"> </iframe>
+</div>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="https://player.bilibili.com/player.html?bvid=BV14Z4y1A7J3&#x26;page=1&#x26;autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;"> </iframe>
+</div>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="https://player.bilibili.com/player.html?bvid=BV1JD4y1Q7mV&#x26;page=1&#x26;autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;"> </iframe>
+</div>
+<h1 id="知识表示"><a class="heading-anchor" href="#知识表示">知识表示</a></h1>
+<h2 id="概述"><a class="heading-anchor" href="#概述">概述</a></h2>
+<p><strong>选取知识表示的方法的因素</strong>：</p>
+<ul>
+<li>表示范围是否广泛
+<ul>
+<li>要求表示内容范围广泛
+<ul>
+<li>数理逻辑表示是一种广泛的知识表示办法，如果单纯用数字表示，则范围就有限</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>是否适于推理
+<ul>
+<li>人工智能只能处理适合推理的知识表示
+<ul>
+<li>数学模型适合推理，普通的数据库只能供浏览检索，但不适合推理</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>是否适于计算机处理
+<ul>
+<li>计算机只能处理离散的、量化的字节流。用文字表述的知识和连续形式表示的知识（如微分方程）不适合计算机处理</li>
+</ul>
+</li>
+<li>是否有高效的算法
+<ul>
+<li>考虑到实用的性能，必须有高效的求解算法，知识表示才有意义</li>
+</ul>
+</li>
+<li>能否表示不精确知识
+<ul>
+<li>自然界的信息具有先天的模糊性和不精确性，能否表示不精确知识也是考虑的重要因素</li>
+<li>许多知识表示方法往往要经过改造，如确定性方法、主观贝叶斯方法等对证据和规则引入了不确定性度量，就是为了表达不精确的知识</li>
+</ul>
+</li>
+<li>能否模块化</li>
+<li>知识和元知识能否用统一的形式表示
+<ul>
+<li>知识和元知识是属于不同层次的知识，使用统一的表示方法可以使知识处理简单</li>
+</ul>
+</li>
+<li>是否加入启发信息
+<ul>
+<li>在已知的前提下，如何最快的推得所需的结论，以及如何才能推得最佳的结论，我们的认识往往是不精确的。因此，往往需要在元知识（控制知识）加入一些控制信息，也就是通常所说的启发信息</li>
+</ul>
+</li>
+<li>过程性表示还是说明性表示
+<ul>
+<li>说明性知识表示涉及细节少，抽象程度高，因此可靠性好，修改方便，但执行效率低</li>
+<li>过程性知识表示的优缺点与说明性知识表示相反</li>
+</ul>
+</li>
+<li>表示方法是否自然
+<ul>
+<li>一般要尽量在表示方法的自然和使用效率之间取得平衡。例如，对于推理来说，PROLOG 比高级语言如 Visual C++ 自然，但显然牺牲了效率</li>
+</ul>
+</li>
+</ul>
+<p>同构与同态：</p>
+<figure class="article-figure"><img src="https://bu.dusays.com/2024/07/17/6697d113cd9f8.png" alt="80-9.png" loading="lazy"><figcaption class="article-figure-caption">80-9.png</figcaption></figure>
+<p><strong>表示观</strong>是对于“什么是表示”这一基本问题的不同理解和采用的方法论，即指导知识表示的思想观点称为表示观。</p>
+<p>人工智能领域关于知识表示的观点的<strong>争论焦点</strong>是常识的处理、表示与推理的关系等问题。</p>
+<p><strong>认识论表示观</strong>：认为表示是对自然世界的表述，表示自身不显示任何智能行为。其唯一的作用就是携带知识。这意味着表示可以独立于启发式来研究。</p>
+<p><strong>本体论（D.Lenta提出）</strong>：认为表示是对自然世界的一种近似，它规定了看待自然世界的方式。即一个约定的集合。表示只是描述了关心的一部分，逼真是不可能的。本体论主要解决的问题是：</p>
+<ul>
+<li>表示需对世界的某个部分给与特别的注意（聚集），而对世界的另外部分衰减，以求达到有效求解。</li>
+<li>对世界可以采用不同的方式来记述。注重的不是“其语言形式，而是其内容”。此内容不是某些特定领域的特殊的专家知识，而是自然世界中那些具有普通意义的一般知识。</li>
+<li>计算效率无疑是表示的核心问题之一。即有效地知识组织及与领域有关的启发式知识是其提高计算效率的手段。</li>
+<li>推理是表示观中不可缺少的一部分。表示研究应与启发式搜索联系起来。认为不考虑推理的纯粹表示是不存在的。</li>
+</ul>
+<h2 id="表示方法"><a class="heading-anchor" href="#表示方法">表示方法</a></h2>
+<h3 id="逻辑表示法"><a class="heading-anchor" href="#逻辑表示法">逻辑表示法</a></h3>
+<p>逻辑表示法的例子：</p>
+<figure class="article-figure"><img src="https://bu.dusays.com/2024/07/21/669cc5b6232ef.png" alt="80-10.png" loading="lazy"><figcaption class="article-figure-caption">80-10.png</figcaption></figure>
+<p>图片示例：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/07/21/KNMO48VQH3RLUqp.png" alt="80-11.png" loading="lazy"><figcaption class="article-figure-caption">80-11.png</figcaption></figure>
+<h3 id="产生式规则表示法"><a class="heading-anchor" href="#产生式规则表示法">产生式规则表示法</a></h3>
+<section class="gdrive-pdf-wrapper"><header class="gdrive-pdf-header"><span class="gdrive-pdf-label">PDF</span><a class="gdrive-pdf-link" href="https://drive.google.com/file/d/1RgISIhsiBYFPGJIB6gGe1riGEGX0BV5W/view" target="_blank" rel="noopener">在 Google Drive 打开</a></header><iframe class="gdrive-pdf-frame" src="https://drive.google.com/file/d/1RgISIhsiBYFPGJIB6gGe1riGEGX0BV5W/preview" loading="lazy" title="PDF preview"></iframe></section>
+<h3 id="语义网络表示法"><a class="heading-anchor" href="#语义网络表示法">语义网络表示法</a></h3>
+<p>语义网络表示法和产生式表示法及谓词逻辑表示法之间有着对应的表示能力。</p>
+<p>表示形式：</p>
+<ul>
+<li>谓词逻辑表示法，Relation（Object1，Object2）</li>
+<li>语义网络表示法为（Object1，Relation，Object2）</li>
+<li>语义网络中连接弧上的语义关系对应于逻辑表示法中的谓词关系</li>
+</ul>
+<p>一些例子：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/07/21/g8rQ3GCadWH7xj4.png" alt="80-12.png" loading="lazy"><figcaption class="article-figure-caption">80-12.png</figcaption></figure>
+<p>语义网络推理，<strong>相应的推理方法还不完善。</strong> 语义网络的推理过程主要有两种：</p>
+<ul>
+<li>继承</li>
+<li>匹配</li>
+</ul>
+<h3 id="框架表示法"><a class="heading-anchor" href="#框架表示法">框架表示法</a></h3>
+<p>省流：刻板印象、模板、…</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/07/21/lIEq4viYLdzSuHJ.png" alt="80-13.png" loading="lazy"><figcaption class="article-figure-caption">80-13.png</figcaption></figure>
+<h3 id="脚本表示法"><a class="heading-anchor" href="#脚本表示法">脚本表示法</a></h3>
+<p>脚本表示法是框架的特殊形式。</p>
+<p>例子，医院的脚本：</p>
+<blockquote>
+<p><strong>开场条件：</strong></p>
+<ol>
+<li>病人有病。</li>
+<li>病人的病需要找医生诊治。</li>
+<li>病人有钱。</li>
+<li>病人能够去医院。</li>
+</ol>
+<p><strong>角色：</strong> 病人、医生、护士。</p>
+<p><strong>道具：</strong> 医院、挂号室、椅子、桌子、药方、药房、钱、药。</p>
+<p><strong>场景：</strong>
+场景1 进入医院
+（1）  人走进医院
+（2）  病人挂号
+（3）  病人在椅子上坐下等待看病
+场景2  看病
+（1）  病人进入医生的办公室
+（2）  病人向医生所说病状
+（3）  医生向病人解释病情
+（4）  医生给病人开药方
+场景3  交费
+（1）  病人到交费处
+（2）  病人递交药方
+（3）  病人交钱
+（4）  病人取回药方及收据
+场景4  取药
+（1）  病人到药房
+（2）  病人递交药方
+（3）  病人取药
+场景5 离开
+（1）  病人离开医院</p>
+<p><strong>结果：</strong>
+1．病人看病了，明白了自己的病是怎么回事
+2．病人花了钱，买了药
+3．医生付出了劳动
+4．医院的药品少了</p>
+</blockquote>
+<p>特点：</p>
+<ul>
+<li>比语义网络、框架等呆板</li>
+<li>知识表达范围很窄</li>
+<li>不适用于表达各种知识，但对实现构思好的特定知识非常有效</li>
+</ul>
+<h2 id="知识图谱"><a class="heading-anchor" href="#知识图谱">知识图谱</a></h2>
+<p>什么是知识图谱？</p>
+<ul>
+<li>知识图谱是 Google 用于增强其搜索引擎功能的知识库（Google 知识图谱，5 亿对象，35 亿事实关系）。</li>
+<li>从学术的角度，<strong>“知识图谱本质上是语义网络（Semantic Network）的知识库”</strong>。</li>
+<li>从实际应用的角度出发，可以简单地把知识图谱理解成<strong>多关系图（Multi-relational Graph）</strong>。
+<ul>
+<li>多关系图一般包含多种类型的节点和多种类型的边</li>
+<li>节点：概念、实体</li>
+<li>边：关系</li>
+</ul>
+</li>
+</ul>
+<p>知识图谱旨在以结构化的形式描述客观世界中存在的概念、实体及其间的复杂关系。</p>
+<ul>
+<li>概念：对客观事物的概念化表示，如人、动物、组织机构</li>
+<li>实体：客观世界中的具体事务，画家达芬奇、作品蒙娜丽莎</li>
+<li>关系：描述概念、实体之间客观存在的关联</li>
+</ul>
+<p>一些具体表现：</p>
+<ul>
+<li>传统搜索引擎会返回包含用户搜索关键词的页面</li>
+<li>知识图谱会返回<strong>知识卡片（Knowledge card）</strong>，为用户查询或返回答案中所包含的概念或实体提供详细的结构化摘要
+<img src="https://s2.loli.net/2024/07/22/Mo3g2fP75uBQYZy.png" alt="80-14.png" loading="lazy"></li>
+</ul>
+<p>知识图谱经历了由人工和群体智慧构建，到面向互联网利用机器学习和信息抽取技术自动获取的过程。</p>
+<p>维基百科是利用群体智能建立的互联网上至今最大的知识资源。</p>
+<p>知识图谱的应用：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/07/22/QHdFvaNWloMiDT1.png" alt="80-15.png" loading="lazy"><figcaption class="article-figure-caption">80-15.png</figcaption></figure>
+<h1 id="逻辑推理"><a class="heading-anchor" href="#逻辑推理">逻辑推理</a></h1>
+<h2 id="概述-1"><a class="heading-anchor" href="#概述-1">概述</a></h2>
+<p><strong>演绎推理：</strong></p>
+<ul>
+<li>从全称判断推出特称判断或单称判断的过程，即从一般到个别的推理</li>
+<li>演绎推理中最常用的形式是<strong>三段论</strong>法（大前提、小前提、结论）</li>
+<li>例如：
+<ul>
+<li>所有的推理系统都是智能系统——一般的知识</li>
+<li>专家系统是推理系统——个体的判断</li>
+<li>所以，专家系统是智能系统——新判断</li>
+</ul>
+</li>
+<li>演绎推理没有增加新的知识</li>
+</ul>
+<p><strong>归纳推理：</strong></p>
+<ul>
+<li>从足够多的事例中归纳出一般性结论的推理过程，是一种<strong>从个别到一般的推理过程</strong></li>
+<li>常用的归纳推理有<strong>简单枚举法</strong>和<strong>类比法</strong>
+<ul>
+<li><strong>枚举法归纳推理</strong>是由已观察到的事物都有某属性，而没有观察到相反的事例，从而推出某类事物都有某属性，推理过程为：
+<ul>
+<li>S1 是 P，S2 是 P，…，Sn 是 P，
+（S1,S2, …,Sn 是 S 类中的个别事物，在枚举中兼容）
+推出 S 都是  P</li>
+</ul>
+</li>
+<li>枚举法归纳推理分<strong>完全归纳推理</strong>与<strong>不完全归纳推理</strong>。完全归纳推理是必然性推理，不完全推理得出的结论不具有必然性。</li>
+<li>在两个或两类事物在许多属性上都相同的基础上，推出它们在其它属性上也相同，是<strong>类比法归纳推理</strong>。</li>
+<li>类比法归纳可形式化地表示为：
+A 具有属性a,b,c,d,e；B 具有属性a,b,c,d；推出 B 也具有属性e 。</li>
+<li>类比法的可靠程度决定于两个或两类事物的相同属性与推出的那个属性之间的相关程度，相关程度越高，则类比法的可靠性就越高</li>
+</ul>
+</li>
+<li>归纳推理增加了知识（在机器学习部分称为归纳学习）</li>
+</ul>
+<p><strong>默认推理</strong></p>
+<ul>
+<li>又称<strong>缺省推理</strong>，是在知识不完全的情况下假设某些条件已经具备，所进行的推理。</li>
+<li>如：在条件A已成立的情况下，如果没有足够的证据能证明条件B不成立，则就默认B是成立的，并在此默认的前提下进行推理，推导出某个结论。</li>
+<li>如果到某一时刻发现原先所作的默认不正确，则要撤消所作的默认以及由此默认推出的所有结论，重新按新情况进行推理。</li>
+</ul>
+<h2 id="归结原理"><a class="heading-anchor" href="#归结原理">归结原理</a></h2>
+<p>Robinson 的归结原理使得自动定理证明得以实现。归结推理方法是机器定理证明的主要方法。</p>
+<section class="gdrive-pdf-wrapper"><header class="gdrive-pdf-header"><span class="gdrive-pdf-label">PDF</span><a class="gdrive-pdf-link" href="https://drive.google.com/file/d/1VsMFwZ5a0ZdOAVsMRdMRaB0GNQqeVdRM/view" target="_blank" rel="noopener">在 Google Drive 打开</a></header><iframe class="gdrive-pdf-frame" src="https://drive.google.com/file/d/1VsMFwZ5a0ZdOAVsMRdMRaB0GNQqeVdRM/preview" loading="lazy" title="PDF preview"></iframe></section>
+<blockquote>
+<p><strong>目录</strong>
+1 命题逻辑的归结法
+10 谓词逻辑归结基础（SKolem标准型、子句集）
+30 归结原理（置换、归结式、“快乐学生”问题）
+50 归结过程的控制策略（删除、支撑集、语义、线性、单元、输入）</p>
+</blockquote>
+<h1 id="不确定性推理"><a class="heading-anchor" href="#不确定性推理">不确定性推理</a></h1>
+<h2 id="概述-2"><a class="heading-anchor" href="#概述-2">概述</a></h2>
+<p>不确定性包括<strong>证据</strong>的不确定性和<strong>知识</strong>的不确定性。</p>
+<p>证据通常有两类：<strong>初始事实</strong>、推理过程中产生的<strong>中间结果</strong>。</p>
+<p>证据的不确定性用 C(E) 表示。</p>
+<p>在规则中，E 是规则的前提即证据，H 是该规则的结论，也可以是其它规则的证据。</p>
+<ul>
+<li>规则的不确定性：用一个数值 f(E，H) 表示，称为<strong>规则强度</strong>。</li>
+</ul>
+<p>在不精确推理中，由于知识和证据都具有不确定性，而且知识所要求的不确定性程度与证据实际具有的不确定性程度不一定相同，因而就出现了“怎样才算匹配成功？”的问题。</p>
+<p>可以设计一个算法用来计算匹配双方<strong>相似的程度</strong>，另外再指定一个<strong>相似的限度</strong>，用来衡量匹配双方相似的程度是否落在指定的限度内。</p>
+<p><strong>不确定性的更新和传播：</strong>
+在推理过程中如何考虑知识不确定性的动态积累和传递？</p>
+<p>推理树：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/07/23/wHcWI12nh9aN3gR.png" alt="80-16.png" loading="lazy"><figcaption class="article-figure-caption">80-16.png</figcaption></figure>
+<h2 id="确定性方法可信度方法"><a class="heading-anchor" href="#确定性方法可信度方法">确定性方法（可信度方法）</a></h2>
+<p>MYCIN 系统研制过程中产生的不确定推理方法（然而这个名字有点误导性）。</p>
+<p>规则 A→B，其可信度 CF(B,A)，有 -1 ≤ CF(B, A) ≤ 1</p>
+<div class="math-source">$$
+CF(B,A)=
+\begin{cases} 
+\frac{P(B|A)-P(B)}{1-P(B)},  &#x26; \text{if }P(B|A) \ge P(B) \\
+\frac{P(B|A)-P(B)}{P(B)}, &#x26; \text{if } P(B|A) \lt P(B)
+\end{cases}
+$$</div>
+<p>CF(B, A)表示的意义：证据为真时</p>
+<ul>
+<li>相对于 P(～B) = 1 - P(B) 来说，A 对 B 为真的支持程度。即 A 发生更支持 B 发生，此时 CF(B, A) ≥ 0</li>
+<li>相对于 P(B) 来说，A 对 B 为真的不支持程度。即 A 发生不支持 B 发生，此时 CF(B, A) &#x3C; 0</li>
+</ul>
+<p>CF(B, A)的特殊值：</p>
+<ul>
+<li>CF(B, A) = 1，前提真，结论必真</li>
+<li>CF(B, A) = -1，前提真，结论必假</li>
+<li>CF(B, A) = 0 ，前提真假与结论无关</li>
+</ul>
+<p><strong>实际应用中 CF(B, A) 的值由专家确定，并不是由P(B|A), P(B)计算得到的。</strong></p>
+<p>证据 A 的可信度表示为 CF(A)，-1 ≤ CF( A) ≤ 1 .</p>
+<p>特殊值：</p>
+<ul>
+<li>CF(A) = 1，    前提肯定真</li>
+<li>CF(A) = -1，   前提肯定假</li>
+<li>CF(A) = 0，	   对前提一无所知</li>
+<li>CF(A) ＞ 0， 表示A以CF(A)程度为真</li>
+<li>CF(A) ＜ 0， 表示A以CF(A)程度为假</li>
+</ul>
+<p>实际使用时：</p>
+<ul>
+<li><strong>初始证据</strong>的 CF 值由专家根据经验提供</li>
+<li><strong>其它证据</strong>的 CF 通过规则进行推理计算得到</li>
+</ul>
+<p><strong>“与”的计算</strong>：	 A1 ∧ A2 →B
+CF(A1 ∧ A2) = min { CF(A1), CF(A2) }</p>
+<p><strong>“或”的计算</strong>：	A1 ∨ A2 →B
+CF(A1 ∨ A2) = max { CF(A1), CF(A2) }</p>
+<p><strong>“非”的计算：</strong>
+CF(～A) = -CF(A)</p>
+<p><strong>由 A，A →B，求 B</strong>：
+CF(B) = max{ 0, CF(A) } · CF(B,A)
+（ CF(A) ＜ 0 时可以不算，即为“0”）</p>
+<p><strong>合成</strong>：由 <span class="math-source">$CF_1(B)$</span>、<span class="math-source">$CF_2(B)$</span>，求 CF(B)</p>
+<div class="math-source">$$
+CF(B) = 
+\begin{cases} 
+CF_1(B)+CF_2(B)-CF_1(B)CF_2(B),  &#x26; CF_1(B) \ge 0, CF_2(B) \ge 0\\
+CF_1(B)+CF_2(B)+CF_1(B)CF_2(B), &#x26; CF_1(B) \lt 0, CF_2(B) \lt 0\\
+CF_1(B)+CF_2(B), &#x26; CF_1(B)CF_2(B) \lt 0
+\end{cases}
+$$</div>
+<p>注意：以上公式<strong>不满足组合交换性</strong>，即：计算结果与各条规则采用的先后顺序有关。</p>
+<p>MYCIN 规定证据的<strong>可信度 CF(A)&#x3C;0.2 时，就认为该证据引入的规则不可使用。</strong></p>
+<p>EMYCIN 系统（MYCIN 发展而成）对 CF1(B) 和 CF2(B) 符号不同时，进行了修正：</p>
+<div class="math-source">$$
+CF(B) = 
+\begin{cases} 
+CF_1(B)+CF_2(B)-CF_1(B)CF_2(B),  &#x26; CF_1(B) \ge 0, CF_2(B) \ge 0\\
+CF_1(B)+CF_2(B)+CF_1(B)CF_2(B), &#x26; CF_1(B) \lt 0, CF_2(B) \lt 0\\
+\frac{CF_1(B)+CF_2(B)}{1-\text{min}\{|CF_1(B)|, |CF_2(B)| \}} , &#x26; CF_1(B)CF_2(B) \lt 0
+\end{cases}
+$$</div>
+<p><strong>结论更新：</strong>
+已经有一个先验的结论可信度，如何由规则更新这个可信度？</p>
+<p>结论更新的三种情况：
+<img src="https://s2.loli.net/2024/07/31/kzcJFGyiX87eAs2.png" alt="80-17.png" loading="lazy"></p>
+<h2 id="主观-bayes"><a class="heading-anchor" href="#主观-bayes">主观 Bayes</a></h2>
+<p>该方法首先应用于地矿勘探系统 PROSPECTOR 中。</p>
+<p>在这种方法中，引入了两个数值 <strong>（LS,LN）</strong> ：</p>
+<ul>
+<li>前者体现规则成立的充分性，后者则表现了规则成立的必要性</li>
+<li>LS 表征的是 A 的发生对 B 发生的影响程度</li>
+<li>LN 表征的是 A 的不发生对 B 发生的影响程度</li>
+<li><strong>实际应用中，采用专家给定的 LS, LN 值</strong></li>
+</ul>
+<h3 id="证据的不确定性"><a class="heading-anchor" href="#证据的不确定性">证据的不确定性</a></h3>
+<p>几率函数 O(A) 表示证据 A 的不确定性：</p>
+<div class="math-source">$$
+O(A) = \frac{P(A)}{1-P(A)} = 
+\begin{cases} 
+0  &#x26; \text{A is false} \\
+\infty  &#x26; \text{A is true} \\
+(0,\infty) &#x26; \text{uncertain}
+\end{cases}
+$$</div>
+<p>几率函数与概率函数形式不同，但是变化相同：<strong>当A为真的程度越大（P(A)越大），几率函数的值也越大。</strong></p>
+<p>在推理过程中需要概率函数值时，可用等式：</p>
+<div class="math-source">$$
+P(A) = \frac{O(A)}{1+O(A)}
+$$</div>
+<p>特殊值：</p>
+<ul>
+<li>P(X) = 0, O(X) = 0</li>
+<li>P(X) = 0.5, O(X) = 1</li>
+<li>P(X) = 1, O(X) = inf</li>
+</ul>
+<h3 id="规则的不确定性"><a class="heading-anchor" href="#规则的不确定性">规则的不确定性</a></h3>
+<p>规则：A→B</p>
+<div class="math-source">$$
+P(B|A) = \frac{P(A|B)P(B)}{P(A)}
+$$</div>
+<div class="math-source">$$
+P(\lnot B|A) = \frac{P(A|\lnot B)P(\lnot B)}{P(A)}
+$$</div>
+<p>两式相除：</p>
+<div class="math-source">$$
+\frac{P(B|A)}{P(\lnot B|A)} = \frac{P(A|B)P(B)}{P(A|\lnot B)P(\lnot B)}
+$$</div>
+<p>记：</p>
+<div class="math-source">$$
+\frac{P(A|B)}{P(A|\lnot B)} = LS
+$$</div>
+<p>又因为：</p>
+<div class="math-source">$$
+O(B) = \frac{P(B)}{P(\lnot B)} \qquad O(B|A) = \frac{P(B|A)}{P(\lnot B|A)}
+$$</div>
+<p>整理得：</p>
+<div class="math-source">$$
+O(B|A) = LS \cdot O(B)
+$$</div>
+<p><strong>LS 的含义</strong>：</p>
+<ul>
+<li>LS 表示 A 真对 B 的影响程度</li>
+<li>LS = ∞ 时，P(~B|A)=0，P(B|A)=1</li>
+<li>说明 A 对于 B 是逻辑充分的，即规则成立是充分的</li>
+<li>LS 称作<strong>充分似然率因子</strong></li>
+</ul>
+<div class="math-source">$$
+LS = \frac{O(B|A)}{O(B)} = \frac{P(B|A)/P(\lnot B|A)}{P(B)/P(\lnot B)}
+$$</div>
+<p>LS 表示 A 存在对 B 发生的影响度：</p>
+<ul>
+<li>LS = 1，O(B|A) = O(B)，A 对 B 无影响</li>
+<li>LS > 1，O(B|A) > O(B)，A 支持 B</li>
+<li>LS &#x3C; 1，O(B|A) &#x3C; O(B)，A 不支持 B</li>
+</ul>
+<p>由类似的推导过程：</p>
+<div class="math-source">$$
+P(B|\lnot A) = \frac{P(\lnot A|B)P(B)}{P(\lnot A)}
+$$</div>
+<div class="math-source">$$
+P(\lnot B|\lnot A) = \frac{P(\lnot A|\lnot B)P(\lnot B)}{P(\lnot A)}
+$$</div>
+<p>两式相除：</p>
+<div class="math-source">$$
+\frac{P(B|\lnot A)}{P(\lnot B| \lnot A)} = \frac{P(\lnot A|B)P(B)}{P(\lnot A| \lnot B)P(\lnot B)}
+$$</div>
+<p>记：</p>
+<div class="math-source">$$
+\frac{P(\lnot A|B)}{P(\lnot A| \lnot B)} = LN
+$$</div>
+<p>又因为：</p>
+<div class="math-source">$$
+O(B) = \frac{P(B)}{P(\lnot B)} \qquad O(B|\lnot A) = \frac{P(B|\lnot A)}{P(\lnot B|\lnot A)}
+$$</div>
+<p>整理得：</p>
+<div class="math-source">$$
+O(B|\lnot A) = LN \cdot O(B)
+$$</div>
+<p>LN 的含义：</p>
+<ul>
+<li>LN 表示 A 假(即不存在)对 B 的影响程度</li>
+<li>LN = 0 时，P(B|~A)=0</li>
+<li>说明 A 对于 B 是逻辑必要的，即规则成立是必要性</li>
+<li>LN 称作<strong>必要似然率因子</strong></li>
+</ul>
+<div class="math-source">$$
+LN = \frac{O(B|\lnot A)}{O(B)} = \frac{P(B|\lnot A)/P(\lnot B|\lnot A)}{P(B)/P(\lnot B)}
+$$</div>
+<p>LN 表示 A 不存在对 B 发生的影响度：</p>
+<ul>
+<li>LN = 1，O(B|~A) = O(B)，~A对B无影响</li>
+<li>LN > 1，O(B|~A) > O(B)，~A支持B</li>
+<li>LN &#x3C; 1，O(B|~A) &#x3C; O(B)，~A不支持B</li>
+</ul>
+<p>LS、LN 的关系：
+<strong>LN≥0，LS≥0，且 LN 和 LS 彼此不独立。</strong></p>
+<p>简单的验证：</p>
+<div class="math-source">$$
+LS = \frac{P(A|B)}{P(A|\lnot B)}
+\qquad LN = \frac{P(\lnot A|B)}{P(\lnot A| \lnot B)}
+$$</div>
+<p>当 LS > 1 时：</p>
+<div class="math-source">$$
+P(A|B)>P(A|\lnot B)
+$$</div>
+<p>故有：</p>
+<div class="math-source">$$
+LN = \frac{1-P(A|B)}{1-P(A|\lnot B)}&#x3C;1
+$$</div>
+<p>事实上，LS 和 LN 必处于下面三种情况之一：</p>
+<ul>
+<li>LS > 1, LN &#x3C; 1</li>
+<li>LS &#x3C; 1, LN > 1</li>
+<li>LS = LN = 1</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/07/31/RVHhLNKy2jWSnsB.png" alt="80-18.png" loading="lazy"><figcaption class="article-figure-caption">80-18.png</figcaption></figure>
+<p>LS、LN 的示例：</p>
+<blockquote>
+<p>“如果有石英矿，则必有钾矿带”。
+LS=300, LN=0.2</p>
+<p>这意味着：
+发现石英矿，对判断发现钾矿带非常有利。而没有发现石英矿，并不暗示一定没有钾矿带。如果 LN &#x3C;&#x3C; 1，则没有发现石英矿时，强烈暗示钾矿带不存在。</p>
+</blockquote>
+<h3 id="推理计算"><a class="heading-anchor" href="#推理计算">推理计算</a></h3>
+<p>给定先验几率、规则 LS 和 LN，怎样计算后验几率呢？</p>
+<p><strong>1）</strong> A 必出现或必不出现时，即 P(A)=1 或 P(A)=0 时</p>
+<div class="math-source">$$
+O(B|A) = LS \cdot O(B)
+$$</div>
+<div class="math-source">$$
+O(B|\lnot A) = LN \cdot O(B)
+$$</div>
+<p><strong>2）</strong> A 不是必出现或必不出现时，即 P(A)≠1 且 P(A)≠0 时</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/01/wxhtucPaoHR8ZJG.png" alt="80-19.png" loading="lazy"><figcaption class="article-figure-caption">80-19.png</figcaption></figure>
+<p>由全概率公式推得：</p>
+<div class="math-source">$$
+P(B|A') = P(B|A)P(A|A')+P(B|\lnot A)P(\lnot A|A')
+$$</div>
+<p>对于上面的式子，先考虑三种特殊情况：</p>
+<p><strong>『1』</strong> P(A|A’) = 1 时（证据 A’ 出现，证据 A 必然出现）</p>
+<div class="math-source">$$
+\begin{aligned}
+P(B|A') &#x26; = P(B|A) \\
+        &#x26; = \frac{P(B|A)}{P(B|A)+P(\lnot B|A)} \\
+        &#x26; = \frac{P(B|A)P(A)}{P(B|A)P(A)+P(\lnot B|A)P(A)} \\
+        &#x26; = \frac{P(AB)}{P(AB)+P(\lnot BA)} \\
+        &#x26; = \frac{P(AB)}{P(AB)+P(A|\lnot B)(1-P(B))} \\
+        &#x26; = \frac{P(A|B)P(B)/P(A|\lnot B)}{P(A|B)P(B)/P(A|\lnot B)+1-P(B)} \\
+        &#x26; = \frac{LS \cdot P(B)}{(LS-1) \cdot P(B)+1}
+\end{aligned}
+$$</div>
+<p><strong>『2』</strong> P(A|A’) = 0 时（证据 A’ 出现，证据 A 必然不出现）</p>
+<p>类似地可以得到：</p>
+<div class="math-source">$$
+P(B|A') = P(B|\lnot A) = \frac{LN \cdot P(B)}{(LN-1) \cdot P(B)+1}
+$$</div>
+<p><strong>『3』</strong> P(A|A’) = P(A) 时</p>
+<p>显然有：</p>
+<div class="math-source">$$
+P(B| A') = P(B)
+$$</div>
+<p><strong>综上『』</strong>，得到以下特殊值：</p>
+<div class="math-source">$$
+P(B| A') = 
+\begin{cases}
+\frac{LS \cdot P(B)}{(LS-1) \cdot P(B)+1}, &#x26; \text {P(A|A')=1} \\
+\frac{LN \cdot P(B)}{(LN-1) \cdot P(B)+1}, &#x26;\text{P(A|A')=0} \\
+P(B), &#x26;\text{P(A|A')=P(A)}
+\end{cases} 
+$$</div>
+<p>在其他位置，使用插值计算：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/01/mIjMNJxkBdnXUEq.png" alt="80-20.png" loading="lazy"><figcaption class="article-figure-caption">80-20.png</figcaption></figure>
+<p>证据的组合、结论的合成：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/01/m4RlxZNfeK8BwhA.png" alt="80-21.png" loading="lazy"><figcaption class="article-figure-caption">80-21.png</figcaption></figure>
+<h1 id="机器学习"><a class="heading-anchor" href="#机器学习">机器学习</a></h1>
+<h2 id="概述-3"><a class="heading-anchor" href="#概述-3">概述</a></h2>
+<p>机器学习就是让机器（计算机）来模拟和实现人类的学习功能。</p>
+<p>基本术语和概念：</p>
+<ul>
+<li><strong>数据集、训练集、测试集</strong>
+<img src="https://s2.loli.net/2024/08/05/5o1MeumFAfdh7W4.png" alt="80-22.png" loading="lazy"></li>
+<li><strong>泛化能力、误差（训练误差、泛化误差）、欠拟合、过拟合</strong>
+<ul>
+<li>泛化能力好：对于新的未知数据，也能很好地预测结果。</li>
+<li>过拟合：模型可以非常完美地拟合现有数据，但是对于新的数据，拟合效果不好。</li>
+</ul>
+</li>
+<li>常见的机器学习任务
+<ul>
+<li>分类：逻辑回归</li>
+<li>回归：线性回归</li>
+</ul>
+</li>
+<li>混淆矩阵
+<img src="https://s2.loli.net/2024/08/05/seyDVPGltc83pFg.png" alt="80-23.png" loading="lazy"></li>
+</ul>
+<p>机器学习按<strong>是否有指导</strong>进行分类：</p>
+<ul>
+<li>监督学习</li>
+<li>无监督学习</li>
+<li>半监督学习</li>
+<li>强化学习</li>
+</ul>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/06/l2sJZhnWqjzkQVE.png" alt="80-24.png" loading="lazy"><figcaption class="article-figure-caption">80-24.png</figcaption></figure>
+<h2 id="决策树"><a class="heading-anchor" href="#决策树">决策树</a></h2>
+<p>长这样：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/06/jGxvRt9JeYuNOHb.png" alt="80-25.png" loading="lazy"><figcaption class="article-figure-caption">80-25.png</figcaption></figure>
+<p>决策树学习的过程实际上是在构造决策树。
+学习前提是必须有一组训练实例。
+学习结果是根据训练实例构造的决策树。
+学习完成后，就可以利用这棵决策树对未知事物进行分类。</p>
+<p>可以利用多种算法构造决策树：</p>
+<ul>
+<li><code>ID 3</code></li>
+<li><code>C4.5</code></li>
+<li><code>CART</code></li>
+<li><code>CHAID</code></li>
+</ul>
+<p>ID3 算法是昆兰（J.R.Quinlan）于 1979 年提出的一种以<strong>信息熵的下降速度</strong>作为属性选择标准的一种学习算法。其输入是一个用来描述各种已知类别的例子集，学习结果是一棵用于进行分类的决策树。</p>
+<p><strong>信息熵（information entropy）</strong>，是对信息源整体不确定性的度量。</p>
+<p>The core idea of information theory is that the “informational value” of a communicated message depends on the degree to which the content of the message is surprising. If a highly likely event occurs, the message carries very little information. On the other hand, if a highly unlikely event occurs, the message is much more informative. For instance, the knowledge that some particular number will not be the winning number of a lottery provides very little information, because any particular chosen number will almost certainly not win. However, knowledge that a particular number will win a lottery has high informational value because it communicates the occurrence of a very low probability event.</p>
+<p>The information content, also called the <i>surprisal</i> or <i>self-information</i>, of an event <span class="math-source">$E$</span> is a function which increases as the probability <span class="math-source">$p(E)$</span> of an event decreases. When <span class="math-source">$p(E)$</span> is close to 1, the surprisal of the event is low, but if <span class="math-source">$p(E)$</span> is close to 0, the surprisal of the event is high. This relationship is described by the function :</p>
+<div class="math-source">$$
+\log (\frac{1}{P(E)})
+$$</div>
+<p>Hence, we can define the information, or surprisal, of an event <span class="math-source">$E$</span> by :</p>
+<div class="math-source">$$
+I(E)=−\log _2(p(E))
+$$</div>
+<p>依据 Boltzmann’s H-theorem，香农把随机变量 X 的熵值 <span class="math-source">$\text{H}$</span>（希腊字母Eta）定义如下：</p>
+<div class="math-source">$$
+\text{H} (X) = E[I(X)] = E[-\log p(X)]
+$$</div>
+<p>其中 E 为期望函数。</p>
+<p>当取自有限的样本时，熵的公式可以表示为：</p>
+<div class="math-source">$$
+\text{H} (X) = - \sum_{i} P(x_i)\log _b P(x_i)
+$$</div>
+<p>当 b = 2 时，熵的单位是 bit .</p>
+<p><strong>加权信息熵</strong>：
+根据某种方法对样本 S 作一个划分：</p>
+<div class="math-source">$$
+S_1, S_2, \cdots , S_r
+$$</div>
+<p>则划分后的加权信息熵为：</p>
+<div class="math-source">$$
+\sum _{t=1}^r \frac{|S_t|}{|S|} \text{H} (S_t)
+$$</div>
+<p>假设 S 中的样本有 m 个属性，其属性集为 X={x1, x2,…,xm}，每个属性 xi 都有不同的取值（xi 取值的个数有 ri 种），根据这个 xi 的取值对样本 S 作划分，则可以记为：</p>
+<div class="math-source">$$
+\text{H} (S, x_i) = \sum _{t=1}^{r_i} \frac{|S_t|}{|S|} \text{H} (S_t)
+$$</div>
+<p>其中 <span class="math-source">$S_t$</span> 为 <span class="math-source">$x_i = t$</span> 时的样本子集。</p>
+<p>选取不同的属性进行划分，<span class="math-source">$\text{H} (S, x_i)$</span> 的值可能不同。记</p>
+<div class="math-source">$$
+G(S, x_i) = \text{H} (S) - \text{H} (S, x_i)
+$$</div>
+<p>称为<strong>信息增益（information gain）</strong>。</p>
+<p>ID3 算法的学习过程，实际上是一个以整个样本集为根节点，以信息增益最大为原则，选择条件属性进行扩展，逐步构造出决策树的过程。</p>
+<p>一个粗略但简单的理解：寻找一个最优的划分。</p>
+<p>例子：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/10/8GUDRfLJKbsIn2e.png" alt="80-26.png" loading="lazy"><figcaption class="article-figure-caption">80-26.png</figcaption></figure>
+<h2 id="遗传算法"><a class="heading-anchor" href="#遗传算法">遗传算法</a></h2>
+<p>遗传算法（GA）模拟自然界优胜劣汰的进化现象，把搜索空间映射为遗传空间，把可能的解编码成一个向量——染色体，向量的每个元素称为基因。 通过不断计算各染色体的适应值，选择最好的染色体，获得最优解。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/21/ewz1HWJra4huK8f.png" alt="80-27.png" loading="lazy"><figcaption class="article-figure-caption">80-27.png</figcaption></figure>
+<p>例子：</p>
+<figure class="article-figure"><img src="https://bu.dusays.com/2024/08/21/66c5b6262dd53.png" alt="80-28.png" loading="lazy"><figcaption class="article-figure-caption">80-28.png</figcaption></figure>
+<p>交叉、变异：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/21/bNopUsOPtXEhrRn.png" alt="80-29.png" loading="lazy"><figcaption class="article-figure-caption">80-29.png</figcaption></figure>
+<p>遗传算法可用于 TSP 问题，具体细节略。</p>
+<h2 id="svmknn"><a class="heading-anchor" href="#svmknn">SVM、KNN</a></h2>
+<p>支持向量机（support vector machine，SVM）是一个二分类模型，它的基本模型是定义在特征空间上的间隔最大的线性分类器。SVM还包括核技巧，这使它成为本质上的非线性分类器。支持向量机的学习算法是求解凸二次优化的最优化算法。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/21/Rf18v9mY4leLoit.png" alt="80-30.png" loading="lazy"><figcaption class="article-figure-caption">80-30.png</figcaption></figure>
+<p>K 最近邻（K-Nearest Neighbor，KNN）分类算法的思路是：如果一个样本在特征空间中的 K 个最相似（即特征空间中最邻近）的样本中的大多数属于某一个类别，则该样本也属于这个类别。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/21/9yFbAOjewurDEzp.webp" alt="80-31.png" loading="lazy"><figcaption class="article-figure-caption">80-31.png</figcaption></figure>
+<h2 id="超参数验证集"><a class="heading-anchor" href="#超参数验证集">超参数、验证集</a></h2>
+<p>学习模型中一般有两种参数，一种参数是可以从学习中得到，还有一种无法数据里面得到，只能靠人的经验来设定，这类参数就叫做<strong>超参数</strong>。</p>
+<p>模型超参数举例：</p>
+<ul>
+<li>神经网络的学习速率、迭代次数、批次大小、激活函数、神经元的数量</li>
+<li>支持向量机的 C 和 σ</li>
+<li>K 近邻中的 K</li>
+</ul>
+<p>超参数搜索的一般过程：</p>
+<ul>
+<li>将数据集分成训练集、验证集、测试集。</li>
+<li>在训练集上根据模型的性能指标对模型参数进行优化。</li>
+<li>在验证集上根据模型的性能指标对模型超参数进行搜索。</li>
+<li>在步骤2和步骤3交替迭代进行，最终确定模型的参数和超参数，并在测试集中评价模型的优劣。</li>
+</ul>
+<p>超参数搜索算法：网格搜索、随机搜素、智能搜素、…</p>
+<p>交叉验证：用来验证分类器的性能的一种统计分析方法，基本思想是把在某种意义下将原始数据进行分组，一部分作为训练集，另一部分作为验证集，首先用训练集对分类器进行训练，再利用验证集来测试训练得到的模型，以此作为评价分类器的性能指标。</p>
+<p>k-折交叉验证（K-CV）：</p>
+<ul>
+<li>将原始数据分成k组（一般是均分）。</li>
+<li>将每个子集数据分别做一次验证集，其余的k-1组子集数据作为训练集，这样会得到k个模型。</li>
+<li>用这k个模型最终的验证集的分类准确率的平均数作为此K-CV下分类器的性能指标。</li>
+</ul>
+<h1 id="人工神经网络"><a class="heading-anchor" href="#人工神经网络">人工神经网络</a></h1>
+<h2 id="基本概念"><a class="heading-anchor" href="#基本概念">基本概念</a></h2>
+<p>人工神经网络(Artificial Neural Network, ANN)，是一种旨在模仿人脑结构及其功能的信息处理系统。</p>
+<p>神经元是神经网络的基本处理单元，科学研究过程中一般是用一个多输入/多输出的非线性器件来模拟生物神经细胞的：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/27/ktN3uOoPJlbEx7f.png" alt="80-32.png" loading="lazy"><figcaption class="article-figure-caption">80-32.png</figcaption></figure>
+<p>在 M-P 模型中：</p>
+<div class="math-source">$$
+Y=\text{sign}[\sum_{i=1}^n x_iw_i-\theta]
+$$</div>
+<p><span class="math-source">$x_i$</span> 表示神经元的输入，<span class="math-source">$w_i$</span> 表示输入的对应权值，即信号源神经元与该神经元的连接强度，Y 为神经元的输出，<span class="math-source">$\theta$</span> 表示神经元的阈值。</p>
+<p>深度学习一般指深度神经网络，这里的深度指神经网络的层数较多。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/27/wLY7B4uCVxeNHp2.png" alt="80-33.png" loading="lazy"><figcaption class="article-figure-caption">80-33.png</figcaption></figure>
+<p>激活函数设计一般需要考虑的因素：</p>
+<ul>
+<li>非线性</li>
+<li>连续可微性</li>
+<li>有界性</li>
+<li>单调性</li>
+<li>平滑性</li>
+<li>原点附近近似 Identity</li>
+</ul>
+<p>基本模型：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/29/jsG7I5pnaFHitvW.png" alt="80-34.png" loading="lazy"><figcaption class="article-figure-caption">80-34.png</figcaption></figure>
+<h2 id="感知器"><a class="heading-anchor" href="#感知器">感知器</a></h2>
+<p>感知器基于 M-P 神经元模型。该模型由一个可调整权重的神经元(线性组合器)和一个硬限幅器组成。输入的加权和施加于硬限幅器，硬限幅器当其输入为正时输出为+1，输入为负时输出为-1（也可以是其他情况，具体由激活函数决定）。</p>
+<p>一个基本感知器，用超平面将 n 维空间分为两个决策区域，超平面由线性分隔函数定义：</p>
+<div class="math-source">$$
+\sum_{i=1}^n x_iw_i-\theta =0
+$$</div>
+<p><strong>用于分类任务的感知器训练算法：</strong></p>
+<blockquote>
+<p><strong>步骤1</strong>：初始化。设置权重w1, w2, … , wn和阈值 <span class="math-source">$\theta$</span> 的初值。初始权重可以随意赋值，取值范围通常为 [-0.5, 0.5] ，然后通过训练样本调整。
+<strong>步骤2</strong>：激活。通过用输入x1(p), x2(p), … ,xn(p)以及期望输出 <span class="math-source">$Y_d(p)$</span> 来激活感知器。迭代 p 时的实际输出为：</p>
+<p>$$
+Y(p) = \text{step} [\sum_{i=1}^n x_i(p) w_i(p)-\theta]
+$$</p>
+<p>其中，n 为感知器输入的数量，step 为阶跃激活函数。
+<strong>步骤3</strong>：权重训练。修改感知器的权重为：</p>
+<p>$$
+w_i(p+1)= w_i(p)+ \Delta w_i(p)
+$$</p>
+<p>其中， <span class="math-source">$\Delta w_i(p)=\alpha x_i(p)e(p)$</span> . e(p) 为误差。
+<strong>步骤4</strong>：迭代。迭代 p 加 1，回到步骤 2，重复以上过程直至收敛。</p>
+</blockquote>
+<p>例子：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/29/MbziVv8mXSfRyQT.png" alt="80-35.png" loading="lazy"><figcaption class="article-figure-caption">80-35.png</figcaption></figure>
+<p>感知器仅能学习线性分割函数，单层感知器只能解决线性分类问题。XOR 问题中无法找到一条合适的线进行分类。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/29/wciCtaYqWGQepk4.jpg" alt="80-36.jpg" loading="lazy"><figcaption class="article-figure-caption">80-36.jpg</figcaption></figure>
+<p>多层感知器可以解决非线性分类问题。</p>
+<p>可以通过在网络中加入一个或多个隐藏层来克服线性模型的限制，使其能处理更普遍的函数关系类型。</p>
+<p>最简单的方法是将许多全连接层堆叠在一起。每一层都输出到上面的层，直到生成最后的输出。我们可以把前 L−1 层看作表示，把最后一层看作线性预测器。这种架构通常称为<strong>多层感知机（multilayer perceptron）</strong>，通常缩写为 MLP。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/29/av3ZbfgGWhxYnqd.png" alt="80-37.png" loading="lazy"><figcaption class="article-figure-caption">80-37.png</figcaption></figure>
+<h2 id="梯度下降损失函数"><a class="heading-anchor" href="#梯度下降损失函数">梯度下降、损失函数</a></h2>
+<p>当训练样例线性不可分时，我们无法找到一个超平面，令感知器完美分类训练样例，但是我们可以近似的分类它们，而允许一些小小的分类错误。怎样让这个错误最小呢，首先要参数化描述这个错误，这就是损失函数（误差函数），它反映了感知器目标输出和实际输出之间的错误。最常用的误差函数为 L2 误差：</p>
+<div class="math-source">$$
+E(w) = \frac{1}{2} \sum_{d \in D} (t_d - o_d)^2
+$$</div>
+<p>其中，d 为训练样例，D 为训练样例集，<span class="math-source">$t_d$</span> 为目标输出，<span class="math-source">$o_d$</span> 为实际输出。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/29/DsAN2V3LhxyfiOX.png" alt="80-38.png" loading="lazy"><figcaption class="article-figure-caption">80-38.png</figcaption></figure>
+<p>梯度下降算法：</p>
+<ul>
+<li>全局梯度下降算法</li>
+<li>随机梯度下降算法</li>
+<li>Mini-Batch 梯度下降算法</li>
+</ul>
+<h2 id="bp-网络"><a class="heading-anchor" href="#bp-网络">BP 网络</a></h2>
+<p>BP 网络学习的网络基础是具有多层前馈结构的 BP 网络。为讨论方便，采用如下所示的三层 BP 网络。</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/08/31/SXHWIuEBPcaU14h.png" alt="80-39.png" loading="lazy"><figcaption class="article-figure-caption">80-39.png</figcaption></figure>
+<p>对上述三层 BP 网络，分别用 i,j,k 表示输入层、隐含层、输出层节点，且以下符号表示：</p>
+<ul>
+<li><span class="math-source">$O_i$</span>, <span class="math-source">$O_j$</span>, <span class="math-source">$O_k$</span> 分别表示输入层节点 i、隐含层节点 j，输出层节点 k 的输出；</li>
+<li><span class="math-source">$I_i$</span>, <span class="math-source">$I_j$</span> ,<span class="math-source">$I_k$</span> 分别表示输入层节点 i、隐含层节点 j，输出层节点 k 的输入；</li>
+<li><span class="math-source">$w_{ij}$</span>, <span class="math-source">$w_{jk}$</span> 分别表示从输入层节点 i 到隐含层节点 j ，从隐含层节点 j 输出层节点 k 的输入节点 j 的连接权值；</li>
+<li><span class="math-source">$θ_j$</span> 、<span class="math-source">$θ_k$</span> 分别表示隐含层节点 j、输出层节点 k 的阈值。</li>
+</ul>
+<p>计算过程和之前大体相当。</p>
+<p>BP 网络的激发函数通常采用连续可微的函数，例如 sigmoid 函数：</p>
+<div class="math-source">$$
+f(x) = \frac{1}{1+e^{-x}}
+$$</div>
+<p>其一阶导数为：</p>
+<div class="math-source">$$
+f'(x) = f(x) [1-f(x)]
+$$</div>
+<p>BP 网络学习过程是一个对给定训练模式，利用传播公式，沿着减小误差的方向不断调整网络联结权值和阈值的过程。</p>
+<p>设样本集中的第 r 个样本，其输出层结点 k 的期望输出用 <span class="math-source">$d_{rk}$</span> 表示，实际输出用 <span class="math-source">$y_{rk}$</span> 表示。其中，<span class="math-source">$d_{rk}$</span> 由训练模式给出，且</p>
+<div class="math-source">$$
+y_{rk} = O_{rk}
+$$</div>
+<p>如果仅针对单个输入样本，其实际输出与期望输出的误差为</p>
+<div class="math-source">$$
+E = \frac{1}{2} \sum_{k=1}^l (d_k - y_k)^2
+$$</div>
+<p>上述误差定义是针对单个训练样本的误差计算公式，它适用于网络的顺序学习方式。若采用批处理学习方式，需要定义其总体误差。假设样本集中有 R 个样本，则对整个样本集的总体误差定义为：</p>
+<div class="math-source">$$
+E_R = \sum_{r=1}^R E_r = \frac{1}{2} \sum_{r=1}^R \sum_{k=1}^l (d_{rk} - y_{rk})^2
+$$</div>
+<p>针对顺序学习方式，其联结权值的调整公式为</p>
+<div class="math-source">$$
+w_{jk}(t+1) = w_{jk}(t) + \Delta w_{jk}
+$$</div>
+<p>式中，<span class="math-source">$w_{jk}(t)$</span> 和 <span class="math-source">$w_{jk}(t+1)$</span> 分别是第 t 次迭代和 t+1 次迭代时，从结点 j 到结点 k 的联结权值；<span class="math-source">$\Delta w_{jk}$</span> 是联结权值的变化量。</p>
+<p>在开始推导之前，补充一点知识：</p>
+<section class="gdrive-pdf-wrapper"><header class="gdrive-pdf-header"><span class="gdrive-pdf-label">PDF</span><a class="gdrive-pdf-link" href="https://drive.google.com/file/d/1M4ZF4w1k8rX9pWV0OStKFaNt2O8eCqB3/view" target="_blank" rel="noopener">在 Google Drive 打开</a></header><iframe class="gdrive-pdf-frame" src="https://drive.google.com/file/d/1M4ZF4w1k8rX9pWV0OStKFaNt2O8eCqB3/preview" loading="lazy" title="PDF preview"></iframe></section>
+<p>其实下面的推导只会用到这个 pdf 最开始的概念。多数情况下可以非常粗糙地理解——只要记住某些符号其实代表了一个向量，而每个向量都有很多元素，但是都可以用同一种方法计算，因而将它们记成了向量。</p>
+<p>为了使联结权值能沿着 E 的梯度下降的方向逐渐改善，网络逐渐收敛，权值变化量 <span class="math-source">$\Delta w_{jk}$</span> 的计算公式如下：</p>
+<div class="math-source">$$
+\Delta w_{jk} = - \eta \frac{\partial E}{\partial w_{jk}}
+$$</div>
+<p>式中，<span class="math-source">$\eta$</span> 为增益因子，取 [0, 1] 区间的一个正数，其取值与算法的收敛速度有关。</p>
+<div class="math-source">$$
+\frac{\partial E}{\partial w_{jk}} = \frac{\partial E}{\partial I_k} \frac{\partial I_k}{\partial w_{jk}}
+$$</div>
+<p>注：E 是一个复合函数，这里用了链式法则。这样拆分是有实际意义的，比较显然。</p>
+<div class="math-source">$$
+\frac{\partial I_k}{\partial w_{jk}} = \frac{\partial}{\partial w_{jk}} \sum_{j=1}^m w_{jk} O_{j} = O_j
+$$</div>
+<p>令局部梯度</p>
+<div class="math-source">$$
+\delta _k = - \frac{\partial E}{\partial I_k}
+$$</div>
+<p>注意，这里 <span class="math-source">$\delta _k$</span> 代表了 <span class="math-source">$l$</span> 个变量，它们具有类似的形式。</p>
+<p>那么有</p>
+<div class="math-source">$$
+\Delta w_{jk} = -\eta \frac{\partial E}{\partial I_k} \frac{\partial I_k}{\partial w_{jk}} = \eta \delta _k O_j
+$$</div>
+<p><strong>对于输出层上的结点</strong>，则有 <span class="math-source">$O_k=y_k$</span> ，因此（这里 <span class="math-source">$y_k$</span> 也是向量）</p>
+<div class="math-source">$$
+\delta _k = - \frac{\partial E}{\partial I_k} = - \frac{\partial E}{\partial y_k} \frac{\partial y_k}{\partial I_k}
+$$</div>
+<p>得到</p>
+<div class="math-source">$$
+\begin{aligned}
+\frac{\partial E}{\partial y_k}
+&#x26;= \frac{\partial}{\partial y_k} ( \frac{1}{2} \sum_{i=1}^l (d_i - y_i)^2 )  \\
+&#x26;= \frac{1}{2} \cdot 2 (d_k - y_k) \cdot (-1)  \\
+&#x26;= -(d_k - y_k)
+\end{aligned}
+$$</div>
+<p>又因为</p>
+<div class="math-source">$$
+\frac{\partial y_k}{\partial I_k} = f'(I_k - \theta)
+$$</div>
+<p>所以</p>
+<div class="math-source">$$
+\delta _k = (d_k - y_k) f'(I_k - \theta)
+$$</div>
+<p>又因为 <span class="math-source">$f(I_k - \theta) = y_k$</span> ，再由 sigmoid 函数的导数的公式，有</p>
+<div class="math-source">$$
+\delta _k = (d_k - y_k) y_k (1-y_k)
+$$</div>
+<p>代入之前的结果：</p>
+<div class="math-source">$$
+\Delta w_{jk} = \eta (d_k - y_k) (1 - y_k) y_k O_j
+$$</div>
+<p>那么，<strong>对输出层有</strong>：</p>
+<div class="math-source">$$
+\begin{aligned}
+w_{jk}(t+1) 
+&#x26;= w_{jk}(t) + \Delta w_{jk} \\
+&#x26;= w_{jk}(t) + \eta (d_k - y_k) (1-y_k) y_k O_j \\
+\end{aligned}
+$$</div>
+<p><strong>现在，我们想要类似地计算 <span class="math-source">$\Delta w_{ij}$</span></strong> 。</p>
+<p><strong>对于不是输出层的结点</strong>。它表示联结权值是作用于隐含层上的结点，我们可以类似地定义 <span class="math-source">$\delta _j$</span> ：</p>
+<div class="math-source">$$
+\delta _j = - \frac{\partial E}{\partial I_j} = - \frac{\partial E}{\partial O_j} \frac{\partial O_j}{\partial I_j}
+$$</div>
+<p>容易得到：</p>
+<div class="math-source">$$
+\delta _j = - \frac{\partial E}{\partial O_j} f'(I_j - \theta _j)
+$$</div>
+<p>为了便于理解，下面的 <span class="math-source">$O_j$</span> 可以理解为隐藏层中的随意一个节点的输出值（实际上它是向量）：</p>
+<div class="math-source">$$
+\begin{aligned}
+-\frac{\partial E}{\partial O_j}
+&#x26;= - \frac{\partial E}{\partial I_k} \frac{\partial I_k}{\partial O_j} \\
+&#x26;= (-\frac{\partial E}{\partial I_k}) \cdot \frac{\partial}{\partial O_j} \sum_{j=1}^m w_{jk} O_j \\
+&#x26;= (- \frac{\partial E}{\partial I_k}) w_{jk} \\
+\end{aligned}
+$$</div>
+<p>上面式子最后结果中的 <span class="math-source">$w_{jk}$</span> 是指该 <span class="math-source">$O_j$</span> 对应的权值。</p>
+<p>这个结果非常的 amazing 啊，注意到</p>
+<div class="math-source">$$
+\delta _k = - \frac{\partial E}{\partial I_k}
+$$</div>
+<p>于是有：</p>
+<div class="math-source">$$
+-\frac{\partial E}{\partial O_j} = \delta _k w_{jk}
+$$</div>
+<p>于是</p>
+<div class="math-source">$$
+\delta _j = \delta _k w_{jk} f'(I_j - \theta _j)
+$$</div>
+<p>这说明，低层结点的 <span class="math-source">$\delta$</span> 值是通过上一层结点的 <span class="math-source">$\delta$</span> 值来计算的。这样，我们就可以先计算出输出层上的 <span class="math-source">$\delta$</span> 值，然后在较低层上计算。</p>
+<div class="math-source">$$
+\delta _j = \delta _k w_{jk} f(I_j - \theta _j) [1 - f(I_j - \theta _j)]
+$$</div>
+<p>于是</p>
+<div class="math-source">$$
+\begin{aligned}
+\Delta w_{ij}
+&#x26;= \eta \delta _k w_{jk} f(I_j - \theta _j) [1 - f(I_j - \theta _j)] O_i \\
+&#x26;= \eta \delta _k w_{jk} O_j (1 - O_j) x_i
+\end{aligned}
+$$</div>
+<p>那么，<strong>对隐含层有</strong>：</p>
+<div class="math-source">$$
+\begin{aligned}
+w_{ij}(t+1)
+&#x26;= w_{ij}(t) + \Delta w_{ij} \\
+&#x26;= \text{代入即可} \cdots \\
+\end{aligned}
+$$</div>
+<p>BP 网络的算法流程：</p>
+<figure class="article-figure"><img src="https://s2.loli.net/2024/09/01/eMNB6CQ5RDiAY2j.png" alt="80-40.png" loading="lazy"><figcaption class="article-figure-caption">80-40.png</figcaption></figure>
+<h2 id="拓展内容"><a class="heading-anchor" href="#拓展内容">拓展内容</a></h2>
+<section class="gdrive-pdf-wrapper"><header class="gdrive-pdf-header"><span class="gdrive-pdf-label">PDF</span><a class="gdrive-pdf-link" href="https://drive.google.com/file/d/1oP-LaYqY_X6sxByJhi9-6LvR6xjNcQYN/view" target="_blank" rel="noopener">在 Google Drive 打开</a></header><iframe class="gdrive-pdf-frame" src="https://drive.google.com/file/d/1oP-LaYqY_X6sxByJhi9-6LvR6xjNcQYN/preview" loading="lazy" title="PDF preview"></iframe></section>
+<blockquote>
+<p><strong>目录</strong>
+卷积神经网络(CNN)  2
+RNN  6
+LSTM结构  9
+注意力机制  11
+正则化与优化器  18</p>
+</blockquote></div> </div> </div> <footer class="post-footer" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <!-- Gitalk comments will be added in Phase 3 --> </div> <section class="reward-widget" data-reward-widget data-astro-cid-bbdapvnt> <div class="reward-panel" id="reward-panel" aria-label="打赏二维码" data-astro-cid-bbdapvnt> <div class="reward-list" data-astro-cid-bbdapvnt> <div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/Alipay.png" alt="支付宝收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>支付宝 Alipay</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/WeChat.png" alt="微信收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>微信 Wechat</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/PayPal-or-CreditCard.png" alt="PayPal 或信用卡收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>PayPal/CreditCard</span> </div> </div> </div> <button class="reward-trigger" type="button" aria-label="打开打赏二维码" aria-controls="reward-panel" aria-expanded="false" data-astro-cid-bbdapvnt>
+打赏 Reward
+</button> </section>  <script type="module">function a(){document.querySelectorAll("[data-reward-widget]").forEach(e=>{if(e.dataset.initialized)return;const r=e.querySelector(".reward-trigger");if(!r)return;e.dataset.initialized="true";const n=t=>{e.classList.toggle("is-open",t),r.setAttribute("aria-expanded",String(t))};r.addEventListener("click",()=>n(!e.classList.contains("is-open"))),document.addEventListener("click",t=>{e.contains(t.target)||n(!1)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&(n(!1),r.blur())})})}window.addEventListener("encrypted-content-revealed",()=>{document.querySelectorAll("[data-reward-after-unlock]").forEach(e=>{e.removeAttribute("hidden")})});document.addEventListener("astro:page-load",a);a();</script> <div id="gitalk-container" class="gitalk-container" data-abbrlink="6f3f8819" data-title="人工智能导论" data-astro-cid-ajg7agi2></div> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">   <script>
+  var GITALK_CFG = {"clientID":"Ov23lijmGQilj9J9CrdP","clientSecret":"bd5066a2aadbe28c20913dd390b8047031f7174a","repo":"dropsong.github.io","owner":"dropsong","admin":["dropsong"],"labels":["Gitalk"],"distractionFreeMode":false};
+</script> <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js">
+</script> <script>
+  (function() {
+    var c = document.getElementById('gitalk-container');
+    if (!c) return;
+    var id = c.dataset.abbrlink || '';
+    var title = c.dataset.title || '';
+    new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting && !c.dataset.loaded) {
+          c.dataset.loaded = '1';
+          new Gitalk(Object.assign({}, GITALK_CFG, {id: id, title: title})).render('gitalk-container');
+        }
+      });
+    }, {rootMargin: '200px'}).observe(c);
+  })();
+</script> </footer> </article> </main> <button class="toc-fab" id="toc-fab" aria-label="目录" data-astro-cid-6t6zfk7k> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M4 6h16M4 12h10M4 18h16" data-astro-cid-6t6zfk7k></path> </svg> </button> <!-- Desktop: hover popup panel --> <div class="toc-popup" id="toc-popup" data-astro-cid-6t6zfk7k> <div class="toc-popup-header" data-astro-cid-6t6zfk7k> <span class="toc-popup-title" data-astro-cid-6t6zfk7k>目录</span> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> <div class="toc-popup-body" data-astro-cid-6t6zfk7k> <ul class="toc-popup-list" data-astro-cid-6t6zfk7k> <li class="toc-popup-item" data-mtoc-section="绪论" data-astro-cid-6t6zfk7k> <a href="#绪论" class="toc-popup-link" data-mtoc="绪论" data-astro-cid-6t6zfk7k> 绪论 </a>  </li><li class="toc-popup-item" data-mtoc-section="搜索技术" data-astro-cid-6t6zfk7k> <a href="#搜索技术" class="toc-popup-link" data-mtoc="搜索技术" data-astro-cid-6t6zfk7k> 搜索技术 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#搜索问题" class="toc-popup-link" data-mtoc="搜索问题" data-astro-cid-6t6zfk7k> 搜索问题 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#回溯策略" class="toc-popup-link" data-mtoc="回溯策略" data-astro-cid-6t6zfk7k> 回溯策略 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#图搜索策略" class="toc-popup-link" data-mtoc="图搜索策略" data-astro-cid-6t6zfk7k> 图搜索策略 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#与或图搜索问题" class="toc-popup-link" data-mtoc="与或图搜索问题" data-astro-cid-6t6zfk7k> 与或图搜索问题 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="知识表示" data-astro-cid-6t6zfk7k> <a href="#知识表示" class="toc-popup-link" data-mtoc="知识表示" data-astro-cid-6t6zfk7k> 知识表示 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#概述" class="toc-popup-link" data-mtoc="概述" data-astro-cid-6t6zfk7k> 概述 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#表示方法" class="toc-popup-link" data-mtoc="表示方法" data-astro-cid-6t6zfk7k> 表示方法 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#知识图谱" class="toc-popup-link" data-mtoc="知识图谱" data-astro-cid-6t6zfk7k> 知识图谱 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="逻辑推理" data-astro-cid-6t6zfk7k> <a href="#逻辑推理" class="toc-popup-link" data-mtoc="逻辑推理" data-astro-cid-6t6zfk7k> 逻辑推理 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#概述-1" class="toc-popup-link" data-mtoc="概述-1" data-astro-cid-6t6zfk7k> 概述 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#归结原理" class="toc-popup-link" data-mtoc="归结原理" data-astro-cid-6t6zfk7k> 归结原理 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="不确定性推理" data-astro-cid-6t6zfk7k> <a href="#不确定性推理" class="toc-popup-link" data-mtoc="不确定性推理" data-astro-cid-6t6zfk7k> 不确定性推理 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#概述-2" class="toc-popup-link" data-mtoc="概述-2" data-astro-cid-6t6zfk7k> 概述 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#确定性方法可信度方法" class="toc-popup-link" data-mtoc="确定性方法可信度方法" data-astro-cid-6t6zfk7k> 确定性方法（可信度方法） </a> </li><li data-astro-cid-6t6zfk7k> <a href="#主观-bayes" class="toc-popup-link" data-mtoc="主观-bayes" data-astro-cid-6t6zfk7k> 主观 Bayes </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="机器学习" data-astro-cid-6t6zfk7k> <a href="#机器学习" class="toc-popup-link" data-mtoc="机器学习" data-astro-cid-6t6zfk7k> 机器学习 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#概述-3" class="toc-popup-link" data-mtoc="概述-3" data-astro-cid-6t6zfk7k> 概述 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#决策树" class="toc-popup-link" data-mtoc="决策树" data-astro-cid-6t6zfk7k> 决策树 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#遗传算法" class="toc-popup-link" data-mtoc="遗传算法" data-astro-cid-6t6zfk7k> 遗传算法 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#svmknn" class="toc-popup-link" data-mtoc="svmknn" data-astro-cid-6t6zfk7k> SVM、KNN </a> </li><li data-astro-cid-6t6zfk7k> <a href="#超参数验证集" class="toc-popup-link" data-mtoc="超参数验证集" data-astro-cid-6t6zfk7k> 超参数、验证集 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="人工神经网络" data-astro-cid-6t6zfk7k> <a href="#人工神经网络" class="toc-popup-link" data-mtoc="人工神经网络" data-astro-cid-6t6zfk7k> 人工神经网络 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#基本概念" class="toc-popup-link" data-mtoc="基本概念" data-astro-cid-6t6zfk7k> 基本概念 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#感知器" class="toc-popup-link" data-mtoc="感知器" data-astro-cid-6t6zfk7k> 感知器 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#梯度下降损失函数" class="toc-popup-link" data-mtoc="梯度下降损失函数" data-astro-cid-6t6zfk7k> 梯度下降、损失函数 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#bp-网络" class="toc-popup-link" data-mtoc="bp-网络" data-astro-cid-6t6zfk7k> BP 网络 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#拓展内容" class="toc-popup-link" data-mtoc="拓展内容" data-astro-cid-6t6zfk7k> 拓展内容 </a> </li> </ul> </li> </ul> </div> </div> <!-- Mobile: bottom sheet overlay --> <div class="toc-overlay" id="toc-overlay" data-astro-cid-6t6zfk7k></div> <div class="toc-sheet" id="toc-sheet" data-astro-cid-6t6zfk7k> <div class="toc-sheet-header" data-astro-cid-6t6zfk7k> <span class="toc-sheet-title" data-astro-cid-6t6zfk7k>目录</span> <div class="toc-sheet-actions" data-astro-cid-6t6zfk7k> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> <button class="toc-sheet-close" id="toc-sheet-close" aria-label="关闭" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M18 6L6 18M6 6l12 12" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> </div> <div class="toc-sheet-body" data-astro-cid-6t6zfk7k> <ul class="toc-sheet-list" data-astro-cid-6t6zfk7k> <li class="toc-sheet-item" data-msheet-section="绪论" data-astro-cid-6t6zfk7k> <a href="#绪论" class="toc-sheet-link" data-msheet="绪论" data-astro-cid-6t6zfk7k> 绪论 </a>  </li><li class="toc-sheet-item" data-msheet-section="搜索技术" data-astro-cid-6t6zfk7k> <a href="#搜索技术" class="toc-sheet-link" data-msheet="搜索技术" data-astro-cid-6t6zfk7k> 搜索技术 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#搜索问题" class="toc-sheet-link" data-msheet="搜索问题" data-astro-cid-6t6zfk7k> 搜索问题 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#回溯策略" class="toc-sheet-link" data-msheet="回溯策略" data-astro-cid-6t6zfk7k> 回溯策略 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#图搜索策略" class="toc-sheet-link" data-msheet="图搜索策略" data-astro-cid-6t6zfk7k> 图搜索策略 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#与或图搜索问题" class="toc-sheet-link" data-msheet="与或图搜索问题" data-astro-cid-6t6zfk7k> 与或图搜索问题 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="知识表示" data-astro-cid-6t6zfk7k> <a href="#知识表示" class="toc-sheet-link" data-msheet="知识表示" data-astro-cid-6t6zfk7k> 知识表示 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#概述" class="toc-sheet-link" data-msheet="概述" data-astro-cid-6t6zfk7k> 概述 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#表示方法" class="toc-sheet-link" data-msheet="表示方法" data-astro-cid-6t6zfk7k> 表示方法 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#知识图谱" class="toc-sheet-link" data-msheet="知识图谱" data-astro-cid-6t6zfk7k> 知识图谱 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="逻辑推理" data-astro-cid-6t6zfk7k> <a href="#逻辑推理" class="toc-sheet-link" data-msheet="逻辑推理" data-astro-cid-6t6zfk7k> 逻辑推理 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#概述-1" class="toc-sheet-link" data-msheet="概述-1" data-astro-cid-6t6zfk7k> 概述 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#归结原理" class="toc-sheet-link" data-msheet="归结原理" data-astro-cid-6t6zfk7k> 归结原理 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="不确定性推理" data-astro-cid-6t6zfk7k> <a href="#不确定性推理" class="toc-sheet-link" data-msheet="不确定性推理" data-astro-cid-6t6zfk7k> 不确定性推理 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#概述-2" class="toc-sheet-link" data-msheet="概述-2" data-astro-cid-6t6zfk7k> 概述 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#确定性方法可信度方法" class="toc-sheet-link" data-msheet="确定性方法可信度方法" data-astro-cid-6t6zfk7k> 确定性方法（可信度方法） </a> </li><li data-astro-cid-6t6zfk7k> <a href="#主观-bayes" class="toc-sheet-link" data-msheet="主观-bayes" data-astro-cid-6t6zfk7k> 主观 Bayes </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="机器学习" data-astro-cid-6t6zfk7k> <a href="#机器学习" class="toc-sheet-link" data-msheet="机器学习" data-astro-cid-6t6zfk7k> 机器学习 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#概述-3" class="toc-sheet-link" data-msheet="概述-3" data-astro-cid-6t6zfk7k> 概述 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#决策树" class="toc-sheet-link" data-msheet="决策树" data-astro-cid-6t6zfk7k> 决策树 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#遗传算法" class="toc-sheet-link" data-msheet="遗传算法" data-astro-cid-6t6zfk7k> 遗传算法 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#svmknn" class="toc-sheet-link" data-msheet="svmknn" data-astro-cid-6t6zfk7k> SVM、KNN </a> </li><li data-astro-cid-6t6zfk7k> <a href="#超参数验证集" class="toc-sheet-link" data-msheet="超参数验证集" data-astro-cid-6t6zfk7k> 超参数、验证集 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="人工神经网络" data-astro-cid-6t6zfk7k> <a href="#人工神经网络" class="toc-sheet-link" data-msheet="人工神经网络" data-astro-cid-6t6zfk7k> 人工神经网络 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#基本概念" class="toc-sheet-link" data-msheet="基本概念" data-astro-cid-6t6zfk7k> 基本概念 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#感知器" class="toc-sheet-link" data-msheet="感知器" data-astro-cid-6t6zfk7k> 感知器 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#梯度下降损失函数" class="toc-sheet-link" data-msheet="梯度下降损失函数" data-astro-cid-6t6zfk7k> 梯度下降、损失函数 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#bp-网络" class="toc-sheet-link" data-msheet="bp-网络" data-astro-cid-6t6zfk7k> BP 网络 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#拓展内容" class="toc-sheet-link" data-msheet="拓展内容" data-astro-cid-6t6zfk7k> 拓展内容 </a> </li> </ul> </li> </ul> </div> </div>  <script type="module">function F(){const f=document.getElementById("toc-fab"),o=document.getElementById("toc-popup"),a=document.getElementById("toc-overlay"),n=document.getElementById("toc-sheet"),q=document.getElementById("toc-sheet-close"),P=document.querySelectorAll(".toc-top-btn");if(!f||!o||!a||!n||!q)return;const p=()=>window.matchMedia("(max-width: 768px)").matches;let h=null,m=null,g=!1,E=!1;function A(){p()||(m&&clearTimeout(m),o.classList.add("open"),y(!0))}function B(){m&&clearTimeout(m),m=setTimeout(()=>{!g&&!E&&o.classList.remove("open")},200)}f.addEventListener("mouseenter",()=>{g=!0,A()}),f.addEventListener("mouseleave",()=>{g=!1,B()}),o.addEventListener("mouseenter",()=>{E=!0,A()}),o.addEventListener("mouseleave",()=>{E=!1,B()}),o.querySelectorAll(".toc-popup-link").forEach(t=>{t.addEventListener("click",()=>{setTimeout(()=>o.classList.remove("open"),150)})}),f.addEventListener("click",()=>{p()&&(a.style.display="block",n.style.display="flex",requestAnimationFrame(()=>{a.classList.add("open"),n.classList.add("open"),y(!0)}),document.body.style.overflow="hidden")});function v(){a.classList.remove("open"),n.classList.remove("open"),setTimeout(()=>{a.style.display="none",n.style.display="none"},300),document.body.style.overflow=""}q.addEventListener("click",v),a.addEventListener("click",v),n.querySelectorAll(".toc-sheet-link").forEach(t=>{t.addEventListener("click",()=>setTimeout(v,200))}),P.forEach(t=>{t.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"}),p()&&v()})});function I(t,b,s,i=!1){const l=t.querySelector(b),S=t.querySelector(s);if(!l||!S)return;const r=l.getBoundingClientRect(),e=S.getBoundingClientRect(),c=e.top>=r.top&&e.bottom<=r.bottom;if(!i&&c)return;const d=l.scrollTop+(e.top-r.top)-l.clientHeight/2+e.height/2;l.scrollTo({top:Math.max(0,d),behavior:i?"auto":"smooth"})}function k(t=!1){!p()&&o.classList.contains("open")&&I(o,".toc-popup-body",".toc-popup-link.active",t),p()&&n.classList.contains("open")&&I(n,".toc-sheet-body",".toc-sheet-link.active",t)}function y(t=!1){requestAnimationFrame(()=>k(t)),h&&clearTimeout(h),h=setTimeout(()=>{k(t),h=null},260)}let x="";function T(){const t=o.querySelectorAll(".toc-popup-link"),b=n.querySelectorAll(".toc-sheet-link"),s=[];t.forEach(e=>{const c=e.dataset.mtoc;if(c){const d=document.getElementById(c);d&&s.push({id:c,el:d})}});let i="";const l=window.scrollY+100;if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-4&&s.length>0)i=s[s.length-1].id;else for(let e=s.length-1;e>=0;e--)if(s[e].el.offsetTop<=l){i=s[e].id;break}t.forEach(e=>e.classList.toggle("active",e.dataset.mtoc===i)),b.forEach(e=>e.classList.toggle("active",e.dataset.msheet===i));function r(e,c,d,H){const R=(i?e.querySelector(`${c}.active`):null)?.closest(d)?.querySelector(H);e.querySelectorAll(H).forEach(u=>{u===R?(u.classList.add("expanded"),u.style.maxHeight=`${u.scrollHeight}px`):(u.classList.remove("expanded"),u.style.removeProperty("max-height"))})}r(o,".toc-popup-link",".toc-popup-item",".toc-popup-sub"),r(n,".toc-sheet-link",".toc-sheet-item",".toc-sheet-sub"),k(),i!==x&&(y(),x=i)}let w=!1;window.addEventListener("scroll",()=>{w||(requestAnimationFrame(()=>{T(),w=!1}),w=!0)});let L=null;window.addEventListener("resize",()=>{L&&clearTimeout(L),L=setTimeout(()=>{T(),y(!0),L=null},100)}),T()}document.addEventListener("astro:page-load",F);F();</script><footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner" data-astro-cid-sz7xmlte></div> </footer>  <script type="module" src="/_astro/CodeBlockEnhance.astro_astro_type_script_index_0_lang.Di89G-ws.js"></script> <div id="image-lightbox" class="lightbox-overlay" data-astro-cid-fbflauxb> <div class="lightbox-content" data-astro-cid-fbflauxb> <img id="lightbox-img" src="" alt="" data-astro-cid-fbflauxb> </div> </div>  <script type="module">function c(){const t=document.getElementById("image-lightbox"),n=document.getElementById("lightbox-img");if(!t||!n)return;function s(e){n.src=e,t.classList.add("open"),document.body.style.overflow="hidden"}function i(){t.classList.remove("open"),document.body.style.overflow=""}t.addEventListener("click",e=>{e.target===t&&i()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t.classList.contains("open")&&i()});function d(){document.querySelectorAll(".article-body img").forEach(e=>{const o=e;o.dataset.lightbox||(o.dataset.lightbox="true",o.style.cursor="zoom-in",o.addEventListener("click",()=>{s(o.src)}))})}document.addEventListener("astro:page-load",d),d()}document.addEventListener("astro:page-load",c);c();</script> <script type="module" src="/_astro/EncryptedBlock.astro_astro_type_script_index_0_lang.DuPogRv7.js"></script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"><script type="module">
+  import renderMathInElement from 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs';
+
+  function renderMath() {
+    const articleBody = document.querySelector('.article-body');
+    if (!articleBody) return;
+
+    renderMathInElement(articleBody, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      throwOnError: false,
+    });
+  }
+
+  document.addEventListener('astro:page-load', renderMath);
+  renderMath();
+</script> </div> </div> </body></html>  

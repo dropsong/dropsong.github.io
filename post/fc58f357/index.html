@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>量子计算笔记 · dropsong&#39;s</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><style>.article-body{font-size:16px;line-height:1.85;color:var(--text);max-width:820px;margin:0 auto}.article-body h1,.article-body h2,.article-body h3,.article-body h4,.article-body h5,.article-body h6{margin-top:1.8em;margin-bottom:.6em;font-weight:600;line-height:1.35;color:var(--text)}.article-body h1{font-size:1.75rem}.article-body h2{font-size:1.45rem}.article-body h3{font-size:1.2rem}.article-body h4{font-size:1.05rem}.article-body p{margin-bottom:1.2em}.article-body p,.article-body li{white-space:pre-line}.article-body p,.article-body li,.article-body blockquote,.article-body td,.article-body th{word-break:normal;overflow-wrap:break-word}.article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.article-body a:hover{color:var(--accent-hover)}.article-body blockquote{margin:1.2em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:#5b9e8c1a;border-radius:0 var(--radius) var(--radius) 0;color:var(--muted)}.article-body blockquote>:last-child{margin-bottom:0}.article-body ul,.article-body ol{margin-bottom:1.2em;padding-left:1.5em}.article-body li>ul,.article-body li>ol{margin-bottom:0;white-space:normal}.article-body li:has(>ul,>ol){white-space:normal}.article-body li{margin-bottom:.25em}.article-body table{width:auto;max-width:100%;border-collapse:collapse;margin:1.5em auto;font-size:.925rem;overflow-x:auto}.article-body table th,.article-body table td{padding:.6em .85em;border:1px solid var(--border);text-align:left}.article-body table th{font-weight:600}.article-body hr{border:none;border-top:1px solid var(--border);margin:2em 0}.article-body img{border-radius:var(--radius);cursor:zoom-in}.article-body .article-figure{margin:1.5em 0;text-align:center}.article-body .article-figure img{display:block;margin:0 auto}.article-body .article-figure-caption{margin-top:.55em;color:var(--muted);font-size:.875rem;line-height:1.5}.article-body iframe{max-width:100%;border-radius:var(--radius)}.article-body .gdrive-pdf-wrapper{margin:1.5em 0;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius);background:#fff}.article-body .gdrive-pdf-header{display:flex;align-items:center;justify-content:space-between;min-height:2.75rem;padding:.5rem .875rem;border-bottom:1px solid var(--border);background:var(--bg)}.article-body .gdrive-pdf-label{color:var(--muted);font-size:.85rem}.article-body .gdrive-pdf-link{color:var(--accent);font-size:.8rem;text-decoration:none}.article-body .gdrive-pdf-link:hover{text-decoration:underline}.article-body .gdrive-pdf-frame{display:block;width:100%;height:min(720px,80vh);border:0;border-radius:0;background:#fff}.article-body :not(pre)>code{background:#fffaf0a6;border:1px solid rgba(180,155,130,.2);border-radius:4px;padding:.1em .4em;font-size:.875em}.article-body pre,.article-body pre.astro-code,.article-body .astro-code{background:transparent!important;background-color:transparent!important;border:1.5px dashed rgba(224,143,88,.45);border-radius:14px}.article-body pre.astro-code code,.article-body .astro-code code{background:transparent!important;background-color:transparent!important}.article-body pre,.article-body table{-webkit-overflow-scrolling:touch}.article-body .katex-display{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;margin:1.4em 0;padding:.25rem 0 .45rem;text-align:center;scrollbar-width:thin;scrollbar-color:rgba(224,143,88,.35) transparent;word-break:normal;overflow-wrap:normal}.article-body .katex-display>.katex{display:inline-block;width:max-content;max-width:none}.article-body .katex{white-space:nowrap;word-break:normal;overflow-wrap:normal}.article-body .katex-display::-webkit-scrollbar{height:4px}.article-body .katex-display::-webkit-scrollbar-thumb{background:transparent}.article-body .katex-display:hover::-webkit-scrollbar-thumb{background:var(--border)}
+</style>
+<link rel="stylesheet" href="/_astro/about.CS0PymYq.css">
+<style>.site-footer[data-astro-cid-sz7xmlte]{padding:2rem 1.5rem;text-align:center}.footer-inner[data-astro-cid-sz7xmlte]{max-width:var(--max-width-page);margin:0 auto;display:flex;justify-content:center;align-items:center;gap:1rem;font-size:.85rem;color:var(--muted)}.footer-muted[data-astro-cid-sz7xmlte]{color:var(--muted)}
+</style>
+<link rel="stylesheet" href="/_astro/_abbrlink_.BDkgFBJR.css">
+<style>.gitalk-container[data-astro-cid-ajg7agi2]{margin-top:2rem}.gt-container{color:var(--text)!important;font-family:inherit!important}.gt-container a{color:var(--accent)!important}.gt-container a:hover{color:var(--accent-hover, var(--accent))!important}.gt-container .gt-header-textarea{background:transparent!important;border:1.5px dashed rgba(224,143,88,.45)!important;border-radius:14px!important;color:var(--text)!important;box-shadow:none!important;outline:none!important;font-family:inherit!important;line-height:1.7!important}.gt-container .gt-header-textarea:focus{border-color:#e08f58ad!important;box-shadow:0 0 0 3px #e08f5814!important}.gt-container .gt-header-preview{background:transparent!important;border:1.5px dashed rgba(224,143,88,.35)!important;border-radius:14px!important;color:var(--text)!important}.gt-container .gt-comment-content{background:transparent!important;border-radius:12px!important}.gt-container .gt-btn-login,.gt-container .gt-btn-public{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important}.gt-container .gt-btn-login:hover,.gt-container .gt-btn-public:hover{background:var(--accent-hover)!important;border-color:var(--accent-hover)!important}.gt-container .gt-btn-preview{background:transparent!important;border:1px solid var(--accent)!important;color:var(--accent)!important}.gt-container .gt-btn-preview:hover{background:#5b9e8c1a!important}
+</style></head> <body data-page="post" data-astro-cid-37fxchfa> <div class="site-page" data-astro-cid-37fxchfa> <!-- Background decoration layer (cream paper style) --> <div class="site-background" aria-hidden="true" data-astro-cid-37fxchfa> <div class="bg-pattern" data-astro-cid-37fxchfa></div> <div class="bg-top-border" data-astro-cid-37fxchfa></div> <div class="bg-bottom-border" data-astro-cid-37fxchfa></div> </div> <!-- Content shell --> <div class="site-shell" data-astro-cid-37fxchfa>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="site-name" data-astro-cid-3ef6ksr2>dropsong's</a> <!-- Desktop: hover dropdown nav (button → panel drops below) --> <nav class="desktop-hover-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <div class="desktop-hover-nav-inner" data-astro-cid-3ef6ksr2> <button class="desktop-nav-trigger" type="button" aria-label="Open navigation menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> <div class="desktop-nav-dropdown" data-astro-cid-3ef6ksr2> <div class="desktop-nav-dropdown-body" data-astro-cid-3ef6ksr2> <a href="/archive/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Search</a> </div> </div> </div> </nav> <!-- Mobile: click-toggle nav (keep exactly as before) --> <nav class="header-nav" id="header-nav" data-astro-cid-3ef6ksr2> <a href="/archive/" class="nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="nav-link" data-astro-cid-3ef6ksr2>Search</a> </nav> <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> </header>  <script type="module">const e=document.getElementById("menu-toggle"),t=document.getElementById("header-nav");e&&t&&e.addEventListener("click",()=>{t.classList.toggle("open")});</script> <main class="post-page" data-astro-cid-gjtny2mx> <article class="post-article" data-astro-cid-gjtny2mx> <header class="post-header" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <h1 class="article-title" data-astro-cid-bjlpfrhy>量子计算笔记</h1> <div class="article-meta" data-astro-cid-bjlpfrhy> <time class="article-date" data-astro-cid-bjlpfrhy>2024-08-13</time>  <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-category" data-astro-cid-bjlpfrhy>数学</span>   <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-tags" data-astro-cid-bjlpfrhy> #量子计算 #线性代数 #希尔伯特空间 #酉矩阵 #谱分解 </span>   </div> </div> </header> <div class="post-body" id="post-body" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <div class="article-body" data-astro-cid-bjlpfrhy><p>省流：只学了前两章，不学了。</p>
+<h1 id="教材-pdf"><a class="heading-anchor" href="#教材-pdf">教材 PDF</a></h1>
+<p>使用的教材是 Quantum Computation and Quantum Information (10th Anniversary Edition) .</p>
+<p>主要笔记都画在教材的 pdf 上了（很大）<del>，等什么时候学完了那个 pdf (?) 再把它放出来</del>。</p>
+<section class="gdrive-pdf-wrapper"><header class="gdrive-pdf-header"><span class="gdrive-pdf-label">PDF</span><a class="gdrive-pdf-link" href="https://drive.google.com/file/d/15OCxHsglHicS35auOV4S9op1qMH1mUKU/view" target="_blank" rel="noopener">在 Google Drive 打开</a></header><iframe class="gdrive-pdf-frame" src="https://drive.google.com/file/d/15OCxHsglHicS35auOV4S9op1qMH1mUKU/preview" loading="lazy" title="PDF preview"></iframe></section>
+<p>这个 pdf 是有目录的，可以下载下来查看。</p>
+<h1 id="批注"><a class="heading-anchor" href="#批注">批注</a></h1>
+<p>下面是一些写不到 pdf 上的批注（『这里空白太小了我写不下』）。可能会比较杂乱。</p>
+<h2 id="希尔伯特空间"><a class="heading-anchor" href="#希尔伯特空间">希尔伯特空间</a></h2>
+<p>快速了解（若链接挂了可去 archive.ph 查找）：</p>
+<p><a href="https://ccjou.wordpress.com/2009/08/18/%E5%BE%9E%E5%B9%BE%E4%BD%95%E5%90%91%E9%87%8F%E7%A9%BA%E9%96%93%E5%88%B0%E5%87%BD%E6%95%B8%E7%A9%BA%E9%96%93/">https://ccjou.wordpress.com/2009/08/18/%E5%BE%9E%E5%B9%BE%E4%BD%95%E5%90%91%E9%87%8F%E7%A9%BA%E9%96%93%E5%88%B0%E5%87%BD%E6%95%B8%E7%A9%BA%E9%96%93/</a></p>
+<p>在此感谢作者。</p>
+<h2 id="伴随概念澄清"><a class="heading-anchor" href="#伴随概念澄清">“伴随”概念澄清</a></h2>
+<p>在本科教授的线性代数、量子计算涉及的数学这两者中，都有“伴随”的概念，但它们实际上是不同的数学概念。</p>
+<p>1） <strong>矩阵的代数余子式和转置定义的“伴随矩阵”</strong></p>
+<p>在经典线性代数中，<a href="https://zh.wikipedia.org/wiki/%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5">伴随矩阵（adjugate matrix 或 classical adjoint）</a>指的是矩阵的代数余子式矩阵的转置。</p>
+<p>伴随矩阵在计算矩阵的逆时起到重要作用：</p>
+<div class="math-source">$$
+A^{-1} = \frac{1}{\det(A)} \text{adj}(A) 
+$$</div>
+<p>2） <strong>在量子力学或泛函分析中的“伴随”或“厄米共轭”</strong></p>
+<p>在量子力学和泛函分析中，<a href="https://zh.wikipedia.org/wiki/%E5%9F%83%E5%B0%94%E7%B1%B3%E7%89%B9%E4%BC%B4%E9%9A%8F">“伴随”（adjoint）</a>通常指的是算子 <span class="math-source">$ A $</span> 的 Hermitian adjoint，记作 <span class="math-source">$ A^\dagger $</span>。</p>
+<p>另外：经典线性代数中的“伴随”，并非是泛函分析中的“伴随”在实数空间上的特殊情况。</p>
+<h2 id="adjoint-和共轭转置"><a class="heading-anchor" href="#adjoint-和共轭转置">adjoint 和共轭转置</a></h2>
+<p>adjoint 的定义在 pdf 第 69 页。</p>
+<p>下面推导它们等价。</p>
+<p>由对偶向量的计算方法：</p>
+<div class="math-source">$$
+\langle v | A | w \rangle = (\overline{v})^T A w
+$$</div>
+<p>由 adjoint 的定义，将 2.32 式子中的 <span class="math-source">$A^\dagger |v \rangle$</span> 整体视作一个向量：</p>
+<div class="math-source">$$
+\langle v | A | w \rangle = \langle A^\dagger v | w \rangle
+$$</div>
+<p>右边的内积可以表示为：</p>
+<div class="math-source">$$
+\langle A^\dagger v | w \rangle = (\overline{A^\dagger v})^T w
+$$</div>
+<p>等式要求两边相等，所以：</p>
+<div class="math-source">$$
+(\overline{v})^T A w = (\overline{A^\dagger v})^T w
+$$</div>
+<p>由于这对任意的 <span class="math-source">$ w $</span> 都成立，必然有：</p>
+<div class="math-source">$$
+(\overline{v})^T A = (\overline{A^\dagger v})^T
+$$</div>
+<p>将其进一步展开，我们有（不难验证 <span class="math-source">$\overline{A\alpha}=\overline{A}\overline{\alpha}$</span> ，其中 A 是矩阵，<span class="math-source">$\alpha$</span> 是向量）：</p>
+<div class="math-source">$$
+(\overline{v})^T A = (\overline{v})^T (\overline{A^\dagger})^T
+$$</div>
+<p>因此：</p>
+<div class="math-source">$$
+A = (\overline{A^\dagger})^T
+$$</div>
+<p>即：</p>
+<div class="math-source">$$
+A^\dagger = (\overline{A})^T
+$$</div>
+<h2 id="酉矩阵是方阵"><a class="heading-anchor" href="#酉矩阵是方阵">酉矩阵是方阵</a></h2>
+<p>酉矩阵一定是方阵。</p>
+<p>酉矩阵 <span class="math-source">$ U $</span> 满足 <span class="math-source">$ U^\dagger U = U U^\dagger = I $</span>，其中 <span class="math-source">$ U^\dagger $</span> 是 <span class="math-source">$ U $</span> 的共轭转置矩阵，<span class="math-source">$ I $</span> 是单位矩阵。</p>
+<p>如果 <span class="math-source">$ U $</span> 是 <span class="math-source">$ m \times n $</span> 的矩阵，则 <span class="math-source">$ U^\dagger $</span> 是 <span class="math-source">$ n \times m $</span> 的矩阵。那么，<span class="math-source">$ U^\dagger U $</span> 是一个 <span class="math-source">$ n \times n $</span> 的方阵，而 <span class="math-source">$ UU^\dagger $</span> 是一个 <span class="math-source">$ m \times m $</span> 的方阵。不满足酉矩阵的定义。</p>
+<h2 id="对标准正交基进行酉变换"><a class="heading-anchor" href="#对标准正交基进行酉变换">对标准正交基进行酉变换</a></h2>
+<p>对一组标准正交基进行酉变换，得到的新基仍然是标准正交基。</p>
+<p>在一个希尔伯特空间中，<span class="math-source">$\{ |e_i\rangle \}$</span> 是标准正交基，意味着对于任意的 <span class="math-source">$i$</span> 和 <span class="math-source">$j$</span>，有：</p>
+<div class="math-source">$$
+\langle e_i | e_j \rangle = \delta_{ij}
+$$</div>
+<p>设 <span class="math-source">$\{ |e_i\rangle \}$</span> 是原来的标准正交基，在经过酉变换 <span class="math-source">$U$</span> 后，得到的新基为 <span class="math-source">$\{ |e’_i\rangle \}$</span>，其中 <span class="math-source">$ |e’_i\rangle = U |e_i\rangle $</span>。我们需要证明这组新基依然是标准正交基。</p>
+<p>酉变换保持内积（pdf 71页）：</p>
+<div class="math-source">$$
+\langle e'_i | e'_j \rangle = 
+\langle U e_i | U e_j \rangle = \langle e_i | e_j \rangle
+$$</div>
+<p>所以：</p>
+<div class="math-source">$$
+\langle e'_i | e'_j \rangle = \delta_{ij}
+$$</div>
+<p>因此新基 <span class="math-source">$\{ |e’_i\rangle \}$</span> 也是一组标准正交基。</p>
+<h2 id="酉阵的外积表示"><a class="heading-anchor" href="#酉阵的外积表示">酉阵的外积表示</a></h2>
+<p>pdf 第 71 页上方。</p>
+<div class="math-source">$$
+\begin{aligned}
+U &#x26; = \sum_{ij} \langle w_j|U|v_i \rangle|w_j\rangle \langle v_i| \\
+  &#x26; = \sum_{ij} \langle w_j|w_i \rangle|w_j\rangle \langle v_i| \\
+  &#x26; = \sum_{ij} \delta_{ij} |w_j \rangle \langle v_i| \\
+  &#x26; = \sum_{i} |w_j \rangle \langle v_i| \\
+\end{aligned}
+$$</div>
+<p>注意，用到了 pdf 上的一个条件，翻到对应的页数即可找到。</p>
+<h2 id="谱分解"><a class="heading-anchor" href="#谱分解">谱分解</a></h2>
+<p><strong>相似对角化</strong>是指，对于一个方阵 <span class="math-source">$ A $</span>，如果存在一个可逆矩阵 <span class="math-source">$ P $</span> 和一个对角矩阵 <span class="math-source">$ D $</span>，使得 <span class="math-source">$ A = PDP^{-1} $</span>，那么矩阵 <span class="math-source">$ A $</span> 就是可相似对角化的。这里的对角矩阵 <span class="math-source">$ D $</span> 的对角元素就是 <span class="math-source">$ A $</span> 的特征值。</p>
+<p><strong>特征分解（Eigendecomposition）</strong>，又称<strong>谱分解（Spectral decomposition）</strong> 是将矩阵分解为由其特征值和特征向量表示的矩阵之积的方法。</p>
+<p>谱分解用于描述正交对角化。在谱分解中，特别是在对称矩阵（实数域上）或酉矩阵（复数域上）的情况下，一个矩阵 <span class="math-source">$ A $</span> 可以被分解为 <span class="math-source">$ A = U \Lambda U^ \dagger $</span>，其中 <span class="math-source">$ U $</span> 是一个正交矩阵或酉矩阵，<span class="math-source">$ \Lambda $</span> 是一个对角矩阵，且对角元素是 <span class="math-source">$ A $</span> 的特征值。</p>
+<p><strong>谱分解是一种特定的相似对角化，适用于特定类型的矩阵。</strong></p>
+<p>正交阵是酉阵的特殊情况。</p>
+<p>谱分解通常表示为矩阵的乘法形式，如 <span class="math-source">$ M = U \Lambda U^\dagger $</span>。然而，<strong>谱分解可以进一步表达为每个特征值与其对应的特征向量的外积之和。</strong></p>
+<p>具体来说，对于一个 <span class="math-source">$ n \times n $</span> 的 Normal 矩阵 <span class="math-source">$ M $</span>，它的谱分解可以写成：</p>
+<div class="math-source">$$
+M = \sum_{i=1}^n \lambda_i \mathbf{v}_i \mathbf{v}_i^\dagger
+$$</div>
+<p>这里：</p>
+<ul>
+<li><span class="math-source">$ \lambda_i $</span> 是 <span class="math-source">$ M $</span> 的第 <span class="math-source">$ i $</span> 个特征值。</li>
+<li><span class="math-source">$ \mathbf{v}_i $</span> 是与特征值 <span class="math-source">$ \lambda_i $</span> 对应的特征向量。</li>
+<li><span class="math-source">$ \mathbf{v}_i^\dagger $</span> 是 <span class="math-source">$ \mathbf{v}_i $</span> 的共轭转置。</li>
+</ul>
+<p>以 <span class="math-source">$ M = \begin{pmatrix} 2 &#x26; 1 \\ 1 &#x26; 2 \end{pmatrix} $</span> 为例，其特征值和特征向量如下：</p>
+<ul>
+<li><span class="math-source">$ \lambda_1 = 3 $</span>， <span class="math-source">$ \mathbf{v}_1 = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} $</span></li>
+<li><span class="math-source">$ \lambda_2 = 1 $</span>， <span class="math-source">$ \mathbf{v}_2 = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} $</span></li>
+</ul>
+<p>它的谱分解可以写成：</p>
+<div class="math-source">$$
+M = 3 \cdot \mathbf{v}_1 \mathbf{v}_1^\dagger + 1 \cdot \mathbf{v}_2 \mathbf{v}_2^\dagger
+$$</div>
+<p>这种和式形式有助于理解矩阵在特征向量空间中的作用。</p>
+<p><strong>为什么之前的乘积形式可以改写为和的形式？</strong></p>
+<p>将 <span class="math-source">$ U $</span> 和 <span class="math-source">$ U^\dagger $</span> 分块：</p>
+<div class="math-source">$$
+U = \begin{pmatrix} \mathbf{v}_1 &#x26; \mathbf{v}_2 &#x26; \cdots &#x26; \mathbf{v}_n \end{pmatrix}
+$$</div>
+<div class="math-source">$$
+U^\dagger = \begin{pmatrix} \mathbf{v}_1^\dagger \\ \mathbf{v}_2^\dagger \\ \vdots \\ \mathbf{v}_n^\dagger \end{pmatrix}
+$$</div>
+<p>其中，<span class="math-source">$ U $</span> 的列向量 <span class="math-source">$ \mathbf{v}_i $</span> 形成一个标准正交基。</p>
+<p>于是：</p>
+<div class="math-source">$$
+M = \begin{pmatrix} \mathbf{v}_1 &#x26; \mathbf{v}_2 &#x26; \cdots &#x26; \mathbf{v}_n \end{pmatrix} \begin{pmatrix} \lambda_1 &#x26; 0 &#x26; \cdots &#x26; 0 \\ 0 &#x26; \lambda_2 &#x26; \cdots &#x26; 0 \\ \vdots &#x26; \vdots &#x26; \ddots &#x26; \vdots \\ 0 &#x26; 0 &#x26; \cdots &#x26; \lambda_n \end{pmatrix} \begin{pmatrix} \mathbf{v}_1^\dagger \\ \mathbf{v}_2^\dagger \\ \vdots \\ \mathbf{v}_n^\dagger \end{pmatrix}
+$$</div>
+<p>由矩阵乘法：</p>
+<div class="math-source">$$
+M = \lambda_1 \mathbf{v}_1 \mathbf{v}_1^\dagger + \lambda_2 \mathbf{v}_2 \mathbf{v}_2^\dagger + \cdots + \lambda_n \mathbf{v}_n \mathbf{v}_n^\dagger
+$$</div>
+<p>简写为：</p>
+<div class="math-source">$$
+M = \sum_{i=1}^n \lambda_i \mathbf{v}_i \mathbf{v}_i^\dagger
+$$</div></div> </div> </div> <footer class="post-footer" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <!-- Gitalk comments will be added in Phase 3 --> </div> <section class="reward-widget" data-reward-widget data-astro-cid-bbdapvnt> <div class="reward-panel" id="reward-panel" aria-label="打赏二维码" data-astro-cid-bbdapvnt> <div class="reward-list" data-astro-cid-bbdapvnt> <div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/Alipay.png" alt="支付宝收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>支付宝 Alipay</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/WeChat.png" alt="微信收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>微信 Wechat</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/PayPal-or-CreditCard.png" alt="PayPal 或信用卡收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>PayPal/CreditCard</span> </div> </div> </div> <button class="reward-trigger" type="button" aria-label="打开打赏二维码" aria-controls="reward-panel" aria-expanded="false" data-astro-cid-bbdapvnt>
+打赏 Reward
+</button> </section>  <script type="module">function a(){document.querySelectorAll("[data-reward-widget]").forEach(e=>{if(e.dataset.initialized)return;const r=e.querySelector(".reward-trigger");if(!r)return;e.dataset.initialized="true";const n=t=>{e.classList.toggle("is-open",t),r.setAttribute("aria-expanded",String(t))};r.addEventListener("click",()=>n(!e.classList.contains("is-open"))),document.addEventListener("click",t=>{e.contains(t.target)||n(!1)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&(n(!1),r.blur())})})}window.addEventListener("encrypted-content-revealed",()=>{document.querySelectorAll("[data-reward-after-unlock]").forEach(e=>{e.removeAttribute("hidden")})});document.addEventListener("astro:page-load",a);a();</script> <div id="gitalk-container" class="gitalk-container" data-abbrlink="fc58f357" data-title="量子计算笔记" data-astro-cid-ajg7agi2></div> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">   <script>
+  var GITALK_CFG = {"clientID":"Ov23lijmGQilj9J9CrdP","clientSecret":"bd5066a2aadbe28c20913dd390b8047031f7174a","repo":"dropsong.github.io","owner":"dropsong","admin":["dropsong"],"labels":["Gitalk"],"distractionFreeMode":false};
+</script> <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js">
+</script> <script>
+  (function() {
+    var c = document.getElementById('gitalk-container');
+    if (!c) return;
+    var id = c.dataset.abbrlink || '';
+    var title = c.dataset.title || '';
+    new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting && !c.dataset.loaded) {
+          c.dataset.loaded = '1';
+          new Gitalk(Object.assign({}, GITALK_CFG, {id: id, title: title})).render('gitalk-container');
+        }
+      });
+    }, {rootMargin: '200px'}).observe(c);
+  })();
+</script> </footer> </article> </main> <button class="toc-fab" id="toc-fab" aria-label="目录" data-astro-cid-6t6zfk7k> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M4 6h16M4 12h10M4 18h16" data-astro-cid-6t6zfk7k></path> </svg> </button> <!-- Desktop: hover popup panel --> <div class="toc-popup" id="toc-popup" data-astro-cid-6t6zfk7k> <div class="toc-popup-header" data-astro-cid-6t6zfk7k> <span class="toc-popup-title" data-astro-cid-6t6zfk7k>目录</span> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> <div class="toc-popup-body" data-astro-cid-6t6zfk7k> <ul class="toc-popup-list" data-astro-cid-6t6zfk7k> <li class="toc-popup-item" data-mtoc-section="教材-pdf" data-astro-cid-6t6zfk7k> <a href="#教材-pdf" class="toc-popup-link" data-mtoc="教材-pdf" data-astro-cid-6t6zfk7k> 教材 PDF </a>  </li><li class="toc-popup-item" data-mtoc-section="批注" data-astro-cid-6t6zfk7k> <a href="#批注" class="toc-popup-link" data-mtoc="批注" data-astro-cid-6t6zfk7k> 批注 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#希尔伯特空间" class="toc-popup-link" data-mtoc="希尔伯特空间" data-astro-cid-6t6zfk7k> 希尔伯特空间 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#伴随概念澄清" class="toc-popup-link" data-mtoc="伴随概念澄清" data-astro-cid-6t6zfk7k> “伴随”概念澄清 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#adjoint-和共轭转置" class="toc-popup-link" data-mtoc="adjoint-和共轭转置" data-astro-cid-6t6zfk7k> adjoint 和共轭转置 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#酉矩阵是方阵" class="toc-popup-link" data-mtoc="酉矩阵是方阵" data-astro-cid-6t6zfk7k> 酉矩阵是方阵 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#对标准正交基进行酉变换" class="toc-popup-link" data-mtoc="对标准正交基进行酉变换" data-astro-cid-6t6zfk7k> 对标准正交基进行酉变换 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#酉阵的外积表示" class="toc-popup-link" data-mtoc="酉阵的外积表示" data-astro-cid-6t6zfk7k> 酉阵的外积表示 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#谱分解" class="toc-popup-link" data-mtoc="谱分解" data-astro-cid-6t6zfk7k> 谱分解 </a> </li> </ul> </li> </ul> </div> </div> <!-- Mobile: bottom sheet overlay --> <div class="toc-overlay" id="toc-overlay" data-astro-cid-6t6zfk7k></div> <div class="toc-sheet" id="toc-sheet" data-astro-cid-6t6zfk7k> <div class="toc-sheet-header" data-astro-cid-6t6zfk7k> <span class="toc-sheet-title" data-astro-cid-6t6zfk7k>目录</span> <div class="toc-sheet-actions" data-astro-cid-6t6zfk7k> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> <button class="toc-sheet-close" id="toc-sheet-close" aria-label="关闭" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M18 6L6 18M6 6l12 12" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> </div> <div class="toc-sheet-body" data-astro-cid-6t6zfk7k> <ul class="toc-sheet-list" data-astro-cid-6t6zfk7k> <li class="toc-sheet-item" data-msheet-section="教材-pdf" data-astro-cid-6t6zfk7k> <a href="#教材-pdf" class="toc-sheet-link" data-msheet="教材-pdf" data-astro-cid-6t6zfk7k> 教材 PDF </a>  </li><li class="toc-sheet-item" data-msheet-section="批注" data-astro-cid-6t6zfk7k> <a href="#批注" class="toc-sheet-link" data-msheet="批注" data-astro-cid-6t6zfk7k> 批注 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#希尔伯特空间" class="toc-sheet-link" data-msheet="希尔伯特空间" data-astro-cid-6t6zfk7k> 希尔伯特空间 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#伴随概念澄清" class="toc-sheet-link" data-msheet="伴随概念澄清" data-astro-cid-6t6zfk7k> “伴随”概念澄清 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#adjoint-和共轭转置" class="toc-sheet-link" data-msheet="adjoint-和共轭转置" data-astro-cid-6t6zfk7k> adjoint 和共轭转置 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#酉矩阵是方阵" class="toc-sheet-link" data-msheet="酉矩阵是方阵" data-astro-cid-6t6zfk7k> 酉矩阵是方阵 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#对标准正交基进行酉变换" class="toc-sheet-link" data-msheet="对标准正交基进行酉变换" data-astro-cid-6t6zfk7k> 对标准正交基进行酉变换 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#酉阵的外积表示" class="toc-sheet-link" data-msheet="酉阵的外积表示" data-astro-cid-6t6zfk7k> 酉阵的外积表示 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#谱分解" class="toc-sheet-link" data-msheet="谱分解" data-astro-cid-6t6zfk7k> 谱分解 </a> </li> </ul> </li> </ul> </div> </div>  <script type="module">function F(){const f=document.getElementById("toc-fab"),o=document.getElementById("toc-popup"),a=document.getElementById("toc-overlay"),n=document.getElementById("toc-sheet"),q=document.getElementById("toc-sheet-close"),P=document.querySelectorAll(".toc-top-btn");if(!f||!o||!a||!n||!q)return;const p=()=>window.matchMedia("(max-width: 768px)").matches;let h=null,m=null,g=!1,E=!1;function A(){p()||(m&&clearTimeout(m),o.classList.add("open"),y(!0))}function B(){m&&clearTimeout(m),m=setTimeout(()=>{!g&&!E&&o.classList.remove("open")},200)}f.addEventListener("mouseenter",()=>{g=!0,A()}),f.addEventListener("mouseleave",()=>{g=!1,B()}),o.addEventListener("mouseenter",()=>{E=!0,A()}),o.addEventListener("mouseleave",()=>{E=!1,B()}),o.querySelectorAll(".toc-popup-link").forEach(t=>{t.addEventListener("click",()=>{setTimeout(()=>o.classList.remove("open"),150)})}),f.addEventListener("click",()=>{p()&&(a.style.display="block",n.style.display="flex",requestAnimationFrame(()=>{a.classList.add("open"),n.classList.add("open"),y(!0)}),document.body.style.overflow="hidden")});function v(){a.classList.remove("open"),n.classList.remove("open"),setTimeout(()=>{a.style.display="none",n.style.display="none"},300),document.body.style.overflow=""}q.addEventListener("click",v),a.addEventListener("click",v),n.querySelectorAll(".toc-sheet-link").forEach(t=>{t.addEventListener("click",()=>setTimeout(v,200))}),P.forEach(t=>{t.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"}),p()&&v()})});function I(t,b,s,i=!1){const l=t.querySelector(b),S=t.querySelector(s);if(!l||!S)return;const r=l.getBoundingClientRect(),e=S.getBoundingClientRect(),c=e.top>=r.top&&e.bottom<=r.bottom;if(!i&&c)return;const d=l.scrollTop+(e.top-r.top)-l.clientHeight/2+e.height/2;l.scrollTo({top:Math.max(0,d),behavior:i?"auto":"smooth"})}function k(t=!1){!p()&&o.classList.contains("open")&&I(o,".toc-popup-body",".toc-popup-link.active",t),p()&&n.classList.contains("open")&&I(n,".toc-sheet-body",".toc-sheet-link.active",t)}function y(t=!1){requestAnimationFrame(()=>k(t)),h&&clearTimeout(h),h=setTimeout(()=>{k(t),h=null},260)}let x="";function T(){const t=o.querySelectorAll(".toc-popup-link"),b=n.querySelectorAll(".toc-sheet-link"),s=[];t.forEach(e=>{const c=e.dataset.mtoc;if(c){const d=document.getElementById(c);d&&s.push({id:c,el:d})}});let i="";const l=window.scrollY+100;if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-4&&s.length>0)i=s[s.length-1].id;else for(let e=s.length-1;e>=0;e--)if(s[e].el.offsetTop<=l){i=s[e].id;break}t.forEach(e=>e.classList.toggle("active",e.dataset.mtoc===i)),b.forEach(e=>e.classList.toggle("active",e.dataset.msheet===i));function r(e,c,d,H){const R=(i?e.querySelector(`${c}.active`):null)?.closest(d)?.querySelector(H);e.querySelectorAll(H).forEach(u=>{u===R?(u.classList.add("expanded"),u.style.maxHeight=`${u.scrollHeight}px`):(u.classList.remove("expanded"),u.style.removeProperty("max-height"))})}r(o,".toc-popup-link",".toc-popup-item",".toc-popup-sub"),r(n,".toc-sheet-link",".toc-sheet-item",".toc-sheet-sub"),k(),i!==x&&(y(),x=i)}let w=!1;window.addEventListener("scroll",()=>{w||(requestAnimationFrame(()=>{T(),w=!1}),w=!0)});let L=null;window.addEventListener("resize",()=>{L&&clearTimeout(L),L=setTimeout(()=>{T(),y(!0),L=null},100)}),T()}document.addEventListener("astro:page-load",F);F();</script><footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner" data-astro-cid-sz7xmlte></div> </footer>  <script type="module" src="/_astro/CodeBlockEnhance.astro_astro_type_script_index_0_lang.Di89G-ws.js"></script> <div id="image-lightbox" class="lightbox-overlay" data-astro-cid-fbflauxb> <div class="lightbox-content" data-astro-cid-fbflauxb> <img id="lightbox-img" src="" alt="" data-astro-cid-fbflauxb> </div> </div>  <script type="module">function c(){const t=document.getElementById("image-lightbox"),n=document.getElementById("lightbox-img");if(!t||!n)return;function s(e){n.src=e,t.classList.add("open"),document.body.style.overflow="hidden"}function i(){t.classList.remove("open"),document.body.style.overflow=""}t.addEventListener("click",e=>{e.target===t&&i()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t.classList.contains("open")&&i()});function d(){document.querySelectorAll(".article-body img").forEach(e=>{const o=e;o.dataset.lightbox||(o.dataset.lightbox="true",o.style.cursor="zoom-in",o.addEventListener("click",()=>{s(o.src)}))})}document.addEventListener("astro:page-load",d),d()}document.addEventListener("astro:page-load",c);c();</script> <script type="module" src="/_astro/EncryptedBlock.astro_astro_type_script_index_0_lang.DuPogRv7.js"></script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"><script type="module">
+  import renderMathInElement from 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs';
+
+  function renderMath() {
+    const articleBody = document.querySelector('.article-body');
+    if (!articleBody) return;
+
+    renderMathInElement(articleBody, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      throwOnError: false,
+    });
+  }
+
+  document.addEventListener('astro:page-load', renderMath);
+  renderMath();
+</script> </div> </div> </body></html>  
