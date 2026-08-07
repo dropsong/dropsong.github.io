@@ -31,12 +31,12 @@
 <p>对上式两边同除 <span class="math-source">$\Delta x$</span> ，再令 <span class="math-source">$\Delta x \rightarrow 0$</span> ，即得：</p>
 <div class="math-source">$$\frac{ {\rm d} } { {\rm d}x}\int_{g(x)}^{h(x)}f(t){\rm d}t=f[h(x)]h'(x)-f[g(x)]g'(x)$$</div>
 <h2 id="三维情形的拓展"><a class="heading-anchor" href="#三维情形的拓展">三维情形的拓展</a></h2>
-<p>三维的情形其实我在 <a href="https://dropsong.github.io/posts/12839668.html">几何角度下的一个公式</a> 这篇文章中已经介绍了。</p>
+<p>三维的情形其实我在 <a href="https://dropsong.cc/post/12839668/">几何角度下的一个公式</a> 这篇文章中已经介绍了。</p>
 <p>当时是我初学这块内容时，觉得同济书的证明过于吓人，试图从几何角度看看能不能建立直观，于是诞生了上面那篇文章。至于为什么是初学？因为大一疫情的时候在家摆烂，二重积分之后的高数一丁点没听。还好老师捞了一把没有挂高数。</p>
 <h2 id="应试中的应用"><a class="heading-anchor" href="#应试中的应用">应试中的应用</a></h2>
 <p>这类题目的特征是，它往往会要你对一个看起来不太能用求导做的积分做一些蜜汁操作。按照上面的思路，我们完全可以直接求导。</p>
 <h3 id="例一"><a class="heading-anchor" href="#例一">例一</a></h3>
-<p>先来看一道典型例题。你可以在 <a href="https://dropsong.github.io/posts/55931ee1.html">数二强化</a> 下的<strong>超越模拟题23</strong> pdf 第四页找到它。</p>
+<p>先来看一道典型例题。你可以在 <a href="https://dropsong.cc/post/55931ee1/">数二强化</a> 下的<strong>超越模拟题23</strong> pdf 第四页找到它。</p>
 <figure class="article-figure"><img src="https://sway.office.com/s/jSZcrgReU4mecpIB/images/9M8xf1ZlWt9Loz" alt="58-3" loading="lazy"><figcaption class="article-figure-caption">58-3</figcaption></figure>
 <p>看到这个形式，很容易想到洛必达：分母是 t 的函数，记为 <span class="math-source">$f(t)$</span> ，分子也是 t 的函数。现在的问题是如何对 <span class="math-source">$f(t)$</span> 求导：</p>
 <p>让我们循着之前的思路，思考导函数最初的意义，即变化率。将题目中的积分区域画出来，其实就是要求阴影面积对 t 的变化率。</p>
@@ -47,7 +47,7 @@
 <p>下面的例子也补充了例一推导中疏漏的一处：</p>
 <figure class="article-figure"><img src="https://sway.office.com/s/jSZcrgReU4mecpIB/images/j4VCgle3qV4cr9" alt="58-4" loading="lazy"><figcaption class="article-figure-caption">58-4</figcaption></figure>
 <figure class="article-figure"><img src="https://sway.office.com/s/jSZcrgReU4mecpIB/images/1oe9wwnJ79lmqE" alt="58-5" loading="lazy"><figcaption class="article-figure-caption">58-5</figcaption></figure>
-<p>你可以在 <a href="https://dropsong.github.io/posts/55931ee1.html">数二强化</a> 下的<strong>李林六24</strong> pdf 第16、17页找到它。</p>
+<p>你可以在 <a href="https://dropsong.cc/post/55931ee1/">数二强化</a> 下的<strong>李林六24</strong> pdf 第16、17页找到它。</p>
 <p>分析都在图里面了。</p></div> </div> </div> <footer class="post-footer" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <!-- Gitalk comments will be added in Phase 3 --> </div> <section class="reward-widget" data-reward-widget data-astro-cid-bbdapvnt> <div class="reward-panel" id="reward-panel" aria-label="打赏二维码" data-astro-cid-bbdapvnt> <div class="reward-list" data-astro-cid-bbdapvnt> <div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/Alipay.png" alt="支付宝收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>支付宝 Alipay</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/WeChat.png" alt="微信收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>微信 Wechat</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/PayPal-or-CreditCard.png" alt="PayPal 或信用卡收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>PayPal/CreditCard</span> </div> </div> </div> <button class="reward-trigger" type="button" aria-label="打开打赏二维码" aria-controls="reward-panel" aria-expanded="false" data-astro-cid-bbdapvnt>
 打赏 Reward
 </button> </section>  <script type="module">function a(){document.querySelectorAll("[data-reward-widget]").forEach(e=>{if(e.dataset.initialized)return;const r=e.querySelector(".reward-trigger");if(!r)return;e.dataset.initialized="true";const n=t=>{e.classList.toggle("is-open",t),r.setAttribute("aria-expanded",String(t))};r.addEventListener("click",()=>n(!e.classList.contains("is-open"))),document.addEventListener("click",t=>{e.contains(t.target)||n(!1)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&(n(!1),r.blur())})})}window.addEventListener("encrypted-content-revealed",()=>{document.querySelectorAll("[data-reward-after-unlock]").forEach(e=>{e.removeAttribute("hidden")})});document.addEventListener("astro:page-load",a);a();</script> <div id="gitalk-container" class="gitalk-container" data-abbrlink="f06381e8" data-title="一类问题的新解法" data-astro-cid-ajg7agi2></div> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">   <script>
