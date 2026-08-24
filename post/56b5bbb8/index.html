@@ -36,7 +36,8 @@
 <p><strong>目标</strong>：最大化未来的折扣奖励总和：<span class="math-source">$max_{\pi_{\theta}}\sum_{t}^{Total~Time}\gamma^{t}r_{t}$</span> 。其中 <span class="math-source">$\gamma$</span> 为折扣因子，<span class="math-source">$\pi_{\theta}$</span> 表示以 <span class="math-source">$\theta$</span> 为参数的深度神经网络策略 。</p>
 <p><strong>状态 (State)</strong>：流统计特征构成的矩阵（如 RTT、传送速率、拥塞窗口大小，以及 BBR 独有的 BtlBw 等） 。</p>
 <p><strong>动作 (Action)</strong>：一个包含所有需要动态调整参数的数组 <span class="math-source">$a_{t}=[a_{t}[1],…,a_{t}[M]]$</span> 。在 BBR 案例中，<span class="math-source">$M=2$</span>，分别控制 RTprop（极小延迟）和 BtlBw（极大带宽）的估算窗口大小 。</p>
-<p><strong>奖励 (Reward)</strong>：结合了比例（P）、积分（I）、微分（D）的控制思想 。针对 BBR 的特性，论文设计了基于吞吐量和延迟预测误差的奖励函数：<span class="math-source">$r_{t}=\alpha\times Throughput+(1-\alpha)\times 1/(1+exp(|latency_{estimate}-latency|))$</span> 。</p>
+<p><strong>奖励 (Reward)</strong>：结合了比例（P）、积分（I）、微分（D）的控制思想 。针对 BBR 的特性，论文设计了基于吞吐量和延迟预测误差的奖励函数：</p>
+<div class="math-source">$$r_{t}=\alpha\times Throughput+(1-\alpha)\times 1/(1+exp(|latency_{estimate}-latency|))$$</div>
 <blockquote>
 <p><strong>补充背景：为什么奖励函数使用负 Sigmoid 结构？</strong>
 论文在延迟惩罚项中使用了 <span class="math-source">$1/(1+exp(x))$</span> 的形式 。这是机器学习中常见的非线性映射手法。它能将绝对误差 <span class="math-source">$|latency_{estimate}-latency|$</span> 映射到 <span class="math-source">$(0, 0.5]$</span> 的范围内，并有效放大小误差与大误差之间的梯度差距，迫使智能体在网络抖动时做出更精确的预测 。</p>
