@@ -34,7 +34,53 @@
 link: <a href="https://cloudswit.ch/blogs/what-is-int%EF%BC%88in-band-network-telemetry%EF%BC%89/">https://cloudswit.ch/blogs/what-is-int%EF%BC%88in-band-network-telemetry%EF%BC%89/</a></p>
 <section class="gdrive-pdf-wrapper"><header class="gdrive-pdf-header"><span class="gdrive-pdf-label">PDF</span><a class="gdrive-pdf-link" href="https://drive.google.com/file/d/1zp2dCzNiDLGTb_sr_zg4_rFoTcjFHZZb/view" target="_blank" rel="noopener">在 Google Drive 打开</a></header><iframe class="gdrive-pdf-frame" src="https://drive.google.com/file/d/1zp2dCzNiDLGTb_sr_zg4_rFoTcjFHZZb/preview" loading="lazy" title="PDF preview"></iframe></section>
 <p>摘要：主要讲 HPCC 算法本身，并没有额外补充其他的知识。</p>
+<blockquote>
+<p>以下是 Algorithm 1 的一些 notes.</p>
+</blockquote>
+<p>先看第21行的函数，<code>lastUpdateSeq</code> 用来记录新窗口 <span class="math-source">$W^C$</span> 中第一个发送的数据包，当到来的 ACK 的序列号大于 <code>IastUpdateSeq</code> 时，触发窗口大小的更新。否则不进行更新，这体现在 updateWc 的参数设置上。在函数的最后，例行更新了 R 和 L 的值。</p>
+<p>第5行，使用 <code>min(ack.L[i].qlen, L[i].qlen)</code> 是为了过滤掉 qlen 的噪声。</p>
+<p>3到7行的代码选出最大的 <span class="math-source">$U$</span>, 第9行做了指数加权移动平均（ewma）。</p>
+<p><strong>ComputeWind 函数</strong>是算法的重点。函数的核心目标是平衡两个有时相互矛盾的需求：</p>
+<ol>
+<li><strong>反应速度 (Reaction Speed)</strong>：当网络有空闲带宽时，要能非常迅速地把速率提上去，占满带宽；当网络拥塞时，要能非常迅速地把速率降下来。这个由<strong>乘性增/减 (MI/MD)</strong>负责。</li>
+<li><strong>公平性 (Fairness)</strong>：当多个流共享瓶颈时，要确保大家能公平分配带宽，<strong>不能因为某个流反应快就一直多占</strong>。这个由<strong>加性增 (AI)</strong>负责。</li>
+</ol>
+<p><strong>第一阶段：“温柔试探”的加性增 (AI) 阶段</strong></p>
+<ul>
+<li><strong>触发条件</strong>: 当发送端发现网络有空闲（<code>U &#x3C; η</code>），<strong>并且</strong>，它还处于“试探期”（<code>incStage &#x3C; maxStage</code>，例如 <code>incStage &#x3C; 5</code>）。</li>
+<li><strong>执行动作 (对应伪代码16-19行)</strong>：
+<ol>
+<li>它会执行一次非常保守的<strong>加性增 (AI)</strong>：<code>W = W^c + W_AI</code>。即在参考窗口的基础上，只增加一个很小的固定值<code>W_AI</code>。</li>
+<li>同时，将“试探”计数器加一：<code>incStage++</code>。</li>
+</ol>
+</li>
+<li><strong>目的</strong>: 这个阶段的目的是<strong>稳定和公平</strong>。它避免了一个流在刚发现网络有空闲时就用“乘性增”暴力抢占带宽，那可能会导致网络震荡。相反，它会先“温柔地”走几步，看看网络反应，同时也给其他流公平竞争的机会。</li>
+</ul>
+<p><strong>第二阶段：“迅猛出击”的乘性增/减 (MIMD) 阶段</strong></p>
+<ul>
+<li><strong>触发条件</strong>: 以下<strong>两个条件满足任何一个</strong>，就会进入这个阶段：
+<ol>
+<li><strong>网络拥塞了 (</strong><code>U >= η</code>)：这是最直接的触发条件。一旦发现拥塞，必须立刻、迅速地做出反应。</li>
+<li><strong>试探期结束了 (</strong><code>incStage >= maxStage</code>)：发送端已经连续执行了<code>maxStage</code>次“温柔”的加性增，但发现网络<strong>依然</strong>还有空闲 (<code>U</code> 仍然小于 <code>η</code>)。这说明网络非常空闲，带宽裕量很大，没必要再一步一步地走了，是时候“迅猛出击”，快速把速率提上去了。</li>
+</ol>
+</li>
+<li><strong>执行动作 (对应伪代码12-15行)</strong>：
+<ol>
+<li>算法会调用完整的<strong>公式(4)</strong>：<code>W = W^c / (U/η) + W_AI</code>。</li>
+<li>这个公式的核心是<code>W^c / (U/η)</code>这一项，它是一个<strong>MIMD</strong>项：
+<ul>
+<li>如果是情况1（拥塞），<code>U/η > 1</code>，窗口会<strong>乘性减小</strong>，实现<strong>快速降速</strong>。</li>
+<li>如果是情况2（试探期结束），<code>U/η &#x3C; 1</code>，窗口会<strong>乘性增大</strong>，实现<strong>快速提速</strong>。</li>
+</ul>
+</li>
+<li>同时，将“试探”计数器清零：<code>incStage = 0</code>，为下一次可能的“温柔试探”做准备。</li>
+</ol>
+</li>
+</ul>
 <h1 id="qtcp-adaptive-congestion-control-with-reinforcement-learning-2018"><a class="heading-anchor" href="#qtcp-adaptive-congestion-control-with-reinforcement-learning-2018">QTCP: Adaptive Congestion Control with Reinforcement Learning (2018)</a></h1>
+<p>paper: <a href="https://ieeexplore.ieee.org/document/8357943/">https://ieeexplore.ieee.org/document/8357943/</a></p>
+<section class="gdrive-pdf-wrapper"><header class="gdrive-pdf-header"><span class="gdrive-pdf-label">PDF</span><a class="gdrive-pdf-link" href="https://drive.google.com/file/d/1vg55TpqHnKFqKYfpeQsZlIBJLDSn0Vaq/view" target="_blank" rel="noopener">在 Google Drive 打开</a></header><iframe class="gdrive-pdf-frame" src="https://drive.google.com/file/d/1vg55TpqHnKFqKYfpeQsZlIBJLDSn0Vaq/preview" loading="lazy" title="PDF preview"></iframe></section>
+<p>摘要：Kanerva 编码、Q-learning、比例公平和 log。</p>
 <h1 id="acc-automatic-ecn-tuning-for-high-speed-datacenter-networks-2021"><a class="heading-anchor" href="#acc-automatic-ecn-tuning-for-high-speed-datacenter-networks-2021">ACC: automatic ECN tuning for high-speed datacenter networks (2021)</a></h1>
 <p>paper: <a href="https://dl.acm.org/doi/10.1145/3452296.3472927">https://dl.acm.org/doi/10.1145/3452296.3472927</a></p>
 <p>参见：<a href="https://dropsong.cc/post/102c6a93/">论文阅读 ACC:automatic ECN tuning for high-speed datacenter networks</a>。</p>
@@ -42,11 +88,16 @@ link: <a href="https://cloudswit.ch/blogs/what-is-int%EF%BC%88in-band-network-te
 <p>paper: <a href="https://arxiv.org/abs/2301.12558">https://arxiv.org/abs/2301.12558</a></p>
 <p>参见：<a href="https://dropsong.cc/post/56b5bbb8/">论文阅读 A Deep Reinforcement Learning Framework for Optimizing Congestion Control in Data Centers</a></p>
 <h1 id="nvidia-papers"><a class="heading-anchor" href="#nvidia-papers">NVIDIA Papers</a></h1>
-<ul>
-<li>Reinforcement Learning for Datacenter Congestion Control (2022)</li>
-<li>Implementing Reinforcement Learning Datacenter Congestion Control in NVIDIA NICs</li>
-</ul>
-<p>在我阅读的时候，这两篇论文只在 arxiv 上。现在已经发表在 acm.</p></div> </div> </div> <footer class="post-footer" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <!-- Gitalk comments will be added in Phase 3 --> </div> <section class="reward-widget" data-reward-widget data-astro-cid-bbdapvnt> <div class="reward-panel" id="reward-panel" aria-label="打赏二维码" data-astro-cid-bbdapvnt> <div class="reward-list" data-astro-cid-bbdapvnt> <div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/Alipay.png" alt="支付宝收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>支付宝 Alipay</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/WeChat.png" alt="微信收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>微信 Wechat</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/PayPal-or-CreditCard.png" alt="PayPal 或信用卡收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>PayPal/CreditCard</span> </div> </div> </div> <button class="reward-trigger" type="button" aria-label="打开打赏二维码" aria-controls="reward-panel" aria-expanded="false" data-astro-cid-bbdapvnt>
+<div class="encrypt-block" data-encrypted="nBJUOMNYviVz6dfrQ84vHcPOVIlr2dFrQ+cyR5PiZNSZ4DYEV7MN4dKQxIev7ux+QB3KKwoXJOnODPvsLt066za2uFskt8NHkh42OLA/Qz0bXTomWcKqNN0XKof6DYef5l9Qzl3Ra4fGPVUXTsCsHPRc1NbAIZBVAoziVlBEPOE/x2RI2A00fITX7+5kqtUnqVOJ05vm0sl8vk9y5o1b6NFpcTYPZ/0tv6zTyfeC6awoPL+XnyIX7hPo6yvJHedbUDzbk62RvZSIuqEXDusfr38K0L0frUciXg+XTCveeEbdZ1X7fLGea3Csgok4BKMNA7xrxglYqZbpD1MZ8w6CZk/g6XWdcEcAaFOn82dVkwI1RghUN6yq">
+  <div class="encrypt-block-prompt">
+    <span class="encrypt-block-icon">🔒</span>
+    <span class="encrypt-block-text">加密内容</span>
+    <input type="password" class="encrypt-block-input" placeholder="输入密码" autocomplete="off">
+    <button class="encrypt-block-btn">解锁</button>
+    <span class="encrypt-block-error" style="display:none">密码错误</span>
+  </div>
+  <div class="encrypt-block-content article-body" style="display:none"></div>
+</div></div> </div> </div> <footer class="post-footer" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <!-- Gitalk comments will be added in Phase 3 --> </div> <section class="reward-widget" data-reward-widget data-astro-cid-bbdapvnt> <div class="reward-panel" id="reward-panel" aria-label="打赏二维码" data-astro-cid-bbdapvnt> <div class="reward-list" data-astro-cid-bbdapvnt> <div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/Alipay.png" alt="支付宝收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>支付宝 Alipay</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/WeChat.png" alt="微信收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>微信 Wechat</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/PayPal-or-CreditCard.png" alt="PayPal 或信用卡收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>PayPal/CreditCard</span> </div> </div> </div> <button class="reward-trigger" type="button" aria-label="打开打赏二维码" aria-controls="reward-panel" aria-expanded="false" data-astro-cid-bbdapvnt>
 打赏 Reward
 </button> </section>  <script type="module">function a(){document.querySelectorAll("[data-reward-widget]").forEach(e=>{if(e.dataset.initialized)return;const r=e.querySelector(".reward-trigger");if(!r)return;e.dataset.initialized="true";const n=t=>{e.classList.toggle("is-open",t),r.setAttribute("aria-expanded",String(t))};r.addEventListener("click",()=>n(!e.classList.contains("is-open"))),document.addEventListener("click",t=>{e.contains(t.target)||n(!1)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&(n(!1),r.blur())})})}window.addEventListener("encrypted-content-revealed",()=>{document.querySelectorAll("[data-reward-after-unlock]").forEach(e=>{e.removeAttribute("hidden")})});document.addEventListener("astro:page-load",a);a();</script> <div id="gitalk-container" class="gitalk-container" data-abbrlink="8d98d543" data-title="论文阅读 拥塞控制主题" data-astro-cid-ajg7agi2></div> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">   <script>
   var GITALK_CFG = {"clientID":"Ov23lijmGQilj9J9CrdP","clientSecret":"bd5066a2aadbe28c20913dd390b8047031f7174a","repo":"dropsong.github.io","owner":"dropsong","admin":["dropsong"],"labels":["Gitalk"],"distractionFreeMode":false};
