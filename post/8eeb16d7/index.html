@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>数据中心高速互连 2026：800G/1.6T、CPO、RoCEv2 与 UET · dropsong&#39;s</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><style>.article-body{font-size:16px;line-height:1.85;color:var(--text);max-width:820px;margin:0 auto}.article-body h1,.article-body h2,.article-body h3,.article-body h4,.article-body h5,.article-body h6{margin-top:1.8em;margin-bottom:.6em;font-weight:600;line-height:1.35;color:var(--text)}.article-body h1{font-size:1.75rem}.article-body h2{font-size:1.45rem}.article-body h3{font-size:1.2rem}.article-body h4{font-size:1.05rem}.article-body p{margin-bottom:1.2em}.article-body p,.article-body li{white-space:pre-line}.article-body p,.article-body li,.article-body blockquote,.article-body td,.article-body th{word-break:normal;overflow-wrap:break-word}.article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.article-body a:hover{color:var(--accent-hover)}.article-body blockquote{margin:1.2em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:#5b9e8c1a;border-radius:0 var(--radius) var(--radius) 0;color:var(--muted)}.article-body blockquote>:last-child{margin-bottom:0}.article-body ul,.article-body ol{margin-bottom:1.2em;padding-left:1.5em}.article-body li>ul,.article-body li>ol{margin-bottom:0;white-space:normal}.article-body li:has(>ul,>ol){white-space:normal}.article-body li{margin-bottom:.25em}.article-body table{width:auto;max-width:100%;border-collapse:collapse;margin:1.5em auto;font-size:.925rem;overflow-x:auto}.article-body table th,.article-body table td{padding:.6em .85em;border:1px solid var(--border);text-align:left}.article-body table th{font-weight:600}.article-body hr{border:none;border-top:1px solid var(--border);margin:2em 0}.article-body img{border-radius:var(--radius);cursor:zoom-in}.article-body .article-figure{margin:1.5em 0;text-align:center}.article-body .article-figure img{display:block;margin:0 auto}.article-body .article-figure-caption{margin-top:.55em;color:var(--muted);font-size:.875rem;line-height:1.5}.article-body iframe{max-width:100%;border-radius:var(--radius)}.article-body .gdrive-pdf-wrapper{margin:1.5em 0;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius);background:#fff}.article-body .gdrive-pdf-header{display:flex;align-items:center;justify-content:space-between;min-height:2.75rem;padding:.5rem .875rem;border-bottom:1px solid var(--border);background:var(--bg)}.article-body .gdrive-pdf-label{color:var(--muted);font-size:.85rem}.article-body .gdrive-pdf-link{color:var(--accent);font-size:.8rem;text-decoration:none}.article-body .gdrive-pdf-link:hover{text-decoration:underline}.article-body .gdrive-pdf-frame{display:block;width:100%;height:min(720px,80vh);border:0;border-radius:0;background:#fff}.article-body :not(pre)>code{background:#fffaf0a6;border:1px solid rgba(180,155,130,.2);border-radius:4px;padding:.1em .4em;font-size:.875em}.article-body pre,.article-body pre.astro-code,.article-body .astro-code{background:transparent!important;background-color:transparent!important;border:1.5px dashed rgba(224,143,88,.45);border-radius:14px}.article-body pre.astro-code code,.article-body .astro-code code{background:transparent!important;background-color:transparent!important}.article-body pre,.article-body table{-webkit-overflow-scrolling:touch}.article-body .katex-display{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;margin:1.4em 0;padding:.25rem 0 .45rem;text-align:center;scrollbar-width:thin;scrollbar-color:rgba(224,143,88,.35) transparent;word-break:normal;overflow-wrap:normal}.article-body .katex-display>.katex{display:inline-block;width:max-content;max-width:none}.article-body .katex{white-space:nowrap;word-break:normal;overflow-wrap:normal}.article-body .katex-display::-webkit-scrollbar{height:4px}.article-body .katex-display::-webkit-scrollbar-thumb{background:transparent}.article-body .katex-display:hover::-webkit-scrollbar-thumb{background:var(--border)}
+</style>
+<link rel="stylesheet" href="/_astro/about.CS0PymYq.css">
+<style>.site-footer[data-astro-cid-sz7xmlte]{padding:2rem 1.5rem;text-align:center}.footer-inner[data-astro-cid-sz7xmlte]{max-width:var(--max-width-page);margin:0 auto;display:flex;justify-content:center;align-items:center;gap:1rem;font-size:.85rem;color:var(--muted)}.footer-muted[data-astro-cid-sz7xmlte]{color:var(--muted)}
+</style>
+<link rel="stylesheet" href="/_astro/_abbrlink_.DCDKYKTk.css">
+<style>.gitalk-container[data-astro-cid-ajg7agi2]{position:relative;z-index:0;isolation:isolate;margin-top:2rem}.gt-container{color:var(--text)!important;font-family:inherit!important}.gt-container a{color:var(--accent)!important}.gt-container a:hover{color:var(--accent-hover, var(--accent))!important}.gt-container .gt-header-textarea{background:transparent!important;border:1.5px dashed rgba(224,143,88,.45)!important;border-radius:14px!important;color:var(--text)!important;box-shadow:none!important;outline:none!important;font-family:inherit!important;line-height:1.7!important}.gt-container .gt-header-textarea:focus{border-color:#e08f58ad!important;box-shadow:0 0 0 3px #e08f5814!important}.gt-container .gt-header-preview{background:transparent!important;border:1.5px dashed rgba(224,143,88,.35)!important;border-radius:14px!important;color:var(--text)!important}.gt-container .gt-comment-content{background:transparent!important;border-radius:12px!important}.gt-container .gt-btn-login,.gt-container .gt-btn-public{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important}.gt-container .gt-btn-login:hover,.gt-container .gt-btn-public:hover{background:var(--accent-hover)!important;border-color:var(--accent-hover)!important}.gt-container .gt-btn-preview{background:transparent!important;border:1px solid var(--accent)!important;color:var(--accent)!important}.gt-container .gt-btn-preview:hover{background:#5b9e8c1a!important}
+</style></head> <body data-page="post" data-astro-cid-37fxchfa> <div class="site-page" data-astro-cid-37fxchfa> <!-- Background decoration layer (cream paper style) --> <div class="site-background" aria-hidden="true" data-astro-cid-37fxchfa> <div class="bg-pattern" data-astro-cid-37fxchfa></div> <div class="bg-top-border" data-astro-cid-37fxchfa></div> <div class="bg-bottom-border" data-astro-cid-37fxchfa></div> </div> <!-- Content shell --> <div class="site-shell" data-astro-cid-37fxchfa>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="site-name" data-astro-cid-3ef6ksr2>dropsong's</a> <!-- Desktop: hover dropdown nav (button → panel drops below) --> <nav class="desktop-hover-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <div class="desktop-hover-nav-inner" data-astro-cid-3ef6ksr2> <button class="desktop-nav-trigger" type="button" aria-label="Open navigation menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> <div class="desktop-nav-dropdown" data-astro-cid-3ef6ksr2> <div class="desktop-nav-dropdown-body" data-astro-cid-3ef6ksr2> <a href="/archive/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Search</a> </div> </div> </div> </nav> <!-- Mobile: click-toggle nav (keep exactly as before) --> <nav class="header-nav" id="header-nav" data-astro-cid-3ef6ksr2> <a href="/archive/" class="nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="nav-link" data-astro-cid-3ef6ksr2>Search</a> </nav> <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> </header>  <script type="module">const e=document.getElementById("menu-toggle"),t=document.getElementById("header-nav");e&&t&&e.addEventListener("click",()=>{t.classList.toggle("open")});</script> <main class="post-page" data-astro-cid-gjtny2mx> <article class="post-article" data-astro-cid-gjtny2mx> <header class="post-header" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <h1 class="article-title" data-astro-cid-bjlpfrhy>数据中心高速互连 2026：800G/1.6T、CPO、RoCEv2 与 UET</h1> <div class="article-meta" data-astro-cid-bjlpfrhy> <time class="article-date" data-astro-cid-bjlpfrhy>2026-10-10</time>  <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-category" data-astro-cid-bjlpfrhy>转载</span>   <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-tags" data-astro-cid-bjlpfrhy> #CPO #RDMA #Ultra Ethernet Transport #Multipath Reliable Connection #NVLink </span>   </div> </div> </header> <div class="post-body" id="post-body" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <div class="article-body" data-astro-cid-bjlpfrhy><p>本文初稿主要由 ChatGPT 生成；已于 2026 年 10 月 10 日按公开资料核查和更新。文中的产品状态以厂商公开披露为准，不能直接等同于跨厂商互操作或大规模部署。</p>
+<blockquote>
+<p>现在的光通信技术发展的怎么样？在数据中心中 RoCEv2 还是事实标准吗？RoCEv2 被替代的时间表有预期吗？</p>
+</blockquote>
+<p>截至 <strong>2026 年 10 月 10 日</strong>，可以把数据中心光通信和高性能网络的状态概括成一句话：</p>
+<p><strong>高速端口正从 800G 向 1.6T 扩展，CPO 与可插拔光模块并行发展；AI 以太网的 RDMA 传输也出现 UET、MRC 等多路径方案，但 RoCEv2 仍在使用。</strong></p>
+<h1 id="光通信现在处在-800g--16t-的换挡期"><a class="heading-anchor" href="#光通信现在处在-800g--16t-的换挡期">光通信：现在处在 800G → 1.6T 的换挡期</a></h1>
+<p>在高端 AI 网络中，<strong>400G 已很成熟，800G 广泛用于新建高速链路，1.6T 的器件已经进入出货和互操作展示阶段</strong>。Marvell 称其 1.6T Ara 光 DSP 已批量出货；Ethernet Alliance 公布的 2026 年 9 月 ECOC 多厂商展示方案涵盖 1.6T OSFP 和 224G SerDes。这些进展不等于所有 1.6T 链路都已完成标准化和大规模部署。截至 10 月 10 日，包含 1.6TbE 的 <strong>IEEE P802.3dj D3.3 正处于第 3 次 Standards Association 复审投票，截止日期为 10 月 10 日 AOE</strong>，尚不能称为正式发布的 IEEE 标准。<a href="https://www.marvell.com/company/newsroom/marvell-1-6t-optical-dsp-ai-data-center-connectivity.html">Marvell</a> · <a href="https://ethernetalliance.org/blog/2026/09/09/1-6t-ethernet-moves-closer-to-reality-in-ethernet-alliances-ecoc-2026-demo/">Ethernet Alliance</a> · <a href="https://www.ieee802.org/3/ballots/announce.html">IEEE 802.3 投票公告</a></p>
+<p>当前常见的 1.6T 光模块方案之一是：</p>
+<p><strong>8 × 200G/lane → 1.6T</strong></p>
+<p>也有不同的电接口与复用方式，不能把 8 × 200G 当作唯一实现。Marvell 已推出 200G/lane 的 1.6T PAM4 DSP，并在 2026 年扩充产品线。<a href="https://www.marvell.com/company/newsroom/marvell-1-6t-optical-dsp-ai-data-center-connectivity.html">Marvell</a> · <a href="https://ethernetalliance.org/technology/ethernet-roadmap/">Ethernet Alliance 2026 路线图</a></p>
+<p>但我觉得比单纯“800G → 1.6T”更重要的变化其实是<strong>光器件正在越来越靠近交换 ASIC / XPU</strong>。</p>
+<p>传统路径大致是：</p>
+<p><code>ASIC → 板级高速电连接 → 模块内 DSP → 前面板光模块 → 光纤</code></p>
+<p>到了 200G/lane，这段高速电连接越来越耗电，也越来越难做。所以现在出现了几条并行路线：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>技术</th><th>2026 年状态</th><th>核心想法</th></tr></thead><tbody><tr><td>Retimed pluggable</td><td>仍是主流</td><td>光模块里放 DSP，信号质量最好，但功耗高</td></tr><tr><td>LRO / LPO</td><td>快速发展</td><td>减少甚至去掉模块 DSP，降低功耗</td></tr><tr><td>TRO 等中间路线</td><td>开始产品化</td><td>只在部分方向 retime，折中功耗与信号完整性</td></tr><tr><td>CPO</td><td>已有产品送样和生产公告，部署规模仍需区分</td><td>光引擎集成在交换 ASIC 附近</td></tr><tr><td>Optical I/O</td><td>更前沿</td><td>将光学 I/O 集成到 XPU 等芯片封装附近</td></tr><tr><td>光学 scale-up</td><td>规范与产品探索中</td><td>用光链路扩展 XPU 之间的 scale-up 网络</td></tr></tbody></table>
+<p>可插拔光模块仍是重要方案，LPO/LRO、TRO 和 CPO 则针对不同距离、功耗及维护需求并行发展。Broadcom 已公布 TH6-Davisson CPO 交换芯片并向早期客户送样；NVIDIA 称 Spectrum-X Ethernet Photonics 已进入生产，官网标注 2026 年下半年可用。这些厂商公告说明 CPO 已走出纯研究阶段，但不能据此推断其已成为市场主流。<a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-announces-tomahawkr-6-davisson-industrys-first-1024">Broadcom</a> · <a href="https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/">NVIDIA</a> · <a href="https://ethernetalliance.org/technology/ethernet-roadmap/">Ethernet Alliance</a></p>
+<p>所以未来几年的主线其实不是单纯：</p>
+<blockquote>
+<p>400G → 800G → 1.6T</p>
+</blockquote>
+<p>而是：</p>
+<blockquote>
+<p><strong>电互连距离不断缩短 + 光不断向计算芯片靠近。</strong></p>
+</blockquote>
+<p>scale-up 网络也在探索光互连。2026 年 AMD、Broadcom、Meta、Microsoft、NVIDIA、OpenAI 等成立了 Optical Compute Interconnect（OCI）MSA，目标是制定开放的光学 scale-up 互连规范；这仍是标准制定和生态建设，不能理解为统一产品已经部署。<a href="https://www.broadcom.com/company/news/product-releases/optical-scale-up-consortium-established-to-create-an-open-specification-for-ai-infrastructure">Broadcom</a></p>
+<h1 id="那-rocev2-现在是不是事实标准"><a class="heading-anchor" href="#那-rocev2-现在是不是事实标准">那 RoCEv2 现在是不是事实标准？</a></h1>
+<p>如果把范围限定为：</p>
+<blockquote>
+<p><strong>Ethernet-based AI/HPC scale-out 网络</strong></p>
+</blockquote>
+<p>答案是：<strong>RoCEv2 仍是成熟且广泛采用的选项，但不能据此断言所有新建集群都默认选择它。</strong></p>
+<p>但不能扩展成“整个数据中心的标准协议”。</p>
+<p>普通数据中心业务流量还是 TCP/IP 为主；NVIDIA AI/HPC 还有相当大的 InfiniBand 市场；GPU 机内或 rack-scale 的 scale-up 又是 NVLink、UALink 等另一套协议。</p>
+<p>如果现在建设 Ethernet GPU 集群，RoCEv2 仍是可以采购和部署的 RDMA 方案。NVIDIA 的 ConnectX-9 文档继续列出 RoCE 支持，Broadcom 的 400G AI NIC 也列出 RoCEv2。与此同时，NVIDIA 公开提供 MRC，Broadcom 的 Thor Ultra 800G NIC 则声明支持 UEC 特性；产品选择正在分化。<a href="https://networking-docs.nvidia.com/connectx9ocphw/introduction">NVIDIA ConnectX-9 文档</a> · <a href="https://www.broadcom.com/products/ethernet-connectivity/network-adapters/p1400gd-dlc">Broadcom 400G NIC</a> · <a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-introduces-industrys-first-800g-ai-ethernet-nic">Broadcom Thor Ultra</a></p>
+<p>UEC 的规范在介绍传统网络时，也描述了以下常见组合：</p>
+<p><strong>RoCEv2 + ECMP + ECN/DCQCN（网络中也可能同时承载 TCP 流量）</strong></p>
+<p>这一套模式。它是传统方案的概括，并不是说每套 RoCE 网络都必须启用 PFC 或采用 DCQCN。<a href="https://ultraethernet.org/uec-1-0-spec">UEC 规范</a> · <a href="https://enterprise-support.nvidia.com/s/article/recommended-network-configuration-examples-for-roce-deployment">NVIDIA 的 RoCE 网络配置示例</a></p>
+<p>所以如果问：</p>
+<blockquote>
+<p>“2026 年建一个 AI Ethernet cluster，还会不会用 RoCEv2？”</p>
+</blockquote>
+<p>答案是：<strong>会，RoCEv2 仍是可行且常见的选择；具体采用率没有可核实的统一统计。</strong></p>
+<h1 id="为什么大家又都在想办法替代-rocev2"><a class="heading-anchor" href="#为什么大家又都在想办法替代-rocev2">为什么大家又都在想办法替代 RoCEv2？</a></h1>
+<p>因为传统 RoCEv2 部署面临的主要挑战并不是协议规定的“带宽上限”，而是负载均衡、拥塞与丢包恢复在超大规模 AI 网络中的效率。</p>
+<p>采用静态 ECMP 的经典 RoCE 网络可以近似为：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>RDMA connection</span></span>
+<span class="line"><span>      ↓</span></span>
+<span class="line"><span>single path / ECMP hash</span></span>
+<span class="line"><span>      ↓</span></span>
+<span class="line"><span>DCQCN</span></span>
+<span class="line"><span>      ↓</span></span>
+<span class="line"><span>PFC / near-lossless Ethernet（常见部署方式之一）</span></span></code></pre>
+<p>三个问题越来越突出。</p>
+<p>第一是 <strong>ECMP 的 flow collision</strong>。</p>
+<p>静态 ECMP 通常把同一条流哈希到某一条路径：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Flow A ───────── Path 1</span></span>
+<span class="line"><span>Flow B ───────── Path 1  ← collision</span></span>
+<span class="line"><span>Flow C ───────── Path 3</span></span>
+<span class="line"><span>Path 2 ───────── idle</span></span></code></pre>
+<p>网络可能总带宽很多，但某些链路拥塞，某些链路空闲。</p>
+<p>第二是 <strong>RoCE 对丢包和乱序处理并不优雅</strong>。</p>
+<p>传统 RoCE Reliable Connection 在丢包时可能触发较大范围的重传；乱序也会增加实现复杂度。因此不少部署使用 PFC、ECN、DCQCN 等机制来减少拥塞与丢包，但 <strong>RoCEv2 不等于必须配置无损网络</strong>：厂商也提供有损 RoCE 的配置方案。<a href="https://ultraethernet.org/uec-progresses-towards-v1-0-set-of-specifications/">UEC</a> · <a href="https://enterprise-support.nvidia.com/s/article/recommended-network-configuration-examples-for-roce-deployment">NVIDIA</a></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>PFC</span></span>
+<span class="line"><span>ECN</span></span>
+<span class="line"><span>DCQCN</span></span>
+<span class="line"><span>buffer tuning</span></span>
+<span class="line"><span>queue tuning</span></span></code></pre>
+<p>这些机制需要按拓扑、缓冲和流量模式设计与调优。</p>
+<p>UEC 对传统方案的批评集中在这里：大型近无损 RoCE fabric 可以做好，但<strong>需要大量调优、监控和工程经验</strong>。<a href="https://ultraethernet.org/wp-content/uploads/sites/20/2023/10/23.07.12-UEC-1.0-Overview-FINAL-WITH-LOGO.pdf">Ultra Ethernet Consortium</a></p>
+<p>第三，也是 AI 最关键的一点，是流量模式已经变了。</p>
+<p>传统数据中心很像：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>A → B</span></span>
+<span class="line"><span>C → D</span></span>
+<span class="line"><span>E → F</span></span></code></pre>
+<p>AI collective 更像：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>GPU0 ─┐</span></span>
+<span class="line"><span>GPU1 ─┼── 多对多或多对一通信</span></span>
+<span class="line"><span>GPU2 ─┤   AllReduce / All-to-All 等</span></span>
+<span class="line"><span>GPU N ─┘</span></span></code></pre>
+<p>成千上万个 accelerator 同时爆发通信。</p>
+<p>这使得 <strong>tail latency、incast、路径利用率</strong>远比以前重要。</p>
+<h1 id="uet为-aihpc-重新设计的以太网传输"><a class="heading-anchor" href="#uet为-aihpc-重新设计的以太网传输">UET：为 AI/HPC 重新设计的以太网传输</a></h1>
+<p>Ultra Ethernet Consortium 的 <strong>UET（Ultra Ethernet Transport）</strong> 是 RoCEv2 之外一个重要的新传输方案。</p>
+<p>UEC 1.0 于 <strong>2025 年 6 月 11 日</strong>发布；截至 2026 年 10 月 10 日，规范历史页列出的最新公开版本是 <strong>1.0.3（2026 年 7 月 16 日）</strong>。1.0.3 的发布说明列出新增 200 Gb/s 每通道信号支持，以及若干协议修正。<a href="https://ultraethernet.org/specification-history/">UEC 规范历史</a> · <a href="https://ultraethernet.org/wp-content/uploads/sites/20/2026/07/UE-Specification-1.0.3-release-notes-.pdf">1.0.3 发布说明</a></p>
+<p>它不是简单的：</p>
+<blockquote>
+<p>RoCEv3</p>
+</blockquote>
+<p>实际上它把不少核心假设都换掉了。</p>
+<p>最重要的是 <strong>packet-level multipathing / packet spraying</strong>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>               ┌── Path 1 ──┐</span></span>
+<span class="line"><span>GPU A ─ NIC ───┼── Path 2 ──┼── NIC ─ GPU B</span></span>
+<span class="line"><span>               ├── Path 3 ──┤</span></span>
+<span class="line"><span>               └── Path 4 ──┘</span></span></code></pre>
+<p>在启用 packet spraying 的模式下，同一通信的报文可以利用多条路径；规范也保留单路径模式，并非所有 UET 流量都必须逐包分散。</p>
+<p>UET 支持根据拥塞反馈调整路径选择，并设计了：</p>
+<p><strong>packet spraying、灵活的顺序语义、发送端拥塞控制和遥测</strong>。接收端信用控制与交换机 packet trimming 是<strong>可选机制</strong>，不能把它们写成所有 UET 实现的必备功能。<a href="https://ultraethernet.org/uec-progresses-towards-v1-0-set-of-specifications/">UEC 技术说明</a> · <a href="https://ultraethernet.org/uec-1-0-spec">UEC 规范</a></p>
+<p>而且一个非常重要的变化是：</p>
+<p><strong>UET 的拥塞控制以 best-effort（允许丢包）的以太网为设计目标。</strong></p>
+<p>这降低了对全网近无损配置的依赖，但仍需拥塞控制和可靠性机制。RoCEv2 本身也可以部署在有损网络上，所以区别在于对丢包、乱序和多路径的处理方式，而非“能否丢包”这个二选一问题。<a href="https://ultraethernet.org/uec-1-0-spec">UEC 规范</a> · <a href="https://enterprise-support.nvidia.com/s/article/recommended-network-configuration-examples-for-roce-deployment">NVIDIA RoCE 配置示例</a></p>
+<p>这是我认为 UET 比“800G → 1.6T”更深层的变化。</p>
+<h1 id="但现在还不能说-uet-已经取代-roce"><a class="heading-anchor" href="#但现在还不能说-uet-已经取代-roce">但现在还不能说 UET 已经取代 RoCE</a></h1>
+<p>因为目前实际上正处在：</p>
+<p><strong>RoCE 成熟部署期 → UET 产品化初期</strong></p>
+<p>这个交界点。</p>
+<p>Broadcom 已发布宣称符合 UEC 规范的 <strong>Thor Ultra 800G AI NIC</strong>；Marvell 展示了交换芯片上的 packet trimming、自动负载均衡与 UET 相关验证；VIAVI 于 2026 年 6 月推出 UET 验证方案。UEC 也已公开合规测试资料。这些是产品和测试生态推进的证据，<strong>尚不足以证明 UET 已大规模替代 RoCEv2，或不同厂商产品均已完成互操作验证</strong>。<a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-introduces-industrys-first-800g-ai-ethernet-nic">Broadcom</a> · <a href="https://www.marvell.com/blogs/marvell-teralynx-packet-trimming-alb-uet-validation.html">Marvell</a> · <a href="https://www.viavisolutions.com/en-us/news-releases/viavi-launches-industrys-first-validation-solution-ultra-ethernet-transport-accelerating-ai-data">VIAVI</a> · <a href="https://ultraethernet.org/compliance/">UEC 合规资料</a></p>
+<p>UEC 在 2025 年底描述 2026 年工作重点时，强调帮助行业实施规范、提供教育材料和编写应用指南。</p>
+<p>结合目前公开的产品和验证资料，更稳妥的判断是：<strong>UET 仍在标准落地和产品导入阶段</strong>。<a href="https://ultraethernet.org/uec-2025-in-review-preparing-for-what-comes-next-a-letter-from-uecs-chair/">Ultra Ethernet Consortium</a></p>
+<h1 id="而且现在又出现了一个很有意思的变量mrc"><a class="heading-anchor" href="#而且现在又出现了一个很有意思的变量mrc">而且现在又出现了一个很有意思的变量：MRC</a></h1>
+<p>2026 年 NVIDIA 又公开了 <strong>MRC — Multipath Reliable Connection</strong>。</p>
+<p>它也是一个 RDMA transport，核心同样是：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>one RDMA connection</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>multiple paths</span></span></code></pre>
+<p>而不是传统 RoCE/ECMP 的单路径思路。</p>
+<p>NVIDIA 表示 MRC 已在 Spectrum-X 上用于生产环境；Open Compute Project 也发布了 MRC 规范，贡献方包括 AMD、Broadcom、Intel、Microsoft、NVIDIA 和 OpenAI。<strong>开放规范与单一平台的生产使用，不等于跨厂商互操作已普遍实现。</strong><a href="https://blogs.nvidia.com/blog/spectrum-x-ethernet-mrc/">NVIDIA</a> · <a href="https://www.opencompute.org/documents/ocp-mrc-1-0-pdf">OCP MRC 规范</a></p>
+<p>所以现在真正的局面实际上变成了：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>                 Ethernet AI fabric</span></span>
+<span class="line"><span>                        │</span></span>
+<span class="line"><span>           ┌────────────┼────────────┐</span></span>
+<span class="line"><span>           │            │            │</span></span>
+<span class="line"><span>        RoCEv2         UET          MRC</span></span>
+<span class="line"><span>           │            │            │</span></span>
+<span class="line"><span>      成熟/广泛       UEC规范/导入中  OCP规范/已有生产案例</span></span></code></pre>
+<p>而不是一个很简单的：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>RoCEv2</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span> UET</span></span></code></pre>
+<p>NVIDIA 表示 Spectrum-X 可运行 Adaptive RDMA、MRC 和其他定制传输。这也说明，多路径与自适应路由能力不能简单归结为“RoCE 全无、UET/MRC 才有”。<a href="https://blogs.nvidia.com/blog/spectrum-x-ethernet-mrc/">NVIDIA</a></p>
+<h1 id="因此rocev2-什么时候被替代目前没有官方时间表"><a class="heading-anchor" href="#因此rocev2-什么时候被替代目前没有官方时间表">因此，“RoCEv2 什么时候被替代？”目前没有官方时间表</a></h1>
+<p>没有类似：</p>
+<blockquote>
+<p>2028 年 RoCEv2 EOL</p>
+</blockquote>
+<p>这样的行业路线图。</p>
+<p>公开资料不足以支持把 2027–2030 年划成具体替代阶段。更有用的是观察以下可验证的节点：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>节点</th><th>目前能确认的状态</th></tr></thead><tbody><tr><td>规范</td><td>UEC 1.0.3 与 OCP MRC 规范已公开</td></tr><tr><td>设备</td><td>已有支持新传输的 NIC、交换机公告和验证方案</td></tr><tr><td>互操作</td><td>需继续看跨厂商一致性测试及公开结果</td></tr><tr><td>部署</td><td>需看可复核的规模部署、运维经验和软件生态支持</td></tr></tbody></table>
+<p>因此，<strong>无法给出 RoCEv2 被 UET 或 MRC 替代的可信年份</strong>。新建集群可能采用不同传输，既有集群也可能长期继续使用 RoCEv2；这是依据现有产品与部署信息作出的判断，而非公布的行业路线图。<a href="https://ultraethernet.org/specification-history/">UEC 规范历史</a> · <a href="https://ultraethernet.org/compliance/">UEC 合规资料</a> · <a href="https://www.opencompute.org/documents/ocp-mrc-1-0-pdf">OCP MRC 规范</a></p>
+<p>原因很简单：<strong>网络协议的存量效应非常强。</strong></p>
+<p>RoCEv2 已经有成熟的实现与运维生态，例如：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>NIC firmware</span></span>
+<span class="line"><span>Linux RDMA stack</span></span>
+<span class="line"><span>verbs API</span></span>
+<span class="line"><span>NCCL / MPI 中的 RoCE 后端或部署</span></span>
+<span class="line"><span>NVMe-oF 的 RoCE 部署</span></span>
+<span class="line"><span>Kubernetes RDMA 设备与网络配置</span></span>
+<span class="line"><span>cloud infrastructure</span></span>
+<span class="line"><span>monitoring / debugging tools</span></span></code></pre>
+<p>但 verbs、NCCL、MPI、NVMe-oF 等接口或框架本身并不与 RoCEv2 绑定；它们的存在不能单独证明 RoCEv2 的未来份额。</p>
+<p>可能出现的并存格局是：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>既有集群：RoCEv2</span></span>
+<span class="line"><span>新建集群：RoCEv2 / UET / MRC（取决于设备和软件生态）</span></span></code></pre>
+<p>新传输能占多大比例，还取决于互操作、软件适配、性能和运维成本。</p>
+<h1 id="真正值得关注的是网络设计的变化"><a class="heading-anchor" href="#真正值得关注的是网络设计的变化">真正值得关注的是网络设计的变化</a></h1>
+<p>这个区分很重要。</p>
+<p><strong>RoCEv2 仍会被使用多久，目前无法准确预测。</strong></p>
+<p>但下面这种设计：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>one flow → one path</span></span>
+<span class="line"><span>lossless fabric</span></span>
+<span class="line"><span>PFC</span></span>
+<span class="line"><span>ECMP</span></span>
+<span class="line"><span>DCQCN</span></span>
+<span class="line"><span>careful tuning</span></span></code></pre>
+<p>正受到多路径、改进的拥塞控制与恢复机制挑战。这只是对传统部署模型的概括，不代表所有 RoCEv2 网络都严格采用这一组配置。</p>
+<p>一些新一代 AI Ethernet 方案正在探索或采用以下能力：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>multi-path</span></span>
+<span class="line"><span>packet spraying</span></span>
+<span class="line"><span>loss tolerant</span></span>
+<span class="line"><span>adaptive congestion control</span></span>
+<span class="line"><span>telemetry</span></span>
+<span class="line"><span>selective / efficient retransmission</span></span></code></pre>
+<p>换句话说，未来不一定是：</p>
+<blockquote>
+<p>Ethernet 打败 InfiniBand</p>
+</blockquote>
+<p>或者：</p>
+<blockquote>
+<p>UET 打败 RoCE。</p>
+</blockquote>
+<p>更准确的技术趋势是：</p>
+<blockquote>
+<p><strong>Ethernet 正在吸收很多以前专用 HPC fabric 才有的能力，同时重新设计 RDMA transport。</strong></p>
+</blockquote>
+<p>从当前公开进展看，未来几年值得持续观察的变化包括 800G → 1.6T、CPO/硅光、多路径 RDMA，以及 NVLink、UALink 和光学 scale-up。它们处于不同成熟阶段，不能合并成一条确定的替代时间线。</p>
+<p>如果你是从<strong>网络/系统方向的职业或技术学习</strong>角度问这个问题，那么我会特别建议把注意力从“记住 RoCEv2 配置方法”稍微上移一层，重点理解 <strong>ECMP、PFC、DCQCN、packet spraying、incast、tail latency、UET congestion control 和 scale-up/scale-out 的区别</strong>。这些概念在接下来几年比某一个具体协议名更不容易过时。</p></div> </div> </div> <footer class="post-footer" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <!-- Gitalk comments will be added in Phase 3 --> </div> <section class="reward-widget" data-reward-widget data-astro-cid-bbdapvnt> <div class="reward-panel" id="reward-panel" aria-label="打赏二维码" data-astro-cid-bbdapvnt> <div class="reward-list" data-astro-cid-bbdapvnt> <div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/Alipay.png" alt="支付宝收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>支付宝 Alipay</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/WeChat.png" alt="微信收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>微信 Wechat</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/PayPal-or-CreditCard.png" alt="PayPal 或信用卡收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>PayPal/CreditCard</span> </div> </div> </div> <button class="reward-trigger" type="button" aria-label="打开打赏二维码" aria-controls="reward-panel" aria-expanded="false" data-astro-cid-bbdapvnt>
+打赏 Reward
+</button> </section>  <script type="module">function a(){document.querySelectorAll("[data-reward-widget]").forEach(e=>{if(e.dataset.initialized)return;const r=e.querySelector(".reward-trigger");if(!r)return;e.dataset.initialized="true";const n=t=>{e.classList.toggle("is-open",t),r.setAttribute("aria-expanded",String(t))};r.addEventListener("click",()=>n(!e.classList.contains("is-open"))),document.addEventListener("click",t=>{e.contains(t.target)||n(!1)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&(n(!1),r.blur())})})}window.addEventListener("encrypted-content-revealed",()=>{document.querySelectorAll("[data-reward-after-unlock]").forEach(e=>{e.removeAttribute("hidden")})});document.addEventListener("astro:page-load",a);a();</script> <div id="gitalk-container" class="gitalk-container" data-abbrlink="8eeb16d7" data-title="数据中心高速互连 2026：800G/1.6T、CPO、RoCEv2 与 UET" data-astro-cid-ajg7agi2></div> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">   <script>
+  var GITALK_CFG = {"clientID":"Ov23lijmGQilj9J9CrdP","clientSecret":"bd5066a2aadbe28c20913dd390b8047031f7174a","repo":"dropsong.github.io","owner":"dropsong","admin":["dropsong"],"labels":["Gitalk"],"distractionFreeMode":false};
+</script> <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js">
+</script> <script>
+  (function() {
+    var c = document.getElementById('gitalk-container');
+    if (!c) return;
+    var id = c.dataset.abbrlink || '';
+    var title = c.dataset.title || '';
+    new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting && !c.dataset.loaded) {
+          c.dataset.loaded = '1';
+          new Gitalk(Object.assign({}, GITALK_CFG, {id: id, title: title})).render('gitalk-container');
+        }
+      });
+    }, {rootMargin: '200px'}).observe(c);
+  })();
+</script> </footer> </article> </main> <div class="toc-root" id="toc-root" data-astro-cid-6t6zfk7k> <button class="toc-fab" id="toc-fab" aria-label="目录" data-astro-cid-6t6zfk7k> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M4 6h16M4 12h10M4 18h16" data-astro-cid-6t6zfk7k></path> </svg> </button> <!-- Desktop: hover popup panel --> <div class="toc-popup" id="toc-popup" data-astro-cid-6t6zfk7k> <div class="toc-popup-header" data-astro-cid-6t6zfk7k> <span class="toc-popup-title" data-astro-cid-6t6zfk7k>目录</span> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> <div class="toc-popup-body" data-astro-cid-6t6zfk7k> <ul class="toc-popup-list" data-astro-cid-6t6zfk7k> <li class="toc-popup-item" data-mtoc-section="光通信现在处在-800g--16t-的换挡期" data-astro-cid-6t6zfk7k> <a href="#光通信现在处在-800g--16t-的换挡期" class="toc-popup-link" data-mtoc="光通信现在处在-800g--16t-的换挡期" data-astro-cid-6t6zfk7k> 光通信：现在处在 800G → 1.6T 的换挡期 </a>  </li><li class="toc-popup-item" data-mtoc-section="那-rocev2-现在是不是事实标准" data-astro-cid-6t6zfk7k> <a href="#那-rocev2-现在是不是事实标准" class="toc-popup-link" data-mtoc="那-rocev2-现在是不是事实标准" data-astro-cid-6t6zfk7k> 那 RoCEv2 现在是不是事实标准？ </a>  </li><li class="toc-popup-item" data-mtoc-section="为什么大家又都在想办法替代-rocev2" data-astro-cid-6t6zfk7k> <a href="#为什么大家又都在想办法替代-rocev2" class="toc-popup-link" data-mtoc="为什么大家又都在想办法替代-rocev2" data-astro-cid-6t6zfk7k> 为什么大家又都在想办法替代 RoCEv2？ </a>  </li><li class="toc-popup-item" data-mtoc-section="uet为-aihpc-重新设计的以太网传输" data-astro-cid-6t6zfk7k> <a href="#uet为-aihpc-重新设计的以太网传输" class="toc-popup-link" data-mtoc="uet为-aihpc-重新设计的以太网传输" data-astro-cid-6t6zfk7k> UET：为 AI/HPC 重新设计的以太网传输 </a>  </li><li class="toc-popup-item" data-mtoc-section="但现在还不能说-uet-已经取代-roce" data-astro-cid-6t6zfk7k> <a href="#但现在还不能说-uet-已经取代-roce" class="toc-popup-link" data-mtoc="但现在还不能说-uet-已经取代-roce" data-astro-cid-6t6zfk7k> 但现在还不能说 UET 已经取代 RoCE </a>  </li><li class="toc-popup-item" data-mtoc-section="而且现在又出现了一个很有意思的变量mrc" data-astro-cid-6t6zfk7k> <a href="#而且现在又出现了一个很有意思的变量mrc" class="toc-popup-link" data-mtoc="而且现在又出现了一个很有意思的变量mrc" data-astro-cid-6t6zfk7k> 而且现在又出现了一个很有意思的变量：MRC </a>  </li><li class="toc-popup-item" data-mtoc-section="因此rocev2-什么时候被替代目前没有官方时间表" data-astro-cid-6t6zfk7k> <a href="#因此rocev2-什么时候被替代目前没有官方时间表" class="toc-popup-link" data-mtoc="因此rocev2-什么时候被替代目前没有官方时间表" data-astro-cid-6t6zfk7k> 因此，“RoCEv2 什么时候被替代？”目前没有官方时间表 </a>  </li><li class="toc-popup-item" data-mtoc-section="真正值得关注的是网络设计的变化" data-astro-cid-6t6zfk7k> <a href="#真正值得关注的是网络设计的变化" class="toc-popup-link" data-mtoc="真正值得关注的是网络设计的变化" data-astro-cid-6t6zfk7k> 真正值得关注的是网络设计的变化 </a>  </li> </ul> </div> </div> <!-- Mobile: bottom sheet overlay --> <div class="toc-overlay" id="toc-overlay" data-astro-cid-6t6zfk7k></div> <div class="toc-sheet" id="toc-sheet" data-astro-cid-6t6zfk7k> <div class="toc-sheet-header" data-astro-cid-6t6zfk7k> <span class="toc-sheet-title" data-astro-cid-6t6zfk7k>目录</span> <div class="toc-sheet-actions" data-astro-cid-6t6zfk7k> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> <button class="toc-sheet-close" id="toc-sheet-close" aria-label="关闭" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M18 6L6 18M6 6l12 12" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> </div> <div class="toc-sheet-body" data-astro-cid-6t6zfk7k> <ul class="toc-sheet-list" data-astro-cid-6t6zfk7k> <li class="toc-sheet-item" data-msheet-section="光通信现在处在-800g--16t-的换挡期" data-astro-cid-6t6zfk7k> <a href="#光通信现在处在-800g--16t-的换挡期" class="toc-sheet-link" data-msheet="光通信现在处在-800g--16t-的换挡期" data-astro-cid-6t6zfk7k> 光通信：现在处在 800G → 1.6T 的换挡期 </a>  </li><li class="toc-sheet-item" data-msheet-section="那-rocev2-现在是不是事实标准" data-astro-cid-6t6zfk7k> <a href="#那-rocev2-现在是不是事实标准" class="toc-sheet-link" data-msheet="那-rocev2-现在是不是事实标准" data-astro-cid-6t6zfk7k> 那 RoCEv2 现在是不是事实标准？ </a>  </li><li class="toc-sheet-item" data-msheet-section="为什么大家又都在想办法替代-rocev2" data-astro-cid-6t6zfk7k> <a href="#为什么大家又都在想办法替代-rocev2" class="toc-sheet-link" data-msheet="为什么大家又都在想办法替代-rocev2" data-astro-cid-6t6zfk7k> 为什么大家又都在想办法替代 RoCEv2？ </a>  </li><li class="toc-sheet-item" data-msheet-section="uet为-aihpc-重新设计的以太网传输" data-astro-cid-6t6zfk7k> <a href="#uet为-aihpc-重新设计的以太网传输" class="toc-sheet-link" data-msheet="uet为-aihpc-重新设计的以太网传输" data-astro-cid-6t6zfk7k> UET：为 AI/HPC 重新设计的以太网传输 </a>  </li><li class="toc-sheet-item" data-msheet-section="但现在还不能说-uet-已经取代-roce" data-astro-cid-6t6zfk7k> <a href="#但现在还不能说-uet-已经取代-roce" class="toc-sheet-link" data-msheet="但现在还不能说-uet-已经取代-roce" data-astro-cid-6t6zfk7k> 但现在还不能说 UET 已经取代 RoCE </a>  </li><li class="toc-sheet-item" data-msheet-section="而且现在又出现了一个很有意思的变量mrc" data-astro-cid-6t6zfk7k> <a href="#而且现在又出现了一个很有意思的变量mrc" class="toc-sheet-link" data-msheet="而且现在又出现了一个很有意思的变量mrc" data-astro-cid-6t6zfk7k> 而且现在又出现了一个很有意思的变量：MRC </a>  </li><li class="toc-sheet-item" data-msheet-section="因此rocev2-什么时候被替代目前没有官方时间表" data-astro-cid-6t6zfk7k> <a href="#因此rocev2-什么时候被替代目前没有官方时间表" class="toc-sheet-link" data-msheet="因此rocev2-什么时候被替代目前没有官方时间表" data-astro-cid-6t6zfk7k> 因此，“RoCEv2 什么时候被替代？”目前没有官方时间表 </a>  </li><li class="toc-sheet-item" data-msheet-section="真正值得关注的是网络设计的变化" data-astro-cid-6t6zfk7k> <a href="#真正值得关注的是网络设计的变化" class="toc-sheet-link" data-msheet="真正值得关注的是网络设计的变化" data-astro-cid-6t6zfk7k> 真正值得关注的是网络设计的变化 </a>  </li> </ul> </div> </div> </div>  <script type="module">function R(){const o=document.getElementById("toc-root");!o||o.dataset.tocDeferred!=="true"||(delete o.dataset.tocDeferred,o.hidden=!1,A())}function A(){const o=document.getElementById("toc-root");if(!o||o.hidden||o.dataset.tocDeferred==="true"||o.dataset.initialized)return;const h=o.querySelector("#toc-fab"),i=o.querySelector("#toc-popup"),a=o.querySelector("#toc-overlay"),n=o.querySelector("#toc-sheet"),x=o.querySelector("#toc-sheet-close"),z=o.querySelectorAll(".toc-top-btn");if(!h||!i||!a||!n||!x)return;o.dataset.initialized="true";const m=()=>window.matchMedia("(max-width: 768px)").matches;let v=null,f=null,E=!1,k=!1;function B(){m()||(f&&clearTimeout(f),i.classList.add("open"),L(!0))}function I(){f&&clearTimeout(f),f=setTimeout(()=>{!E&&!k&&i.classList.remove("open")},200)}h.addEventListener("mouseenter",()=>{E=!0,B()}),h.addEventListener("mouseleave",()=>{E=!1,I()}),i.addEventListener("mouseenter",()=>{k=!0,B()}),i.addEventListener("mouseleave",()=>{k=!1,I()}),i.querySelectorAll(".toc-popup-link").forEach(t=>{t.addEventListener("click",()=>{setTimeout(()=>i.classList.remove("open"),150)})}),h.addEventListener("click",()=>{m()&&(a.style.display="block",n.style.display="flex",requestAnimationFrame(()=>{a.classList.add("open"),n.classList.add("open"),L(!0)}),document.body.style.overflow="hidden")});function y(){a.classList.remove("open"),n.classList.remove("open"),setTimeout(()=>{a.style.display="none",n.style.display="none"},300),document.body.style.overflow=""}x.addEventListener("click",y),a.addEventListener("click",y),n.querySelectorAll(".toc-sheet-link").forEach(t=>{t.addEventListener("click",()=>setTimeout(y,200))}),z.forEach(t=>{t.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"}),m()&&y()})});function H(t,q,c,s=!1){const l=t.querySelector(q),b=t.querySelector(c);if(!l||!b)return;const d=l.getBoundingClientRect(),e=b.getBoundingClientRect(),r=e.top>=d.top&&e.bottom<=d.bottom;if(!s&&r)return;const u=l.scrollTop+(e.top-d.top)-l.clientHeight/2+e.height/2;l.scrollTo({top:Math.max(0,u),behavior:s?"auto":"smooth"})}function T(t=!1){!m()&&i.classList.contains("open")&&H(i,".toc-popup-body",".toc-popup-link.active",t),m()&&n.classList.contains("open")&&H(n,".toc-sheet-body",".toc-sheet-link.active",t)}function L(t=!1){requestAnimationFrame(()=>T(t)),v&&clearTimeout(v),v=setTimeout(()=>{T(t),v=null},260)}let F="";function w(){const t=i.querySelectorAll(".toc-popup-link"),q=n.querySelectorAll(".toc-sheet-link"),c=[];t.forEach(e=>{const r=e.dataset.mtoc;if(r){const u=document.getElementById(r);u&&c.push({id:r,el:u})}});let s="";const l=window.scrollY+100;if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-4&&c.length>0)s=c[c.length-1].id;else for(let e=c.length-1;e>=0;e--)if(c[e].el.offsetTop<=l){s=c[e].id;break}t.forEach(e=>e.classList.toggle("active",e.dataset.mtoc===s)),q.forEach(e=>e.classList.toggle("active",e.dataset.msheet===s));function d(e,r,u,P){const D=(s?e.querySelector(`${r}.active`):null)?.closest(u)?.querySelector(P);e.querySelectorAll(P).forEach(p=>{p===D?(p.classList.add("expanded"),p.style.maxHeight=`${p.scrollHeight}px`):(p.classList.remove("expanded"),p.style.removeProperty("max-height"))})}d(i,".toc-popup-link",".toc-popup-item",".toc-popup-sub"),d(n,".toc-sheet-link",".toc-sheet-item",".toc-sheet-sub"),T(),s!==F&&(L(),F=s)}let S=!1;window.addEventListener("scroll",()=>{S||(requestAnimationFrame(()=>{w(),S=!1}),S=!0)});let g=null;window.addEventListener("resize",()=>{g&&clearTimeout(g),g=setTimeout(()=>{w(),L(!0),g=null},100)}),w()}window.addEventListener("encrypted-content-revealed",R);document.addEventListener("astro:page-load",A);A();</script><footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner" data-astro-cid-sz7xmlte></div> </footer>  <script type="module" src="/_astro/CodeBlockEnhance.astro_astro_type_script_index_0_lang.Di89G-ws.js"></script> <div id="image-lightbox" class="lightbox-overlay" data-astro-cid-fbflauxb> <div class="lightbox-content" data-astro-cid-fbflauxb> <img id="lightbox-img" src="" alt="" data-astro-cid-fbflauxb> </div> </div>  <script type="module">function c(){const t=document.getElementById("image-lightbox"),n=document.getElementById("lightbox-img");if(!t||!n)return;function s(e){n.src=e,t.classList.add("open"),document.body.style.overflow="hidden"}function i(){t.classList.remove("open"),document.body.style.overflow=""}t.addEventListener("click",e=>{e.target===t&&i()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t.classList.contains("open")&&i()});function d(){document.querySelectorAll(".article-body img").forEach(e=>{const o=e;o.dataset.lightbox||(o.dataset.lightbox="true",o.style.cursor="zoom-in",o.addEventListener("click",()=>{s(o.src)}))})}document.addEventListener("astro:page-load",d),d()}document.addEventListener("astro:page-load",c);c();</script> <script type="module" src="/_astro/EncryptedBlock.astro_astro_type_script_index_0_lang.DuPogRv7.js"></script>  </div> </div> </body></html>  
