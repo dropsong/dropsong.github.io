@@ -1,0 +1,1929 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>论文阅读 DAgger · dropsong&#39;s</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><style>.article-body{font-size:16px;line-height:1.85;color:var(--text);max-width:820px;margin:0 auto}.article-body h1,.article-body h2,.article-body h3,.article-body h4,.article-body h5,.article-body h6{margin-top:1.8em;margin-bottom:.6em;font-weight:600;line-height:1.35;color:var(--text)}.article-body h1{font-size:1.75rem}.article-body h2{font-size:1.45rem}.article-body h3{font-size:1.2rem}.article-body h4{font-size:1.05rem}.article-body p{margin-bottom:1.2em}.article-body p,.article-body li{white-space:pre-line}.article-body p,.article-body li,.article-body blockquote,.article-body td,.article-body th{word-break:normal;overflow-wrap:break-word}.article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.article-body a:hover{color:var(--accent-hover)}.article-body blockquote{margin:1.2em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:#5b9e8c1a;border-radius:0 var(--radius) var(--radius) 0;color:var(--muted)}.article-body blockquote>:last-child{margin-bottom:0}.article-body ul,.article-body ol{margin-bottom:1.2em;padding-left:1.5em}.article-body li>ul,.article-body li>ol{margin-bottom:0;white-space:normal}.article-body li:has(>ul,>ol){white-space:normal}.article-body li{margin-bottom:.25em}.article-body table{width:auto;max-width:100%;border-collapse:collapse;margin:1.5em auto;font-size:.925rem;overflow-x:auto}.article-body table th,.article-body table td{padding:.6em .85em;border:1px solid var(--border);text-align:left}.article-body table th{font-weight:600}.article-body hr{border:none;border-top:1px solid var(--border);margin:2em 0}.article-body img{border-radius:var(--radius);cursor:zoom-in}.article-body .article-figure{margin:1.5em 0;text-align:center}.article-body .article-figure img{display:block;margin:0 auto}.article-body .article-figure-caption{margin-top:.55em;color:var(--muted);font-size:.875rem;line-height:1.5}.article-body iframe{max-width:100%;border-radius:var(--radius)}.article-body .gdrive-pdf-wrapper{margin:1.5em 0;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius);background:#fff}.article-body .gdrive-pdf-header{display:flex;align-items:center;justify-content:space-between;min-height:2.75rem;padding:.5rem .875rem;border-bottom:1px solid var(--border);background:var(--bg)}.article-body .gdrive-pdf-label{color:var(--muted);font-size:.85rem}.article-body .gdrive-pdf-link{color:var(--accent);font-size:.8rem;text-decoration:none}.article-body .gdrive-pdf-link:hover{text-decoration:underline}.article-body .gdrive-pdf-frame{display:block;width:100%;height:min(720px,80vh);border:0;border-radius:0;background:#fff}.article-body :not(pre)>code{background:#fffaf0a6;border:1px solid rgba(180,155,130,.2);border-radius:4px;padding:.1em .4em;font-size:.875em}.article-body pre,.article-body pre.astro-code,.article-body .astro-code{background:transparent!important;background-color:transparent!important;border:1.5px dashed rgba(224,143,88,.45);border-radius:14px}.article-body pre.astro-code code,.article-body .astro-code code{background:transparent!important;background-color:transparent!important}.article-body pre,.article-body table{-webkit-overflow-scrolling:touch}.article-body .katex-display{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;margin:1.4em 0;padding:.25rem 0 .45rem;text-align:center;scrollbar-width:thin;scrollbar-color:rgba(224,143,88,.35) transparent;word-break:normal;overflow-wrap:normal}.article-body .katex-display>.katex{display:inline-block;width:max-content;max-width:none}.article-body .katex{white-space:nowrap;word-break:normal;overflow-wrap:normal}.article-body .katex-display::-webkit-scrollbar{height:4px}.article-body .katex-display::-webkit-scrollbar-thumb{background:transparent}.article-body .katex-display:hover::-webkit-scrollbar-thumb{background:var(--border)}
+</style>
+<link rel="stylesheet" href="/_astro/about.CS0PymYq.css">
+<style>.site-footer[data-astro-cid-sz7xmlte]{padding:2rem 1.5rem;text-align:center}.footer-inner[data-astro-cid-sz7xmlte]{max-width:var(--max-width-page);margin:0 auto;display:flex;justify-content:center;align-items:center;gap:1rem;font-size:.85rem;color:var(--muted)}.footer-muted[data-astro-cid-sz7xmlte]{color:var(--muted)}
+</style>
+<link rel="stylesheet" href="/_astro/_abbrlink_.DCDKYKTk.css">
+<style>.gitalk-container[data-astro-cid-ajg7agi2]{position:relative;z-index:0;isolation:isolate;margin-top:2rem}.gt-container{color:var(--text)!important;font-family:inherit!important}.gt-container a{color:var(--accent)!important}.gt-container a:hover{color:var(--accent-hover, var(--accent))!important}.gt-container .gt-header-textarea{background:transparent!important;border:1.5px dashed rgba(224,143,88,.45)!important;border-radius:14px!important;color:var(--text)!important;box-shadow:none!important;outline:none!important;font-family:inherit!important;line-height:1.7!important}.gt-container .gt-header-textarea:focus{border-color:#e08f58ad!important;box-shadow:0 0 0 3px #e08f5814!important}.gt-container .gt-header-preview{background:transparent!important;border:1.5px dashed rgba(224,143,88,.35)!important;border-radius:14px!important;color:var(--text)!important}.gt-container .gt-comment-content{background:transparent!important;border-radius:12px!important}.gt-container .gt-btn-login,.gt-container .gt-btn-public{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important}.gt-container .gt-btn-login:hover,.gt-container .gt-btn-public:hover{background:var(--accent-hover)!important;border-color:var(--accent-hover)!important}.gt-container .gt-btn-preview{background:transparent!important;border:1px solid var(--accent)!important;color:var(--accent)!important}.gt-container .gt-btn-preview:hover{background:#5b9e8c1a!important}
+</style></head> <body data-page="post" data-astro-cid-37fxchfa> <div class="site-page" data-astro-cid-37fxchfa> <!-- Background decoration layer (cream paper style) --> <div class="site-background" aria-hidden="true" data-astro-cid-37fxchfa> <div class="bg-pattern" data-astro-cid-37fxchfa></div> <div class="bg-top-border" data-astro-cid-37fxchfa></div> <div class="bg-bottom-border" data-astro-cid-37fxchfa></div> </div> <!-- Content shell --> <div class="site-shell" data-astro-cid-37fxchfa>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="site-name" data-astro-cid-3ef6ksr2>dropsong's</a> <!-- Desktop: hover dropdown nav (button → panel drops below) --> <nav class="desktop-hover-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <div class="desktop-hover-nav-inner" data-astro-cid-3ef6ksr2> <button class="desktop-nav-trigger" type="button" aria-label="Open navigation menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> <div class="desktop-nav-dropdown" data-astro-cid-3ef6ksr2> <div class="desktop-nav-dropdown-body" data-astro-cid-3ef6ksr2> <a href="/archive/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="desktop-nav-link" data-astro-cid-3ef6ksr2>Search</a> </div> </div> </div> </nav> <!-- Mobile: click-toggle nav (keep exactly as before) --> <nav class="header-nav" id="header-nav" data-astro-cid-3ef6ksr2> <a href="/archive/" class="nav-link" data-astro-cid-3ef6ksr2>Archive</a><a href="/tags/" class="nav-link" data-astro-cid-3ef6ksr2>Tags</a><a href="/categories/" class="nav-link" data-astro-cid-3ef6ksr2>Categories</a><a href="/about/" class="nav-link" data-astro-cid-3ef6ksr2>About</a><a href="/link/" class="nav-link" data-astro-cid-3ef6ksr2>Link</a><a href="/comments/" class="nav-link" data-astro-cid-3ef6ksr2>Comments</a><a href="/search/" class="nav-link" data-astro-cid-3ef6ksr2>Search</a> </nav> <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" data-astro-cid-3ef6ksr2> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> </header>  <script type="module">const e=document.getElementById("menu-toggle"),t=document.getElementById("header-nav");e&&t&&e.addEventListener("click",()=>{t.classList.toggle("open")});</script> <main class="post-page" data-astro-cid-gjtny2mx> <article class="post-article" data-astro-cid-gjtny2mx> <header class="post-header" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <h1 class="article-title" data-astro-cid-bjlpfrhy>论文阅读 DAgger</h1> <div class="article-meta" data-astro-cid-bjlpfrhy> <time class="article-date" data-astro-cid-bjlpfrhy>2026-10-12</time>  <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-category" data-astro-cid-bjlpfrhy>算法</span>   <span class="meta-sep" data-astro-cid-bjlpfrhy>·</span> <span class="article-tags" data-astro-cid-bjlpfrhy> #论文阅读 #DAgger #Behavior Cloning #在线学习 #强凸函数 #Hölder&#39;s Inequality #Azuma–Hoeffding 不等式 </span>   </div> </div> </header> <div class="post-body" id="post-body" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <div class="article-body" data-astro-cid-bjlpfrhy><p>paper: <a href="https://proceedings.mlr.press/v15/ross11a/ross11a.pdf">Stéphane Ross、Geoffrey J. Gordon、J. Andrew Bagnell，〈A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning〉，AISTATS 2011</a>。</p>
+<p>这就是提出 <strong>DAgger（Dataset Aggregation，数据集聚合）</strong> 的论文。下面按原文六个一级标题组织笔记，最后单独讨论后续研究的批评。公式沿用原文主要符号；用于帮助理解的例子、推导解释和评价会明确区分。</p>
+<p>先给出贯穿全文的问题：</p>
+<blockquote>
+<p><strong>当模型的输出会改变它下一步看到的输入时，如何通过监督学习，训练出在自己造成的状态分布上仍然表现良好的模型？</strong></p>
+</blockquote>
+<p>理解这句话，比记住“不断把新数据加入训练集”更重要。</p>
+<h1 id="introduction问题为何不能直接当作普通监督学习"><a class="heading-anchor" href="#introduction问题为何不能直接当作普通监督学习">INTRODUCTION：问题为何不能直接当作普通监督学习</a></h1>
+<h2 id="模仿学习的基本做法"><a class="heading-anchor" href="#模仿学习的基本做法">模仿学习的基本做法</a></h2>
+<p>假设我们想教一辆车开车。专家提供状态与动作：</p>
+<div class="math-source">$$
+D=\{(s_i,a_i^*)\}_{i=1}^n.
+$$</div>
+<p>其中：</p>
+<ul>
+<li><span class="math-source">$s_i$</span>：图像、车辆位置或其他观测；</li>
+<li><span class="math-source">$a_i^*$</span>：专家在该状态下的动作；</li>
+<li><span class="math-source">$\pi(s)$</span>：学习到的控制策略。</li>
+</ul>
+<p>最直接的方法是监督学习：</p>
+<div class="math-source">$$
+\hat\pi
+=
+\arg\min_{\pi\in\Pi}
+\frac1n\sum_{i=1}^n
+\ell\bigl(\pi(s_i),a_i^*\bigr).
+$$</div>
+<p>今天通常把这种做法称为 <strong>Behavior Cloning，行为克隆，简称 BC</strong>。</p>
+<p>问题在于，训练状态是专家开车时遇到的，部署状态却是学习者开车时遇到的。</p>
+<p>例如：</p>
+<ol>
+<li>专家总在道路中央行驶。</li>
+<li>学习者方向盘稍微打偏。</li>
+<li>学习者来到路边，看到训练时少见的画面。</li>
+<li>在陌生画面上预测更差。</li>
+<li>车辆进一步偏离正常状态。</li>
+</ol>
+<p>这里存在反馈：</p>
+<div class="math-source">$$
+\text{预测错误}
+\longrightarrow
+\text{状态分布改变}
+\longrightarrow
+\text{后续预测更困难}.
+$$</div>
+<h2 id="违反-iid应当怎样理解"><a class="heading-anchor" href="#违反-iid应当怎样理解">“违反 i.i.d.”应当怎样理解</a></h2>
+<p>原文以违反普通监督学习的 i.i.d. 假设来描述问题。更精确地说，至少有两件事：</p>
+<ul>
+<li>一条轨迹内部的样本具有时间依赖；</li>
+<li><strong>训练分布与部署分布不同，而且部署分布由学习到的策略决定。</strong></li>
+</ul>
+<p>第二件事才是本文的核心。</p>
+<p>即使你从许多独立的专家轨迹中采样，使训练数据在统计上更规整，也不能自动解决：</p>
+<div class="math-source">$$
+d_{\pi^*}\neq d_{\hat\pi}.
+$$</div>
+<p>其中 <span class="math-source">$d_{\pi^*}$</span> 是专家访问的状态分布，<span class="math-source">$d_{\hat\pi}$</span> 是学习者访问的状态分布。</p>
+<p><strong>1.3 论文的贡献是什么？</strong></p>
+<p>贡献可以分为三个层面：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>层面</th><th>核心内容</th></tr></thead><tbody><tr><td>算法</td><td>让学习者执行策略，在它访问的状态上请专家标注，并聚合历史数据</td></tr><tr><td>理论</td><td>将这种交互式模仿学习归约为无遗憾在线学习</td></tr><tr><td>策略形式</td><td>最终可以部署一个固定的确定性策略，而不必保留逐步随机切换的策略混合</td></tr></tbody></table>
+<p>“固定”指每个时间步使用同一个决策规则；“确定性”指同一输入给出同一输出。它不表示训练过程不能随机，也不表示环境必须确定。</p>
+<h1 id="preliminaries符号目标以及旧方法为什么受限"><a class="heading-anchor" href="#preliminaries符号目标以及旧方法为什么受限">PRELIMINARIES：符号、目标，以及旧方法为什么受限</a></h1>
+<h2 id="全文最重要的符号"><a class="heading-anchor" href="#全文最重要的符号">全文最重要的符号</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>符号</th><th>含义</th></tr></thead><tbody><tr><td><span class="math-source">$\Pi$</span></td><td>学习者可选择的策略集合</td></tr><tr><td><span class="math-source">$\pi^*$</span></td><td>专家策略</td></tr><tr><td><span class="math-source">$T$</span></td><td>单次任务的决策步数，即 horizon</td></tr><tr><td><span class="math-source">$d_\pi^t$</span></td><td>前 <span class="math-source">$t-1$</span> 步执行 <span class="math-source">$\pi$</span> 后，第 <span class="math-source">$t$</span> 步的状态分布</td></tr><tr><td><span class="math-source">$d_\pi$</span></td><td>整个任务上的平均状态分布</td></tr><tr><td><span class="math-source">$C(s,a)$</span></td><td>真实任务的即时成本，假设在 <span class="math-source">$[0,1]$</span></td></tr><tr><td><span class="math-source">$\ell(s,\pi)$</span></td><td>用于模仿专家的替代损失</td></tr><tr><td><span class="math-source">$J(\pi)$</span></td><td>执行策略 <span class="math-source">$\pi$</span> 的期望总成本</td></tr></tbody></table>
+<p>平均状态分布定义为：</p>
+<div class="math-source">$$
+d_\pi=\frac1T\sum_{t=1}^T d_\pi^t.
+$$</div>
+<p>它可以理解为：先均匀随机选一个时间步，再观察该时间步的状态。</p>
+<p>若策略允许随机动作，则：</p>
+<div class="math-source">$$
+C_\pi(s)
+=
+\mathbb E_{a\sim\pi(\cdot\mid s)}[C(s,a)].
+$$</div>
+<p>总成本为：</p>
+<div class="math-source">$$
+J(\pi)
+=
+\sum_{t=1}^T
+\mathbb E_{s\sim d_\pi^t}[C_\pi(s)]
+=
+T\mathbb E_{s\sim d_\pi}[C_\pi(s)].
+$$</div>
+<p><strong>必须区分两类损失：</strong></p>
+<ul>
+<li><span class="math-source">$C$</span>：任务真正关心什么，例如碰撞、跌落、时间消耗；</li>
+<li><span class="math-source">$\ell$</span>：训练时优化什么，例如与专家动作的分类错误或平方误差。</li>
+</ul>
+<p>动作像专家，不自动等于任务完成得好。后面所有性能保证都需要处理这道转换。</p>
+<h2 id="真正的优化目标分布也依赖待优化策略"><a class="heading-anchor" href="#真正的优化目标分布也依赖待优化策略">真正的优化目标：分布也依赖待优化策略</a></h2>
+<p>论文写出的目标是：</p>
+<div class="math-source">$$
+\hat\pi
+=
+\arg\min_{\pi\in\Pi}
+\mathbb E_{s\sim d_\pi}[\ell(s,\pi)].
+$$</div>
+<p>这里 <span class="math-source">$\pi$</span> 出现了两次：</p>
+<ol>
+<li>决定当前状态的预测损失；</li>
+<li>决定未来会访问什么状态。</li>
+</ol>
+<p>而普通监督学习优化的是：</p>
+<div class="math-source">$$
+\hat\pi_{\mathrm{sup}}
+=
+\arg\min_{\pi\in\Pi}
+\mathbb E_{s\sim d_{\pi^*}}[\ell(s,\pi)].
+$$</div>
+<p>在普通监督学习目标中，输入分布是固定的；在本文的优化目标中，输入分布跟着策略变化。</p>
+<p>所以，即使对每个固定状态，<span class="math-source">$\ell(s,\pi)$</span> 关于策略参数是凸函数，整体目标也未必凸。</p>
+<p><strong>DAgger 后面并没有直接求解这个一般非凸目标的全局最优解。</strong> 它构造另一种可分析的交互学习过程，获得关于自身访问分布的性能界。</p>
+<h2 id="原文-21监督模仿为什么会出现-t2epsilon"><a class="heading-anchor" href="#原文-21监督模仿为什么会出现-t2epsilon">原文 §2.1：监督模仿为什么会出现 <span class="math-source">$T^2\epsilon$</span></a></h2>
+<p>假设学习者在专家状态分布上的模仿错误为：</p>
+<div class="math-source">$$
+\mathbb E_{s\sim d_{\pi^*}}[\ell(s,\pi)]
+=
+\epsilon,
+$$</div>
+<p>且 <span class="math-source">$\ell$</span> 是动作不一致的 0–1 损失，或其上界。</p>
+<p>定理 2.1 给出：</p>
+<div class="math-source">$$
+\boxed{
+J(\pi)\le J(\pi^*)+T^2\epsilon.
+}
+$$</div>
+<p><strong>直觉推导：</strong></p>
+<p>在简化情形下，前 <span class="math-source">$t$</span> 步至少出现一次错误的概率可以用 union bound 控制为 <span class="math-source">$t\epsilon$</span>。一旦偏离专家轨迹，后续成本可能持续增加，因此：</p>
+<div class="math-source">$$
+\sum_{t=1}^T t\epsilon
+=
+\frac{T(T+1)}2\epsilon
+=
+O(T^2\epsilon).
+$$</div>
+<p>这是帮助理解量级的推导；原定理允许按时间平均的专家分布误差。</p>
+<p><strong>两个容易误读的地方：</strong></p>
+<ul>
+<li>这是最坏情况上界，并不是说行为克隆在所有任务里都会产生平方级退化。</li>
+<li>因为 <span class="math-source">$C\in[0,1]$</span>，总成本本来就不超过 <span class="math-source">$T$</span>。当 <span class="math-source">$T^2\epsilon>T$</span> 时，该界只是变得不够有信息，不能解释成成本真的能无限超过任务长度。</li>
+</ul>
+<p>论文强调的是：存在任务，让小的专家分布误差造成严重的长期后果。</p>
+<h2 id="原文-22forward-training-怎样改善分布匹配"><a class="heading-anchor" href="#原文-22forward-training-怎样改善分布匹配">原文 §2.2：Forward Training 怎样改善分布匹配</a></h2>
+<p>Forward Training 为不同时间步分别训练：</p>
+<div class="math-source">$$
+\pi_1,\pi_2,\ldots,\pi_T.
+$$</div>
+<p>训练第 <span class="math-source">$t$</span> 个策略时：</p>
+<ol>
+<li>前 <span class="math-source">$t-1$</span> 步执行已经学好的策略；</li>
+<li>获得第 <span class="math-source">$t$</span> 步实际会遇到的状态；</li>
+<li>让专家给这些状态标注；</li>
+<li>训练 <span class="math-source">$\pi_t$</span>。</li>
+</ol>
+<p>好处是：训练第 <span class="math-source">$t$</span> 步策略时，已经考虑了前面学习者动作造成的影响。</p>
+<p>缺点是：</p>
+<ul>
+<li>要顺序训练 <span class="math-source">$T$</span> 个策略；</li>
+<li>策略随时间步改变；</li>
+<li>长任务或没有明确终点的任务不方便使用。</li>
+</ul>
+<p>这一小节还给出了后面非常关键的定理 2.2。</p>
+<h2 id="定理-22把自身分布上的模仿误差转换成任务成本"><a class="heading-anchor" href="#定理-22把自身分布上的模仿误差转换成任务成本">定理 2.2：把“自身分布上的模仿误差”转换成任务成本</a></h2>
+<p>定义：</p>
+<div class="math-source">$$
+Q_h^{\pi^*}(s,a)
+$$</div>
+<p>为：从状态 <span class="math-source">$s$</span> 开始，第一步执行动作 <span class="math-source">$a$</span>，之后执行专家，总共执行 <span class="math-source">$h$</span> 步的期望成本。</p>
+<p>这里还要求 <span class="math-source">$\ell(s,\pi)$</span> 是与专家动作不一致的 0–1 损失，或逐状态上界该损失。假设对每个时间步、学习者可能访问的状态和可选动作，一次偏离专家动作造成的额外 cost-to-go 不超过 <span class="math-source">$u$</span>：</p>
+<div class="math-source">$$
+Q_{T-t+1}^{\pi^*}(s,a)
+-
+Q_{T-t+1}^{\pi^*}(s,\pi^*(s))
+\le u.
+$$</div>
+<p>如果策略在<strong>自己访问的状态分布</strong>上满足：</p>
+<div class="math-source">$$
+\mathbb E_{s\sim d_\pi}[\ell(s,\pi)]
+=
+\epsilon,
+$$</div>
+<p>则：</p>
+<div class="math-source">$$
+\boxed{
+J(\pi)\le J(\pi^*)+uT\epsilon.
+}
+$$</div>
+<p>这里 <span class="math-source">$u$</span> 是全文最不能忽略的量。</p>
+<p>它衡量的不是“当前动作错多少”，而是：</p>
+<blockquote>
+<p><strong>现在做错一步，随后交给专家补救，最多会多付出多少长期成本？</strong></p>
+</blockquote>
+<p>例如：</p>
+<ul>
+<li>轻微偏离道路，专家几步内可修正：<span class="math-source">$u$</span> 可能较小。</li>
+<li>一个动作导致不可逆事故，余下任务都失败：<span class="math-source">$u$</span> 可能随 <span class="math-source">$T$</span> 增长。</li>
+</ul>
+<p>因此：</p>
+<div class="math-source">$$
+u=O(1)
+\quad\Rightarrow\quad
+J(\pi)-J(\pi^*)=O(T\epsilon);
+$$</div>
+<p>但：</p>
+<div class="math-source">$$
+u=O(T)
+\quad\Rightarrow\quad
+J(\pi)-J(\pi^*)=O(T^2\epsilon).
+$$</div>
+<p><strong>所以“DAgger 把平方误差界变成线性界”需要附带条件。对任意真实任务成本，并没有无条件的线性保证。</strong></p>
+<p><strong>证明的主要思路：逐步替换专家。</strong></p>
+<p>构造混合执行序列：先执行学习者若干步，之后交给专家。相邻两个序列只在一个时间步不同。将这些差异相加，得到：</p>
+<div class="math-source">$$
+\begin{aligned}
+J(\pi)-J(\pi^*)
+&#x26;=
+\sum_{t=1}^T
+\mathbb E_{s\sim d_\pi^t}
+\left[
+Q_{T-t+1}^{\pi^*}(s,\pi)
+-
+Q_{T-t+1}^{\pi^*}(s,\pi^*)
+\right]\\
+&#x26;\le
+u\sum_{t=1}^T
+\mathbb E_{s\sim d_\pi^t}[\ell(s,\pi)]\\
+&#x26;=
+uT\epsilon.
+\end{aligned}
+$$</div>
+<p>当两个策略动作相同，差异为零；动作不同，差异由 <span class="math-source">$u$</span> 控制。</p>
+<p>这个证明也解释了为什么需要 <span class="math-source">$d_\pi$</span>：替换到第 <span class="math-source">$t$</span> 步时，前面已经执行的是学习者。</p>
+<h2 id="上一小节的推导细节"><a class="heading-anchor" href="#上一小节的推导细节">上一小节的推导细节</a></h2>
+<p>这段推导最难的是第一个等号：<strong>为什么两个完整策略的总成本之差，能拆成一系列“只改一个动作”的成本差？</strong> 我们用一个只有 3 步的任务来展开。</p>
+<p>先记住，成本越小越好：</p>
+<ul>
+<li><span class="math-source">$J(\pi)$</span>：从头到尾都用学习者的期望总成本。</li>
+<li><span class="math-source">$J(\pi^*)$</span>：从头到尾都用专家的期望总成本。</li>
+<li><span class="math-source">$Q_h^{\pi^*}(s,\pi)$</span>：从状态 <span class="math-source">$s$</span> 出发，<strong>第一步用学习者，之后用专家</strong>，总共走 <span class="math-source">$h$</span> 步的期望成本。</li>
+</ul>
+<p>特别注意：<span class="math-source">$Q$</span> 中括号里的 <span class="math-source">$\pi$</span> 只控制第一步，上标 <span class="math-source">$\pi^*$</span> 控制后面的步骤。</p>
+<p><strong>1. 插入几个“先学习者、后专家”的过渡策略</strong></p>
+<p>设 <span class="math-source">$T=3$</span>，构造四种执行方式：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>策略</th><th>第 1 步</th><th>第 2 步</th><th>第 3 步</th><th>期望总成本</th></tr></thead><tbody><tr><td><span class="math-source">$H_0$</span></td><td>专家</td><td>专家</td><td>专家</td><td><span class="math-source">$J(H_0)=J(\pi^*)$</span></td></tr><tr><td><span class="math-source">$H_1$</span></td><td>学习者</td><td>专家</td><td>专家</td><td><span class="math-source">$J(H_1)$</span></td></tr><tr><td><span class="math-source">$H_2$</span></td><td>学习者</td><td>学习者</td><td>专家</td><td><span class="math-source">$J(H_2)$</span></td></tr><tr><td><span class="math-source">$H_3$</span></td><td>学习者</td><td>学习者</td><td>学习者</td><td><span class="math-source">$J(H_3)=J(\pi)$</span></td></tr></tbody></table>
+<p>纯代数上：</p>
+<div class="math-source">$$
+\begin{aligned}
+J(\pi)-J(\pi^*)
+={}&#x26;[J(H_1)-J(H_0)]\\
+&#x26;+[J(H_2)-J(H_1)]\\
+&#x26;+[J(H_3)-J(H_2)].
+\end{aligned}
+$$</div>
+<p>右边展开后，中间项全部抵消。这叫<strong>望远镜求和</strong>。</p>
+<p>这样，我们就把“整个策略都换掉”，拆成了三次“只替换一个时间步的决策规则”。</p>
+<p><strong>2. 看懂其中一项：<span class="math-source">$J(H_2)-J(H_1)$</span></strong></p>
+<p>这两个策略是：</p>
+<div class="math-source">$$
+H_2=(\text{学习者},\text{学习者},\text{专家}),
+$$</div>
+<div class="math-source">$$
+H_1=(\text{学习者},\text{专家},\text{专家}).
+$$</div>
+<p>它们的关系是：</p>
+<ul>
+<li>第 1 步都用学习者，所以第 1 步的期望成本相同；</li>
+<li>到达第 2 步时，状态分布相同，都是 <span class="math-source">$d_\pi^2$</span>；</li>
+<li>第 2 步，一个用学习者，一个用专家；</li>
+<li>第 3 步都交给专家。</li>
+</ul>
+<p>假设第 2 步来到状态 <span class="math-source">$s$</span>，剩下两步的成本分别是：</p>
+<div class="math-source">$$
+\underbrace{Q_2^{\pi^*}(s,\pi)}_{\text{现在用学习者，下一步用专家}},
+\qquad
+\underbrace{Q_2^{\pi^*}(s,\pi^*)}_{\text{现在和下一步都用专家}}.
+$$</div>
+<p>所以：</p>
+<div class="math-source">$$
+J(H_2)-J(H_1)
+=
+\mathbb E_{s\sim d_\pi^2}
+\left[
+Q_2^{\pi^*}(s,\pi)
+-
+Q_2^{\pi^*}(s,\pi^*)
+\right].
+$$</div>
+<p><strong>虽然后面都用专家，后面的成本不一定相同！</strong> 第 2 步的不同动作可能把系统带到不同状态。<span class="math-source">$Q$</span> 正是把这些后续影响也算进去了。</p>
+<p>推广到第 <span class="math-source">$t$</span> 步：</p>
+<div class="math-source">$$
+J(H_t)-J(H_{t-1})
+=
+\mathbb E_{s\sim d_\pi^t}
+\left[
+Q_{T-t+1}^{\pi^*}(s,\pi)
+-
+Q_{T-t+1}^{\pi^*}(s,\pi^*)
+\right].
+$$</div>
+<p>其中：</p>
+<ul>
+<li><span class="math-source">$d_\pi^t$</span>：因为前 <span class="math-source">$t-1$</span> 步都由学习者执行；</li>
+<li><span class="math-source">$T-t+1$</span>：因为从第 <span class="math-source">$t$</span> 步到第 <span class="math-source">$T$</span> 步，还剩这么多步。</li>
+</ul>
+<p>把这些差相加，就得到你选中的<strong>第一个等号</strong>。</p>
+<p><strong>3. 为什么下一行能用 <span class="math-source">$u\ell(s,\pi)$</span> 控制？</strong></p>
+<p>先考虑确定性策略，并令：</p>
+<div class="math-source">$$
+\ell(s,\pi)=
+\begin{cases}
+0,&#x26;\pi(s)=\pi^*(s),\\
+1,&#x26;\pi(s)\ne\pi^*(s).
+\end{cases}
+$$</div>
+<p>对于一个固定状态 <span class="math-source">$s$</span>，分两种情况：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>当前动作</th><th>两个 <span class="math-source">$Q$</span> 的差</th></tr></thead><tbody><tr><td>学习者与专家动作相同</td><td>差为 <span class="math-source">$0$</span>：当前动作和后续策略都一样</td></tr><tr><td>学习者与专家动作不同</td><td>根据定理的假设，差至多为 <span class="math-source">$u$</span></td></tr></tbody></table>
+<p>因此，无论是哪一种情况：</p>
+<div class="math-source">$$
+Q_{T-t+1}^{\pi^*}(s,\pi)
+-
+Q_{T-t+1}^{\pi^*}(s,\pi^*)
+\le
+u\,\ell(s,\pi).
+$$</div>
+<p>这里的假设是：</p>
+<blockquote>
+<p><strong>做错这一步后，即使立即交还给专家，额外造成的长期成本也至多为 <span class="math-source">$u$</span>。</strong></p>
+</blockquote>
+<p>例如，某状态下：</p>
+<ul>
+<li>现在由专家操作，剩余期望成本为 <span class="math-source">$2$</span>；</li>
+<li>现在由学习者操作、随后交回专家，剩余期望成本为 <span class="math-source">$5$</span>；</li>
+</ul>
+<p>那么这次偏离造成的额外成本就是 <span class="math-source">$5-2=3$</span>。定理要求 <span class="math-source">$u$</span> 能统一上界所有相关状态下的这种差。</p>
+<p>逐状态的不等式取期望，再对时间求和，就得到：</p>
+<div class="math-source">$$
+J(\pi)-J(\pi^*)
+\le
+u\sum_{t=1}^T
+\mathbb E_{s\sim d_\pi^t}[\ell(s,\pi)].
+$$</div>
+<p>如果使用的是 0–1 损失的上界，这一步同样成立。</p>
+<p><strong>4. 最后为什么是 <span class="math-source">$uT\epsilon$</span>？</strong></p>
+<p>这里的 <span class="math-source">$\epsilon$</span> 定义为：<strong>学习者自己执行任务时，平均每一步的模仿损失</strong>：</p>
+<div class="math-source">$$
+\epsilon
+=
+\mathbb E_{s\sim d_\pi}[\ell(s,\pi)].
+$$</div>
+<p>而：</p>
+<div class="math-source">$$
+d_\pi=\frac1T\sum_{t=1}^T d_\pi^t,
+$$</div>
+<p>所以：</p>
+<div class="math-source">$$
+\epsilon
+=
+\frac1T
+\sum_{t=1}^T
+\mathbb E_{s\sim d_\pi^t}[\ell(s,\pi)].
+$$</div>
+<p>两边乘以 <span class="math-source">$T$</span>：</p>
+<div class="math-source">$$
+\sum_{t=1}^T
+\mathbb E_{s\sim d_\pi^t}[\ell(s,\pi)]
+=
+T\epsilon.
+$$</div>
+<p>代回去：</p>
+<div class="math-source">$$
+\boxed{J(\pi)-J(\pi^*)\le uT\epsilon.}
+$$</div>
+<p>当 <span class="math-source">$\ell$</span> 是 0–1 损失时，可以把右边读成：</p>
+<div class="math-source">$$
+\underbrace{u}_{\text{一次偏离造成的额外长期成本上界}}
+\times
+\underbrace{T\epsilon}_{\text{学习者执行时，预期有多少步与专家动作不同}}.
+$$</div>
+<p>这个直觉之所以能严格成立，靠的就是前面的过渡策略：<strong>将整段行为的差异拆开，每次只替换一步，再把差异相加。</strong></p>
+<h2 id="原文-23smile-的思路与代价"><a class="heading-anchor" href="#原文-23smile-的思路与代价">原文 §2.3：SMILe 的思路与代价</a></h2>
+<p>SMILe 从专家策略开始，每轮训练一个新策略，再逐步把专家的权重移交给这些学习者。</p>
+<p>它的更新为：</p>
+<div class="math-source">$$
+\pi_n
+=
+\pi_{n-1}
++
+\alpha(1-\alpha)^{n-1}
+(\hat\pi_n-\pi_0),
+$$</div>
+<p>其中 <span class="math-source">$\pi_0=\pi^*$</span>。</p>
+<p>展开后：</p>
+<div class="math-source">$$
+\pi_n
+=
+(1-\alpha)^n\pi^*
++
+\sum_{j=1}^n
+\alpha(1-\alpha)^{j-1}\hat\pi_j.
+$$</div>
+<p>最终去掉专家部分并重新归一化，即可部署。</p>
+<p>这里混合的是<strong>策略的执行概率</strong>，不必理解为对方向盘数值求平均。</p>
+<p>代价是最终仍保留多个策略，逐步随机切换可能引入不稳定行为。原文所述保证还要求较保守的更新尺度：</p>
+<div class="math-source">$$
+\alpha=O(T^{-2}),
+\qquad
+N=O(T^2\log T).
+$$</div>
+<p>DAgger 希望保留交互采样的优点，同时最后只部署一个学习者。</p>
+<h1 id="dataset-aggregationdagger-的完整机制"><a class="heading-anchor" href="#dataset-aggregationdagger-的完整机制">DATASET AGGREGATION：DAgger 的完整机制</a></h1>
+<h2 id="algorithm-31-实际做了什么"><a class="heading-anchor" href="#algorithm-31-实际做了什么">Algorithm 3.1 实际做了什么</a></h2>
+<p>区分两个符号：</p>
+<ul>
+<li><span class="math-source">$\hat\pi_i$</span>：第 <span class="math-source">$i$</span> 轮的学习者；</li>
+<li><span class="math-source">$\pi_i$</span>：第 <span class="math-source">$i$</span> 轮用于收集数据的行为策略。</li>
+</ul>
+<p>行为策略为：</p>
+<div class="math-source">$$
+\pi_i
+=
+\beta_i\pi^*
++
+(1-\beta_i)\hat\pi_i.
+$$</div>
+<p>意思是在每个决策步骤：</p>
+<div class="math-source">$$
+a_t=
+\begin{cases}
+\pi^*(s_t), &#x26; \text{概率 }\beta_i,\\
+\hat\pi_i(s_t), &#x26; \text{概率 }1-\beta_i.
+\end{cases}
+$$</div>
+<p>算法可以写成：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>初始化聚合数据集 D 为空</span></span>
+<span class="line"><span>初始化学习者策略</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>重复 N 轮：</span></span>
+<span class="line"><span>    1. 用当前学习者与专家的混合策略执行任务</span></span>
+<span class="line"><span>    2. 记录访问到的状态</span></span>
+<span class="line"><span>    3. 请专家为这些状态提供正确动作</span></span>
+<span class="line"><span>    4. 将新标注数据加入 D</span></span>
+<span class="line"><span>    5. 用整个 D 训练下一轮学习者</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>通过验证选择一个学习者策略部署</span></span></code></pre>
+<p>关键训练数据是：</p>
+<div class="math-source">$$
+D_i
+=
+\{(s,\pi^*(s)):s\text{ 是本轮访问的状态}\}.
+$$</div>
+<p><strong>注意标签不是学习者刚才执行的动作。</strong></p>
+<p>学习者决定“去哪里收集问题”，专家决定“这些问题应该怎样回答”。</p>
+<p>如果把学习者自己的动作当作标签重新训练，就不再是原论文的 DAgger。</p>
+<h2 id="为什么一定要聚合历史数据"><a class="heading-anchor" href="#为什么一定要聚合历史数据">为什么一定要聚合历史数据</a></h2>
+<p>更新可写成：</p>
+<div class="math-source">$$
+\hat\pi_{i+1}
+\in
+\arg\min_{\pi\in\Pi}
+\sum_{j=1}^i
+\sum_{(s,a^*)\in D_j}
+\ell(\pi(s),a^*).
+$$</div>
+<p>如果每轮只训练最新数据：</p>
+<ul>
+<li>修好了当前状态下的错误；</li>
+<li>可能又忘了此前状态下的正确行为；</li>
+<li>策略变化进一步改变状态分布；</li>
+<li>学习过程可能反复摇摆。</li>
+</ul>
+<p>聚合数据使新策略必须同时解释过去多轮遇到的状态。</p>
+<p>更严格地说，这与在线学习中的 <strong>Follow-The-Leader，FTL</strong> 对应：每轮选择截至目前累计损失最小的决策。</p>
+<p>不过，“聚合数据”本身并不无条件保证稳定或无遗憾，还需要底层优化器与损失满足相应条件。</p>
+<h2 id="beta_i-的作用控制执行不是控制标注量"><a class="heading-anchor" href="#beta_i-的作用控制执行不是控制标注量"><span class="math-source">$\beta_i$</span> 的作用：控制执行，不是控制标注量</a></h2>
+<p>一个简单选择是：</p>
+<div class="math-source">$$
+\beta_i=\mathbf1[i=1].
+$$</div>
+<p>也就是：</p>
+<ul>
+<li>第一轮完全由专家执行；</li>
+<li>后续完全由学习者执行。</li>
+</ul>
+<p>另一个选择是指数衰减：</p>
+<div class="math-source">$$
+\beta_i=p^{i-1},
+\qquad 0&#x3C;p&#x3C;1.
+$$</div>
+<p>保留一些专家动作可能帮助早期学习者脱离毫无进展的状态，获得更多样的数据。</p>
+<p>但必须理解：</p>
+<blockquote>
+<p><strong>即使 <span class="math-source">$\beta_i=0$</span>，原始 DAgger 仍然需要专家给学习者访问的状态提供标签。</strong></p>
+</blockquote>
+<p>“专家不再控制系统”与“专家不再参与训练”是两回事。</p>
+<p>论文的一般渐近要求是专家混合比例的平均值趋于零：</p>
+<div class="math-source">$$
+\bar\beta_N
+=
+\frac1N\sum_{i=1}^N\beta_i
+\longrightarrow0.
+$$</div>
+<p>用 <span class="math-source">$\bar\beta_N$</span> 表示平均值，避免与第 <span class="math-source">$N$</span> 轮的 <span class="math-source">$\beta_N$</span> 混淆。</p>
+<h2 id="理论中的-epsilon_n-到底是什么"><a class="heading-anchor" href="#理论中的-epsilon_n-到底是什么">理论中的 <span class="math-source">$\epsilon_N$</span> 到底是什么</a></h2>
+<p>定义：</p>
+<div class="math-source">$$
+\epsilon_N
+=
+\min_{\pi\in\Pi}
+\frac1N\sum_{i=1}^N
+\mathbb E_{s\sim d_{\pi_i}}[\ell(s,\pi)].
+$$</div>
+<p>它是：</p>
+<blockquote>
+<p>在实际收集到的这一系列状态分布上，策略类中最好的<strong>同一个固定策略</strong>所能达到的平均损失。</p>
+</blockquote>
+<p>它不是：</p>
+<ul>
+<li>专家的错误率；</li>
+<li>最后一个学习者的训练损失；</li>
+<li>每轮分别挑一个最优策略后的平均损失；</li>
+<li><span class="math-source">$\min_\pi \mathbb E_{d_\pi}\ell(s,\pi)$</span>。</li>
+</ul>
+<p>尤其应比较下面两个式子：</p>
+<div class="math-source">$$
+\underbrace{
+\min_\pi\frac1N\sum_i
+\mathbb E_{d_{\pi_i}}\ell(s,\pi)
+}_{\text{固定同一个比较策略}}
+$$</div>
+<p>与</p>
+<div class="math-source">$$
+\underbrace{
+\frac1N\sum_i\min_\pi
+\mathbb E_{d_{\pi_i}}\ell(s,\pi)
+}_{\text{允许每轮换比较策略}}.
+$$</div>
+<p>后者通常更小，原文并没有直接保证与后者竞争。</p>
+<p>这也意味着：如果学习者表达能力不足，聚合分布上根本不存在低误差策略，那么 <span class="math-source">$\epsilon_N$</span> 会很大。DAgger 不能凭数据收集机制消除模型能力限制。</p>
+<h2 id="定理-3134先看结果再看证明"><a class="heading-anchor" href="#定理-3134先看结果再看证明">定理 3.1—3.4：先看结果，再看证明</a></h2>
+<p>在原文给定的有界、强凸损失及专家混合衰减条件下，主要结果如下。涉及任意真实任务成本 <span class="math-source">$C$</span> 的定理 3.2 和 3.4 还要求 <span class="math-source">$\ell$</span> 上界与专家动作不一致的 0–1 损失，并满足定理 2.2 的 cost-to-go 差值上界 <span class="math-source">$u$</span>。这里 <span class="math-source">$\tilde O$</span> 隐藏对数因子，表中的轮数表示达到该精度的充分量级。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>情形</th><th align="right">训练轮数的充分量级</th><th>保证</th></tr></thead><tbody><tr><td>无限样本，定理 3.1</td><td align="right"><span class="math-source">$N=\tilde O(T)$</span></td><td>存在 <span class="math-source">$\hat\pi$</span>，自身分布损失 <span class="math-source">$\le\epsilon_N+O(1/T)$</span></td></tr><tr><td>无限样本，定理 3.2</td><td align="right"><span class="math-source">$N=\tilde O(uT)$</span></td><td>存在 <span class="math-source">$\hat\pi$</span>，<span class="math-source">$J(\hat\pi)\le J(\pi^*)+uT\epsilon_N+O(1)$</span></td></tr><tr><td>每轮常数条轨迹，定理 3.3</td><td align="right"><span class="math-source">$N=O(T^2\log(1/\delta))$</span></td><td>以至少 <span class="math-source">$1-\delta$</span> 概率，自身分布损失 <span class="math-source">$\le\hat\epsilon_N+O(1/T)$</span></td></tr><tr><td>每轮常数条轨迹，定理 3.4</td><td align="right"><span class="math-source">$N=O(u^2T^2\log(1/\delta))$</span></td><td>以至少 <span class="math-source">$1-\delta$</span> 概率，<span class="math-source">$J(\hat\pi)\le J(\pi^*)+uT\hat\epsilon_N+O(1)$</span></td></tr></tbody></table>
+<p>其中 <span class="math-source">$\hat\epsilon_N$</span> 是聚合采样数据上的最佳经验损失。</p>
+<p>为什么需要每步误差项达到 <span class="math-source">$O(1/T)$</span>？</p>
+<p>因为转为整个任务的成本时会乘以 <span class="math-source">$T$</span>：</p>
+<div class="math-source">$$
+T\cdot O(1/T)=O(1).
+$$</div>
+<p><strong>这里的保证都是“生成的策略序列中存在一个好策略”，不是“最后一个一定好”。</strong></p>
+<p>算法因此写的是通过验证选择策略。定理没有免除策略选择所需的额外评估成本。</p>
+<h1 id="theoretical-analysis为什么无遗憾能够解决这个问题"><a class="heading-anchor" href="#theoretical-analysis为什么无遗憾能够解决这个问题">THEORETICAL ANALYSIS：为什么无遗憾能够解决这个问题</a></h1>
+<p>这一章是论文的理论核心。整个证明可以拆成三步：</p>
+<ol>
+<li>构造在线学习损失；</li>
+<li>控制专家混合造成的分布偏差；</li>
+<li>把平均性能转换为“存在一个好策略”。</li>
+</ol>
+<h2 id="原文-41什么叫-no-regret"><a class="heading-anchor" href="#原文-41什么叫-no-regret">原文 §4.1：什么叫 no-regret</a></h2>
+<p>在线学习中，第 <span class="math-source">$i$</span> 轮先选择策略 <span class="math-source">$\hat\pi_i$</span>，相对于其他可能的选择策略来说，对应的损失函数为 <span class="math-source">$\ell_i$</span>。</p>
+<p>累计遗憾为：</p>
+<div class="math-source">$$
+R_N
+=
+\sum_{i=1}^N\ell_i(\hat\pi_i)
+-
+\min_{\pi\in\Pi}
+\sum_{i=1}^N\ell_i(\pi).
+$$</div>
+<p>平均遗憾为：</p>
+<div class="math-source">$$
+\begin{aligned}
+\frac{R_N}{N} 
+&#x26;= \frac{1}{N}\sum_{i=1}^N\ell_i(\hat\pi_i) - \frac{1}{N}\min_{\pi\in\Pi}\sum_{i=1}^N\ell_i(\pi) \\
+&#x26;= \frac{1}{N}\sum_{i=1}^N\ell_i(\hat\pi_i) - \epsilon_N \le\gamma_N. 
+\end{aligned}
+$$</div>
+<p>若：</p>
+<div class="math-source">$$
+\gamma_N\longrightarrow0,
+$$</div>
+<p>就称算法无遗憾。</p>
+<p>它表示：</p>
+<blockquote>
+<p>回头看整个学习过程，我逐轮做出的决策，平均而言不会比事先知道全部损失函数、然后选出的最佳固定策略差很多。</p>
+</blockquote>
+<p>它不表示：</p>
+<ul>
+<li>每一轮损失都下降；</li>
+<li>每一轮都接近该轮最优；</li>
+<li>策略参数一定收敛；</li>
+<li>绝对损失一定很小。</li>
+</ul>
+<p>最后一点尤其重要：如果最优固定策略本身就很差，无遗憾算法仍可能取得很差的绝对性能。</p>
+<h2 id="如何把-dagger-写成在线学习"><a class="heading-anchor" href="#如何把-dagger-写成在线学习">如何把 DAgger 写成在线学习</a></h2>
+<p>定义第 <span class="math-source">$i$</span> 轮损失：</p>
+<div class="math-source">$$
+\boxed{
+\ell_i(\pi)
+=
+\mathbb E_{s\sim d_{\pi_i}}[\ell(s,\pi)].
+}
+$$</div>
+<p>本轮执行策略产生一个状态分布；这个分布定义了一个监督学习问题。</p>
+<p>在评估这一轮的候选策略 <span class="math-source">$\pi$</span> 时，分布 <span class="math-source">$d_{\pi_i}$</span> 是固定的。</p>
+<p>这与直接优化：</p>
+<div class="math-source">$$
+\mathbb E_{s\sim d_\pi}[\ell(s,\pi)]
+$$</div>
+<p>不同：后者的分布会随候选策略一起改变。</p>
+<p>DAgger 的 FTL 更新相当于：</p>
+<div class="math-source">$$
+\hat\pi_{i+1}
+\in
+\arg\min_{\pi\in\Pi}
+\sum_{j=1}^i\ell_j(\pi).
+$$</div>
+<p>实际运行时，用采样数据近似这些期望。</p>
+<p>这就是“归约”的具体含义：将困难的交互任务组织成一串监督损失，再调用具有无遗憾性质的在线学习算法。</p>
+<h2 id="为什么强调强凸性"><a class="heading-anchor" href="#为什么强调强凸性">为什么强调强凸性</a></h2>
+<p>FTL 并不是对任意损失序列都无遗憾。</p>
+<p>若参数为 <span class="math-source">$\theta$</span>，强凸性可写为：</p>
+<div class="math-source">$$
+\ell_i(\theta')
+\ge
+\ell_i(\theta)
++
+\nabla\ell_i(\theta)^\top(\theta'-\theta)
++
+\frac{\mu}{2}\|\theta'-\theta\|^2,
+\qquad \mu>0.
+$$</div>
+<p>配合适当的梯度有界等条件，强凸性可以控制优化解在相邻轮次间的变化，并得到类似：</p>
+<div class="math-source">$$
+R_N=O(\log N),
+\qquad
+\gamma_N=O\left(\frac{\log N}{N}\right).
+$$</div>
+<p>需要区分：</p>
+<ul>
+<li>论文的一般归约只要求底层算法无遗憾；</li>
+<li>用 FTL 实现并取得较快速度时，强凸性提供了一个充分条件；</li>
+<li>不是任意神经网络训练过程都自动满足这些条件。</li>
+</ul>
+<p>平方误差关于网络输出是凸的，也不意味着它关于整个深度网络参数是凸的。</p>
+<h2 id="对上一节的解释"><a class="heading-anchor" href="#对上一节的解释">对上一节的解释</a></h2>
+<p>先把 <span class="math-source">$\theta$</span> 解释清楚。</p>
+<p><span class="math-source">$\pi$</span> 表示策略，即“输入状态、输出动作”的函数；<span class="math-source">$\theta$</span> 表示<strong>这个函数中需要通过训练确定的参数</strong>，因此也可以把策略写成 <span class="math-source">$\pi_\theta$</span>。</p>
+<p>例如，线性控制器：</p>
+<div class="math-source">$$
+\pi_\theta(s)=w^\top x(s)+b,
+\qquad
+\theta=(w,b).
+$$</div>
+<p>这里 <span class="math-source">$x(s)$</span> 是状态特征，<span class="math-source">$\theta$</span> 就是权重和偏置组成的参数向量。如果策略是神经网络，<span class="math-source">$\theta$</span> 就包含网络里的所有待训练权重和偏置。</p>
+<p>所以：</p>
+<div class="math-source">$$
+\ell_i(\theta)
+$$</div>
+<p>表示“参数为 <span class="math-source">$\theta$</span> 的策略，在第 <span class="math-source">$i$</span> 轮数据分布上的损失”。<span class="math-source">$\theta’$</span> 则是另一组参数，<strong>撇号不是求导的意思</strong>。</p>
+<p>先看普通凸函数满足的条件：</p>
+<div class="math-source">$$
+f(\theta')
+\ge
+f(\theta)+\nabla f(\theta)^\top(\theta'-\theta).
+$$</div>
+<p>右边正是<strong>一阶泰勒近似</strong>。几何上，它是函数在 <span class="math-source">$\theta$</span> 处的切线；多维时是切平面。</p>
+<p>这个不等式的意思是：</p>
+<blockquote>
+<p>凸函数的实际值，始终不低于任何一个点处的切平面。</p>
+</blockquote>
+<p>强凸性进一步要求：</p>
+<div class="math-source">$$
+\boxed{
+f(\theta')
+\ge
+\underbrace{f(\theta)+\nabla f(\theta)^\top(\theta'-\theta)}
+_{\text{切平面}}
++
+\underbrace{\frac{\mu}{2}\|\theta'-\theta\|^2}
+_{\text{至少还要高出这么多}}.
+}
+$$</div>
+<p>因此，<a href="https://zhuanlan.zhihu.com/p/661270429">强凸函数</a>不仅位于切平面上方，还必须以一定速度向上弯曲。这个“最低弯曲程度”就是 <span class="math-source">$\mu>0$</span>。</p>
+<p>例如，取一维函数：</p>
+<div class="math-source">$$
+f(\theta)=\theta^2.
+$$</div>
+<p>因为 <span class="math-source">$f’(\theta)=2\theta$</span>，所以：</p>
+<div class="math-source">$$
+\underbrace{(\theta')^2}_{f(\theta')}
+=
+\underbrace{\theta^2+2\theta(\theta'-\theta)}
+_{\text{一阶泰勒近似}}
++
+\underbrace{(\theta'-\theta)^2}_{\text{二次项}}.
+$$</div>
+<p>它恰好满足强凸性，取 <span class="math-source">$\mu=2$</span>。</p>
+<p>在最低点 <span class="math-source">$\theta=0$</span> 处，这个条件尤其直观：</p>
+<div class="math-source">$$
+f(\theta')\ge f(0)+\frac{\mu}{2}|\theta'|^2.
+$$</div>
+<p>意思是：<strong>离最低点越远，损失至少按距离的平方增长。</strong></p>
+<center>
+<font color="red">
+------ 和泰勒展开的关系 ------
+</font>
+</center>
+<p>对泰勒展开的联想，还可以更精确地写出来。</p>
+<p>如果 <span class="math-source">$f$</span> 二阶连续可微，令 <span class="math-source">$\Delta=\theta’-\theta$</span>，局部二阶展开为：</p>
+<div class="math-source">$$
+f(\theta+\Delta)
+=
+f(\theta)
++\nabla f(\theta)^\top\Delta
++\frac12\Delta^\top\nabla^2 f(\theta)\Delta
++o(\|\Delta\|^2).
+$$</div>
+<p>其中 <span class="math-source">$\nabla^2 f(\theta)$</span> 是 Hessian 矩阵，描述各个方向的曲率。</p>
+<p>在凸参数域上，如果<strong>每个位置、每个方向</strong>的曲率都至少为 <span class="math-source">$\mu$</span>，即：</p>
+<div class="math-source">$$
+\nabla^2 f(\theta)\succeq\mu I,
+$$</div>
+<p>就能得到前面的强凸不等式。在一维时，这简化为：</p>
+<div class="math-source">$$
+f''(\theta)\ge\mu>0.
+$$</div>
+<p>这里不能只把泰勒展开的余项删掉就得到强凸性；需要的是<strong>沿两点之间整条路径的曲率都有统一下界</strong>。</p>
+<p>也不是“看起来像碗”就足够。例如：</p>
+<div class="math-source">$$
+f(\theta)=\theta^4
+$$</div>
+<p>是严格凸函数，但在零点处：</p>
+<div class="math-source">$$
+f''(0)=0.
+$$</div>
+<p>因此无法在包含零点附近的区间上找到统一的 <span class="math-source">$\mu>0$</span>，它在那里不是强凸的。</p>
+<center>
+<font color="red">
+------ 和泰勒展开的关系 end ------
+</font>
+</center>
+<p>最后，这为什么对 FTL 有帮助？</p>
+<p>FTL 每轮最小化此前的累计损失：</p>
+<div class="math-source">$$
+\theta_{i+1}
+=
+\arg\min_\theta
+\sum_{j=1}^{i}\ell_j(\theta).
+$$</div>
+<p>如果每个 <span class="math-source">$\ell_j$</span> 都是 <span class="math-source">$\mu$</span>-强凸的，那么累计损失就是 <span class="math-source">$i\mu$</span>-强凸的：<strong>随着数据轮数增加，累计目标对偏离最优参数的惩罚越来越强。</strong></p>
+<p>在梯度有界等条件下，新加入一轮损失，就越来越难把最优参数推得很远。相邻更新的变化可以控制在类似：</p>
+<div class="math-source">$$
+\|\theta_{i+1}-\theta_i\|=O(1/i)
+$$</div>
+<p>的量级。这个稳定性最终带来：</p>
+<div class="math-source">$$
+R_N=O\left(\sum_{i=1}^N\frac1i\right)
+=O(\log N).
+$$</div>
+<p>所以这部分的逻辑是：</p>
+<p><strong>损失具有统一的最低曲率 → 累计目标越来越能约束参数变化 → FTL 的更新更稳定 → 可以控制累计遗憾。</strong></p>
+<blockquote>
+<p>本小节的剩下部分解释上面的 <span class="math-source">$O(1/i)$</span> 是怎么来的。</p>
+</blockquote>
+<p>可以把这个 <span class="math-source">$O(1/i)$</span> 推出来，而且在下面的条件下能得到具体上界：</p>
+<div class="math-source">$$
+\boxed{
+\|\theta_{i+1}-\theta_i\|
+\le \frac{G}{i\mu}.
+}
+$$</div>
+<p>其中 <span class="math-source">$\mu$</span> 是每轮损失的强凸系数，<span class="math-source">$G$</span> 是每轮损失梯度的统一上界。先考虑参数不受约束、损失可微、每次都精确求出最优解的情况。</p>
+<p><strong>第一步：写出更新前后的目标函数。</strong></p>
+<p>令累计损失为：</p>
+<div class="math-source">$$
+F_i(\theta)=\sum_{j=1}^i\ell_j(\theta).
+$$</div>
+<p>FTL 的相邻两次参数分别满足：</p>
+<div class="math-source">$$
+\theta_i=\arg\min_\theta F_{i-1}(\theta),
+\qquad
+\theta_{i+1}=\arg\min_\theta F_i(\theta).
+$$</div>
+<p>因此，一阶最优条件给出：</p>
+<div class="math-source">$$
+\nabla F_{i-1}(\theta_i)=0,
+\qquad
+\nabla F_i(\theta_{i+1})=0.
+$$</div>
+<p>新加入的只有 <span class="math-source">$\ell_i$</span>，所以在<strong>旧最优点</strong>处，新目标的梯度为：</p>
+<div class="math-source">$$
+\begin{aligned}
+\nabla F_i(\theta_i)
+&#x26;=\nabla F_{i-1}(\theta_i)+\nabla\ell_i(\theta_i)\\
+&#x26;=\nabla\ell_i(\theta_i).
+\end{aligned}
+$$</div>
+<p>如果每轮梯度满足：</p>
+<div class="math-source">$$
+\|\nabla\ell_i(\theta)\|\le G,
+$$</div>
+<p>那么：</p>
+<div class="math-source">$$
+\boxed{\|\nabla F_i(\theta_i)\|\le G.}
+$$</div>
+<p>也就是说，加入新损失后，旧最优点处出现的梯度大小至多为 <span class="math-source">$G$</span>。</p>
+<p><strong>第二步：强凸性把“梯度大小”转成“离最优点的距离”。</strong></p>
+<p>一个 <span class="math-source">$\lambda$</span>-强凸的可微函数 <span class="math-source">$F$</span> 满足：</p>
+<div class="math-source">$$
+\bigl(\nabla F(x)-\nabla F(y)\bigr)^\top(x-y)
+\ge \lambda\|x-y\|^2.
+$$</div>
+<p>这个性质可以直接从强凸定义得到：分别写出 <span class="math-source">$F(x)$</span> 在 <span class="math-source">$y$</span> 处的下界，以及 <span class="math-source">$F(y)$</span> 在 <span class="math-source">$x$</span> 处的下界，再相加即可。</p>
+<p>若 <span class="math-source">$y$</span> 是最优点，<span class="math-source">$\nabla F(y)=0$</span>，则上式成为：</p>
+<div class="math-source">$$
+\nabla F(x)^\top(x-y)
+\ge\lambda\|x-y\|^2.
+$$</div>
+<p>另一方面，由柯西–施瓦茨不等式：</p>
+<div class="math-source">$$
+\nabla F(x)^\top(x-y)
+\le\|\nabla F(x)\|\,\|x-y\|.
+$$</div>
+<blockquote>
+<p>柯西–施瓦茨不等式：
+在实数向量空间中，任意两个向量 u 和 v，<span class="math-source">$|u^\top v| \le \|u\| \|v\|$</span> .</p>
+</blockquote>
+<p>两者合起来，约掉一个距离因子，得到：</p>
+<div class="math-source">$$
+\boxed{
+\|x-y\|
+\le\frac{\|\nabla F(x)\|}{\lambda}.
+}
+$$</div>
+<p>如果 <span class="math-source">$x=y$</span>，这个界当然也成立。</p>
+<p>它的含义是：<strong>曲率越大，同样大小的梯度所对应的“离最优点距离”就越小。</strong></p>
+<p><strong>第三步：代入累计目标的曲率。</strong></p>
+<p>每个 <span class="math-source">$\ell_j$</span> 都是 <span class="math-source">$\mu$</span>-强凸的，所以它们的和 <span class="math-source">$F_i$</span> 是 <span class="math-source">$i\mu$</span>-强凸的。</p>
+<p>在上式中取：</p>
+<div class="math-source">$$
+F=F_i,\qquad
+x=\theta_i,\qquad
+y=\theta_{i+1},\qquad
+\lambda=i\mu,
+$$</div>
+<p>就得到：</p>
+<div class="math-source">$$
+\begin{aligned}
+\|\theta_i-\theta_{i+1}\|
+&#x26;\le
+\frac{\|\nabla F_i(\theta_i)\|}{i\mu}\\
+&#x26;=
+\frac{\|\nabla\ell_i(\theta_i)\|}{i\mu}\\
+&#x26;\le
+\frac{G}{i\mu}.
+\end{aligned}
+$$</div>
+<p>当 <span class="math-source">$G,\mu$</span> 不随轮数变化时，这就是：</p>
+<div class="math-source">$$
+\|\theta_{i+1}-\theta_i\|=O(1/i).
+$$</div>
+<p><strong>证毕。</strong></p>
+<p>还可以用一个一维例子直接看到这个量级。假设：</p>
+<div class="math-source">$$
+\ell_j(\theta)=\frac{\mu}{2}(\theta-a_j)^2.
+$$</div>
+<p>每轮损失都希望参数接近自己的 <span class="math-source">$a_j$</span>。累计损失的最优点就是这些 <span class="math-source">$a_j$</span> 的平均值：</p>
+<div class="math-source">$$
+\theta_i=\frac1{i-1}\sum_{j=1}^{i-1}a_j.
+$$</div>
+<p>加入第 <span class="math-source">$i$</span> 个目标 <span class="math-source">$a_i$</span> 后：</p>
+<div class="math-source">$$
+\theta_{i+1}
+=
+\frac{(i-1)\theta_i+a_i}{i}.
+$$</div>
+<p>于是：</p>
+<div class="math-source">$$
+\boxed{
+\theta_{i+1}-\theta_i
+=
+\frac{a_i-\theta_i}{i}.
+}
+$$</div>
+<p>如果 <span class="math-source">$a_i$</span> 与旧均值的距离始终有界，每次更新自然就是 <span class="math-source">$O(1/i)$</span>：<strong>新加入的一轮，在累计的 <span class="math-source">$i$</span> 轮里只占 <span class="math-source">$1/i$</span> 的影响。</strong></p>
+<p>一般强凸损失未必能写成平均值，但前面的梯度推导给出了同样的控制。这个估计依赖梯度有界与精确优化；若新损失的梯度可以无限大，或者每轮只近似求解，就需要另外计入这些影响。</p>
+<h2 id="lemma-41混合执行和纯学习者执行有多不同"><a class="heading-anchor" href="#lemma-41混合执行和纯学习者执行有多不同">Lemma 4.1：混合执行和纯学习者执行有多不同</a></h2>
+<p>训练用的是：</p>
+<div class="math-source">$$
+\pi_i=\beta_i\pi^*+(1-\beta_i)\hat\pi_i,
+$$</div>
+<p>部署用的是：</p>
+<div class="math-source">$$
+\hat\pi_i.
+$$</div>
+<p>因此还需要控制：</p>
+<div class="math-source">$$
+d_{\pi_i}
+\quad\text{与}\quad
+d_{\hat\pi_i}
+$$</div>
+<p>之间的差异。</p>
+<p>在 <span class="math-source">$T$</span> 步中，混合策略一次也不选择专家的概率为：</p>
+<div class="math-source">$$
+(1-\beta_i)^T.
+$$</div>
+<p>在这个事件上，行为与纯学习者一致。于是有：</p>
+<div class="math-source">$$
+\begin{aligned}
+\|d_{\pi_i}-d_{\hat\pi_i}\|_1
+&#x26;\le
+2\left[1-(1-\beta_i)^T\right]\\
+&#x26;\le
+2T\beta_i.
+\end{aligned}
+$$</div>
+<p>再结合两个分布的 <span class="math-source">$L_1$</span> 距离至多为 2：</p>
+<div class="math-source">$$
+\boxed{
+\|d_{\pi_i}-d_{\hat\pi_i}\|_1
+\le
+2\min(1,T\beta_i).
+}
+$$</div>
+<p>注意，若使用标准定义：</p>
+<div class="math-source">$$
+\operatorname{TV}(p,q)=\frac12\|p-q\|_1,
+$$</div>
+<p>则总变差距离对应少一个系数 2。原文这里写的是 <span class="math-source">$L_1$</span> 范数形式。</p>
+<p><strong>直观含义：</strong></p>
+<p>单步专家介入概率很小，不代表整条长轨迹中专家几乎不起作用。只要 <span class="math-source">$T\beta_i$</span> 不小，训练分布与纯学习者分布仍可能相差很大。</p>
+<h2 id="上一小节的详细推导"><a class="heading-anchor" href="#上一小节的详细推导">上一小节的详细推导</a></h2>
+<p>关键是把混合策略产生的状态分布拆成两部分：<strong>整段执行都没有选择专家</strong>，以及<strong>至少选择过一次专家</strong>。</p>
+<p>暂时省略下标 <span class="math-source">$i$</span>，写成：</p>
+<ul>
+<li><span class="math-source">$\hat\pi$</span>：纯学习者；</li>
+<li><span class="math-source">$\pi$</span>：每一步以概率 <span class="math-source">$\beta$</span> 选择专家、以概率 <span class="math-source">$1-\beta$</span> 选择学习者。</li>
+</ul>
+<p>每一步的选择是独立的。</p>
+<p><strong>第一步：按“是否选过专家”拆分分布。</strong></p>
+<p>令事件 <span class="math-source">$E$</span> 表示“<span class="math-source">$T$</span> 步中一次也没选择专家”。它的概率是：</p>
+<div class="math-source">$$
+q:=P(E)=(1-\beta)^T.
+$$</div>
+<p>在事件 <span class="math-source">$E$</span> 下，每一步都执行学习者，因此状态分布就是 <span class="math-source">$d_{\hat\pi}$</span>。</p>
+<p>再用 <span class="math-source">$r$</span> 表示“至少选过一次专家”条件下的状态分布。我们不需要知道 <span class="math-source">$r$</span> 具体是什么。</p>
+<p>由全概率公式：</p>
+<div class="math-source">$$
+\boxed{
+d_\pi=q\,d_{\hat\pi}+(1-q)\,r.
+}
+$$</div>
+<p>这表示：混合策略有比例 <span class="math-source">$q$</span> 的执行完全等同于学习者，剩余比例 <span class="math-source">$1-q$</span> 的执行可能不同。</p>
+<p><strong>第二步：算它与纯学习者分布的距离。</strong></p>
+<p>两边减去 <span class="math-source">$d_{\hat\pi}$</span>：</p>
+<div class="math-source">$$
+\begin{aligned}
+d_\pi-d_{\hat\pi}
+&#x26;=q\,d_{\hat\pi}+(1-q)r-d_{\hat\pi}\\
+&#x26;=(1-q)(r-d_{\hat\pi}).
+\end{aligned}
+$$</div>
+<p>所以：</p>
+<div class="math-source">$$
+\boxed{
+\|d_\pi-d_{\hat\pi}\|_1
+=(1-q)\|r-d_{\hat\pi}\|_1.
+}
+$$</div>
+<p>现在用到一个基本事实：<strong>任意两个概率分布的 <span class="math-source">$L_1$</span> 距离至多为 2。</strong></p>
+<p>以离散状态为例：</p>
+<div class="math-source">$$
+\begin{aligned}
+\|r-d_{\hat\pi}\|_1
+&#x26;=\sum_s|r(s)-d_{\hat\pi}(s)|\\
+&#x26;\le\sum_s\bigl(r(s)+d_{\hat\pi}(s)\bigr)\\
+&#x26;=1+1=2.
+\end{aligned}
+$$</div>
+<p>因此：</p>
+<div class="math-source">$$
+\|d_\pi-d_{\hat\pi}\|_1
+\le2(1-q)
+=
+\boxed{2\left[1-(1-\beta)^T\right]}.
+$$</div>
+<p>这里的直觉是：<strong>只有“至少选过一次专家”的那部分执行可能造成分布差异；即使那部分的分布完全不同，距离也最多是 2。</strong></p>
+<p><strong>第三步：为什么又能上界为 <span class="math-source">$2T\beta$</span>？</strong></p>
+<p>令 <span class="math-source">$A_t$</span> 表示“第 <span class="math-source">$t$</span> 步选择专家”。那么：</p>
+<div class="math-source">$$
+1-(1-\beta)^T
+=
+P\left(\bigcup_{t=1}^T A_t\right).
+$$</div>
+<p>根据 union bound（并集概率不超过各事件概率之和）：</p>
+<div class="math-source">$$
+P\left(\bigcup_{t=1}^T A_t\right)
+\le
+\sum_{t=1}^T P(A_t)
+=
+T\beta.
+$$</div>
+<p>于是：</p>
+<div class="math-source">$$
+\boxed{
+\|d_\pi-d_{\hat\pi}\|_1
+\le
+2\left[1-(1-\beta)^T\right]
+\le
+2T\beta.
+}
+$$</div>
+<p>例如，<span class="math-source">$T=10,\ \beta=0.01$</span>，至少选过一次专家的概率为：</p>
+<div class="math-source">$$
+1-0.99^{10}\approx0.0956.
+$$</div>
+<p>所以：</p>
+<div class="math-source">$$
+\|d_\pi-d_{\hat\pi}\|_1
+\le0.1912
+\le0.2.
+$$</div>
+<p>注意这是<strong>上界</strong>。即使选择了专家，如果专家恰好给出与学习者相同的动作，也可能根本没有改变轨迹。因此，“选过专家”只是轨迹可能发生变化的条件，并不意味着一定变化。</p>
+<h2 id="theorem-41论文最重要的不等式"><a class="heading-anchor" href="#theorem-41论文最重要的不等式">Theorem 4.1：论文最重要的不等式</a></h2>
+<p>假设：</p>
+<div class="math-source">$$
+0\le\ell(s,\pi)\le\ell_{\max}.
+$$</div>
+<p>把定理写成更容易理解的形式，记为 (★) 式：</p>
+<div class="math-source">$$
+\boxed{
+\min_{1\le i\le N}
+\mathbb E_{s\sim d_{\hat\pi_i}}
+[\ell(s,\hat\pi_i)]
+\le
+\epsilon_N+\gamma_N+
+\frac{2\ell_{\max}}N
+\sum_{i=1}^N\min(1,T\beta_i).
+}
+$$</div>
+<p>右侧三项分别是：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>项</th><th>含义</th></tr></thead><tbody><tr><td><span class="math-source">$\epsilon_N$</span></td><td>策略类在聚合分布上的可达到误差</td></tr><tr><td><span class="math-source">$\gamma_N$</span></td><td>在线算法未能达到最佳固定策略的代价</td></tr><tr><td>混合项</td><td>训练时有专家介入，与部署时纯学习者执行的分布差异</td></tr></tbody></table>
+<p>原文假设 <span class="math-source">$\beta_i$</span> 非增，并定义最后一个满足 <span class="math-source">$\beta_i>1/T$</span> 的轮次为 <span class="math-source">$n_\beta$</span>，于是将混合项写成：</p>
+<div class="math-source">$$
+\frac{2\ell_{\max}}N
+\left[
+n_\beta
++
+T\sum_{i=n_\beta+1}^N\beta_i
+\right].
+$$</div>
+<p><strong>证明可以完整压缩为下面三行：</strong></p>
+<div class="math-source">$$
+\begin{aligned}
+\min_i
+\mathbb E_{d_{\hat\pi_i}}\ell(s,\hat\pi_i)
+&#x26;\le
+\frac1N\sum_i
+\mathbb E_{d_{\hat\pi_i}}\ell(s,\hat\pi_i)\\
+&#x26;\le
+\frac1N\sum_i
+\mathbb E_{d_{\pi_i}}\ell(s,\hat\pi_i)
++
+\frac{2\ell_{\max}}N
+\sum_i\min(1,T\beta_i)\\
+&#x26;\le
+\epsilon_N+\gamma_N
++
+\frac{2\ell_{\max}}N
+\sum_i\min(1,T\beta_i).
+\end{aligned}
+$$</div>
+<p>三行分别用了：</p>
+<ol>
+<li>最小值不超过平均值。</li>
+<li>状态分布距离界。</li>
+<li>在线学习的遗憾界，上文中有一个不等式可以解释。</li>
+</ol>
+<p>这就是整篇论文最值得掌握的证明结构。</p>
+<p>对于第二行，需要另一个基本关系：对于有界函数 <span class="math-source">$f$</span>，如果 <span class="math-source">$|f(s)|\le M$</span>，那么：</p>
+<div class="math-source">$$
+|\mathbb E_p f-\mathbb E_q f|
+\le M\|p-q\|_1.
+$$</div>
+<p>以离散状态为例：</p>
+<div class="math-source">$$
+\begin{aligned}
+|\mathbb E_p f-\mathbb E_q f|
+&#x26;=
+\left|\sum_s[p(s)-q(s)]f(s)\right|\\
+&#x26;\le
+\sum_s|p(s)-q(s)|\,|f(s)|\\
+&#x26;\le
+M\sum_s|p(s)-q(s)|.
+\end{aligned}
+$$</div>
+<p>于是：</p>
+<div class="math-source">$$
+\begin{aligned}
+\mathbb E_{d_{\hat\pi_i}}\ell(s,\hat\pi_i)
+&#x26;\le
+\mathbb E_{d_{\pi_i}}\ell(s,\hat\pi_i)
++
+\ell_{\max}\|d_{\hat\pi_i}-d_{\pi_i}\|_1\\
+&#x26;\le
+\mathbb E_{d_{\pi_i}}\ell(s,\hat\pi_i)
++
+2\ell_{\max}\min(1,T\beta_i).
+\end{aligned}
+$$</div>
+<p>注意，此处被评估的策略始终是同一个 <span class="math-source">$\hat\pi_i$</span>；改变的只有状态分布：</p>
+<div class="math-source">$$
+d_{\hat\pi_i}
+\longrightarrow
+d_{\pi_i}.
+$$</div>
+<p>额外项用来支付这次换分布的代价。</p>
+<blockquote>
+<p>所以其实可以这样理解其意义：
+要约束一个纯学习者部署时的模仿损失，可以用它在本轮采样分布上的模仿损失，加上一个分布差异附加项，作为上界。
+右边虽然用混合策略 <span class="math-source">$\pi_i$</span> 收集状态，但在这些状态上，仍然比较学习者 <span class="math-source">$\hat\pi_i(s)$</span> 与专家 <span class="math-source">$\pi^*(s)$</span> 的动作。并不是评估混合策略自身的动作损失。</p>
+</blockquote>
+<h2 id="为什么最简单的-beta_i-已经足够"><a class="heading-anchor" href="#为什么最简单的-beta_i-已经足够">为什么最简单的 <span class="math-source">$\beta_i$</span> 已经足够</a></h2>
+<p>若：</p>
+<div class="math-source">$$
+\beta_1=1,\qquad \beta_i=0\quad(i\ge2),
+$$</div>
+<p>则：</p>
+<div class="math-source">$$
+\frac{2\ell_{\max}}N
+\sum_i\min(1,T\beta_i)
+=
+\frac{2\ell_{\max}}N.
+$$</div>
+<p>所以：</p>
+<div class="math-source">$$
+\min_i
+\mathbb E_{d_{\hat\pi_i}}\ell(s,\hat\pi_i)
+\le
+\epsilon_N+\gamma_N+\frac{2\ell_{\max}}N.
+$$</div>
+<p>若 <span class="math-source">$\gamma_N=O(\log N/N)$</span>，取足够大的、约为 <span class="math-source">$T$</span> 乘对数因子的训练轮数，就能让额外误差达到 <span class="math-source">$O(1/T)$</span>。</p>
+<p>若用指数衰减：</p>
+<div class="math-source">$$
+\beta_i=(1-\alpha)^{i-1},
+$$</div>
+<p>原文给出混合项中括号的平均量级：</p>
+<div class="math-source">$$
+\frac1N
+\left[
+n_\beta+
+T\sum_{i>n_\beta}\beta_i
+\right]
+\le
+\frac{\log T+1}{N\alpha}.
+$$</div>
+<p>因此，衰减足够快的专家介入不会阻碍渐近保证。</p>
+<h2 id="存在一个好策略不等于解出了原始目标"><a class="heading-anchor" href="#存在一个好策略不等于解出了原始目标">“存在一个好策略”不等于“解出了原始目标”</a></h2>
+<p>这是对理论力度的关键判断。</p>
+<p>式（★）比较的是：</p>
+<div class="math-source">$$
+\min_\pi
+\frac1N\sum_i
+\mathbb E_{d_{\pi_i}}\ell(s,\pi),
+$$</div>
+<p>并没有直接比较：</p>
+<div class="math-source">$$
+\min_\pi
+\mathbb E_{d_\pi}\ell(s,\pi).
+$$</div>
+<p>因此，不能从式（★）直接声称：</p>
+<blockquote>
+<p>DAgger 找到了策略类中、按各自状态分布计算的全局最优策略。</p>
+</blockquote>
+<p>要让绝对误差足够小，还需要额外条件，例如聚合状态分布上确实存在能够很好模仿专家的策略。</p>
+<p>原文还指出，均匀随机挑选一个历史策略，并让它执行整条轨迹，也能得到相应的平均保证。但这与“每一步随机挑一个策略”不同，不能混淆。</p>
+<h2 id="theorem-42有限数据与轨迹相关性"><a class="heading-anchor" href="#theorem-42有限数据与轨迹相关性">Theorem 4.2：有限数据与轨迹相关性</a></h2>
+<p>实际每轮只收集 <span class="math-source">$m$</span> 条轨迹。关于这点，之前折叠了一些细节，实际上，每轮要重复执行 <span class="math-source">$m$</span> 次任务，每次任务包含 <span class="math-source">$T$</span> 个时间步。具体来说：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>初始化学习者 π̂₁</span></span>
+<span class="line"><span>初始化聚合数据集 D = 空</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>for i = 1, ..., N:                  # 第 i 轮训练</span></span>
+<span class="line"><span>    固定当前学习者 π̂ᵢ</span></span>
+<span class="line"><span>    构造本轮执行策略 πᵢ</span></span>
+<span class="line"><span>    本轮数据集 Dᵢ = 空</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    for j = 1, ..., m:              # 本轮第 j 次驾驶</span></span>
+<span class="line"><span>        重置环境，采样初始状态</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        for t = 1, ..., T:          # 本次驾驶第 t 次决策</span></span>
+<span class="line"><span>            观察状态 sᵢⱼₜ</span></span>
+<span class="line"><span>            获取专家标签 π*(sᵢⱼₜ)</span></span>
+<span class="line"><span>            将状态与专家标签加入 Dᵢ</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            以概率 βᵢ 执行专家动作</span></span>
+<span class="line"><span>            否则执行当前学习者 π̂ᵢ 的动作</span></span>
+<span class="line"><span>            环境进入下一状态</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    D = D ∪ Dᵢ</span></span>
+<span class="line"><span>    用聚合数据 D 训练下一轮学习者 π̂ᵢ₊₁</span></span></code></pre>
+<p>DAgger 并不为每个时间步分别训练一个策略。那是前文介绍的 Forward Training。DAgger 在一轮数据收集期间使用固定的当前学习者，收集完数据后才更新它。</p>
+<p>定义最佳经验损失：</p>
+<div class="math-source">$$
+\hat\epsilon_N
+=
+\min_{\pi\in\Pi}
+\frac1N\sum_{i=1}^N
+\mathbb E_{s\sim D_i}[\ell(s,\pi)].
+$$</div>
+<p>有限样本界为：</p>
+<div class="math-source">$$
+\boxed{
+\begin{aligned}
+\min_i
+\mathbb E_{d_{\hat\pi_i}}
+[\ell(s,\hat\pi_i)]
+\le\;&#x26;
+\hat\epsilon_N+\gamma_N\\
+&#x26;+\frac{2\ell_{\max}}N
+\left[
+n_\beta+
+T\sum_{i>n_\beta}\beta_i
+\right]\\
+&#x26;+\ell_{\max}
+\sqrt{\frac{2\log(1/\delta)}{mN}},
+\end{aligned}
+}
+$$</div>
+<p>以至少 <span class="math-source">$1-\delta$</span> 的概率成立。这里的 <span class="math-source">$\gamma_N$</span> 对应采样损失上的平均遗憾。</p>
+<p>原论文的 <a href="https://proceedings.mlr.press/v15/ross11a/ross11a.pdf">Theorem 4.2</a> 用 <a href="https://www.bohrium.com/sciencepedia/feynman/keyword/azuma_hoeffding_inequality">Azuma–Hoeffding 不等式</a>控制上述采样误差。</p>
+<p><strong>为什么分母是 <span class="math-source">$mN$</span>，而不是 <span class="math-source">$mNT$</span>？</strong></p>
+<p>因为同一条轨迹中的 <span class="math-source">$T$</span> 个状态并不能直接当作 <span class="math-source">$T$</span> 个独立样本。</p>
+<p>原文将第 <span class="math-source">$i$</span> 轮第 <span class="math-source">$j$</span> 条轨迹的误差差值写成：</p>
+<div class="math-source">$$
+Y_{ij}
+=
+\mathbb E_{s\sim d_{\pi_i}}
+[\ell(s,\hat\pi_i)]
+-
+\frac1T\sum_{t=1}^T
+\ell(s_{ijt},\hat\pi_i).
+$$</div>
+<p>在给定此前历史后：</p>
+<ul>
+<li>当前策略已经确定；</li>
+<li>新采样轨迹的平均损失具有正确的条件期望；</li>
+<li>因此这些差值构成鞅差序列；</li>
+<li>可以使用 Azuma–Hoeffding 不等式。</li>
+</ul>
+<p>这避免了错误地假设轨迹中每一帧独立。</p>
+<p>要使抽样误差达到 <span class="math-source">$O(1/T)$</span>，需要：</p>
+<div class="math-source">$$
+mN=O(T^2\log(1/\delta))
+$$</div>
+<p>量级的轨迹数。</p>
+<p><strong>注意样本单位：这是轨迹数，不是状态标注数。</strong> 每条轨迹若包含 <span class="math-source">$T$</span> 个需要标注的状态，专家调用量还要考虑这个额外因子。</p>
+<p>原文提出，利用强凸性的更精细分析可能改善这个界；应把这一点视作改进方向，而不是本文已经完成的证明。</p>
+<h1 id="experiments实验究竟验证了哪些主张"><a class="heading-anchor" href="#experiments实验究竟验证了哪些主张">EXPERIMENTS：实验究竟验证了哪些主张</a></h1>
+<p>论文没有现代意义上的深度网络架构。它使用简单的线性回归和 SVM，主要比较<strong>数据收集与训练流程</strong>。</p>
+<p>原文共有五张图：</p>
+<ul>
+<li>图 1、图 3：任务画面；</li>
+<li>图 2、图 4、图 5：实验结果曲线。</li>
+</ul>
+<p>下面按图号解读；结果表是为了阅读方便重新整理的，并非原论文中的表格。</p>
+<h2 id="super-tux-kart连续控制与恢复能力"><a class="heading-anchor" href="#super-tux-kart连续控制与恢复能力">Super Tux Kart：连续控制与恢复能力</a></h2>
+<p><strong>任务和模型。</strong></p>
+<p>车辆在固定赛道上以固定速度行驶，模型只控制转向：</p>
+<div class="math-source">$$
+\hat y=w^\top x+b.
+$$</div>
+<p>输入由游戏画面缩小到 <span class="math-source">$25\times19$</span> 后的 LAB 色彩值构成。训练使用岭回归：</p>
+<div class="math-source">$$
+L(w,b)
+=
+\frac1n\sum_{i=1}^n
+(w^\top x_i+b-y_i)^2
++
+\frac{\lambda}{2}w^\top w,
+$$</div>
+<p>其中：</p>
+<div class="math-source">$$
+\lambda=10^{-3}.
+$$</div>
+<p>控制频率为 5 Hz，专家是人类，转向标签位于 <span class="math-source">$[-1,1]$</span>。</p>
+<p><strong>图 1 的意义。</strong></p>
+<p>赛道悬浮在空中，车辆偏离赛道会跌落，再被放回赛道中央。这个环境适合观察：</p>
+<ul>
+<li>是否会偏离；</li>
+<li>偏离后能否修正；</li>
+<li>错误是否不断放大。</li>
+</ul>
+<p><strong>图 2：横轴为训练样本量，纵轴为每圈平均跌落次数，越低越好。</strong></p>
+<p>结果曲线带有 95% 置信区间：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方法</th><th>原图与正文表现</th></tr></thead><tbody><tr><td>普通监督学习</td><td>增加专家数据后没有持续改善，仍频繁跌落</td></tr><tr><td>SMILe</td><td>有改善，但 20 轮后仍约每圈跌落两次</td></tr><tr><td>DAgger</td><td>5 轮后已很少跌落；15 轮后的所报告评估中没有跌落</td></tr></tbody></table>
+<p>这里 DAgger 使用最简单的：</p>
+<div class="math-source">$$
+\beta_i=\mathbf1[i=1].
+$$</div>
+<p>图 2 的主要证据是：<strong>更多同类专家数据，不等于覆盖了学习者需要的恢复状态。</strong></p>
+<p><strong>如何评价？</strong></p>
+<p>这个实验很好地隔离了分布问题，因为底层学习器很简单。</p>
+<p>但“评估中没有跌落”不能解释为安全证明；训练与评估也围绕特定赛道展开，不能据此断言它能泛化到任意道路。</p>
+<h2 id="super-mario-bros离散动作卡住问题与混合比例"><a class="heading-anchor" href="#super-mario-bros离散动作卡住问题与混合比例">Super Mario Bros：离散动作、卡住问题与混合比例</a></h2>
+<p><strong>专家与学习者。</strong></p>
+<p>专家是一个能够访问游戏内部状态、模拟未来动作后果的近似最优规划器。</p>
+<p>学习者输出四个二元动作：</p>
+<div class="math-source">$$
+a=
+(a_{\mathrm{left}},
+a_{\mathrm{right}},
+a_{\mathrm{jump}},
+a_{\mathrm{speed}}).
+$$</div>
+<p>四个动作分别由线性 SVM 预测：</p>
+<div class="math-source">$$
+\hat a_k
+=
+\mathbf1[w_k^\top x+b_k>0].
+$$</div>
+<p>输入不是直接端到端处理原始像素，而是较丰富的手工表示：</p>
+<ul>
+<li>Mario 周围 <span class="math-source">$22\times22$</span> 网格；</li>
+<li>每格 14 个二元语义特征；</li>
+<li>最近四帧的特征；</li>
+<li>最近六个动作；</li>
+<li>Mario 的形态及是否接地等状态。</li>
+</ul>
+<p>总计 27,152 个稀疏二元特征。</p>
+<p>因此，这个实验包含明显的专家与学生能力差异：专家有内部状态和规划能力，学生使用有限特征和线性决策。</p>
+<p><strong>图 3</strong> 展示游戏场景；<strong>图 4</strong> 展示每关平均前进距离，越高越好。</p>
+<p>每轮收集 5,000 个数据点，运行 20 轮。正文报告：</p>
+<div class="math-source">$$
+\text{DAgger，}\beta_i=0.5^{i-1}:
+\quad 3030,
+$$</div>
+<div class="math-source">$$
+\text{DAgger，仅首轮专家执行}:
+\quad 2980.
+$$</div>
+<p>从图 4 可以观察到：</p>
+<ul>
+<li>普通监督学习大约停留在 1,450 附近；</li>
+<li>DAgger 的快速衰减版本整体表现最好；</li>
+<li><span class="math-source">$\beta_i=0.9^{i-1}$</span> 的版本改善更慢；</li>
+<li>SEARN 的纯策略迭代版本波动明显。</li>
+</ul>
+<p>其中普通监督学习的数值是读图近似，3030 和 2980 是正文给出的结果。</p>
+<p><strong>为什么行为克隆容易卡住？</strong></p>
+<p>专家在离障碍物还有一段距离时就跳过去了。</p>
+<p>于是专家数据缺少：</p>
+<blockquote>
+<p>已经贴到障碍物边缘、跳跃时机已经错过，现在应该怎么办？</p>
+</blockquote>
+<p>学习者却经常进入这种状态，随后不断重复无效动作。</p>
+<p>DAgger 会收集这些状态，并获得专家的脱困动作。这是整个实验中最直观的机制证据。</p>
+<p><strong>为什么少量专家介入反而有帮助？</strong></p>
+<p>完全由早期学习者执行时，可能产生大量重复的“原地卡住”状态。少量专家介入让它脱困，继续接触后面的场景。</p>
+<p>所以 <span class="math-source">$\beta_i$</span> 存在实际权衡：</p>
+<ul>
+<li>太大：训练过于依赖专家，学习者真实分布覆盖不足；</li>
+<li>太小：早期可能困在低信息、重复状态中；</li>
+<li>适当衰减：既暴露错误，又保持数据多样性。</li>
+</ul>
+<p>还应注意：关卡平均长度约为 4200—4300，3030 的平均前进距离并不等于成功率接近 100%。</p>
+<h2 id="handwriting-recognition为何结构化预测也是模仿学习"><a class="heading-anchor" href="#handwriting-recognition为何结构化预测也是模仿学习">Handwriting Recognition：为何结构化预测也是模仿学习</a></h2>
+<p>任务是逐字符识别一个手写单词。</p>
+<p>模型从左到右预测：</p>
+<div class="math-source">$$
+\hat y_t
+=
+\pi(x_t,\hat y_{t-1}).
+$$</div>
+<p>其中 <span class="math-source">$x_t$</span> 是当前字符图像，<span class="math-source">$\hat y_{t-1}$</span> 是上一个字符的预测。</p>
+<p>普通监督训练可能使用：</p>
+<div class="math-source">$$
+(x_t,y_{t-1}^*)\mapsto y_t^*,
+$$</div>
+<p>而测试时使用：</p>
+<div class="math-source">$$
+(x_t,\hat y_{t-1})\mapsto\hat y_t.
+$$</div>
+<p>这又出现了训练与部署输入不一致。</p>
+<p>可以把它解释为一个简单的决策过程：</p>
+<ul>
+<li>状态：当前字符图像及之前预测；</li>
+<li>动作：预测当前字符；</li>
+<li>转移：把这个预测传给下一个位置；</li>
+<li>专家：训练集中的正确字符标签。</li>
+</ul>
+<p><strong>这里的特殊便利是：</strong> 上一个字符即使预测错了，当前图像的正确字符标签仍然已知。因此可以在模型生成的错误上下文上继续提供正确监督。</p>
+<p>并非所有结构化任务都有这么容易获得的“偏离后专家”；复杂解析或生成任务可能需要额外设计。</p>
+<p><strong>实验设置。</strong></p>
+<ul>
+<li>约 6600 个单词，超过 52,000 个字符；</li>
+<li>十折实验，每次九折训练、一折测试；</li>
+<li>当前字符使用 <span class="math-source">$8\times16=128$</span> 个像素特征；</li>
+<li>上一个预测字符使用 26 维编码；</li>
+<li>采用线性 SVM 和单遍贪心解码。</li>
+</ul>
+<p><strong>图 5：横轴为训练轮数，纵轴为测试字符准确率。</strong></p>
+<p>正文给出的主要结果：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方法</th><th align="right">字符准确率</th></tr></thead><tbody><tr><td>独立识别每个字符</td><td align="right">约 82%</td></tr><tr><td>加入前一个字符，但训练时总给正确前缀</td><td align="right">约 83.6%</td></tr><tr><td>DAgger</td><td align="right">可达到约 85.5%</td></tr></tbody></table>
+<p>从 83.6% 到 85.5%：</p>
+<div class="math-source">$$
+\text{绝对准确率提升}=1.9\text{ 个百分点}.
+$$</div>
+<p>换算成错误率的相对下降：</p>
+<div class="math-source">$$
+\frac{16.4-14.5}{16.4}\approx11.6\%.
+$$</div>
+<p>后一数值是根据正文数据计算的，不是原文直接报告。</p>
+<p><strong>最值得注意的比较结果：</strong></p>
+<p>调参后的 SEARN，以及该任务中的纯策略迭代版本，表现与 DAgger 接近。图 5 并不支持“DAgger 全面优于 SEARN”。</p>
+<p>作者的解释是：学习者只改变输入中的一小部分——前一个字符的特征；当前字符图像并没有被改变。因此该任务中的分布反馈没有机器人控制那么剧烈。</p>
+<h2 id="三个实验放在一起应当得出怎样的结论"><a class="heading-anchor" href="#三个实验放在一起应当得出怎样的结论">三个实验放在一起，应当得出怎样的结论</a></h2>
+<p>证据比较充分地支持：</p>
+<ol>
+<li>单纯增加专家轨迹，可能无法消除学习者特有的错误状态。</li>
+<li>收集学习者访问状态并获得专家纠正，可以明显改善性能。</li>
+<li>聚合数据、部署单个策略，在这些任务中具有实用优势。</li>
+<li>专家混合比例会影响数据覆盖和训练速度。</li>
+</ol>
+<p>证据不足以支持：</p>
+<ul>
+<li>任意任务上都优于行为克隆；</li>
+<li>任意神经网络上都有同样的理论保证；</li>
+<li>任意真实成本都获得 <span class="math-source">$O(T\epsilon)$</span> 界；</li>
+<li>训练全过程安全；</li>
+<li>最后一个策略必然最好；</li>
+<li>三个实验已经验证了所有理论样本复杂度量级。</li>
+</ul>
+<h1 id="future-work"><a class="heading-anchor" href="#future-work">FUTURE WORK</a></h1>
+<p>原文最后提出三个方向：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方向</th><th>要进一步解决什么</th></tr></thead><tbody><tr><td>更复杂的结构化解码</td><td>超越单遍贪心预测，例如多遍或搜索式解码</td></tr><tr><td>结合逆最优控制</td><td>学习供规划器使用的成本函数，而不只直接预测动作</td></tr><tr><td>利用 cost-to-go 扩展</td><td>让数据聚合与在线学习处理更一般的强化学习问题</td></tr></tbody></table>
+<p>第三个方向尤其值得注意。</p>
+<p>DAgger 的监督信号主要回答：</p>
+<div class="math-source">$$
+\text{“专家在这个状态会做什么？”}
+$$</div>
+<p>但真实控制还关心：</p>
+<div class="math-source">$$
+\text{“如果选另一个动作，长期后果有多坏？”}
+$$</div>
+<p>这正是后续 AggreVaTe 工作展开的方向。</p>
+<h1 id="后续研究有哪些批评"><a class="heading-anchor" href="#后续研究有哪些批评">后续研究有哪些批评</a></h1>
+<p>有，而且不少来自延续这条研究路线的学者，包括原作者本人。</p>
+<p>这些批评主要是在说明<strong>理论与实际应用的边界</strong>，并不等于原始定理被推翻。</p>
+<h2 id="批评一动作不一致损失没有充分反映错误的长期严重程度"><a class="heading-anchor" href="#批评一动作不一致损失没有充分反映错误的长期严重程度">批评一：动作不一致损失没有充分反映错误的长期严重程度</a></h2>
+<p><strong>来源：<a href="https://arxiv.org/abs/1406.5979">Ross 与 Bagnell，2014，AggreVaTe</a>。</strong></p>
+<p>后续论文直接指出：仅仅学习与专家动作一致，无法充分利用动作成本信息。</p>
+<p>他们使用悬崖驾驶来说明：在悬崖边，一个偏差动作可能造成不可逆灾难；其他偏差动作可能只是稍微绕路。若都按一次分类错误处理，就没有体现后果的差别。</p>
+<p>可以用下面的比较理解：</p>
+<div class="math-source">$$
+\ell_{\mathrm{DAgger}}(s,a)
+=
+\mathbf1[a\neq\pi^*(s)].
+$$</div>
+<p>只要动作不同，两者都记一次错。</p>
+<p>而真正的长期差异是：</p>
+<div class="math-source">$$
+A^{\pi^*}(s,a)
+=
+Q^{\pi^*}(s,a)
+-
+Q^{\pi^*}(s,\pi^*(s)).
+$$</div>
+<p>它可以区分轻微失误与灾难性失误。</p>
+<p><strong>这与原论文矛盾吗？</strong></p>
+<p>不矛盾。原论文通过 <span class="math-source">$u$</span> 已经留下了这个限制：灾难性失误会让 <span class="math-source">$u$</span> 很大，保证随之变弱。</p>
+<p>AggreVaTe 的改进方向是：训练时就利用 cost-to-go，而不是等到分析时用一个最坏情况 <span class="math-source">$u$</span> 统一兜底。</p>
+<p><strong>需要补充的判断：</strong> 原论文允许一般替代损失，并非逻辑上禁止设计有成本意识的损失；问题在于，标准动作模仿目标与 DAgger 数据聚合机制本身，并不会自动提供这种长期成本信息。</p>
+<h2 id="批评二专家查询昂贵减少专家执行并没有减少专家标注需求"><a class="heading-anchor" href="#批评二专家查询昂贵减少专家执行并没有减少专家标注需求">批评二：专家查询昂贵，减少专家执行并没有减少专家标注需求</a></h2>
+<p><strong>来源：<a href="https://arxiv.org/abs/1605.06450">Zhang 与 Cho 的 SafeDAgger 工作</a>。</strong></p>
+<p>原始 DAgger 需要为大量学习者状态查询参考策略。若专家是昂贵规划器或真人，这会成为核心瓶颈。</p>
+<p>SafeDAgger 明确针对这一问题，学习预测学习者何时明显偏离参考策略，从而选择性地查询专家，降低调用量。</p>
+<p>根据原始流程，若每轮有 <span class="math-source">$m$</span> 条长为 <span class="math-source">$T$</span> 的轨迹，总共 <span class="math-source">$N$</span> 轮，那么全部状态都标注时：</p>
+<div class="math-source">$$
+\text{专家标签数量}\approx NmT.
+$$</div>
+<p>即使 <span class="math-source">$\beta_i$</span> 已经降到零，这项成本仍然存在。</p>
+<p>对应用的含义是：在决定使用 DAgger 前，首先要确认是否有能力对<strong>学习者造成的状态</strong>获得可靠专家答案。</p>
+<p>只有一份固定专家示范数据集，通常不能直接执行原始 DAgger。</p>
+<h2 id="批评三人类擅长亲自操作不一定擅长给别人的错误轨迹逐状态标注"><a class="heading-anchor" href="#批评三人类擅长亲自操作不一定擅长给别人的错误轨迹逐状态标注">批评三：人类擅长亲自操作，不一定擅长给别人的错误轨迹逐状态标注</a></h2>
+<p><strong>来源：<a href="https://arxiv.org/abs/1610.00850">Laskey 等人 2017 年的人类中心/机器人中心采样研究</a>；<a href="https://bair.berkeley.edu/blog/2017/10/26/dart/">DART 作者的研究说明</a>。</strong> 下述十人实验出自前一篇研究，不是 DART 论文的实验。</p>
+<p>研究者报告了一个具体困难：让人看机器人执行后的画面，再指出当时应采取的动作，可能比让人亲自遥操作更困难。</p>
+<p>原因是反馈方式不同：</p>
+<ul>
+<li>亲自操作时，人不断观察动作后果并修正；</li>
+<li>事后标注时，人必须在脑中推测“这个动作本来会产生什么后果”。</li>
+</ul>
+<p>研究者还报告，在其特定的十人实验中，由人类直接演示训练的策略，成功率约为 60%；使用 DAgger 式机器人中心采样、事后纠正标注训练的策略，成功率约为 40%。他们分析了两种可能原因：纠正状态更难学习，以及事后标注与真人实际操作不一致。这里比较的是 DAgger 式采样，不应把结果误写成原始 DAgger 算法在所有真人专家任务中都不如行为克隆。</p>
+<p><strong>技术含义：</strong></p>
+<p>理论通常把专家当作稳定的查询接口：</p>
+<div class="math-source">$$
+s\mapsto\pi^*(s).
+$$</div>
+<p>但真人给出的标签可能依赖：</p>
+<ul>
+<li>是否在实际控制；</li>
+<li>能否看到动态上下文；</li>
+<li>对当前状态的熟悉程度；</li>
+<li>标注界面和反应时间。</li>
+</ul>
+<p>因此，改进采样分布的同时，可能降低了标签质量。</p>
+<p>这是很有价值的批评：统计理论里理想化的“专家 oracle”，在真实人机交互里并不是免费的。</p>
+<h2 id="批评四训练时执行不成熟策略会带来安全与计算成本"><a class="heading-anchor" href="#批评四训练时执行不成熟策略会带来安全与计算成本">批评四：训练时执行不成熟策略，会带来安全与计算成本</a></h2>
+<p><a href="https://bair.berkeley.edu/blog/2017/10/26/dart/">DART 的研究者</a>还明确讨论了两类工程负担：</p>
+<ul>
+<li>学习阶段必须执行尚未学好的策略，可能进入危险状态；</li>
+<li>不断收集、聚合、重训的闭环可能计算昂贵，且较大的策略更新会使已有数据对新分布不够适用。</li>
+</ul>
+<p>原文的：</p>
+<div class="math-source">$$
+\pi_i=\beta_i\pi^*+(1-\beta_i)\hat\pi_i
+$$</div>
+<p>只是随机混合，并不是根据危险程度触发的安全控制器。</p>
+<p>所以，小概率专家介入不能解释为“训练时不会发生事故”。</p>
+<p>从原始算法还能直接推导一个资源问题：若每轮新增 <span class="math-source">$M$</span> 个样本，每次都完整扫描聚合数据，那么单次扫描量的累计为：</p>
+<div class="math-source">$$
+M+2M+\cdots+NM
+=
+\frac{MN(N+1)}2.
+$$</div>
+<p>这是关于朴素实现的计算，不是说所有 DAgger 实现都必须具有相同复杂度。增量优化、抽样回放和数据压缩能减轻负担，但实现与理论条件需要重新对齐。</p>
+<h2 id="批评五无遗憾不保证策略序列收敛更不保证最后策略最佳"><a class="heading-anchor" href="#批评五无遗憾不保证策略序列收敛更不保证最后策略最佳">批评五：无遗憾不保证策略序列收敛，更不保证最后策略最佳</a></h2>
+<p><strong>来源：<a href="https://proceedings.mlr.press/v84/cheng18c.html">Cheng 与 Boots，2018，〈Convergence of Value Aggregation for Imitation Learning〉</a>。</strong></p>
+<p>这项后续研究明确反对一种常见误解：</p>
+<blockquote>
+<p>数据聚合会自动产生不断改善并最终收敛的策略序列。</p>
+</blockquote>
+<p>他们研究了更一般的 value aggregation 框架，给出收敛所需的稳定性条件，并分析最后一个策略的性能。</p>
+<p>应区分三件事：</p>
+<div class="math-source">$$
+\underbrace{\frac{R_N}{N}\to0}_{\text{平均遗憾消失}},
+$$</div>
+<div class="math-source">$$
+\underbrace{\exists i:\;J(\hat\pi_i)\text{较好}}_{\text{序列中存在好策略}},
+$$</div>
+<div class="math-source">$$
+\underbrace{\hat\pi_N\text{收敛且性能好}}_{\text{最后迭代保证}}.
+$$</div>
+<p>前两件事不能直接推出第三件事。</p>
+<p><strong>实际影响：</strong></p>
+<ul>
+<li>不应只因为最后一个模型见过最多数据，就假定它最好；</li>
+<li>需要保留候选模型并执行评估；</li>
+<li>在随机环境中，可靠比较策略又需要额外样本。</li>
+</ul>
+<p>这并不是原论文的漏洞：原算法已经写明返回验证最好的策略。后续工作批评的是对原理论过度延伸的理解，以及原保证在部署时的不便。</p>
+<h2 id="批评六强凸假设与现代策略优化之间有距离"><a class="heading-anchor" href="#批评六强凸假设与现代策略优化之间有距离">批评六：强凸假设与现代策略优化之间有距离</a></h2>
+<p><strong>来源：<a href="https://proceedings.mlr.press/v199/lavington22a.html">Lavington、Vaswani、Schmidt，2022，〈Improved Policy Optimization for Online Imitation Learning〉</a>。</strong></p>
+<p>这项工作专门研究 DAgger 理论与实践之间的差距，在策略类足够有表达能力时给出更强结果，并放宽了原有分析对参数层面强凸性的要求，还提出正则化的在线优化方法。</p>
+<p>对阅读 2011 年论文的启示是：</p>
+<ul>
+<li>DAgger 的数据流程可以用于深度网络；</li>
+<li>但换成深度网络后，原始 FTL 强凸分析不能自动照搬；</li>
+<li>原论文提供的是一套有条件的归约，不是对所有策略参数化和优化器的统一保证。</li>
+</ul>
+<p>此外，连续控制中常用的平方误差：</p>
+<div class="math-source">$$
+\|\pi(s)-\pi^*(s)\|^2
+$$</div>
+<p>并不一般性地上界“动作是否完全相同”的 0–1 损失。两个连续动作可以只差极小量，但“不完全相同”的指示量仍为 1。</p>
+<p>因此，把连续动作回归误差转换成任务成本，往往需要额外的平滑性、敏感度或成本联系，不能机械套用离散分类的论证。这是根据原文定理条件作出的适用性分析。</p>
+<h2 id="对原文实验的独立评价"><a class="heading-anchor" href="#对原文实验的独立评价">对原文实验的独立评价</a></h2>
+<p>以下是根据原文设计作出的评价，不冒充已有研究的统一结论：</p>
+<ul>
+<li><strong>优点：机制清晰。</strong> 简单学习器配合不同采样流程，使分布反馈的作用比较容易看出来。</li>
+<li><strong>优点：覆盖两类任务。</strong> 连续控制、离散控制和结构化预测说明思想具有一定通用性。</li>
+<li><strong>限制：规模与表示受时代限制。</strong> 手工特征和线性模型不足以验证现代高容量模型上的全部行为。</li>
+<li><strong>限制：无法得出全局胜负。</strong> OCR 中调参后的 SEARN 与 DAgger 接近。</li>
+<li><strong>限制：成本维度不完整。</strong> 样本量相近，不代表人类标注时间、规划器查询成本或重训练成本相近。</li>
+<li><strong>限制：有限环境中的恢复能力，不等于普遍安全。</strong> 特定赛道的零跌落评估尤其不能如此外推。</li>
+</ul>
+<h2 id="读完后应当能够准确回答的几个问题"><a class="heading-anchor" href="#读完后应当能够准确回答的几个问题">读完后应当能够准确回答的几个问题</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>问题</th><th>准确回答</th></tr></thead><tbody><tr><td>DAgger 主要解决什么？</td><td>学习者动作导致的训练与部署状态分布失配</td></tr><tr><td>谁决定训练状态？</td><td>当前学习者，或学习者与专家的混合执行策略</td></tr><tr><td>谁提供标签？</td><td>专家</td></tr><tr><td>为什么聚合旧数据？</td><td>对应累计损失优化，保留对历次访问分布的约束</td></tr><tr><td>理论最核心的要求？</td><td>底层在线学习具有无遗憾性质，并满足相应损失、采样等条件</td></tr><tr><td>无遗憾是否意味着低绝对损失？</td><td>不意味着，还取决于 <span class="math-source">$\epsilon_N$</span></td></tr><tr><td>是否保证最后一个策略最好？</td><td>不保证</td></tr><tr><td>是否无条件把真实成本变为线性误差界？</td><td>不保证，还取决于 cost-to-go 敏感度 <span class="math-source">$u$</span></td></tr><tr><td>是否不再需要专家？</td><td>部署时可以不需要；训练时仍需要查询</td></tr><tr><td>是否直接求出了原始非凸目标的全局最优？</td><td>没有</td></tr></tbody></table>
+<p>最值得保留的两个公式是：</p>
+<div class="math-source">$$
+\boxed{
+\text{自身分布上的模仿损失}
+\le
+\underbrace{\epsilon_N}_{\text{策略类可达到的误差}}
++
+\underbrace{\gamma_N}_{\text{在线学习遗憾}}
++
+\underbrace{\text{分布混合误差}}_{\text{专家介入}}
++
+\underbrace{\text{采样误差}}_{\text{有限轨迹}}
+}
+$$</div>
+<p>以及：</p>
+<div class="math-source">$$
+\boxed{
+J(\hat\pi)-J(\pi^*)
+\le
+uT\,
+\mathbb E_{s\sim d_{\hat\pi}}
+[\ell(s,\hat\pi)].
+}
+$$</div>
+<p>第一个公式解释 DAgger 如何获得对自身访问状态的监督学习保证；第二个公式说明，这种保证何时能够转化为真正的任务表现。</p></div> </div> </div> <footer class="post-footer" data-astro-cid-gjtny2mx> <div data-astro-cid-bjlpfrhy> <!-- Gitalk comments will be added in Phase 3 --> </div> <section class="reward-widget" data-reward-widget data-astro-cid-bbdapvnt> <div class="reward-panel" id="reward-panel" aria-label="打赏二维码" data-astro-cid-bbdapvnt> <div class="reward-list" data-astro-cid-bbdapvnt> <div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/Alipay.png" alt="支付宝收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>支付宝 Alipay</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/WeChat.png" alt="微信收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>微信 Wechat</span> </div><div class="reward-item" data-astro-cid-bbdapvnt> <img src="/assets/reward/PayPal-or-CreditCard.png" alt="PayPal 或信用卡收款二维码" width="120" height="120" loading="lazy" data-astro-cid-bbdapvnt> <span data-astro-cid-bbdapvnt>PayPal/CreditCard</span> </div> </div> </div> <button class="reward-trigger" type="button" aria-label="打开打赏二维码" aria-controls="reward-panel" aria-expanded="false" data-astro-cid-bbdapvnt>
+打赏 Reward
+</button> </section>  <script type="module">function a(){document.querySelectorAll("[data-reward-widget]").forEach(e=>{if(e.dataset.initialized)return;const r=e.querySelector(".reward-trigger");if(!r)return;e.dataset.initialized="true";const n=t=>{e.classList.toggle("is-open",t),r.setAttribute("aria-expanded",String(t))};r.addEventListener("click",()=>n(!e.classList.contains("is-open"))),document.addEventListener("click",t=>{e.contains(t.target)||n(!1)}),document.addEventListener("keydown",t=>{t.key==="Escape"&&(n(!1),r.blur())})})}window.addEventListener("encrypted-content-revealed",()=>{document.querySelectorAll("[data-reward-after-unlock]").forEach(e=>{e.removeAttribute("hidden")})});document.addEventListener("astro:page-load",a);a();</script> <div id="gitalk-container" class="gitalk-container" data-abbrlink="8d9da8bd" data-title="论文阅读 DAgger" data-astro-cid-ajg7agi2></div> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">   <script>
+  var GITALK_CFG = {"clientID":"Ov23lijmGQilj9J9CrdP","clientSecret":"bd5066a2aadbe28c20913dd390b8047031f7174a","repo":"dropsong.github.io","owner":"dropsong","admin":["dropsong"],"labels":["Gitalk"],"distractionFreeMode":false};
+</script> <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js">
+</script> <script>
+  (function() {
+    var c = document.getElementById('gitalk-container');
+    if (!c) return;
+    var id = c.dataset.abbrlink || '';
+    var title = c.dataset.title || '';
+    new IntersectionObserver(function(es) {
+      es.forEach(function(e) {
+        if (e.isIntersecting && !c.dataset.loaded) {
+          c.dataset.loaded = '1';
+          new Gitalk(Object.assign({}, GITALK_CFG, {id: id, title: title})).render('gitalk-container');
+        }
+      });
+    }, {rootMargin: '200px'}).observe(c);
+  })();
+</script> </footer> </article> </main> <div class="toc-root" id="toc-root" data-astro-cid-6t6zfk7k> <button class="toc-fab" id="toc-fab" aria-label="目录" data-astro-cid-6t6zfk7k> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M4 6h16M4 12h10M4 18h16" data-astro-cid-6t6zfk7k></path> </svg> </button> <!-- Desktop: hover popup panel --> <div class="toc-popup" id="toc-popup" data-astro-cid-6t6zfk7k> <div class="toc-popup-header" data-astro-cid-6t6zfk7k> <span class="toc-popup-title" data-astro-cid-6t6zfk7k>目录</span> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> <div class="toc-popup-body" data-astro-cid-6t6zfk7k> <ul class="toc-popup-list" data-astro-cid-6t6zfk7k> <li class="toc-popup-item" data-mtoc-section="introduction问题为何不能直接当作普通监督学习" data-astro-cid-6t6zfk7k> <a href="#introduction问题为何不能直接当作普通监督学习" class="toc-popup-link" data-mtoc="introduction问题为何不能直接当作普通监督学习" data-astro-cid-6t6zfk7k> INTRODUCTION：问题为何不能直接当作普通监督学习 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#模仿学习的基本做法" class="toc-popup-link" data-mtoc="模仿学习的基本做法" data-astro-cid-6t6zfk7k> 模仿学习的基本做法 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#违反-iid应当怎样理解" class="toc-popup-link" data-mtoc="违反-iid应当怎样理解" data-astro-cid-6t6zfk7k> “违反 i.i.d.”应当怎样理解 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="preliminaries符号目标以及旧方法为什么受限" data-astro-cid-6t6zfk7k> <a href="#preliminaries符号目标以及旧方法为什么受限" class="toc-popup-link" data-mtoc="preliminaries符号目标以及旧方法为什么受限" data-astro-cid-6t6zfk7k> PRELIMINARIES：符号、目标，以及旧方法为什么受限 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#全文最重要的符号" class="toc-popup-link" data-mtoc="全文最重要的符号" data-astro-cid-6t6zfk7k> 全文最重要的符号 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#真正的优化目标分布也依赖待优化策略" class="toc-popup-link" data-mtoc="真正的优化目标分布也依赖待优化策略" data-astro-cid-6t6zfk7k> 真正的优化目标：分布也依赖待优化策略 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#原文-21监督模仿为什么会出现-t2epsilon" class="toc-popup-link" data-mtoc="原文-21监督模仿为什么会出现-t2epsilon" data-astro-cid-6t6zfk7k> 原文 §2.1：监督模仿为什么会出现 $T^2\epsilon$ </a> </li><li data-astro-cid-6t6zfk7k> <a href="#原文-22forward-training-怎样改善分布匹配" class="toc-popup-link" data-mtoc="原文-22forward-training-怎样改善分布匹配" data-astro-cid-6t6zfk7k> 原文 §2.2：Forward Training 怎样改善分布匹配 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#定理-22把自身分布上的模仿误差转换成任务成本" class="toc-popup-link" data-mtoc="定理-22把自身分布上的模仿误差转换成任务成本" data-astro-cid-6t6zfk7k> 定理 2.2：把“自身分布上的模仿误差”转换成任务成本 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#上一小节的推导细节" class="toc-popup-link" data-mtoc="上一小节的推导细节" data-astro-cid-6t6zfk7k> 上一小节的推导细节 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#原文-23smile-的思路与代价" class="toc-popup-link" data-mtoc="原文-23smile-的思路与代价" data-astro-cid-6t6zfk7k> 原文 §2.3：SMILe 的思路与代价 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="dataset-aggregationdagger-的完整机制" data-astro-cid-6t6zfk7k> <a href="#dataset-aggregationdagger-的完整机制" class="toc-popup-link" data-mtoc="dataset-aggregationdagger-的完整机制" data-astro-cid-6t6zfk7k> DATASET AGGREGATION：DAgger 的完整机制 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#algorithm-31-实际做了什么" class="toc-popup-link" data-mtoc="algorithm-31-实际做了什么" data-astro-cid-6t6zfk7k> Algorithm 3.1 实际做了什么 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#为什么一定要聚合历史数据" class="toc-popup-link" data-mtoc="为什么一定要聚合历史数据" data-astro-cid-6t6zfk7k> 为什么一定要聚合历史数据 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#beta_i-的作用控制执行不是控制标注量" class="toc-popup-link" data-mtoc="beta_i-的作用控制执行不是控制标注量" data-astro-cid-6t6zfk7k> $\beta_i$ 的作用：控制执行，不是控制标注量 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#理论中的-epsilon_n-到底是什么" class="toc-popup-link" data-mtoc="理论中的-epsilon_n-到底是什么" data-astro-cid-6t6zfk7k> 理论中的 $\epsilon_N$ 到底是什么 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#定理-3134先看结果再看证明" class="toc-popup-link" data-mtoc="定理-3134先看结果再看证明" data-astro-cid-6t6zfk7k> 定理 3.1—3.4：先看结果，再看证明 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="theoretical-analysis为什么无遗憾能够解决这个问题" data-astro-cid-6t6zfk7k> <a href="#theoretical-analysis为什么无遗憾能够解决这个问题" class="toc-popup-link" data-mtoc="theoretical-analysis为什么无遗憾能够解决这个问题" data-astro-cid-6t6zfk7k> THEORETICAL ANALYSIS：为什么无遗憾能够解决这个问题 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#原文-41什么叫-no-regret" class="toc-popup-link" data-mtoc="原文-41什么叫-no-regret" data-astro-cid-6t6zfk7k> 原文 §4.1：什么叫 no-regret </a> </li><li data-astro-cid-6t6zfk7k> <a href="#如何把-dagger-写成在线学习" class="toc-popup-link" data-mtoc="如何把-dagger-写成在线学习" data-astro-cid-6t6zfk7k> 如何把 DAgger 写成在线学习 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#为什么强调强凸性" class="toc-popup-link" data-mtoc="为什么强调强凸性" data-astro-cid-6t6zfk7k> 为什么强调强凸性 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#对上一节的解释" class="toc-popup-link" data-mtoc="对上一节的解释" data-astro-cid-6t6zfk7k> 对上一节的解释 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#lemma-41混合执行和纯学习者执行有多不同" class="toc-popup-link" data-mtoc="lemma-41混合执行和纯学习者执行有多不同" data-astro-cid-6t6zfk7k> Lemma 4.1：混合执行和纯学习者执行有多不同 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#上一小节的详细推导" class="toc-popup-link" data-mtoc="上一小节的详细推导" data-astro-cid-6t6zfk7k> 上一小节的详细推导 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#theorem-41论文最重要的不等式" class="toc-popup-link" data-mtoc="theorem-41论文最重要的不等式" data-astro-cid-6t6zfk7k> Theorem 4.1：论文最重要的不等式 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#为什么最简单的-beta_i-已经足够" class="toc-popup-link" data-mtoc="为什么最简单的-beta_i-已经足够" data-astro-cid-6t6zfk7k> 为什么最简单的 $\beta_i$ 已经足够 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#存在一个好策略不等于解出了原始目标" class="toc-popup-link" data-mtoc="存在一个好策略不等于解出了原始目标" data-astro-cid-6t6zfk7k> “存在一个好策略”不等于“解出了原始目标” </a> </li><li data-astro-cid-6t6zfk7k> <a href="#theorem-42有限数据与轨迹相关性" class="toc-popup-link" data-mtoc="theorem-42有限数据与轨迹相关性" data-astro-cid-6t6zfk7k> Theorem 4.2：有限数据与轨迹相关性 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="experiments实验究竟验证了哪些主张" data-astro-cid-6t6zfk7k> <a href="#experiments实验究竟验证了哪些主张" class="toc-popup-link" data-mtoc="experiments实验究竟验证了哪些主张" data-astro-cid-6t6zfk7k> EXPERIMENTS：实验究竟验证了哪些主张 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#super-tux-kart连续控制与恢复能力" class="toc-popup-link" data-mtoc="super-tux-kart连续控制与恢复能力" data-astro-cid-6t6zfk7k> Super Tux Kart：连续控制与恢复能力 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#super-mario-bros离散动作卡住问题与混合比例" class="toc-popup-link" data-mtoc="super-mario-bros离散动作卡住问题与混合比例" data-astro-cid-6t6zfk7k> Super Mario Bros：离散动作、卡住问题与混合比例 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#handwriting-recognition为何结构化预测也是模仿学习" class="toc-popup-link" data-mtoc="handwriting-recognition为何结构化预测也是模仿学习" data-astro-cid-6t6zfk7k> Handwriting Recognition：为何结构化预测也是模仿学习 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#三个实验放在一起应当得出怎样的结论" class="toc-popup-link" data-mtoc="三个实验放在一起应当得出怎样的结论" data-astro-cid-6t6zfk7k> 三个实验放在一起，应当得出怎样的结论 </a> </li> </ul> </li><li class="toc-popup-item" data-mtoc-section="future-work" data-astro-cid-6t6zfk7k> <a href="#future-work" class="toc-popup-link" data-mtoc="future-work" data-astro-cid-6t6zfk7k> FUTURE WORK </a>  </li><li class="toc-popup-item" data-mtoc-section="后续研究有哪些批评" data-astro-cid-6t6zfk7k> <a href="#后续研究有哪些批评" class="toc-popup-link" data-mtoc="后续研究有哪些批评" data-astro-cid-6t6zfk7k> 后续研究有哪些批评 </a> <ul class="toc-popup-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#批评一动作不一致损失没有充分反映错误的长期严重程度" class="toc-popup-link" data-mtoc="批评一动作不一致损失没有充分反映错误的长期严重程度" data-astro-cid-6t6zfk7k> 批评一：动作不一致损失没有充分反映错误的长期严重程度 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#批评二专家查询昂贵减少专家执行并没有减少专家标注需求" class="toc-popup-link" data-mtoc="批评二专家查询昂贵减少专家执行并没有减少专家标注需求" data-astro-cid-6t6zfk7k> 批评二：专家查询昂贵，减少专家执行并没有减少专家标注需求 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#批评三人类擅长亲自操作不一定擅长给别人的错误轨迹逐状态标注" class="toc-popup-link" data-mtoc="批评三人类擅长亲自操作不一定擅长给别人的错误轨迹逐状态标注" data-astro-cid-6t6zfk7k> 批评三：人类擅长亲自操作，不一定擅长给别人的错误轨迹逐状态标注 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#批评四训练时执行不成熟策略会带来安全与计算成本" class="toc-popup-link" data-mtoc="批评四训练时执行不成熟策略会带来安全与计算成本" data-astro-cid-6t6zfk7k> 批评四：训练时执行不成熟策略，会带来安全与计算成本 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#批评五无遗憾不保证策略序列收敛更不保证最后策略最佳" class="toc-popup-link" data-mtoc="批评五无遗憾不保证策略序列收敛更不保证最后策略最佳" data-astro-cid-6t6zfk7k> 批评五：无遗憾不保证策略序列收敛，更不保证最后策略最佳 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#批评六强凸假设与现代策略优化之间有距离" class="toc-popup-link" data-mtoc="批评六强凸假设与现代策略优化之间有距离" data-astro-cid-6t6zfk7k> 批评六：强凸假设与现代策略优化之间有距离 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#对原文实验的独立评价" class="toc-popup-link" data-mtoc="对原文实验的独立评价" data-astro-cid-6t6zfk7k> 对原文实验的独立评价 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#读完后应当能够准确回答的几个问题" class="toc-popup-link" data-mtoc="读完后应当能够准确回答的几个问题" data-astro-cid-6t6zfk7k> 读完后应当能够准确回答的几个问题 </a> </li> </ul> </li> </ul> </div> </div> <!-- Mobile: bottom sheet overlay --> <div class="toc-overlay" id="toc-overlay" data-astro-cid-6t6zfk7k></div> <div class="toc-sheet" id="toc-sheet" data-astro-cid-6t6zfk7k> <div class="toc-sheet-header" data-astro-cid-6t6zfk7k> <span class="toc-sheet-title" data-astro-cid-6t6zfk7k>目录</span> <div class="toc-sheet-actions" data-astro-cid-6t6zfk7k> <button class="toc-top-btn" type="button" aria-label="回到顶部" title="回到顶部" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M12 19V5M5 12l7-7 7 7" data-astro-cid-6t6zfk7k></path> </svg> </button> <button class="toc-sheet-close" id="toc-sheet-close" aria-label="关闭" data-astro-cid-6t6zfk7k> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-6t6zfk7k> <path d="M18 6L6 18M6 6l12 12" data-astro-cid-6t6zfk7k></path> </svg> </button> </div> </div> <div class="toc-sheet-body" data-astro-cid-6t6zfk7k> <ul class="toc-sheet-list" data-astro-cid-6t6zfk7k> <li class="toc-sheet-item" data-msheet-section="introduction问题为何不能直接当作普通监督学习" data-astro-cid-6t6zfk7k> <a href="#introduction问题为何不能直接当作普通监督学习" class="toc-sheet-link" data-msheet="introduction问题为何不能直接当作普通监督学习" data-astro-cid-6t6zfk7k> INTRODUCTION：问题为何不能直接当作普通监督学习 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#模仿学习的基本做法" class="toc-sheet-link" data-msheet="模仿学习的基本做法" data-astro-cid-6t6zfk7k> 模仿学习的基本做法 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#违反-iid应当怎样理解" class="toc-sheet-link" data-msheet="违反-iid应当怎样理解" data-astro-cid-6t6zfk7k> “违反 i.i.d.”应当怎样理解 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="preliminaries符号目标以及旧方法为什么受限" data-astro-cid-6t6zfk7k> <a href="#preliminaries符号目标以及旧方法为什么受限" class="toc-sheet-link" data-msheet="preliminaries符号目标以及旧方法为什么受限" data-astro-cid-6t6zfk7k> PRELIMINARIES：符号、目标，以及旧方法为什么受限 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#全文最重要的符号" class="toc-sheet-link" data-msheet="全文最重要的符号" data-astro-cid-6t6zfk7k> 全文最重要的符号 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#真正的优化目标分布也依赖待优化策略" class="toc-sheet-link" data-msheet="真正的优化目标分布也依赖待优化策略" data-astro-cid-6t6zfk7k> 真正的优化目标：分布也依赖待优化策略 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#原文-21监督模仿为什么会出现-t2epsilon" class="toc-sheet-link" data-msheet="原文-21监督模仿为什么会出现-t2epsilon" data-astro-cid-6t6zfk7k> 原文 §2.1：监督模仿为什么会出现 $T^2\epsilon$ </a> </li><li data-astro-cid-6t6zfk7k> <a href="#原文-22forward-training-怎样改善分布匹配" class="toc-sheet-link" data-msheet="原文-22forward-training-怎样改善分布匹配" data-astro-cid-6t6zfk7k> 原文 §2.2：Forward Training 怎样改善分布匹配 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#定理-22把自身分布上的模仿误差转换成任务成本" class="toc-sheet-link" data-msheet="定理-22把自身分布上的模仿误差转换成任务成本" data-astro-cid-6t6zfk7k> 定理 2.2：把“自身分布上的模仿误差”转换成任务成本 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#上一小节的推导细节" class="toc-sheet-link" data-msheet="上一小节的推导细节" data-astro-cid-6t6zfk7k> 上一小节的推导细节 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#原文-23smile-的思路与代价" class="toc-sheet-link" data-msheet="原文-23smile-的思路与代价" data-astro-cid-6t6zfk7k> 原文 §2.3：SMILe 的思路与代价 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="dataset-aggregationdagger-的完整机制" data-astro-cid-6t6zfk7k> <a href="#dataset-aggregationdagger-的完整机制" class="toc-sheet-link" data-msheet="dataset-aggregationdagger-的完整机制" data-astro-cid-6t6zfk7k> DATASET AGGREGATION：DAgger 的完整机制 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#algorithm-31-实际做了什么" class="toc-sheet-link" data-msheet="algorithm-31-实际做了什么" data-astro-cid-6t6zfk7k> Algorithm 3.1 实际做了什么 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#为什么一定要聚合历史数据" class="toc-sheet-link" data-msheet="为什么一定要聚合历史数据" data-astro-cid-6t6zfk7k> 为什么一定要聚合历史数据 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#beta_i-的作用控制执行不是控制标注量" class="toc-sheet-link" data-msheet="beta_i-的作用控制执行不是控制标注量" data-astro-cid-6t6zfk7k> $\beta_i$ 的作用：控制执行，不是控制标注量 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#理论中的-epsilon_n-到底是什么" class="toc-sheet-link" data-msheet="理论中的-epsilon_n-到底是什么" data-astro-cid-6t6zfk7k> 理论中的 $\epsilon_N$ 到底是什么 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#定理-3134先看结果再看证明" class="toc-sheet-link" data-msheet="定理-3134先看结果再看证明" data-astro-cid-6t6zfk7k> 定理 3.1—3.4：先看结果，再看证明 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="theoretical-analysis为什么无遗憾能够解决这个问题" data-astro-cid-6t6zfk7k> <a href="#theoretical-analysis为什么无遗憾能够解决这个问题" class="toc-sheet-link" data-msheet="theoretical-analysis为什么无遗憾能够解决这个问题" data-astro-cid-6t6zfk7k> THEORETICAL ANALYSIS：为什么无遗憾能够解决这个问题 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#原文-41什么叫-no-regret" class="toc-sheet-link" data-msheet="原文-41什么叫-no-regret" data-astro-cid-6t6zfk7k> 原文 §4.1：什么叫 no-regret </a> </li><li data-astro-cid-6t6zfk7k> <a href="#如何把-dagger-写成在线学习" class="toc-sheet-link" data-msheet="如何把-dagger-写成在线学习" data-astro-cid-6t6zfk7k> 如何把 DAgger 写成在线学习 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#为什么强调强凸性" class="toc-sheet-link" data-msheet="为什么强调强凸性" data-astro-cid-6t6zfk7k> 为什么强调强凸性 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#对上一节的解释" class="toc-sheet-link" data-msheet="对上一节的解释" data-astro-cid-6t6zfk7k> 对上一节的解释 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#lemma-41混合执行和纯学习者执行有多不同" class="toc-sheet-link" data-msheet="lemma-41混合执行和纯学习者执行有多不同" data-astro-cid-6t6zfk7k> Lemma 4.1：混合执行和纯学习者执行有多不同 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#上一小节的详细推导" class="toc-sheet-link" data-msheet="上一小节的详细推导" data-astro-cid-6t6zfk7k> 上一小节的详细推导 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#theorem-41论文最重要的不等式" class="toc-sheet-link" data-msheet="theorem-41论文最重要的不等式" data-astro-cid-6t6zfk7k> Theorem 4.1：论文最重要的不等式 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#为什么最简单的-beta_i-已经足够" class="toc-sheet-link" data-msheet="为什么最简单的-beta_i-已经足够" data-astro-cid-6t6zfk7k> 为什么最简单的 $\beta_i$ 已经足够 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#存在一个好策略不等于解出了原始目标" class="toc-sheet-link" data-msheet="存在一个好策略不等于解出了原始目标" data-astro-cid-6t6zfk7k> “存在一个好策略”不等于“解出了原始目标” </a> </li><li data-astro-cid-6t6zfk7k> <a href="#theorem-42有限数据与轨迹相关性" class="toc-sheet-link" data-msheet="theorem-42有限数据与轨迹相关性" data-astro-cid-6t6zfk7k> Theorem 4.2：有限数据与轨迹相关性 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="experiments实验究竟验证了哪些主张" data-astro-cid-6t6zfk7k> <a href="#experiments实验究竟验证了哪些主张" class="toc-sheet-link" data-msheet="experiments实验究竟验证了哪些主张" data-astro-cid-6t6zfk7k> EXPERIMENTS：实验究竟验证了哪些主张 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#super-tux-kart连续控制与恢复能力" class="toc-sheet-link" data-msheet="super-tux-kart连续控制与恢复能力" data-astro-cid-6t6zfk7k> Super Tux Kart：连续控制与恢复能力 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#super-mario-bros离散动作卡住问题与混合比例" class="toc-sheet-link" data-msheet="super-mario-bros离散动作卡住问题与混合比例" data-astro-cid-6t6zfk7k> Super Mario Bros：离散动作、卡住问题与混合比例 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#handwriting-recognition为何结构化预测也是模仿学习" class="toc-sheet-link" data-msheet="handwriting-recognition为何结构化预测也是模仿学习" data-astro-cid-6t6zfk7k> Handwriting Recognition：为何结构化预测也是模仿学习 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#三个实验放在一起应当得出怎样的结论" class="toc-sheet-link" data-msheet="三个实验放在一起应当得出怎样的结论" data-astro-cid-6t6zfk7k> 三个实验放在一起，应当得出怎样的结论 </a> </li> </ul> </li><li class="toc-sheet-item" data-msheet-section="future-work" data-astro-cid-6t6zfk7k> <a href="#future-work" class="toc-sheet-link" data-msheet="future-work" data-astro-cid-6t6zfk7k> FUTURE WORK </a>  </li><li class="toc-sheet-item" data-msheet-section="后续研究有哪些批评" data-astro-cid-6t6zfk7k> <a href="#后续研究有哪些批评" class="toc-sheet-link" data-msheet="后续研究有哪些批评" data-astro-cid-6t6zfk7k> 后续研究有哪些批评 </a> <ul class="toc-sheet-sub" data-astro-cid-6t6zfk7k> <li data-astro-cid-6t6zfk7k> <a href="#批评一动作不一致损失没有充分反映错误的长期严重程度" class="toc-sheet-link" data-msheet="批评一动作不一致损失没有充分反映错误的长期严重程度" data-astro-cid-6t6zfk7k> 批评一：动作不一致损失没有充分反映错误的长期严重程度 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#批评二专家查询昂贵减少专家执行并没有减少专家标注需求" class="toc-sheet-link" data-msheet="批评二专家查询昂贵减少专家执行并没有减少专家标注需求" data-astro-cid-6t6zfk7k> 批评二：专家查询昂贵，减少专家执行并没有减少专家标注需求 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#批评三人类擅长亲自操作不一定擅长给别人的错误轨迹逐状态标注" class="toc-sheet-link" data-msheet="批评三人类擅长亲自操作不一定擅长给别人的错误轨迹逐状态标注" data-astro-cid-6t6zfk7k> 批评三：人类擅长亲自操作，不一定擅长给别人的错误轨迹逐状态标注 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#批评四训练时执行不成熟策略会带来安全与计算成本" class="toc-sheet-link" data-msheet="批评四训练时执行不成熟策略会带来安全与计算成本" data-astro-cid-6t6zfk7k> 批评四：训练时执行不成熟策略，会带来安全与计算成本 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#批评五无遗憾不保证策略序列收敛更不保证最后策略最佳" class="toc-sheet-link" data-msheet="批评五无遗憾不保证策略序列收敛更不保证最后策略最佳" data-astro-cid-6t6zfk7k> 批评五：无遗憾不保证策略序列收敛，更不保证最后策略最佳 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#批评六强凸假设与现代策略优化之间有距离" class="toc-sheet-link" data-msheet="批评六强凸假设与现代策略优化之间有距离" data-astro-cid-6t6zfk7k> 批评六：强凸假设与现代策略优化之间有距离 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#对原文实验的独立评价" class="toc-sheet-link" data-msheet="对原文实验的独立评价" data-astro-cid-6t6zfk7k> 对原文实验的独立评价 </a> </li><li data-astro-cid-6t6zfk7k> <a href="#读完后应当能够准确回答的几个问题" class="toc-sheet-link" data-msheet="读完后应当能够准确回答的几个问题" data-astro-cid-6t6zfk7k> 读完后应当能够准确回答的几个问题 </a> </li> </ul> </li> </ul> </div> </div> </div>  <script type="module">function R(){const o=document.getElementById("toc-root");!o||o.dataset.tocDeferred!=="true"||(delete o.dataset.tocDeferred,o.hidden=!1,A())}function A(){const o=document.getElementById("toc-root");if(!o||o.hidden||o.dataset.tocDeferred==="true"||o.dataset.initialized)return;const h=o.querySelector("#toc-fab"),i=o.querySelector("#toc-popup"),a=o.querySelector("#toc-overlay"),n=o.querySelector("#toc-sheet"),x=o.querySelector("#toc-sheet-close"),z=o.querySelectorAll(".toc-top-btn");if(!h||!i||!a||!n||!x)return;o.dataset.initialized="true";const m=()=>window.matchMedia("(max-width: 768px)").matches;let v=null,f=null,E=!1,k=!1;function B(){m()||(f&&clearTimeout(f),i.classList.add("open"),L(!0))}function I(){f&&clearTimeout(f),f=setTimeout(()=>{!E&&!k&&i.classList.remove("open")},200)}h.addEventListener("mouseenter",()=>{E=!0,B()}),h.addEventListener("mouseleave",()=>{E=!1,I()}),i.addEventListener("mouseenter",()=>{k=!0,B()}),i.addEventListener("mouseleave",()=>{k=!1,I()}),i.querySelectorAll(".toc-popup-link").forEach(t=>{t.addEventListener("click",()=>{setTimeout(()=>i.classList.remove("open"),150)})}),h.addEventListener("click",()=>{m()&&(a.style.display="block",n.style.display="flex",requestAnimationFrame(()=>{a.classList.add("open"),n.classList.add("open"),L(!0)}),document.body.style.overflow="hidden")});function y(){a.classList.remove("open"),n.classList.remove("open"),setTimeout(()=>{a.style.display="none",n.style.display="none"},300),document.body.style.overflow=""}x.addEventListener("click",y),a.addEventListener("click",y),n.querySelectorAll(".toc-sheet-link").forEach(t=>{t.addEventListener("click",()=>setTimeout(y,200))}),z.forEach(t=>{t.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"}),m()&&y()})});function H(t,q,c,s=!1){const l=t.querySelector(q),b=t.querySelector(c);if(!l||!b)return;const d=l.getBoundingClientRect(),e=b.getBoundingClientRect(),r=e.top>=d.top&&e.bottom<=d.bottom;if(!s&&r)return;const u=l.scrollTop+(e.top-d.top)-l.clientHeight/2+e.height/2;l.scrollTo({top:Math.max(0,u),behavior:s?"auto":"smooth"})}function T(t=!1){!m()&&i.classList.contains("open")&&H(i,".toc-popup-body",".toc-popup-link.active",t),m()&&n.classList.contains("open")&&H(n,".toc-sheet-body",".toc-sheet-link.active",t)}function L(t=!1){requestAnimationFrame(()=>T(t)),v&&clearTimeout(v),v=setTimeout(()=>{T(t),v=null},260)}let F="";function w(){const t=i.querySelectorAll(".toc-popup-link"),q=n.querySelectorAll(".toc-sheet-link"),c=[];t.forEach(e=>{const r=e.dataset.mtoc;if(r){const u=document.getElementById(r);u&&c.push({id:r,el:u})}});let s="";const l=window.scrollY+100;if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-4&&c.length>0)s=c[c.length-1].id;else for(let e=c.length-1;e>=0;e--)if(c[e].el.offsetTop<=l){s=c[e].id;break}t.forEach(e=>e.classList.toggle("active",e.dataset.mtoc===s)),q.forEach(e=>e.classList.toggle("active",e.dataset.msheet===s));function d(e,r,u,P){const D=(s?e.querySelector(`${r}.active`):null)?.closest(u)?.querySelector(P);e.querySelectorAll(P).forEach(p=>{p===D?(p.classList.add("expanded"),p.style.maxHeight=`${p.scrollHeight}px`):(p.classList.remove("expanded"),p.style.removeProperty("max-height"))})}d(i,".toc-popup-link",".toc-popup-item",".toc-popup-sub"),d(n,".toc-sheet-link",".toc-sheet-item",".toc-sheet-sub"),T(),s!==F&&(L(),F=s)}let S=!1;window.addEventListener("scroll",()=>{S||(requestAnimationFrame(()=>{w(),S=!1}),S=!0)});let g=null;window.addEventListener("resize",()=>{g&&clearTimeout(g),g=setTimeout(()=>{w(),L(!0),g=null},100)}),w()}window.addEventListener("encrypted-content-revealed",R);document.addEventListener("astro:page-load",A);A();</script><footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner" data-astro-cid-sz7xmlte></div> </footer>  <script type="module" src="/_astro/CodeBlockEnhance.astro_astro_type_script_index_0_lang.Di89G-ws.js"></script> <div id="image-lightbox" class="lightbox-overlay" data-astro-cid-fbflauxb> <div class="lightbox-content" data-astro-cid-fbflauxb> <img id="lightbox-img" src="" alt="" data-astro-cid-fbflauxb> </div> </div>  <script type="module">function c(){const t=document.getElementById("image-lightbox"),n=document.getElementById("lightbox-img");if(!t||!n)return;function s(e){n.src=e,t.classList.add("open"),document.body.style.overflow="hidden"}function i(){t.classList.remove("open"),document.body.style.overflow=""}t.addEventListener("click",e=>{e.target===t&&i()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t.classList.contains("open")&&i()});function d(){document.querySelectorAll(".article-body img").forEach(e=>{const o=e;o.dataset.lightbox||(o.dataset.lightbox="true",o.style.cursor="zoom-in",o.addEventListener("click",()=>{s(o.src)}))})}document.addEventListener("astro:page-load",d),d()}document.addEventListener("astro:page-load",c);c();</script> <script type="module" src="/_astro/EncryptedBlock.astro_astro_type_script_index_0_lang.DuPogRv7.js"></script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"><script type="module">
+  import renderMathInElement from 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs';
+
+  function renderMath() {
+    const articleBody = document.querySelector('.article-body');
+    if (!articleBody) return;
+
+    renderMathInElement(articleBody, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      throwOnError: false,
+    });
+  }
+
+  document.addEventListener('astro:page-load', renderMath);
+  renderMath();
+</script> </div> </div> </body></html>  
